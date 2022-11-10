@@ -1,4 +1,4 @@
-# Introduction
+# Introduction: the why
 
 The research report assignment requires students to locate, access, analyse and report previously collected data. This introduction is intended to answer the first question anybody might ask.
 
@@ -11,7 +11,7 @@ In following materials, I will answer the questions.
 
 It is going to appear, at first, that I am going a *long* way away from telling you what you need to do for the assignment. I hope you will agree that the discussion that follows is worth your time in reading it. It will help you to understand *why* we are asking you to do the assignment, and *why* we are looking for what we are looking for. It will help you to understand *how* this work will aid your development. And it will help to show *how* doing the assignment furnishes the opportunity for research experience that will help you later in your working life.
 
-For those who are more eager to start the work, here are the links to the how \[\] and to the what \[\] information.
+For those who are more eager to start the work, here are the links to the what information in [in Chapter -@sec-what] and to the how information [in Chapter -@sec-how].
 
 ## The key ideas
 
@@ -29,7 +29,7 @@ We will begin by discussing psychological research, and research *about* psychol
 
 ### The wider context: crisis and revolution
 
-We are all here because we are interested in humans and human behaviour, and because we are interested in scientific methods of making sense of these things. Some of us are aware that science (including psychological science) has undergone a rolling series of crises: the replicability or replication crisis [@Pashler2012a; @Pashler2012b]; the statistical crisis [@gelman2014a]; and the generalizability crisis [@yarkoni2022]. And that science is undergoing a response to these crises, evidenced in the advocacy of pre-registration [@nosek2018; @nosek2019prereg], and of registered reports [@nosek2014], the use of open science badges (e.g., [for the journal *Psychological Science*](https://www.psychologicalscience.org/publications/badges){.external target="_blank"}), the completion of large-scale replication studies [@aarts2015], and the identification of open science principles [@munafò2017].
+We are here because we are interested in humans and human behaviour, and because we are interested in scientific methods of making sense of these things. Some of us are aware that science (including psychological science) has undergone a rolling series of crises: the replicability or replication crisis [@Pashler2012a; @Pashler2012b]; the statistical crisis [@gelman2014a]; and the generalizability crisis [@yarkoni2022]. And that science is undergoing a response to these crises, evidenced in the advocacy of pre-registration [@nosek2018; @nosek2019prereg], and of registered reports [@nosek2014], the use of open science badges (e.g., [for the journal *Psychological Science*](https://www.psychologicalscience.org/publications/badges){.external target="_blank"}), the completion of large-scale replication studies [@aarts2015], and the identification of open science principles [@munafò2017]. We may usefully refer, collectively, to the crises and the responses, as the *credibility revolution* [@vazire2018]
 
 We could teach a course on this (in Lancaster, we do) but I must be brief, here, and invite you to follow the references, if you are interested. Before going on, I want to call your attention to the fact that important elements of the hard work in trying to make science work better has been led by PhD students and by junior researchers [e.g., @herndon2014]. Graduate students may, at first, assume that the fact that a research article has been published in a journal means the findings that are reported must be *true*. Most of the time, some educated skepticism is more appropriate. An important driver of the realization that there are problems evident in the literature, and that there are changes we can make to improve practice, comes from independent **post-publication review work** exposing the problems in published work (see, e.g., [this account by Andrew Gelman](https://statmodeling.stat.columbia.edu/2016/12/16/an-efficiency-argument-for-post-publication-review/){.external target="_blank"})
 
@@ -41,7 +41,9 @@ In brief, then, most practicing scientists now understand *or should* understand
 
 This discussion could (again) be unsettling. This list of problems could make you angry or sad. I, like others, think it is exciting. It is exciting because these problems have probably existed for a long time [e.g., @cohen1962; @meehl1967] and now, having identified the problems, we can hope to do something about it. It is exciting because if you care about people, the study of people, or the applications in clinical, education and other domains of the results of the study of people, then you might hope to see better, more useful, science in the future [@vazire2018].
 
-As someone who teaches graduate and undergraduate students, I want to help you to be the change you want to see in the world. We cannot solve every problem but we can try to do better those things that are within our reach. I am going to end this introduction with a brief discussion of some ideas we can use to guide our better practices.
+As someone who teaches graduate and undergraduate students, I want to help you to *be the change you want to see in the world* [^intro-1]. We cannot solve every problem but we can try to do better those things that are within our reach. I am going to end this introduction with a brief discussion of some ideas we can use to guide our better practices.
+
+[^intro-1]: This encouragement is often attributed to Gandhi but is attributed ([(here)](https://professorbuzzkill.com/gandhi-be-the-change-you-wish-to-see-in-the-world/){.external target="_blank"}) to a Brooklyn school teacher, Ms Arleen Lorrance, who led a transformative school project in the 1970s.
 
 ### The specific context: what we need to look at, conceptually and practically
 
@@ -49,7 +51,7 @@ In this course, for this assignment, we are going to focus on:
 
 1.  multiverse analyses
 2.  kinds of reproducibility
-3.  the current mis-match between open science ideas and practices
+3.  the current state of the match between open science ideas and practices
 
 In the classes on the linear model, we will discuss:
 
@@ -58,9 +60,9 @@ In the classes on the linear model, we will discuss:
 6.  samples
 7.  variation in results
 
-### Multiverse analyses
+### Multiverse analyses: multi- what?
 
-#### A first useful metaphor: the pipeline
+#### A first useful metaphor: the pipeline {#sec-pipeline}
 
 I am going to link this discussion to a metaphor (see Figure @fig-pipeline) or a description you will find useful: **the data analysis pipeline** or **workflow**.
 
@@ -118,11 +120,11 @@ We introduce the idea that your analysis work will flow through the stages of a 
 -   As you practice your data analysis work, try to identify the elements and the order of your work, as the parts of a *workflow*.
 :::
 
-#### A second useful metaphor: the garden of forking paths
+#### A second useful metaphor: the garden of forking paths {#sec-forking}
 
-What researchers have come to realize: because we started looking ... The open secret that has been well kept [@bourdieu2004]: because everybody who does science knows about it, yet we may not teach it; and because we do not write textbooks revealing it ... Is that at each stage in the analysis workflow, we can and do make choices where multiple alternative choices are possible. @gelman2014 capture this insight as the "garden of forking paths"[^intro-1] (see @fig-forking).
+What researchers have come to realize: because we started looking ... The open secret that has been well kept [@bourdieu2004]: because everybody who does science knows about it, yet we may not teach it; and because we do not write textbooks revealing it ... Is that at each stage in the analysis workflow, we can and do make choices where multiple alternative choices are possible. @gelman2014 capture this insight as the "garden of forking paths"[^intro-2] (see @fig-forking).
 
-[^intro-1]: The term is taken from the name of a short story by Jorge Luis Borges, "El jardin de senderos que se bifurcan".
+[^intro-2]: The term is taken from the name of a short story by Jorge Luis Borges, "El jardin de senderos que se bifurcan".
 
 The general idea is that it is possible to have **multiple potential different paths** from the data to the results. The results will vary, depending on the path we take. In an analysis, we could take multiple different paths simply because at point A we decide to do B1, B2 or B3, maybe we choose B1, and then at point B1, we may decide to do C1, C2 or C3. Here, maybe we have our raw data at point A. Maybe we could do one of two different things when we tidy the data: action B1 or B2. Then, when we have our tidy data, maybe we can choose to do our analysis in one of six ways. Where we are at each step *depends* on the choices we made at the previous steps.
 
@@ -151,7 +153,7 @@ I am talking about forking paths because the *multiplicity* of paths has consequ
 -   It is about here, I hope, that you can start to see why it would makes sense to access data from a published study and to examine if you can get the same results as the study authors.
 :::
 
-### Multiverse analyses
+### Multiverse analyses {#sec-multiverse}
 
 I am going to discuss, now, what are commonly called *multiverse analyses*. Psychologists use this term, having been introduced to it in an influential paper by @steegen2016, but it comes from theoretical physics ([take a look at wikipedia](https://en.wikipedia.org/wiki/Multiverse){.external target="_blank"}).
 
@@ -162,13 +164,11 @@ We are going to look at:
 1.  dataset construction
 2.  analysis choices
 
-#### The link between crisis and the multiverse
+#### The link between the credibility revolution and the multiverse
 
-In first discussing the wider context (of crisis and revolution), then discussing the specific context (of multiverses and, in the following, of reproducibility), I should be clear about **the link between the two things**.
-The finding that some results may not be supported by the evidence is probably due to a mix of causes.
-But one of those causes will be the uncertainty over data processing or the uncertainty over analysis methods revealed in multiverse analyses, as we see next.
+In first discussing the wider context (of crisis and revolution), then discussing the specific context (of multiverses and, in the following, of reproducibility), I should be clear about **the link between the two things**. The finding that some results may not be supported by the evidence is probably due to a mix of causes. But one of those causes will be the combination of uncertainty over data processing or the uncertainty over analysis methods revealed in multiverse analyses, as we see next, combined with the limitations of data and code sharing, and the incompleteness of results reporting (as we see later).
 
-#### The data multiverse
+#### The data multiverse {#sec-multiversedata}
 
 When you collect or access data for a research study, the complete raw dataset you receive is almost never the complete dataset you analyze or whose analysis you report. This is not a story about deliberately cheating. It is a story about the normal practice of science [@kuhn1970].
 
@@ -215,7 +215,7 @@ But you will be asking yourself: **what do I need to think about, for the assign
 -   If you can access the raw data, ask yourself: could different choices change the results of the same analysis?
 :::
 
-#### Analysis multiverses
+#### Analysis multiverses {#sec-multiverseanalysis}
 
 Even if we begin with the same research question and, critically, the *same dataset*, the results of a series of studies show that different researchers will often (reasonably) make *different choices about the analysis* they do to answer the research question. We often call these studies (analysis or model) **multiverse** studies. In these studies, we see variation in analysis and this variation is also associated with variation in results.
 
@@ -232,14 +232,15 @@ But you will be asking yourself: **what do I need to think about, for the assign
 -   If you can access the data and analysis code, ask yourself: could different methods change the results of the same analysis?
 :::
 
-#### What can we conclude?
+#### What can we conclude -- the story so far?
 
-This is not a story where everybody or nobody is right or where everything or nothing is true [^intro-variation].
-Instead, we can be guided by the advice [@meehl1967; @scheel2022; @steegen2016] that we should (1.) seek better and more complete theorizing about the constructs of interest and how we measure them, and (2.) seek more complete and more precise theory so that some options are theoretically superior than others, and should be preferred, when constructing datasets or specifying analysis methods.
+This is a good place to look at what we have discussed, and present an evaluation of the story so far.
 
-[^intro-variation]: There could be a story where the hero (us) ultimately learns to reject binary (right, wrong) choices, and embrace variation, or embrace uncertainty [@Gelman2015; @vasishth2021]. 
+This is not a story where everybody or nobody is right or where everything or nothing is true [^intro-3]. Instead, we can be guided by the advice [@meehl1967; @scheel2022; @steegen2016] that we should (1.) seek better and more complete theorizing about the constructs of interest and how we measure them, and (2.) seek more complete and more precise theory so that some options are theoretically superior than others, and should be preferred, when constructing datasets or specifying analysis methods.
 
-Not all research questions and not all hypothesis information will allow an equally wide variety of potential reasonable approaches to the analysis. As Paul Meehl argued a long time ago [@meehl1967; @meehl1978], and researchers like Anne Scheel [@scheel2021; @scheel2022] argued more recently, the complexity of the thing we study -- people, and what they do -- and the still early development of our understanding of this thing, mean that what we *want* but what we do not see, in psychology, are scientifically productive tests of *falsifiable theories*. (See, in line with this perspective, discussions by @auspurg2021 and by @delgiudice2021 about the range of analysis possibilities that may or may not be allowed, in multiverse analyses, by more or less clear research questions or well-developed causal theories.) Our concern should not so much be with being able to do statistical analysis, or with finding significant or not significant results. It would be more useful to do analyses to test concrete, inflexible, precise predictions that *can be wrong*.
+[^intro-3]: There could be a story where the hero (us) ultimately learns to reject binary (present, absent; significant, non-significant) choices, and embrace variation, or embrace uncertainty [@Gelman2015; @vasishth2021].
+
+Not all research questions and not all hypothesis information will allow an equally wide variety of potential reasonable approaches to the analysis. As Paul Meehl argued a long time ago [@meehl1967; @meehl1978], and researchers like Anne Scheel [@scheel2021; @scheel2022] argued more recently, the complexity of the thing we study -- people, and what they do -- and the still early development of our understanding of this thing, mean that what we *want* but what we do not see, in psychology, are scientifically productive tests of *falsifiable theories*. (See, consistent with this perspective, discussions by @auspurg2021 and by @delgiudice2021 about the range of analysis possibilities that may or may not be allowed, in multiverse analyses, by more or less clear research questions or well-developed causal theories.) Our concern should not so much be with being able to do statistical analysis, or with finding significant or not significant results. It would be more useful to do analyses to test concrete, inflexible, precise predictions that *can be wrong*.
 
 Nor is this a story, I think, about the potential for *cheating*. While we may refer to subjective choices or to researcher flexibility, the differences that we see do not resemble the *researcher degrees of freedom* [@Simmons2011] some may exploit, consciously or unconsciously, to change results to suit their aims. Instead, the multiverse results show us the impact of the reasonable differences in approach that different researchers may sensibly choose to take when they try to answer a research question with data.
 
@@ -254,7 +255,7 @@ But you will be asking yourself: **what do I need to think about, for the assign
 -   If you read the methods or results section of a paper, you should reflect: what other analysis methods could be used here? How could variation in analysis method --- in what or how you do the analysis --- influence the results?
 :::
 
-Making you aware of the potential for analysis choices is useful because developing researchers, including graduate students, are often not aware of the room for choice in the data analysis workflow. Developing researchers --- you --- may be instructed that "this is how we do things" or "you should follow what researchers did previously". Following convention is not necessarily a bad thing: it is a feature of the normal practice of science [@kuhn1970a]. However, you can now see, perhaps, that there likely will be alternative ways to process or to analyse data than the approach a supervisor, lab or field normally adopts.
+Making you aware of the potential for analysis choices is useful because developing researchers, including graduate students, are often not aware of the room for choice in the data analysis workflow. Developing researchers --- you --- may be instructed that "this is how we do things" or "you should follow what researchers did previously". Following convention is not necessarily a bad thing: it is a feature of the normal practice of science [@kuhn1970]. However, you can now see, perhaps, that there likely will be alternative ways to process or to analyse data than the approach a supervisor, lab or field normally adopts.
 
 This understanding or awareness has three implications for practice, it means:
 
@@ -262,31 +263,193 @@ This understanding or awareness has three implications for practice, it means:
 2.  We should check, or enable others to check, what impact making different choices would have on our results.
 3.  Most importantly: **we can allow ourselves the freedom to critically evaluate** the choices researchers make, even the choices researchers make in published articles.
 
-### Kinds of reproducibility
+### From the multiverse to kinds of reproducibility
 
--- results, methods and inferential reproducibility -- results will vary
+Multiverse analyses and post-publication analyses, in general, show that we can and should question or critically evaluate the analyses we encounter in the literature. This work can usefully detect problems in original published analyses [e.g., @Gelman2009c; @herndon2014; @Wagenmakers2011]. It can demonstrate where original published claims are or are not robust to variation of analysis method or approach.
 
--- are results stable? -- specific to choices or to samples? -- scientific virtues require: -- examination of stability over contexts, choices
+Given these lessons, and the implications we have identified, we should expect or hope to see open science practices [@munafò2017; @nosek2022]:
 
-### The mis-match between open science ideas and practices
+-   share data and code;
+-   publish research reports in ways that enable others to check or query analyses.
 
--- reproducibility varies -- now normative to expect data and code -- but declaration that data or code available not always -- rarely -- fulfilled -- data and code if shared may not be usable, poorly documented or incomplete -- even where there are badges -- data and code if shared and usable may not result in reproduction of results reported -- sensitivity or robustness checks: results can depend on specification choices
+As we discuss, following, these practices are now common but the quality of practice can sometimes be questioned. This matters for you because it makes it more challenging -- in specific identifiable locations -- to locate, access, analyse and report previously collected data.
 
-### Scientific virtues
+The discussion of current practices identifies where or how the assignment may be more challenging, but also identifies some of the exact places where the assignment provides **a real opportunity to do original research work**.
 
-In some fields, there have long been calls to conduct *robustness* or *sensitivity* analyses to examine the extent to which analysis results may depend on analyst choices [@leamer1983let; @leamer1985sensitivity]. In practice,
+First, I am going to introduce some ideas that will help you to think about what you are doing when you do this work. We focus on the concept of *reproducibility*.
 
--   stability over contexts
+@gilmore2017 [following @goodman2016] present three kinds of reproducibility:
+
+-   methods reproducibility
+-   results reproducibility
+-   inferential reproducibility
+
+In looking at reproducibility, here, we are considering how much, or in what ways, the results or the claims that are made in a published study can be found or *repeated* by someone else.
+
+#### Methods reproducibility {#sec-methodsrepro}
+
+As @gilmore2017 discuss, **methods reproducibility** means that another researcher should be able to get the same results if they use the same tools and analysis methods to analyse the same dataset [some researchers also refer to *analytic reproducibility* or *computational reproducibility*; see e.g. @crüwell; @hardwicke2018; @hardwicke; @laurinavichyute2022; @minocher].
+
+In neuroimaging, the multiplicity of possible implementations of the data analysis pipeline [@carp2012plurality], and the fact that important elements or information about the pipeline deployed by researchers may be missing from published reports [@carp2012secret], can make it challenging to identify how results can be reproduced.
+
+In psychological science, in evaluating reports of results from analyses of behavioural data collected through survey or experimental work, in principle, we should expect to be able to access the data collected by the study authors, follow the description of their analysis method, and reproduce the results they report.
+
+::: callout-tip
+-   For an assignment in which we ask students to locate, access, analyse and report previously collected data, we are directly concerned with *methods reproducibility*.
+:::
+
+#### Results reproducibility {#sec-resultsrepro}
+
+**Results reproducibility** means that if another researcher completes a new study with new data they are able to get the same results as the results reported following an original study: this often referred to as *replication*. The replication studies that have been reported [e.g., @aarts2015], and continue to be reported (see, for example, the studies discussed by @nosek2022), in the last several years, present attempts to examine the results reproducibility of published findings.
+
+In the classes on the linear model, we will examine if similar or different results are observed in a series of studies using the same procedure and the same materials. We shall discuss, in those classes, in more depth, what results reproducibility (or study replication) can or cannot tell us about the behaviours that interest us.
+
+#### Inferential reproducibility {#sec-inferencerepro}
+
+**Inferential reproducibility** means that if a researcher repeats a study (aiming for results reproducibility) or re-analyzes an original dataset (aiming for methods reproducibility) then they can come to the same or similar conclusions as the authors of the report of an original study.
+
+How is inferential reproducibility not methods or results reproducibility? @goodman2016 explain that researchers can make the same conclusions from different sets of results and *can reach different conclusions from the same set of results*.
+
+How is it possible to reach different conclusions from the same results? We can imagine two scenarios.
+
+First, we have to think about the wider research field, the research context, within which we consider a set of results. It may be that two different researchers will come to look at the same results with different expectations about what the results *could* tell us (in Bayesian terms, with different prior expectations). Given different expectations, it is easy to imagine different researchers looking at the same results and, for example, one researcher being more skeptical than another about what conclusion can be taken from those results. (In the class on graduate writing skills, I discuss in some depth the importance of reviewing a research literature in order to get an understanding of the assumptions, conventions or expectations that may be shared by the researchers working in the field.)
+
+Second, imagine two different researchers looking at the same results --- picture the original authors of a published study, and someone doing a post-publication re-analysis of their data --- you can expect that the re-analysis or the reproducibility analysis could identify reasons to value the evidence differently, or to reach more skeptical conclusions, through critical evaluation of:
+
+-   data processing choices;
+-   the choice of the method used to do analysis;
+-   choices in how the analysis method is used.
+
+Where that critical evaluation involves an analysis of the choices the original researchers made, perhaps involving an analysis of other choices they could have made, perhaps reflecting on how effectively the analyses address a given research question or test a given prediction.
+
+::: callout-tip
+-   We can think about the work we do, when we analyse previously reported data, in terms of the need to identify the *reproducibility* of results, methods and inferences.
+-   In psychological science, determining that someone can get the same results, by analyzing the same data, or will reach the same conclusions from the same results, are important -- potentially, original -- research contributions.
+:::
+
+### The current state of the match between open science ideas and practices
+
+I have said that we should expect or hope to see open science practices [@munafò2017; @nosek2022] where researchers:
+
+-   share data and code;
+-   publish research reports in ways that enable others to check or query analyses.
+
+This raises an important question: **What exactly do we see, when we look at current practices?** The question is important because answering it helps to identify where the challenges are located when you complete your work to locate, access, analyse and report previously collected data.
+
+I break the discussion of what we see into two parts. Firstly, I look at the results of audits of data and code sharing ([see Section -@sec-sharing]): are data shared and can we access the data? Secondly, I discuss analyses of methods reproducibility, and shared data and code usability ([see Section -@sec-checkanalyses]): can others reproduce the results reported in published articles, given shared data? can others access and run shared analysis code? can others use the shared code to reproduce the reported results? Again, I need to be brief but reference sources that you can follow-up.
+
+#### The link between the credibility revolution and the reproducibility of results
+
+I should be clear, before we go on, about **the link** between the *credibility revolution* in science, and the effort to examine reproducibility of results. Many elements of the credibility revolution emerged out of the observation that it has often been difficult to repeat the results of published studies when we conduct new studies (replication studies or results reproducibility; e.g., @aarts2015). However, it is clearly difficult to know *what* to replicate or reproduce if we cannot reproduce the results presented in a study report (methods reproducibility), given the study data [@artner2021; @laurinavichyute2022; @minocher].
+
+#### Data and code sharing {#sec-sharing}
+
+Research on data and code sharing practices suggest that practices have improved, from earlier low levels.
+
+In an important early report, @wicherts2006 observed that it was very difficult to obtain data reported in psychological research articles from the authors of the articles. They asked for data from the lead authors of 141 articles published in four leading psychology journals, for about 25% of the studies. This low response rate was found despite the fact that authors in these journals must agree to the principle that data can be shared with others wishing to verify claims.
+
+Practice *has* changed: how?
+
+One change to practice has involved the use of **open science badges**. In journals like [Psychological Science](https://www.psychologicalscience.org/publications/badges){.external target="_blank"} authors of articles may be awarded badges --- Open Data, Open Materials, Preregistration badges --- by the editorial team. Authors can apply for and earn the badges by providing information about open practices, and journal articles are published with the badges displayed near the front of the articles.
+
+In theory, initiatives like encouraging authors to earn open science badges should mean that data sharing practices improve, enabling access to data and code for those, like you, who would like to re-analyze previously published data. In theory, all you should need to do --- to locate and access data --- is just search articles in the journal *Psychological Science* for studies with open data badges, and follow links from the published articles to then access study data at an open repository like the *Open Science Framework* [(OSF)](https://osf.io){.external target="_blank"} What do we see in practice?
+
+Analyses reported by @kidwell2016 as well as analyses reviewed by @nosek2022 indicate that more articles have claimed to make data available in the time since badges were introduced. When they did their analysis, @kidwell2016 found that a substantial proportion, but not all, of the articles in *Psychological Science* can be found to actually provide access to shared data. However, critically, many but not all the articles with open data badges provide access to data available through an open repository, data that are correct, complete and usable [@kidwell2016]. In their later report, the analyses reviewed by @nosek2022 suggest that the use of repositories like OSF for data sharing may be accelerating but that, over the last few years, the rate at which open science practices like sharing data, overall, appears to be substantial but not yet reported or observed in a majority of the work of researchers.
+
+Many journals now require the authors of articles to include a **Data Availability Statement** to locate their data. Analyses by @federer2022 indicate that Data Availability Statements for articles published in the open access [^intro-4] journal PLOS ONE often, helpfully, include Digital Object Identifiers (DOIs) or Universal resource locators (URLs) enabling direct access to shared data (i.e., without having to contact authors). Of those DOIs or URLs, most appeared to be associated with resources that could successfully be retrieved. In contrast, analyses reported by @gabelica2022 that where article authors state that "data sets are available on reasonable request" (the most common availability statement), most of the time, the authors did not respond or declined to share the data [see similar findings, across fields, by @tedersoo2021]. Clearly, in the analyses of open science practices we have seen so far, data sharing is more effective where sharing does not have to work through authors.
+
+[^intro-4]: Open access journals publish articles that are free to read or download.
+
+::: callout-tip
+-   When you are looking for a study in order to get data that you can then reanalyze, it makes sense to look, first, for studies focusing on research questions that interest you.
+-   When you are looking for published reports where the authors share data, look for articles with open science badges or where you can see a Data Availability Statement.
+-   Choose articles where the authors provide a direct link to their data, where the data are located on an open repository like the Open Science Framework (there are other repositories).
+:::
+
+#### Enabling others to check or query analyses {#sec-checkanalyses}
+
+Research on data and code sharing practices suggest that practices have improved but that there are concerns about the quality of the sharing. Here, the critical concern relates to the word *enable* in the objective: that we should publish research reports in ways that *enable* others to check or query analyses.
+
+John Towse and colleagues [@towse2021] examined the quality of open datasets to assess their quality in terms of their completeness and reusability [see also @roche2015].
+
+-   **completeness**: are all the data and the data descriptors supporting a study's findings publicly available?
+-   **reusability**: how readily can the data be accessed and understood by others?
+
+For a sample of datasets, they found that about half were incomplete, and about two-thirds were shared in a way that made them difficult to use. Practices tended to be slightly better in more recent publications. (Broadly similar results are reported by [@hardwicke2018].)
+
+Where data were found to be incomplete, this appeared to be, in part, because participants were excluded in the processing of the data for analysis but this information was not in the report, or because data were shared without a guide or "readme" file or data dictionary (or codebook) explaining the structure, coding or composition of the shared data.
+
+Potentially important for future open science practices, [@towse2021; also @roche2015] found that sharing data as *Supplementary materials* may appear to carry risks that, in the long term, mean that data may become inaccessible.
+
+::: callout-tip
+-   When you locate open data you can access, look for a guide, "readme" file, codebook or data dictionary explaining the data: you need to be able to understand what the variables are, what the observations relate to (observations per person, per trial?) and how variables are coded.
+-   Locate and examine carefully the parts of the published report, or the data guide, where the authors explain how they processed their data.
+:::
+
+A number of studies have been conducted to examine whether shared data and analysis code can be reused by others to reproduce the results reported in papers [e.g., @artner2021; @crüwell; @hardwicke2018; @hardwicke; @laurinavichyute2022; @minocher; @obels2020; see @artner2021 for a review of reproducibility studies]. In critical respects, the researchers doing this work are doing work similar to the work we are helping students to do, locating, accessing, and analyzing previously collected data. In these studies, typically, the researchers progressed through a series of steps.
+
+1.  Searched the articles published in a journal (e.g., *Cognition*, the *Journal of Memory and Language*, *Psychological Science*), published in a topic area across multiple journals (e.g., social learning, psychological research), or associated with a specific practice (e.g., registered reports.
+2.  Selected a subset of articles where it was identified that data could be accessed.
+3.  Identify a target result or outcome to reproduce, for each article. In their analyses, Hardwicke and colleagues [@hardwicke2018; @hardwicke] focused on attempting to reproduce primary or *straightforward and substantive* outcomes: substantive -- if emphasized in the abstract, or presented in a table or figure; straightforward -- if the outcome could be calculated using the kind of test one would learn in an introductory psychology course (e.g., t-test, correlation).
+4.  Attempted to reproduce the results reported in the article, using the description of the data analysis presented in the article, and the analysis code (if provided), in some cases asking for information from the original study authors, in other cases working independently of original authors.
+
+What the reproducibility studies appear to show is that, for many published reports, *if* data are shared and *if* the shared data are accessible and reusable *then*, most of the time, the researchers **could reproduce** the results presented by the original study authors [@hardwicke2018; @hardwicke; @laurinavichyute2022; @minocher; @obels2020; but see @crüwell]. This is great. But what is interesting, for us, is where the reproducibility researchers encountered challenges. You may encounter the same or similar challenges.
+
+I list some challenges that the researchers describe, following. Before you look at the list, I want to assure you: you will not find *all* these challenges present for any one article you look at. Most likely, you will find one or two challenges. Obviously, some challenges will be more difficult than others.
+
+::: callout-tip
+-   When you find a study you are interested in, with open data and maybe open analysis code, your main challenge will often be to identify exactly what analysis the original study authors did to answer their research question.
+-   Locate and examine carefully the parts of the published report where the authors explain how they did the analysis that gave them their key result. Usually that key result should be identified in the abstract or in the conclusion.
+:::
+
+##### Data challenges {#sec-datachallenges}
+
+1.  Data Availability Statements or open science badges indicate data are shared but data are not directly accessible through a link to an open repository.
+2.  The data are shared and accessible but there is missing or incorrect information *about* the data. The documentation, codebook or data dictionary is missing or incomplete. There is unclear or missing information about the variables or the observations, or about the coding of variable values, responses.
+3.  Original study authors may share raw and processed data or just processed or just raw data. It may not be clear how raw data were processed to construct the data analysed for the report. It may not be clear how variables were transformed or calculated or processed.
+4.  There may be mismatches between the variables referred to in the report and the variables named in the data file. It may be unclear how a data file corresponds to a study described in a report, where there are multiple studies and multiple data files.
+
+##### Analysis challenges {#sec-analysischallenges}
+
+1.  The original report includes a description of the analysis but the description of the analysis procedure is incomplete or ambiguous.
+2.  There may be a mismatch, in the report, between a hypothesis, and the analysis specified to test the hypothesis (maybe in the Methods section), compared to a long sequence of results reported in the Results section. This makes it difficult to identify the key analysis.
+3.  It is easier to reproduce results if both data and code are shared because the presentation of the analysis code usually (not always) makes clear what analysis was done to get the results presented in the report.
+4.  Sometimes, analysis code is shared but it is difficult to use because it requires proprietary software (e.g., SPSS) or because it requires function libraries that are no longer publicly available.
+5.  Sometimes, there are errors in the analysis. Sometimes, there are errors in the presentation of the results, where results have been incorrectly copied into reports from analysis outputs.
 
 ## This is why
 
--- this is why: -- want students to graduate aware of issues so can make deliberate choices -- want to be ready to share good data with high quality documentation -- want to be aware of utility of tests for robustness or sensitivity
+The research report assignment requires students to locate, access, analyse and report previously collected data. At the start of the introduction, I said I would explain the answer to the question:
 
--- a good way to learn this is to see what there is in the wild -- look for data and try to use it: if hard, learn the lesson and do better in own data practices -- know that there is almost never a necessary and sufficient analysis of data -- though seeing possible choices beyond those that published may require a bit of skills and experience -- that is where our teaching, support and learning opportunities comes in
+-   Why: what is the motivation for the assignment?
 
--- why not just do less demanding or challenging tasks? -- because this is part of what makes a Lancaster MSc degree valuable -- what makes you more available in the job market, in employment
+I summarize, following, the main points of the answer I have given. When you review these points, I want you to think about two things, returning to the ideas of @bourdieu2004 and @kuhn1970 I sketched at the start.
 
-## References
+Often what we do in science is guided by convention, the assumptions and habits of *normal practice* [@kuhn1970]. These conventions can work in our minds so that if we encounter an *anomaly* or *discrepancy* between what we expect and what we find, in our work, we may usually blame ourselves: it was something wrong that we did or failed to do. It can cause us anxiety if we do not reproduce a result we think we should be able to reproduce [@lubega]. But I want you to understand, from the start, that sometimes, if you think you have found an error or a problem in a published analysis or a shared dataset, **you may be right**. 
 
-::: {#refs}
+If there is anything we have learned, through the findings of replication studies, multiverse analyses, and reproducibility audits it is that people make mistakes, different choices are often reasonable, and we *always* need to check the evidence.
+
+### Summary: this is why
+
+1.  We are in the middle of a credibility revolution. The lessons we have learned so far oblige us to think about and to teach good open science practices that safeguard the value of evidence in psychology.
+2.  This matters, even if we do not care about scientific methods, because if we care about the translation into policy or practice -- in clinical psychology, in education, health, marketing and other fields -- what we do will depend on the value of the research evidence that informs policy ideas or practice guides.
+3.  Focusing on data analysis, it is useful to think about the whole *data pipeline* in analysis, the workflow that takes us from data collection to raw data to data processing to analysis to the presentation of results.
+4.  At every stage of the data pipeline, there are choices about what to do. There are not always reasons why we make one choice instead of another. Sometimes, we are guided by convention, example or instruction.
+5.  The existence of choices means the path we take, when we do data analysis, can be one path among multiple different *forking paths*.
+6.  For some parts of the pipeline -- dataset construction, data analysis choices -- reasonable people might make different decisions to sensibly answer the same research question, given the same data. This variation between pathways can be more or less important in influencing the results we see.
+7.  If results tend to stay similar across different ways of doing analysis, we might conclude that the results are reasonably robust across contexts, choices, or other variation in methods.
+8.  To *enable* others to see what we did (versus what we could have done), to see how we got to our results from our data, it is important to share our data and code.
+9.  Everyone makes mistakes and we should make it easy for others, and ourselves, to find those mistakes by sharing our data and code in accessible, clear, usable ways.
+10. We need to **teach and learn** how to share effectively the data and the code that we used to answer our research questions.
+
+In constructing the assignment -- in asking *and supporting* students to locate, access, analyse and report previously collected data -- we are presenting an opportunity to really investigate and evaluate existing practices.
+
+You may find that this work is challenging, in some of the places that reproducibility research has identified there can be challenges. Where the challenges cannot be fixed -- if you have found an interesting study but the study data are inaccessible or unusable -- we will advise you to move on to another study. Where the challenges can be fixed -- if data require processing, or if analysis information requires clarification -- we will provide you with help or enabling information so that you fix the problems yourself.
+
+::: callout-tip
+-   Maybe the main lesson from this exercise is a reminder of the *Golden rule*: **treat others as you would like to be treated**.
+-   If it is frustrating when it is difficult to understand information about an analysis or about data, or when it is difficult to access and reuse shared data and code.
+-   When it is your turn, do better, reflecting on what frustrated you.
 :::
+
+One last question: why not just do less demanding or challenging tasks? Because this is part of what makes graduate degree valuable, what will make you more skilled in the workplace. Most of the time, we work in teams, we inherit problems or data analysis tasks, or are given results with partial information. The lessons you learn here will help you to effectively navigate those situations.
