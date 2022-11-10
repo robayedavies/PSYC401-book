@@ -1,23 +1,28 @@
 project:
   type: book
+  output-dir: docs
 
 book:
-  title: "PSYC401-book"
-  author: "Jane Doe"
+  title: "The research report: why, what and how"
+  author: "Rob Davies"
   date: "02/11/2022"
   chapters:
     - index.qmd
     - intro.qmd
+    - what.qmd
+    - how.qmd
     - summary.qmd
     - references.qmd
 
 bibliography: references.bib
+csl: psychological-bulletin.csl
 
 format:
   html:
     theme: cosmo
+    link-external-icon: true
+    link-external-newwindow: true
   pdf:
     documentclass: scrreprt
 
 editor: visual
-
