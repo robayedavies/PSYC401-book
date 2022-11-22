@@ -35,14 +35,14 @@ Here are some examples.
 
 <https://r4ds.hadley.nz>
 
--   The "ggplot2: Elegant Graphics for Data Analysis" book [@R-ggplot2], and the latest version can be accessed in an online free version here:
+-   The "ggplot2: Elegant Graphics for Data Analysis" book [@R-ggplot2] corresponding to the `ggplot` library was written by Hadley Wickham in its first edition, it is now in its third edition (as a work in progress, co-authored by Wickham, Danielle Navarro and Thomas Lin Pedersen) and this latest version can be accessed in an online free version here:
 
 <https://ggplot2-book.org/index.html>
-
--   The book "Fundamentals of Data Visualization" [@wilke] is more specifically about visualization, and can be accessed in an online free version here:
-
-<https://clauswilke.com/dataviz/>
 
 -   The "R graphics cookbook" [@Chang2013a], and the latest version can be accessed in an online free version here:
 
 <https://r-graphics.org>
+
+-   The book "Fundamentals of Data Visualization" [@wilke] is about different aspects of visualization, and can be accessed in an online free version here:
+
+<https://clauswilke.com/dataviz/>
