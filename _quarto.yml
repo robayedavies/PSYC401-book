@@ -8,12 +8,17 @@ book:
   date: "02/11/2022"
   chapters:
     - index.qmd
+    - part: "The research report"
     - intro.qmd
     - what.qmd
     - how.qmd
+    - part: "Making the most of your skills"
+    - visualization.qmd
+    - ecosystem.qmd
+    - part: "End"
     - summary.qmd
     - references.qmd
-
+      
 bibliography: references.bib
 csl: psychological-bulletin.csl
 
