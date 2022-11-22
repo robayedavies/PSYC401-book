@@ -1,1 +1,48 @@
 # Data visualization
+
+## Helpful resources
+
+### Some helpful websites
+
+- We typically use the `ggplot` library (part of the `tidyverse`) to produce plots. Clear technical information, with useful examples you can copy and run, can be found in the reference webpages:
+
+<https://ggplot2.tidyverse.org/reference/index.html>
+
+- A source of inspiration can be found here:
+
+<https://r-graph-gallery.com>
+
+If you are trying to work out how to do things by searching for information online, you often find yourself at tutorial webpages.
+You will develop a sense of quality and usefulness with experience.
+Most often, what you are looking for is a tutorial that provides some explanation, and example code you can adapt for your own purposes.
+Here are some examples.
+
+- Cedric Scherer on producing raincloud plots:
+
+<https://www.cedricscherer.com/2021/06/06/visualizing-distributions-with-raincloud-plots-and-how-to-create-them-with-ggplot2/>
+
+- Winston Chang on colours and colour blind palettes:
+
+<http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/>
+
+- Thomas Lin Pedersen (and others) on putting together plots into a single presentation using the `patchwork` library functions:
+
+<https://patchwork.data-imaginist.com/articles/patchwork.html>
+
+### Some helpful books
+
+-   The book "R for Data Science" [@wickham2016] will guide you through the data analysis workflow, including data visualization, and the latest version can be accessed in an online free version here:
+
+<https://r4ds.hadley.nz>
+
+-   The "ggplot2: Elegant Graphics for Data Analysis" book [@R-ggplot2], and the latest version can be accessed in an online free version here:
+
+<https://ggplot2-book.org/index.html>
+
+-   The book "Fundamentals of Data Visualization" [@wilke] is more specifically about visualization, and can be accessed in an online free version here:
+
+<https://clauswilke.com/dataviz/>
+
+-   The "R graphics cookbook" [@Chang2013a], and the latest version can be accessed in an online free version here:
+
+<https://r-graphics.org>
