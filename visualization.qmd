@@ -1,31 +1,530 @@
 # Data visualization
 
-## Helpful resources
+```{r libraries-hide}
+#| warning: false
+#| echo: false
+library(kableExtra)
+library(lme4)
+library(tidyverse)
+```
+
+## Aims {#sec-aims}
+
+Ideas:
+
+-   the psychological science of data visualization
+-   the grammar of graphics
+
+Choices:
+
+-   what
+-   how
+-   why
+
+Materials designed to foster awareness of choices: *make* choices based on reasons
+
+Indicate routes to further development: give further free resources at the end [see Section -@sec-resources].
+
+## Our approach {#sec-approach}
+
+Show plots plus walk-through coding steps, explaining reasons for choices
+
+Model process:
+
+-   Show how we use R ecosystem of knowledge to figure things out
+
+Use tidyverse, use pipes:
+
+-   Data processing into plots
+
+## Key ideas {#sec-ideas}
+
+-   Not limited to any one stage of the pipeline but useful at every stage
+
+The data analysis **pipeline** or **workflow**.
+
+```{dot}
+//| fig-width: 5
+//| label: fig-pipeline
+//| fig-cap: The data analysis pipeline or workflow
+//| fig-alt: The diagram shows a flowchart. The flowchart starts at the top with "get raw data" and finishes at the bottom with "present". "get raw data" has an arrow to "tidy data". "tidy data" has arrows to "analyze", "explore" and "visualize". On the same level as "tidy "data", "assumptions" also has arrows to "analyze", "explore" and "visualize". Then "analyze", "explore" and "visualize" have arrows to "present. 
+digraph Q {
+
+  node [shape=record];
+
+  nd_1   [label = "Get raw data"];
+  nd_2   [label = "Tidy data"];
+  nd_3_a [label = "Assumptions"];
+  nd_3_l [label = "Visualize"];
+  nd_3   [label = "Analyze"];
+  nd_3_r [label = "Explore"];
+  nd_4   [label = "Present"];
+
+  nd_3_a -> nd_3 [color= grey];
+  nd_3_a -> nd_3_r [color= grey];
+  nd_3_a -> nd_3_l [color= grey];
+  
+  nd_2 -> nd_3_r;
+  nd_2 -> nd_3_l;
+  
+  nd_1 -> nd_2 -> nd_3 -> nd_4;
+  
+  nd_3_l -> nd_4;
+
+  subgraph cluster_R {
+
+    {rank=same nd_3_l nd_3 nd_3_r}
+
+    nd_3_l -> nd_3 -> nd_3_r [color= none arrowhead=none];
+
+  }
+
+}
+```
+
+### Purposes
+
+After Gelman and Unwin
+
+-   Discovery
+-   Communication
+
+### Psychological science of data visualization
+
+Reasons for choices
+
+### Grammar of graphics
+
+Discuss further as we progress
+
+-   layers, scales, facets, themes
+
+## A quick start
+
+We can get started before we understand in depth the key ideas or the coding steps. This will help to show where we are going. We will work with the `sleepstudy` dataset.
+
+I will model the process, to give you an example workflow:
+
+-   the data, where they come from --- what we can find out;
+-   how we approach them --- what we *expect* to see;
+-   how we visualize them --- discovery, communication.
+
+### Sleepstudy data
+
+When we work with R, we usually work with functions like `ggplot()` provided in libraries like `ggplot2` [@R-ggplot2] which is part of `tidyverse` [@R-tidyverse]. These libraries typically provide not only functions but also datasets that we can use for demonstration and learning.
+
+The `lme4` library [@R-lme4] provides the `sleepstudy` dataset and we will take a look at these data to offer a taste of what we can learn to do. Usually, information about the R libraries we use is located on the ([Comprehensive R Archive Network (CRAN)](https://cran.r-project.org){.external target="_blank"}) web pages and we can find the technical reference information for ([lme4](https://cran.r-project.org/web/packages/lme4/lme4.pdf){.external target="_blank"}) where we can see that the `sleepstudy` data are from a study reported by [@belenky2003].
+
+The information we need is in the `lme4` manual, and it is that the 'sleepstudy' dataset comprises:
+
+> A data frame with 180 observations on the following 3 variables.
+> Reaction Average reaction time (ms)
+> Days Number of days of sleep deprivation
+> Subject Subject number on which the observation was made.
+
+We can take a look at the first few rows.
+
+```{r}
+#| label: sleep-study-data
+#| fig-cap: "Figure showing an extract of the dataset: `sleepstudy`"
+#| fig-alt: "Figure showing an extract of the dataset: sleepstudy. We see the top four rows of values observed under the column headers 'Reaction, Days, Subject'"
+sleepstudy %>%
+    head(n = 4)
+```
+
+What we are looking at are:
+
+> The average reaction time per day (in milliseconds) for subjects in a sleep deprivation study. Days 0-1 were adaptation and training (T1/T2), day 2 was baseline (B); sleep deprivation started after day 2.
+
+The abstract for @belenky2003 tells us that participants were deprived of sleep and the impact of relative deprivation was tested using a cognitive vigilance task for which the reaction times of responses were recorded.
+
+So, we can *expect to find*:
+
+-   A set of rows corresponding to multiple observations for each participant (`Subject`)
+-   A reaction time value for each participant (`Reaction`)
+-   Recorded on each `Day`
+
+### Discovery
+
+In data analysis work, we often begin with the objective to understand the structure or the nature of the data we are working with.
+
+You can call this the *discovery* phase:
+
+-   what have we got?
+-   does it match our expectations?
+
+If these are reaction time data (collected in an cognitive experiment) do they look like cognitive reaction time data *should* look? We would expect to see a skewed distribution of observed reaction times distributed around an average located somewhere in the range 200-700ms.
+
+```{r}
+#| label: fig-sleep-study-histogram
+#| echo: true
+#| fig-cap: "Figure showing a histogram of `sleepstudy` reaction time data"
+#| fig-alt: "Histogram showing a distribution of reaction times, ranging from about 200ms to 500ms. The distribution has a peak around 300ms. The location of the mean is shown with a dashed red line. The distribution includes a long tail of longer times."
+sleepstudy %>%
+  ggplot(aes(x = Reaction)) +
+  geom_histogram(binwidth = 15) +
+  geom_vline(xintercept = mean(sleepstudy$Reaction), 
+             colour = "red", linetype = 'dashed', size = 1.5) +
+  annotate("text", x = 370, y =20, 
+                    colour = "red", 
+                    label = "Average value shown in red") +
+  theme_bw()
+```
+
+@fig-sleep-study-histogram shows a distribution of reaction times, ranging from about 200ms to 500ms. The distribution has a peak around 300ms. The location of the mean is shown with a dashed red line. The distribution includes a long tail of longer times. This *is* pretty much what we would expect to see.
+
+### Communication
+
+Let us imagine that it is our study. (Here, we shall not concern ourselves too much --- with apologies --- with understanding what the original study authors actually did.)
+
+If we are looking at the impact of sleep deprivation on cognitive performance, we might predict that reaction times got longer (responses slowed) as the study progressed. Is that what we see?
+
+To examine the association between two variables, we often use scatterplots. @fig-sleep-study-scatterplot-all is a scatterplot indicating the possible association between reaction time and days in the `sleepstudy` data". Points are ordered on x-axis from 0 to 9 days, on y-axis from 200 to 500 ms reaction time.
+
+```{r}
+#| label: fig-sleep-study-scatterplot-all
+#| echo: true
+#| fig-cap: "Figure showing a scatterplot of the relation between reaction time and days in the `sleepstudy` data"
+#| fig-alt: "Scatterplot showing the relation between reaction time and days in the `sleepstudy` data. Points are ordered on x-axis from 0 to 9 days, on y-axis from 200 to 500 ms reaction time. The plot indicates that reaction time increases with increasing number of days."
+sleepstudy %>%
+  ggplot(aes(x = Days, y = Reaction)) +
+  geom_point() + 
+  scale_x_continuous(breaks = c(0, 3, 6, 9)) +
+  theme_bw()
+```
+
+The plot suggests that reaction time increases with increasing number of days.
+
+In producing this plot, we are doing both (1.) discovery and potentially able to do (2.) communication.
+
+1.  Discovery: is the relation between variables what we expect?
+2.  Communication: to ourselves and others, this is the relation we observe.
+
+You have been introduced to scatterplots before, why we use them, how we write code to produce them, and how we read them.
+
+With two additional *limited* steps we can significantly increase the power of the visualization. @fig-sleep-study-scatterplot-by-subject is a grid of scatterplots indicating the possible association between reaction time and days separately for each participant.
+
+```{r}
+#| label: fig-sleep-study-scatterplot-by-subject
+#| echo: true
+#| fig-cap: "Figure showing a scatterplot of the relation between reaction time and days: here, we plot the data for each participant separately"
+#| fig-alt: "The figure presents a grid of scatterplots showing the relation between reaction time and days in the `sleepstudy` data separately for each participant. Points are ordered on x-axis from 0 to 9 days, on y-axis from 200 to 500 ms reaction time. Most plots indicate that reaction time increases with increasing number of days. However, different participants show this trend to differing extents."
+#| fig-height: 9
+#| fig-width: 10
+#| fig-align: center
+sleepstudy %>%
+  group_by(Subject) %>%
+  mutate(average = mean(Reaction)) %>%
+  ungroup() %>%
+  mutate(Subject = fct_reorder(Subject, average)) %>%
+  ggplot(aes(x = Days, y = Reaction)) +
+  geom_point() + 
+  geom_line() +
+  scale_x_continuous(breaks = c(0, 3, 6, 9)) +
+  facet_wrap(~ Subject) +
+  theme_bw()
+```
+
+Figure @fig-sleep-study-scatterplot-by-subject is a grid (or lattice or trellis) of scatterplots *revealing* how the possible association between reaction time and days varies quite substantially between the participants in the `sleepstudy` data". Most plots indicate that reaction time increases with increasing number of days. However, different participants show this trend to differing extents.
+
+What are the two additions I made to the conventional scatterplot code?
+
+-   I calculated the average reaction time per participant.
+-   I ordered the data by those averages.
+-   I *facetted* the plots, breaking them out into separate scatterplots per participant.
+
+Why would you do this? Variation between people or groups, in effects, in averages, are often to be found in psychological data [@vasishth2021].
+The functions in the `ggplot2` library enable us to discover and communicate this variation to strengthen our and others' scientific understanding.
+
+### Summary: quick lessons to begin
+
+## Set up for coding
+
+### Get libraries {#sec-libraries}
+
+We are going to need these libraries.
+
+```{r libraries-show}
+#| warning: false
+#| eval: false
+library(lme4)
+library(tidyverse)
+```
+
+### Get data
+
+Download the [data.zip](files/data.zip) files folder and upload the files to RStudio Server.
+
+The folder includes the data files:
+
+-   `PrimDir-111019_English.csv`
+-   `PrimInd-111019_English.csv`
+
+<!-- # -- get the data from the paper: -->
+
+<!-- # https://peerj.com/articles/9511/ -->
+
+<!-- # -- downloaded from the repository:   -->
+
+<!-- # https://osf.io/j29fn/   -->
+
+<!-- schizotypy.dir <- read_csv("PrimDir-111019_English.csv", -->
+
+<!--                           col_types = cols( -->
+
+<!--                             soa = col_factor(), -->
+
+<!--                             lexicality = col_factor(), -->
+
+<!--                             relation = col_factor(), -->
+
+<!--                             prime = col_factor(), -->
+
+<!--                             item = col_factor(), -->
+
+<!--                             target = col_factor(), -->
+
+<!--                             participant = col_factor(), -->
+
+<!--                             sex = col_factor() -->
+
+<!--                           )) %>% -->
+
+<!--   rename("bilingualism" = "Bilingualism") -->
+
+<!-- schizotypy.indir <- read_csv("PrimInd-111019_English.csv", -->
+
+<!--                            col_types = cols( -->
+
+<!--                              soa = col_factor(), -->
+
+<!--                              lexicality = col_factor(), -->
+
+<!--                              relation = col_factor(), -->
+
+<!--                              prime = col_factor(), -->
+
+<!--                              item = col_factor(), -->
+
+<!--                              target = col_factor(), -->
+
+<!--                              participant = col_factor(), -->
+
+<!--                              sex = col_factor() -->
+
+<!--                            )) %>% -->
+
+<!--   mutate(sex = fct_recode(sex, -->
+
+<!--                           "Male" = "Hombre", -->
+
+<!--                            "Female" = "Mujer")) -->
+
+<!-- # -- put the two datasets together -->
+
+<!-- schizotypy.rt <- bind_rows(schizotypy.dir, schizotypy.indir) -->
+
+<!-- # -- inspect the data: -->
+
+<!-- summary(schizotypy.dir) -->
+
+<!-- summary(schizotypy.indir) -->
+
+<!-- summary(schizotypy.rt) -->
+
+<!-- # -- extract just distinct rows to get subject data -->
+
+<!-- # -- first calculate average reaction time per person -->
+
+<!-- schizotypy.rt.subjs <- schizotypy.rt %>% -->
+
+<!--   drop_na() %>%                        -->
+
+<!--   group_by(participant) %>% -->
+
+<!--   mutate(meanrt = mean(reactiontime)) %>% -->
+
+<!--   ungroup() %>% -->
+
+<!--   distinct(participant, .keep_all = TRUE) %>% -->
+
+<!--   select(participant:OLIFEImp, meanrt) -->
+
+<!-- # -- inspect: -->
+
+<!-- summary(schizotypy.rt.subjs) -->
+
+<!-- # -- get the data from the paper: -->
+
+<!-- # https://www.sciencedirect.com/science/article/pii/S095947522100027X   -->
+
+<!-- # -- downloaded from the repository:   -->
+
+<!-- # https://osf.io/e5gzk/?view_only=038118528c7c426c9729983f54138c88  -->
+
+<!-- long.orth <- read_csv("long.orth_2020-08-11.csv", -->
+
+<!--                            col_types = cols( -->
+
+<!--                              Participant = col_factor(), -->
+
+<!--                              Time = col_factor(), -->
+
+<!--                              Study = col_factor(), -->
+
+<!--                              Instructions = col_factor(), -->
+
+<!--                              Version = col_factor(), -->
+
+<!--                              Word = col_factor(), -->
+
+<!--                              Orthography = col_factor(), -->
+
+<!--                              Measure = col_factor(), -->
+
+<!--                              Spelling.transcription = col_factor() -->
+
+<!--                            )) -->
+
+<!-- long.sem <- read_csv("long.sem_2020-08-11.csv", -->
+
+<!--                       col_types = cols( -->
+
+<!--                         Participant = col_factor(), -->
+
+<!--                         Time = col_factor(), -->
+
+<!--                         Study = col_factor(), -->
+
+<!--                         Instructions = col_factor(), -->
+
+<!--                         Version = col_factor(), -->
+
+<!--                         Word = col_factor(), -->
+
+<!--                         Orthography = col_factor(), -->
+
+<!--                         Measure = col_factor() -->
+
+<!--                       )) -->
+
+<!-- conc.orth <- read_csv("concurrent.orth_2020-08-11.csv", -->
+
+<!--                       col_types = cols( -->
+
+<!--                         Participant = col_factor(), -->
+
+<!--                         Time = col_factor(), -->
+
+<!--                         Study = col_factor(), -->
+
+<!--                         Instructions = col_factor(), -->
+
+<!--                         Version = col_factor(), -->
+
+<!--                         Word = col_factor(), -->
+
+<!--                         Orthography = col_factor(), -->
+
+<!--                         Measure = col_factor(), -->
+
+<!--                         Spelling.transcription = col_factor() -->
+
+<!--                       )) -->
+
+<!-- conc.sem <- read_csv("concurrent.sem_2020-08-11.csv", -->
+
+<!--                      col_types = cols( -->
+
+<!--                        Participant = col_factor(), -->
+
+<!--                        Time = col_factor(), -->
+
+<!--                        Study = col_factor(), -->
+
+<!--                        Instructions = col_factor(), -->
+
+<!--                        Version = col_factor(), -->
+
+<!--                        Word = col_factor(), -->
+
+<!--                        Orthography = col_factor(), -->
+
+<!--                        Measure = col_factor() -->
+
+<!--                      )) -->
+
+<!-- # -- inspect the data: -->
+
+<!-- summary(conc.orth) -->
+
+<!-- summary(conc.sem) -->
+
+<!-- summary(long.orth) -->
+
+<!-- summary(long.sem) -->
+
+<!-- # -- extract just distinct rows to get subject data -->
+
+<!-- # -- first calculate average response per person -->
+
+<!-- conc.orth.subjs <- conc.orth %>% -->
+
+<!--   group_by(Participant) %>% -->
+
+<!--   mutate(mean.score = mean(Score)) %>% -->
+
+<!--   ungroup() %>% -->
+
+<!--   distinct(Participant, .keep_all = TRUE) %>% -->
+
+<!--   select(WASImRS:BPVSRS, mean.score, Participant) -->
+
+<!-- # -- inspect: -->
+
+<!-- summary(conc.orth.subjs) -->
+
+<!-- conc.sem.subjs <- conc.sem %>% -->
+
+<!--   group_by(Participant) %>% -->
+
+<!--   mutate(mean.score = mean(Score)) %>% -->
+
+<!--   ungroup() %>% -->
+
+<!--   distinct(Participant, .keep_all = TRUE) %>% -->
+
+<!--   select(WASImRS:BPVSRS, mean.score, Participant) -->
+
+<!-- # -- inspect: -->
+
+<!-- summary(conc.sem.subjs) -->
+
+### Process the data
+
+## Helpful resources {#sec-resources}
 
 ### Some helpful websites
 
-- We typically use the `ggplot` library (part of the `tidyverse`) to produce plots. Clear technical information, with useful examples you can copy and run, can be found in the reference webpages:
+-   We typically use the `ggplot` library (part of the `tidyverse`) to produce plots. Clear technical information, with useful examples you can copy and run, can be found in the reference webpages:
 
 <https://ggplot2.tidyverse.org/reference/index.html>
 
-- A source of inspiration can be found here:
+-   A source of inspiration can be found here:
 
 <https://r-graph-gallery.com>
 
-If you are trying to work out how to do things by searching for information online, you often find yourself at tutorial webpages.
-You will develop a sense of quality and usefulness with experience.
-Most often, what you are looking for is a tutorial that provides some explanation, and example code you can adapt for your own purposes.
-Here are some examples.
+If you are trying to work out how to do things by searching for information online, you often find yourself at tutorial webpages. You will develop a sense of quality and usefulness with experience. Most often, what you are looking for is a tutorial that provides some explanation, and example code you can adapt for your own purposes. Here are some examples.
 
-- Cedric Scherer on producing raincloud plots:
+-   Cedric Scherer on producing raincloud plots:
 
 <https://www.cedricscherer.com/2021/06/06/visualizing-distributions-with-raincloud-plots-and-how-to-create-them-with-ggplot2/>
 
-- Winston Chang on colours and colour blind palettes:
+-   Winston Chang on colours and colour blind palettes:
 
 <http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/>
 
-- Thomas Lin Pedersen (and others) on putting together plots into a single presentation using the `patchwork` library functions:
+-   Thomas Lin Pedersen (and others) on putting together plots into a single presentation using the `patchwork` library functions:
 
 <https://patchwork.data-imaginist.com/articles/patchwork.html>
 
