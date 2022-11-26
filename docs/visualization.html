@@ -20,6 +20,69 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1.6em;
   vertical-align: middle;
 }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
@@ -170,10 +233,31 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#helpful-resources" id="toc-helpful-resources" class="nav-link active" data-scroll-target="#helpful-resources"><span class="toc-section-number">4.1</span>  Helpful resources</a>
+  <li><a href="#sec-aims" id="toc-sec-aims" class="nav-link active" data-scroll-target="#sec-aims"><span class="toc-section-number">4.1</span>  Aims</a></li>
+  <li><a href="#sec-approach" id="toc-sec-approach" class="nav-link" data-scroll-target="#sec-approach"><span class="toc-section-number">4.2</span>  Our approach</a></li>
+  <li><a href="#sec-ideas" id="toc-sec-ideas" class="nav-link" data-scroll-target="#sec-ideas"><span class="toc-section-number">4.3</span>  Key ideas</a>
   <ul class="collapse">
-  <li><a href="#some-helpful-websites" id="toc-some-helpful-websites" class="nav-link" data-scroll-target="#some-helpful-websites"><span class="toc-section-number">4.1.1</span>  Some helpful websites</a></li>
-  <li><a href="#some-helpful-books" id="toc-some-helpful-books" class="nav-link" data-scroll-target="#some-helpful-books"><span class="toc-section-number">4.1.2</span>  Some helpful books</a></li>
+  <li><a href="#purposes" id="toc-purposes" class="nav-link" data-scroll-target="#purposes"><span class="toc-section-number">4.3.1</span>  Purposes</a></li>
+  <li><a href="#psychological-science-of-data-visualization" id="toc-psychological-science-of-data-visualization" class="nav-link" data-scroll-target="#psychological-science-of-data-visualization"><span class="toc-section-number">4.3.2</span>  Psychological science of data visualization</a></li>
+  <li><a href="#grammar-of-graphics" id="toc-grammar-of-graphics" class="nav-link" data-scroll-target="#grammar-of-graphics"><span class="toc-section-number">4.3.3</span>  Grammar of graphics</a></li>
+  </ul></li>
+  <li><a href="#a-quick-start" id="toc-a-quick-start" class="nav-link" data-scroll-target="#a-quick-start"><span class="toc-section-number">4.4</span>  A quick start</a>
+  <ul class="collapse">
+  <li><a href="#sleepstudy-data" id="toc-sleepstudy-data" class="nav-link" data-scroll-target="#sleepstudy-data"><span class="toc-section-number">4.4.1</span>  Sleepstudy data</a></li>
+  <li><a href="#discovery" id="toc-discovery" class="nav-link" data-scroll-target="#discovery"><span class="toc-section-number">4.4.2</span>  Discovery</a></li>
+  <li><a href="#communication" id="toc-communication" class="nav-link" data-scroll-target="#communication"><span class="toc-section-number">4.4.3</span>  Communication</a></li>
+  <li><a href="#summary-quick-lessons-to-begin" id="toc-summary-quick-lessons-to-begin" class="nav-link" data-scroll-target="#summary-quick-lessons-to-begin"><span class="toc-section-number">4.4.4</span>  Summary: quick lessons to begin</a></li>
+  </ul></li>
+  <li><a href="#set-up-for-coding" id="toc-set-up-for-coding" class="nav-link" data-scroll-target="#set-up-for-coding"><span class="toc-section-number">4.5</span>  Set up for coding</a>
+  <ul class="collapse">
+  <li><a href="#sec-libraries" id="toc-sec-libraries" class="nav-link" data-scroll-target="#sec-libraries"><span class="toc-section-number">4.5.1</span>  Get libraries</a></li>
+  <li><a href="#get-data" id="toc-get-data" class="nav-link" data-scroll-target="#get-data"><span class="toc-section-number">4.5.2</span>  Get data</a></li>
+  <li><a href="#process-the-data" id="toc-process-the-data" class="nav-link" data-scroll-target="#process-the-data"><span class="toc-section-number">4.5.3</span>  Process the data</a></li>
+  </ul></li>
+  <li><a href="#sec-resources" id="toc-sec-resources" class="nav-link" data-scroll-target="#sec-resources"><span class="toc-section-number">4.6</span>  Helpful resources</a>
+  <ul class="collapse">
+  <li><a href="#some-helpful-websites" id="toc-some-helpful-websites" class="nav-link" data-scroll-target="#some-helpful-websites"><span class="toc-section-number">4.6.1</span>  Some helpful websites</a></li>
+  <li><a href="#some-helpful-books" id="toc-some-helpful-books" class="nav-link" data-scroll-target="#some-helpful-books"><span class="toc-section-number">4.6.2</span>  Some helpful books</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -197,10 +281,433 @@ div.csl-indent {
 
 </header>
 
-<section id="helpful-resources" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="helpful-resources"><span class="header-section-number">4.1</span> Helpful resources</h2>
-<section id="some-helpful-websites" class="level3" data-number="4.1.1">
-<h3 data-number="4.1.1" class="anchored" data-anchor-id="some-helpful-websites"><span class="header-section-number">4.1.1</span> Some helpful websites</h3>
+<div class="cell">
+
+</div>
+<section id="sec-aims" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="sec-aims"><span class="header-section-number">4.1</span> Aims</h2>
+<p>Ideas:</p>
+<ul>
+<li>the psychological science of data visualization</li>
+<li>the grammar of graphics</li>
+</ul>
+<p>Choices:</p>
+<ul>
+<li>what</li>
+<li>how</li>
+<li>why</li>
+</ul>
+<p>Materials designed to foster awareness of choices: <em>make</em> choices based on reasons</p>
+<p>Indicate routes to further development: give further free resources at the end <a href="#sec-resources">see Section&nbsp;<span>4.6</span></a>.</p>
+</section>
+<section id="sec-approach" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="sec-approach"><span class="header-section-number">4.2</span> Our approach</h2>
+<p>Show plots plus walk-through coding steps, explaining reasons for choices</p>
+<p>Model process:</p>
+<ul>
+<li>Show how we use R ecosystem of knowledge to figure things out</li>
+</ul>
+<p>Use tidyverse, use pipes:</p>
+<ul>
+<li>Data processing into plots</li>
+</ul>
+</section>
+<section id="sec-ideas" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="sec-ideas"><span class="header-section-number">4.3</span> Key ideas</h2>
+<ul>
+<li>Not limited to any one stage of the pipeline but useful at every stage</li>
+</ul>
+<p>The data analysis <strong>pipeline</strong> or <strong>workflow</strong>.</p>
+<div class="cell" data-fig-width="5">
+<div class="cell-output-display">
+<div id="fig-pipeline" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p>
+<svg width="480" height="480" viewbox="0.00 0.00 267.00 264.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 260)">
+<title>
+Q
+</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-260 263,-260 263,4 -4,4"></polygon> <g id="clust1" class="cluster">
+<title>
+cluster_R
+</title>
+<polygon fill="none" stroke="black" points="8,-65 8,-118 251,-118 251,-65 8,-65"></polygon> </g> <!-- nd_1 --> <g id="node1" class="node">
+<title>
+nd_1
+</title>
+<polygon fill="none" stroke="black" points="35.24,-219.5 35.24,-255.5 122.76,-255.5 122.76,-219.5 35.24,-219.5"></polygon> <text text-anchor="middle" x="79" y="-233.3" font-family="Times,serif" font-size="14.00">Get raw data</text> </g> <!-- nd_2 --> <g id="node2" class="node">
+<title>
+nd_2
+</title>
+<polygon fill="none" stroke="black" points="44.37,-146.5 44.37,-182.5 113.63,-182.5 113.63,-146.5 44.37,-146.5"></polygon> <text text-anchor="middle" x="79" y="-160.3" font-family="Times,serif" font-size="14.00">Tidy data</text> </g> <!-- nd_1&#45;&gt;nd_2 --> <g id="edge6" class="edge">
+<title>
+nd_1-&gt;nd_2
+</title>
+<path fill="none" stroke="black" d="M79,-219.31C79,-211.29 79,-201.55 79,-192.57"></path> <polygon fill="black" stroke="black" points="82.5,-192.53 79,-182.53 75.5,-192.53 82.5,-192.53"></polygon> </g> <!-- nd_3_l --> <g id="node4" class="node">
+<title>
+nd_3_l
+</title>
+<polygon fill="none" stroke="black" points="174.57,-73.5 174.57,-109.5 243.43,-109.5 243.43,-73.5 174.57,-73.5"></polygon> <text text-anchor="middle" x="209" y="-87.3" font-family="Times,serif" font-size="14.00">Visualize</text> </g> <!-- nd_2&#45;&gt;nd_3_l --> <g id="edge5" class="edge">
+<title>
+nd_2-&gt;nd_3_l
+</title>
+<path fill="none" stroke="black" d="M112.24,-146.3C128.26,-137.9 147.71,-127.58 165,-118 166.95,-116.92 168.93,-115.81 170.94,-114.68"></path> <polygon fill="black" stroke="black" points="172.78,-117.66 179.74,-109.67 169.32,-111.57 172.78,-117.66"></polygon> </g> <!-- nd_3 --> <g id="node5" class="node">
+<title>
+nd_3
+</title>
+<polygon fill="none" stroke="black" points="15.68,-73.5 15.68,-109.5 78.32,-109.5 78.32,-73.5 15.68,-73.5"></polygon> <text text-anchor="middle" x="47" y="-87.3" font-family="Times,serif" font-size="14.00">Analyze</text> </g> <!-- nd_2&#45;&gt;nd_3 --> <g id="edge7" class="edge">
+<title>
+nd_2-&gt;nd_3
+</title>
+<path fill="none" stroke="black" d="M71.25,-146.31C67.52,-138.03 62.96,-127.91 58.81,-118.69"></path> <polygon fill="black" stroke="black" points="61.97,-117.21 54.67,-109.53 55.59,-120.08 61.97,-117.21"></polygon> </g> <!-- nd_3_r --> <g id="node6" class="node">
+<title>
+nd_3_r
+</title>
+<polygon fill="none" stroke="black" points="95.84,-73.5 95.84,-109.5 156.16,-109.5 156.16,-73.5 95.84,-73.5"></polygon> <text text-anchor="middle" x="126" y="-87.3" font-family="Times,serif" font-size="14.00">Explore</text> </g> <!-- nd_2&#45;&gt;nd_3_r --> <g id="edge4" class="edge">
+<title>
+nd_2-&gt;nd_3_r
+</title>
+<path fill="none" stroke="black" d="M90.38,-146.31C95.98,-137.85 102.84,-127.48 109.05,-118.11"></path> <polygon fill="black" stroke="black" points="112.13,-119.8 114.73,-109.53 106.29,-115.94 112.13,-119.8"></polygon> </g> <!-- nd_3_a --> <g id="node3" class="node">
+<title>
+nd_3_a
+</title>
+<polygon fill="none" stroke="black" points="131.44,-146.5 131.44,-182.5 220.56,-182.5 220.56,-146.5 131.44,-146.5"></polygon> <text text-anchor="middle" x="176" y="-160.3" font-family="Times,serif" font-size="14.00">Assumptions</text> </g> <!-- nd_3_a&#45;&gt;nd_3_l --> <g id="edge3" class="edge">
+<title>
+nd_3_a-&gt;nd_3_l
+</title>
+<path fill="none" stroke="grey" d="M183.99,-146.31C187.84,-138.03 192.54,-127.91 196.83,-118.69"></path> <polygon fill="grey" stroke="grey" points="200.04,-120.07 201.09,-109.53 193.7,-117.12 200.04,-120.07"></polygon> </g> <!-- nd_3_a&#45;&gt;nd_3 --> <g id="edge1" class="edge">
+<title>
+nd_3_a-&gt;nd_3
+</title>
+<path fill="none" stroke="grey" d="M140.5,-146.32C124.04,-138.11 104.32,-127.92 87,-118 85.28,-117.02 83.54,-116 81.79,-114.95"></path> <polygon fill="grey" stroke="grey" points="83.39,-111.83 73.03,-109.6 79.74,-117.8 83.39,-111.83"></polygon> </g> <!-- nd_3_a&#45;&gt;nd_3_r --> <g id="edge2" class="edge">
+<title>
+nd_3_a-&gt;nd_3_r
+</title>
+<path fill="none" stroke="grey" d="M163.9,-146.31C157.88,-137.77 150.49,-127.27 143.83,-117.82"></path> <polygon fill="grey" stroke="grey" points="146.61,-115.69 137.99,-109.53 140.89,-119.72 146.61,-115.69"></polygon> </g> <!-- nd_3_l&#45;&gt;nd_3 --> <g id="edge10" class="edge">
+<title>
+nd_3_l-&gt;nd_3
+</title>
+<path fill="none" stroke="transparent" d="M191.16,-109.88C181.63,-118.37 169.16,-127.55 156,-132 130.74,-140.55 121.09,-141.03 96,-132 83.54,-127.52 71.99,-118.34 63.24,-109.85"></path> </g> <!-- nd_4 --> <g id="node7" class="node">
+<title>
+nd_4
+</title>
+<polygon fill="none" stroke="black" points="99.39,-0.5 99.39,-36.5 156.61,-36.5 156.61,-0.5 99.39,-0.5"></polygon> <text text-anchor="middle" x="128" y="-14.3" font-family="Times,serif" font-size="14.00">Present</text> </g> <!-- nd_3_l&#45;&gt;nd_4 --> <g id="edge9" class="edge">
+<title>
+nd_3_l-&gt;nd_4
+</title>
+<path fill="none" stroke="black" d="M189.39,-73.31C179.14,-64.33 166.44,-53.19 155.25,-43.39"></path> <polygon fill="black" stroke="black" points="157.25,-40.49 147.43,-36.53 152.64,-45.75 157.25,-40.49"></polygon> </g> <!-- nd_3&#45;&gt;nd_4 --> <g id="edge8" class="edge">
+<title>
+nd_3-&gt;nd_4
+</title>
+<path fill="none" stroke="black" d="M66.61,-73.31C76.86,-64.33 89.56,-53.19 100.75,-43.39"></path> <polygon fill="black" stroke="black" points="103.36,-45.75 108.57,-36.53 98.75,-40.49 103.36,-45.75"></polygon> </g> </g>
+</svg>
+</p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.1: The data analysis pipeline or workflow</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="purposes" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="purposes"><span class="header-section-number">4.3.1</span> Purposes</h3>
+<p>After Gelman and Unwin</p>
+<ul>
+<li>Discovery</li>
+<li>Communication</li>
+</ul>
+</section>
+<section id="psychological-science-of-data-visualization" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="psychological-science-of-data-visualization"><span class="header-section-number">4.3.2</span> Psychological science of data visualization</h3>
+<p>Reasons for choices</p>
+</section>
+<section id="grammar-of-graphics" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="grammar-of-graphics"><span class="header-section-number">4.3.3</span> Grammar of graphics</h3>
+<p>Discuss further as we progress</p>
+<ul>
+<li>layers, scales, facets, themes</li>
+</ul>
+</section>
+</section>
+<section id="a-quick-start" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="a-quick-start"><span class="header-section-number">4.4</span> A quick start</h2>
+<p>We can get started before we understand in depth the key ideas or the coding steps. This will help to show where we are going. We will work with the <code>sleepstudy</code> dataset.</p>
+<p>I will model the process, to give you an example workflow:</p>
+<ul>
+<li>the data, where they come from — what we can find out;</li>
+<li>how we approach them — what we <em>expect</em> to see;</li>
+<li>how we visualize them — discovery, communication.</li>
+</ul>
+<section id="sleepstudy-data" class="level3" data-number="4.4.1">
+<h3 data-number="4.4.1" class="anchored" data-anchor-id="sleepstudy-data"><span class="header-section-number">4.4.1</span> Sleepstudy data</h3>
+<p>When we work with R, we usually work with functions like <code>ggplot()</code> provided in libraries like <code>ggplot2</code> <span class="citation" data-cites="R-ggplot2">(<a href="references.html#ref-R-ggplot2" role="doc-biblioref">Wickham, 2016</a>)</span> which is part of <code>tidyverse</code> <span class="citation" data-cites="R-tidyverse">(<a href="references.html#ref-R-tidyverse" role="doc-biblioref">Wickham, 2017</a>)</span>. These libraries typically provide not only functions but also datasets that we can use for demonstration and learning.</p>
+<p>The <code>lme4</code> library <span class="citation" data-cites="R-lme4">(<a href="references.html#ref-R-lme4" role="doc-biblioref">Bates et al., 2015</a>)</span> provides the <code>sleepstudy</code> dataset and we will take a look at these data to offer a taste of what we can learn to do. Usually, information about the R libraries we use is located on the (<a href="https://cran.r-project.org" class="external" target="_blank">Comprehensive R Archive Network (CRAN)</a>) web pages and we can find the technical reference information for (<a href="https://cran.r-project.org/web/packages/lme4/lme4.pdf" class="external" target="_blank">lme4</a>) where we can see that the <code>sleepstudy</code> data are from a study reported by <span class="citation" data-cites="belenky2003">(<a href="references.html#ref-belenky2003" role="doc-biblioref">Belenky et al., 2003</a>)</span>.</p>
+<p>The information we need is in the <code>lme4</code> manual, and it is that the ‘sleepstudy’ dataset comprises:</p>
+<blockquote class="blockquote">
+<p>A data frame with 180 observations on the following 3 variables. Reaction Average reaction time (ms) Days Number of days of sleep deprivation Subject Subject number on which the observation was made.</p>
+</blockquote>
+<p>We can take a look at the first few rows.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>sleepstudy <span class="sc">%&gt;%</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  Reaction Days Subject
+1 249.5600    0     308
+2 258.7047    1     308
+3 250.8006    2     308
+4 321.4398    3     308</code></pre>
+</div>
+</div>
+<p>What we are looking at are:</p>
+<blockquote class="blockquote">
+<p>The average reaction time per day (in milliseconds) for subjects in a sleep deprivation study. Days 0-1 were adaptation and training (T1/T2), day 2 was baseline (B); sleep deprivation started after day 2.</p>
+</blockquote>
+<p>The abstract for <span class="citation" data-cites="belenky2003">Belenky et al. (<a href="references.html#ref-belenky2003" role="doc-biblioref">2003</a>)</span> tells us that participants were deprived of sleep and the impact of relative deprivation was tested using a cognitive vigilance task for which the reaction times of responses were recorded.</p>
+<p>So, we can <em>expect to find</em>:</p>
+<ul>
+<li>A set of rows corresponding to multiple observations for each participant (<code>Subject</code>)</li>
+<li>A reaction time value for each participant (<code>Reaction</code>)</li>
+<li>Recorded on each <code>Day</code></li>
+</ul>
+</section>
+<section id="discovery" class="level3" data-number="4.4.2">
+<h3 data-number="4.4.2" class="anchored" data-anchor-id="discovery"><span class="header-section-number">4.4.2</span> Discovery</h3>
+<p>In data analysis work, we often begin with the objective to understand the structure or the nature of the data we are working with.</p>
+<p>You can call this the <em>discovery</em> phase:</p>
+<ul>
+<li>what have we got?</li>
+<li>does it match our expectations?</li>
+</ul>
+<p>If these are reaction time data (collected in an cognitive experiment) do they look like cognitive reaction time data <em>should</em> look? We would expect to see a skewed distribution of observed reaction times distributed around an average located somewhere in the range 200-700ms.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sleepstudy <span class="sc">%&gt;%</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Reaction)) <span class="sc">+</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">15</span>) <span class="sc">+</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(sleepstudy<span class="sc">$</span>Reaction), </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>             <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">linetype =</span> <span class="st">'dashed'</span>, <span class="at">size =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="dv">370</span>, <span class="at">y =</span><span class="dv">20</span>, </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">colour =</span> <span class="st">"red"</span>, </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">label =</span> <span class="st">"Average value shown in red"</span>) <span class="sc">+</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-sleep-study-histogram" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualization_files/figure-html/fig-sleep-study-histogram-1.png" class="img-fluid figure-img" alt="Histogram showing a distribution of reaction times, ranging from about 200ms to 500ms. The distribution has a peak around 300ms. The location of the mean is shown with a dashed red line. The distribution includes a long tail of longer times." width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.2: Figure showing a histogram of <code>sleepstudy</code> reaction time data</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p><a href="#fig-sleep-study-histogram">Figure&nbsp;<span>4.2</span></a> shows a distribution of reaction times, ranging from about 200ms to 500ms. The distribution has a peak around 300ms. The location of the mean is shown with a dashed red line. The distribution includes a long tail of longer times. This <em>is</em> pretty much what we would expect to see.</p>
+</section>
+<section id="communication" class="level3" data-number="4.4.3">
+<h3 data-number="4.4.3" class="anchored" data-anchor-id="communication"><span class="header-section-number">4.4.3</span> Communication</h3>
+<p>Let us imagine that it is our study. (Here, we shall not concern ourselves too much — with apologies — with understanding what the original study authors actually did.)</p>
+<p>If we are looking at the impact of sleep deprivation on cognitive performance, we might predict that reaction times got longer (responses slowed) as the study progressed. Is that what we see?</p>
+<p>To examine the association between two variables, we often use scatterplots. <a href="#fig-sleep-study-scatterplot-all">Figure&nbsp;<span>4.3</span></a> is a scatterplot indicating the possible association between reaction time and days in the <code>sleepstudy</code> data”. Points are ordered on x-axis from 0 to 9 days, on y-axis from 200 to 500 ms reaction time.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>sleepstudy <span class="sc">%&gt;%</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Days, <span class="at">y =</span> Reaction)) <span class="sc">+</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">9</span>)) <span class="sc">+</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-sleep-study-scatterplot-all" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualization_files/figure-html/fig-sleep-study-scatterplot-all-1.png" class="img-fluid figure-img" alt="Scatterplot showing the relation between reaction time and days in the `sleepstudy` data. Points are ordered on x-axis from 0 to 9 days, on y-axis from 200 to 500 ms reaction time. The plot indicates that reaction time increases with increasing number of days." width="672"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.3: Figure showing a scatterplot of the relation between reaction time and days in the <code>sleepstudy</code> data</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>The plot suggests that reaction time increases with increasing number of days.</p>
+<p>In producing this plot, we are doing both (1.) discovery and potentially able to do (2.) communication.</p>
+<ol type="1">
+<li>Discovery: is the relation between variables what we expect?</li>
+<li>Communication: to ourselves and others, this is the relation we observe.</li>
+</ol>
+<p>You have been introduced to scatterplots before, why we use them, how we write code to produce them, and how we read them.</p>
+<p>With two additional <em>limited</em> steps we can significantly increase the power of the visualization. <a href="#fig-sleep-study-scatterplot-by-subject">Figure&nbsp;<span>4.4</span></a> is a grid of scatterplots indicating the possible association between reaction time and days separately for each participant.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>sleepstudy <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Subject) <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">average =</span> <span class="fu">mean</span>(Reaction)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ungroup</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">Subject =</span> <span class="fu">fct_reorder</span>(Subject, average)) <span class="sc">%&gt;%</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Days, <span class="at">y =</span> Reaction)) <span class="sc">+</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">6</span>, <span class="dv">9</span>)) <span class="sc">+</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> Subject) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div id="fig-sleep-study-scatterplot-by-subject" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="visualization_files/figure-html/fig-sleep-study-scatterplot-by-subject-1.png" class="img-fluid figure-img" alt="The figure presents a grid of scatterplots showing the relation between reaction time and days in the `sleepstudy` data separately for each participant. Points are ordered on x-axis from 0 to 9 days, on y-axis from 200 to 500 ms reaction time. Most plots indicate that reaction time increases with increasing number of days. However, different participants show this trend to differing extents." width="960"></p>
+<p></p><figcaption class="figure-caption">Figure&nbsp;4.4: Figure showing a scatterplot of the relation between reaction time and days: here, we plot the data for each participant separately</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Figure <a href="#fig-sleep-study-scatterplot-by-subject">Figure&nbsp;<span>4.4</span></a> is a grid (or lattice or trellis) of scatterplots <em>revealing</em> how the possible association between reaction time and days varies quite substantially between the participants in the <code>sleepstudy</code> data”. Most plots indicate that reaction time increases with increasing number of days. However, different participants show this trend to differing extents.</p>
+<p>What are the two additions I made to the conventional scatterplot code?</p>
+<ul>
+<li>I calculated the average reaction time per participant.</li>
+<li>I ordered the data by those averages.</li>
+<li>I <em>facetted</em> the plots, breaking them out into separate scatterplots per participant.</li>
+</ul>
+<p>Why would you do this? Variation between people or groups, in effects, in averages, are often to be found in psychological data <span class="citation" data-cites="vasishth2021">(<a href="references.html#ref-vasishth2021" role="doc-biblioref">Vasishth &amp; Gelman, 2021</a>)</span>. The functions in the <code>ggplot2</code> library enable us to discover and communicate this variation to strengthen our and others’ scientific understanding.</p>
+</section>
+<section id="summary-quick-lessons-to-begin" class="level3" data-number="4.4.4">
+<h3 data-number="4.4.4" class="anchored" data-anchor-id="summary-quick-lessons-to-begin"><span class="header-section-number">4.4.4</span> Summary: quick lessons to begin</h3>
+</section>
+</section>
+<section id="set-up-for-coding" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="set-up-for-coding"><span class="header-section-number">4.5</span> Set up for coding</h2>
+<section id="sec-libraries" class="level3" data-number="4.5.1">
+<h3 data-number="4.5.1" class="anchored" data-anchor-id="sec-libraries"><span class="header-section-number">4.5.1</span> Get libraries</h3>
+<p>We are going to need these libraries.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lme4)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="get-data" class="level3" data-number="4.5.2">
+<h3 data-number="4.5.2" class="anchored" data-anchor-id="get-data"><span class="header-section-number">4.5.2</span> Get data</h3>
+<p>Download the <a href="files/data.zip">data.zip</a> files folder and upload the files to RStudio Server.</p>
+<p>The folder includes the data files:</p>
+<ul>
+<li><code>PrimDir-111019_English.csv</code></li>
+<li><code>PrimInd-111019_English.csv</code></li>
+</ul>
+<!-- # -- get the data from the paper: -->
+<!-- # https://peerj.com/articles/9511/ -->
+<!-- # -- downloaded from the repository:   -->
+<!-- # https://osf.io/j29fn/   -->
+<!-- schizotypy.dir <- read_csv("PrimDir-111019_English.csv", -->
+<!--                           col_types = cols( -->
+<!--                             soa = col_factor(), -->
+<!--                             lexicality = col_factor(), -->
+<!--                             relation = col_factor(), -->
+<!--                             prime = col_factor(), -->
+<!--                             item = col_factor(), -->
+<!--                             target = col_factor(), -->
+<!--                             participant = col_factor(), -->
+<!--                             sex = col_factor() -->
+<!--                           )) %>% -->
+<!--   rename("bilingualism" = "Bilingualism") -->
+<!-- schizotypy.indir <- read_csv("PrimInd-111019_English.csv", -->
+<!--                            col_types = cols( -->
+<!--                              soa = col_factor(), -->
+<!--                              lexicality = col_factor(), -->
+<!--                              relation = col_factor(), -->
+<!--                              prime = col_factor(), -->
+<!--                              item = col_factor(), -->
+<!--                              target = col_factor(), -->
+<!--                              participant = col_factor(), -->
+<!--                              sex = col_factor() -->
+<!--                            )) %>% -->
+<!--   mutate(sex = fct_recode(sex, -->
+<!--                           "Male" = "Hombre", -->
+<!--                            "Female" = "Mujer")) -->
+<!-- # -- put the two datasets together -->
+<!-- schizotypy.rt <- bind_rows(schizotypy.dir, schizotypy.indir) -->
+<!-- # -- inspect the data: -->
+<!-- summary(schizotypy.dir) -->
+<!-- summary(schizotypy.indir) -->
+<!-- summary(schizotypy.rt) -->
+<!-- # -- extract just distinct rows to get subject data -->
+<!-- # -- first calculate average reaction time per person -->
+<!-- schizotypy.rt.subjs <- schizotypy.rt %>% -->
+<!--   drop_na() %>%                        -->
+<!--   group_by(participant) %>% -->
+<!--   mutate(meanrt = mean(reactiontime)) %>% -->
+<!--   ungroup() %>% -->
+<!--   distinct(participant, .keep_all = TRUE) %>% -->
+<!--   select(participant:OLIFEImp, meanrt) -->
+<!-- # -- inspect: -->
+<!-- summary(schizotypy.rt.subjs) -->
+<!-- # -- get the data from the paper: -->
+<!-- # https://www.sciencedirect.com/science/article/pii/S095947522100027X   -->
+<!-- # -- downloaded from the repository:   -->
+<!-- # https://osf.io/e5gzk/?view_only=038118528c7c426c9729983f54138c88  -->
+<!-- long.orth <- read_csv("long.orth_2020-08-11.csv", -->
+<!--                            col_types = cols( -->
+<!--                              Participant = col_factor(), -->
+<!--                              Time = col_factor(), -->
+<!--                              Study = col_factor(), -->
+<!--                              Instructions = col_factor(), -->
+<!--                              Version = col_factor(), -->
+<!--                              Word = col_factor(), -->
+<!--                              Orthography = col_factor(), -->
+<!--                              Measure = col_factor(), -->
+<!--                              Spelling.transcription = col_factor() -->
+<!--                            )) -->
+<!-- long.sem <- read_csv("long.sem_2020-08-11.csv", -->
+<!--                       col_types = cols( -->
+<!--                         Participant = col_factor(), -->
+<!--                         Time = col_factor(), -->
+<!--                         Study = col_factor(), -->
+<!--                         Instructions = col_factor(), -->
+<!--                         Version = col_factor(), -->
+<!--                         Word = col_factor(), -->
+<!--                         Orthography = col_factor(), -->
+<!--                         Measure = col_factor() -->
+<!--                       )) -->
+<!-- conc.orth <- read_csv("concurrent.orth_2020-08-11.csv", -->
+<!--                       col_types = cols( -->
+<!--                         Participant = col_factor(), -->
+<!--                         Time = col_factor(), -->
+<!--                         Study = col_factor(), -->
+<!--                         Instructions = col_factor(), -->
+<!--                         Version = col_factor(), -->
+<!--                         Word = col_factor(), -->
+<!--                         Orthography = col_factor(), -->
+<!--                         Measure = col_factor(), -->
+<!--                         Spelling.transcription = col_factor() -->
+<!--                       )) -->
+<!-- conc.sem <- read_csv("concurrent.sem_2020-08-11.csv", -->
+<!--                      col_types = cols( -->
+<!--                        Participant = col_factor(), -->
+<!--                        Time = col_factor(), -->
+<!--                        Study = col_factor(), -->
+<!--                        Instructions = col_factor(), -->
+<!--                        Version = col_factor(), -->
+<!--                        Word = col_factor(), -->
+<!--                        Orthography = col_factor(), -->
+<!--                        Measure = col_factor() -->
+<!--                      )) -->
+<!-- # -- inspect the data: -->
+<!-- summary(conc.orth) -->
+<!-- summary(conc.sem) -->
+<!-- summary(long.orth) -->
+<!-- summary(long.sem) -->
+<!-- # -- extract just distinct rows to get subject data -->
+<!-- # -- first calculate average response per person -->
+<!-- conc.orth.subjs <- conc.orth %>% -->
+<!--   group_by(Participant) %>% -->
+<!--   mutate(mean.score = mean(Score)) %>% -->
+<!--   ungroup() %>% -->
+<!--   distinct(Participant, .keep_all = TRUE) %>% -->
+<!--   select(WASImRS:BPVSRS, mean.score, Participant) -->
+<!-- # -- inspect: -->
+<!-- summary(conc.orth.subjs) -->
+<!-- conc.sem.subjs <- conc.sem %>% -->
+<!--   group_by(Participant) %>% -->
+<!--   mutate(mean.score = mean(Score)) %>% -->
+<!--   ungroup() %>% -->
+<!--   distinct(Participant, .keep_all = TRUE) %>% -->
+<!--   select(WASImRS:BPVSRS, mean.score, Participant) -->
+<!-- # -- inspect: -->
+<!-- summary(conc.sem.subjs) -->
+</section>
+<section id="process-the-data" class="level3" data-number="4.5.3">
+<h3 data-number="4.5.3" class="anchored" data-anchor-id="process-the-data"><span class="header-section-number">4.5.3</span> Process the data</h3>
+</section>
+</section>
+<section id="sec-resources" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="sec-resources"><span class="header-section-number">4.6</span> Helpful resources</h2>
+<section id="some-helpful-websites" class="level3" data-number="4.6.1">
+<h3 data-number="4.6.1" class="anchored" data-anchor-id="some-helpful-websites"><span class="header-section-number">4.6.1</span> Some helpful websites</h3>
 <ul>
 <li>We typically use the <code>ggplot</code> library (part of the <code>tidyverse</code>) to produce plots. Clear technical information, with useful examples you can copy and run, can be found in the reference webpages:</li>
 </ul>
@@ -223,8 +730,8 @@ div.csl-indent {
 </ul>
 <p><a href="https://patchwork.data-imaginist.com/articles/patchwork.html" class="uri">https://patchwork.data-imaginist.com/articles/patchwork.html</a></p>
 </section>
-<section id="some-helpful-books" class="level3" data-number="4.1.2">
-<h3 data-number="4.1.2" class="anchored" data-anchor-id="some-helpful-books"><span class="header-section-number">4.1.2</span> Some helpful books</h3>
+<section id="some-helpful-books" class="level3" data-number="4.6.2">
+<h3 data-number="4.6.2" class="anchored" data-anchor-id="some-helpful-books"><span class="header-section-number">4.6.2</span> Some helpful books</h3>
 <ul>
 <li>The book “R for Data Science” <span class="citation" data-cites="wickham2016">(<a href="references.html#ref-wickham2016" role="doc-biblioref">Wickham &amp; Grolemund, 2016</a>)</span> will guide you through the data analysis workflow, including data visualization, and the latest version can be accessed in an online free version here:</li>
 </ul>
@@ -244,11 +751,23 @@ div.csl-indent {
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography" style="display: none">
+<div id="ref-R-lme4" class="csl-entry" role="doc-biblioentry">
+Bates, D., Mächler, M., Bolker, B., &amp; Walker, S. (2015). Fitting linear mixed-effects models using <span></span>lme4<span></span>. <em>Journal of Statistical Software</em>, <em>67</em>(1), 1–48. <a href="https://doi.org/10.18637/jss.v067.i01">https://doi.org/10.18637/jss.v067.i01</a>
+</div>
+<div id="ref-belenky2003" class="csl-entry" role="doc-biblioentry">
+Belenky, G., Wesensten, N. J., Thorne, D. R., Thomas, M. L., Sing, H. C., Redmond, D. P., Russo, M. B., &amp; Balkin, T. J. (2003). Patterns of performance degradation and restoration during sleep restriction and subsequent recovery: a sleep dose-response study. <em>Journal of Sleep Research</em>, <em>12</em>(1), 1–12. <a href="https://doi.org/10.1046/j.1365-2869.2003.00337.x">https://doi.org/10.1046/j.1365-2869.2003.00337.x</a>
+</div>
 <div id="ref-Chang2013a" class="csl-entry" role="doc-biblioentry">
 Chang, W. (2013). <em>R graphics cookbook</em>. o’Reilly Media.
 </div>
+<div id="ref-vasishth2021" class="csl-entry" role="doc-biblioentry">
+Vasishth, S., &amp; Gelman, A. (2021). How to embrace variation and accept uncertainty in linguistic and psycholinguistic data analysis. <em>Linguistics</em>, <em>59</em>(5), 1311–1342. <a href="https://doi.org/10.1515/ling-2019-0051">https://doi.org/10.1515/ling-2019-0051</a>
+</div>
 <div id="ref-R-ggplot2" class="csl-entry" role="doc-biblioentry">
 Wickham, H. (2016). <em>ggplot2: Elegant graphics for data analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>
+</div>
+<div id="ref-R-tidyverse" class="csl-entry" role="doc-biblioentry">
+Wickham, H. (2017). <em>Tidyverse: Easily install and load the ’tidyverse’</em>. <a href="https://cran.r-project.org/package=tidyverse">https://cran.r-project.org/package=tidyverse</a>
 </div>
 <div id="ref-wickham2016" class="csl-entry" role="doc-biblioentry">
 Wickham, H., &amp; Grolemund, G. (2016). <em>R for data science: Import, tidy, transform, visualize, and model data</em>. <span>"</span> O’Reilly Media, Inc.<span>"</span>.
