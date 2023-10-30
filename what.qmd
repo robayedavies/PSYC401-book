@@ -1,4 +1,4 @@
-# What {#sec-what}
+# The PSCY401 Research Report assignment: What you have to do {#sec-what}
 
 We present the following guidelines to help you to complete the coursework assessment. 
 If you have any questions, you can contact:
@@ -12,13 +12,13 @@ If you want to understand **why** we think you will benefit from doing this, you
 
 If you want to know more about **how** to do this work, you can read about how in @sec-how.
 
+We provide information on assessment criteria and our approach to marking in @sec-marking.
+
 ## The research report: what you are expected to do {#sec-what-expected}
 
 Note that the following information mirrors exactly the information provided on Moodle:
 
 <https://modules.lancaster.ac.uk/mod/page/view.php?id=2212445>
-
-We provide information on assessment criteria and our approach to marking in @sec-marking.
 
 ### What data can I analyse? {#sec-what-data}
 
