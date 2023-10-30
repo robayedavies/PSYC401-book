@@ -36,8 +36,7 @@ The reasons for this are understandable: methods are complex, technical, subject
 This is a mistake because it presents a misleading view of the challenge in learning methods: the challenge is *just* the (difficult enough) challenge of learning about statistical methods, or dealing with numbers.
 It is a mistake, also, because it implies that if you learn the method, and can match the textbook example -- the variables, the state of the data -- when it is your turn to do an analysis, all will be well.
 
-Maybe.
-I think a more productive approach -- this is the approach we will take -- is to expose, and talk about some of the real challenges that anybody who handles data, or quantitative evidence, in professional life.
+A more productive approach -- this is the approach we will take -- is to expose, and talk about some of the real challenges that anybody who handles data, or quantitative evidence, in professional life.
 These challenges include:
 
 1. Thinking about the mapping from our concerns to the research questions, to the things we measure, to analysis we do, and then the conclusions we make.

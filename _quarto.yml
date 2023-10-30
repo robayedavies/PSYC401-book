@@ -11,7 +11,7 @@ book:
     - index.qmd
     - part: "DATA ANALYSIS"
     - visualization.qmd
-    - part: "WRITING ABOUT RESEARCH"
+    - part: "THE RESEARCH REPORT ASSIGNMENT"
     - intro.qmd
     - what.qmd
     - how.qmd
