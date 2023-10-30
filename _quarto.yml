@@ -3,19 +3,21 @@ project:
   output-dir: docs
 
 book:
-  title: "The research report: why, what and how"
+  title: "Psychological data analysis for graduate students: PSYC401"
+  number-sections: true
   author: "Rob Davies"
   date: "2023-10-30"
   chapters:
     - index.qmd
-    - part: "The research report"
+    - part: "MAKING THE MOST OF R"
+    - knowledge-ecosystem.qmd
+    - part: "DATA ANALYSIS"
+    - visualization.qmd
+    - part: "WRITING ABOUT RESEARCH"
     - intro.qmd
     - what.qmd
     - how.qmd
-    - part: "Making the most of your skills"
-    - visualization.qmd
-    - ecosystem.qmd
-    - part: "End"
+    - part: "END"
     - summary.qmd
     - references.qmd
       
