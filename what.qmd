@@ -18,6 +18,8 @@ Note that the following information mirrors exactly the information provided on 
 
 <https://modules.lancaster.ac.uk/mod/page/view.php?id=2212445>
 
+We provide information on assessment criteria and our approach to marking in @sec-marking.
+
 ### What data can I analyse? {#sec-what-data}
 
 Reports will concern, usually, findings from analyses of data-sets we have provided to you. 
@@ -122,4 +124,79 @@ And for APA formatting of statistics and numbers:
 
 Though the APA guidelines are the authoritative guide.
 
-#### Add a link to the data analysed for the report {what-link}
+#### Add a link to the data analysed for the report {#what-link}
+
+## The research report: assessment criteria {#sec-marking}
+
+Note that the following information mirrors exactly the information provided on Moodle on assessment criteria:
+
+<https://modules.lancaster.ac.uk/mod/page/view.php?id=2212446>
+
+These assessment criteria relate to the short research report:
+
+The marks for the report will be depend primarily on the quality of the Results and Discussion sections of the report. 
+This is because, in most cases, you will be using data for your analysis that were collected, previously, by other authors for an already published report. 
+We cannot give you much credit for writing about the background research literature in the Introduction or about the Method of data collection because the authors of the original report did that work if you are using published data, or because I [or others] did that work if you are using demonstration data. 
+We can give you credit for writing brief notes in the Introduction and Method sections, in your report, that present concise, clear, summaries of the background research literature and method of data collection.
+
+Marks will be awarded on the basis of the quality of the Results and Discussion sections.
+You can use whatever analysis approach you feel is justified. 
+We will award marks for:-
+
+- The clarity and sense of the reasoning you describe for the approach you take. Explain your decisions. Why did you use the analysis method you chose to use?
+
+- The clarity of the description of the analysis method and results. Follow the APA style guide on how you should present tables and how you should report statistics in the text of the report. You must say not just whether a difference between conditions or the effect of a variable is significant. You must also describe the nature of the difference or of the effect. What is the size and the direction of the difference or the effect?
+
+- How effectively you make sense of the results in the context of the background research, and the research question. Explain how the reader should interpret the results. What are the theoretical or practical implications of the results?
+
+### How will marks be awarded? {#sec-marking-how}
+
+Read the guide to postgraduate marking criteria, in the Masters handbook.
+
+Some things will be more important than others in determining your marks. 
+What will be especially important for this assessment are the following.
+
+A *distinction* requires ... Clear conceptual structure; a thorough understanding of the topic and its implications; a clearly expressed and convincing argument that is used to develop a coherent and logical answer to the question, and is effectively based in existing theory and research; 
+evidence of independent research; 
+an insightful argument showing evidence of original thinking; 
+and mastery of analytic techniques or methods.
+
+What is required is *mastery*.
+To evidence mastery, we will want to see: 
+
+- the ability to evaluate methodologies critically;
+- critical awareness of current problems or new insights from current research;
+- demonstration that you can handle complex issues systematically, making excellent judgements.
+
+Mastery is about choices. 
+Data analysis requires you to make choices. 
+Those choices require awareness of alternative approaches, an evaluation of the relative appropriateness of one method compared to others, and an explanation motivating the approach you choose to take. 
+To get to this level, you will need to work with our materials, and read more widely, perhaps even looking at primary and secondary literature on statistics in independent reading.
+
+Of course, you can get a distinction by doing what we teach you but you will evidence, in addition, some reflection on the relevant concerns, some creativity or original thinking or reading about the relevant issues.
+
+A *merit* requires ... Clear conceptual structure; a good understanding of the topic and its implications; an ability to select and organize material to provide a clear and logical line of argument; some (limited) evidence of independent thought or reading; general competence in analytic techniques or methods.
+
+What is required is a good level of competence overall. 
+To evidence good competence, we will want to see:
+
+- a clear correspondence between the research question, hypotheses or predictions, and the chosen analytic method, which must be applied in a clearly appropriate manner;
+- an awareness of the concerns relevant to the data analysis required to address the research question;
+- a comprehensive understanding of the techniques, and the skilful application of those techniques where appropriate.
+
+General competence is about skill and understanding. 
+We expect you to be able to identify the appropriate method to analyse data to address a research question. 
+To evidence a good level of competence, your explanation of why you use the method you use will need to show an understanding of the appropriateness of the method in the context of the research question. 
+We may see some critical evaluation, or reflection, on the appropriateness of the method, or its limits, but less than we might see in work of distinction standard. We expect to see a skillful use of the techniques we taught you. 
+We expect to see an effective communication of your explanation for why you use the method, and what the results show.
+
+A *pass* requires ... Basic competence in the application of research methods or analytic techniques. 
+It is distinguished from work in the Merit category by the level of analysis displayed and by the coherence with which the material is organized. 
+There may be some errors, misjudgments or omissions of important details.
+
+What is required is basic competence overall. 
+To evidence basic competence, we will want to see:
+
+- a clear correspondence between the research question, hypotheses or predictions, and the chosen analytic method, which must be applied in an appropriate manner;
+- reasonably well-structured account of the key information, concepts or findings;
+- evidence of understanding of and some skill in using the appropriate techniques, though there may be evidence of limitations in understanding, perhaps some minor errors or omissions in the use of techniques or in the reporting of results. 
