@@ -5,7 +5,7 @@ project:
 book:
   title: "The research report: why, what and how"
   author: "Rob Davies"
-  date: "02/11/2022"
+  date: "2023-10-30"
   chapters:
     - index.qmd
     - part: "The research report"
