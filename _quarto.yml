@@ -3,10 +3,13 @@ project:
   output-dir: docs
 
 book:
-  title: "Psychological data analysis for graduate students: PSYC401"
+  title: "Psychological data analysis for graduate students: *PSYC401*"
   number-sections: true
-  author: "Rob Davies"
-  date: "2023-10-30"
+  author: 
+    name: "Rob Davies"
+    affiliation: "Department of Psychology, Lancaster University"
+    email: r.davies1@lancaster.ac.uk
+  date: "2023-10-01"
   chapters:
     - index.qmd
     - part: "DATA ANALYSIS"
@@ -20,6 +23,8 @@ book:
     - part: "END"
     - summary.qmd
     - references.qmd
+
+licence: GNU General Public License v3.0
       
 bibliography: references.bib
 csl: psychological-bulletin.csl
