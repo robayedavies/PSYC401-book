@@ -15,6 +15,7 @@ book:
     - part: "DATA ANALYSIS"
     - visualization.qmd
     - part: "THE RESEARCH REPORT ASSIGNMENT"
+    - report-preface.qmd
     - intro.qmd
     - what.qmd
     - how.qmd

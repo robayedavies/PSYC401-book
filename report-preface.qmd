@@ -1,0 +1,5 @@
+# The research report assignment: Outline introduction {#sec-report-intro}
+
+::: callout-warning
+Under construction
+:::
