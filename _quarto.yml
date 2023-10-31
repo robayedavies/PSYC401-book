@@ -24,6 +24,7 @@ book:
     - part: "END"
     - summary.qmd
     - references.qmd
+  downloads: pdf
 
 licence: GNU General Public License v3.0
       
