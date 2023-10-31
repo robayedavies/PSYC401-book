@@ -4,7 +4,6 @@ project:
 
 book:
   title: "Psychological data analysis for graduate students: *PSYC401*"
-  number-sections: true
   author: 
     name: "Rob Davies"
     affiliation: "Department of Psychology, Lancaster University"
@@ -24,7 +23,6 @@ book:
     - part: "END"
     - summary.qmd
     - references.qmd
-  downloads: pdf
 
 licence: GNU General Public License v3.0
       
@@ -36,7 +34,6 @@ format:
     theme: cosmo
     link-external-icon: true
     link-external-newwindow: true
-  pdf:
-    documentclass: scrreprt
+    number-sections: true
 
 editor: visual
