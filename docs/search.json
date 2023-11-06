@@ -187,5 +187,12 @@
     "title": "2  The research report assignment: Outline introduction",
     "section": "2.2 Lecture recordings",
     "text": "2.2 Lecture recordings\nThe lecture material is presented in three short parts.\n\n2.2.1 Lecture recordings\nClick on a link and your browser should open a tab showing the Panopto video for the lecture part. You should be able to access the videos anywhere; you should not need to be on campus or logged on to the university VPN to view the videos.\nPart 1 of 3; about 15 minutes\nPart 2 of 3; about 20 minutes\nPart 3 of 3; about 20 minutes\n\n\n2.2.2 Lecture recordings\nYou can download the lecture slides in two different forms.\n\nYou can download the slides as a .html file: 401-research-report.html. This can be opened in a browser and presents the slides as they are delivered.\nYou can download the slides as a Word .docx file: 401-research-report-printable.docx. This can be opened in Microsoft Word. You can edit the file to write your own notes. And you can print the document.\n\nThere will be some slight variation in how the images appear in the .html and .docx versions. This is because I wrote the slides in {Quarto}, in R-Studio, and {Quarto} is designed to render natively to .html (so that images look nice in a browser)."
+  },
+  {
+    "objectID": "hypotheses-associations.html",
+    "href": "hypotheses-associations.html",
+    "title": "1  Hypotheses and associations",
+    "section": "",
+    "text": "Warning\n\n\n\nUnder construction"
   }
 ]
