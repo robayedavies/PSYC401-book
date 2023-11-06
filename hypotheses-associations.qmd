@@ -4,3 +4,38 @@
 Under construction
 :::
 
+```{r libraries-hide}
+#| warning: false
+#| echo: false
+library(tidyverse)
+```
+
+```{r readin-hide}
+#| warning: false
+#| echo: false
+# -- code to read in the aggregated subject level data from the clearly-understood data set
+# -- study one
+study.one.gen <- read_csv("study-one-general-participants.csv", 
+                                  col_types = cols(
+                                    participant_ID = col_factor(),
+                                    study = col_factor(),
+                                    EDUCATION = col_factor(),
+                                    GENDER = col_factor(),
+                                    ETHNICITY = col_factor()
+                                    )
+                                   )
+
+# -- study two
+study.two.gen <- read_csv("study-two-general-participants.csv", 
+                                  col_types = cols(
+                                    participant_ID = col_factor(),
+                                    study = col_factor(),
+                                    EDUCATION = col_factor(),
+                                    GENDER = col_factor(),
+                                    ETHNICITY = col_factor()
+                                    )
+                                   )
+```
+
+
+
