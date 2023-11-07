@@ -422,9 +422,8 @@ Warning
 <li><code>401-associations-workbook.R</code></li>
 </ul>
 <p>You will use these files for your practical learning.</p>
-<p>You can download the .R files and the data .csv files from the link here:</p>
-<p><a href="files/PSYC401_week6_materials.zip">PSYC401_week6_materials.zip</a></p>
-<p>or you can download them from the module <a href="https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse7" target="_blank">Moodle page for PSYC401</a>.</p>
+<p>You can download the .R files and the data .csv files in a single folder, using the link <a href="files/PSYC401_week7_materials.zip">here</a>.</p>
+<p>Or you can download the files as individual files from the module <a href="https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse7" target="_blank">Moodle page for PSYC401</a>.</p>
 <p>Once you have downloaded the file folder, you will need to upload it to the R-Studio server to access and use the R files.</p>
 <section id="sec-associations-practical-how-to" class="level4" data-number="1.3.2.1">
 <h4 data-number="1.3.2.1" class="anchored" data-anchor-id="sec-associations-practical-how-to"><span class="header-section-number">1.3.2.1</span> The how-to guide</h4>
@@ -488,7 +487,7 @@ Tip
 </ol>
 <p>The activity <code>401-associations-workbook.R</code> file takes you through the tasks, one by one.</p>
 <p>If you are unsure about what you need to do, check the advice in <code>401-associations-how-to.R</code>.</p>
-<p>You will see that you can match a task in the <code>activity</code> to the same task in the <code>how-to</code>. The <code>how-to</code> shows you what function you need and how you should write the function code. You will need to change the names of the dataset or the variables to complete the tasks in the activity.</p>
+<p>You will see that you can match a task in the <code>activity</code> to the same task in the <code>how-to</code>. The <code>how-to</code> shows you what function you need and how you should write the function code. You will need to change the names of the data-set or the variables to complete the tasks in the activity.</p>
 <p>This process of adapting demonstration code is a process critical to data literacy and to effective problem solving in working with data in psychological science.</p>
 </section>
 <section id="the-data-files" class="level3" data-number="1.3.4">
@@ -630,10 +629,26 @@ Tip
 <section id="sec-associations-notes" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="sec-associations-notes"><span class="header-section-number">1.4</span> Lecture notes</h2>
 <p>Some people find it easier to read notes than to watch video recordings. This is why we also include the lecture notes here.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In these notes, I provide notes on the code steps that result in the plot.</p>
+<ul>
+<li>Click on the <code>Notes</code> tab to see them.</li>
+</ul>
+</div>
+</div>
 <section id="better-methods-cant-make-up-for-mediocre-theory" class="level3" data-number="1.4.1">
 <h3 data-number="1.4.1" class="anchored" data-anchor-id="better-methods-cant-make-up-for-mediocre-theory"><span class="header-section-number">1.4.1</span> Better methods can’t make up for mediocre theory</h3>
 <ul>
-<li><strong>Previously – in week 6</strong>: I talked about improving science through open <em>reproducible</em> methods but we cannot make progress without better theory and data <span class="citation" data-cites="smaldino2019better">(<a href="references.html#ref-smaldino2019better" role="doc-biblioref">Smaldino, 2019</a>)</span></li>
+<li><em>Previously</em> – in week 6: I talked about improving science through open <em>reproducible</em> methods but we cannot make progress without better theory and data <span class="citation" data-cites="smaldino2019better">(<a href="references.html#ref-smaldino2019better" role="doc-biblioref">Smaldino, 2019</a>)</span></li>
 <li>We want open reproducible findings but we do not just want reproducibility</li>
 <li>We want to make sense of people in useful ways</li>
 </ul>
@@ -676,7 +691,19 @@ Tip
 <li>We train hypothesis testing but we also need to train <em>hypothesising</em>:</li>
 <li>how to measure, operationalize, and how to decide if hypothesis is corroborated or not</li>
 </ul>
-<p><strong>We want to be capable of being wrong</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We want to be capable of being wrong</p>
+</div>
+</div>
 </section>
 <section id="statistical-rituals-largely-eliminate-critical-statistical-thinking" class="level3" data-number="1.4.6">
 <h3 data-number="1.4.6" class="anchored" data-anchor-id="statistical-rituals-largely-eliminate-critical-statistical-thinking"><span class="header-section-number">1.4.6</span> Statistical rituals largely eliminate critical statistical <em>thinking</em></h3>
@@ -953,12 +980,19 @@ nd_1_r-&gt;nd_2
 <section id="lets-look-at-the-data-we-will-use" class="level3" data-number="1.4.24">
 <h3 data-number="1.4.24" class="anchored" data-anchor-id="lets-look-at-the-data-we-will-use"><span class="header-section-number">1.4.24</span> Let’s look at the data we will use</h3>
 <ul>
+<li>First, we need to read the data into R</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>study.one.gen <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"study-one-general-participants.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Next, we should take a look at the data: you can open the data-set in Excel or you can use the <code>head</code> command to show the first few rows in</li>
 <li>The person in row 1 has <code>ETHNICITY</code> White, is <code>AGE</code> 34 years, scored 33 on <code>Shipley</code> vocabulary, scored 7 on <code>HLVA</code> health literacy and, on average, self-rated their understanding of health information as 7.96 (<em>so</em> 8/9, <code>mean.self</code>) while scoring 0.49 accuracy in tests of understanding (49% <code>mean.acc</code>)</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>study.one.gen <span class="sc">%&gt;%</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(mean.acc, mean.self, HLVA, SHIPLEY, AGE, ETHNICITY) <span class="sc">%&gt;%</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>study.one.gen <span class="sc">%&gt;%</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(mean.acc, mean.self, HLVA, SHIPLEY, AGE, ETHNICITY) <span class="sc">%&gt;%</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">head</span>(<span class="at">n =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 6
   mean.acc mean.self  HLVA SHIPLEY   AGE ETHNICITY
@@ -1024,39 +1058,106 @@ nd_1_r-&gt;nd_2
 </section>
 <section id="distributions-how-do-scores-vary" class="level3" data-number="1.4.28">
 <h3 data-number="1.4.28" class="anchored" data-anchor-id="distributions-how-do-scores-vary"><span class="header-section-number">1.4.28</span> Distributions: How do scores vary?</h3>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Notes</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>p.acc <span class="ot">&lt;-</span> study.one.gen <span class="sc">%&gt;%</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.acc)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> .<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(study.one.gen<span class="sc">$</span>mean.acc),</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>           <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
-ℹ Please use `linewidth` instead.</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>p.self <span class="ot">&lt;-</span> study.one.gen <span class="sc">%&gt;%</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.self)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(study.one.gen<span class="sc">$</span>mean.self),</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlab</span>(<span class="st">"mean self-rated accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="sc">+</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>           <span class="fu">theme_bw</span>()</span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>p.acc <span class="sc">+</span> p.self</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values (`geom_bar()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values (`geom_bar()`).</code></pre>
-</div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-study-one-gen-self-acc-histograms" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="hypotheses-associations_files/figure-html/hist-1-a-1.png" class="img-fluid figure-img" alt="There are two histograms, shown side by side: The 'mean accuracy' histogram shows how 'mean accuracy' scores vary between about 0.3 and 1.0, with a peak, indicated by a vertical red line, around .8; the 'mean self-rated accuracy' histogram shows how 'mean accuracy' scores vary between about 2.5 and 9.0, with a peak, indicated by a vertical red line, around 7." width="672"></p>
-<figcaption class="figure-caption">Histograms showing the distribution of mean accuracy and mean self-rated accuracy scores in the ‘study.one.gen’ dataset: means calculated for each participant over all their responses</figcaption>
+<p><img src="hypotheses-associations_files/figure-html/fig-study-one-gen-self-acc-histograms-1.png" class="img-fluid figure-img" alt="There are two histograms, shown side by side: The 'mean accuracy' histogram shows how 'mean accuracy' scores vary between about 0.3 and 1.0, with a peak, indicated by a vertical red line, around .8; the 'mean self-rated accuracy' histogram shows how 'mean accuracy' scores vary between about 2.5 and 9.0, with a peak, indicated by a vertical red line, around 7." width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.3: Histograms showing the distribution of mean accuracy and mean self-rated accuracy scores in the ‘study.one.gen’ data-set: means calculated for each participant over all their responses</figcaption>
 </figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a>p.acc <span class="ot">&lt;-</span> study.one.gen <span class="sc">%&gt;%</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.acc)) <span class="sc">+</span> </span>
+<span id="cb4-6"><a href="#cb4-6"></a>           <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> .<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>           <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(study.one.gen<span class="sc">$</span>mean.acc),</span>
+<span id="cb4-8"><a href="#cb4-8"></a>                      <span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>           <span class="fu">xlab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a>           <span class="fu">theme_bw</span>()</span>
+<span id="cb4-12"><a href="#cb4-12"></a></span>
+<span id="cb4-13"><a href="#cb4-13"></a>p.self <span class="ot">&lt;-</span> study.one.gen <span class="sc">%&gt;%</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.self)) <span class="sc">+</span> </span>
+<span id="cb4-15"><a href="#cb4-15"></a>           <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a>           <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(study.one.gen<span class="sc">$</span>mean.self),</span>
+<span id="cb4-17"><a href="#cb4-17"></a>                      <span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a>           <span class="fu">xlab</span>(<span class="st">"mean self-rated accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="sc">+</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a>           <span class="fu">theme_bw</span>()</span>
+<span id="cb4-21"><a href="#cb4-21"></a></span>
+<span id="cb4-22"><a href="#cb4-22"></a>p.acc <span class="sc">+</span> p.self</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Let’s go through the code step-by-step.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Here the code is broken down, line by line, and each line is numbered.</li>
+<li>This presentation style is done to make it easier for you to see what each step is doing.</li>
+<li>Notice that when we use <code>p.acc &lt;- study.one.gen</code> we tell R to first create the plot (giving it the name <code>p.acc</code>) but to not show it <em>yet</em>.</li>
+</ul>
+</div>
+</div>
+<ol type="1">
+<li><code>library(patchwork)</code> and <code>library(tidyverse)</code>: We need to use {tidyverse} library functions to construct the plots and {patchwork} library functions to assemble the plots into a grid showing the plots next to each other. We use the <code>library()</code> function to get these libraries.</li>
+<li>We construct two plots. We call the plots <code>p.acc</code> and <code>p.self</code>. Each plot is constructed in a similar way so we explain the main steps for one plot. The plots are constructed but not shown until the last line of code is run.</li>
+<li><code>p.acc &lt;- ...</code> creates a plot called <code>p.acc</code>, using the processes that are specified in the next lines of code that follow.</li>
+<li><code>... &lt;- study.one.gen</code> tells R that we are working with the data-set <code>study.one.gen</code> that we read in earlier.</li>
+<li><code>%&gt;%</code> is called the <code>pipe</code> and it is code telling R to work with the <code>study.one.gen</code> data in the next plot processing steps.</li>
+<li><code>ggplot(aes(x = mean.acc)) +</code> takes the <code>study.one.gen</code> data and asks R to use the <code>ggplot()</code> function to produce a plot.</li>
+<li><code>aes(x = mean.acc)</code> tells R that in the plot we want it to show the <code>mean.acc</code> variable values as locations on the x-axis: this is the <em>aesthetic mapping</em>.</li>
+<li><code>geom_histogram(binwidth = .1) +</code> tells R to produce a histogram then add a step, next.</li>
+<li><code>geom_vline(...) +</code> tells R we want to draw a vertical line.</li>
+<li><code>xintercept = mean(study.one.gen$mean.acc), ...</code> tells R to draw the vertical line at the mean value of the variable <code>mean.acc</code> in the <code>study.one.gen</code> data-set.</li>
+<li><code>size = 1.5, colour = "red"</code> tells R we want the vertical line to be red, and 1.5 times the usual size.</li>
+<li><code>xlab("mean accuracy") +</code> tells R we want the x-axis label to say that the plot is of <code>"mean accuracy"</code>.</li>
+<li><code>xlim(0, 1.1) +</code> sets limits on the minimum and maximum <code>mean accuracy</code> values shown in the plot.</li>
+<li><code>theme_bw()</code> lastly, we change the theme.</li>
+<li>Then we have code to construct the second plot <code>p.self</code>.</li>
+<li><code>p.acc + p.self</code>: tells R to put the two plots together so they appear side-by-side in a grid for easy comparison.</li>
+</ol>
+<p>In using pipes in the code, I am structuring the code so that it works — and is presented — in a sequence of steps. There are different ways to write code but I find this way easier to work with and to read and I think you will too.</p>
+<p>What you can see is that each line ending in a <code>%&gt;</code> pipe passes something on to the next line. A following line takes the output of the process coded in the preceding line, and works with it.</p>
+<p>Each step is executed in turn, in strict sequence. This means that if I delete the line <code>study.one.gen %&gt;%</code> then the following lines cannot work because the <code>ggplot()</code> function will be looking for a variable <code>average</code> that does not yet exist.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>You can see that in the data processing part of the code, successive steps in data processing end in a pipe <code>%&gt;%</code>.</li>
+<li>In contrast, successive steps of the plotting code add <code>ggplot</code> elements line by line with each line (except the last) ending in a <code>+</code>.</li>
+</ul>
+</div>
+</div>
+<p>Notice that none of the processing steps actually changes the dataset called <code>study.one.gen</code>. The results of the process exist and can be used only within the sequence of steps coded to produce the plots.</p>
+<ul>
+<li>You can read a clear explanation of pipes <a href="https://r4ds.had.co.nz/pipes.html" class="external" target="_blank">here</a>.</li>
+<li>You can read about the new <code>geom_vline()</code> <a href="https://ggplot2.tidyverse.org/reference/geom_abline.html" class="external" target="_blank">here</a>.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1069,26 +1170,58 @@ nd_1_r-&gt;nd_2
 <li>We draw the plot by grouping together similar values in bins</li>
 <li>Heights of bars represent numbers of cases with similar values in same bin</li>
 </ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Notes</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>study.one.gen <span class="sc">%&gt;%</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.acc)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> .<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(study.one.gen<span class="sc">$</span>mean.acc),</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>           <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">0.6</span>, <span class="at">y =</span> <span class="dv">60</span>,</span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">colour =</span> <span class="st">"red"</span>,</span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">label =</span> <span class="st">"average value</span><span class="sc">\n</span><span class="st">shown in red"</span>) <span class="sc">+</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>           <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values (`geom_bar()`).</code></pre>
-</div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-study-one-gen-acc-histograms-case" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="hypotheses-associations_files/figure-html/hist-1-b-1.png" class="img-fluid figure-img" alt="The 'mean accuracy' histogram shows how 'mean accuracy' scores vary between about 0.3 and 1.0, with a peak, indicated by a vertical red line, around .8." width="480"></p>
-<figcaption class="figure-caption">Distribution of mean accuracy</figcaption>
+<p><img src="hypotheses-associations_files/figure-html/fig-study-one-gen-acc-histograms-case-1.png" class="img-fluid figure-img" alt="The 'mean accuracy' histogram shows how 'mean accuracy' scores vary between about 0.3 and 1.0, with a peak, indicated by a vertical red line, around .8." width="480"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.4: Distribution of mean accuracy</figcaption>
 </figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>study.one.gen <span class="sc">%&gt;%</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.acc)) <span class="sc">+</span> </span>
+<span id="cb5-3"><a href="#cb5-3"></a>           <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> .<span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>           <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(study.one.gen<span class="sc">$</span>mean.acc),</span>
+<span id="cb5-5"><a href="#cb5-5"></a>                      <span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>           <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">0.6</span>, <span class="at">y =</span> <span class="dv">60</span>,</span>
+<span id="cb5-7"><a href="#cb5-7"></a>                    <span class="at">colour =</span> <span class="st">"red"</span>,</span>
+<span id="cb5-8"><a href="#cb5-8"></a>                    <span class="at">label =</span> <span class="st">"average value</span><span class="sc">\n</span><span class="st">shown in red"</span>) <span class="sc">+</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a>           <span class="fu">xlab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a>           <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We go through the code line by line. It will be useful to identify some differences between this chunk of code and the previous chunk of code.</p>
+<ol type="1">
+<li>We are going to use {tidyverse} library functions to construct the plots and {patchwork} library functions to assemble the plots into a grid. I assume you have already run the <code>library()</code> function to get these libraries. We do not need to do it again in the same R session.</li>
+<li>We construct one plot here. We do not give it a name. Run the code and R will show the plot in the plot window immediately.</li>
+<li><code>study.one.gen %&gt;%</code> tells R that we are working with the data-set <code>study.one.gen</code> that we read in earlier.</li>
+<li><code>%&gt;%</code> is the <code>pipe</code> and it is code telling R to work with the <code>study.one.gen</code> data in the next plot processing steps.</li>
+<li><code>ggplot(aes(x = mean.acc)) +</code> takes the <code>study.one.gen</code> data and asks R to use the <code>ggplot()</code> function to produce a plot.</li>
+<li><code>aes(x = mean.acc)</code> tells R that in the plot we want it to show the <code>mean.acc</code> variable values as locations on the x-axis: this is the <em>aesthetic mapping</em>.</li>
+<li><code>geom_histogram(binwidth = .1) +</code> tells R to produce a histogram then add a step, next.</li>
+<li><code>geom_vline(...) +</code> tells R we want to draw a vertical line.</li>
+<li><code>xintercept = mean(study.one.gen$mean.acc), ...</code> tells R to draw the vertical line at the mean value of the variable <code>mean.acc</code> in the <code>study.one.gen</code> data-set.</li>
+<li><code>size = 1.5, colour = "red"</code> tells R we want the vertical line to be red, and 1.5 times the usual size.</li>
+<li><code>annotate("text", ...</code>** tells R to write some text.</li>
+<li><code>x = 0.6, y = 60</code>** tells R where to write the text.</li>
+<li><code>colour = "red"</code>** tells R what colour to write the text.</li>
+<li><code>label = "average value\nshown in red"</code>** tells R what text to write.</li>
+<li><code>xlab("mean accuracy") +</code> tells R we want the x-axis label to say that the plot is about <code>"mean accuracy"</code>.</li>
+<li><code>xlim(0, 1.1) +</code> sets limits on the minimum and maximum <code>mean accuracy</code> values shown in the plot.</li>
+<li><code>theme_bw()</code> lastly, we change the theme.</li>
+</ol>
+<ul>
+<li>You can read about the new <code>annotate()</code> function <a href="https://ggplot2.tidyverse.org/reference/annotate.html" class="external" target="_blank">here</a>.</li>
+</ul>
 </div>
 </div>
 </div>
@@ -1100,26 +1233,11 @@ nd_1_r-&gt;nd_2
 <li>The accuracy score for the person in row 1 is located at <span class="math inline">\(x = .49\)</span>, marked in blue</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>study.one.gen <span class="sc">%&gt;%</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.acc)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> .<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(study.one.gen<span class="sc">$</span>mean.acc),</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.49</span>, <span class="at">size =</span> <span class="fl">1.25</span>, <span class="at">colour =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>           <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">0.7</span>, <span class="at">y =</span> <span class="dv">60</span>, <span class="at">colour =</span> <span class="st">"red"</span>,</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">label =</span> <span class="st">"average</span><span class="sc">\n</span><span class="st">value"</span>) <span class="sc">+</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>           <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">0.3</span>, <span class="at">y =</span> <span class="dv">40</span>, <span class="at">colour =</span> <span class="st">"blue"</span>,</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>                    <span class="at">label =</span> <span class="st">"value for</span><span class="sc">\n</span><span class="st">person in row 1"</span>) <span class="sc">+</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>           <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values (`geom_bar()`).</code></pre>
-</div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-study-one-gen-acc-histograms-one-case" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="hypotheses-associations_files/figure-html/hist-1-c-1.png" class="img-fluid figure-img" alt="The 'mean accuracy' histogram shows how 'mean accuracy' scores vary between about 0.3 and 1.0, with the average of mean accuracy scores, indicated by a vertical red line located near .8, and the score of the person in row 1 of the dataset, indicated by a blue line located at .49." width="480"></p>
-<figcaption class="figure-caption">Distribution of mean accuracy</figcaption>
+<p><img src="hypotheses-associations_files/figure-html/fig-study-one-gen-acc-histograms-one-case-1.png" class="img-fluid figure-img" alt="The 'mean accuracy' histogram shows how 'mean accuracy' scores vary between about 0.3 and 1.0, with the average of mean accuracy scores, indicated by a vertical red line located near .8, and the score of the person in row 1 of the data-set, indicated by a blue line located at .49." width="480"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.5: Distribution of mean accuracy</figcaption>
 </figure>
 </div>
 </div>
@@ -1131,26 +1249,11 @@ nd_1_r-&gt;nd_2
 <li>In comparison, the mean accuracy score for the person in row 4 is located at <span class="math inline">\(x = .94\)</span>, marked in blue</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>study.one.gen <span class="sc">%&gt;%</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.acc)) <span class="sc">+</span> <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> .<span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fu">mean</span>(study.one.gen<span class="sc">$</span>mean.acc),</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                      <span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_vline</span>(<span class="at">xintercept =</span> <span class="fl">0.94</span>, <span class="at">size =</span> <span class="fl">1.25</span>, <span class="at">colour =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>           <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">0.7</span>, <span class="at">y =</span> <span class="dv">60</span>, <span class="at">colour =</span> <span class="st">"red"</span>,</span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">label =</span> <span class="st">"average</span><span class="sc">\n</span><span class="st">value"</span>) <span class="sc">+</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>           <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">1.05</span>, <span class="at">y =</span> <span class="dv">20</span>, <span class="at">colour =</span> <span class="st">"blue"</span>,</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>                    <span class="at">label =</span> <span class="st">"value for</span><span class="sc">\n</span><span class="st">person in </span><span class="sc">\n</span><span class="st">row 4"</span>) <span class="sc">+</span></span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>           <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values (`geom_bar()`).</code></pre>
-</div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-study-one-gen-acc-histograms-another-case" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="hypotheses-associations_files/figure-html/hist-1-d-1.png" class="img-fluid figure-img" alt="The 'mean accuracy' histogram shows how 'mean accuracy' scores vary between about 0.3 and 1.0, with the average of mean accuracy scores, indicated by a vertical red line located near .8, and the score of the person in row 4 of the dataset, indicated by a blue line located at .94." width="480"></p>
-<figcaption class="figure-caption">Distribution of mean accuracy</figcaption>
+<p><img src="hypotheses-associations_files/figure-html/fig-study-one-gen-acc-histograms-another-case-1.png" class="img-fluid figure-img" alt="The 'mean accuracy' histogram shows how 'mean accuracy' scores vary between about 0.3 and 1.0, with the average of mean accuracy scores, indicated by a vertical red line located near .8, and the score of the person in row 4 of the data-set, indicated by a blue line located at .94." width="480"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.6: Distribution of mean accuracy</figcaption>
 </figure>
 </div>
 </div>
@@ -1169,59 +1272,117 @@ nd_1_r-&gt;nd_2
 <ul>
 <li>Is variation in the mean accuracy of understanding (of health information) associated with variation in mean self-rated accuracy of understanding?</li>
 </ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Notes</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>p.acc <span class="ot">&lt;-</span> study.one.gen <span class="sc">%&gt;%</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.self, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ylab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlab</span>(<span class="st">"mean self-rated accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>           <span class="fu">theme_bw</span>()</span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>p.self <span class="ot">&lt;-</span> study.one.gen <span class="sc">%&gt;%</span></span>
-<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> mean.self, <span class="at">x =</span> mean.acc)) <span class="sc">+</span></span>
-<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ylab</span>(<span class="st">"mean self-rated accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="sc">+</span> <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
-<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a>           <span class="fu">theme_bw</span>()</span>
-<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-17"><a href="#cb14-17" aria-hidden="true" tabindex="-1"></a>p.acc <span class="sc">+</span> p.self</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-study-one-gen-scatter-acc-self-grid" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="hypotheses-associations_files/figure-html/scatter-1-a-1.png" class="img-fluid figure-img" alt="The figure shows two scatterplots, side by side: both plots show points where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in the example data. The plot on the left orients the presentation with 'mean accuracy' on the y axis. The plot on the right orients the presentation with 'mean self-rated accuracy' on the y axis." width="672"></p>
-<figcaption class="figure-caption">Scatterplots showing whether values on mean accuracy (<code>mean.acc</code>) vary together with values on mean self-rated accuracy (<code>mean.self</code>) for the participants in this sample</figcaption>
+<p><img src="hypotheses-associations_files/figure-html/fig-study-one-gen-scatter-acc-self-grid-1.png" class="img-fluid figure-img" alt="The figure shows two scatterplots, side by side: both plots show points where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in the example data. The plot on the left orients the presentation with 'mean accuracy' on the y axis. The plot on the right orients the presentation with 'mean self-rated accuracy' on the y axis." width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.7: Scatterplots showing whether values on mean accuracy (<code>mean.acc</code>) vary together with values on mean self-rated accuracy (<code>mean.self</code>) for the participants in this sample</figcaption>
 </figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>p.acc <span class="ot">&lt;-</span> study.one.gen <span class="sc">%&gt;%</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.self, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>           <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>           <span class="fu">ylab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>           <span class="fu">xlab</span>(<span class="st">"mean self-rated accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a>           <span class="fu">theme_bw</span>()</span>
+<span id="cb6-8"><a href="#cb6-8"></a></span>
+<span id="cb6-9"><a href="#cb6-9"></a>p.self <span class="ot">&lt;-</span> study.one.gen <span class="sc">%&gt;%</span></span>
+<span id="cb6-10"><a href="#cb6-10"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y =</span> mean.self, <span class="at">x =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb6-11"><a href="#cb6-11"></a>           <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a>           <span class="fu">xlab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>           <span class="fu">ylab</span>(<span class="st">"mean self-rated accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a>           <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="sc">+</span> <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
+<span id="cb6-15"><a href="#cb6-15"></a>           <span class="fu">theme_bw</span>()</span>
+<span id="cb6-16"><a href="#cb6-16"></a></span>
+<span id="cb6-17"><a href="#cb6-17"></a>p.acc <span class="sc">+</span> p.self</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ol type="1">
+<li>We are going to use {tidyverse} library functions to construct the plots and {patchwork} library functions to assemble the plots into a grid. I assume you have already run the <code>library()</code> function to get these libraries. We do not need to do it again in the same R session.</li>
+<li>We construct two plots. We call the plots <code>p.acc</code> and <code>p.self</code> <em>again</em>. Each plot is constructed in a similar way so we explain the main steps for one plot. The plots are constructed but not shown until the last line of code is run.</li>
+<li><code>p.acc &lt;- ...</code> creates a plot called <code>p.acc</code>, using the processes that are specified in the next lines of code that follow.</li>
+<li><code>... &lt;- study.one.gen</code> tells R that we are working with the data-set <code>study.one.gen</code> that we read in earlier.</li>
+<li><code>%&gt;%</code> is called the <code>pipe</code> and it is code telling R to work with the <code>study.one.gen</code> data in the next plot processing steps.</li>
+<li><code>ggplot(...) +</code> takes the <code>study.one.gen</code> data and asks R to use the <code>ggplot()</code> function to produce a plot.</li>
+<li><code>aes(x = mean.self, ...)</code> tells R that in the plot we want it to show the <code>mean.self</code> variable values as horizontal (left to right) locations on the x-axis: this is one <em>aesthetic mapping</em>.</li>
+<li><code>aes(... , y = mean.acc)</code> tells R that in the plot we want it to show the <code>mean.acc</code> variable values as vertical (low to high) locations on the y-axis: this is the second <em>aesthetic mapping</em>.</li>
+<li><code>aes(x = mean.self, y = mean.acc)</code> thus encodes two aesthetic mappings, telling R the position of the things it will draw (it will draw points, next): the vertical height, and the horizontal left-to-right position.</li>
+<li><code>geom_point(...)</code> tells R to produce a scatterplot, representing data values as points.</li>
+<li><code>size = 2, alpha = .5</code> tells R we want the points to be 2 times the usual size with <code>size = 2</code>, and half the usual level of opacity (i.e.&nbsp;how solid the colour is) with <code>alpha = .5</code>.</li>
+<li><code>ylab("mean accuracy") +</code> tells R we want the y-axis label to say that the plot is of <code>"mean accuracy"</code>.</li>
+<li><code>xlab("mean self-rated accuracy") +</code> tells R we want the y-axis label to say that the plot is of <code>"mean self-rated accuracy"</code>.</li>
+<li><code>ylim(0, 10) + xlim(0, 1.1) +</code> sets limits on the minimum and maximum <code>mean accuracy</code> and <code>mean self-rated accuracy</code> values shown in the plot.</li>
+<li><code>theme_bw()</code> changes the theme.</li>
+<li>Then we have code to construct the second plot <code>p.self</code>.</li>
+<li><code>p.acc + p.self</code>: tells R to put the two plots together so they appear side-by-side in a grid for easy comparison.</li>
+</ol>
+<ul>
+<li>You can read about the <code>geom_point()</code> function <a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="external" target="_blank">here</a>.</li>
+</ul>
 </div>
 </div>
 </div>
 </section>
 <section id="a-scatterplot-is-a-useful-way-to-examine-if-the-values-of-two-or-more-variables-vary-together" class="level3" data-number="1.4.34">
 <h3 data-number="1.4.34" class="anchored" data-anchor-id="a-scatterplot-is-a-useful-way-to-examine-if-the-values-of-two-or-more-variables-vary-together"><span class="header-section-number">1.4.34</span> A scatterplot is a useful way to examine if the values of two or more variables vary together</h3>
-<ul>
+<ol type="1">
 <li>Mean accuracy scores vary between 0.0 and 1.0</li>
+</ol>
+<ul>
 <li>The height of each point shows the observed value of accuracy on the y-axis</li>
+</ul>
+<ol start="2" type="1">
 <li>Self-rated accuracy scores vary between 1 and 9</li>
+</ol>
+<ul>
 <li>The horizontal position of each point shows the observed value of self-rated accuracy on the x-axis</li>
 </ul>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Plot</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Notes</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-4-1-tab">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>study.one.gen <span class="sc">%&gt;%</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.self, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ylab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlab</span>(<span class="st">"mean self-rated accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>           <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-study-one-gen-scatter-acc-self-single" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="hypotheses-associations_files/figure-html/scatter-1-b-1.png" class="img-fluid figure-img" alt="The figure shows a scatterplot showing points where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in the example data. The plot orients the presentation with 'mean accuracy' on the y axis." width="480"></p>
-<figcaption class="figure-caption">Scatterplot showing how values on mean accuracy and mean self-rated accuracy vary together</figcaption>
+<p><img src="hypotheses-associations_files/figure-html/fig-study-one-gen-scatter-acc-self-single-1.png" class="img-fluid figure-img" alt="The figure shows a scatterplot showing points where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in the example data. The plot orients the presentation with 'mean accuracy' on the y axis." width="480"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.8: Scatterplot showing how values on mean accuracy and mean self-rated accuracy vary together</figcaption>
 </figure>
 </div>
 </div>
 </div>
+</div>
+<div id="tabset-4-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-4-2-tab">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>study.one.gen <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.self, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>           <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>           <span class="fu">ylab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>           <span class="fu">xlab</span>(<span class="st">"mean self-rated accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>           <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>We use mostly the same code to draw <a href="#fig-study-one-gen-scatter-acc-self-single">Figure&nbsp;<span>1.8</span></a>, compared to the code we used to draw <a href="#fig-study-one-gen-scatter-acc-self-grid">Figure&nbsp;<span>1.7</span></a>, but there is one difference. I do not walk through every line of code, here, but highlight the difference.</p>
+<ol type="1">
+<li>We construct one plot here. We do not give it a name. Run the code and R will show the plot in the plot window immediately.</li>
+<li><code>study.one.gen %&gt;%</code> tells R that we are working with the data-set <code>study.one.gen</code> that we read in earlier.</li>
+<li><code>ggplot(aes(x = mean.self, y = mean.acc)) +</code> takes the <code>study.one.gen</code> data and asks R to use the <code>ggplot()</code> function to produce a plot.</li>
+<li><code>aes(x = mean.self, y = mean.acc)</code> thus encodes two aesthetic mappings, telling R the position of the things it will draw (it will draw points, next): the vertical height, and the horizontal left-to-right position.</li>
+</ol>
+</div>
+</div>
+</div>
+<p>We can focus in one point, showing the data for one person.</p>
 <ul>
 <li>We have a sample of 170 people</li>
 <li>For each person, we have a value for the mean accuracy and a <em>paired</em> value for the mean self-rated accuracy</li>
@@ -1229,19 +1390,11 @@ nd_1_r-&gt;nd_2
 <li>In red: someone scored 3.48 on mean self-rated accuracy, 0.57 on mean accuracy</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>study.one.gen <span class="sc">%&gt;%</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.self, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fl">3.48</span>, <span class="at">y =</span> <span class="fl">0.57</span>), <span class="at">size =</span> <span class="fl">2.5</span>, <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">shape =</span> <span class="st">"star"</span>) <span class="sc">+</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ylab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlab</span>(<span class="st">"mean self-rated accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
-<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>           <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-study-one-gen-scatter-acc-self-single-highlighted" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="hypotheses-associations_files/figure-html/scatter-1-c-1.png" class="img-fluid figure-img" alt="The figure shows a scatterplot showing points where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in the example data. The plot orients the presentation with 'mean accuracy' on the y axis." width="480"></p>
-<figcaption class="figure-caption">Scatterplot showing how values on mean accuracy and mean self-rated accuracy vary together</figcaption>
+<p><img src="hypotheses-associations_files/figure-html/fig-study-one-gen-scatter-acc-self-single-highlighted-1.png" class="img-fluid figure-img" alt="The figure shows a scatterplot showing points where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in the example data. The plot orients the presentation with 'mean accuracy' on the y axis." width="480"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.9: Scatterplot showing how values on mean accuracy and mean self-rated accuracy vary together</figcaption>
 </figure>
 </div>
 </div>
@@ -1250,14 +1403,14 @@ nd_1_r-&gt;nd_2
 <section id="the-r-code-for-a-correlation-test-bit-by-bit" class="level3" data-number="1.4.35">
 <h3 data-number="1.4.35" class="anchored" data-anchor-id="the-r-code-for-a-correlation-test-bit-by-bit"><span class="header-section-number">1.4.35</span> The R code for a correlation test, bit by bit</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="fu">cor.test</span>(study.one.gen<span class="sc">$</span>mean.acc,</span>
-<span id="cb17-2"><a href="#cb17-2"></a>         study.one.gen<span class="sc">$</span>mean.self,</span>
-<span id="cb17-3"><a href="#cb17-3"></a>         <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">cor.test</span>(study.one.gen<span class="sc">$</span>mean.acc,</span>
+<span id="cb8-2"><a href="#cb8-2"></a>         study.one.gen<span class="sc">$</span>mean.self,</span>
+<span id="cb8-3"><a href="#cb8-3"></a>         <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol type="1">
 <li>We specify the <code>cor.test</code> function, and name one variable <code>study.one.gen$mean.acc</code></li>
 <li>Then we name the second variable <code>study.one.gen$mean.self</code></li>
-<li>Last we specify the correlation <code>method = "pearson"</code> because we have a choice</li>
+<li>Last we specify the correlation <code>method = "pearson"</code> because we have a choice (we can apply other methods to estimate the correlation, e.g., <em>Spearmans</em>)</li>
 </ol>
 </section>
 <section id="identifying-the-key-information-in-the-results-from-one-correlation-test" class="level3 smaller" data-number="1.4.36">
@@ -1268,9 +1421,9 @@ nd_1_r-&gt;nd_2
 <li>And <code>p-value = 2.026e-11</code> indicating that the correlation is <em>significant</em> <span class="math inline">\(p &lt; .001\)</span></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(study.one.gen<span class="sc">$</span>mean.acc,</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>         study.one.gen<span class="sc">$</span>mean.self,</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(study.one.gen<span class="sc">$</span>mean.acc,</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>         study.one.gen<span class="sc">$</span>mean.self,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>         <span class="at">method =</span> <span class="st">"pearson"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's product-moment correlation
@@ -1292,7 +1445,7 @@ sample estimates:
 <li>Usually, we report a correlation like this:</li>
 </ul>
 <blockquote class="blockquote">
-<p>Mean accuracy and mean self-rated accuracy were significantly correlated (<span class="math inline">\(r = .49 (167 \text{ df}), p &lt; .001\)</span>). Higher mean accuracy scores are associated with higher mean self-rated accuracy scores.</p>
+<p>Mean accuracy and mean self-rated accuracy were significantly correlated (<span class="math inline">\(r (167 \text{ df}) = .49, p &lt; .001\)</span>). Higher mean accuracy scores are associated with higher mean self-rated accuracy scores.</p>
 </blockquote>
 </section>
 <section id="interpreting-correlations-with-the-help-of-visualization" class="level3 smaller" data-number="1.4.38">
@@ -1302,18 +1455,11 @@ sample estimates:
 <li>We can see that higher mean accuracy (<code>mean.acc</code>) scores are associated with higher mean self-rated accuracy (<code>mean.self</code>) scores</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>study.one.gen <span class="sc">%&gt;%</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.self, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ylab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlab</span>(<span class="st">"mean self-rated accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
-<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>           <span class="fu">theme_bw</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-study-one-gen-scatter-acc-self-single-repeat-1" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="hypotheses-associations_files/figure-html/scatter-1-d-1.png" class="img-fluid figure-img" alt="The figure shows a scatterplot showing points where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in the example data. The plot orients the presentation with 'mean accuracy' on the y axis." width="480"></p>
-<figcaption class="figure-caption">Scatterplot showing how values on mean accuracy and mean self-rated accuracy vary together</figcaption>
+<p><img src="hypotheses-associations_files/figure-html/fig-study-one-gen-scatter-acc-self-single-repeat-1-1.png" class="img-fluid figure-img" alt="The figure shows a scatterplot showing points where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in the example data. The plot orients the presentation with 'mean accuracy' on the y axis." width="480"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.10: Scatterplot showing how values on mean accuracy and mean self-rated accuracy vary together</figcaption>
 </figure>
 </div>
 </div>
@@ -1321,55 +1467,13 @@ sample estimates:
 </section>
 <section id="what-will-different-kinds-of-correlations-look-like" class="level3" data-number="1.4.39">
 <h3 data-number="1.4.39" class="anchored" data-anchor-id="what-will-different-kinds-of-correlations-look-like"><span class="header-section-number">1.4.39</span> What will different kinds of correlations look like?</h3>
-<p>We can simulate data to demonstrate: <strong>(left)</strong> the correlation is positive, <span class="math inline">\(r = .5\)</span>; <strong>(right)</strong> the correlation is negative, <span class="math inline">\(r = -.5\)</span></p>
+<p>We can simulate data to demonstrate [what scatterplots look like if]: <strong>(left)</strong> the correlation is positive, <span class="math inline">\(r = .5\)</span>; <strong>(right)</strong> the correlation is negative, <span class="math inline">\(r = -.5\)</span></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># -- if we look at the study one sample data</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="co"># -- and the correlation between mean.self and mean.acc</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="co"># describe(study.one.gen)</span></span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="co"># cor.test(study.one.gen$mean.acc, study.one.gen$mean.self)</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a><span class="co"># -- we can simulate roughly the data and the association:</span></span>
-<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>dat<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(<span class="at">n =</span> <span class="dv">150</span>,</span>
-<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mu =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="dv">7</span>),</span>
-<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sd =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">1.5</span>),</span>
-<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">r =</span> <span class="fu">c</span>(<span class="fl">0.5</span>),</span>
-<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>                     <span class="at">varnames =</span> <span class="fu">c</span>(<span class="st">"mean.acc"</span>, <span class="st">"mean.self"</span>),</span>
-<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>                     <span class="at">empirical =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>dat<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(<span class="at">n =</span> <span class="dv">150</span>,</span>
-<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mu =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="dv">7</span>),</span>
-<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sd =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">1.5</span>),</span>
-<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a>                     <span class="at">r =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="fl">0.5</span>),</span>
-<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>                     <span class="at">varnames =</span> <span class="fu">c</span>(<span class="st">"mean.acc"</span>, <span class="st">"mean.self"</span>),</span>
-<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>                     <span class="at">empirical =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>p.acc.pos <span class="ot">&lt;-</span> dat<span class="fl">.1</span> <span class="sc">%&gt;%</span></span>
-<span id="cb21-21"><a href="#cb21-21" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.self, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
-<span id="cb21-22"><a href="#cb21-22" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb21-23"><a href="#cb21-23" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ylab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb21-24"><a href="#cb21-24" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlab</span>(<span class="st">"mean self-rated accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb21-25"><a href="#cb21-25" aria-hidden="true" tabindex="-1"></a>           <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">2.5</span>, <span class="at">y =</span> <span class="fl">0.3</span>, <span class="at">label =</span> <span class="st">"positive r"</span>, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
-<span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a>           <span class="fu">theme_bw</span>()</span>
-<span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>p.acc.neg <span class="ot">&lt;-</span> dat<span class="fl">.2</span> <span class="sc">%&gt;%</span></span>
-<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.self, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
-<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb21-32"><a href="#cb21-32" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ylab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb21-33"><a href="#cb21-33" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlab</span>(<span class="st">"mean self-rated accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb21-34"><a href="#cb21-34" aria-hidden="true" tabindex="-1"></a>           <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">2.5</span>, <span class="at">y =</span> <span class="fl">0.3</span>, <span class="at">label =</span> <span class="st">"negative r"</span>, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb21-35"><a href="#cb21-35" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
-<span id="cb21-36"><a href="#cb21-36" aria-hidden="true" tabindex="-1"></a>           <span class="fu">theme_bw</span>()</span>
-<span id="cb21-37"><a href="#cb21-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-38"><a href="#cb21-38" aria-hidden="true" tabindex="-1"></a>p.acc.pos <span class="sc">+</span> p.acc.neg</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 2 rows containing missing values (`geom_point()`).
-Removed 2 rows containing missing values (`geom_point()`).</code></pre>
-</div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-study-one-gen-scatter-acc-self-grid-simulated-signs" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="hypotheses-associations_files/figure-html/scatter-sim-a-1.png" class="img-fluid figure-img" alt="The figure shows two scatterplots showing how simulated data values on mean accuracy and mean self-rated accuracy *could* vary together given positive or negative correlations. Each plot shows points, where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in a simulated dataset. The plot on the left shows the scatter of points when data are simulated assuming r = .5. The plot on the left shows the scatter of points when data are simulated assuming r = -.5." width="672"></p>
-<figcaption class="figure-caption">Scatterplots showing how simulated data values on mean accuracy and mean self-rated accuracy <em>could</em> vary together given positive or negative correlations</figcaption>
+<p><img src="hypotheses-associations_files/figure-html/fig-study-one-gen-scatter-acc-self-grid-simulated-signs-1.png" class="img-fluid figure-img" alt="The figure shows two scatterplots showing how simulated data values on mean accuracy and mean self-rated accuracy *could* vary together given positive or negative correlations. Each plot shows points, where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in a simulated data-set. The plot on the left shows the scatter of points when data are simulated assuming r = .5. The plot on the left shows the scatter of points when data are simulated assuming r = -.5." width="672"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.11: Scatterplots showing how simulated data values on mean accuracy and mean self-rated accuracy <em>could</em> vary together given positive or negative correlations</figcaption>
 </figure>
 </div>
 </div>
@@ -1382,95 +1486,11 @@ Removed 2 rows containing missing values (`geom_point()`).</code></pre>
 <li>As the correlation increases, the points cluster together more closely</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># -- if we look at the study one sample data</span></span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="co"># -- and the correlation between mean.self and mean.acc</span></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="co"># describe(study.one.gen)</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co"># cor.test(study.one.gen$mean.acc, study.one.gen$mean.self)</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co"># -- we can simulate roughly the data and the association:</span></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>dat<span class="fl">.1</span> <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(<span class="at">n =</span> <span class="dv">150</span>,</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mu =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="dv">7</span>),</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sd =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">1.5</span>),</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>                     <span class="at">r =</span> <span class="fu">c</span>(<span class="fl">0.1</span>),</span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>                     <span class="at">varnames =</span> <span class="fu">c</span>(<span class="st">"mean.acc"</span>, <span class="st">"mean.self"</span>),</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>                     <span class="at">empirical =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>dat<span class="fl">.2</span> <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(<span class="at">n =</span> <span class="dv">150</span>,</span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mu =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="dv">7</span>),</span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sd =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">1.5</span>),</span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>                     <span class="at">r =</span> <span class="fu">c</span>(<span class="fl">0.3</span>),</span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>                     <span class="at">varnames =</span> <span class="fu">c</span>(<span class="st">"mean.acc"</span>, <span class="st">"mean.self"</span>),</span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a>                     <span class="at">empirical =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>dat<span class="fl">.3</span> <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(<span class="at">n =</span> <span class="dv">150</span>,</span>
-<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mu =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="dv">7</span>),</span>
-<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sd =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">1.5</span>),</span>
-<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>                     <span class="at">r =</span> <span class="fu">c</span>(<span class="fl">0.5</span>),</span>
-<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a>                     <span class="at">varnames =</span> <span class="fu">c</span>(<span class="st">"mean.acc"</span>, <span class="st">"mean.self"</span>),</span>
-<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>                     <span class="at">empirical =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>dat<span class="fl">.4</span> <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(<span class="at">n =</span> <span class="dv">150</span>,</span>
-<span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a>                     <span class="at">mu =</span> <span class="fu">c</span>(<span class="fl">0.8</span>, <span class="dv">7</span>),</span>
-<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a>                     <span class="at">sd =</span> <span class="fu">c</span>(<span class="fl">0.1</span>, <span class="fl">1.5</span>),</span>
-<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a>                     <span class="at">r =</span> <span class="fu">c</span>(<span class="fl">0.8</span>),</span>
-<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a>                     <span class="at">varnames =</span> <span class="fu">c</span>(<span class="st">"mean.acc"</span>, <span class="st">"mean.self"</span>),</span>
-<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a>                     <span class="at">empirical =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a>p.acc.low <span class="ot">&lt;-</span> dat<span class="fl">.1</span> <span class="sc">%&gt;%</span></span>
-<span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.self, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
-<span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ylab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlab</span>(<span class="st">"mean self-rated accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a>           <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">2.5</span>, <span class="at">y =</span> <span class="fl">0.3</span>, <span class="at">label =</span> <span class="st">"small r = 0.1"</span>, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
-<span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a>           <span class="fu">theme_bw</span>()</span>
-<span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-44"><a href="#cb23-44" aria-hidden="true" tabindex="-1"></a>p.acc.med <span class="ot">&lt;-</span> dat<span class="fl">.2</span> <span class="sc">%&gt;%</span></span>
-<span id="cb23-45"><a href="#cb23-45" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.self, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
-<span id="cb23-46"><a href="#cb23-46" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb23-47"><a href="#cb23-47" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ylab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb23-48"><a href="#cb23-48" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlab</span>(<span class="st">"mean self-rated accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb23-49"><a href="#cb23-49" aria-hidden="true" tabindex="-1"></a>           <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">2.5</span>, <span class="at">y =</span> <span class="fl">0.3</span>, <span class="at">label =</span> <span class="st">"medium r = 0.3"</span>, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb23-50"><a href="#cb23-50" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
-<span id="cb23-51"><a href="#cb23-51" aria-hidden="true" tabindex="-1"></a>           <span class="fu">theme_bw</span>()</span>
-<span id="cb23-52"><a href="#cb23-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-53"><a href="#cb23-53" aria-hidden="true" tabindex="-1"></a>p.acc.hig <span class="ot">&lt;-</span> dat<span class="fl">.3</span> <span class="sc">%&gt;%</span></span>
-<span id="cb23-54"><a href="#cb23-54" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.self, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
-<span id="cb23-55"><a href="#cb23-55" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb23-56"><a href="#cb23-56" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ylab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb23-57"><a href="#cb23-57" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlab</span>(<span class="st">"mean self-rated accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb23-58"><a href="#cb23-58" aria-hidden="true" tabindex="-1"></a>           <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">2.5</span>, <span class="at">y =</span> <span class="fl">0.3</span>, <span class="at">label =</span> <span class="st">"large r = 0.5"</span>, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb23-59"><a href="#cb23-59" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
-<span id="cb23-60"><a href="#cb23-60" aria-hidden="true" tabindex="-1"></a>           <span class="fu">theme_bw</span>()</span>
-<span id="cb23-61"><a href="#cb23-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-62"><a href="#cb23-62" aria-hidden="true" tabindex="-1"></a>p.acc.higher <span class="ot">&lt;-</span> dat<span class="fl">.4</span> <span class="sc">%&gt;%</span></span>
-<span id="cb23-63"><a href="#cb23-63" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mean.self, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
-<span id="cb23-64"><a href="#cb23-64" aria-hidden="true" tabindex="-1"></a>           <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">alpha =</span> .<span class="dv">5</span>) <span class="sc">+</span></span>
-<span id="cb23-65"><a href="#cb23-65" aria-hidden="true" tabindex="-1"></a>           <span class="fu">ylab</span>(<span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb23-66"><a href="#cb23-66" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlab</span>(<span class="st">"mean self-rated accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb23-67"><a href="#cb23-67" aria-hidden="true" tabindex="-1"></a>           <span class="fu">annotate</span>(<span class="st">"text"</span>, <span class="at">x =</span> <span class="fl">2.5</span>, <span class="at">y =</span> <span class="fl">0.3</span>, <span class="at">label =</span> <span class="st">"larger r = 0.8"</span>, <span class="at">colour =</span> <span class="st">"red"</span>) <span class="sc">+</span></span>
-<span id="cb23-68"><a href="#cb23-68" aria-hidden="true" tabindex="-1"></a>           <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">10</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>) <span class="sc">+</span></span>
-<span id="cb23-69"><a href="#cb23-69" aria-hidden="true" tabindex="-1"></a>           <span class="fu">theme_bw</span>()</span>
-<span id="cb23-70"><a href="#cb23-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-71"><a href="#cb23-71" aria-hidden="true" tabindex="-1"></a>p.acc.low <span class="sc">+</span> p.acc.med <span class="sc">+</span> p.acc.hig <span class="sc">+</span> p.acc.higher <span class="sc">+</span></span>
-<span id="cb23-72"><a href="#cb23-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">plot_layout</span>(<span class="at">ncol =</span> <span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 6 rows containing missing values (`geom_point()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 1 rows containing missing values (`geom_point()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 5 rows containing missing values (`geom_point()`).</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 1 rows containing missing values (`geom_point()`).</code></pre>
-</div>
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
+<div id="fig-study-one-gen-scatter-acc-self-grid-simulated-sizes" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
-<p><img src="hypotheses-associations_files/figure-html/scatter-sim-b-1.png" class="img-fluid figure-img" alt="The figure shows 4 scatterplots showing how simulated data values on mean accuracy and mean self-rated accuracy *could* vary together given positive correlations of increasing size. Each plot shows points, where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in a simulated dataset. The plots show the scatter of points, from left to right, (1.) if r - .1; (2.) if r = .3; (3.) if r = .5; (4.) if r = .8" width="1152"></p>
-<figcaption class="figure-caption">Scatterplots showing how simulated data values on mean accuracy and mean self-rated accuracy <em>could</em> vary together given positive correlations of increasing size</figcaption>
+<p><img src="hypotheses-associations_files/figure-html/fig-study-one-gen-scatter-acc-self-grid-simulated-sizes-1.png" class="img-fluid figure-img" alt="The figure shows 4 scatterplots showing how simulated data values on mean accuracy and mean self-rated accuracy *could* vary together given positive correlations of increasing size. Each plot shows points, where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in a simulated data-set. The plots show the scatter of points, from left to right, (1.) if r - .1; (2.) if r = .3; (3.) if r = .5; (4.) if r = .8" width="1152"></p>
+<figcaption class="figure-caption">Figure&nbsp;1.12: Scatterplots showing how simulated data values on mean accuracy and mean self-rated accuracy <em>could</em> vary together given positive correlations of increasing size</figcaption>
 </figure>
 </div>
 </div>

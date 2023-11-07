@@ -168,11 +168,9 @@ and .R code files:
 
 You will use these files for your practical learning.
 
-You can download the .R files and the data .csv files from the link here:
+You can download the .R files and the data .csv files in a single folder, using the link [here](files/PSYC401_week7_materials.zip).
 
-[PSYC401_week6_materials.zip](files/PSYC401_week6_materials.zip)
-
-or you can download them from the module [Moodle page for PSYC401](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse7){target="_blank"}.
+Or you can download the files as individual files from the module [Moodle page for PSYC401](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse7){target="_blank"}.
 
 Once you have downloaded the file folder, you will need to upload it to the R-Studio server to access and use the R files.
 
@@ -233,7 +231,7 @@ The activity `401-associations-workbook.R` file takes you through the tasks, one
 
 If you are unsure about what you need to do, check the advice in `401-associations-how-to.R`.
 
-You will see that you can match a task in the `activity` to the same task in the `how-to`. The `how-to` shows you what function you need and how you should write the function code. You will need to change the names of the dataset or the variables to complete the tasks in the activity.
+You will see that you can match a task in the `activity` to the same task in the `how-to`. The `how-to` shows you what function you need and how you should write the function code. You will need to change the names of the data-set or the variables to complete the tasks in the activity.
 
 This process of adapting demonstration code is a process critical to data literacy and to effective problem solving in working with data in psychological science.
 
@@ -275,9 +273,15 @@ The answers version will present my answers for questions, and some extra inform
 
 Some people find it easier to read notes than to watch video recordings. This is why we also include the lecture notes here.
 
+::: callout-tip
+In these notes, I provide notes on the code steps that result in the plot. 
+
+- Click on the `Notes` tab to see them.
+:::
+
 ### Better methods can't make up for mediocre theory
 
--   **Previously -- in week 6**: I talked about improving science through open *reproducible* methods but we cannot make progress without better theory and data [@smaldino2019better]
+-   *Previously* -- in week 6: I talked about improving science through open *reproducible* methods but we cannot make progress without better theory and data [@smaldino2019better]
 -   We want open reproducible findings but we do not just want reproducibility
 -   We want to make sense of people in useful ways
 
@@ -310,7 +314,9 @@ Some people find it easier to read notes than to watch video recordings. This is
 -   We train hypothesis testing but we also need to train *hypothesising*:
 -   how to measure, operationalize, and how to decide if hypothesis is corroborated or not
 
-**We want to be capable of being wrong**
+::: callout-tip
+We want to be capable of being wrong
+:::
 
 ### Statistical rituals largely eliminate critical statistical *thinking*
 
@@ -500,12 +506,20 @@ digraph Q {
 
 ### Let's look at the data we will use
 
+- First, we need to read the data into R
+
+```{r}
+#| eval: false
+study.one.gen <- read_csv("study-one-general-participants.csv")
+```
+
+-   Next, we should take a look at the data: you can open the data-set in Excel or you can use the `head` command to show the first few rows in 
 -   The person in row 1 has `ETHNICITY` White, is `AGE` 34 years, scored 33 on `Shipley` vocabulary, scored 7 on `HLVA` health literacy and, on average, self-rated their understanding of health information as 7.96 (*so* 8/9, `mean.self`) while scoring 0.49 accuracy in tests of understanding (49% `mean.acc`)
 
 ```{r}
 #| label: study-one-gen-head
-#| fig-cap: "Figure showing an extract of the dataset: 'study.one.gen'"
-#| fig-alt: "Figure showing an extract of the dataset: study.one.gen. We see the two few rows of values observed under the column headers 'mean.acc, mean.self, HLVA, SHIPLEY, AGE, ETHNICITY'"
+#| fig-cap: "Figure showing an extract of the data-set: 'study.one.gen'"
+#| fig-alt: "Figure showing an extract of the data-set: study.one.gen. We see the two few rows of values observed under the column headers 'mean.acc, mean.self, HLVA, SHIPLEY, AGE, ETHNICITY'"
 study.one.gen %>%
     select(mean.acc, mean.self, HLVA, SHIPLEY, AGE, ETHNICITY) %>%
     head(n = 4)
@@ -578,9 +592,13 @@ $$r = \frac{COV_{xy}}{s_xs_y}$$
 
 ### Distributions: How do scores vary?
 
+::: panel-tabset
+## Plot
 ```{r}
-#| label: hist-1-a
-#| fig-cap: "Histograms showing the distribution of mean accuracy and mean self-rated accuracy scores in the 'study.one.gen' dataset: means calculated for each participant over all their responses"
+#| echo: false
+#| warning: false
+#| label: fig-study-one-gen-self-acc-histograms
+#| fig-cap: "Histograms showing the distribution of mean accuracy and mean self-rated accuracy scores in the 'study.one.gen' data-set: means calculated for each participant over all their responses"
 #| fig-alt: "There are two histograms, shown side by side: The 'mean accuracy' histogram shows how 'mean accuracy' scores vary between about 0.3 and 1.0, with a peak, indicated by a vertical red line, around .8; the 'mean self-rated accuracy' histogram shows how 'mean accuracy' scores vary between about 2.5 and 9.0, with a peak, indicated by a vertical red line, around 7."
 p.acc <- study.one.gen %>%
            ggplot(aes(x = mean.acc)) + geom_histogram(binwidth = .1) +
@@ -601,6 +619,77 @@ p.self <- study.one.gen %>%
 p.acc + p.self
 ```
 
+## Notes
+
+```{r}
+#| eval: false
+#| code-line-numbers: true
+library(patchwork)
+library(tidyverse)
+
+p.acc <- study.one.gen %>%
+           ggplot(aes(x = mean.acc)) + 
+           geom_histogram(binwidth = .1) +
+           geom_vline(xintercept = mean(study.one.gen$mean.acc),
+                      size = 1.5, colour = "red") +
+           xlab("mean accuracy") +
+           xlim(0, 1.1) +
+           theme_bw()
+
+p.self <- study.one.gen %>%
+           ggplot(aes(x = mean.self)) + 
+           geom_histogram(binwidth = 1) +
+           geom_vline(xintercept = mean(study.one.gen$mean.self),
+                      size = 1.5, colour = "red") +
+           xlab("mean self-rated accuracy") +
+           xlim(0, 10) +
+           theme_bw()
+
+p.acc + p.self
+```
+
+Let's go through the code step-by-step.
+
+::: callout-tip
+- Here the code is broken down, line by line, and each line is numbered. 
+- This presentation style is done to make it easier for you to see what each step is doing.
+- Notice that when we use `p.acc <- study.one.gen` we tell R to first create the plot (giving it the name `p.acc`) but to not show it *yet*.
+:::
+
+1. `library(patchwork)` and `library(tidyverse)`: We need to use {tidyverse} library functions to construct the plots and {patchwork} library functions to assemble the plots into a grid showing the plots next to each other. We use the `library()` function to get these libraries.
+2. We construct two plots. We call the plots `p.acc` and `p.self`. Each plot is constructed in a similar way so we explain the main steps for one plot. The plots are constructed but not shown until the last line of code is run.
+3. `p.acc <- ...` creates a plot called `p.acc`, using the processes that are specified in the next lines of code that follow.
+4. `... <- study.one.gen` tells R that we are working with the data-set `study.one.gen` that we read in earlier.
+5. `%>%` is called the `pipe` and it is code telling R to work with the `study.one.gen` data in the next plot processing steps.
+6. `ggplot(aes(x = mean.acc)) +` takes the `study.one.gen` data and asks R to use the `ggplot()` function to produce a plot.
+7. `aes(x = mean.acc)` tells R that in the plot we want it to show the `mean.acc` variable values as locations on the x-axis: this is the *aesthetic mapping*.
+8. `geom_histogram(binwidth = .1) +` tells R to produce a histogram then add a step, next.
+9. `geom_vline(...) +` tells R we want to draw a vertical line.
+10. `xintercept = mean(study.one.gen$mean.acc), ...` tells R to draw the vertical line at the mean value of the variable `mean.acc` in the `study.one.gen` data-set.
+11. `size = 1.5, colour = "red"` tells R we want the vertical line to be red, and 1.5 times the usual size.
+13. `xlab("mean accuracy") +` tells R we want the x-axis label to say that the plot is of `"mean accuracy"`.
+14. `xlim(0, 1.1) +` sets limits on the minimum and maximum `mean accuracy` values shown in the plot.
+15. `theme_bw()` lastly, we change the theme.
+16. Then we have code to construct the second plot `p.self`.
+17. `p.acc + p.self`: tells R to put the two plots together so they appear side-by-side in a grid for easy comparison.
+
+In using pipes in the code, I am structuring the code so that it works --- and is presented --- in a sequence of steps. There are different ways to write code but I find this way easier to work with and to read and I think you will too.
+
+What you can see is that each line ending in a `%>` pipe passes something on to the next line. A following line takes the output of the process coded in the preceding line, and works with it.
+
+Each step is executed in turn, in strict sequence. This means that if I delete the line `study.one.gen %>%` then the following lines cannot work because the `ggplot()` function will be looking for a variable `average` that does not yet exist.
+
+::: callout-tip
+- You can see that in the data processing part of the code, successive steps in data processing end in a pipe `%>%`.
+- In contrast, successive steps of the plotting code add `ggplot` elements line by line with each line (except the last) ending in a `+`.
+:::
+
+Notice that none of the processing steps actually changes the dataset called `study.one.gen`. The results of the process exist and can be used only within the sequence of steps coded to produce the plots.
+
+- You can read a clear explanation of pipes [here](https://r4ds.had.co.nz/pipes.html){.external target="_blank"}.
+- You can read about the new `geom_vline()` [here](https://ggplot2.tidyverse.org/reference/geom_abline.html){.external target="_blank"}.
+:::
+
 ### A histogram is a useful way to show the distribution of values
 
 -   We have a sample of accuracy scores:
@@ -608,8 +697,14 @@ p.acc + p.self
 -   We draw the plot by grouping together similar values in bins
 -   Heights of bars represent numbers of cases with similar values in same bin
 
+::: panel-tabset
+
+## Plot
+
 ```{r}
-#| label: hist-1-b
+#| label: fig-study-one-gen-acc-histograms-case
+#| warning: false
+#| echo: false
 #| fig-cap: "Distribution of mean accuracy"
 #| fig-alt: "The 'mean accuracy' histogram shows how 'mean accuracy' scores vary between about 0.3 and 1.0, with a peak, indicated by a vertical red line, around .8."
 #| fig-height: 5
@@ -627,15 +722,59 @@ study.one.gen %>%
            theme_bw()
 ```
 
+## Notes
+
+```{r}
+#| eval: false
+#| code-line-numbers: true
+study.one.gen %>%
+           ggplot(aes(x = mean.acc)) + 
+           geom_histogram(binwidth = .1) +
+           geom_vline(xintercept = mean(study.one.gen$mean.acc),
+                      size = 1.5, colour = "red") +
+           annotate("text", x = 0.6, y = 60,
+                    colour = "red",
+                    label = "average value\nshown in red") +
+           xlab("mean accuracy") +
+           xlim(0, 1.1) +
+           theme_bw()
+```
+
+We go through the code line by line. It will be useful to identify some differences between this chunk of code and the previous chunk of code.
+
+1. We are going to use {tidyverse} library functions to construct the plots and {patchwork} library functions to assemble the plots into a grid. I assume you have already run the `library()` function to get these libraries. We do not need to do it again in the same R session.
+2. We construct one plot here. We do not give it a name. Run the code and R will show the plot in the plot window immediately.
+3. `study.one.gen %>%` tells R that we are working with the data-set `study.one.gen` that we read in earlier.
+4. `%>%` is the `pipe` and it is code telling R to work with the `study.one.gen` data in the next plot processing steps.
+5. `ggplot(aes(x = mean.acc)) +` takes the `study.one.gen` data and asks R to use the `ggplot()` function to produce a plot.
+6. `aes(x = mean.acc)` tells R that in the plot we want it to show the `mean.acc` variable values as locations on the x-axis: this is the *aesthetic mapping*.
+7. `geom_histogram(binwidth = .1) +` tells R to produce a histogram then add a step, next.
+8. `geom_vline(...) +` tells R we want to draw a vertical line.
+9. `xintercept = mean(study.one.gen$mean.acc), ...` tells R to draw the vertical line at the mean value of the variable `mean.acc` in the `study.one.gen` data-set.
+10. `size = 1.5, colour = "red"` tells R we want the vertical line to be red, and 1.5 times the usual size.
+11. `annotate("text", ...`** tells R to write some text.
+12. `x = 0.6, y = 60`** tells R where to write the text.
+13. `colour = "red"`** tells R what colour to write the text.
+14. `label = "average value\nshown in red"`** tells R what text to write.
+15. `xlab("mean accuracy") +` tells R we want the x-axis label to say that the plot is about `"mean accuracy"`.
+16. `xlim(0, 1.1) +` sets limits on the minimum and maximum `mean accuracy` values shown in the plot.
+17. `theme_bw()` lastly, we change the theme.
+
+- You can read about the new `annotate()` function [here](https://ggplot2.tidyverse.org/reference/annotate.html){.external target="_blank"}.
+
+:::
+
 ### When we talk about variance we are talking about how values vary in relation to the mean for the sample
 
 -   The average of these *mean accuracy* scores is marked with a red line where $\bar{x} =$ `r round(mean(study.one.gen$mean.acc), 1)`
 -   The accuracy score for the person in row 1 is located at $x = .49$, marked in blue
 
 ```{r}
-#| label: hist-1-c
+#| label: fig-study-one-gen-acc-histograms-one-case
+#| warning: false
+#| echo: false
 #| fig-cap: "Distribution of mean accuracy"
-#| fig-alt: "The 'mean accuracy' histogram shows how 'mean accuracy' scores vary between about 0.3 and 1.0, with the average of mean accuracy scores, indicated by a vertical red line located near .8, and the score of the person in row 1 of the dataset, indicated by a blue line located at .49."
+#| fig-alt: "The 'mean accuracy' histogram shows how 'mean accuracy' scores vary between about 0.3 and 1.0, with the average of mean accuracy scores, indicated by a vertical red line located near .8, and the score of the person in row 1 of the data-set, indicated by a blue line located at .49."
 #| fig-height: 5
 #| fig-width: 5
 #| fig-align: center
@@ -658,9 +797,11 @@ study.one.gen %>%
 -   In comparison, the mean accuracy score for the person in row 4 is located at $x = .94$, marked in blue
 
 ```{r}
-#| label: hist-1-d
+#| label: fig-study-one-gen-acc-histograms-another-case
+#| warning: false
+#| echo: false
 #| fig-cap: "Distribution of mean accuracy"
-#| fig-alt: "The 'mean accuracy' histogram shows how 'mean accuracy' scores vary between about 0.3 and 1.0, with the average of mean accuracy scores, indicated by a vertical red line located near .8, and the score of the person in row 4 of the dataset, indicated by a blue line located at .94."
+#| fig-alt: "The 'mean accuracy' histogram shows how 'mean accuracy' scores vary between about 0.3 and 1.0, with the average of mean accuracy scores, indicated by a vertical red line located near .8, and the score of the person in row 4 of the data-set, indicated by a blue line located at .94."
 #| fig-height: 5
 #| fig-width: 5
 #| fig-align: center
@@ -688,8 +829,14 @@ study.one.gen %>%
 
 -   Is variation in the mean accuracy of understanding (of health information) associated with variation in mean self-rated accuracy of understanding?
 
+::: panel-tabset
+
+## Plot
+
 ```{r}
-#| label: scatter-1-a
+#| label: fig-study-one-gen-scatter-acc-self-grid
+#| warning: false
+#| echo: false
 #| fig-cap: "Scatterplots showing whether values on mean accuracy (`mean.acc`) vary together with values on mean self-rated accuracy (`mean.self`) for the participants in this sample"
 #| fig-alt: "The figure shows two scatterplots, side by side: both plots show points where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in the example data. The plot on the left orients the presentation with 'mean accuracy' on the y axis. The plot on the right orients the presentation with 'mean self-rated accuracy' on the y axis."
 p.acc <- study.one.gen %>%
@@ -711,15 +858,69 @@ p.self <- study.one.gen %>%
 p.acc + p.self
 ```
 
-### A scatterplot is a useful way to examine if the values of two or more variables vary together
-
--   Mean accuracy scores vary between 0.0 and 1.0
--   The height of each point shows the observed value of accuracy on the y-axis
--   Self-rated accuracy scores vary between 1 and 9
--   The horizontal position of each point shows the observed value of self-rated accuracy on the x-axis
+## Notes
 
 ```{r}
-#| label: scatter-1-b
+#| eval: false
+#| code-line-numbers: true
+p.acc <- study.one.gen %>%
+           ggplot(aes(x = mean.self, y = mean.acc)) +
+           geom_point(size = 2, alpha = .5) +
+           ylab("mean accuracy") +
+           xlab("mean self-rated accuracy") +
+           xlim(0, 10) + ylim(0, 1.1) +
+           theme_bw()
+
+p.self <- study.one.gen %>%
+           ggplot(aes(y = mean.self, x = mean.acc)) +
+           geom_point(size = 2, alpha = .5) +
+           xlab("mean accuracy") +
+           ylab("mean self-rated accuracy") +
+           ylim(0, 10) + xlim(0, 1.1) +
+           theme_bw()
+
+p.acc + p.self
+```
+
+1. We are going to use {tidyverse} library functions to construct the plots and {patchwork} library functions to assemble the plots into a grid. I assume you have already run the `library()` function to get these libraries. We do not need to do it again in the same R session.
+2. We construct two plots. We call the plots `p.acc` and `p.self` *again*. Each plot is constructed in a similar way so we explain the main steps for one plot. The plots are constructed but not shown until the last line of code is run.
+3. `p.acc <- ...` creates a plot called `p.acc`, using the processes that are specified in the next lines of code that follow.
+4. `... <- study.one.gen` tells R that we are working with the data-set `study.one.gen` that we read in earlier.
+5. `%>%` is called the `pipe` and it is code telling R to work with the `study.one.gen` data in the next plot processing steps.
+6. `ggplot(...) +` takes the `study.one.gen` data and asks R to use the `ggplot()` function to produce a plot.
+7. `aes(x = mean.self, ...)` tells R that in the plot we want it to show the `mean.self` variable values as horizontal (left to right) locations on the x-axis: this is one *aesthetic mapping*.
+8. `aes(... , y = mean.acc)` tells R that in the plot we want it to show the `mean.acc` variable values as vertical (low to high) locations on the y-axis: this is the second *aesthetic mapping*.
+9. `aes(x = mean.self, y = mean.acc)` thus encodes two aesthetic mappings, telling R the position of the things it will draw (it will draw points, next): the vertical height, and the horizontal left-to-right position.
+10. `geom_point(...)` tells R to produce a scatterplot, representing data values as points.
+11. `size = 2, alpha = .5` tells R we want the points to be 2 times the usual size with `size = 2`, and half the usual level of opacity (i.e. how solid the colour is) with `alpha = .5`.
+12. `ylab("mean accuracy") +` tells R we want the y-axis label to say that the plot is of `"mean accuracy"`.
+13. `xlab("mean self-rated accuracy") +` tells R we want the y-axis label to say that the plot is of `"mean self-rated accuracy"`.
+14. `ylim(0, 10) + xlim(0, 1.1) +` sets limits on the minimum and maximum `mean accuracy` and `mean self-rated accuracy` values shown in the plot.
+15. `theme_bw()` changes the theme.
+16. Then we have code to construct the second plot `p.self`.
+17. `p.acc + p.self`: tells R to put the two plots together so they appear side-by-side in a grid for easy comparison.
+
+- You can read about the `geom_point()` function [here](https://ggplot2.tidyverse.org/reference/geom_point.html){.external target="_blank"}.
+:::
+
+### A scatterplot is a useful way to examine if the values of two or more variables vary together
+
+1.  Mean accuracy scores vary between 0.0 and 1.0
+
+-   The height of each point shows the observed value of accuracy on the y-axis
+
+2.   Self-rated accuracy scores vary between 1 and 9
+
+-   The horizontal position of each point shows the observed value of self-rated accuracy on the x-axis
+
+::: panel-tabset
+
+## Plot
+
+```{r}
+#| warning: false
+#| echo: false
+#| label: fig-study-one-gen-scatter-acc-self-single
 #| fig-cap: "Scatterplot showing how values on mean accuracy and mean self-rated accuracy vary together"
 #| fig-alt: "The figure shows a scatterplot showing points where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in the example data. The plot orients the presentation with 'mean accuracy' on the y axis."
 #| fig-height: 5
@@ -734,13 +935,41 @@ study.one.gen %>%
            theme_bw()
 ```
 
+## Notes
+
+```{r}
+#| eval: false
+#| code-line-numbers: true
+study.one.gen %>%
+           ggplot(aes(x = mean.self, y = mean.acc)) +
+           geom_point(size = 2, alpha = .5) +
+           ylab("mean accuracy") +
+           xlab("mean self-rated accuracy") +
+           xlim(0, 10) + ylim(0, 1.1) +
+           theme_bw()
+```
+
+We use mostly the same code to draw @fig-study-one-gen-scatter-acc-self-single, compared to the code we used to draw @fig-study-one-gen-scatter-acc-self-grid, but there is one difference.
+I do not walk through every line of code, here, but highlight the difference.
+
+1. We construct one plot here. We do not give it a name. Run the code and R will show the plot in the plot window immediately.
+2. `study.one.gen %>%` tells R that we are working with the data-set `study.one.gen` that we read in earlier.
+3. `ggplot(aes(x = mean.self, y = mean.acc)) +` takes the `study.one.gen` data and asks R to use the `ggplot()` function to produce a plot.
+4. `aes(x = mean.self, y = mean.acc)` thus encodes two aesthetic mappings, telling R the position of the things it will draw (it will draw points, next): the vertical height, and the horizontal left-to-right position.
+
+:::
+
+We can focus in one point, showing the data for one person.
+
 -   We have a sample of 170 people
 -   For each person, we have a value for the mean accuracy and a *paired* value for the mean self-rated accuracy
 -   Each point shows the paired data values for a person
 -   In red: someone scored 3.48 on mean self-rated accuracy, 0.57 on mean accuracy
 
 ```{r}
-#| label: scatter-1-c
+#| warning: false
+#| echo: false
+#| label: fig-study-one-gen-scatter-acc-self-single-highlighted
 #| fig-cap: "Scatterplot showing how values on mean accuracy and mean self-rated accuracy vary together"
 #| fig-alt: "The figure shows a scatterplot showing points where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in the example data. The plot orients the presentation with 'mean accuracy' on the y axis."
 #| fig-height: 5
@@ -760,7 +989,7 @@ study.one.gen %>%
 
 ```{r}
 #| echo: true
-#| code-line-numbers: "1|2|3"
+#| code-line-numbers: true
 #| eval: false
 cor.test(study.one.gen$mean.acc,
          study.one.gen$mean.self,
@@ -769,7 +998,7 @@ cor.test(study.one.gen$mean.acc,
 
 1.  We specify the `cor.test` function, and name one variable `study.one.gen$mean.acc`
 2.  Then we name the second variable `study.one.gen$mean.self`
-3.  Last we specify the correlation `method = "pearson"` because we have a choice
+3.  Last we specify the correlation `method = "pearson"` because we have a choice (we can apply other methods to estimate the correlation, e.g., *Spearmans*)
 
 ### Identifying the key information in the results from one correlation test {.smaller}
 
@@ -788,7 +1017,7 @@ cor.test(study.one.gen$mean.acc,
 
 -   Usually, we report a correlation like this:
 
-> Mean accuracy and mean self-rated accuracy were significantly correlated ($r = .49 (167 \text{ df}), p < .001$). Higher mean accuracy scores are associated with higher mean self-rated accuracy scores.
+> Mean accuracy and mean self-rated accuracy were significantly correlated ($r (167 \text{ df}) = .49, p < .001$). Higher mean accuracy scores are associated with higher mean self-rated accuracy scores.
 
 ### Interpreting correlations with the help of visualization {.smaller}
 
@@ -796,7 +1025,9 @@ cor.test(study.one.gen$mean.acc,
 -   We can see that higher mean accuracy (`mean.acc`) scores are associated with higher mean self-rated accuracy (`mean.self`) scores
 
 ```{r}
-#| label: scatter-1-d
+#| warning: false
+#| echo: false
+#| label: fig-study-one-gen-scatter-acc-self-single-repeat-1
 #| fig-cap: "Scatterplot showing how values on mean accuracy and mean self-rated accuracy vary together"
 #| fig-alt: "The figure shows a scatterplot showing points where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in the example data. The plot orients the presentation with 'mean accuracy' on the y axis."
 #| fig-height: 5
@@ -813,12 +1044,14 @@ study.one.gen %>%
 
 ### What will different kinds of correlations look like?
 
-We can simulate data to demonstrate: **(left)** the correlation is positive, $r = .5$; **(right)** the correlation is negative, $r = -.5$
+We can simulate data to demonstrate [what scatterplots look like if]: **(left)** the correlation is positive, $r = .5$; **(right)** the correlation is negative, $r = -.5$
 
 ```{r}
-#| label: scatter-sim-a
+#| warning: false
+#| echo: false
+#| label: fig-study-one-gen-scatter-acc-self-grid-simulated-signs
 #| fig-cap: "Scatterplots showing how simulated data values on mean accuracy and mean self-rated accuracy *could* vary together given positive or negative correlations"
-#| fig-alt: "The figure shows two scatterplots showing how simulated data values on mean accuracy and mean self-rated accuracy *could* vary together given positive or negative correlations. Each plot shows points, where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in a simulated dataset. The plot on the left shows the scatter of points when data are simulated assuming r = .5. The plot on the left shows the scatter of points when data are simulated assuming r = -.5."
+#| fig-alt: "The figure shows two scatterplots showing how simulated data values on mean accuracy and mean self-rated accuracy *could* vary together given positive or negative correlations. Each plot shows points, where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in a simulated data-set. The plot on the left shows the scatter of points when data are simulated assuming r = .5. The plot on the left shows the scatter of points when data are simulated assuming r = -.5."
 # -- if we look at the study one sample data
 # -- and the correlation between mean.self and mean.acc
 # describe(study.one.gen)
@@ -865,9 +1098,11 @@ p.acc.pos + p.acc.neg
 -   As the correlation increases, the points cluster together more closely
 
 ```{r}
-#| label: scatter-sim-b
+#| warning: false
+#| echo: false
+#| label: fig-study-one-gen-scatter-acc-self-grid-simulated-sizes
 #| fig-cap: "Scatterplots showing how simulated data values on mean accuracy and mean self-rated accuracy *could* vary together given positive correlations of increasing size"
-#| fig-alt: "The figure shows 4 scatterplots showing how simulated data values on mean accuracy and mean self-rated accuracy *could* vary together given positive correlations of increasing size. Each plot shows points, where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in a simulated dataset. The plots show the scatter of points, from left to right, (1.) if r - .1; (2.) if r = .3; (3.) if r = .5; (4.) if r = .8"
+#| fig-alt: "The figure shows 4 scatterplots showing how simulated data values on mean accuracy and mean self-rated accuracy *could* vary together given positive correlations of increasing size. Each plot shows points, where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in a simulated data-set. The plots show the scatter of points, from left to right, (1.) if r - .1; (2.) if r = .3; (3.) if r = .5; (4.) if r = .8"
 #| fig-height: 3.5
 #| fig-width: 12
 #| fig-align: center
@@ -942,7 +1177,7 @@ p.acc.higher <- dat.4 %>%
            theme_bw()
 
 p.acc.low + p.acc.med + p.acc.hig + p.acc.higher +
-  plot_layout(ncol = 4)
+  plot_layout(ncol = 2)
 ```
 
 ## Summary
