@@ -40,35 +40,26 @@ study.two.gen <- read_csv("study-two-general-participants.csv",
                                    )
 ```
 
-## Overview {#sec-associations-overview} 
+## Overview {#sec-associations-overview}
 
 Welcome to our overview of the materials you will work with in our data analysis class in the *PSYC401* module, Week 7.
 
-We are completing five classes together in weeks 6-10.
-These classes are designed to help students to learn about some very common and powerful psychological data analysis methods.
-We will focus on methods that allow us to visualize and make sense of evidence for **associations** between variables.
-Our materials are designed to help you to think about what you are doing, to understand the aims of the practical steps.
+We are completing five classes together in weeks 6-10. These classes are designed to help students to learn about some very common and powerful psychological data analysis methods. We will focus on methods that allow us to visualize and make sense of evidence for **associations** between variables. Our materials are designed to help you to think about what you are doing, to understand the aims of the practical steps.
 
-We will do this in the context of a live research project with potential real world impacts: the *Clearly understood* project.
-We will present our PSYC401 lessons in the context of this research project because we think that this **context** will help you to make sense of the data, and to see why we ask you to practise the skills we are teaching.
+We will do this in the context of a live research project with potential real world impacts: the *Clearly understood* project. We will present our PSYC401 lessons in the context of this research project because we think that this **context** will help you to make sense of the data, and to see why we ask you to practise the skills we are teaching.
 
-We encounter written health information all the time: on medication labels, in letters from doctors, and online when we research things we are worried about.
-It is not always easy to understand this information.
+We encounter written health information all the time: on medication labels, in letters from doctors, and online when we research things we are worried about. It is not always easy to understand this information.
 
-It is unclear how to make health communication more effective.
-The problem is that we are not sure how health information should be communicated so that everyone can understand it.
-This is why we ask the research questions:
+It is unclear how to make health communication more effective. The problem is that we are not sure how health information should be communicated so that everyone can understand it. This is why we ask the research questions:
 
-1. What person attributes predict success in understanding?
-2. Can people accurately evaluate whether they correctly understand written health information?
+1.  What person attributes predict success in understanding?
+2.  Can people accurately evaluate whether they correctly understand written health information?
 
-As we work together, we will be revisiting some of the ideas and techniques you have seen in previous classes.
-This is to give you the opportunity to consolidate your learning.
-We will be extending your development with some new ideas to strengthen your skills.
+As we work together, we will be revisiting some of the ideas and techniques you have seen in previous classes. This is to give you the opportunity to consolidate your learning. We will be extending your development with some new ideas to strengthen your skills.
 
-## Our learning goals {#sec-associations-goals} 
+## Our learning goals {#sec-associations-goals}
 
-This week, we focus on both developing your critical thinking and strengthening your practical skills in data analysis. 
+This week, we focus on both developing your critical thinking and strengthening your practical skills in data analysis.
 
 **1. Critical thinking**
 
@@ -84,21 +75,19 @@ This week, we focus on both developing your critical thinking and strengthening 
 -   *Skills* -- hypothesis tests for correlations
 -   *Skills* -- interpreting and reporting correlations
 
-## Learning resources {#sec-associations-resources} 
+## Learning resources {#sec-associations-resources}
 
 You will see *next* links to the lectures we created to explain the concepts behind the critical thinking and analysis skills we want you to develop (@sec-associations-lectures), *then* information about the practical materials we have provided to help you to practise your skills (@sec-associations-practical).
 
 All the links to the lecture videos, the lecture slides, and everything you need for your practical work can *also* be found in the Week 7 files folder on Moodle [here](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse7){target="_blank"}
 
-In @sec-associations-notes, we present the lecture slide points.
-We do this here because we can share the code we used to generate the plots we use in some of the slides [^1]
+In @sec-associations-notes, we present the lecture slide points. We do this here because we can share the code we used to generate the plots we use in some of the slides [^hypotheses-associations-1]
 
-[^1]: We write the slides and this book in [Quarto](https://quarto.org){target="_blank"} in R-Studio. Quarto scripts can be rendered as .html to share web-books like this one, or to share slides like those we use in presenting the lecture. One advantage of using Quarto is that we can share a plot and the code we used to generate the plot in the same page.
+[^hypotheses-associations-1]: We write the slides and this book in [Quarto](https://quarto.org){target="_blank"} in R-Studio. Quarto scripts can be rendered as .html to share web-books like this one, or to share slides like those we use in presenting the lecture. One advantage of using Quarto is that we can share a plot and the code we used to generate the plot in the same page.
 
 ### Lectures {#sec-associations-lectures}
 
-The lecture material for this week is presented in five short parts.
-Click on a link and your browser should open a tab showing the *Panopto* video for the lecture part.
+The lecture material for this week is presented in five short parts. Click on a link and your browser should open a tab showing the *Panopto* video for the lecture part.
 
 [Part 1 of 5](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3e5f2ca1-fc6d-4e31-8f7c-af5000c9916f){target="_blank"}
 
@@ -112,16 +101,19 @@ Click on a link and your browser should open a tab showing the *Panopto* video f
 
 You can download the slides we presented in the lecture in two different formats, depending on what you think will be most useful to you:
 
-- Download the slides exactly as they appear in the lecture from [this link](files/401-hypotheses-assocations.html). The .html file can be opened and viewed in any web browser (e.g., Chrome, Firefox, Safari).
-- Or you can download a printable Word .docx presentation of the slides from [this link](files/401-hypotheses-associations-printable-edited.docx). The .docx can be opened in Microsoft Word. The figures will not appear exactly as they do in the lecture recording because Word cannot cope with images so well but the trade-off is that you get a document you can print and edit to add notes.
+-   Download the slides exactly as they appear in the lecture from [this link](files/401-hypotheses-assocations.html). The .html file can be opened and viewed in any web browser (e.g., Chrome, Firefox, Safari).
+-   Or you can download a printable Word .docx presentation of the slides from [this link](files/401-hypotheses-associations-printable-edited.docx). The .docx can be opened in Microsoft Word. The figures will not appear exactly as they do in the lecture recording because Word cannot cope with images so well but the trade-off is that you get a document you can print and edit to add notes.
 
 <!-- ## Pre-lab activity 1 -->
 
 <!-- In weeks 16-19, we will be working together on a research project to investigate how people vary in their response to health advice. -->
+
 <!-- Completing the project involves collecting responses from PSYC122 students. -->
+
 <!-- In our class activities, we can then analyze the data we collect. -->
 
 <!-- To enter your responses, we invite you to complete a short survey. -->
+
 <!-- You can complete the survey here (just click on the web address to get started): -->
 
 <!-- [Complete the survey](https://lancasteruni.eu.qualtrics.com/jfe/form/SV_0ww8HHxx172TPJs){target="_blank"} -->
@@ -131,19 +123,25 @@ You can download the slides we presented in the lecture in two different formats
 <!-- The survey asks you to: -->
 
 <!-- - complete some questions about who you are; -->
+
 <!-- - and then answer some questions about what you know about some English words, about what you know about health matters, and about how you approach reading. -->
 
 <!-- The survey then asks you to: -->
 
 <!-- - read five short extracts from patient information leaflets about different kinds of health issue; -->
+
 <!-- - respond to some multiple choice questions about each extract; -->
+
 <!-- - and rate how well you think you understand the advice. -->
 
 <!-- The survey should take about 20 minutes to complete. -->
+
 <!-- Some people will take less time, and some people might take a little more time. -->
 
 <!-- Taking part in the survey is **completely voluntary**. -->
+
 <!-- You can stop at any time without completing the survey if you do not want to finish it. -->
+
 <!-- If you do not want to do the survey, you can do an alternative activity (see below). -->
 
 <!-- All responses will be recorded completely anonymously. -->
@@ -160,13 +158,13 @@ We have collected the practical materials together into a folder.
 
 The folder includes the data files:
 
-- `study-one-general-participants.csv`
-- `study-two-general-participants.csv`
+-   `study-one-general-participants.csv`
+-   `study-two-general-participants.csv`
 
 and .R code files:
 
-- `401-associations-how-to.R`
-- `401-associations-workbook.R`
+-   `401-associations-how-to.R`
+-   `401-associations-workbook.R`
 
 You will use these files for your practical learning.
 
@@ -182,61 +180,60 @@ Once you have downloaded the file folder, you will need to upload it to the R-St
 
 In the `how-to` guide:
 
-- `401-associations-how-to.R`
+-   `401-associations-how-to.R`
 
-we show you how to do everything you need to do in the practical workbook (see @sec-associations-practical-workbook).
-The guide comprises an .R file `401-associations-how-to.R` with code and advice.
+we show you how to do everything you need to do in the practical workbook (see @sec-associations-practical-workbook). The guide comprises an .R file `401-associations-how-to.R` with code and advice.
 
-The code in the .R file was written to work with the data file 
+The code in the .R file was written to work with the data file
 
-- `study-one-general-participants.csv`.
+-   `study-one-general-participants.csv`.
 
 <!-- In the video, I work my way through the R code, step-by-step, explaining what each line of code does. -->
+
 <!-- Watching the video takes about 20 minutes. -->
+
 <!-- It is completely optional but I have provided the video because students have told us they find it useful. -->
 
 <!-- [Watch the how-to guide](https://dtu-panopto.lancs.ac.uk/Panopto/Pages/Viewer.aspx?id=fc290f97-5085-4b92-8870-ae3f01294230){target="_blank"} -->
 
 ::: callout-tip
-- Work through the steps in the `how-to` guide first, this practice will help you to understand what you need to do for the `workbook` tasks.
+-   Work through the steps in the `how-to` guide first, this practice will help you to understand what you need to do for the `workbook` tasks.
 
-- The `how-to` guide and the `workbook` have similar structures. This is intentional: so that you can copy and *adapt* code from the `how-to` guide to do the practical tasks in the `workbook`.
+-   The `how-to` guide and the `workbook` have similar structures. This is intentional: so that you can copy and *adapt* code from the `how-to` guide to do the practical tasks in the `workbook`.
 :::
 
 ### The workbook {#sec-associations-practical-workbook}
 
 In the `workbook`:
 
-- `401-associations-workbook.R`
+-   `401-associations-workbook.R`
 
 you will work with the data file
 
-- `study-two-general-participants.csv`
+-   `study-two-general-participants.csv`
 
-We split .R scripts into parts, tasks and questions:  
+We split .R scripts into parts, tasks and questions:
 
-- different parts for different phases of the analysis workflow;
-- different tasks for different steps in each phase;
-- different questions to examine different ideas or coding steps.
+-   different parts for different phases of the analysis workflow;
+-   different tasks for different steps in each phase;
+-   different questions to examine different ideas or coding steps.
 
 In the week 7 workbook, we are going to work through the following workflow steps:
 
-1. Empty the R environment -- using `rm(list=ls())`
-2. Load relevant libraries -- using `library()`
-3. Read in the data file -- using `read_csv()`
-4. Inspect the data -- using `head()` and `summary()`
-5. Change the type classification of a variable in the data -- using `as.factor()`
-6. Draw histograms to examine the distributions of variables -- using `ggplot()` and `geom_histogram()`
-7. Draw scatterplots to examine the association between pairs of variables -- using `ggplot()` and `geom_point()`
-8. Estimate and test the correlations between pairs of variables -- using `cor.test()`
+1.  Empty the R environment -- using `rm(list=ls())`
+2.  Load relevant libraries -- using `library()`
+3.  Read in the data file -- using `read_csv()`
+4.  Inspect the data -- using `head()` and `summary()`
+5.  Change the type classification of a variable in the data -- using `as.factor()`
+6.  Draw histograms to examine the distributions of variables -- using `ggplot()` and `geom_histogram()`
+7.  Draw scatterplots to examine the association between pairs of variables -- using `ggplot()` and `geom_point()`
+8.  Estimate and test the correlations between pairs of variables -- using `cor.test()`
 
 The activity `401-associations-workbook.R` file takes you through the tasks, one by one.
 
 If you are unsure about what you need to do, check the advice in `401-associations-how-to.R`.
 
-You will see that you can match a task in the `activity` to the same task in the `how-to`.
-The `how-to` shows you what function you need and how you should write the function code.
-You will need to change the names of the dataset or the variables to complete the tasks in the activity.
+You will see that you can match a task in the `activity` to the same task in the `how-to`. The `how-to` shows you what function you need and how you should write the function code. You will need to change the names of the dataset or the variables to complete the tasks in the activity.
 
 This process of adapting demonstration code is a process critical to data literacy and to effective problem solving in working with data in psychological science.
 
@@ -254,17 +251,17 @@ kable(head(study.two.gen))
 
 You can see the columns:
 
-- `participant_ID` participant code
-- `mean.acc` average accuracy of response to questions testing understanding of health guidance
-- `mean.self` average self-rated accuracy of understanding of health guidance
-- `study` variable coding for what study the data were collected in
-- `AGE` age in years
-- `HLVA` health literacy test score
-- `SHIPLEY` vocabulary knowledge test score
-- `FACTOR3` reading strategy survey score
-- `GENDER` gender code
-- `EDUCATION` education level code
-- `ETHNICITY` ethnicity (Office National Statistics categories) code
+-   `participant_ID` participant code
+-   `mean.acc` average accuracy of response to questions testing understanding of health guidance
+-   `mean.self` average self-rated accuracy of understanding of health guidance
+-   `study` variable coding for what study the data were collected in
+-   `AGE` age in years
+-   `HLVA` health literacy test score
+-   `SHIPLEY` vocabulary knowledge test score
+-   `FACTOR3` reading strategy survey score
+-   `GENDER` gender code
+-   `EDUCATION` education level code
+-   `ETHNICITY` ethnicity (Office National Statistics categories) code
 
 ### The answers
 
@@ -276,8 +273,7 @@ The answers version will present my answers for questions, and some extra inform
 
 ## Lecture notes {#sec-associations-notes}
 
-Some people find it easier to read notes than to watch video recordings.
-This is why we also include the lecture notes here.
+Some people find it easier to read notes than to watch video recordings. This is why we also include the lecture notes here.
 
 ### Better methods can't make up for mediocre theory
 
@@ -380,7 +376,7 @@ The derivation chain [@meehl1990; @scheel2021]
 
 ### Valid measures
 
--   We often teach and learn about different kinds of validity but the key idea is simple [@borsboom2004]:
+-   We often teach and learn about different kinds of validity but the key idea is simple [@borsboom2004]
 
 > a test is valid for measuring an attribute if and only if (a) the attribute exists and (b) variations in the attribute causally produce variations in the outcomes of the measurement procedure
 
@@ -517,7 +513,7 @@ study.one.gen %>%
 
 ### Destination correlation: where the correlation number comes from
 
-- **Covariance**
+-   **Covariance**
 
 $$COV_{xy} = \frac{\sum(x - \bar{x})(y - \bar{y})}{n -1}$$
 
@@ -527,7 +523,7 @@ $$COV_{xy} = \frac{\sum(x - \bar{x})(y - \bar{y})}{n -1}$$
 
 ### Destination correlation: where the correlation number comes from
 
-- **Covariance divided by standard deviations**
+-   **Covariance divided by standard deviations**
 
 $$r = \frac{COV_{xy}}{s_xs_y}$$
 
@@ -690,7 +686,7 @@ study.one.gen %>%
 
 ### We can use scatterplots to examine associations
 
-- Is variation in the mean accuracy of understanding (of health information) associated with variation in mean self-rated accuracy of understanding?
+-   Is variation in the mean accuracy of understanding (of health information) associated with variation in mean self-rated accuracy of understanding?
 
 ```{r}
 #| label: scatter-1-a
@@ -777,9 +773,9 @@ cor.test(study.one.gen$mean.acc,
 
 ### Identifying the key information in the results from one correlation test {.smaller}
 
-- We look at the value of the correlation (here, `cor`) and the p-value
-- We can see that the correlation statistic is positive `cor = .4863771` which we round to $cor = .49$
-- And `p-value = 2.026e-11` indicating that the correlation is *significant* $p < .001$
+-   We look at the value of the correlation (here, `cor`) and the p-value
+-   We can see that the correlation statistic is positive `cor = .4863771` which we round to $cor = .49$
+-   And `p-value = 2.026e-11` indicating that the correlation is *significant* $p < .001$
 
 ```{r}
 #| echo: true
@@ -965,18 +961,3 @@ p.acc.low + p.acc.med + p.acc.hig + p.acc.higher +
 
 -   R is *free open statistical software*: everything you use is contributed, discussed and taught by a community of R users online, in open forums
 -   Learning to navigate this knowledge is an introduction to the future of knowledge sharing
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
