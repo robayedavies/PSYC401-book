@@ -1103,8 +1103,8 @@ p.acc.pos + p.acc.neg
 #| label: fig-study-one-gen-scatter-acc-self-grid-simulated-sizes
 #| fig-cap: "Scatterplots showing how simulated data values on mean accuracy and mean self-rated accuracy *could* vary together given positive correlations of increasing size"
 #| fig-alt: "The figure shows 4 scatterplots showing how simulated data values on mean accuracy and mean self-rated accuracy *could* vary together given positive correlations of increasing size. Each plot shows points, where each point indicates the pair of scores corresponding to the 'mean accuracy' and the 'mean self-rated accuracy' recorded for each participant in a simulated data-set. The plots show the scatter of points, from left to right, (1.) if r - .1; (2.) if r = .3; (3.) if r = .5; (4.) if r = .8"
-#| fig-height: 3.5
-#| fig-width: 12
+#| fig-height: 10
+#| fig-width: 10
 #| fig-align: center
 # -- if we look at the study one sample data
 # -- and the correlation between mean.self and mean.acc
