@@ -79,7 +79,7 @@ This week, we focus on both developing your critical thinking and strengthening 
 
 You will see *next* links to the lectures we created to explain the concepts behind the critical thinking and analysis skills we want you to develop (@sec-associations-lectures), *then* information about the practical materials we have provided to help you to practise your skills (@sec-associations-practical).
 
-All the links to the lecture videos, the lecture slides, and everything you need for your practical work can *also* be found in the Week 7 files folder on Moodle [here](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse7){target="_blank"}
+All the links to the lecture videos, the lecture slides, and everything you need for your practical work can *also* be found in the Week 7 files folder on Moodle [here](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse8){target="_blank"}
 
 In @sec-associations-notes, we present the lecture slide points. We do this here because we can share the code we used to generate the plots we use in some of the slides [^hypotheses-associations-1]
 
@@ -170,7 +170,7 @@ You will use these files for your practical learning.
 
 You can download the .R files and the data .csv files in a single folder, using the link [here](files/PSYC401_week7_materials.zip).
 
-Or you can download the files as individual files from the module [Moodle page for PSYC401](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse7){target="_blank"}.
+Or you can download the files as individual files from the module [Moodle page for PSYC401](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse8){target="_blank"}.
 
 Once you have downloaded the file folder, you will need to upload it to the R-Studio server to access and use the R files.
 
