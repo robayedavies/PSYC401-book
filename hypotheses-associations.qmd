@@ -1,9 +1,5 @@
 # Hypotheses and associations {#sec-associations}
 
-::: callout-warning
-Under construction
-:::
-
 ```{r libraries-hide}
 #| warning: false
 #| echo: false
