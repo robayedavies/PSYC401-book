@@ -13,7 +13,7 @@ book:
     - index.qmd
     - part: "DATA ANALYSIS"
     - hypotheses-associations.qmd
-    - visualization-intro
+    - visualization-intro.qmd
     - visualization.qmd
     - part: "THE RESEARCH REPORT ASSIGNMENT"
     - report-preface.qmd
