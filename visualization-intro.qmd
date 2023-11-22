@@ -1,9 +1,5 @@
 # Introduction to visualization {#sec-vis-intro-intro}
 
-::: callout-warning
-Under construction
-:::
-
 ```{r library}
 #| echo: false
 #| warning: false
