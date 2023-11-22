@@ -25,7 +25,7 @@ There is an extensive experimental and theoretical literature concerning data vi
 
 In my experience, knowing that there *are* choices is the first step. In proprietary software packages like Excel and SPSS there are plenty of choices but these are limited by the menu systems to certain combinations of elements. Here, in using R to produce visualizations, there is much more freedom, and much more capacity to control what a plot shows and how it looks, but knowing where to start has to begin with seeing examples of what some of the choices result in.
 
-At the end of the chapter, I highlight some resources you can use in independent learning for further development, see @sec-resources.
+At the end of the chapter, I highlight some resources you can use in independent learning for further development, see @sec-vis-resources.
 
 So, we are aiming to (1.) start to build insight into the choices we make and (2.) provide resources to enable making those choices in data visualization.
 
@@ -1992,7 +1992,7 @@ This kind of insight is something we can and should seek to reveal through our v
 
 ## Next steps for development {#sec-vis-next-steps}
 
-To take your development further, take a look at the resources listed in @sec-resources.
+To take your development further, take a look at the resources listed in @sec-vis-resources.
 
 In my experience, the most productive way to learn about visualization and about coding the production of plots, is by doing.
 And this work is most interesting if you have a dataset you care about: for your research report, or for your dissertation study.
