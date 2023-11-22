@@ -1,4 +1,4 @@
-# Data visualization
+# Data visualization {#sec-visualization}
 
 ```{r libraries-hide}
 #| warning: false
@@ -13,7 +13,7 @@ library(psych)
 library(tidyverse)
 ```
 
-## Aims {#sec-aims}
+## Aims {#sec-vis-aims}
 
 In writing this chapter, I have two aims.
 
@@ -76,7 +76,7 @@ digraph Q {
 }
 ```
 
-## Three kinds of honesty {#sec-honesty}
+## Three kinds of honesty {#sec-vis-honesty}
 
 I write this chapter with three kinds of honesty in mind.
 
@@ -97,7 +97,7 @@ I write this chapter with three kinds of honesty in mind.
 -   Sources of variation will be everywhere in our data, even though we often work with statistical analyses (like the t-test) that focus our attention on the average participant or the average response.
 -   Modern analysis methods (like mixed-effects models) enable us to account for sources of variation systematically, so it is good to begin thinking about, say, how people vary in their response to different experimental conditions from early in your development.
 
-## Our approach: tidyverse {#sec-tidyverse}
+## Our approach: tidyverse {#sec-vis-tidyverse}
 
 The approach we will take is to focus on step-by-step guides to coding. I will show plots and I will walk through the coding steps, explaining my reasons for the choices I make.
 
@@ -105,7 +105,7 @@ We will be working with plotting functions like `ggplot()` provided in libraries
 
 You can access information about the tidyverse collection [here](https://www.tidyverse.org){.external target="_blank"}.
 
-### Grammar of graphics {#sec-grammar-graphics}
+### Grammar of graphics {#sec-vis-grammar-graphics}
 
 The `gg` in `ggplot` stands for the "Grammar of Graphics", and the ideas motivating the development of the `ggplot2` library of functions are grounded in the ideas concerning the grammar of graphics, set out in the book of that name [@wilkinson2013].
 
@@ -120,7 +120,7 @@ And we can add annotation, labels, and other elements to guide and inform the at
 
 You can read more about mastering the grammar [here](https://ggplot2-book.org/mastery.html){.external target="_blank"}.
 
-### Pipes
+### Pipes {#sec-vis-pipes}
 
 We know that (some of) you want to see more use of pipes (represented as `%>%` or `|>`) in coding. There will be plenty of pipes in this chapter.
 
@@ -171,14 +171,14 @@ You can use the code you see:
 -   Breaking things, or changing things, helps to show what each bit of code does.
 :::
 
-## Key ideas {#sec-ideas}
+## Key ideas {#sec-vis-ideas}
 
 Data visualization is not really about coding, as about thinking.
 
 -   What are our goals?
 -   Why do we make some choices instead of others?
 
-### Purposes {#sec-purposes}
+### Purposes {#sec-vis-purposes}
 
 @gelman2013 outline the goals we may contemplate when we produce or evaluate visual data displays. In general, they argue, we are doing one or both of two things.
 
@@ -199,7 +199,7 @@ In practice, this may involve the following (I paraphrase them, here).
 -   We often use a plot to tell a story: the story of our study, our data, or our insight and how we get to it.
 -   We can use visualizations to attract attention and stimulate interest. Often, in presenting data to an audience through a talk or a report we need to use effective visualizations to ensure we get attention and that we locate the attention of our audience in the right places.
 
-### Psychological science of data visualization {#sec-psychology-visualization}
+### Psychological science of data visualization {#sec-vis-psychology-visualization}
 
 You will see a rich variety of data visualizations in media and in the research literature. You will know that some choices, in the production of those visualizations, appear to work better than others.
 
@@ -232,7 +232,7 @@ You can read about using colour blind palettes [here](http://www.cookbook-r.com/
 
 In the following practical exercises, we work with many of the insights in our construction of visualizations.
 
-## A quick start {#sec-quick-start}
+## A quick start {#sec-vis-quick-start}
 
 We can get started before we understand in depth the key ideas or the coding steps. This will help to show where we are going. We will work with the `sleepstudy` dataset.
 
@@ -242,7 +242,7 @@ I will model the process, to give you an example workflow:
 -   how we approach the data --- what we *expect* to see;
 -   how we visualize the data --- discovery, communication.
 
-### Sleepstudy data {#sec-sleep-study-data}
+### Sleepstudy data {#sec-vis-sleep-study-data}
 
 When we work with R, we usually work with functions like `ggplot()` provided in libraries like `ggplot2` [@R-ggplot2]. These libraries typically provide not only functions but also datasets that we can use for demonstration and learning.
 
@@ -274,7 +274,7 @@ So, we can *expect to find*:
 -   A reaction time value for each participant (`Reaction`)
 -   Recorded on each `Day`
 
-### Discovery and communication {#sec-sleepstudy-histogram}
+### Discovery and communication {#sec-vis-sleepstudy-histogram}
 
 In data analysis work, we often begin with the objective to understand the structure or the nature of the data we are working with.
 
@@ -345,7 +345,7 @@ Let's go through the code step-by-step:
 
 We may wish to communicate the information we gain through using this histogram, in a presentation or in a report.
 
-### Discovery and communication {#sec-sleepstudy-scatter}
+### Discovery and communication {#sec-vis-sleepstudy-scatter}
 
 Let us imagine that it is our study. (Here, we shall not concern ourselves too much --- with apologies --- with understanding what the original study authors actually did.)
 
@@ -495,7 +495,7 @@ Why would you do this? Variation between people or groups, in effects or in aver
 The data processing and plotting functions in the `tidyverse` collection of libraries enable us to discover and to communicate variation in behaviours that should strengthen our and others' scientific understanding.
 :::
 
-### Summary: Quick start lessons
+### Summary: Quick start lessons {#sec-vis-summary-quick-start}
 
 What we have seen, so far, is that we can make dramatic changes to the appearance of visualizations (e.g., through faceting) and also that we can exert fine control over the details (e.g., adjusting scale labels). 
 What we need to stop and consider are what we want to do (and why), in what order.
@@ -510,7 +510,7 @@ We can verbalize the thought process behind the production of these plots throug
 2. Is there a salient feature of the plot we want to draw the attention of the audience to? We can add a visual element (like a line) and annotation text to guide the audience.
 3. Are we interested in variation between sub-sets of the data? We can facet the plot to examine variation between sub-sets (facets) enabling the comparison of trends.
 
-## A practical guide to visualization ideas {#sec-practical-visualization}
+## A practical guide to visualization ideas {#sec-vis-practical-visualization}
 
 In this guide, we illustrate some of the ideas about visualization we discussed at the start, working with practical coding examples.
 We will be working with real data from a published research project.
@@ -529,11 +529,11 @@ You can then further extend your development by trying out the coding moves for 
 - Critically, the data are provided with comprehensive documentation.
 :::
 
-### Set up for coding {#sec-set-up}
+### Set up for coding {#sec-vis-set-up}
 
 To do our practical work, we will need functions and data. We get these at the start of our workflow.
 
-#### Get libraries {#sec-libraries}
+#### Get libraries {#sec-vis-libraries}
 
 We are going to need the `lme4, patchwork, psych` and `tidyverse` libraries of functions and data.
 
@@ -546,11 +546,11 @@ library(psych)
 library(tidyverse)
 ```
 
-#### Get the data {#sec-get-data}
+#### Get the data {#sec-vis-get-data}
 
 You can access the data we are going to use in two different ways.
 
-##### Get the data from project repositories {#sec-from-repros}
+##### Get the data from project repositories {#sec-vis-from-repros}
 
 The data associated with both [@ricketts2021] and [@rodríguez-ferreiro2020] are freely available through project repositories on the Open Science Framework web pages.
 
@@ -562,7 +562,7 @@ These data are associated with full explanations of data collection methods, mat
 
 In the following, I am going to abstract summary information about the @ricketts2021 study and data. I shall leave you to do the same for the @rodríguez-ferreiro2020 study.
 
-##### Get the data through a downloadable archive {#sec-download}
+##### Get the data through a downloadable archive {#sec-vis-download}
 
 Download the [data.zip](files/data.zip) files folder and upload the files to RStudio Server.
 
@@ -585,7 +585,7 @@ The folder also includes the @rodríguez-ferreiro2020 data files:
 -   These data files are collected together in a folder for download, for your convenience, but the *version of record* for the data for each study comprise the files located on the OSF repositories associated with the original articles.
 :::
 
-### Information about the Ricketts study and the datasets {#sec-ricketts-study}
+### Information about the Ricketts study and the datasets {#sec-vis-ricketts-study}
 
 @ricketts2021 conducted an investigation of word learning in school-aged children.
 They taught children 16 novel words in a study with a *2 x 2* factorial design.
@@ -624,7 +624,7 @@ Each child was asked to respond to 16 words and, for each of the 16 words, we co
 
 We explain what you will find when you inspect the .csv files, next.
 
-#### Data -- variables and value coding {#sec-ricketts-variables}
+#### Data -- variables and value coding {#sec-vis-ricketts-variables}
 
 The variables included in .csv files are listed, following, with information about value coding or calculation.
 
@@ -674,9 +674,9 @@ Levenshtein distance scores are higher *if* a child makes more errors in produci
 
 To demonstrate some of the processes we can enact to process and visualize data, and some of the benefits of doing so, we are going to work with the `concurrent.orth_2020-08-11.csv` dataset. These are data corresponding to the @ricketts2021 Study 2. `concurrent` refers to the analysis (a concurrent comparison) of data from younger and older children.
 
-### Read the data into R {#sec-read-in}
+### Read the data into R {#sec-vis-read-in}
 
-Assuming you have downloaded the data files, we first read the dataset into the R environment: `concurrent.orth_2020-08-11.csv`. We do the data read in a bit differently than you have seen it done before; we will come back to what is going on (in @sec-col-types).
+Assuming you have downloaded the data files, we first read the dataset into the R environment: `concurrent.orth_2020-08-11.csv`. We do the data read in a bit differently than you have seen it done before; we will come back to what is going on (in @sec-vis-col-types).
 
 ```{r}
 conc.orth <- read_csv("concurrent.orth_2020-08-11.csv",
@@ -721,11 +721,11 @@ conc.orth %>%
 
 You can see that for `EOF001`, as for every participant, we have information on the conditions under which we observed their responses (`Instructions, Orthography`), as well as information about the stimuli that we asked participants to respond to (e.g., `Word, Consistency_H`), information about the responses or *outcomes* we recorded (`Measure, Score, Spelling.transcription,	Levenshtein.Score`), and information about the participants themselves (e.g., `TOWREsweRS, TOWREpdeRS`).
 
-### Process the data {#sec-ricketts-process-data}
+### Process the data {#sec-vis-ricketts-process-data}
 
 We almost always need to process data in order to render the information ready for discovery or communication data visualization.
 
-#### Specify column data types {#sec-col-types}
+#### Specify column data types {#sec-vis-col-types}
 
 You will have seen that data processing began when we first read the data in for use. Let's go back and take a look at the code steps.
 
@@ -770,7 +770,7 @@ Using the `col_types = cols( ... )` argument saves me from having to first read 
 conc.orth$Participant <- as.factor(conc.orth$Participant)
 ```
 
-##### Exercise {#sec-exercise-process}
+##### Exercise {#sec-vis-exercise-process}
 
 I do not have to do step 2 of the read-in process, here. What happens if we use just `read_csv()`? Try it.
 
@@ -779,13 +779,13 @@ I do not have to do step 2 of the read-in process, here. What happens if we use 
 conc.orth <- read_csv("concurrent.orth_2020-08-11.csv")
 ```
 
-##### Further information
+##### Further information {#sec-vis-further-info}
 
 You can read more about `read_csv()` [here](https://readr.tidyverse.org/reference/read_delim.html){.external target="_blank"}
 
 You can read more about `col_types = cols()` [here](https://readr.tidyverse.org/reference/cols.html){.external target="_blank"}
 
-#### Extract information from the dataset {#sec-get-distinct}
+#### Extract information from the dataset {#sec-vis-get-distinct}
 
 The @ricketts2021 dataset `orth.conc` is a moderately sized and rich dataset with several observations, on multiple variables, for each of many participants. Sometimes, we want to extract information from a more complex dataset because we want to understand or present a part of it, or a relatively simple account of it. We look at an example of how you might do that now.
 
@@ -848,25 +848,25 @@ Notice:
 2.  We would prefer to use real words for row name labels instead of dataset variable column labels, e.g, replace `TOWREsweRS` with: "TOWRE word reading score".
 :::
 
-##### Exercise
+##### Exercise {sec-vis-ex-1}
 
 In these bits of demonstration code, we extract information relating just to participants.
 However, in this study, we recorded the responses participants made to 16 stimulus words, and we include in the dataset information about the word properties `Consistency_H`. 
 
 - Can you adapt the code you see here in order to calculate a mean score for each word, and then extract the word-level information for each distinct stimulus word identity?
 
-##### Further information
+##### Further information {sec-vis-ex-1-further}
 
 You can read more about the `psych` library, which is often useful, [here](https://personality-project.org/r/psych/vignettes/intro.pdf){.external target="_blank"}.
 You can read more about the `distinct()` function [here](https://dplyr.tidyverse.org/reference/distinct.html){.external target="_blank"}.
 
-### Visualize the data: introduction {#visualize-data}
+### Visualize the data: introduction {#sec-vis-visualize-data}
 
 It has taken us a while but now we are ready to examine the data using visualizations. Remember, we are engaging in visualization to (1.) do discovery, to get a sense of our data, and maybe reveal unexpected aspects, and (2.) potentially to communicate to ourselves and others what we have observed or perhaps what insights we can gain.
 
 We have been learning to use histograms, in other classes, so let's start there.
 
-### Examine the distributions of numeric variables {#sec-examine-distribution}
+### Examine the distributions of numeric variables {#sec-vis-examine-distribution}
 
 We can use histograms to visualize the distribution of observed values for a numeric variable. Let's start simple, and then explore how to elaborate the plotting code, in a series of edits, to polish the plot presentation.
 
@@ -927,7 +927,7 @@ ggplot(data = conc.orth.subjs, aes(x = WASImRS)) +
 2.  `labs(x = "Scores on the Wechsler Abbreviated Scale of Intelligence") +` changes the label to something that should be understandable by people, in our audience, who do not have access to variable information (as we do) about the dataset.
 3.  `theme_bw()` we change the overall appearance of the plot by changing the theme.
 
-#### Exercise
+#### Exercise {sec-vis-ex-2}
 
 We could, if we wanted, add a line and annotation to indicate the mean value, as you saw in @fig-sleep-study-histogram.
 
@@ -937,11 +937,11 @@ We can, of course, plot histograms to indicate the distributions of other variab
 
 - Can you apply the histogram code to plot histograms of other variables?
 
-### Comparing the distributions of numeric variables {#sec-compare-distributions}
+### Comparing the distributions of numeric variables {#sec-vis-compare-distributions}
 
 We may wish to discover or communicate how values vary on dataset variables in two different ways. Sometimes, we need to examine how values vary on different variables. And sometimes, we need to examine how values vary on the same variable but in different groups of participants (or stimuli) or under different conditions. We look at this next. We begin by looking at how you might compare how values vary on different variables.
 
-#### Compare how values vary on different variables {#sec-compare-distributions-variables}
+#### Compare how values vary on different variables {#sec-vis-compare-distributions-variables}
 
 It can be useful to compare the distributions of different variables. Why?
 
@@ -1101,7 +1101,7 @@ conc.orth.subjs %>%
 You can find more information on `ggridges` [here](https://cran.r-project.org/web/packages/ggridges/vignettes/introduction.html){.external target="_blank"}.
 :::
 
-#### Compare between groups how values vary on different variables {#sec-compare-distributions-groups}
+#### Compare between groups how values vary on different variables {#sec-vis-compare-distributions-groups}
 
 We will often want to compare the distributions of variable values between groups or between conditions. This need may appear when, for example, we are conducting a between-groups manipulation of some condition and we want to check that the groups are approximately matched on dimensions that are potentially linked to outcomes (i.e., on potential *confounds*). The need may appear when, alternatively, we have recruited or selected participant (or stimulus) samples and we want to check that the sample sub-groups are approximately matched or detectably different on one or more dimensions of interest or of concern.
 
@@ -1115,7 +1115,7 @@ We can check this through data visualization. Our aim is to present the distribu
 
 I am going to process the data before I do the plotting. I will re-use the code I used before (see @sec-get-distinct) with one additional change. I will add a line to create a group coding variable. This addition shows you how to do an action that is *very often* useful in the data processing part of your workflow.
 
-##### Data processing {#sec-process-code-group}
+##### Data processing {#sec-vis-process-code-group}
 
 You have seen that the @ricketts2021 report states that an additional group of children was recruited for the investigation's second study. How do we know who they are? If you recall the summary view of the complete dataset, there is one variable we can use to code group identity.
 
@@ -1163,7 +1163,7 @@ The `tidyverse` collection includes the `forcats` library of functions for worki
 
 Changing factors level coding by hand is, for many, a common task, and the `fct_recode()` function makes it easy. You can find the technical information on the function, with further examples, [here](https://forcats.tidyverse.org/reference/fct_recode.html){.external target="_blank"}.
 
-##### Group comparison visualization {#sec-group-compare-distribution}
+##### Group comparison visualization {#sec-vis-group-compare-distribution}
 
 There are different ways to examine the distributions of variables *so that* we can compare the distributions of the same variable between groups.
 
@@ -1332,7 +1332,7 @@ Here is what the code does:
 8.  `labs(x = "BPVS vocabulary score") +` makes the x-axis label something understandable to someone who does not know about the study.
 9.  `theme_bw()` changes the theme.
 
-##### Critical evaluation: discovery and communication {#sec-group-compare-conclusions}
+##### Critical evaluation: discovery and communication {#sec-vis-group-compare-conclusions}
 
 As we work with visualization, we should aim to develop skills in reading plots, so:
 
@@ -1340,13 +1340,13 @@ As we work with visualization, we should aim to develop skills in reading plots,
 
 When we look at @fig-density-BPVS-WASI, we can see that the younger and older children in the @ricketts2021 sample have broadly overlapping distributions of vocabulary scores. However, as we have noticed previously, the peak of the distribution is a bit lower for the younger children compared to the older children. This appears to be the case whether we are looking at the BPVS or at the WASI measures of vocabulary, suggesting that the observation does not depend on the particular vocabulary test. Is this observation unexpected? Probably not, as we should hope to see vocabulary knowledge increase as children get older. Is this observation a problem for our analysis? You need to read the paper to find out what we decided.
 
-##### Exercise
+##### Exercise {sec-vis-ex-3}
 
 In the demonstration examples, I focused on comparing age groups on vocabulary, what about the other measures?
 
 I used superimposed density plots: are other plotting styles more effective, for you? Try using boxplots or superimposed or faceted histograms instead.
 
-### Summary: Visualizing distributions {#sec-summary-distributions}
+### Summary: Visualizing distributions {#sec-vis-summary-distributions}
 
 So far, we have looked at how and why we may examine the distributions of numeric variables. We have used histograms to visualize the distribution of variable values. We have explored the construction of grids of plots to enable the quick examination or concise communication of information about the distributions of multiple variables at the same time. And we have used histograms, boxplots and density plots to examine how the distributions of variables may differ between groups.
 
@@ -1354,7 +1354,7 @@ The comparison of the distributions of variable values in different groups (or, 
 
 While boxplots, density plots and histograms are typically used to examine how the values of a numeric variable vary, scatterplots are typically used when we wish to examine, to make sense of or communicate potential associations or relations between two (or more) numeric variables. We turn to scatterplots, next.
 
-### Examine the associations between numeric variables {#sec-examine-associations}
+### Examine the associations between numeric variables {#sec-vis-examine-associations}
 
 Many of us start learning about scatterplots in high school math classes. Using the modern tools made available to us through the `ggplot2` library (as part of `tidyverse`), we can produce effective, nice-looking, scatterplots for a range of discovery or communication scenarios.
 
@@ -1362,7 +1362,7 @@ We continue working with the @ricketts2021 dataset. In the context of the @ricke
 
 Later on, we will look at more advanced plots that help us to communicate the impact of the experimental manipulations implemented by @ricketts2021, and also to discover the ways that these impacts may vary between children.
 
-#### Getting started: Scatterplot basics {#sec-scatter-basics}
+#### Getting started: Scatterplot basics {#sec-vis-scatter-basics}
 
 We can begin by asking a simple research question we can guess the answer to:
 
@@ -1405,7 +1405,7 @@ How does the code work? We have seen scatterplots before but, to ensure we are c
 6.  `title = "Are WASI and BPVS vocabulary scores associated?") +` fixes the title.
 7.  `theme_bw()` changes the theme.
 
-#### Building complexity: adding information step by step {#sec-scatter-building}
+#### Building complexity: adding information step by step {#sec-vis-scatter-building}
 
 For this pair of variables in this dataset, the potential association in the variation of scores is quite obvious. However, sometimes it is helpful to guide the audience by imposing a *smoother*. There are different ways to do this, for different objectives and in different contexts. Here, we look at two different approaches. In addition, as we go, we examine how to adjust the appearance of the plot to address different potential discovery or communication needs.
 
@@ -1470,7 +1470,7 @@ Notice the difference between @fig-scatter-BPVS-WASI-loess and @fig-scatter-BPVS
 
 The `lm` method requires R to estimate the association between the two variables, here, BPVS and WASI, assuming a linear model. Of course, we are going to learn about linear models but, in short, right now, what we need to know is that we assume a "straight line" relationship between the variables. This assumption requires that for any interval of WASI scores -- e.g., whether we are talking about WASI scores between 20-25 or about WASI scores between 30-35 -- the relation between BPVS and WASI scores has the same shape: the direction and steepness of the slope of the line is the same.
 
-#### Exercise
+#### Exercise {sec-vis-ex-4}
 
 ::: callout-advice
 Developing skill in working with data visualizations is not just about developing coding skills, it is also about developing skills in reading, and critically evaluating, the information the plots we produce show us.
@@ -1496,7 +1496,7 @@ You can train your critical evaluation by asking yourself questions like the fol
 -   If the trend line represents a set of predictions about how the BPVS scores vary (in height) given variation in WASI scores, we can see that in places the prediction is not very good.
 -   Take a look at the points located at WASI 25. We can see that there there are points indicating that different children have the same WASI score of 25 but BPVS scores ranging from about 115 to 140.
 
-#### Polish the appearance of a plot for presentation
+#### Polish the appearance of a plot for presentation {#sec-vis-scatter-polish}
 
 @fig-scatter-BPVS-WASI-lm presents a satisfactory looking plot but it is worth checking what edits we can make to the appearance of the plot, to indicate some of the ways that you can exercise choice in determining what a plot looks like. This will be helpful to you when you are constructing plots for presentation and report and you want to ensure the plots are as effective as possible.
 
@@ -1527,7 +1527,7 @@ If you inspect the code, you can see that I have made three changes:
 
 The last step --- changing the axis limits --- reveals how the sample data can be understood in the context of possible scores on these ability measures. Children *could* get BPVS scores of 0 or WASI scores of 0. By showing the start of the axes we get a more realistic sense of how our sample compares to the possible ranges of scores we could see in the wider population of children. This perhaps offers a more honest or realistic visualization of the potential association between BPVS and WASI vocabulary scores.
 
-#### Examining associations among multiple variables {#sec-scatter-analysis-multiple}
+#### Examining associations among multiple variables {#sec-vis-scatter-analysis-multiple}
 
 As we have seen previously, we can construct a series of plots and present them all at once in a grid or lattice. @fig-distribution-scatter-grid presents just such a grid: of scatterplots, indicating a series of potential associations.
 
@@ -1790,7 +1790,7 @@ Levenshtein distance scores are higher *if* a child makes more errors in produci
 - This means that if we want to see what factors help a child to learn a word, including its spelling, then we want to see that helpful factors are associated with *lower* Levenshtein scores.
 :::
 
-### Answering a scientific question: Visualize the effects of experimental conditions {#sec-visualize-effects}
+### Answering a scientific question: Visualize the effects of experimental conditions {#sec-vis-visualize-effects}
 
 As explained in @sec-ricketts-study, in the @ricketts2021 study, we taught children taught 16 novel words in a study with a *2 x 2* factorial design. The presence of orthography (orthography absent vs. orthography present) was manipulated within participants: for all children, eight of the words were taught with orthography (the word spelling) present and eight with orthography absent. Instructions (incidental vs. explicit) were manipulated between participants such that children in the explicit condition were alerted to the presence of orthography whereas children in the incidental condition were not. The @ricketts2021 investigation was primarily concerned with the effects on word learning of presenting words for learning with or without showing the words with their spellings, with or without instructing students explicitly that they would be helped by the presence of the spellings.
 
@@ -1974,7 +1974,7 @@ Once we have done the data processing in preparation, the code to produce the pl
 6.  `facet_wrap(~ reorder(Participant, difference.score))` tells R that we want the sub-sets to be organized by Participant, and we want the facets to be ordered by the `difference.score` calculated for each participant.
 7.  `theme(axis.text.x = element_blank())` removes the x-axis labels because it is too crowded with the axis labels left in, and the information is already present in the colour guide legend shown on the right of the plot.
 
-### Summary: Visualizing associations
+### Summary: Visualizing associations {#sec-vis-associations-summary}
 
 Visualizing associations between variables encompasses a wide range of the things we have to do, in terms of both discovery and communication, when we work with data from psychological experiments.
 
@@ -1990,7 +1990,7 @@ However, you will have noticed that presenting plots of effects is not where we 
 Further plotting indicates quite marked variation between participants in the effects of the conditions.
 This kind of insight is something we can and should seek to reveal through our visualization work.
 
-## Next steps for development
+## Next steps for development {#sec-vis-next-steps}
 
 To take your development further, take a look at the resources listed in @sec-resources.
 
@@ -2003,7 +2003,7 @@ As you have the alternate datasets described in @sec-from-repros, you can start 
 Alternatively, you can look at the data reported by @rodríguez-ferreiro2020.
 @rodríguez-ferreiro2020 present both measures of individual differences (on schizotypyal traits) and experimental manipulations (of semantic priming) so you can do similar things with those data as we have explored here.
 
-## Helpful resources {#sec-resources}
+## Helpful resources {#sec-vis-resources}
 
 ### Some helpful websites
 
