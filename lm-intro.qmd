@@ -10,6 +10,7 @@ Under construction
 library(datasauRus)
 library(faux)
 library(ggExtra)
+library(ggridges)
 library(kableExtra)
 library(knitr)
 library(lme4)
@@ -260,1193 +261,1020 @@ In these notes, I provide notes on the code steps that result in plots.
 -   Click on the `Notes` tab to see them.
 :::
 
-<!-- ## Week 9: Focus on the linear model {background-color="lightblue"} -->
-
-<!-- ```{r} -->
-<!-- #| label: abline-predict-random-1 -->
-<!-- #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line. In the background, a fan of light pink lines indicate possible ways to capture the trend of the association." -->
-<!-- #| fig-height: 5.5 -->
-<!-- #| fig-width: 5.5 -->
-
-<!-- # -- see for how to on coding: -->
-<!-- # grolemund-wickham-p.347 -->
-
-<!-- models <- tibble( -->
-<!--             a1 = runif(250, .25, .75), -->
-<!--             a2 = runif(250, -.05, .05) -->
-<!--             ) -->
-
-<!--   ggplot(data = clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) + -->
-<!--   geom_abline(data = models, aes(intercept = a1, slope = a2), alpha = .05, colour = "darkred") + -->
-<!--   geom_point(size = 2.5, colour = "darkgrey", alpha = 0.75) + -->
-<!--   geom_smooth(method = "lm", colour = "red", size = 1.5, se = FALSE) + -->
-<!--   theme_bw() + -->
-<!--   theme( -->
-<!--     axis.text = element_text(size = rel(1.15)), -->
-<!--     axis.title = element_text(size = rel(1.5)) -->
-<!--   )  + -->
-<!--   xlim(0, 40) + ylim(0, 1) + -->
-<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") -->
-<!-- ``` -->
+### Week 9: Focus on the linear model
+
+```{r}
+#| label: abline-predict-random-1
+#| echo: false
+#| warning: false
+#| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line. In the background, a fan of light pink lines indicate possible ways to capture the trend of the association."
+#| fig-height: 5
+#| fig-width: 5
+
+# -- see for how to on coding:
+# grolemund-wickham-p.347
+
+models <- tibble(
+            a1 = runif(250, .25, .75),
+            a2 = runif(250, -.05, .05)
+            )
+
+  ggplot(data = clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+  geom_abline(data = models, aes(intercept = a1, slope = a2), alpha = .05, colour = "darkred") +
+  geom_point(size = 2.5, colour = "darkgrey", alpha = 0.75) +
+  geom_smooth(method = "lm", colour = "red", size = 1.5, se = FALSE) +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  )  +
+  xlim(0, 40) + ylim(0, 1) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy")
+```
 
-<!-- ## Analyze + visualize + present -->
+### Analyze + visualize + present
 
-<!-- ```{dot} -->
-<!-- //| label: fig-pipeline -->
-<!-- //| fig-cap: "The data analysis pipeline or workflow: we focus on the linear model" -->
-<!-- //| fig-alt: "The diagram shows a flowchart. The flowchart starts at the top with 'get raw data' and finishes at the bottom with 'present'. 'get raw data' has an arrow to 'tidy data'. 'tidy data' has arrows to 'analyze', 'explore' and 'visualize'. On the same level as 'tidy 'data', 'assumptions' also has arrows to 'analyze', 'explore' and 'visualize'. Then 'analyze', 'explore' and 'visualize' have arrows to 'present'. The 'analyze', 'visualize' and 'present' boxes are outlined in red." -->
+```{dot}
+//| label: fig-pipeline
+//| fig-cap: "The data analysis pipeline or workflow: we focus on the linear model"
+//| fig-alt: "The diagram shows a flowchart. The flowchart starts at the top with 'get raw data' and finishes at the bottom with 'present'. 'get raw data' has an arrow to 'tidy data'. 'tidy data' has arrows to 'analyze', 'explore' and 'visualize'. On the same level as 'tidy 'data', 'assumptions' also has arrows to 'analyze', 'explore' and 'visualize'. Then 'analyze', 'explore' and 'visualize' have arrows to 'present'. The 'analyze', 'visualize' and 'present' boxes are outlined in red."
 
-<!-- digraph Q { -->
-
-<!--   node [shape=record]; -->
+digraph Q {
 
-<!--   nd_1   [label = "Get raw data"]; -->
-<!--   nd_2   [label = "Tidy data"]; -->
-<!--   nd_3_a [label = "Assumptions"]; -->
-<!--   nd_3_l [label = "Visualize", color = red]; -->
-<!--   nd_3   [label = "Analyze", color = red]; -->
-<!--   nd_3_r [label = "Explore"]; -->
-<!--   nd_4   [label = "Present", color = red]; -->
+  node [shape=record];
 
-<!--   nd_3_a -> nd_3 [color = grey]; -->
-<!--   nd_3_a -> nd_3_r [color = grey]; -->
-<!--   nd_3_a -> nd_3_l [color = grey]; -->
+  nd_1   [label = "Get raw data"];
+  nd_2   [label = "Tidy data"];
+  nd_3_a [label = "Assumptions"];
+  nd_3_l [label = "Visualize", color = red];
+  nd_3   [label = "Analyze", color = red];
+  nd_3_r [label = "Explore"];
+  nd_4   [label = "Present", color = red];
 
-<!--   nd_2 -> nd_3_r [color = grey]; -->
-<!--   nd_2 -> nd_3_l [color = grey]; -->
+  nd_3_a -> nd_3 [color = grey];
+  nd_3_a -> nd_3_r [color = grey];
+  nd_3_a -> nd_3_l [color = grey];
 
-<!--   nd_1 -> nd_2 -> nd_3 -> nd_4 [color = grey]; -->
+  nd_2 -> nd_3_r [color = grey];
+  nd_2 -> nd_3_l [color = grey];
 
-<!--   nd_3_l -> nd_4 [color = grey]; -->
+  nd_1 -> nd_2 -> nd_3 -> nd_4 [color = grey];
 
-<!--   subgraph cluster_R { -->
+  nd_3_l -> nd_4 [color = grey];
 
-<!--     {rank=same nd_3_l nd_3 nd_3_r} -->
+  subgraph cluster_R {
 
-<!--     nd_3_l -> nd_3 -> nd_3_r [color= none arrowhead=none]; -->
+    {rank=same nd_3_l nd_3 nd_3_r}
 
-<!--   } -->
+    nd_3_l -> nd_3 -> nd_3_r [color= none arrowhead=none];
 
-<!-- } -->
-<!-- ``` -->
+  }
 
-<!-- ## The linear model: our aims -->
+}
+```
 
-<!-- ::: columns -->
+### The linear model: our aims
 
-<!-- :::: {.column width=.55} -->
-<!-- 1. Understand how to code: `lm(mean.acc ~ SHIPLEY)` -->
-<!-- 2. To answer questions like: **Is comprehension success influenced by vocabulary knowledge?** -->
-<!-- :::: -->
+1. Understand how to code: `lm(mean.acc ~ SHIPLEY)`
+2. To answer questions like: **Is comprehension success influenced by vocabulary knowledge?**
 
-<!-- :::: {.column width=.4} -->
-<!-- ```{r} -->
-<!-- #| warning: false -->
-<!-- #| echo: false -->
-<!-- #| label: fig-scatterplot-shipley-acc-1 -->
-<!-- #| fig-cap: "Scatterplot showing the potential association between accuracy of comprehension and vocabulary scores" -->
-<!-- #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line." -->
-<!-- #| fig-width: 5 -->
-<!-- #| fig-height: 5 -->
+```{r}
+#| warning: false
+#| echo: false
+#| label: fig-scatterplot-shipley-acc-1
+#| fig-cap: "Scatterplot showing the potential association between accuracy of comprehension and vocabulary scores"
+#| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line."
+#| fig-width: 5
+#| fig-height: 5
 
-<!-- clearly.one.subjects %>% -->
-<!--   ggplot(aes(x = SHIPLEY, y = mean.acc)) + -->
-<!--   geom_point(size = 2.5, alpha = .5, colour = "darkgrey") + -->
-<!--   geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) + -->
-<!--   xlim(0, 40) + -->
-<!--   ylim(0, 1.1)+ -->
-<!--   theme_bw() + -->
-<!--   theme( -->
-<!--     axis.text = element_text(size = rel(1.15)), -->
-<!--     axis.title = element_text(size = rel(1.5)) -->
-<!--   ) + -->
-<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") -->
-<!-- ``` -->
-<!-- :::: -->
+clearly.one.subjects %>%
+  ggplot(aes(x = SHIPLEY, y = mean.acc)) +
+  geom_point(size = 2.5, alpha = .5, colour = "darkgrey") +
+  geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) +
+  xlim(0, 40) +
+  ylim(0, 1.1)+
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  ) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy")
+```
 
-<!-- ::: -->
+### Using the linear model to answer research questions
 
-<!-- ## Using the linear model to answer research questions -->
+- We will learn how to:
 
-<!-- - We will learn how to: -->
+1. code linear models
+2. identify and interpret model statistics
+3. critically evaluate the results
+4. communicate the results
 
-<!-- 1. code linear models -->
-<!-- 2. identify and interpret model statistics -->
-<!-- 3. critically evaluate the results -->
-<!-- 4. communicate the results -->
+### Thinking about relationships in psychologial science
 
-<!-- ## Thinking about relationships in psychologial science -->
+We often want to know about relationships
 
-<!-- We often want to know about relationships -->
+- Does variation in X predict variation in Y?
+- What are the factors that influence outcome Y?
+- Is a theoretical model consistent with observed behaviour?
 
-<!-- - Does variation in X predict variation in Y? -->
-<!-- - What are the factors that influence outcome Y? -->
-<!-- - Is a theoretical model consistent with observed behaviour? -->
+### Now consider our research aims in the *context* of the health comprehension project
 
-<!-- ## Now consider our research aims in the *context* of the health comprehension project -->
+1. Because public health impacts depend on giving people information they can understand
+2. We want to know: **What makes it easy or difficult to understand written health information?**
 
-<!-- ::: columns -->
+```{r nurse-patient-talk-1, echo=FALSE, out.width='100%', fig.cap="flickr: Sasin Tipchair 'Senior woman in wheelchair talking to a nurse in a hospital'"}
+knitr::include_graphics("nurse-patient-talk.png")
+```
 
-<!-- :::: {.column width=.4} -->
-<!-- 1. Because public health impacts depend on giving people information they can understand -->
-<!-- 2. We want to know: **What makes it easy or difficult to understand written health information?** -->
-<!-- :::: -->
+### Health comprehension project: questions and analyses
 
-<!-- :::: {.column width=.6} -->
-<!-- ```{r nurse-patient-talk-1, echo=FALSE, out.width='100%', fig.cap="flickr: Sasin Tipchair 'Senior woman in wheelchair talking to a nurse in a hospital'"} -->
-<!-- knitr::include_graphics("nurse-patient-talk.png") -->
-<!-- ``` -->
-<!-- :::: -->
+1. We want to know: **What makes it easy or difficult to understand written health information?**
+2. So our research questions are:
 
-<!-- ::: -->
+-  What person attributes predict success in understanding?
+-  Can people accurately evaluate whether they correctly understand written health information?
 
-<!-- ## Health comprehension project: questions and analyses -->
+3. These kinds of research questions can be answered using methods like linear models
 
-<!-- 1. We want to know: **What makes it easy or difficult to understand written health information?** -->
-<!-- 2. So our research questions are: -->
+### Context: Individual differences theory of comprehension success
 
-<!-- -  What person attributes predict success in understanding? -->
-<!-- -  Can people accurately evaluate whether they correctly understand written health information? -->
+-   Understanding text depends on (1.) language experience and (2.) reasoning ability [@freed2017]
 
-<!-- 3. These kinds of research questions can be answered using methods like linear models -->
+```{dot}
+//| label: fig-comprehension-drivers
+//| fig-alt: The diagram shows a flowchart, from left to right, nodes "Language experience" and "Reasoning capacity" are both connected by arrows to "Comprehension outcome".
+digraph Q {
+  rankdir="LR"
 
-<!-- ## Context: Individual differences theory of comprehension success -->
+  node [shape=box];
+  node [style=rounded];
 
-<!-- -   Understanding text depends on (1.) language experience and (2.) reasoning ability [@freed2017] -->
+  nd_1_l   [label = "Language experience"];
+  nd_1_r   [label = "Reasoning capacity"];
+  nd_2   [label = "Comprehension outcome"];
 
-<!-- ```{dot} -->
-<!-- //| label: fig-comprehension-drivers -->
-<!-- //| fig-alt: The diagram shows a flowchart, from left to right, nodes "Language experience" and "Reasoning capacity" are both connected by arrows to "Comprehension outcome". -->
-<!-- digraph Q { -->
-<!--   rankdir="LR" -->
+  nd_1_l -> nd_2;
+  nd_1_r -> nd_2;
 
-<!--   node [shape=box]; -->
-<!--   node [style=rounded]; -->
+}
+```
 
-<!--   nd_1_l   [label = "Language experience"]; -->
-<!--   nd_1_r   [label = "Reasoning capacity"]; -->
-<!--   nd_2   [label = "Comprehension outcome"]; -->
+<!-- ![Freed et al., 2017; structural equation model, adult reading comprehension](freed-2017-fig1-sem-model-1.png){fig-alt="Freed et al., 2017; structural equation model, adult reading comprehension"} -->
 
-<!--   nd_1_l -> nd_2; -->
-<!--   nd_1_r -> nd_2; -->
+### The measurement context: Where the data come from
 
-<!-- } -->
-<!-- ``` -->
+-   We measure reading comprehension: asking people to read text and then answer multiple choice questions
+-   We measure background knowledge: vocabulary knowledge (Shipley); health literacy (HLVA)
 
-<!-- <!-- ![Freed et al., 2017; structural equation model, adult reading comprehension](freed-2017-fig1-sem-model-1.png){fig-alt="Freed et al., 2017; structural equation model, adult reading comprehension"} --> -->
+### Reflect: The kinds of critical evaluation questions you can ask yourself
 
-<!-- ## The measurement context: Where the data come from -->
+-   Are multiple choice questions good ways to probe understanding? *What alternatives are there?*
+-   Are tests like the Shipley good measures of language knowledge? *What do we miss?*
 
-<!-- -   We measure reading comprehension: asking people to read text and then answer multiple choice questions -->
-<!-- -   We measure background knowledge: vocabulary knowledge (Shipley); health literacy (HLVA) -->
+### Reflect: As we move into thinking about the data analysis, we need to identify our assumptions
 
-<!-- ## Reflect: The kinds of critical evaluation questions you can ask yourself -->
+1. **validity**: that differences in knowledge or ability cause differences in test scores
+2. **measurement**: that this is equally true across the different kinds of people we tested
+3. **generalizability**: that the sample of people we recruited looks like the population
 
-<!-- -   Are multiple choice questions good ways to probe understanding? *What alternatives are there?* -->
-<!-- -   Are tests like the Shipley good measures of language knowledge? *What do we miss?* -->
+### We need to think about the derivation chain
 
-<!-- ## Reflect: As we move into thinking about the data analysis, we need to identify our assumptions -->
+```{dot}
+//| label: fig-derivation-chain
+//| fig-cap: The derivation chain
+//| fig-alt: The diagram shows a flowchart. The flowchart starts at the top with "concept formation" and "causal model" in the same subset, that subset is linked by an arrow to "measurement", "measurement" and "auxiliary assumptions" are linked to "statistical predictions", "statistical predictions" are linked to "testing hypotheses".
+digraph Q {
 
-<!-- 1. **validity**: that differences in knowledge or ability cause differences in test scores -->
-<!-- 2. **measurement**: that this is equally true across the different kinds of people we tested -->
-<!-- 3. **generalizability**: that the sample of people we recruited looks like the population -->
+  node [shape=record];
 
-<!-- ## We need to think about the derivation chain -->
+  nd_1_l   [label = "Concept formation"];
+  nd_1_r   [label = "Causal model"];
+  nd_2_l   [label = "Measurement"];
+  nd_2_r [label = "Auxiliary assumptions"];
+  nd_3   [label = "Statistical predictions"];
+  nd_4   [label = "Testing hypotheses"];
 
-<!-- ```{dot} -->
-<!-- //| label: fig-derivation-chain -->
-<!-- //| fig-cap: The derivation chain -->
-<!-- //| fig-alt: The diagram shows a flowchart. The flowchart starts at the top with "concept formation" and "causal model" in the same subset, that subset is linked by an arrow to "measurement", "measurement" and "auxiliary assumptions" are linked to "statistical predictions", "statistical predictions" are linked to "testing hypotheses". -->
-<!-- digraph Q { -->
+  nd_1_l -> nd_2_l -> nd_3 -> nd_4;
 
-<!--   node [shape=record]; -->
+  nd_2_r -> nd_3;
 
-<!--   nd_1_l   [label = "Concept formation"]; -->
-<!--   nd_1_r   [label = "Causal model"]; -->
-<!--   nd_2_l   [label = "Measurement"]; -->
-<!--   nd_2_r [label = "Auxiliary assumptions"]; -->
-<!--   nd_3   [label = "Statistical predictions"]; -->
-<!--   nd_4   [label = "Testing hypotheses"]; -->
+  subgraph cluster_R {
 
-<!--   nd_1_l -> nd_2_l -> nd_3 -> nd_4; -->
+    {rank=same nd_1_l nd_1_r}
 
-<!--   nd_2_r -> nd_3; -->
+    nd_1_l -> nd_1_r [color= none arrowhead=none];
 
-<!--   subgraph cluster_R { -->
+  }
 
-<!--     {rank=same nd_1_l nd_1_r} -->
+}
+```
 
-<!--     nd_1_l -> nd_1_r [color= none arrowhead=none]; -->
+### Questions, assumptions, predictions
 
-<!--   } -->
+Link: concepts, questions $\rightarrow$ assumptions $\rightarrow$ testable predictions
 
-<!-- } -->
-<!-- ``` -->
+1. **concepts, questions**: Can people accurately understand health guidance? $\rightarrow$
+2. **assumptions**: People who know more about language should also present more accurate understanding $\rightarrow$
+3. **testable predictions**: Higher levels of vocabulary should be associated with higher levels of comprehension accuracy: we expect to estimate a positive coefficient
 
-<!-- ## Questions, assumptions, predictions -->
+### One way of thinking about the association is to visualize it
 
-<!-- Link: concepts, questions $\rightarrow$ assumptions $\rightarrow$ testable predictions -->
+- For each value of the predictor **vocabulary**
+- Does the the value of the outcome **accuracy**
+- *Increase or decrease?*
 
-<!-- 1. **concepts, questions**: Can people accurately understand health guidance? $\rightarrow$ -->
-<!-- 2. **assumptions**: People who know more about language should also present more accurate understanding $\rightarrow$ -->
-<!-- 3. **testable predictions**: Higher levels of vocabulary should be associated with higher levels of comprehension accuracy: we expect to estimate a positive coefficient -->
+```{r}
+#| warning: false
+#| echo: false
+#| label: fig-scatterplot-shipley-acc-2
+#| fig-cap: "The association between comprehension accuracy and vocabulary"
+#| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line."
+#| fig-width: 5
+#| fig-height: 5
 
-<!-- ## One way of thinking about the association is to visualize it -->
+clearly.one.subjects %>%
+  ggplot(aes(x = SHIPLEY, y = mean.acc)) +
+  geom_point(size = 2.5, alpha = .5, colour = "darkgrey") +
+  geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) +
+  xlim(0, 40) +
+  ylim(0, 1.1)+
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  ) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy")
+```
 
-<!-- ::: columns -->
+<!-- gelman -- p.4 -- Regression is a method that allows researchers to summarize how predictions or average values of an outcome vary across individuals defined by a set of predictors. -->
 
-<!-- :::: {.column width=.5} -->
-<!-- - For each value of the predictor **vocabulary** -->
-<!-- - Does the the value of the outcome **accuracy** -->
-<!-- - *Increase or decrease?* -->
-<!-- :::: -->
+<!-- -- consolidate -- the linear model with one predictor -->
+<!-- -- explain -- the linear model as a prediction engine -->
+<!-- -- explain -- differences in average outcomes given differences in groups or continuous variables -->
+<!-- -- demonstrate -- the construction of the prediction line -->
+<!-- -- explain -- the linear sum of terms -->
+<!-- -- explain -- the best fit line -- residuals -->
 
-<!-- :::: {.column width=.4} -->
-<!-- ```{r} -->
-<!-- #| warning: false -->
-<!-- #| echo: false -->
-<!-- #| label: fig-scatterplot-shipley-acc-2 -->
-<!-- #| fig-cap: "The association between comprehension accuracy and vocabulary" -->
-<!-- #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line." -->
-<!-- #| fig-width: 4.5 -->
-<!-- #| fig-height: 4.5 -->
+### Predicted association as *expected* change in average outcome
 
-<!-- clearly.one.subjects %>% -->
-<!--   ggplot(aes(x = SHIPLEY, y = mean.acc)) + -->
-<!--   geom_point(size = 2.5, alpha = .5, colour = "darkgrey") + -->
-<!--   geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) + -->
-<!--   xlim(0, 40) + -->
-<!--   ylim(0, 1.1)+ -->
-<!--   theme_bw() + -->
-<!--   theme( -->
-<!--     axis.text = element_text(size = rel(1.15)), -->
-<!--     axis.title = element_text(size = rel(1.5)) -->
-<!--   ) + -->
-<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") -->
-<!-- ``` -->
-<!-- :::: -->
+- @fig-scatterplot-ridges-shipley-acc-1 shows the distribution curve of mean (comprehension) accuracy scores observed at each value of vocabulary
+- You can see that the middle -- the average -- of each distribution increases
+- as we go from left (low scores) to right (high scores) on vocabulary
 
-<!-- ::: -->
+```{r}
+#| warning: false
+#| echo: false
+#| label: fig-scatterplot-ridges-shipley-acc-1
+#| fig-cap: "Association between accuracy and vocabulary"
+#| fig-alt: "The figure presents a indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. In the plot, the points are shown in dark red and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. Ridges are superimposed on the points, shown in dark grey and red. We show the distribution curve of mean (comprehension) accuracy scores observed at each value of vocabulary. You can see that the middle -- the average -- of each distribution increases as we go from left (low scores) to right (high scores)."
+#| fig-width: 6
+#| fig-height: 6
 
-<!-- ## Let's take a break {background-color="aquamarine"} -->
+clearly.one.subjects %>%
+  ggplot(aes(y = SHIPLEY, x = mean.acc, group = SHIPLEY)) +
+  stat_density_ridges(
+    quantile_lines = TRUE, quantiles = 2,
+    rel_min_height = 0.15,
+    jittered_points = TRUE, position = "raincloud",
+    scale = .7,
+    alpha = 0.6, fill = "lightgrey", colour = "darkred") +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  ) +
+  coord_flip() +
+  xlim(0.3, 1.1) + ylim(25, 42) +
+  ylab("Vocabulary (Shipley)") + xlab("Mean accuracy")
 
-<!-- :::{.nonincremental} -->
-<!-- -   End of part 1 -->
-<!-- ::: -->
+```
 
-<!-- <!-- gelman -- p.4 -- Regression is a method that allows researchers to summarize how predictions or average values of an outcome vary across individuals defined by a set of predictors. --> -->
+### How do we *estimate* the association between two variables?
 
-<!-- <!-- -- consolidate -- the linear model with one predictor --> -->
-<!-- <!-- -- explain -- the linear model as a prediction engine --> -->
-<!-- <!-- -- explain -- differences in average outcomes given differences in groups or continuous variables --> -->
-<!-- <!-- -- demonstrate -- the construction of the prediction line --> -->
-<!-- <!-- -- explain -- the linear sum of terms --> -->
-<!-- <!-- -- explain -- the best fit line -- residuals --> -->
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: "1|2|3"
+model <- lm(mean.acc ~ SHIPLEY,
+            data = clearly.one.subjects)
+summary(model)
+```
 
-<!-- ## Predicted association as *expected* change in average outcome {.smaller} -->
+1.  Specify the `lm` function and the model `mean.acc ~ SHIPLEY`
+2.  Specify what data we use `data = clearly.one.subjects`
+3.  Get the results `summary(model)`
 
-<!-- ::: columns -->
+### The sentence structure of models in R
 
-<!-- :::: {.column width=.35} -->
-<!-- - @fig-scatterplot-ridges-shipley-acc-1 shows the distribution curve of mean (comprehension) accuracy scores observed at each value of vocabulary -->
-<!-- - You can see that the middle -- the average -- of each distribution increases -->
-<!-- - as we go from left (low scores) to right (high scores) on vocabulary -->
-<!-- :::: -->
+Take a good look:
 
-<!-- :::: {.column width=.65} -->
-<!-- ```{r} -->
-<!-- #| warning: false -->
-<!-- #| echo: false -->
-<!-- #| label: fig-scatterplot-ridges-shipley-acc-1 -->
-<!-- #| fig-cap: "Association between accuracy and vocabulary" -->
-<!-- #| fig-alt: "The figure presents a indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. In the plot, the points are shown in dark red and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. Ridges are superimposed on the points, shown in dark grey and red. We show the distribution curve of mean (comprehension) accuracy scores observed at each value of vocabulary. You can see that the middle -- the average -- of each distribution increases as we go from left (low scores) to right (high scores)." -->
-<!-- #| fig-width: 6 -->
-<!-- #| fig-height: 6 -->
+```{r}
+#| echo: true
+#| eval: false
+lm(mean.acc ~ SHIPLEY ...)
+```
 
-<!-- clearly.one.subjects %>% -->
-<!--   ggplot(aes(y = SHIPLEY, x = mean.acc, group = SHIPLEY)) + -->
-<!--   stat_density_ridges( -->
-<!--     quantile_lines = TRUE, quantiles = 2, -->
-<!--     rel_min_height = 0.15, -->
-<!--     jittered_points = TRUE, position = "raincloud", -->
-<!--     scale = .7, -->
-<!--     alpha = 0.6, fill = "lightgrey", colour = "darkred") + -->
-<!--   theme_bw() + -->
-<!--   theme( -->
-<!--     axis.text = element_text(size = rel(1.15)), -->
-<!--     axis.title = element_text(size = rel(1.5)) -->
-<!--   ) + -->
-<!--   coord_flip() + -->
-<!--   xlim(0.3, 1.1) + ylim(25, 42) + -->
-<!--   ylab("Vocabulary (Shipley)") + xlab("Mean accuracy") -->
+You will see this sentence structure in coding for *many* different analysis types
 
-<!-- ``` -->
-<!-- :::: -->
+- `method(outcome ~ predictors)`
+- `method` could be `aov, brm, lm, glm, glmm, lmer, t.test, cor.test`
 
-<!-- ::: -->
+### Results: How does the outcome vary in relation to the predictor? {.smaller}
 
-<!-- ## How do we *estimate* the association between two variables? -->
+```{r}
+model <- lm(mean.acc ~ SHIPLEY,
+            data = clearly.one.subjects)
+summary(model)
+```
 
-<!-- ```{r} -->
-<!-- #| echo: true -->
-<!-- #| eval: false -->
-<!-- #| code-line-numbers: "1|2|3" -->
-<!-- model <- lm(mean.acc ~ SHIPLEY, -->
-<!--             data = clearly.one.subjects) -->
-<!-- summary(model) -->
-<!-- ``` -->
+- A model summary gives us estimates of:
+- The coefficient $= 0.44914$ for the intercept
+- The coefficient $= 0.01050$ for the slope of the SHIPLEY 'effect'
 
-<!-- 1.  Specify the `lm` function and the model `mean.acc ~ SHIPLEY` -->
-<!-- 2.  Specify what data we use `data = clearly.one.subjects` -->
-<!-- 3.  Get the results `summary(model)` -->
+### These *coefficients* build a line
 
-<!-- ## The sentence structure of models in R {background-color="lightblue"} -->
+- The line represents:
+- our prediction for how the outcome varies *on average*
+- given change in the predictor
 
-<!-- Take a good look: -->
+### So now we need to think about straight lines
 
-<!-- ```{r} -->
-<!-- #| echo: true -->
-<!-- #| eval: false -->
-<!-- lm(mean.acc ~ SHIPLEY ...) -->
-<!-- ``` -->
+<!-- -- gelman2021 p.37 -->
 
-<!-- You will see this sentence structure in coding for *many* different analysis types -->
+1. You may remember from school that to draw a straight line you need four numbers:
 
-<!-- - `method(outcome ~ predictors)` -->
-<!-- - `method` could be `aov, brm, lm, glm, glmm, lmer, t.test, cor.test` -->
+$$y = a + bx$$
 
-<!-- ## Results: How does the outcome vary in relation to the predictor? {.smaller} -->
+2. We calculate the height $y$ by adding
 
-<!-- ```{r} -->
-<!-- model <- lm(mean.acc ~ SHIPLEY, -->
-<!--             data = clearly.one.subjects) -->
-<!-- summary(model) -->
-<!-- ``` -->
+- $a$ the intercept, the value of y when $x = 0$
+- to the product of $b$ the coefficient for the slope of the line
+- multiplied by $x$ the value of the predictor variable
+
+### Let's draw it
 
-<!-- - A model summary gives us estimates of: -->
-<!-- - The coefficient $= 0.44914$ for the intercept -->
-<!-- - The coefficient $= 0.01050$ for the slope of the SHIPLEY 'effect' -->
+<!-- -- gelman2021 p.37 -->
 
-<!-- ## These *coefficients* build a line -->
-
-<!-- - The line represents: -->
-<!-- - our prediction for how the outcome varies *on average* -->
-<!-- - given change in the predictor -->
-
-<!-- ## So now we need to think about straight lines -->
-
-<!-- <!-- -- gelman2021 p.37 --> -->
-
-<!-- 1. You may remember from school that to draw a straight line you need four numbers: -->
-
-<!-- $$y = a + bx$$ -->
-
-<!-- 2. We calculate the height $y$ by adding -->
-
-<!-- - $a$ the intercept, the value of y when $x = 0$ -->
-<!-- - to the product of $b$ the coefficient for the slope of the line -->
-<!-- - multiplied by $x$ the value of the predictor variable -->
-
-<!-- ## Let's draw it -->
-
-<!-- <!-- -- gelman2021 p.37 --> -->
-
-<!-- ::: columns -->
-
-<!-- :::: {.column width=.5} -->
-<!-- - Look at what we get if we draw the line using the linear model coefficients: -->
-<!-- - $= 0.449$ for the intercept, $a$ -->
-<!-- - $= 0.011$ for the slope, $b$ -->
-<!-- - In the formula: $y = 0.449 + 0.011x$ -->
-<!-- - (I round the numbers to three decimal places.) -->
-<!-- :::: -->
-
-<!-- :::: {.column width=.5} -->
-<!-- ```{r} -->
-<!-- #| warning: false -->
-<!-- #| echo: false -->
-<!-- #| label: fig-prediction-shipley-acc-1 -->
-<!-- #| fig-cap: "The *predicted* association between comprehension accuracy and vocabulary" -->
-<!-- #| fig-alt: "The figure presents a line indicating the predicted association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. In the plot, higher vocabulary scores are predicted to be associated with higher accuracy scores. Model prediction of change in outcome is shown with a red line." -->
-<!-- #| fig-width: 4 -->
-<!-- #| fig-height: 4 -->
-<!-- clearly.one.subjects %>% -->
-<!--   ggplot(aes(x = SHIPLEY, y = mean.acc)) + -->
-<!--   geom_abline(intercept = 0.449, slope = 0.011, colour = "red", size = 1.5) + -->
-<!--   theme_bw() + -->
-<!--   theme( -->
-<!--     axis.text = element_text(size = rel(1.15)), -->
-<!--     axis.title = element_text(size = rel(1.5)) -->
-<!--   )  + -->
-<!--   xlim(0, 40) + ylim(0, 1) + -->
-<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") -->
-<!-- ``` -->
-<!-- :::: -->
-
-<!-- ::: -->
-
-<!-- ## We can understand the line as representing a set of predictions -->
-
-<!-- <!-- -- gelman2021 p.37 --> -->
-
-<!-- ::: columns -->
-
-<!-- :::: {.column width=.5} -->
-<!-- - To see how --- we use the coefficients to predict just one potential outcome: -->
-<!-- - the expected accuracy for someone with a vocabulary score of 20 -->
-<!-- - We do this using the formula: -->
-
-<!-- $\text{predicted y} = 0.449 + \text{0.011 } \times \text{ Shipley score of } 20$ -->
-<!-- :::: -->
-
-<!-- :::: {.column width=.5} -->
-<!-- ```{r} -->
-<!-- #| warning: false -->
-<!-- #| echo: false -->
-<!-- #| label: fig-prediction-shipley-acc-2 -->
-<!-- #| fig-cap: "Predicted outcome in red" -->
-<!-- #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. We predict the value of comprehension accuracy given a Shipley vocabulary score of 20: the point is shown in red at about mean accuracy of 65." -->
-<!-- #| fig-width: 4 -->
-<!-- #| fig-height: 4 -->
-
-<!-- y.pred <- 0.449 + 0.011 * 20 -->
-
-<!-- clearly.one.subjects %>% -->
-<!--   ggplot(aes(x = SHIPLEY, y = mean.acc)) + -->
-<!--   geom_point(size = 1.5, alpha = .5, colour = "darkgrey") + -->
-<!--   geom_point(aes(x = 20, y = y.pred), colour = "red", size = 2) + -->
-<!--   annotate("text", x = 13, y = y.pred, label = "Prediction", colour = "red") + -->
-<!--   theme_bw() + -->
-<!--   theme( -->
-<!--     axis.text = element_text(size = rel(1.15)), -->
-<!--     axis.title = element_text(size = rel(1.5)) -->
-<!--   )  + -->
-<!--   xlim(0, 40) + ylim(0, 1) + -->
-<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") -->
-<!-- ``` -->
-<!-- :::: -->
-
-<!-- ::: -->
-
-<!-- ## We can understand the line as representing a set of predictions -->
-
-<!-- <!-- -- gelman2021 p.37 --> -->
-
-<!-- ::: columns -->
-
-<!-- :::: {.column width=.45} -->
-<!-- - Let's expand our predictions -->
-
-<!-- 1. Predict accuracy given a Shipley score of 20 -->
-<!-- - $y = 0.449 + 0.011 \times 20$ -->
-<!-- 2. Predict accuracy given a Shipley score of 30 -->
-<!-- - $y = 0.449 + 0.011 \times 30$ -->
-<!-- :::: -->
-
-<!-- :::: {.column width=.55} -->
-<!-- ```{r} -->
-<!-- #| warning: false -->
-<!-- #| echo: false -->
-<!-- #| label: fig-prediction-shipley-acc-3 -->
-<!-- #| fig-cap: "Predicted outcome in red" -->
-<!-- #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. We predict the value of comprehension accuracy given Shipley vocabulary scoreS of 20 and 30." -->
-<!-- #| fig-width: 4 -->
-<!-- #| fig-height: 4 -->
-
-<!-- clearly.one.subjects %>% -->
-<!--   ggplot(aes(x = SHIPLEY, y = mean.acc)) + -->
-<!--   geom_point(size = 1.5, alpha = .5, colour = "darkgrey") + -->
-<!--   geom_point(aes(x = 20, y = 0.449 + 0.011 * 20), colour = "darkred", size = 2) + -->
-<!--   annotate("text", x = 14.5, y = 0.449 + 0.011 * 20, label = "Prediction", colour = "darkred") + -->
-<!--     geom_point(aes(x = 30, y = 0.449 + 0.011 * 30), colour = "red", size = 2) + -->
-<!--     annotate("text", x = 24.5, y = 0.449 + 0.011 * 30, label = "Prediction", colour = "red") + -->
-<!--   theme_bw() + -->
-<!--   theme( -->
-<!--     axis.text = element_text(size = rel(1.15)), -->
-<!--     axis.title = element_text(size = rel(1.5)) -->
-<!--   )  + -->
-<!--   xlim(0, 40) + ylim(0, 1) + -->
-<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") -->
-<!-- ``` -->
-<!-- :::: -->
-
-<!-- ::: -->
-
-<!-- ## The linear model allows us to predict the average outcome we can expect given *any* value of the predictor -->
-
-<!-- ```{r} -->
-<!-- #| warning: false -->
-<!-- #| echo: false -->
-<!-- #| label: fig-prediction-shipley-acc-4 -->
-<!-- #| fig-cap: "The predicted change in mean comprehension accuracy, given variation in vocabulary scores" -->
-<!-- #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. We predict the value of comprehension accuracy given Shipley vocabulary scoreS of 20 and 30. A blue line is drawn through the linear model predicted trend." -->
-<!-- #| fig-width: 4 -->
-<!-- #| fig-height: 4 -->
-
-<!-- clearly.one.subjects %>% -->
-<!--   ggplot(aes(x = SHIPLEY, y = mean.acc)) + -->
-<!--   geom_point(size = 1.5, alpha = .5, colour = "darkgrey") + -->
-<!--   geom_abline(intercept = 0.449, slope = 0.011, colour = "blue") + -->
-<!--     geom_point(aes(x = 20, y = 0.449 + 0.011 * 20), colour = "darkred", size = 2) + -->
-<!--     # annotate("text", x = 15, y = 0.449 + 0.011 * 20, label = "Prediction", colour = "darkred") + -->
-<!--     geom_point(aes(x = 30, y = 0.449 + 0.011 * 30), colour = "red", size = 2) + -->
-<!--     annotate("text", x = 23, y = 0.449 + 0.011 * 30, label = "Prediction", colour = "red") + -->
-<!--   theme_bw() + -->
-<!--   theme( -->
-<!--     axis.text = element_text(size = rel(1.15)), -->
-<!--     axis.title = element_text(size = rel(1.5)) -->
-<!--   )  + -->
-<!--   xlim(0, 40) + ylim(0, 1) + -->
-<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") -->
-<!-- ``` -->
-
-<!-- ## Let's take a break {background-color="aquamarine"} -->
-
-<!-- :::{.nonincremental} -->
-<!-- -   End of part 2 -->
-<!-- ::: -->
-
-<!-- ## We could draw a variety of different model prediction lines: how do we pick the *right* one? -->
-
-<!-- ```{r} -->
-<!-- #| label: abline-predict-random-2 -->
-<!-- #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line. In the background, a fan of light pink lines indicate possible ways to capture the trend of the association." -->
-<!-- #| fig-height: 5.5 -->
-<!-- #| fig-width: 5.5 -->
-<!-- #| fig-align: center -->
-
-<!-- # -- see for how to on coding: -->
-<!-- # grolemund-wickham-p.347 -->
-
-<!-- models <- tibble( -->
-<!--             a1 = runif(250, .25, .75), -->
-<!--             a2 = runif(250, -.05, .05) -->
-<!--             ) -->
-
-<!--   ggplot(data = clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) + -->
-<!--   geom_abline(data = models, aes(intercept = a1, slope = a2), alpha = .05, colour = "darkred") + -->
-<!--   geom_point(size = 2.5, colour = "darkgrey", alpha = 0.75) + -->
-<!--   geom_smooth(method = "lm", colour = "red", size = 1.5, se = FALSE) + -->
-<!--   theme_bw() + -->
-<!--   theme( -->
-<!--     axis.text = element_text(size = rel(1.15)), -->
-<!--     axis.title = element_text(size = rel(1.5)) -->
-<!--   )  + -->
-<!--   xlim(0, 40) + ylim(0, 1) + -->
-<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") -->
-<!-- ``` -->
-
-<!-- ## We could draw a variety of different model prediction lines: how do we pick the *right* one? -->
-
-<!-- We need to go back to the prediction model -->
-
-<!-- - To calculate a predicted outcome value, we calculated it as: $\text{predicted y} = 0.449 + 0.011 \times \text{ Shipley score } 20$ -->
-<!-- - Assuming the linear model $\text{predicted y} = intercept + \text{slope } \times \text{ vocabulary}$ -->
-<!-- - But we missed a bit: **error** -->
-
-<!-- ## Linear models are typically estimated given sample data -->
-
-<!-- - Maybe you noticed that I talked about how the model allows us to predict -->
-<!-- - how the outcome varies **on average** given different values of the predictor -->
-<!-- - When we use a linear model to estimate the intercept and slope -- to build the predictions -- we fit a model to the sample data -->
-<!-- - And no model will fit sample data perfectly -->
-
-<!-- <!-- -- gelman -- p.103 -- given more than two data points, cannot find a line that gives a perfect fit --> -->
-
-<!-- ## Linear models are typically estimated given sample data -->
-
-<!-- <!-- -- gelman -- p.49 -- measurement error model --> -->
-
-<!-- Usually, this means there are differences between the expected outcomes that the model predicts and the observed outcomes -->
-
-<!-- - So we often write the linear model like this: $y = a + bx + \epsilon$ -->
-
-<!-- 1. The observed outcome $y$ equals -->
-<!-- 2. the intercept $a$ -->
-<!-- 3. plus the difference associated with a specific predictor value $bx$ -->
-<!-- 4. plus some amount of mismatch or error $\epsilon$, the difference between the observed outcome and the predicted outcome -->
-
-<!-- ## We can derive the formulas used to calculate the estimates using calculus -->
-
-<!-- - But we won't -->
-<!-- - Because the linear model calculations are done using matrix solution algorithms in R *so we don't have to* -->
-<!-- <!-- -- gelman -- p.104 --> -->
-
-<!-- ## What do the prediction errors -- the residuals -- look like? -->
-
-<!-- ```{r} -->
-<!-- #| warning: false -->
-<!-- #| echo: false -->
-<!-- #| label: fig-abline-predict-residuals-1 -->
-<!-- #| fig-cap: "The predicted change in mean comprehension accuracy, given variation in vocabulary scores. Observed values are shown in orange-red. Predicted values are shown in blue" -->
-<!-- #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction." -->
-<!-- #| fig-height: 4 -->
-<!-- #| fig-width: 4 -->
-<!-- #| fig-align: center -->
-
-<!-- # -- plot residuals against predicted values -->
-<!-- # https://drsimonj.svbtle.com/visualising-residuals -->
-<!-- # clearly.one.subjects -->
-<!-- fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects) -->
-<!-- # -- then -->
-<!-- clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values -->
-<!-- clearly.one.subjects$residuals <- residuals(fit) # Save the residual values -->
-
-<!-- # -- plot observed vs. predicted values -->
-<!-- ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) + -->
-<!--   geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope -->
-<!--   geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines -->
-<!--   # > Color adjustments made here... -->
-<!--   geom_point(aes(color = abs(residuals))) + # Color mapped to abs(residuals) -->
-<!--   scale_color_continuous(low = "orange", high = "darkred") +  # Colors to use here -->
-<!--   guides(color = FALSE) +  # Color legend removed -->
-<!--   geom_point(aes(y = predicted), shape = 1) + -->
-<!--   theme_bw() + -->
-<!--   ylim(0,1.1) + xlim(20,40) + -->
-<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") -->
-
-<!-- ``` -->
-
-<!-- ## What the prediction errors look like {.smaller} -->
-
-<!-- ::: columns -->
-
-<!-- :::: {.column width=.3} -->
-<!-- - The model expectation: higher vocabulary predicts higher mean comprehension accuracy -->
-<!-- - The predicted points are shown by the blue line -->
-<!-- - The prediction line increases in height for higher values of vocabulary -->
-<!-- - Look at the **differences in height** between the observed points (in orange-red) and predicted points -->
-<!-- :::: -->
-
-<!-- :::: {.column width=.7} -->
-<!-- ```{r} -->
-<!-- #| label: fig-abline-predict-residuals-2 -->
-<!-- #| fig-cap: "The predicted change in mean comprehension accuracy, given variation in vocabulary scores. Observed values are shown in orange-red. Predicted values are shown in blue" -->
-<!-- #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction." -->
-<!-- #| fig-height: 5 -->
-<!-- #| fig-width: 5 -->
-<!-- #| fig-align: center -->
-
-<!-- # -- plot residuals against predicted values -->
-<!-- # https://drsimonj.svbtle.com/visualising-residuals -->
-<!-- # clearly.one.subjects -->
-<!-- fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects) -->
-<!-- # -- then -->
-<!-- clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values -->
-<!-- clearly.one.subjects$residuals <- residuals(fit) # Save the residual values -->
-
-<!-- # -- plot observed vs. predicted values -->
-<!-- ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) + -->
-<!--   geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope -->
-<!--   geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines -->
-<!--   # > Color adjustments made here... -->
-<!--   geom_point(aes(color = abs(residuals))) + # Color mapped to abs(residuals) -->
-<!--   scale_color_continuous(low = "orange", high = "darkred") +  # Colors to use here -->
-<!--   guides(color = FALSE) +  # Color legend removed -->
-<!--   geom_point(aes(y = predicted), shape = 1) + -->
-<!--   theme_bw() + -->
-<!--   ylim(0,1.1) + xlim(20,40) + -->
-<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") -->
-
-<!-- ``` -->
-<!-- :::: -->
-
-<!-- ::: -->
-
-<!-- ## What the prediction errors look like {.smaller} -->
-
-<!-- ::: columns -->
-
-<!-- :::: {.column width=.4} -->
-<!-- - If the regression model were perfect then all the observed points would lie on the prediction line -->
-<!-- - They do not -->
-<!-- :::: -->
-
-<!-- :::: {.column width=.6} -->
-<!-- ```{r} -->
-<!-- #| label: fig-abline-predict-residuals-3 -->
-<!-- #| fig-cap: "The predicted change in mean comprehension accuracy, given variation in vocabulary scores. Observed values are shown in orange-red. Predicted values are shown in blue" -->
-<!-- #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction." -->
-<!-- #| fig-height: 5 -->
-<!-- #| fig-width: 5 -->
-<!-- #| fig-align: center -->
-
-<!-- # -- plot residuals against predicted values -->
-<!-- # https://drsimonj.svbtle.com/visualising-residuals -->
-<!-- # clearly.one.subjects -->
-<!-- fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects) -->
-<!-- # -- then -->
-<!-- clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values -->
-<!-- clearly.one.subjects$residuals <- residuals(fit) # Save the residual values -->
-
-<!-- # -- plot observed vs. predicted values -->
-<!-- ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) + -->
-<!--   geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope -->
-<!--   geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines -->
-<!--   # > Color adjustments made here... -->
-<!--   geom_point(aes(color = abs(residuals))) + # Color mapped to abs(residuals) -->
-<!--   scale_color_continuous(low = "orange", high = "darkred") +  # Colors to use here -->
-<!--   guides(color = FALSE) +  # Color legend removed -->
-<!--   geom_point(aes(y = predicted), shape = 1) + -->
-<!--   theme_bw() + -->
-<!--   ylim(0,1.1) + xlim(20,40) + -->
-<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") -->
-
-<!-- ``` -->
-<!-- :::: -->
-
-<!-- ::: -->
-
-<!-- ## What the prediction errors look like {.smaller} -->
-
-<!-- ::: columns -->
-
-<!-- :::: {.column width=.4} -->
-<!-- - Differences between observed and predicted outcomes are shown by the vertical lines -->
-<!-- - Better models should show smaller differences between observed and predicted outcome values -->
-<!-- - Notice: some participants had same vocabulary scores but different outcomes -->
-<!-- :::: -->
-
-<!-- :::: {.column width=.6} -->
-<!-- ```{r} -->
-<!-- #| label: fig-abline-predict-residuals-4 -->
-<!-- #| fig-cap: "The predicted change in mean comprehension accuracy, given variation in vocabulary scores. Observed values are shown in orange-red. Predicted values are shown in blue" -->
-<!-- #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction." -->
-<!-- #| fig-height: 5 -->
-<!-- #| fig-width: 5 -->
-<!-- #| fig-align: center -->
-
-<!-- # -- plot residuals against predicted values -->
-<!-- # https://drsimonj.svbtle.com/visualising-residuals -->
-<!-- # clearly.one.subjects -->
-<!-- fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects) -->
-<!-- # -- then -->
-<!-- clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values -->
-<!-- clearly.one.subjects$residuals <- residuals(fit) # Save the residual values -->
-
-<!-- # -- plot observed vs. predicted values -->
-<!-- ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) + -->
-<!--   geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope -->
-<!--   geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines -->
-<!--   # > Color adjustments made here... -->
-<!--   geom_point(aes(color = abs(residuals))) + # Color mapped to abs(residuals) -->
-<!--   scale_color_continuous(low = "orange", high = "darkred") +  # Colors to use here -->
-<!--   guides(color = FALSE) +  # Color legend removed -->
-<!--   geom_point(aes(y = predicted), shape = 1) + -->
-<!--   theme_bw() + -->
-<!--   ylim(0,1.1) + xlim(20,40) + -->
-<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") -->
-
-<!-- ``` -->
-<!-- :::: -->
-
-<!-- ::: -->
-
-<!-- ## We typically assume that the residuals are normally distributed -->
-
-<!-- ::: columns -->
-
-<!-- :::: {.column width=.4} -->
-<!-- - Some are positive: observed outcome larger than predicted outcome -->
-<!-- - Some are negative: observed outcome smaller than predicted outcome -->
-<!-- - The average of the residuals will be zero overall -->
-<!-- :::: -->
-
-<!-- :::: {.column width=.6} -->
-<!-- ```{r} -->
-<!-- #| label: fig-residuals-density-1 -->
-<!-- #| fig-cap: "Plot showing the distribution of prediction errors -- residuals -- for the linear model of comprehension accuracy" -->
-<!-- #| fig-alt: "The figure a histogram of the residuals, the prediction errors, for the linear model of the association between mean comprehension accuracy and vocabulary. The histogram is shown in grey, and the peak is centered at residuals = 0. A dashed red line is drawn at resdiduals = 0. A red density curve is superimposed on the histogram to indicate the theoretical normal distribution of residuals." -->
-<!-- #| fig-height: 4 -->
-<!-- #| fig-width: 4 -->
-<!-- #| fig-align: center -->
-
-<!-- # -- plot residuals vs. theoretical normal -->
-<!-- # https://stackoverflow.com/questions/6967664/ggplot2-histogram-with-normal-curve -->
-<!-- ggplot(clearly.one.subjects, aes(x = residuals)) + -->
-<!--   geom_histogram(aes(y = ..density..), alpha = .75, binwidth = .1) + -->
-<!--   stat_function(fun = dnorm, args = -->
-<!--                   list(mean = mean(clearly.one.subjects$residuals), -->
-<!--                        sd = sd(clearly.one.subjects$residuals)), -->
-<!--                 colour = "red", size = 1.5) + -->
-<!--   geom_vline(xintercept = 0, linetype = "dashed", colour = "darkred", size = 1.1, alpha = .75) + -->
-<!--   xlim(-.5, .5) + -->
-<!--   theme_bw() -->
-
-<!-- ``` -->
-<!-- :::: -->
-
-<!-- ::: -->
-
-<!-- ## So: We pick the line that minimizes the residuals -- the mismatch between predicted and observed outcomes -->
-
-<!-- ```{r} -->
-<!-- #| label: abline-predict-random-3 -->
-<!-- #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line. In the background, a fan of light pink lines indicate possible ways to capture the trend of the association." -->
-<!-- #| fig-height: 5.5 -->
-<!-- #| fig-width: 5.5 -->
-<!-- #| fig-align: center -->
-
-<!-- # -- see for how to on coding: -->
-<!-- # grolemund-wickham-p.347 -->
-
-<!-- models <- tibble( -->
-<!--             a1 = runif(250, .25, .75), -->
-<!--             a2 = runif(250, -.05, .05) -->
-<!--             ) -->
-
-<!--   ggplot(data = clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) + -->
-<!--   geom_abline(data = models, aes(intercept = a1, slope = a2), alpha = .05, colour = "darkred") + -->
-<!--   geom_point(size = 2.5, colour = "darkgrey", alpha = 0.75) + -->
-<!--   geom_smooth(method = "lm", colour = "red", size = 1.5, se = FALSE) + -->
-<!--   theme_bw() + -->
-<!--   theme( -->
-<!--     axis.text = element_text(size = rel(1.15)), -->
-<!--     axis.title = element_text(size = rel(1.5)) -->
-<!--   )  + -->
-<!--   xlim(0, 40) + ylim(0, 1) + -->
-<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") -->
-<!-- ``` -->
-
-<!-- ## Let's take a break {background-color="aquamarine"} -->
-
-<!-- :::{.nonincremental} -->
-<!-- -   End of part 3 -->
-<!-- ::: -->
-
-<!-- ## Identifying the key information in the linear model results {.smaller} -->
-
-<!-- ::: columns -->
-
-<!-- :::: {.column width=.45} -->
-<!-- - The `summary()` of the linear model shows ... -->
-<!-- - The `Estimate` of the `Coefficient` of the effect of individual differences in vocabulary (`SHIPLEY`) -->
-<!-- - how much the outcome `mean.acc` value changes, given differences in `SHIPLEY` score -->
-<!-- - Associated `t value` and `Pr(> |t|)` statistics for the coefficient t-test -->
-<!-- - Model fit statistics: `R-squared` and `F-statistic` -->
-<!-- :::: -->
-
-<!-- :::: {.column width=.55} -->
-<!-- ```{r} -->
-<!-- model <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects) -->
-<!-- summary(model) -->
-<!-- ``` -->
-<!-- :::: -->
-
-<!-- ::: -->
-
-<!-- ## For the effect of vocabulary (SHIPLEY), we have: {.smaller} -->
-
-<!-- ::: columns -->
-
-<!-- :::: {.column width=.45} -->
-<!-- - The coefficient for the slope of the effect of variation in vocabulary scores: `0.01050` -->
-<!-- - The `Std. Error` (standard error) `0.00229` for that estimate -->
-<!-- - The `t `value `4.585` and associated `Pr(>|t|)` p-value `8.85e-06` for the null hypothesis test of the coefficient -->
-<!-- :::: -->
-
-<!-- :::: {.column width=.55} -->
-<!-- ```{r} -->
-<!-- model <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects) -->
-<!-- summary(model) -->
-<!-- ``` -->
-<!-- :::: -->
-
-<!-- ::: -->
-
-<!-- ## Identifying the key information in the results {.smaller} -->
-
-<!-- ::: columns -->
-
-<!-- :::: {.column width=.45} -->
-<!-- - Pay attention to the **sign and the size** of the coefficient estimate: -->
-<!-- - Is the coefficient (e.g., SHIPLEY `0.01050`) a positive or a negative number? -->
-<!-- - Is it relatively large or small? -->
-<!-- - We come back to this, shortly, in the context of interpretation and reporting -->
-<!-- :::: -->
-
-<!-- :::: {.column width=.55} -->
-<!-- ```{r} -->
-<!-- model <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects) -->
-<!-- summary(model) -->
-<!-- ``` -->
-<!-- :::: -->
-
-<!-- ::: -->
-
-<!-- ## The t-tests in the linear model -->
-
-<!-- <!-- -- gelman -- p.147 --> -->
-<!-- <!-- -- howell -- p.261, 275 pp.543-545 --> -->
-<!-- <!-- -- cohen -- p.86 --> -->
-
-<!-- $$t = \frac{\beta_j}{s_{\beta_j}}$$ -->
-
-<!-- <!-- - We follow statistical convention and refer to the coefficient estimate as $\beta_j$ (b) --> -->
-<!-- - For each coefficient, the t-test is used to evaluate if the coefficient $\beta_j$ is significantly different from zero -->
-<!-- - We assume the **null hypothesis** that the coefficient $\beta_j$ is zero -->
-<!-- - We do the test by comparing the estimated coefficient $\beta_j$ with the standard error of the estimate -->
-
-<!-- ## The t-tests in the linear model -->
-
-<!-- <!-- -- gelman -- p.147 --> -->
-<!-- <!-- -- howell -- p.261, 275 pp.543-545 --> -->
-<!-- <!-- -- cohen -- p.86 --> -->
-
-<!-- $$t = \frac{\beta_j}{s_{\beta_j}}$$ -->
-
-<!-- - The standard error $s_{\beta_j}$ indicates our **uncertainty** about the estimate -->
-<!-- - Larger standard errors represent greater uncertainty -->
-
-<!-- ## The t-tests in the linear model -->
-
-<!-- <!-- -- gelman -- p.147 --> -->
-<!-- <!-- -- howell -- p.261, 275 pp.543-545 --> -->
-<!-- <!-- -- cohen -- p.86 --> -->
-
-<!-- $$t = \frac{\beta_j}{s_{\beta_j}}$$ -->
-
-<!-- - Standard errors can be calculated using information about: -->
-<!-- - Error in the model --- think of the distribution of residuals -->
-<!-- - Variation of values in the predictor --- how widely they range -->
-<!-- - The sample size -->
-<!-- - Standard errors will be smaller for the coefficients of effects that appear to have bigger impacts, in models that describe outcomes better, in larger samples -->
-
-<!-- ## Identifying the key information in the results {.smaller} -->
-
-<!-- ::: columns -->
-
-<!-- :::: {.column width=.45} -->
-<!-- - Pay attention to R-squared: -->
-<!-- - The model summary gives us the `Multiple R-squared` and `Adjusted R-squared` -->
-<!-- - These numbers represent how much of the variation in the outcome can be predicted by the model -->
-<!-- - We usually report `Adjusted R-squared` because it tends to be more accurate -->
-<!-- :::: -->
-
-<!-- :::: {.column width=.55} -->
-<!-- ```{r} -->
-<!-- model <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects) -->
-<!-- summary(model) -->
-<!-- ``` -->
-<!-- :::: -->
-
-<!-- ::: -->
-
-<!-- ## R-squared -- what is it? -- an indicator of the proportion of outcome variation we can predict {.smaller} -->
-
-<!-- ::: columns -->
-
-<!-- :::: {.column width=.4} -->
-<!-- - Better models should show smaller differences between observed and predicted outcomes -->
-<!-- - R-squared ($R^2$) gives the proportion of outcome variance -->
-<!-- - we can predict given information about differences in vocabulary -->
-<!-- :::: -->
-
-<!-- :::: {.column width=.6} -->
-<!-- ```{r} -->
-<!-- #| label: fig-abline-predict-residuals-5 -->
-<!-- #| fig-cap: "The difference between predicted and observed outcomes, given variation in vocabulary" -->
-<!-- #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction." -->
-<!-- #| fig-height: 4 -->
-<!-- #| fig-width: 4 -->
-<!-- #| fig-align: center -->
-
-<!-- # -- plot residuals against predicted values -->
-<!-- # https://drsimonj.svbtle.com/visualising-residuals -->
-<!-- # clearly.one.subjects -->
-<!-- fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects) -->
-<!-- # -- then -->
-<!-- clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values -->
-<!-- clearly.one.subjects$residuals <- residuals(fit) # Save the residual values -->
-
-<!-- # -- plot observed vs. predicted values -->
-<!-- ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) + -->
-<!--   geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope -->
-<!--   geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines -->
-<!--   # > Color adjustments made here... -->
-<!--   geom_point(aes(color = abs(residuals))) + # Color mapped to abs(residuals) -->
-<!--   scale_color_continuous(low = "orange", high = "darkred") +  # Colors to use here -->
-<!--   guides(color = FALSE) +  # Color legend removed -->
-<!--   geom_point(aes(y = predicted), shape = 1) + -->
-<!--   theme_bw() + -->
-<!--   ylim(0,1.1) + xlim(20,40) + -->
-<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") -->
-
-<!-- ``` -->
-<!-- :::: -->
-
-<!-- ::: -->
-
-<!-- ## R-squared as an indicator of the proportion of the outcome variation we can predict {.smaller} -->
-
-<!-- ::: columns -->
-
-<!-- :::: {.column width=.4} -->
-<!-- - To understand what this means, look at the scatterplot -->
-<!-- - On  average, values in outcome (accuracy) increase with increasing values in the predictor (vocabulary) -->
-<!-- - But different people got different outcomes even with same vocabulary scores -->
-<!-- :::: -->
-
-<!-- :::: {.column width=.6} -->
-<!-- ```{r} -->
-<!-- #| label: fig-abline-predict-residuals-6 -->
-<!-- #| fig-cap: "The difference between predicted and observed outcomes, given variation in vocabulary" -->
-<!-- #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction." -->
-<!-- #| fig-height: 4 -->
-<!-- #| fig-width: 4 -->
-<!-- #| fig-align: center -->
-
-<!-- # -- plot residuals against predicted values -->
-<!-- # https://drsimonj.svbtle.com/visualising-residuals -->
-<!-- # clearly.one.subjects -->
-<!-- fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects) -->
-<!-- # -- then -->
-<!-- clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values -->
-<!-- clearly.one.subjects$residuals <- residuals(fit) # Save the residual values -->
-
-<!-- # -- plot observed vs. predicted values -->
-<!-- ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) + -->
-<!--   geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope -->
-<!--   geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines -->
-<!--   # > Color adjustments made here... -->
-<!--   geom_point(aes(color = abs(residuals))) + # Color mapped to abs(residuals) -->
-<!--   scale_color_continuous(low = "orange", high = "darkred") +  # Colors to use here -->
-<!--   guides(color = FALSE) +  # Color legend removed -->
-<!--   geom_point(aes(y = predicted), shape = 1) + -->
-<!--   theme_bw() + -->
-<!--   ylim(0,1.1) + xlim(20,40) + -->
-<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") -->
-
-<!-- ``` -->
-<!-- :::: -->
-
-<!-- ::: -->
-
-<!-- ## R-squared as an indicator of the proportion of the outcome variation we can predict {.smaller} -->
-
-<!-- ::: columns -->
-
-<!-- :::: {.column width=.4} -->
-<!-- - So: we have variation in the outcome that is related to variation in the predictor -->
-<!-- - And: we have variation in the outcome that seems unrelated to the predictor -->
-<!-- - $R^2$ tells us how much variation in the outcome is explained by the model -->
-<!-- - $R^2$ gives us a proportion where $R^2 = \frac{\text{predicted outcome variation}}{\text{total outcome variation}}$ -->
-<!-- :::: -->
-
-<!-- :::: {.column width=.6} -->
-<!-- ```{r} -->
-<!-- #| label: fig-abline-predict-residuals-7 -->
-<!-- #| fig-cap: "The difference between predicted and observed outcomes, given variation in vocabulary" -->
-<!-- #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction." -->
-<!-- #| fig-height: 4 -->
-<!-- #| fig-width: 4 -->
-<!-- #| fig-align: center -->
-
-<!-- # -- plot residuals against predicted values -->
-<!-- # https://drsimonj.svbtle.com/visualising-residuals -->
-<!-- # clearly.one.subjects -->
-<!-- fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects) -->
-<!-- # -- then -->
-<!-- clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values -->
-<!-- clearly.one.subjects$residuals <- residuals(fit) # Save the residual values -->
-
-<!-- # -- plot observed vs. predicted values -->
-<!-- ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) + -->
-<!--   geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope -->
-<!--   geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines -->
-<!--   # > Color adjustments made here... -->
-<!--   geom_point(aes(color = abs(residuals))) + # Color mapped to abs(residuals) -->
-<!--   scale_color_continuous(low = "orange", high = "darkred") +  # Colors to use here -->
-<!--   guides(color = FALSE) +  # Color legend removed -->
-<!--   geom_point(aes(y = predicted), shape = 1) + -->
-<!--   theme_bw() + -->
-<!--   ylim(0,1.1) + xlim(20,40) + -->
-<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") -->
-
-<!-- ``` -->
-<!-- :::: -->
-
-<!-- ::: -->
-
-<!-- ## Identifying the key information in the results {.smaller} -->
-
-<!-- ::: columns -->
-
-<!-- :::: {.column width=.5} -->
-<!-- - Pay attention to F: -->
-<!-- - The model summary gives us the F-statistic: -->
-<!-- - This is the test statistic for the test of the null hypothesis that the model does not predict the outcome -->
-<!-- :::: -->
-
-<!-- :::: {.column width=.5} -->
-<!-- ```{r} -->
-<!-- model <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects) -->
-<!-- summary(model) -->
-<!-- ``` -->
-<!-- :::: -->
-
-<!-- ::: -->
-
-<!-- ## Reporting the results of a linear model {.smaller} -->
-
-<!-- ::: columns -->
-
-<!-- :::: {.column width=.5} -->
-<!-- - You will need to report three bits of information: -->
-
-<!-- 1. $R^2$ how much outcome variation is explained by the model -->
-<!-- 2. $F$ test for the null hypothesis that none of the predictors actually predict the outcome -->
-<!-- 3. Coefficient estimates with the t-tests for the null hypothesis for each coefficient -->
-<!-- :::: -->
-
-<!-- :::: {.column width=.5} -->
-<!-- ```{r} -->
-<!-- model <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects) -->
-<!-- summary(model) -->
-<!-- ``` -->
-<!-- :::: -->
-
-<!-- ::: -->
-
-<!-- ## The language and style of reporting linear model results {.smaller} -->
-
-<!-- Here is an example of results reporting text that is conventional: -->
-
-<!-- >We fitted a linear model with mean comprehension accuracy as the outcome and vocabulary (Shipley) as the predictor. -->
-<!-- Our analysis indicated a significant effect of vocabulary knowledge. -->
-<!-- The model is significant overall, with $F(1, 167) = 21.03, p < .001$, and explains 11\% of variance ($\text{adjusted } R^2 = 0.11$). -->
-<!-- The model estimates showed that the accuracy of comprehension increased with increasing levels of participant vocabulary knowledge ($\beta = .011, t = 4.59, p <.001$). -->
-
-<!-- ## Look at what we do with the text {.smaller} -->
-
-<!-- ::: columns -->
-
-<!-- :::: {.column width=.5} -->
-<!-- 1. Explain what I did, specifying the method (linear model), the outcome variable (accuracy) and the predictor variables (health literacy, reading strategy, reading skill and vocabulary) -->
-<!-- 2. Report the model fit statistics overall ($F, R^2$) -->
-<!-- 3. Report the significant effects ($\beta, t, p$) and describe the nature of the effects (does the outcome increase or decrease?) -->
-
-<!-- :::: -->
-
-<!-- :::: {.column width=.45} -->
-<!-- >We fitted a linear model with mean comprehension accuracy as the outcome and vocabulary (Shipley) as the predictor. -->
-<!-- Our analysis indicated a significant effect of vocabulary knowledge. -->
-<!-- The model is significant overall, with $F(1, 167) = 21.03, p < .001$, and explains 11\% of variance ($\text{adjusted } R^2 = 0.11$). -->
-<!-- The model estimates showed that the accuracy of comprehension increased with increasing levels of participant vocabulary knowledge ($\beta = .011, t = 4.59, p <.001$). -->
-<!-- :::: -->
-
-<!-- ::: -->
-
-<!-- ## Summary {.smaller} -->
-
-<!-- - In psychological science, we often ask questions like: -->
-
-<!-- 1. Does variation in X predict variation in Y? -->
-<!-- 2. What are the factors that influence outcome Y? -->
-<!-- 3. Is a theoretical model consistent with observed behaviour? -->
-
-<!-- - We can answer these questions using the linear model -->
-<!-- - Given sample data, we can predict the average difference in outcome values, for different levels of a predictor variable -->
-<!-- - We (or the math engine R uses) calculate the predictions so that they minimize the residuals, the errors of prediction or the mismatch between predicted and observed outcomes -->
-<!-- - Our results report tells the reader about the model and the estimated effects -->
+- Look at what we get if we draw the line using the linear model coefficients:
+- $= 0.449$ for the intercept, $a$
+- $= 0.011$ for the slope, $b$
+- In the formula: $y = 0.449 + 0.011x$
+- (I round the numbers to three decimal places.)
+
+```{r}
+#| warning: false
+#| echo: false
+#| label: fig-prediction-shipley-acc-1
+#| fig-cap: "The *predicted* association between comprehension accuracy and vocabulary"
+#| fig-alt: "The figure presents a line indicating the predicted association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. In the plot, higher vocabulary scores are predicted to be associated with higher accuracy scores. Model prediction of change in outcome is shown with a red line."
+#| fig-width: 5
+#| fig-height: 5
+clearly.one.subjects %>%
+  ggplot(aes(x = SHIPLEY, y = mean.acc)) +
+  geom_abline(intercept = 0.449, slope = 0.011, colour = "red", size = 1.5) +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  )  +
+  xlim(0, 40) + ylim(0, 1) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy")
+```
+
+### We can understand the line as representing a set of predictions
+
+<!-- -- gelman2021 p.37 -->
+
+- To see how --- we use the coefficients to predict just one potential outcome:
+- the expected accuracy for someone with a vocabulary score of 20
+- We do this using the formula:
+
+$\text{predicted y} = 0.449 + \text{0.011 } \times \text{ Shipley score of } 20$
+
+```{r}
+#| warning: false
+#| echo: false
+#| label: fig-prediction-shipley-acc-2
+#| fig-cap: "Predicted outcome in red"
+#| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. We predict the value of comprehension accuracy given a Shipley vocabulary score of 20: the point is shown in red at about mean accuracy of 65."
+#| fig-width: 5
+#| fig-height: 5
+
+y.pred <- 0.449 + 0.011 * 20
+
+clearly.one.subjects %>%
+  ggplot(aes(x = SHIPLEY, y = mean.acc)) +
+  geom_point(size = 1.5, alpha = .5, colour = "darkgrey") +
+  geom_point(aes(x = 20, y = y.pred), colour = "red", size = 2) +
+  annotate("text", x = 13, y = y.pred, label = "Prediction", colour = "red") +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  )  +
+  xlim(0, 40) + ylim(0, 1) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy")
+```
+
+## We can understand the line as representing a set of predictions
+
+<!-- -- gelman2021 p.37 -->
+
+- Let's expand our predictions
+
+1. Predict accuracy given a Shipley score of 20
+- $y = 0.449 + 0.011 \times 20$
+2. Predict accuracy given a Shipley score of 30
+- $y = 0.449 + 0.011 \times 30$
+
+```{r}
+#| warning: false
+#| echo: false
+#| label: fig-prediction-shipley-acc-3
+#| fig-cap: "Predicted outcome in red"
+#| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. We predict the value of comprehension accuracy given Shipley vocabulary scoreS of 20 and 30."
+#| fig-width: 5
+#| fig-height: 5
+
+clearly.one.subjects %>%
+  ggplot(aes(x = SHIPLEY, y = mean.acc)) +
+  geom_point(size = 1.5, alpha = .5, colour = "darkgrey") +
+  geom_point(aes(x = 20, y = 0.449 + 0.011 * 20), colour = "darkred", size = 2) +
+  annotate("text", x = 14.5, y = 0.449 + 0.011 * 20, label = "Prediction", colour = "darkred") +
+    geom_point(aes(x = 30, y = 0.449 + 0.011 * 30), colour = "red", size = 2) +
+    annotate("text", x = 24.5, y = 0.449 + 0.011 * 30, label = "Prediction", colour = "red") +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  )  +
+  xlim(0, 40) + ylim(0, 1) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy")
+```
+
+### The linear model allows us to predict the average outcome we can expect given *any* value of the predictor
+
+```{r}
+#| warning: false
+#| echo: false
+#| label: fig-prediction-shipley-acc-4
+#| fig-cap: "The predicted change in mean comprehension accuracy, given variation in vocabulary scores"
+#| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. We predict the value of comprehension accuracy given Shipley vocabulary scoreS of 20 and 30. A blue line is drawn through the linear model predicted trend."
+#| fig-width: 5
+#| fig-height: 5
+
+clearly.one.subjects %>%
+  ggplot(aes(x = SHIPLEY, y = mean.acc)) +
+  geom_point(size = 1.5, alpha = .5, colour = "darkgrey") +
+  geom_abline(intercept = 0.449, slope = 0.011, colour = "blue") +
+    geom_point(aes(x = 20, y = 0.449 + 0.011 * 20), colour = "darkred", size = 2) +
+    # annotate("text", x = 15, y = 0.449 + 0.011 * 20, label = "Prediction", colour = "darkred") +
+    geom_point(aes(x = 30, y = 0.449 + 0.011 * 30), colour = "red", size = 2) +
+    annotate("text", x = 23, y = 0.449 + 0.011 * 30, label = "Prediction", colour = "red") +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  )  +
+  xlim(0, 40) + ylim(0, 1) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy")
+```
+
+### We could draw a variety of different model prediction lines: how do we pick the *right* one?
+
+```{r}
+#| label: abline-predict-random-2
+#| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line. In the background, a fan of light pink lines indicate possible ways to capture the trend of the association."
+#| fig-height: 5
+#| fig-width: 5
+#| fig-align: center
+
+# -- see for how to on coding:
+# grolemund-wickham-p.347
+
+models <- tibble(
+            a1 = runif(250, .25, .75),
+            a2 = runif(250, -.05, .05)
+            )
+
+  ggplot(data = clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+  geom_abline(data = models, aes(intercept = a1, slope = a2), alpha = .05, colour = "darkred") +
+  geom_point(size = 2.5, colour = "darkgrey", alpha = 0.75) +
+  geom_smooth(method = "lm", colour = "red", size = 1.5, se = FALSE) +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  )  +
+  xlim(0, 40) + ylim(0, 1) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy")
+```
+
+### We could draw a variety of different model prediction lines: how do we pick the *right* one?
+
+We need to go back to the prediction model
+
+- To calculate a predicted outcome value, we calculated it as: $\text{predicted y} = 0.449 + 0.011 \times \text{ Shipley score } 20$
+- Assuming the linear model $\text{predicted y} = intercept + \text{slope } \times \text{ vocabulary}$
+- But we missed a bit: **error**
+
+### Linear models are typically estimated given sample data
+
+- Maybe you noticed that I talked about how the model allows us to predict
+- how the outcome varies **on average** given different values of the predictor
+- When we use a linear model to estimate the intercept and slope -- to build the predictions -- we fit a model to the sample data
+- And no model will fit sample data perfectly
+
+<!-- -- gelman -- p.103 -- given more than two data points, cannot find a line that gives a perfect fit -->
+
+### Linear models are typically estimated given sample data
+
+<!-- -- gelman -- p.49 -- measurement error model -->
+
+Usually, this means there are differences between the expected outcomes that the model predicts and the observed outcomes
+
+- So we often write the linear model like this: $y = a + bx + \epsilon$
+
+1. The observed outcome $y$ equals
+2. the intercept $a$
+3. plus the difference associated with a specific predictor value $bx$
+4. plus some amount of mismatch or error $\epsilon$, the difference between the observed outcome and the predicted outcome
+
+### We can derive the formulas used to calculate the estimates using calculus
+
+- But we won't
+- Because the linear model calculations are done using matrix solution algorithms in R *so we don't have to*
+<!-- -- gelman -- p.104 -->
+
+### What do the prediction errors -- the residuals -- look like?
+
+```{r}
+#| warning: false
+#| echo: false
+#| label: fig-abline-predict-residuals-1
+#| fig-cap: "The predicted change in mean comprehension accuracy, given variation in vocabulary scores. Observed values are shown in orange-red. Predicted values are shown in blue"
+#| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction."
+#| fig-height: 5
+#| fig-width: 5
+#| fig-align: center
+
+# -- plot residuals against predicted values
+# https://drsimonj.svbtle.com/visualising-residuals
+# clearly.one.subjects
+fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+# -- then
+clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values
+clearly.one.subjects$residuals <- residuals(fit) # Save the residual values
+
+# -- plot observed vs. predicted values
+ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+  geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope
+  geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines
+  # > Color adjustments made here...
+  geom_point(aes(color = abs(residuals))) + # Color mapped to abs(residuals)
+  scale_color_continuous(low = "orange", high = "darkred") +  # Colors to use here
+  guides(color = FALSE) +  # Color legend removed
+  geom_point(aes(y = predicted), shape = 1) +
+  theme_bw() +
+  ylim(0,1.1) + xlim(20,40) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy")
+
+```
+
+### What the prediction errors look like
+
+- The model expectation: higher vocabulary predicts higher mean comprehension accuracy
+- The predicted points are shown by the blue line
+- The prediction line increases in height for higher values of vocabulary
+- Look at the **differences in height** between the observed points (in orange-red) and predicted points
+
+```{r}
+#| label: fig-abline-predict-residuals-2
+#| fig-cap: "The predicted change in mean comprehension accuracy, given variation in vocabulary scores. Observed values are shown in orange-red. Predicted values are shown in blue"
+#| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction."
+#| fig-height: 5
+#| fig-width: 5
+#| fig-align: center
+
+# -- plot residuals against predicted values
+# https://drsimonj.svbtle.com/visualising-residuals
+# clearly.one.subjects
+fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+# -- then
+clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values
+clearly.one.subjects$residuals <- residuals(fit) # Save the residual values
+
+# -- plot observed vs. predicted values
+ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+  geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope
+  geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines
+  # > Color adjustments made here...
+  geom_point(aes(color = abs(residuals))) + # Color mapped to abs(residuals)
+  scale_color_continuous(low = "orange", high = "darkred") +  # Colors to use here
+  guides(color = FALSE) +  # Color legend removed
+  geom_point(aes(y = predicted), shape = 1) +
+  theme_bw() +
+  ylim(0,1.1) + xlim(20,40) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy")
+
+```
+
+## What the prediction errors look like
+
+- If the regression model were perfect then all the observed points would lie on the prediction line
+- They do not
+
+```{r}
+#| label: fig-abline-predict-residuals-3
+#| fig-cap: "The predicted change in mean comprehension accuracy, given variation in vocabulary scores. Observed values are shown in orange-red. Predicted values are shown in blue"
+#| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction."
+#| fig-height: 5
+#| fig-width: 5
+#| fig-align: center
+
+# -- plot residuals against predicted values
+# https://drsimonj.svbtle.com/visualising-residuals
+# clearly.one.subjects
+fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+# -- then
+clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values
+clearly.one.subjects$residuals <- residuals(fit) # Save the residual values
+
+# -- plot observed vs. predicted values
+ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+  geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope
+  geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines
+  # > Color adjustments made here...
+  geom_point(aes(color = abs(residuals))) + # Color mapped to abs(residuals)
+  scale_color_continuous(low = "orange", high = "darkred") +  # Colors to use here
+  guides(color = FALSE) +  # Color legend removed
+  geom_point(aes(y = predicted), shape = 1) +
+  theme_bw() +
+  ylim(0,1.1) + xlim(20,40) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy")
+
+```
+
+### What the prediction errors look like
+
+- Differences between observed and predicted outcomes are shown by the vertical lines
+- Better models should show smaller differences between observed and predicted outcome values
+- Notice: some participants had same vocabulary scores but different outcomes
+
+```{r}
+#| label: fig-abline-predict-residuals-4
+#| echo: false
+#| warning: false
+#| fig-cap: "The predicted change in mean comprehension accuracy, given variation in vocabulary scores. Observed values are shown in orange-red. Predicted values are shown in blue"
+#| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction."
+#| fig-height: 5
+#| fig-width: 5
+#| fig-align: center
+
+# -- plot residuals against predicted values
+# https://drsimonj.svbtle.com/visualising-residuals
+# clearly.one.subjects
+fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+# -- then
+clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values
+clearly.one.subjects$residuals <- residuals(fit) # Save the residual values
+
+# -- plot observed vs. predicted values
+ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+  geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope
+  geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines
+  # > Color adjustments made here...
+  geom_point(aes(color = abs(residuals))) + # Color mapped to abs(residuals)
+  scale_color_continuous(low = "orange", high = "darkred") +  # Colors to use here
+  guides(color = FALSE) +  # Color legend removed
+  geom_point(aes(y = predicted), shape = 1) +
+  theme_bw() +
+  ylim(0,1.1) + xlim(20,40) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy")
+
+```
+
+### We typically assume that the residuals are normally distributed
+
+- Some are positive: observed outcome larger than predicted outcome
+- Some are negative: observed outcome smaller than predicted outcome
+- The average of the residuals will be zero overall
+
+```{r}
+#| label: fig-residuals-density-1
+#| echo: false
+#| warning: false
+#| fig-cap: "Plot showing the distribution of prediction errors -- residuals -- for the linear model of comprehension accuracy"
+#| fig-alt: "The figure a histogram of the residuals, the prediction errors, for the linear model of the association between mean comprehension accuracy and vocabulary. The histogram is shown in grey, and the peak is centered at residuals = 0. A dashed red line is drawn at resdiduals = 0. A red density curve is superimposed on the histogram to indicate the theoretical normal distribution of residuals."
+#| fig-height: 5
+#| fig-width: 5
+#| fig-align: center
+
+# -- plot residuals vs. theoretical normal
+# https://stackoverflow.com/questions/6967664/ggplot2-histogram-with-normal-curve
+ggplot(clearly.one.subjects, aes(x = residuals)) +
+  geom_histogram(aes(y = ..density..), alpha = .75, binwidth = .1) +
+  stat_function(fun = dnorm, args =
+                  list(mean = mean(clearly.one.subjects$residuals),
+                       sd = sd(clearly.one.subjects$residuals)),
+                colour = "red", size = 1.5) +
+  geom_vline(xintercept = 0, linetype = "dashed", colour = "darkred", size = 1.1, alpha = .75) +
+  xlim(-.5, .5) +
+  theme_bw()
+
+```
+
+### So: We pick the line that minimizes the residuals -- the mismatch between predicted and observed outcomes
+
+```{r}
+#| label: abline-predict-random-3
+#| echo: false
+#| warning: false
+#| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line. In the background, a fan of light pink lines indicate possible ways to capture the trend of the association."
+#| fig-height: 5
+#| fig-width: 5
+#| fig-align: center
+
+# -- see for how to on coding:
+# grolemund-wickham-p.347
+
+models <- tibble(
+            a1 = runif(250, .25, .75),
+            a2 = runif(250, -.05, .05)
+            )
+
+  ggplot(data = clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+  geom_abline(data = models, aes(intercept = a1, slope = a2), alpha = .05, colour = "darkred") +
+  geom_point(size = 2.5, colour = "darkgrey", alpha = 0.75) +
+  geom_smooth(method = "lm", colour = "red", size = 1.5, se = FALSE) +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  )  +
+  xlim(0, 40) + ylim(0, 1) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy")
+```
+
+### Identifying the key information in the linear model results
+
+- The `summary()` of the linear model shows ...
+- The `Estimate` of the `Coefficient` of the effect of individual differences in vocabulary (`SHIPLEY`)
+- how much the outcome `mean.acc` value changes, given differences in `SHIPLEY` score
+- Associated `t value` and `Pr(> |t|)` statistics for the coefficient t-test
+- Model fit statistics: `R-squared` and `F-statistic`
+
+```{r}
+model <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+summary(model)
+```
+
+### For the effect of vocabulary (SHIPLEY), we have:
+
+- The coefficient for the slope of the effect of variation in vocabulary scores: `0.01050`
+- The `Std. Error` (standard error) `0.00229` for that estimate
+- The `t `value `4.585` and associated `Pr(>|t|)` p-value `8.85e-06` for the null hypothesis test of the coefficient
+
+```{r}
+model <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+summary(model)
+```
+
+### Identifying the key information in the results
+
+- Pay attention to the **sign and the size** of the coefficient estimate:
+- Is the coefficient (e.g., SHIPLEY `0.01050`) a positive or a negative number?
+- Is it relatively large or small?
+- We come back to this, shortly, in the context of interpretation and reporting
+
+```{r}
+model <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+summary(model)
+```
+
+### The t-tests in the linear model
+
+<!-- -- gelman -- p.147 -->
+<!-- -- howell -- p.261, 275 pp.543-545 -->
+<!-- -- cohen -- p.86 -->
+
+$$t = \frac{\beta_j}{s_{\beta_j}}$$
+
+<!-- - We follow statistical convention and refer to the coefficient estimate as $\beta_j$ (b) -->
+- For each coefficient, the t-test is used to evaluate if the coefficient $\beta_j$ is significantly different from zero
+- We assume the **null hypothesis** that the coefficient $\beta_j$ is zero
+- We do the test by comparing the estimated coefficient $\beta_j$ with the standard error of the estimate
+
+### The t-tests in the linear model
+
+<!-- -- gelman -- p.147 -->
+<!-- -- howell -- p.261, 275 pp.543-545 -->
+<!-- -- cohen -- p.86 -->
+
+$$t = \frac{\beta_j}{s_{\beta_j}}$$
+
+- The standard error $s_{\beta_j}$ indicates our **uncertainty** about the estimate
+- Larger standard errors represent greater uncertainty
+
+### The t-tests in the linear model
+
+<!-- -- gelman -- p.147 -->
+<!-- -- howell -- p.261, 275 pp.543-545 -->
+<!-- -- cohen -- p.86 -->
+
+$$t = \frac{\beta_j}{s_{\beta_j}}$$
+
+- Standard errors can be calculated using information about:
+- Error in the model --- think of the distribution of residuals
+- Variation of values in the predictor --- how widely they range
+- The sample size
+- Standard errors will be smaller for the coefficients of effects that appear to have bigger impacts, in models that describe outcomes better, in larger samples
+
+### Identifying the key information in the results {.smaller}
+
+- Pay attention to R-squared:
+- The model summary gives us the `Multiple R-squared` and `Adjusted R-squared`
+- These numbers represent how much of the variation in the outcome can be predicted by the model
+- We usually report `Adjusted R-squared` because it tends to be more accurate
+
+```{r}
+model <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+summary(model)
+```
+
+### R-squared -- what is it? -- an indicator of the proportion of outcome variation we can predict
+
+- Better models should show smaller differences between observed and predicted outcomes
+- R-squared ($R^2$) gives the proportion of outcome variance
+- we can predict given information about differences in vocabulary
+
+```{r}
+#| label: fig-abline-predict-residuals-5
+#| echo: false
+#| warning: false
+#| fig-cap: "The difference between predicted and observed outcomes, given variation in vocabulary"
+#| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction."
+#| fig-height: 5
+#| fig-width: 5
+#| fig-align: center
+
+# -- plot residuals against predicted values
+# https://drsimonj.svbtle.com/visualising-residuals
+# clearly.one.subjects
+fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+# -- then
+clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values
+clearly.one.subjects$residuals <- residuals(fit) # Save the residual values
+
+# -- plot observed vs. predicted values
+ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+  geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope
+  geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines
+  # > Color adjustments made here...
+  geom_point(aes(color = abs(residuals))) + # Color mapped to abs(residuals)
+  scale_color_continuous(low = "orange", high = "darkred") +  # Colors to use here
+  guides(color = FALSE) +  # Color legend removed
+  geom_point(aes(y = predicted), shape = 1) +
+  theme_bw() +
+  ylim(0,1.1) + xlim(20,40) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy")
+
+```
+
+### R-squared as an indicator of the proportion of the outcome variation we can predict {.smaller}
+
+- To understand what this means, look at the scatterplot
+- On  average, values in outcome (accuracy) increase with increasing values in the predictor (vocabulary)
+- But different people got different outcomes even with same vocabulary scores
+
+```{r}
+#| label: fig-abline-predict-residuals-6
+#| echo: false
+#| warning: false
+#| fig-cap: "The difference between predicted and observed outcomes, given variation in vocabulary"
+#| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction."
+#| fig-height: 5
+#| fig-width: 5
+#| fig-align: center
+
+# -- plot residuals against predicted values
+# https://drsimonj.svbtle.com/visualising-residuals
+# clearly.one.subjects
+fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+# -- then
+clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values
+clearly.one.subjects$residuals <- residuals(fit) # Save the residual values
+
+# -- plot observed vs. predicted values
+ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+  geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope
+  geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines
+  # > Color adjustments made here...
+  geom_point(aes(color = abs(residuals))) + # Color mapped to abs(residuals)
+  scale_color_continuous(low = "orange", high = "darkred") +  # Colors to use here
+  guides(color = FALSE) +  # Color legend removed
+  geom_point(aes(y = predicted), shape = 1) +
+  theme_bw() +
+  ylim(0,1.1) + xlim(20,40) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy")
+
+```
+
+### R-squared as an indicator of the proportion of the outcome variation we can predict {.smaller}
+
+- So: we have variation in the outcome that is related to variation in the predictor
+- And: we have variation in the outcome that seems unrelated to the predictor
+- $R^2$ tells us how much variation in the outcome is explained by the model
+- $R^2$ gives us a proportion where $R^2 = \frac{\text{predicted outcome variation}}{\text{total outcome variation}}$
+
+```{r}
+#| label: fig-abline-predict-residuals-7
+#| echo: false
+#| warning: false
+#| fig-cap: "The difference between predicted and observed outcomes, given variation in vocabulary"
+#| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction."
+#| fig-height: 5
+#| fig-width: 5
+#| fig-align: center
+
+# -- plot residuals against predicted values
+# https://drsimonj.svbtle.com/visualising-residuals
+# clearly.one.subjects
+fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+# -- then
+clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values
+clearly.one.subjects$residuals <- residuals(fit) # Save the residual values
+
+# -- plot observed vs. predicted values
+ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+  geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope
+  geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines
+  # > Color adjustments made here...
+  geom_point(aes(color = abs(residuals))) + # Color mapped to abs(residuals)
+  scale_color_continuous(low = "orange", high = "darkred") +  # Colors to use here
+  guides(color = FALSE) +  # Color legend removed
+  geom_point(aes(y = predicted), shape = 1) +
+  theme_bw() +
+  ylim(0,1.1) + xlim(20,40) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy")
+
+```
+
+### Identifying the key information in the results
+
+- Pay attention to F:
+- The model summary gives us the F-statistic:
+- This is the test statistic for the test of the null hypothesis that the model does not predict the outcome
+
+```{r}
+model <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+summary(model)
+```
+
+### Reporting the results of a linear model
+
+- You will need to report three bits of information:
+
+1. $R^2$ how much outcome variation is explained by the model
+2. $F$ test for the null hypothesis that none of the predictors actually predict the outcome
+3. Coefficient estimates with the t-tests for the null hypothesis for each coefficient
+
+```{r}
+model <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+summary(model)
+```
+
+### The language and style of reporting linear model results
+
+Here is an example of results reporting text that is conventional:
+
+>We fitted a linear model with mean comprehension accuracy as the outcome and vocabulary (Shipley) as the predictor.
+Our analysis indicated a significant effect of vocabulary knowledge.
+The model is significant overall, with $F(1, 167) = 21.03, p < .001$, and explains 11\% of variance ($\text{adjusted } R^2 = 0.11$).
+The model estimates showed that the accuracy of comprehension increased with increasing levels of participant vocabulary knowledge ($\beta = .011, t = 4.59, p <.001$).
+
+### Look at what we do with the text
+
+1. Explain what I did, specifying the method (linear model), the outcome variable (accuracy) and the predictor variables (health literacy, reading strategy, reading skill and vocabulary)
+2. Report the model fit statistics overall ($F, R^2$)
+3. Report the significant effects ($\beta, t, p$) and describe the nature of the effects (does the outcome increase or decrease?)
+
+>We fitted a linear model with mean comprehension accuracy as the outcome and vocabulary (Shipley) as the predictor.
+Our analysis indicated a significant effect of vocabulary knowledge.
+The model is significant overall, with $F(1, 167) = 21.03, p < .001$, and explains 11\% of variance ($\text{adjusted } R^2 = 0.11$).
+The model estimates showed that the accuracy of comprehension increased with increasing levels of participant vocabulary knowledge ($\beta = .011, t = 4.59, p <.001$).
+
+## Summary
+
+- In psychological science, we often ask questions like:
+
+1. Does variation in X predict variation in Y?
+2. What are the factors that influence outcome Y?
+3. Is a theoretical model consistent with observed behaviour?
+
+- We can answer these questions using the linear model
+- Given sample data, we can predict the average difference in outcome values, for different levels of a predictor variable
+- We (or the math engine R uses) calculate the predictions so that they minimize the residuals, the errors of prediction or the mismatch between predicted and observed outcomes
+- Our results report tells the reader about the model and the estimated effects
 
