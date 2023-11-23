@@ -1113,7 +1113,7 @@ Do the younger (Study 1) children differ in any way from the older (additional) 
 
 We can check this through data visualization. Our aim is to present the distributions of variables side-by-side or *superimposed* to ensure easy comparison. We can do this in different ways, so I will demonstrate one approach with an outline explanation of the actions, and offer suggestions for further approaches.
 
-I am going to process the data before I do the plotting. I will re-use the code I used before (see @sec-get-distinct) with one additional change. I will add a line to create a group coding variable. This addition shows you how to do an action that is *very often* useful in the data processing part of your workflow.
+I am going to process the data before I do the plotting. I will re-use the code I used before (see @sec-vis-get-distinct) with one additional change. I will add a line to create a group coding variable. This addition shows you how to do an action that is *very often* useful in the data processing part of your workflow.
 
 ##### Data processing {#sec-vis-process-code-group}
 
@@ -1140,7 +1140,7 @@ conc.orth.subjs <- conc.orth %>%
   select(WASImRS:BPVSRS, mean.score, Participant, age.group)
 ```
 
-The code block is mostly the same as the code I used in Section @sec-get-distinct to extract the data for each participant, with two changes:
+The code block is mostly the same as the code I used in Section @sec-vis-get-distinct to extract the data for each participant, with two changes:
 
 1.  First, `mutate(age.group = fct_recode(...)` tells R that I want to create a new variable `age.group` through the process of recoding, with `fct_recode(...)` the variable I specify next, in the way that I specify.
 2.  `fct_recode(Study, ...)` tells R I want to recode the variable `Study`.
@@ -1531,7 +1531,7 @@ The last step --- changing the axis limits --- reveals how the sample data can b
 
 As we have seen previously, we can construct a series of plots and present them all at once in a grid or lattice. @fig-distribution-scatter-grid presents just such a grid: of scatterplots, indicating a series of potential associations.
 
-Let's suppose that we are primarily interested in what factors influence the extent to which children in the @ricketts2021 word learning experiment are able to correctly spell the target words they were given to learn. As explained earlier, in @sec-ricketts-study, @ricketts2021 examined the spellings produced by participant children in response to target words, counting how many string edits (i.e., letter deletions etc.) separated the spelling each child produced from the target spelling they should have produced.
+Let's suppose that we are primarily interested in what factors influence the extent to which children in the @ricketts2021 word learning experiment are able to correctly spell the target words they were given to learn. As explained earlier, in @sec-vis-ricketts-study, @ricketts2021 examined the spellings produced by participant children in response to target words, counting how many string edits (i.e., letter deletions etc.) separated the spelling each child produced from the target spelling they should have produced.
 
 We can calculate the mean spelling accuracy score for each child, over all the target words we observed their response to. We can identify mean spelling score as the *outcome variable*. We can then examine whether the outcome spelling scores are or are not influenced by participant attributes like vocabulary knowledge.
 
@@ -1792,7 +1792,7 @@ Levenshtein distance scores are higher *if* a child makes more errors in produci
 
 ### Answering a scientific question: Visualize the effects of experimental conditions {#sec-vis-visualize-effects}
 
-As explained in @sec-ricketts-study, in the @ricketts2021 study, we taught children taught 16 novel words in a study with a *2 x 2* factorial design. The presence of orthography (orthography absent vs. orthography present) was manipulated within participants: for all children, eight of the words were taught with orthography (the word spelling) present and eight with orthography absent. Instructions (incidental vs. explicit) were manipulated between participants such that children in the explicit condition were alerted to the presence of orthography whereas children in the incidental condition were not. The @ricketts2021 investigation was primarily concerned with the effects on word learning of presenting words for learning with or without showing the words with their spellings, with or without instructing students explicitly that they would be helped by the presence of the spellings.
+As explained in @sec-vis-ricketts-study, in the @ricketts2021 study, we taught children taught 16 novel words in a study with a *2 x 2* factorial design. The presence of orthography (orthography absent vs. orthography present) was manipulated within participants: for all children, eight of the words were taught with orthography (the word spelling) present and eight with orthography absent. Instructions (incidental vs. explicit) were manipulated between participants such that children in the explicit condition were alerted to the presence of orthography whereas children in the incidental condition were not. The @ricketts2021 investigation was primarily concerned with the effects on word learning of presenting words for learning with or without showing the words with their spellings, with or without instructing students explicitly that they would be helped by the presence of the spellings.
 
 We can analyze the effects of orthography and instruction using a linear model.
 
@@ -1997,7 +1997,7 @@ To take your development further, take a look at the resources listed in @sec-vi
 In my experience, the most productive way to learn about visualization and about coding the production of plots, is by doing.
 And this work is most interesting if you have a dataset you care about: for your research report, or for your dissertation study.
 
-As you have the alternate datasets described in @sec-from-repros, you can start with the data from the other task or the other study in @ricketts2021.
+As you have the alternate datasets described in @sec-vis-from-repros, you can start with the data from the other task or the other study in @ricketts2021.
 @ricketts2021 recorded children's responses in two different outcome tasks, the orthographic spelling task we have looked at, and a semantic or meaning-based task. It would be a fairly short step to adapt the code you see in the example code chunks to work with the semantic datasets.
 
 Alternatively, you can look at the data reported by @rodríguez-ferreiro2020.
