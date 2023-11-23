@@ -22,9 +22,6 @@ library(tidyverse)
 #| echo: false
 #| warning: false
 
-# -- read in the datasaurus dataset:
-datasaurus <- read_csv("Datasaurus_data.csv")
-
 # -- code to read in the aggregated subject level data from the clearly-understood data set
 # -- study one
 clearly.one.subjects <- read_csv("study-one-general-participants.csv", 
@@ -90,37 +87,35 @@ To do this, we will learn to think about and work with *linear models*.
 
 ## Learning resources {#sec-lm-intro-resources}
 
-You will see *next* links to the lectures we created to explain the concepts we want you to learn about and the practical visualization skills we want you to develop (@sec-lm-intro-lectures), *then* information about the practical materials we have provided to help you to practise your skills (@sec-lm-intro-practical).
+You will see in the *next section* links to the lectures we created both to explain the concepts we want to help you to learn about, and to explain the practical data analysis skills we want to help you to develop (@sec-lm-intro-lectures). We *then* share links to information about the practical materials we have provided to help you to practise those skills (@sec-lm-intro-practical).
 
-All the links to the lecture videos, the lecture slides, and everything you need for your practical work can *also* be found in the Week 8 files folder on Moodle [here](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse9){target="_blank"}
+All the links to the lecture videos, the lecture slides, and everything you need for your practical work can *also* be found in the Week 9 files folder on Moodle [here](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse10){target="_blank"}
 
-In @sec-lm-intro-notes, we present the lecture slide points. We do this here because we can share the code we used to generate the plots we use in some of the slides [^visualization-intro-1]
-
-[^visualization-intro-1]: We write the slides and this book in [Quarto](https://quarto.org){target="_blank"} in R-Studio. Quarto scripts can be rendered as .html to share web-books like this one, or to share slides like those we use in presenting the lecture. One advantage of using Quarto is that we can share a plot and the code we used to generate the plot in the same page.
+In @sec-lm-intro-notes, we present the lecture slide points.
 
 ::: callout-tip
 **Linked resources** include:
 
--   In @sec-lmualization, we present a more extensive discussion of data visualization, elaborating on some ideas, incorporating additional example plots and enabling you to work with alternate data-sets. This is provided as *optional* reading and may support more advanced development for students interested in future professional roles involving data analysis or data visualization.
--   In the *PSYC403* Week 8, I present a lecture that outlines some *perspectives* or useful ways of thinking about data visualization: the history; the context in professional work; and what research suggests are effective ways to produce visualizations. You can access the resources for that class [here](https://modules.lancaster.ac.uk/course/view.php?id=40624#coursecontentcollapse9){target="_blank"}.
+-   In @ec-associations, we present an overview of the materials we have shared to support your development of critical thinking in relation to associations, and to support your learning about conducting correlation-based analyses of associations.
+- It may help you to revise these materials.
 :::
 
 ### Lectures {#sec-lm-intro-lectures}
 
 The lecture material for this week is presented in four short parts. Click on a link and your browser should open a tab showing the *Panopto* video for the lecture part.
 
-[Part 1 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b7324096-ad13-4ca1-b8ab-b0c000d85850){target="_blank"}
+[Part 1 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9d4653c0-9ea2-4437-a74f-af5f00b2fd2e){target="_blank"}
 
-[Part 2 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=8f42d056-6da6-4aba-b893-b0c000dc28d1){target="_blank"}
+[Part 2 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=71eaffe1-5066-425c-9ce2-af5f00b79730){target="_blank"}
 
-[Part 3 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=05e049cb-277d-4d76-888d-b0c000df3c6f){target="_blank"}
+[Part 3 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a08f12af-606a-4be0-90ae-af5f00bc1491){target="_blank"}
 
-[Part 4 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5fccaa55-9d07-4e24-8995-b0c0010fe92b){target="_blank"}
+[Part 4 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a16c627e-609b-49db-b683-af5f00bfb15f){target="_blank"}
 
 You can download the slides we presented in the lecture in two different formats, depending on what you think will be most useful to you:
 
--   Download the slides exactly as they appear in the lecture from [this link](files/401-data-visualisation-practices.html). The .html file can be opened and viewed in any web browser (e.g., Chrome, Firefox, Safari).
--   Or you can download a printable Word .docx presentation of the slides from [this link](files/401-data-visualisation-practices-printable.docx). The .docx can be opened in Microsoft Word. The figures will not appear exactly as they do in the lecture recording because Word cannot cope with images so well but the trade-off is that you get a document you can print and edit to add notes.
+-   Download the slides exactly as they appear in the lecture from [this link](files/401-linear-model-intro.html). The .html file can be opened and viewed in any web browser (e.g., Chrome, Firefox, Safari).
+-   Or you can download a printable Word .docx presentation of the slides from [this link](files/401-linear-model-intro-printable-edit.docx). The .docx can be opened in Microsoft Word. The figures will not appear exactly as they do in the lecture recording because Word cannot cope with images so well but the trade-off is that you get a document you can print and edit to add notes.
 
 ### Practical materials {#sec-lm-intro-practical}
 
@@ -133,14 +128,14 @@ The folder includes the data files:
 
 and .R code files:
 
--   `401-visualization-how-to.R`
--   `401-visualization-workbook.R`
+-   `401-lm-intro-how-to.R`
+-   `401-lm-intro-workbook.R`
 
 You will use these files for your practical learning.
 
-You can download the .R files and the data .csv files in a single folder, using the link [here](files/PSYC401_visualization_materials.zip).
+You can download the .R files and the data .csv files in a single folder, using the link [here](files/PSYC401_lm-intro_materials.zip).
 
-Or you can download the files as individual files from the module [Moodle page for PSYC401](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse9){target="_blank"}.
+Or you can download the files as individual files from the module [Moodle page for PSYC401](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse10){target="_blank"}.
 
 Once you have downloaded the file folder, you will need to upload it to the R-Studio server to access and use the R files.
 
@@ -148,9 +143,9 @@ Once you have downloaded the file folder, you will need to upload it to the R-St
 
 In the `how-to` guide:
 
--   `401-visualization-how-to.R`
+-   `401-lm-intro-how-to.R`
 
-we show you how to do everything you need to do in the practical workbook (see @sec-lm-intro-practical-workbook). The guide comprises an .R file `401-visualization-how-to.R` with code and advice.
+we show you how to do everything you need to do in the practical workbook (see @sec-lm-intro-practical-workbook). The guide comprises an .R file `401-lm-intro-how-to.R` with code and advice.
 
 The code in the .R file was written to work with the data file
 
@@ -166,7 +161,7 @@ The code in the .R file was written to work with the data file
 
 In the `workbook`:
 
--   `401-visualization-workbook.R`
+-   `401-lm-intro-workbook.R`
 
 you will work with the data file
 
