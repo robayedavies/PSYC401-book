@@ -1,4 +1,4 @@
-# Introduction to visualization {#sec-vis-intro-intro}
+# Introduction to visualization {#sec-lm-intro-intro}
 
 ::: callout-warning
 Under construction
@@ -50,9 +50,9 @@ clearly.two.subjects <- read_csv("study-two-general-participants.csv",
 
 ```
 
-## Overview {#sec-vis-intro-overview}
+## Overview {#sec-lm-intro-overview}
 
-Welcome to our overview of the materials you will work with in our data visualization class in *PSYC401* Week 8. This week, we will focus on perspectives and practices in data visualization.
+Welcome to our overview of the materials you will work with in our class introducing you to the **linear model** in *PSYC401* Week 9.
 
 Our materials are designed to help you to think about what you are doing, to understand the aims of the practical steps, as well as to learn about producing professional effective data visualizations.
 
@@ -62,7 +62,7 @@ You can read a bit more about the project and the project data in @sec-associati
 
 As we work together, we will be revisiting some of the ideas and techniques you have seen in previous classes. This is to give you the opportunity to consolidate your learning. We will be extending your development with some new ideas to strengthen your skills.
 
-## Our learning goals {#sec-vis-intro-goals}
+## Our learning goals {#sec-lm-intro-goals}
 
 This week, we focus on both developing your critical thinking and strengthening your practical skills in data visualization.
 
@@ -84,24 +84,24 @@ We are working together so you can:
 3.  *Development* --- Locate yourself within the stages of the development process
 4.  *Implement* --- Produce visualizations that look good and are useful
 
-## Learning resources {#sec-vis-intro-resources}
+## Learning resources {#sec-lm-intro-resources}
 
-You will see *next* links to the lectures we created to explain the concepts we want you to learn about and the practical visualization skills we want you to develop (@sec-vis-intro-lectures), *then* information about the practical materials we have provided to help you to practise your skills (@sec-vis-intro-practical).
+You will see *next* links to the lectures we created to explain the concepts we want you to learn about and the practical visualization skills we want you to develop (@sec-lm-intro-lectures), *then* information about the practical materials we have provided to help you to practise your skills (@sec-lm-intro-practical).
 
 All the links to the lecture videos, the lecture slides, and everything you need for your practical work can *also* be found in the Week 8 files folder on Moodle [here](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse9){target="_blank"}
 
-In @sec-vis-intro-notes, we present the lecture slide points. We do this here because we can share the code we used to generate the plots we use in some of the slides [^visualization-intro-1]
+In @sec-lm-intro-notes, we present the lecture slide points. We do this here because we can share the code we used to generate the plots we use in some of the slides [^visualization-intro-1]
 
 [^visualization-intro-1]: We write the slides and this book in [Quarto](https://quarto.org){target="_blank"} in R-Studio. Quarto scripts can be rendered as .html to share web-books like this one, or to share slides like those we use in presenting the lecture. One advantage of using Quarto is that we can share a plot and the code we used to generate the plot in the same page.
 
 ::: callout-tip
 **Linked resources** include:
 
--   In @sec-visualization, we present a more extensive discussion of data visualization, elaborating on some ideas, incorporating additional example plots and enabling you to work with alternate data-sets. This is provided as *optional* reading and may support more advanced development for students interested in future professional roles involving data analysis or data visualization.
+-   In @sec-lmualization, we present a more extensive discussion of data visualization, elaborating on some ideas, incorporating additional example plots and enabling you to work with alternate data-sets. This is provided as *optional* reading and may support more advanced development for students interested in future professional roles involving data analysis or data visualization.
 -   In the *PSYC403* Week 8, I present a lecture that outlines some *perspectives* or useful ways of thinking about data visualization: the history; the context in professional work; and what research suggests are effective ways to produce visualizations. You can access the resources for that class [here](https://modules.lancaster.ac.uk/course/view.php?id=40624#coursecontentcollapse9){target="_blank"}.
 :::
 
-### Lectures {#sec-vis-intro-lectures}
+### Lectures {#sec-lm-intro-lectures}
 
 The lecture material for this week is presented in four short parts. Click on a link and your browser should open a tab showing the *Panopto* video for the lecture part.
 
@@ -118,7 +118,7 @@ You can download the slides we presented in the lecture in two different formats
 -   Download the slides exactly as they appear in the lecture from [this link](files/401-data-visualisation-practices.html). The .html file can be opened and viewed in any web browser (e.g., Chrome, Firefox, Safari).
 -   Or you can download a printable Word .docx presentation of the slides from [this link](files/401-data-visualisation-practices-printable.docx). The .docx can be opened in Microsoft Word. The figures will not appear exactly as they do in the lecture recording because Word cannot cope with images so well but the trade-off is that you get a document you can print and edit to add notes.
 
-### Practical materials {#sec-vis-intro-practical}
+### Practical materials {#sec-lm-intro-practical}
 
 We have collected the practical materials together into a folder.
 
@@ -140,13 +140,13 @@ Or you can download the files as individual files from the module [Moodle page f
 
 Once you have downloaded the file folder, you will need to upload it to the R-Studio server to access and use the R files.
 
-#### The how-to guide {#sec-vis-intro-practical-how-to}
+#### The how-to guide {#sec-lm-intro-practical-how-to}
 
 In the `how-to` guide:
 
 -   `401-visualization-how-to.R`
 
-we show you how to do everything you need to do in the practical workbook (see @sec-vis-intro-practical-workbook). The guide comprises an .R file `401-visualization-how-to.R` with code and advice.
+we show you how to do everything you need to do in the practical workbook (see @sec-lm-intro-practical-workbook). The guide comprises an .R file `401-visualization-how-to.R` with code and advice.
 
 The code in the .R file was written to work with the data file
 
@@ -158,7 +158,7 @@ The code in the .R file was written to work with the data file
 -   The `how-to` guide and the `workbook` have similar structures. This is intentional: so that you can copy and *adapt* code from the `how-to` guide to do the practical tasks in the `workbook`.
 :::
 
-### The workbook {#sec-vis-intro-practical-workbook}
+### The workbook {#sec-lm-intro-practical-workbook}
 
 In the `workbook`:
 
@@ -177,7 +177,7 @@ For this class on data visualization practices, our practical materials have two
 
 This means that in both the `how-to` and the `workbook` the different parts concern different sources of online information and how to access each.
 
-In the `how-to` and the `workbook` we look at methods to produce visualizations that display information about both summary statistics (e.g., the average outcome) and raw or individual outcome variability. We explain why we should visualize data like this in the lecture (as you can see in @sec-vis-intro-lectures or @sec-vis-intro-notes).
+In the `how-to` and the `workbook` we look at methods to produce visualizations that display information about both summary statistics (e.g., the average outcome) and raw or individual outcome variability. We explain why we should visualize data like this in the lecture (as you can see in @sec-lm-intro-lectures or @sec-lm-intro-notes).
 
 Specifically, the materials are written to support learning how to work with visualizations called *boxplots* and *rain cloud* plots. These are popular data visualization techniques so it is important to learn how to build them and how to interpret them. If you have already been introduced to them, you will find that our materials here show how to edit or polish the visualizations to make them more effective.
 
@@ -250,7 +250,7 @@ After the practical class, you will be able to download the answers version of t
 
 The answers version will present my answers for questions, and some extra information where that is helpful.
 
-## Lecture notes {#sec-vis-intro-notes}
+## Lecture notes {#sec-lm-intro-notes}
 
 Some people find it easier to read notes than to watch video recordings. This is why we also include the lecture notes here.
 
