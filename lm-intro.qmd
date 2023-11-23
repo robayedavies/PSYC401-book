@@ -1,4 +1,4 @@
-# Introduction to visualization {#sec-lm-intro-intro}
+# Introduction to the linear model {#sec-lm-intro-intro}
 
 ::: callout-warning
 Under construction
