@@ -169,49 +169,24 @@ you will work with the data file
 
 We split .R scripts into parts, tasks and questions.
 
-For this class on data visualization practices, our practical materials have two aims:
+For this class on linear models, our practical materials have two aims:
 
-1.  Helping you to learn about data visualization;
-2.  Helping you to learn how to help yourself by accessing, evaluating and exploiting the rich R knowledge ecosystem.
+1.  Helping you to learn how to use linear models to address questions about associations, questions like "What person attributes predict success in understanding?";
+2.  Helping you to learn how to interpret linear model results, including how to work with data visualizations displaying distributions or associations.
 
-This means that in both the `how-to` and the `workbook` the different parts concern different sources of online information and how to access each.
+We progress a series of parts, each designed to enable learning or developing concepts or skills:
 
-In the `how-to` and the `workbook` we look at methods to produce visualizations that display information about both summary statistics (e.g., the average outcome) and raw or individual outcome variability. We explain why we should visualize data like this in the lecture (as you can see in @sec-lm-intro-lectures or @sec-lm-intro-notes).
+- **Part 3** refreshes your development of skills for working with histogram-based visualizations of data distributions. Here, we are aiming to advance your skills so that you can develop nicer looking histograms that present more accurate accounts of distributions (by showing the full range of potential values), and so that you can annotate histograms to direct the attention of your audience [as we discuss in @sec-vis-intro-intro].
+- **Part 4** helps you to learn how you can present grids of histograms for easy comparison of variable distributions.
+- **Part 5** refreshes your development of skills for working with scatterplot-based visualizations of associations or of the relationships between two or more numeric variables. We look at how you can edit the appearance of the plots, element by element. And we look at how you can produce grids of scatterplots, again, to enable comparisons --- here, of the potential relationships between one outcome and multiple other variables.
+- **Part 6** offers the opportunity to revise the calculation and interpretation of correlation analyses.
+- **Part 7** provides exercises designed to help you to learn how to conduct linear model analyses.
+- **Part 8** helps you to develop skills in calculating and presenting model predictions.
+- **Part 9** is optional and focuses on working with R-community information to find out how to annotate plots using `geom_vline()` or `geom_hline()`.
 
-Specifically, the materials are written to support learning how to work with visualizations called *boxplots* and *rain cloud* plots. These are popular data visualization techniques so it is important to learn how to build them and how to interpret them. If you have already been introduced to them, you will find that our materials here show how to edit or polish the visualizations to make them more effective.
+The activity `401-lm-intro-workbook.R` file takes you through the tasks, one by one.
 
-There are three main sources of information you can access for free online.
-
-1.  The people who write software like the `{tidyverse}` or `{ggplot2}` libraries provide manuals, reference guides and tutorials. This information is often written as free web books, or as hard copy books.
-
-2.  These people, and often ther people, may write tutorials or guides or teaching materials designed to show learners (like us) how to use R functions or do certain things using R. They may present these tutorials or guides as web books, blog sites or video tutorials e.g. on Youtube or TikTok.
-
-3.  Many post questions and answers to discussion forums like *Stackoverflow*.
-
-Learning how to find, understand and use this information teaches two lessons:
-
--   A lot of scholarly and technical information is online and free.
--   Learning how to access this information is a key way that most professionals work out what they want to do and how they can do it.
-
-In our practical materials, we look at how you can:
-
--   search for and find relevant information;
--   learn how to understand the tools using the information shared through online sources;
--   work with example or demonstration code, adapting it for your own purposes.
-
-::: callout-tip
-This process of adapting demonstration code is a process critical to data literacy and to effective problem solving in working with data in psychological science.
-:::
-
-**Part 3** in the `workbook` focuses on locating and using `{ggplot2}` reference information to learn how to build box plots.
-
-**Part 4** in the `workbook` focuses on locating and using online tutorial information or how-to guides to build *rain cloud* plots. This kind of plot incorporates elements of the boxplot, the scatterplot and the density plot to give the viewer summary information about the distribution of scores on a variable while also giving information about the variability of outcomes.
-
-**Part 5** in the `workbook` focuses on using information available in the public discussion *Stackoverflow* so that you can learn how to export the plots you make, in order to include them in reports.
-
-The activity `401-visualization-workbook.R` file takes you through the tasks, one by one.
-
-If you are unsure about what you need to do, check the advice in `401-visualization-how-to.R`.
+If you are unsure about what you need to do, check the advice in `401-lm-intro-how-to.R`.
 
 You will see that you can match a task in the `activity` to the same task in the `how-to`. The `how-to` shows you what function you need and how you should write the function code. You will need to change the names of the data-set or the variables to complete the tasks in the activity.
 
