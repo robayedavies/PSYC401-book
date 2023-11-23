@@ -96,7 +96,7 @@ In @sec-lm-intro-notes, we present the lecture slide points.
 ::: callout-tip
 **Linked resources** include:
 
--   In @ec-associations, we present an overview of the materials we have shared to support your development of critical thinking in relation to associations, and to support your learning about conducting correlation-based analyses of associations.
+-   In @sec-associations, we present an overview of the materials we have shared to support your development of critical thinking in relation to associations, and to support your learning about conducting correlation-based analyses of associations.
 - It may help you to revise these materials.
 :::
 
@@ -228,11 +228,11 @@ The answers version will present my answers for questions, and some extra inform
 
 Some people find it easier to read notes than to watch video recordings. This is why we also include the lecture notes here.
 
-::: callout-tip
-In these notes, I provide notes on the code steps that result in plots.
+<!-- ::: callout-tip -->
+<!-- In these notes, I provide notes on the code steps that result in plots. -->
 
--   Click on the `Notes` tab to see them.
-:::
+<!-- -   Click on the `Notes` tab to see them. -->
+<!-- ::: -->
 
 ### Week 9: Focus on the linear model
 
@@ -376,6 +376,7 @@ knitr::include_graphics("nurse-patient-talk.png")
 
 ```{dot}
 //| label: fig-comprehension-drivers
+//| fig-cap: The potential drivers of comprehension success
 //| fig-alt: The diagram shows a flowchart, from left to right, nodes "Language experience" and "Reasoning capacity" are both connected by arrows to "Comprehension outcome".
 digraph Q {
   rankdir="LR"
@@ -718,6 +719,8 @@ clearly.one.subjects %>%
 
 ```{r}
 #| label: abline-predict-random-2
+#| warning: false
+#| echo: false
 #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line. In the background, a fan of light pink lines indicate possible ways to capture the trend of the association."
 #| fig-height: 5
 #| fig-width: 5
@@ -824,6 +827,8 @@ ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
 
 ```{r}
 #| label: fig-abline-predict-residuals-2
+#| warning: false
+#| echo: false
 #| fig-cap: "The predicted change in mean comprehension accuracy, given variation in vocabulary scores. Observed values are shown in orange-red. Predicted values are shown in blue"
 #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction."
 #| fig-height: 5
@@ -860,6 +865,8 @@ ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
 
 ```{r}
 #| label: fig-abline-predict-residuals-3
+#| warning: false
+#| echo: false
 #| fig-cap: "The predicted change in mean comprehension accuracy, given variation in vocabulary scores. Observed values are shown in orange-red. Predicted values are shown in blue"
 #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction."
 #| fig-height: 5
