@@ -55,35 +55,38 @@ clearly.two.subjects <- read_csv("study-two-general-participants.csv",
 
 Welcome to our overview of the materials you will work with in our class introducing you to the **linear model** in *PSYC401* Week 9.
 
-Our materials are designed to help you to think about what you are doing, to understand the aims of the practical steps, as well as to learn about producing professional effective data visualizations.
+We will return to locate our learning in the context of the *Clearly understood* project. We will present our PSYC401 lessons in the context of this research project because we think that this context will help you to make sense of the data (as we explain in @sec-preface).
 
-We will continue to work with data collected for the *Clearly understood* project because we think that working with these data in this research **context** will help you to make sense of the data, and to see why we ask you to practise the skills we are teaching.
+Remember: it is unclear how to make health communication more effective. The problem is that we are not sure how health information should be communicated so that everyone can understand it. This is why we ask the research questions:
 
-You can read a bit more about the project and the project data in @sec-associations.
+1.  What person attributes predict success in understanding?
+2.  Can people accurately evaluate whether they correctly understand written health information?
 
 As we work together, we will be revisiting some of the ideas and techniques you have seen in previous classes. This is to give you the opportunity to consolidate your learning. We will be extending your development with some new ideas to strengthen your skills.
 
+You can read a bit more about the project and the project data in @sec-associations.
+
 ## Our learning goals {#sec-lm-intro-goals}
 
-This week, we focus on both developing your critical thinking and strengthening your practical skills in data visualization.
+This week, we focus on learning how to predict people: predicting observations about us (e.g., our attributes) or about the things we make or do.
+To do this, we will learn to think about and work with *linear models*.
 
 **Our learning objectives: --- what are we learning about?**
 
-We are working together to help you:
+### Using the linear model to answer research questions
 
-1.  *Goals* --- Formulate questions you can ask yourself to help you to work effectively
-2.  *Audience* --- Understand the psychological factors that affect your impact
-3.  *Development* --- Work reflectively through a development process
-4.  *Implement* --- Produce visualizations in line with best practice
+- We will learn how to:
 
-**Our assessment targets: --- how do you know if you have learned?**
+1. code linear models
+2. identify and interpret model statistics
+3. critically evaluate the results
+4. communicate the results
 
-We are working together so you can:
+- Because we often want to know about relationships, asking questions like:
 
-1.  *Goals* --- Identify a set of targets for a development process in your professional teams
-2.  *Audience* --- Explain what you need to do to make a visualization effective
-3.  *Development* --- Locate yourself within the stages of the development process
-4.  *Implement* --- Produce visualizations that look good and are useful
+1. Does variation in X predict variation in Y?
+2. What are the factors that influence outcome Y?
+3. Is a theoretical model consistent with observed behaviour?
 
 ## Learning resources {#sec-lm-intro-resources}
 

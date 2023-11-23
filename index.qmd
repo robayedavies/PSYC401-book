@@ -1,4 +1,4 @@
-# Preface: Our approach {.unnumbered}
+# Preface: Our approach {#sec-preface}
 
 We can, here, explain a development in the approach we take in teaching this course.
 Naturally, this development in approach will require a parallel development in your approach to learning.
