@@ -1,9 +1,5 @@
 # Introduction to the linear model {#sec-lm-intro-intro}
 
-::: callout-warning
-Under construction
-:::
-
 ```{r library}
 #| echo: false
 #| warning: false
