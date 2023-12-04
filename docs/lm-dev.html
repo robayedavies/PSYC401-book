@@ -54,26 +54,7 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -115,8 +96,6 @@ div.csl-indent {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -271,63 +250,7 @@ div.csl-indent {
   <li><a href="#the-data-files" id="toc-the-data-files" class="nav-link" data-scroll-target="#the-data-files"><span class="header-section-number">6.3.4</span> The data files</a></li>
   <li><a href="#the-answers" id="toc-the-answers" class="nav-link" data-scroll-target="#the-answers"><span class="header-section-number">6.3.5</span> The answers</a></li>
   </ul></li>
-  <li><a href="#sec-lm-dev-notes" id="toc-sec-lm-dev-notes" class="nav-link" data-scroll-target="#sec-lm-dev-notes"><span class="header-section-number">6.4</span> Lecture notes</a>
-  <ul class="collapse">
-  <li><a href="#week-9-focus-on-the-linear-model" id="toc-week-9-focus-on-the-linear-model" class="nav-link" data-scroll-target="#week-9-focus-on-the-linear-model"><span class="header-section-number">6.4.1</span> Week 9: Focus on the linear model</a></li>
-  <li><a href="#analyze-visualize-present" id="toc-analyze-visualize-present" class="nav-link" data-scroll-target="#analyze-visualize-present"><span class="header-section-number">6.4.2</span> Analyze + visualize + present</a></li>
-  <li><a href="#the-linear-model-our-aims" id="toc-the-linear-model-our-aims" class="nav-link" data-scroll-target="#the-linear-model-our-aims"><span class="header-section-number">6.4.3</span> The linear model: our aims</a></li>
-  <li><a href="#using-the-linear-model-to-answer-research-questions-1" id="toc-using-the-linear-model-to-answer-research-questions-1" class="nav-link" data-scroll-target="#using-the-linear-model-to-answer-research-questions-1"><span class="header-section-number">6.4.4</span> Using the linear model to answer research questions</a></li>
-  <li><a href="#thinking-about-relationships-in-psychologial-science" id="toc-thinking-about-relationships-in-psychologial-science" class="nav-link" data-scroll-target="#thinking-about-relationships-in-psychologial-science"><span class="header-section-number">6.4.5</span> Thinking about relationships in psychologial science</a></li>
-  <li><a href="#now-consider-our-research-aims-in-the-context-of-the-health-comprehension-project" id="toc-now-consider-our-research-aims-in-the-context-of-the-health-comprehension-project" class="nav-link" data-scroll-target="#now-consider-our-research-aims-in-the-context-of-the-health-comprehension-project"><span class="header-section-number">6.4.6</span> Now consider our research aims in the <em>context</em> of the health comprehension project</a></li>
-  <li><a href="#health-comprehension-project-questions-and-analyses" id="toc-health-comprehension-project-questions-and-analyses" class="nav-link" data-scroll-target="#health-comprehension-project-questions-and-analyses"><span class="header-section-number">6.4.7</span> Health comprehension project: questions and analyses</a></li>
-  <li><a href="#context-individual-differences-theory-of-comprehension-success" id="toc-context-individual-differences-theory-of-comprehension-success" class="nav-link" data-scroll-target="#context-individual-differences-theory-of-comprehension-success"><span class="header-section-number">6.4.8</span> Context: Individual differences theory of comprehension success</a></li>
-  <li><a href="#the-measurement-context-where-the-data-come-from" id="toc-the-measurement-context-where-the-data-come-from" class="nav-link" data-scroll-target="#the-measurement-context-where-the-data-come-from"><span class="header-section-number">6.4.9</span> The measurement context: Where the data come from</a></li>
-  <li><a href="#reflect-the-kinds-of-critical-evaluation-questions-you-can-ask-yourself" id="toc-reflect-the-kinds-of-critical-evaluation-questions-you-can-ask-yourself" class="nav-link" data-scroll-target="#reflect-the-kinds-of-critical-evaluation-questions-you-can-ask-yourself"><span class="header-section-number">6.4.10</span> Reflect: The kinds of critical evaluation questions you can ask yourself</a></li>
-  <li><a href="#reflect-as-we-move-into-thinking-about-the-data-analysis-we-need-to-identify-our-assumptions" id="toc-reflect-as-we-move-into-thinking-about-the-data-analysis-we-need-to-identify-our-assumptions" class="nav-link" data-scroll-target="#reflect-as-we-move-into-thinking-about-the-data-analysis-we-need-to-identify-our-assumptions"><span class="header-section-number">6.4.11</span> Reflect: As we move into thinking about the data analysis, we need to identify our assumptions</a></li>
-  <li><a href="#we-need-to-think-about-the-derivation-chain" id="toc-we-need-to-think-about-the-derivation-chain" class="nav-link" data-scroll-target="#we-need-to-think-about-the-derivation-chain"><span class="header-section-number">6.4.12</span> We need to think about the derivation chain</a></li>
-  <li><a href="#questions-assumptions-predictions" id="toc-questions-assumptions-predictions" class="nav-link" data-scroll-target="#questions-assumptions-predictions"><span class="header-section-number">6.4.13</span> Questions, assumptions, predictions</a></li>
-  <li><a href="#one-way-of-thinking-about-the-association-is-to-visualize-it" id="toc-one-way-of-thinking-about-the-association-is-to-visualize-it" class="nav-link" data-scroll-target="#one-way-of-thinking-about-the-association-is-to-visualize-it"><span class="header-section-number">6.4.14</span> One way of thinking about the association is to visualize it</a></li>
-  <li><a href="#predicted-association-as-expected-change-in-average-outcome" id="toc-predicted-association-as-expected-change-in-average-outcome" class="nav-link" data-scroll-target="#predicted-association-as-expected-change-in-average-outcome"><span class="header-section-number">6.4.15</span> Predicted association as <em>expected</em> change in average outcome</a></li>
-  <li><a href="#how-do-we-estimate-the-association-between-two-variables" id="toc-how-do-we-estimate-the-association-between-two-variables" class="nav-link" data-scroll-target="#how-do-we-estimate-the-association-between-two-variables"><span class="header-section-number">6.4.16</span> How do we <em>estimate</em> the association between two variables?</a></li>
-  <li><a href="#the-sentence-structure-of-models-in-r" id="toc-the-sentence-structure-of-models-in-r" class="nav-link" data-scroll-target="#the-sentence-structure-of-models-in-r"><span class="header-section-number">6.4.17</span> The sentence structure of models in R</a></li>
-  <li><a href="#results-how-does-the-outcome-vary-in-relation-to-the-predictor" id="toc-results-how-does-the-outcome-vary-in-relation-to-the-predictor" class="nav-link" data-scroll-target="#results-how-does-the-outcome-vary-in-relation-to-the-predictor"><span class="header-section-number">6.4.18</span> Results: How does the outcome vary in relation to the predictor?</a></li>
-  <li><a href="#these-coefficients-build-a-line" id="toc-these-coefficients-build-a-line" class="nav-link" data-scroll-target="#these-coefficients-build-a-line"><span class="header-section-number">6.4.19</span> These <em>coefficients</em> build a line</a></li>
-  <li><a href="#so-now-we-need-to-think-about-straight-lines" id="toc-so-now-we-need-to-think-about-straight-lines" class="nav-link" data-scroll-target="#so-now-we-need-to-think-about-straight-lines"><span class="header-section-number">6.4.20</span> So now we need to think about straight lines</a></li>
-  <li><a href="#lets-draw-it" id="toc-lets-draw-it" class="nav-link" data-scroll-target="#lets-draw-it"><span class="header-section-number">6.4.21</span> Let’s draw it</a></li>
-  <li><a href="#we-can-understand-the-line-as-representing-a-set-of-predictions" id="toc-we-can-understand-the-line-as-representing-a-set-of-predictions" class="nav-link" data-scroll-target="#we-can-understand-the-line-as-representing-a-set-of-predictions"><span class="header-section-number">6.4.22</span> We can understand the line as representing a set of predictions</a></li>
-  </ul></li>
-  <li><a href="#we-can-understand-the-line-as-representing-a-set-of-predictions-1" id="toc-we-can-understand-the-line-as-representing-a-set-of-predictions-1" class="nav-link" data-scroll-target="#we-can-understand-the-line-as-representing-a-set-of-predictions-1"><span class="header-section-number">6.5</span> We can understand the line as representing a set of predictions</a>
-  <ul class="collapse">
-  <li><a href="#the-linear-model-allows-us-to-predict-the-average-outcome-we-can-expect-given-any-value-of-the-predictor" id="toc-the-linear-model-allows-us-to-predict-the-average-outcome-we-can-expect-given-any-value-of-the-predictor" class="nav-link" data-scroll-target="#the-linear-model-allows-us-to-predict-the-average-outcome-we-can-expect-given-any-value-of-the-predictor"><span class="header-section-number">6.5.1</span> The linear model allows us to predict the average outcome we can expect given <em>any</em> value of the predictor</a></li>
-  <li><a href="#we-could-draw-a-variety-of-different-model-prediction-lines-how-do-we-pick-the-right-one" id="toc-we-could-draw-a-variety-of-different-model-prediction-lines-how-do-we-pick-the-right-one" class="nav-link" data-scroll-target="#we-could-draw-a-variety-of-different-model-prediction-lines-how-do-we-pick-the-right-one"><span class="header-section-number">6.5.2</span> We could draw a variety of different model prediction lines: how do we pick the <em>right</em> one?</a></li>
-  <li><a href="#we-could-draw-a-variety-of-different-model-prediction-lines-how-do-we-pick-the-right-one-1" id="toc-we-could-draw-a-variety-of-different-model-prediction-lines-how-do-we-pick-the-right-one-1" class="nav-link" data-scroll-target="#we-could-draw-a-variety-of-different-model-prediction-lines-how-do-we-pick-the-right-one-1"><span class="header-section-number">6.5.3</span> We could draw a variety of different model prediction lines: how do we pick the <em>right</em> one?</a></li>
-  <li><a href="#linear-models-are-typically-estimated-given-sample-data" id="toc-linear-models-are-typically-estimated-given-sample-data" class="nav-link" data-scroll-target="#linear-models-are-typically-estimated-given-sample-data"><span class="header-section-number">6.5.4</span> Linear models are typically estimated given sample data</a></li>
-  <li><a href="#linear-models-are-typically-estimated-given-sample-data-1" id="toc-linear-models-are-typically-estimated-given-sample-data-1" class="nav-link" data-scroll-target="#linear-models-are-typically-estimated-given-sample-data-1"><span class="header-section-number">6.5.5</span> Linear models are typically estimated given sample data</a></li>
-  <li><a href="#we-can-derive-the-formulas-used-to-calculate-the-estimates-using-calculus" id="toc-we-can-derive-the-formulas-used-to-calculate-the-estimates-using-calculus" class="nav-link" data-scroll-target="#we-can-derive-the-formulas-used-to-calculate-the-estimates-using-calculus"><span class="header-section-number">6.5.6</span> We can derive the formulas used to calculate the estimates using calculus</a></li>
-  <li><a href="#what-do-the-prediction-errors-the-residuals-look-like" id="toc-what-do-the-prediction-errors-the-residuals-look-like" class="nav-link" data-scroll-target="#what-do-the-prediction-errors-the-residuals-look-like"><span class="header-section-number">6.5.7</span> What do the prediction errors – the residuals – look like?</a></li>
-  <li><a href="#what-the-prediction-errors-look-like" id="toc-what-the-prediction-errors-look-like" class="nav-link" data-scroll-target="#what-the-prediction-errors-look-like"><span class="header-section-number">6.5.8</span> What the prediction errors look like</a></li>
-  </ul></li>
-  <li><a href="#what-the-prediction-errors-look-like-1" id="toc-what-the-prediction-errors-look-like-1" class="nav-link" data-scroll-target="#what-the-prediction-errors-look-like-1"><span class="header-section-number">6.6</span> What the prediction errors look like</a>
-  <ul class="collapse">
-  <li><a href="#what-the-prediction-errors-look-like-2" id="toc-what-the-prediction-errors-look-like-2" class="nav-link" data-scroll-target="#what-the-prediction-errors-look-like-2"><span class="header-section-number">6.6.1</span> What the prediction errors look like</a></li>
-  <li><a href="#we-typically-assume-that-the-residuals-are-normally-distributed" id="toc-we-typically-assume-that-the-residuals-are-normally-distributed" class="nav-link" data-scroll-target="#we-typically-assume-that-the-residuals-are-normally-distributed"><span class="header-section-number">6.6.2</span> We typically assume that the residuals are normally distributed</a></li>
-  <li><a href="#so-we-pick-the-line-that-minimizes-the-residuals-the-mismatch-between-predicted-and-observed-outcomes" id="toc-so-we-pick-the-line-that-minimizes-the-residuals-the-mismatch-between-predicted-and-observed-outcomes" class="nav-link" data-scroll-target="#so-we-pick-the-line-that-minimizes-the-residuals-the-mismatch-between-predicted-and-observed-outcomes"><span class="header-section-number">6.6.3</span> So: We pick the line that minimizes the residuals – the mismatch between predicted and observed outcomes</a></li>
-  <li><a href="#identifying-the-key-information-in-the-linear-model-results" id="toc-identifying-the-key-information-in-the-linear-model-results" class="nav-link" data-scroll-target="#identifying-the-key-information-in-the-linear-model-results"><span class="header-section-number">6.6.4</span> Identifying the key information in the linear model results</a></li>
-  <li><a href="#for-the-effect-of-vocabulary-shipley-we-have" id="toc-for-the-effect-of-vocabulary-shipley-we-have" class="nav-link" data-scroll-target="#for-the-effect-of-vocabulary-shipley-we-have"><span class="header-section-number">6.6.5</span> For the effect of vocabulary (SHIPLEY), we have:</a></li>
-  <li><a href="#identifying-the-key-information-in-the-results" id="toc-identifying-the-key-information-in-the-results" class="nav-link" data-scroll-target="#identifying-the-key-information-in-the-results"><span class="header-section-number">6.6.6</span> Identifying the key information in the results</a></li>
-  <li><a href="#the-t-tests-in-the-linear-model" id="toc-the-t-tests-in-the-linear-model" class="nav-link" data-scroll-target="#the-t-tests-in-the-linear-model"><span class="header-section-number">6.6.7</span> The t-tests in the linear model</a></li>
-  <li><a href="#the-t-tests-in-the-linear-model-1" id="toc-the-t-tests-in-the-linear-model-1" class="nav-link" data-scroll-target="#the-t-tests-in-the-linear-model-1"><span class="header-section-number">6.6.8</span> The t-tests in the linear model</a></li>
-  <li><a href="#the-t-tests-in-the-linear-model-2" id="toc-the-t-tests-in-the-linear-model-2" class="nav-link" data-scroll-target="#the-t-tests-in-the-linear-model-2"><span class="header-section-number">6.6.9</span> The t-tests in the linear model</a></li>
-  <li><a href="#identifying-the-key-information-in-the-results-1" id="toc-identifying-the-key-information-in-the-results-1" class="nav-link" data-scroll-target="#identifying-the-key-information-in-the-results-1"><span class="header-section-number">6.6.10</span> Identifying the key information in the results</a></li>
-  <li><a href="#r-squared-what-is-it-an-indicator-of-the-proportion-of-outcome-variation-we-can-predict" id="toc-r-squared-what-is-it-an-indicator-of-the-proportion-of-outcome-variation-we-can-predict" class="nav-link" data-scroll-target="#r-squared-what-is-it-an-indicator-of-the-proportion-of-outcome-variation-we-can-predict"><span class="header-section-number">6.6.11</span> R-squared – what is it? – an indicator of the proportion of outcome variation we can predict</a></li>
-  <li><a href="#r-squared-as-an-indicator-of-the-proportion-of-the-outcome-variation-we-can-predict" id="toc-r-squared-as-an-indicator-of-the-proportion-of-the-outcome-variation-we-can-predict" class="nav-link" data-scroll-target="#r-squared-as-an-indicator-of-the-proportion-of-the-outcome-variation-we-can-predict"><span class="header-section-number">6.6.12</span> R-squared as an indicator of the proportion of the outcome variation we can predict</a></li>
-  <li><a href="#r-squared-as-an-indicator-of-the-proportion-of-the-outcome-variation-we-can-predict-1" id="toc-r-squared-as-an-indicator-of-the-proportion-of-the-outcome-variation-we-can-predict-1" class="nav-link" data-scroll-target="#r-squared-as-an-indicator-of-the-proportion-of-the-outcome-variation-we-can-predict-1"><span class="header-section-number">6.6.13</span> R-squared as an indicator of the proportion of the outcome variation we can predict</a></li>
-  <li><a href="#identifying-the-key-information-in-the-results-2" id="toc-identifying-the-key-information-in-the-results-2" class="nav-link" data-scroll-target="#identifying-the-key-information-in-the-results-2"><span class="header-section-number">6.6.14</span> Identifying the key information in the results</a></li>
-  <li><a href="#reporting-the-results-of-a-linear-model" id="toc-reporting-the-results-of-a-linear-model" class="nav-link" data-scroll-target="#reporting-the-results-of-a-linear-model"><span class="header-section-number">6.6.15</span> Reporting the results of a linear model</a></li>
-  <li><a href="#the-language-and-style-of-reporting-linear-model-results" id="toc-the-language-and-style-of-reporting-linear-model-results" class="nav-link" data-scroll-target="#the-language-and-style-of-reporting-linear-model-results"><span class="header-section-number">6.6.16</span> The language and style of reporting linear model results</a></li>
-  <li><a href="#look-at-what-we-do-with-the-text" id="toc-look-at-what-we-do-with-the-text" class="nav-link" data-scroll-target="#look-at-what-we-do-with-the-text"><span class="header-section-number">6.6.17</span> Look at what we do with the text</a></li>
-  </ul></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">6.7</span> Summary</a></li>
+  <li><a href="#sec-lm-dev-notes" id="toc-sec-lm-dev-notes" class="nav-link" data-scroll-target="#sec-lm-dev-notes"><span class="header-section-number">6.4</span> Lecture notes</a></li>
   </ul>
 </nav>
     </div>
@@ -362,6 +285,119 @@ Warning
 </div>
 <div class="callout-body-container callout-body">
 <p>Under construction</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(faux)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+************
+Welcome to faux. For support and examples visit:
+https://debruine.github.io/faux/
+- Get and set global package options with: faux_options()
+************</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggcorrplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggcorrplot' was built under R version 4.1.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Loading required package: ggplot2</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggeffects)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggExtra)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggExtra' was built under R version 4.1.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggridges)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ggridges' was built under R version 4.1.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gridExtra)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(here)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>here() starts at /Users/robdavies/OneDrive - Lancaster University/FromBox/teaching-PSYC401-402/PSYC401-book</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ordinal)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'ordinal' was built under R version 4.1.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(patchwork)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'patchwork' was built under R version 4.1.1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'tidyr' was built under R version 4.1.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'purrr' was built under R version 4.1.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: package 'stringr' was built under R version 4.1.1</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.2     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ lubridate 1.9.2     ✔ tibble    3.2.1
+✔ purrr     1.0.1     ✔ tidyr     1.3.0</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::combine() masks gridExtra::combine()
+✖ dplyr::filter()  masks stats::filter()
+✖ dplyr::lag()     masks stats::lag()
+✖ dplyr::slice()   masks ordinal::slice()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># -- code to read in the currently collated student project datasets</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># -- see:</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a><span class="co"># teaching-PSYC122-PYC401-402-notes_2022-07-22.rtf</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 2022-12-05 notes</span></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a><span class="co"># -- where see:</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 2022-07-27_all-studies.csv</span></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 2022-07-27_all-studies-subject-scores.csv</span></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># /Users/robdavies/OneDrive - Lancaster University/FromBox/project health comprehension/PSYC400 2021-22 study/data-analysis</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a><span class="co"># -- which comprises the PSYC122, PSYC304, PSYC401 datasets:</span></span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a><span class="co"># PSYC122-2021-22_2022-05-13.csv</span></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="co"># PSYC304-2021-22_2022-05-13.csv</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="co"># PSYC401-2021-22_2022-05-13.csv  </span></span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a><span class="co"># -- plus:</span></span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 2022-07-27_KA-prog-noNAs-tidy.csv</span></span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 2022-07-27_KA-prog-noNAs-tidy.csv</span></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>all.studies <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"2022-07-27_all-studies.csv"</span>, </span>
+<span id="cb22-18"><a href="#cb22-18" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">col_types =</span> <span class="fu">cols</span>(</span>
+<span id="cb22-19"><a href="#cb22-19" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">ResponseId =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb22-20"><a href="#cb22-20" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">study =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb22-21"><a href="#cb22-21" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">EDUCATION =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb22-22"><a href="#cb22-22" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">GENDER =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb22-23"><a href="#cb22-23" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">ETHNICITY =</span> <span class="fu">col_factor</span>()</span>
+<span id="cb22-24"><a href="#cb22-24" aria-hidden="true" tabindex="-1"></a>                                    )</span>
+<span id="cb22-25"><a href="#cb22-25" aria-hidden="true" tabindex="-1"></a>                                   )</span>
+<span id="cb22-26"><a href="#cb22-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-27"><a href="#cb22-27" aria-hidden="true" tabindex="-1"></a><span class="co"># -- code to read in the aggregated subject level data from the combined dataset</span></span>
+<span id="cb22-28"><a href="#cb22-28" aria-hidden="true" tabindex="-1"></a>all.studies.subjects <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"2022-07-27_all-studies-subject-scores.csv"</span>, </span>
+<span id="cb22-29"><a href="#cb22-29" aria-hidden="true" tabindex="-1"></a>                                  <span class="at">col_types =</span> <span class="fu">cols</span>(</span>
+<span id="cb22-30"><a href="#cb22-30" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">ResponseId =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb22-31"><a href="#cb22-31" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">study =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb22-32"><a href="#cb22-32" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">EDUCATION =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb22-33"><a href="#cb22-33" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">GENDER =</span> <span class="fu">col_factor</span>(),</span>
+<span id="cb22-34"><a href="#cb22-34" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">ETHNICITY =</span> <span class="fu">col_factor</span>()</span>
+<span id="cb22-35"><a href="#cb22-35" aria-hidden="true" tabindex="-1"></a>                                    )</span>
+<span id="cb22-36"><a href="#cb22-36" aria-hidden="true" tabindex="-1"></a>                                   )</span>
+<span id="cb22-37"><a href="#cb22-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-38"><a href="#cb22-38" aria-hidden="true" tabindex="-1"></a><span class="co"># -- need to calculate and add mean.acc to all.studies.subjects</span></span>
+<span id="cb22-39"><a href="#cb22-39" aria-hidden="true" tabindex="-1"></a>all.studies.subjects <span class="ot">&lt;-</span> all.studies <span class="sc">%&gt;%</span></span>
+<span id="cb22-40"><a href="#cb22-40" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(ResponseId) <span class="sc">%&gt;%</span></span>
+<span id="cb22-41"><a href="#cb22-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">mean.acc =</span> <span class="fu">mean</span>(response), <span class="at">mean.self =</span> <span class="fu">mean</span>(rating)) <span class="sc">%&gt;%</span></span>
+<span id="cb22-42"><a href="#cb22-42" aria-hidden="true" tabindex="-1"></a>  <span class="fu">full_join</span>(all.studies.subjects)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Joining with `by = join_by(ResponseId)`</code></pre>
 </div>
 </div>
 <section id="sec-lm-dev-overview" class="level2" data-number="6.1">
@@ -515,117 +551,12 @@ Tip
 <section id="the-data-files" class="level3" data-number="6.3.4">
 <h3 data-number="6.3.4" class="anchored" data-anchor-id="the-data-files"><span class="header-section-number">6.3.4</span> The data files</h3>
 <p>Each of the data files we will work with has a similar structure.</p>
-<p>Here are what the first few rows in the data file <code>study-two-general-participants.csv</code> looks like:</p>
-<div class="cell">
-<div class="cell-output-display">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
-<thead>
-<tr class="header">
-<th style="text-align: left;" data-quarto-table-cell-role="th">participant_ID</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">mean.acc</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">mean.self</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">study</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">AGE</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">SHIPLEY</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">HLVA</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">FACTOR3</th>
-<th style="text-align: right;" data-quarto-table-cell-role="th">QRITOTAL</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">GENDER</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">EDUCATION</th>
-<th style="text-align: left;" data-quarto-table-cell-role="th">ETHNICITY</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;">studytwo.1</td>
-<td style="text-align: right;">0.4107143</td>
-<td style="text-align: right;">6.071429</td>
-<td style="text-align: left;">studytwo</td>
-<td style="text-align: right;">26</td>
-<td style="text-align: right;">27</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">50</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: left;">Female</td>
-<td style="text-align: left;">Higher</td>
-<td style="text-align: left;">Asian</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">studytwo.10</td>
-<td style="text-align: right;">0.6071429</td>
-<td style="text-align: right;">8.500000</td>
-<td style="text-align: left;">studytwo</td>
-<td style="text-align: right;">38</td>
-<td style="text-align: right;">24</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">58</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: left;">Female</td>
-<td style="text-align: left;">Secondary</td>
-<td style="text-align: left;">White</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">studytwo.100</td>
-<td style="text-align: right;">0.8750000</td>
-<td style="text-align: right;">8.928571</td>
-<td style="text-align: left;">studytwo</td>
-<td style="text-align: right;">66</td>
-<td style="text-align: right;">40</td>
-<td style="text-align: right;">13</td>
-<td style="text-align: right;">60</td>
-<td style="text-align: right;">20</td>
-<td style="text-align: left;">Female</td>
-<td style="text-align: left;">Higher</td>
-<td style="text-align: left;">White</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">studytwo.101</td>
-<td style="text-align: right;">0.9642857</td>
-<td style="text-align: right;">8.500000</td>
-<td style="text-align: left;">studytwo</td>
-<td style="text-align: right;">21</td>
-<td style="text-align: right;">31</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">59</td>
-<td style="text-align: right;">14</td>
-<td style="text-align: left;">Female</td>
-<td style="text-align: left;">Higher</td>
-<td style="text-align: left;">White</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">studytwo.102</td>
-<td style="text-align: right;">0.7142857</td>
-<td style="text-align: right;">7.071429</td>
-<td style="text-align: left;">studytwo</td>
-<td style="text-align: right;">74</td>
-<td style="text-align: right;">35</td>
-<td style="text-align: right;">7</td>
-<td style="text-align: right;">52</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: left;">Male</td>
-<td style="text-align: left;">Higher</td>
-<td style="text-align: left;">White</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">studytwo.103</td>
-<td style="text-align: right;">0.7678571</td>
-<td style="text-align: right;">5.071429</td>
-<td style="text-align: left;">studytwo</td>
-<td style="text-align: right;">18</td>
-<td style="text-align: right;">40</td>
-<td style="text-align: right;">11</td>
-<td style="text-align: right;">54</td>
-<td style="text-align: right;">15</td>
-<td style="text-align: left;">Female</td>
-<td style="text-align: left;">Further</td>
-<td style="text-align: left;">White</td>
-</tr>
-</tbody>
-</table>
-
-
-</div>
-</div>
+<!-- Here are what the first few rows in the data file `study-two-general-participants.csv` looks like: -->
+<!-- # ```{r head} -->
+<!-- # #| warning: false -->
+<!-- # #| echo: false -->
+<!-- # kable(head(clearly.two.subjects)) -->
+<!-- # ``` -->
 <p>You can see the columns:</p>
 <ul>
 <li><code>participant_ID</code> participant code</li>
@@ -655,1008 +586,871 @@ Tip
 <!-- In these notes, I provide notes on the code steps that result in plots. -->
 <!-- -   Click on the `Notes` tab to see them. -->
 <!-- ::: -->
-<section id="week-9-focus-on-the-linear-model" class="level3" data-number="6.4.1">
-<h3 data-number="6.4.1" class="anchored" data-anchor-id="week-9-focus-on-the-linear-model"><span class="header-section-number">6.4.1</span> Week 9: Focus on the linear model</h3>
-<div class="cell">
-<div class="cell-output-display">
-<p><img src="lm-dev_files/figure-html/abline-predict-random-1-1.png" class="img-fluid" alt="The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line. In the background, a fan of light pink lines indicate possible ways to capture the trend of the association." width="480"></p>
-</div>
-</div>
-</section>
-<section id="analyze-visualize-present" class="level3" data-number="6.4.2">
-<h3 data-number="6.4.2" class="anchored" data-anchor-id="analyze-visualize-present"><span class="header-section-number">6.4.2</span> Analyze + visualize + present</h3>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-pipeline" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<div>
-<svg width="672" height="480" viewbox="0.00 0.00 267.00 264.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 260)">
-<title>
-Q
-</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-260 263,-260 263,4 -4,4"></polygon> <g id="clust1" class="cluster">
-<title>
-cluster_R
-</title>
-<polygon fill="none" stroke="black" points="8,-65 8,-118 251,-118 251,-65 8,-65"></polygon> </g> <!-- nd_1 --> <g id="node1" class="node">
-<title>
-nd_1
-</title>
-<polygon fill="none" stroke="black" points="35.24,-219.5 35.24,-255.5 122.76,-255.5 122.76,-219.5 35.24,-219.5"></polygon> <text text-anchor="middle" x="79" y="-233.3" font-family="Times,serif" font-size="14.00">Get raw data</text> </g> <!-- nd_2 --> <g id="node2" class="node">
-<title>
-nd_2
-</title>
-<polygon fill="none" stroke="black" points="44.37,-146.5 44.37,-182.5 113.63,-182.5 113.63,-146.5 44.37,-146.5"></polygon> <text text-anchor="middle" x="79" y="-160.3" font-family="Times,serif" font-size="14.00">Tidy data</text> </g> <!-- nd_1&#45;&gt;nd_2 --> <g id="edge6" class="edge">
-<title>
-nd_1-&gt;nd_2
-</title>
-<path fill="none" stroke="grey" d="M79,-219.31C79,-211.29 79,-201.55 79,-192.57"></path> <polygon fill="grey" stroke="grey" points="82.5,-192.53 79,-182.53 75.5,-192.53 82.5,-192.53"></polygon> </g> <!-- nd_3_l --> <g id="node4" class="node">
-<title>
-nd_3_l
-</title>
-<polygon fill="none" stroke="red" points="174.57,-73.5 174.57,-109.5 243.43,-109.5 243.43,-73.5 174.57,-73.5"></polygon> <text text-anchor="middle" x="209" y="-87.3" font-family="Times,serif" font-size="14.00">Visualize</text> </g> <!-- nd_2&#45;&gt;nd_3_l --> <g id="edge5" class="edge">
-<title>
-nd_2-&gt;nd_3_l
-</title>
-<path fill="none" stroke="grey" d="M112.24,-146.3C128.26,-137.9 147.71,-127.58 165,-118 166.95,-116.92 168.93,-115.81 170.94,-114.68"></path> <polygon fill="grey" stroke="grey" points="172.78,-117.66 179.74,-109.67 169.32,-111.57 172.78,-117.66"></polygon> </g> <!-- nd_3 --> <g id="node5" class="node">
-<title>
-nd_3
-</title>
-<polygon fill="none" stroke="red" points="15.68,-73.5 15.68,-109.5 78.32,-109.5 78.32,-73.5 15.68,-73.5"></polygon> <text text-anchor="middle" x="47" y="-87.3" font-family="Times,serif" font-size="14.00">Analyze</text> </g> <!-- nd_2&#45;&gt;nd_3 --> <g id="edge7" class="edge">
-<title>
-nd_2-&gt;nd_3
-</title>
-<path fill="none" stroke="grey" d="M71.25,-146.31C67.52,-138.03 62.96,-127.91 58.81,-118.69"></path> <polygon fill="grey" stroke="grey" points="61.97,-117.21 54.67,-109.53 55.59,-120.08 61.97,-117.21"></polygon> </g> <!-- nd_3_r --> <g id="node6" class="node">
-<title>
-nd_3_r
-</title>
-<polygon fill="none" stroke="black" points="95.84,-73.5 95.84,-109.5 156.16,-109.5 156.16,-73.5 95.84,-73.5"></polygon> <text text-anchor="middle" x="126" y="-87.3" font-family="Times,serif" font-size="14.00">Explore</text> </g> <!-- nd_2&#45;&gt;nd_3_r --> <g id="edge4" class="edge">
-<title>
-nd_2-&gt;nd_3_r
-</title>
-<path fill="none" stroke="grey" d="M90.38,-146.31C95.98,-137.85 102.84,-127.48 109.05,-118.11"></path> <polygon fill="grey" stroke="grey" points="112.13,-119.8 114.73,-109.53 106.29,-115.94 112.13,-119.8"></polygon> </g> <!-- nd_3_a --> <g id="node3" class="node">
-<title>
-nd_3_a
-</title>
-<polygon fill="none" stroke="black" points="131.44,-146.5 131.44,-182.5 220.56,-182.5 220.56,-146.5 131.44,-146.5"></polygon> <text text-anchor="middle" x="176" y="-160.3" font-family="Times,serif" font-size="14.00">Assumptions</text> </g> <!-- nd_3_a&#45;&gt;nd_3_l --> <g id="edge3" class="edge">
-<title>
-nd_3_a-&gt;nd_3_l
-</title>
-<path fill="none" stroke="grey" d="M183.99,-146.31C187.84,-138.03 192.54,-127.91 196.83,-118.69"></path> <polygon fill="grey" stroke="grey" points="200.04,-120.07 201.09,-109.53 193.7,-117.12 200.04,-120.07"></polygon> </g> <!-- nd_3_a&#45;&gt;nd_3 --> <g id="edge1" class="edge">
-<title>
-nd_3_a-&gt;nd_3
-</title>
-<path fill="none" stroke="grey" d="M140.5,-146.32C124.04,-138.11 104.32,-127.92 87,-118 85.28,-117.02 83.54,-116 81.79,-114.95"></path> <polygon fill="grey" stroke="grey" points="83.39,-111.83 73.03,-109.6 79.74,-117.8 83.39,-111.83"></polygon> </g> <!-- nd_3_a&#45;&gt;nd_3_r --> <g id="edge2" class="edge">
-<title>
-nd_3_a-&gt;nd_3_r
-</title>
-<path fill="none" stroke="grey" d="M163.9,-146.31C157.88,-137.77 150.49,-127.27 143.83,-117.82"></path> <polygon fill="grey" stroke="grey" points="146.61,-115.69 137.99,-109.53 140.89,-119.72 146.61,-115.69"></polygon> </g> <!-- nd_3_l&#45;&gt;nd_3 --> <g id="edge10" class="edge">
-<title>
-nd_3_l-&gt;nd_3
-</title>
-<path fill="none" stroke="transparent" d="M191.16,-109.88C181.63,-118.37 169.16,-127.55 156,-132 130.74,-140.55 121.09,-141.03 96,-132 83.54,-127.52 71.99,-118.34 63.24,-109.85"></path> </g> <!-- nd_4 --> <g id="node7" class="node">
-<title>
-nd_4
-</title>
-<polygon fill="none" stroke="red" points="99.39,-0.5 99.39,-36.5 156.61,-36.5 156.61,-0.5 99.39,-0.5"></polygon> <text text-anchor="middle" x="128" y="-14.3" font-family="Times,serif" font-size="14.00">Present</text> </g> <!-- nd_3_l&#45;&gt;nd_4 --> <g id="edge9" class="edge">
-<title>
-nd_3_l-&gt;nd_4
-</title>
-<path fill="none" stroke="grey" d="M189.39,-73.31C179.14,-64.33 166.44,-53.19 155.25,-43.39"></path> <polygon fill="grey" stroke="grey" points="157.25,-40.49 147.43,-36.53 152.64,-45.75 157.25,-40.49"></polygon> </g> <!-- nd_3&#45;&gt;nd_4 --> <g id="edge8" class="edge">
-<title>
-nd_3-&gt;nd_4
-</title>
-<path fill="none" stroke="grey" d="M66.61,-73.31C76.86,-64.33 89.56,-53.19 100.75,-43.39"></path> <polygon fill="grey" stroke="grey" points="103.36,-45.75 108.57,-36.53 98.75,-40.49 103.36,-45.75"></polygon> </g> </g>
-</svg>
-</div>
-<figcaption class="figure-caption">Figure&nbsp;6.1: The data analysis pipeline or workflow: we focus on the linear model</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="the-linear-model-our-aims" class="level3" data-number="6.4.3">
-<h3 data-number="6.4.3" class="anchored" data-anchor-id="the-linear-model-our-aims"><span class="header-section-number">6.4.3</span> The linear model: our aims</h3>
-<ol type="1">
-<li>Understand how to code: <code>lm(mean.acc ~ SHIPLEY)</code></li>
-<li>To answer questions like: <strong>Is comprehension success influenced by vocabulary knowledge?</strong></li>
-</ol>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-scatterplot-shipley-acc-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="lm-dev_files/figure-html/fig-scatterplot-shipley-acc-1-1.png" class="img-fluid figure-img" alt="The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line." width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.2: Scatterplot showing the potential association between accuracy of comprehension and vocabulary scores</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="using-the-linear-model-to-answer-research-questions-1" class="level3" data-number="6.4.4">
-<h3 data-number="6.4.4" class="anchored" data-anchor-id="using-the-linear-model-to-answer-research-questions-1"><span class="header-section-number">6.4.4</span> Using the linear model to answer research questions</h3>
-<ul>
-<li>We will learn how to:</li>
-</ul>
-<ol type="1">
-<li>code linear models</li>
-<li>identify and interpret model statistics</li>
-<li>critically evaluate the results</li>
-<li>communicate the results</li>
-</ol>
-</section>
-<section id="thinking-about-relationships-in-psychologial-science" class="level3" data-number="6.4.5">
-<h3 data-number="6.4.5" class="anchored" data-anchor-id="thinking-about-relationships-in-psychologial-science"><span class="header-section-number">6.4.5</span> Thinking about relationships in psychologial science</h3>
-<p>We often want to know about relationships</p>
-<ul>
-<li>Does variation in X predict variation in Y?</li>
-<li>What are the factors that influence outcome Y?</li>
-<li>Is a theoretical model consistent with observed behaviour?</li>
-</ul>
-</section>
-<section id="now-consider-our-research-aims-in-the-context-of-the-health-comprehension-project" class="level3" data-number="6.4.6">
-<h3 data-number="6.4.6" class="anchored" data-anchor-id="now-consider-our-research-aims-in-the-context-of-the-health-comprehension-project"><span class="header-section-number">6.4.6</span> Now consider our research aims in the <em>context</em> of the health comprehension project</h3>
-<ol type="1">
-<li>Because public health impacts depend on giving people information they can understand</li>
-<li>We want to know: <strong>What makes it easy or difficult to understand written health information?</strong></li>
-</ol>
-<div class="cell">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="nurse-patient-talk.png" class="img-fluid figure-img" style="width:100.0%"></p>
-<figcaption class="figure-caption">flickr: Sasin Tipchair ‘Senior woman in wheelchair talking to a nurse in a hospital’</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="health-comprehension-project-questions-and-analyses" class="level3" data-number="6.4.7">
-<h3 data-number="6.4.7" class="anchored" data-anchor-id="health-comprehension-project-questions-and-analyses"><span class="header-section-number">6.4.7</span> Health comprehension project: questions and analyses</h3>
-<ol type="1">
-<li>We want to know: <strong>What makes it easy or difficult to understand written health information?</strong></li>
-<li>So our research questions are:</li>
-</ol>
-<ul>
-<li>What person attributes predict success in understanding?</li>
-<li>Can people accurately evaluate whether they correctly understand written health information?</li>
-</ul>
-<ol start="3" type="1">
-<li>These kinds of research questions can be answered using methods like linear models</li>
-</ol>
-</section>
-<section id="context-individual-differences-theory-of-comprehension-success" class="level3" data-number="6.4.8">
-<h3 data-number="6.4.8" class="anchored" data-anchor-id="context-individual-differences-theory-of-comprehension-success"><span class="header-section-number">6.4.8</span> Context: Individual differences theory of comprehension success</h3>
-<ul>
-<li>Understanding text depends on (1.) language experience and (2.) reasoning ability <span class="citation" data-cites="freed2017">(<a href="references.html#ref-freed2017" role="doc-biblioref">Freed et al., 2017</a>)</span></li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-comprehension-drivers" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<div>
-<svg width="672" height="480" viewbox="0.00 0.00 335.68 98.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 94)">
-<title>
-Q
-</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-94 331.68,-94 331.68,4 -4,4"></polygon> <!-- nd_1_l --> <g id="node1" class="node">
-<title>
-nd_1_l
-</title>
-<path fill="none" stroke="black" d="M123.47,-90C123.47,-90 11.84,-90 11.84,-90 5.84,-90 -0.16,-84 -0.16,-78 -0.16,-78 -0.16,-66 -0.16,-66 -0.16,-60 5.84,-54 11.84,-54 11.84,-54 123.47,-54 123.47,-54 129.47,-54 135.47,-60 135.47,-66 135.47,-66 135.47,-78 135.47,-78 135.47,-84 129.47,-90 123.47,-90"></path> <text text-anchor="middle" x="67.66" y="-67.8" font-family="Times,serif" font-size="14.00">Language experience</text> </g> <!-- nd_2 --> <g id="node3" class="node">
-<title>
-nd_2
-</title>
-<path fill="none" stroke="black" d="M315.86,-63C315.86,-63 183.13,-63 183.13,-63 177.13,-63 171.13,-57 171.13,-51 171.13,-51 171.13,-39 171.13,-39 171.13,-33 177.13,-27 183.13,-27 183.13,-27 315.86,-27 315.86,-27 321.86,-27 327.86,-33 327.86,-39 327.86,-39 327.86,-51 327.86,-51 327.86,-57 321.86,-63 315.86,-63"></path> <text text-anchor="middle" x="249.5" y="-40.8" font-family="Times,serif" font-size="14.00">Comprehension outcome</text> </g> <!-- nd_1_l&#45;&gt;nd_2 --> <g id="edge1" class="edge">
-<title>
-nd_1_l-&gt;nd_2
-</title>
-<path fill="none" stroke="black" d="M135.37,-61.98C143.77,-60.72 152.47,-59.42 161.13,-58.12"></path> <polygon fill="black" stroke="black" points="161.9,-61.54 171.27,-56.59 160.86,-54.62 161.9,-61.54"></polygon> </g> <!-- nd_1_r --> <g id="node2" class="node">
-<title>
-nd_1_r
-</title>
-<path fill="none" stroke="black" d="M118.4,-36C118.4,-36 16.92,-36 16.92,-36 10.92,-36 4.92,-30 4.92,-24 4.92,-24 4.92,-12 4.92,-12 4.92,-6 10.92,0 16.92,0 16.92,0 118.4,0 118.4,0 124.4,0 130.4,-6 130.4,-12 130.4,-12 130.4,-24 130.4,-24 130.4,-30 124.4,-36 118.4,-36"></path> <text text-anchor="middle" x="67.66" y="-13.8" font-family="Times,serif" font-size="14.00">Reasoning capacity</text> </g> <!-- nd_1_r&#45;&gt;nd_2 --> <g id="edge2" class="edge">
-<title>
-nd_1_r-&gt;nd_2
-</title>
-<path fill="none" stroke="black" d="M130.3,-27.25C140.24,-28.75 150.69,-30.32 161.1,-31.88"></path> <polygon fill="black" stroke="black" points="160.64,-35.35 171.04,-33.37 161.67,-28.43 160.64,-35.35"></polygon> </g> </g>
-</svg>
-</div>
-<figcaption class="figure-caption">Figure&nbsp;6.3: The potential drivers of comprehension success</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<!-- ![Freed et al., 2017; structural equation model, adult reading comprehension](freed-2017-fig1-sem-model-1.png){fig-alt="Freed et al., 2017; structural equation model, adult reading comprehension"} -->
-</section>
-<section id="the-measurement-context-where-the-data-come-from" class="level3" data-number="6.4.9">
-<h3 data-number="6.4.9" class="anchored" data-anchor-id="the-measurement-context-where-the-data-come-from"><span class="header-section-number">6.4.9</span> The measurement context: Where the data come from</h3>
-<ul>
-<li>We measure reading comprehension: asking people to read text and then answer multiple choice questions</li>
-<li>We measure background knowledge: vocabulary knowledge (Shipley); health literacy (HLVA)</li>
-</ul>
-</section>
-<section id="reflect-the-kinds-of-critical-evaluation-questions-you-can-ask-yourself" class="level3" data-number="6.4.10">
-<h3 data-number="6.4.10" class="anchored" data-anchor-id="reflect-the-kinds-of-critical-evaluation-questions-you-can-ask-yourself"><span class="header-section-number">6.4.10</span> Reflect: The kinds of critical evaluation questions you can ask yourself</h3>
-<ul>
-<li>Are multiple choice questions good ways to probe understanding? <em>What alternatives are there?</em></li>
-<li>Are tests like the Shipley good measures of language knowledge? <em>What do we miss?</em></li>
-</ul>
-</section>
-<section id="reflect-as-we-move-into-thinking-about-the-data-analysis-we-need-to-identify-our-assumptions" class="level3" data-number="6.4.11">
-<h3 data-number="6.4.11" class="anchored" data-anchor-id="reflect-as-we-move-into-thinking-about-the-data-analysis-we-need-to-identify-our-assumptions"><span class="header-section-number">6.4.11</span> Reflect: As we move into thinking about the data analysis, we need to identify our assumptions</h3>
-<ol type="1">
-<li><strong>validity</strong>: that differences in knowledge or ability cause differences in test scores</li>
-<li><strong>measurement</strong>: that this is equally true across the different kinds of people we tested</li>
-<li><strong>generalizability</strong>: that the sample of people we recruited looks like the population</li>
-</ol>
-</section>
-<section id="we-need-to-think-about-the-derivation-chain" class="level3" data-number="6.4.12">
-<h3 data-number="6.4.12" class="anchored" data-anchor-id="we-need-to-think-about-the-derivation-chain"><span class="header-section-number">6.4.12</span> We need to think about the derivation chain</h3>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-derivation-chain" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<div>
-<svg width="672" height="480" viewbox="0.00 0.00 291.19 280.00" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" style="; max-width: none; max-height: none">
-<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 276)">
-<title>
-Q
-</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-276 287.19,-276 287.19,4 -4,4"></polygon> <g id="clust1" class="cluster">
-<title>
-cluster_R
-</title>
-<polygon fill="none" stroke="black" points="8,-211 8,-264 256,-264 256,-211 8,-211"></polygon> </g> <!-- nd_1_l --> <g id="node1" class="node">
-<title>
-nd_1_l
-</title>
-<polygon fill="none" stroke="black" points="16.32,-219.5 16.32,-255.5 137.68,-255.5 137.68,-219.5 16.32,-219.5"></polygon> <text text-anchor="middle" x="77" y="-233.3" font-family="Times,serif" font-size="14.00">Concept formation</text> </g> <!-- nd_1_r --> <g id="node2" class="node">
-<title>
-nd_1_r
-</title>
-<polygon fill="none" stroke="black" points="155.7,-219.5 155.7,-255.5 248.3,-255.5 248.3,-219.5 155.7,-219.5"></polygon> <text text-anchor="middle" x="202" y="-233.3" font-family="Times,serif" font-size="14.00">Causal model</text> </g> <!-- nd_2_l --> <g id="node3" class="node">
-<title>
-nd_2_l
-</title>
-<polygon fill="none" stroke="black" points="30.9,-146.5 30.9,-182.5 123.1,-182.5 123.1,-146.5 30.9,-146.5"></polygon> <text text-anchor="middle" x="77" y="-160.3" font-family="Times,serif" font-size="14.00">Measurement</text> </g> <!-- nd_1_l&#45;&gt;nd_2_l --> <g id="edge1" class="edge">
-<title>
-nd_1_l-&gt;nd_2_l
-</title>
-<path fill="none" stroke="black" d="M77,-219.31C77,-211.29 77,-201.55 77,-192.57"></path> <polygon fill="black" stroke="black" points="80.5,-192.53 77,-182.53 73.5,-192.53 80.5,-192.53"></polygon> </g> <!-- nd_3 --> <g id="node5" class="node">
-<title>
-nd_3
-</title>
-<polygon fill="none" stroke="black" points="75.54,-73.5 75.54,-109.5 212.46,-109.5 212.46,-73.5 75.54,-73.5"></polygon> <text text-anchor="middle" x="144" y="-87.3" font-family="Times,serif" font-size="14.00">Statistical predictions</text> </g> <!-- nd_2_l&#45;&gt;nd_3 --> <g id="edge2" class="edge">
-<title>
-nd_2_l-&gt;nd_3
-</title>
-<path fill="none" stroke="black" d="M93.22,-146.31C101.53,-137.5 111.8,-126.63 120.92,-116.96"></path> <polygon fill="black" stroke="black" points="123.61,-119.2 127.93,-109.53 118.52,-114.4 123.61,-119.2"></polygon> </g> <!-- nd_2_r --> <g id="node4" class="node">
-<title>
-nd_2_r
-</title>
-<polygon fill="none" stroke="black" points="140.81,-146.5 140.81,-182.5 283.19,-182.5 283.19,-146.5 140.81,-146.5"></polygon> <text text-anchor="middle" x="212" y="-160.3" font-family="Times,serif" font-size="14.00">Auxiliary assumptions</text> </g> <!-- nd_2_r&#45;&gt;nd_3 --> <g id="edge4" class="edge">
-<title>
-nd_2_r-&gt;nd_3
-</title>
-<path fill="none" stroke="black" d="M195.54,-146.31C187.1,-137.5 176.68,-126.63 167.42,-116.96"></path> <polygon fill="black" stroke="black" points="169.75,-114.33 160.31,-109.53 164.7,-119.17 169.75,-114.33"></polygon> </g> <!-- nd_4 --> <g id="node6" class="node">
-<title>
-nd_4
-</title>
-<polygon fill="none" stroke="black" points="82.15,-0.5 82.15,-36.5 205.85,-36.5 205.85,-0.5 82.15,-0.5"></polygon> <text text-anchor="middle" x="144" y="-14.3" font-family="Times,serif" font-size="14.00">Testing hypotheses</text> </g> <!-- nd_3&#45;&gt;nd_4 --> <g id="edge3" class="edge">
-<title>
-nd_3-&gt;nd_4
-</title>
-<path fill="none" stroke="black" d="M144,-73.31C144,-65.29 144,-55.55 144,-46.57"></path> <polygon fill="black" stroke="black" points="147.5,-46.53 144,-36.53 140.5,-46.53 147.5,-46.53"></polygon> </g> </g>
-</svg>
-</div>
-<figcaption class="figure-caption">Figure&nbsp;6.4: The derivation chain</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="questions-assumptions-predictions" class="level3" data-number="6.4.13">
-<h3 data-number="6.4.13" class="anchored" data-anchor-id="questions-assumptions-predictions"><span class="header-section-number">6.4.13</span> Questions, assumptions, predictions</h3>
-<p>Link: concepts, questions <span class="math inline">\(\rightarrow\)</span> assumptions <span class="math inline">\(\rightarrow\)</span> testable predictions</p>
-<ol type="1">
-<li><strong>concepts, questions</strong>: Can people accurately understand health guidance? <span class="math inline">\(\rightarrow\)</span></li>
-<li><strong>assumptions</strong>: People who know more about language should also present more accurate understanding <span class="math inline">\(\rightarrow\)</span></li>
-<li><strong>testable predictions</strong>: Higher levels of vocabulary should be associated with higher levels of comprehension accuracy: we expect to estimate a positive coefficient</li>
-</ol>
-</section>
-<section id="one-way-of-thinking-about-the-association-is-to-visualize-it" class="level3" data-number="6.4.14">
-<h3 data-number="6.4.14" class="anchored" data-anchor-id="one-way-of-thinking-about-the-association-is-to-visualize-it"><span class="header-section-number">6.4.14</span> One way of thinking about the association is to visualize it</h3>
-<ul>
-<li>For each value of the predictor <strong>vocabulary</strong></li>
-<li>Does the the value of the outcome <strong>accuracy</strong></li>
-<li><em>Increase or decrease?</em></li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-scatterplot-shipley-acc-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="lm-dev_files/figure-html/fig-scatterplot-shipley-acc-2-1.png" class="img-fluid figure-img" alt="The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line." width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.5: The association between comprehension accuracy and vocabulary</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<!-- gelman -- p.4 -- Regression is a method that allows researchers to summarize how predictions or average values of an outcome vary across individuals defined by a set of predictors. -->
-<!-- -- consolidate -- the linear model with one predictor -->
-<!-- -- explain -- the linear model as a prediction engine -->
-<!-- -- explain -- differences in average outcomes given differences in groups or continuous variables -->
-<!-- -- demonstrate -- the construction of the prediction line -->
-<!-- -- explain -- the linear sum of terms -->
-<!-- -- explain -- the best fit line -- residuals -->
-</section>
-<section id="predicted-association-as-expected-change-in-average-outcome" class="level3" data-number="6.4.15">
-<h3 data-number="6.4.15" class="anchored" data-anchor-id="predicted-association-as-expected-change-in-average-outcome"><span class="header-section-number">6.4.15</span> Predicted association as <em>expected</em> change in average outcome</h3>
-<ul>
-<li><a href="#fig-scatterplot-ridges-shipley-acc-1">Figure&nbsp;<span>6.6</span></a> shows the distribution curve of mean (comprehension) accuracy scores observed at each value of vocabulary</li>
-<li>You can see that the middle – the average – of each distribution increases</li>
-<li>as we go from left (low scores) to right (high scores) on vocabulary</li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-scatterplot-ridges-shipley-acc-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="lm-dev_files/figure-html/fig-scatterplot-ridges-shipley-acc-1-1.png" class="img-fluid figure-img" alt="The figure presents a indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. In the plot, the points are shown in dark red and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. Ridges are superimposed on the points, shown in dark grey and red. We show the distribution curve of mean (comprehension) accuracy scores observed at each value of vocabulary. You can see that the middle -- the average -- of each distribution increases as we go from left (low scores) to right (high scores)." width="576"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.6: Association between accuracy and vocabulary</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="how-do-we-estimate-the-association-between-two-variables" class="level3" data-number="6.4.16">
-<h3 data-number="6.4.16" class="anchored" data-anchor-id="how-do-we-estimate-the-association-between-two-variables"><span class="header-section-number">6.4.16</span> How do we <em>estimate</em> the association between two variables?</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean.acc <span class="sc">~</span> SHIPLEY,</span>
-<span id="cb1-2"><a href="#cb1-2"></a>            <span class="at">data =</span> clearly.one.subjects)</span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<ol type="1">
-<li>Specify the <code>lm</code> function and the model <code>mean.acc ~ SHIPLEY</code></li>
-<li>Specify what data we use <code>data = clearly.one.subjects</code></li>
-<li>Get the results <code>summary(model)</code></li>
-</ol>
-</section>
-<section id="the-sentence-structure-of-models-in-r" class="level3" data-number="6.4.17">
-<h3 data-number="6.4.17" class="anchored" data-anchor-id="the-sentence-structure-of-models-in-r"><span class="header-section-number">6.4.17</span> The sentence structure of models in R</h3>
-<p>Take a good look:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(mean.acc <span class="sc">~</span> SHIPLEY ...)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>You will see this sentence structure in coding for <em>many</em> different analysis types</p>
-<ul>
-<li><code>method(outcome ~ predictors)</code></li>
-<li><code>method</code> could be <code>aov, brm, lm, glm, glmm, lmer, t.test, cor.test</code></li>
-</ul>
-</section>
-<section id="results-how-does-the-outcome-vary-in-relation-to-the-predictor" class="level3 smaller" data-number="6.4.18">
-<h3 class="smaller anchored" data-number="6.4.18" data-anchor-id="results-how-does-the-outcome-vary-in-relation-to-the-predictor"><span class="header-section-number">6.4.18</span> Results: How does the outcome vary in relation to the predictor?</h3>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean.acc <span class="sc">~</span> SHIPLEY,</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> clearly.one.subjects)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = mean.acc ~ SHIPLEY, data = clearly.one.subjects)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--0.42871 -0.04921  0.02079  0.07480  0.18430 
-
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  0.44914    0.08053   5.577 9.67e-08 ***
-SHIPLEY      0.01050    0.00229   4.585 8.85e-06 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.1115 on 167 degrees of freedom
-Multiple R-squared:  0.1118,    Adjusted R-squared:  0.1065 
-F-statistic: 21.03 on 1 and 167 DF,  p-value: 8.846e-06</code></pre>
-</div>
-</div>
-<ul>
-<li>A model summary gives us estimates of:</li>
-<li>The coefficient <span class="math inline">\(= 0.44914\)</span> for the intercept</li>
-<li>The coefficient <span class="math inline">\(= 0.01050\)</span> for the slope of the SHIPLEY ‘effect’</li>
-</ul>
-</section>
-<section id="these-coefficients-build-a-line" class="level3" data-number="6.4.19">
-<h3 data-number="6.4.19" class="anchored" data-anchor-id="these-coefficients-build-a-line"><span class="header-section-number">6.4.19</span> These <em>coefficients</em> build a line</h3>
-<ul>
-<li>The line represents:</li>
-<li>our prediction for how the outcome varies <em>on average</em></li>
-<li>given change in the predictor</li>
-</ul>
-</section>
-<section id="so-now-we-need-to-think-about-straight-lines" class="level3" data-number="6.4.20">
-<h3 data-number="6.4.20" class="anchored" data-anchor-id="so-now-we-need-to-think-about-straight-lines"><span class="header-section-number">6.4.20</span> So now we need to think about straight lines</h3>
-<!-- -- gelman2021 p.37 -->
-<ol type="1">
-<li>You may remember from school that to draw a straight line you need four numbers:</li>
-</ol>
-<p><span class="math display">\[y = a + bx\]</span></p>
-<ol start="2" type="1">
-<li>We calculate the height <span class="math inline">\(y\)</span> by adding</li>
-</ol>
-<ul>
-<li><span class="math inline">\(a\)</span> the intercept, the value of y when <span class="math inline">\(x = 0\)</span></li>
-<li>to the product of <span class="math inline">\(b\)</span> the coefficient for the slope of the line</li>
-<li>multiplied by <span class="math inline">\(x\)</span> the value of the predictor variable</li>
-</ul>
-</section>
-<section id="lets-draw-it" class="level3" data-number="6.4.21">
-<h3 data-number="6.4.21" class="anchored" data-anchor-id="lets-draw-it"><span class="header-section-number">6.4.21</span> Let’s draw it</h3>
-<!-- -- gelman2021 p.37 -->
-<ul>
-<li>Look at what we get if we draw the line using the linear model coefficients:</li>
-<li><span class="math inline">\(= 0.449\)</span> for the intercept, <span class="math inline">\(a\)</span></li>
-<li><span class="math inline">\(= 0.011\)</span> for the slope, <span class="math inline">\(b\)</span></li>
-<li>In the formula: <span class="math inline">\(y = 0.449 + 0.011x\)</span></li>
-<li>(I round the numbers to three decimal places.)</li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-prediction-shipley-acc-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="lm-dev_files/figure-html/fig-prediction-shipley-acc-1-1.png" class="img-fluid figure-img" alt="The figure presents a line indicating the predicted association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. In the plot, higher vocabulary scores are predicted to be associated with higher accuracy scores. Model prediction of change in outcome is shown with a red line." width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.7: The <em>predicted</em> association between comprehension accuracy and vocabulary</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="we-can-understand-the-line-as-representing-a-set-of-predictions" class="level3" data-number="6.4.22">
-<h3 data-number="6.4.22" class="anchored" data-anchor-id="we-can-understand-the-line-as-representing-a-set-of-predictions"><span class="header-section-number">6.4.22</span> We can understand the line as representing a set of predictions</h3>
-<!-- -- gelman2021 p.37 -->
-<ul>
-<li>To see how — we use the coefficients to predict just one potential outcome:</li>
-<li>the expected accuracy for someone with a vocabulary score of 20</li>
-<li>We do this using the formula:</li>
-</ul>
-<p><span class="math inline">\(\text{predicted y} = 0.449 + \text{0.011 } \times \text{ Shipley score of } 20\)</span></p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-prediction-shipley-acc-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="lm-dev_files/figure-html/fig-prediction-shipley-acc-2-1.png" class="img-fluid figure-img" alt="The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. We predict the value of comprehension accuracy given a Shipley vocabulary score of 20: the point is shown in red at about mean accuracy of 65." width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.8: Predicted outcome in red</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="we-can-understand-the-line-as-representing-a-set-of-predictions-1" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="we-can-understand-the-line-as-representing-a-set-of-predictions-1"><span class="header-section-number">6.5</span> We can understand the line as representing a set of predictions</h2>
-<!-- -- gelman2021 p.37 -->
-<ul>
-<li>Let’s expand our predictions</li>
-</ul>
-<ol type="1">
-<li>Predict accuracy given a Shipley score of 20</li>
-</ol>
-<ul>
-<li><span class="math inline">\(y = 0.449 + 0.011 \times 20\)</span></li>
-</ul>
-<ol start="2" type="1">
-<li>Predict accuracy given a Shipley score of 30</li>
-</ol>
-<ul>
-<li><span class="math inline">\(y = 0.449 + 0.011 \times 30\)</span></li>
-</ul>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-prediction-shipley-acc-3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="lm-dev_files/figure-html/fig-prediction-shipley-acc-3-1.png" class="img-fluid figure-img" alt="The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. We predict the value of comprehension accuracy given Shipley vocabulary scoreS of 20 and 30." width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.9: Predicted outcome in red</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<section id="the-linear-model-allows-us-to-predict-the-average-outcome-we-can-expect-given-any-value-of-the-predictor" class="level3" data-number="6.5.1">
-<h3 data-number="6.5.1" class="anchored" data-anchor-id="the-linear-model-allows-us-to-predict-the-average-outcome-we-can-expect-given-any-value-of-the-predictor"><span class="header-section-number">6.5.1</span> The linear model allows us to predict the average outcome we can expect given <em>any</em> value of the predictor</h3>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-prediction-shipley-acc-4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="lm-dev_files/figure-html/fig-prediction-shipley-acc-4-1.png" class="img-fluid figure-img" alt="The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. We predict the value of comprehension accuracy given Shipley vocabulary scoreS of 20 and 30. A blue line is drawn through the linear model predicted trend." width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.10: The predicted change in mean comprehension accuracy, given variation in vocabulary scores</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="we-could-draw-a-variety-of-different-model-prediction-lines-how-do-we-pick-the-right-one" class="level3" data-number="6.5.2">
-<h3 data-number="6.5.2" class="anchored" data-anchor-id="we-could-draw-a-variety-of-different-model-prediction-lines-how-do-we-pick-the-right-one"><span class="header-section-number">6.5.2</span> We could draw a variety of different model prediction lines: how do we pick the <em>right</em> one?</h3>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="lm-dev_files/figure-html/abline-predict-random-2-1.png" class="img-fluid figure-img" alt="The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line. In the background, a fan of light pink lines indicate possible ways to capture the trend of the association." width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="we-could-draw-a-variety-of-different-model-prediction-lines-how-do-we-pick-the-right-one-1" class="level3" data-number="6.5.3">
-<h3 data-number="6.5.3" class="anchored" data-anchor-id="we-could-draw-a-variety-of-different-model-prediction-lines-how-do-we-pick-the-right-one-1"><span class="header-section-number">6.5.3</span> We could draw a variety of different model prediction lines: how do we pick the <em>right</em> one?</h3>
-<p>We need to go back to the prediction model</p>
-<ul>
-<li>To calculate a predicted outcome value, we calculated it as: <span class="math inline">\(\text{predicted y} = 0.449 + 0.011 \times \text{ Shipley score } 20\)</span></li>
-<li>Assuming the linear model <span class="math inline">\(\text{predicted y} = intercept + \text{slope } \times \text{ vocabulary}\)</span></li>
-<li>But we missed a bit: <strong>error</strong></li>
-</ul>
-</section>
-<section id="linear-models-are-typically-estimated-given-sample-data" class="level3" data-number="6.5.4">
-<h3 data-number="6.5.4" class="anchored" data-anchor-id="linear-models-are-typically-estimated-given-sample-data"><span class="header-section-number">6.5.4</span> Linear models are typically estimated given sample data</h3>
-<ul>
-<li>Maybe you noticed that I talked about how the model allows us to predict</li>
-<li>how the outcome varies <strong>on average</strong> given different values of the predictor</li>
-<li>When we use a linear model to estimate the intercept and slope – to build the predictions – we fit a model to the sample data</li>
-<li>And no model will fit sample data perfectly</li>
-</ul>
-<!-- -- gelman -- p.103 -- given more than two data points, cannot find a line that gives a perfect fit -->
-</section>
-<section id="linear-models-are-typically-estimated-given-sample-data-1" class="level3" data-number="6.5.5">
-<h3 data-number="6.5.5" class="anchored" data-anchor-id="linear-models-are-typically-estimated-given-sample-data-1"><span class="header-section-number">6.5.5</span> Linear models are typically estimated given sample data</h3>
-<!-- -- gelman -- p.49 -- measurement error model -->
-<p>Usually, this means there are differences between the expected outcomes that the model predicts and the observed outcomes</p>
-<ul>
-<li>So we often write the linear model like this: <span class="math inline">\(y = a + bx + \epsilon\)</span></li>
-</ul>
-<ol type="1">
-<li>The observed outcome <span class="math inline">\(y\)</span> equals</li>
-<li>the intercept <span class="math inline">\(a\)</span></li>
-<li>plus the difference associated with a specific predictor value <span class="math inline">\(bx\)</span></li>
-<li>plus some amount of mismatch or error <span class="math inline">\(\epsilon\)</span>, the difference between the observed outcome and the predicted outcome</li>
-</ol>
-</section>
-<section id="we-can-derive-the-formulas-used-to-calculate-the-estimates-using-calculus" class="level3" data-number="6.5.6">
-<h3 data-number="6.5.6" class="anchored" data-anchor-id="we-can-derive-the-formulas-used-to-calculate-the-estimates-using-calculus"><span class="header-section-number">6.5.6</span> We can derive the formulas used to calculate the estimates using calculus</h3>
-<ul>
-<li>But we won’t</li>
-<li>Because the linear model calculations are done using matrix solution algorithms in R <em>so we don’t have to</em> <!-- -- gelman -- p.104 --></li>
-</ul>
-</section>
-<section id="what-do-the-prediction-errors-the-residuals-look-like" class="level3" data-number="6.5.7">
-<h3 data-number="6.5.7" class="anchored" data-anchor-id="what-do-the-prediction-errors-the-residuals-look-like"><span class="header-section-number">6.5.7</span> What do the prediction errors – the residuals – look like?</h3>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-abline-predict-residuals-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="lm-dev_files/figure-html/fig-abline-predict-residuals-1-1.png" class="img-fluid figure-img" alt="The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction." width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.11: The predicted change in mean comprehension accuracy, given variation in vocabulary scores. Observed values are shown in orange-red. Predicted values are shown in blue</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="what-the-prediction-errors-look-like" class="level3" data-number="6.5.8">
-<h3 data-number="6.5.8" class="anchored" data-anchor-id="what-the-prediction-errors-look-like"><span class="header-section-number">6.5.8</span> What the prediction errors look like</h3>
-<ul>
-<li>The model expectation: higher vocabulary predicts higher mean comprehension accuracy</li>
-<li>The predicted points are shown by the blue line</li>
-<li>The prediction line increases in height for higher values of vocabulary</li>
-<li>Look at the <strong>differences in height</strong> between the observed points (in orange-red) and predicted points</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-abline-predict-residuals-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="lm-dev_files/figure-html/fig-abline-predict-residuals-2-1.png" class="img-fluid figure-img" alt="The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction." width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.12: The predicted change in mean comprehension accuracy, given variation in vocabulary scores. Observed values are shown in orange-red. Predicted values are shown in blue</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-</section>
-<section id="what-the-prediction-errors-look-like-1" class="level2" data-number="6.6">
-<h2 data-number="6.6" class="anchored" data-anchor-id="what-the-prediction-errors-look-like-1"><span class="header-section-number">6.6</span> What the prediction errors look like</h2>
-<ul>
-<li>If the regression model were perfect then all the observed points would lie on the prediction line</li>
-<li>They do not</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-abline-predict-residuals-3" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="lm-dev_files/figure-html/fig-abline-predict-residuals-3-1.png" class="img-fluid figure-img" alt="The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction." width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.13: The predicted change in mean comprehension accuracy, given variation in vocabulary scores. Observed values are shown in orange-red. Predicted values are shown in blue</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<section id="what-the-prediction-errors-look-like-2" class="level3" data-number="6.6.1">
-<h3 data-number="6.6.1" class="anchored" data-anchor-id="what-the-prediction-errors-look-like-2"><span class="header-section-number">6.6.1</span> What the prediction errors look like</h3>
-<ul>
-<li>Differences between observed and predicted outcomes are shown by the vertical lines</li>
-<li>Better models should show smaller differences between observed and predicted outcome values</li>
-<li>Notice: some participants had same vocabulary scores but different outcomes</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-abline-predict-residuals-4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="lm-dev_files/figure-html/fig-abline-predict-residuals-4-1.png" class="img-fluid figure-img" alt="The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction." width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.14: The predicted change in mean comprehension accuracy, given variation in vocabulary scores. Observed values are shown in orange-red. Predicted values are shown in blue</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="we-typically-assume-that-the-residuals-are-normally-distributed" class="level3" data-number="6.6.2">
-<h3 data-number="6.6.2" class="anchored" data-anchor-id="we-typically-assume-that-the-residuals-are-normally-distributed"><span class="header-section-number">6.6.2</span> We typically assume that the residuals are normally distributed</h3>
-<ul>
-<li>Some are positive: observed outcome larger than predicted outcome</li>
-<li>Some are negative: observed outcome smaller than predicted outcome</li>
-<li>The average of the residuals will be zero overall</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-residuals-density-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="lm-dev_files/figure-html/fig-residuals-density-1-1.png" class="img-fluid figure-img" alt="The figure a histogram of the residuals, the prediction errors, for the linear model of the association between mean comprehension accuracy and vocabulary. The histogram is shown in grey, and the peak is centered at residuals = 0. A dashed red line is drawn at resdiduals = 0. A red density curve is superimposed on the histogram to indicate the theoretical normal distribution of residuals." width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.15: Plot showing the distribution of prediction errors – residuals – for the linear model of comprehension accuracy</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="so-we-pick-the-line-that-minimizes-the-residuals-the-mismatch-between-predicted-and-observed-outcomes" class="level3" data-number="6.6.3">
-<h3 data-number="6.6.3" class="anchored" data-anchor-id="so-we-pick-the-line-that-minimizes-the-residuals-the-mismatch-between-predicted-and-observed-outcomes"><span class="header-section-number">6.6.3</span> So: We pick the line that minimizes the residuals – the mismatch between predicted and observed outcomes</h3>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="lm-dev_files/figure-html/abline-predict-random-3-1.png" class="img-fluid figure-img" alt="The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line. In the background, a fan of light pink lines indicate possible ways to capture the trend of the association." width="480"></p>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="identifying-the-key-information-in-the-linear-model-results" class="level3" data-number="6.6.4">
-<h3 data-number="6.6.4" class="anchored" data-anchor-id="identifying-the-key-information-in-the-linear-model-results"><span class="header-section-number">6.6.4</span> Identifying the key information in the linear model results</h3>
-<ul>
-<li>The <code>summary()</code> of the linear model shows …</li>
-<li>The <code>Estimate</code> of the <code>Coefficient</code> of the effect of individual differences in vocabulary (<code>SHIPLEY</code>)</li>
-<li>how much the outcome <code>mean.acc</code> value changes, given differences in <code>SHIPLEY</code> score</li>
-<li>Associated <code>t value</code> and <code>Pr(&gt; |t|)</code> statistics for the coefficient t-test</li>
-<li>Model fit statistics: <code>R-squared</code> and <code>F-statistic</code></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean.acc <span class="sc">~</span> SHIPLEY, <span class="at">data =</span> clearly.one.subjects)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = mean.acc ~ SHIPLEY, data = clearly.one.subjects)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--0.42871 -0.04921  0.02079  0.07480  0.18430 
-
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  0.44914    0.08053   5.577 9.67e-08 ***
-SHIPLEY      0.01050    0.00229   4.585 8.85e-06 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.1115 on 167 degrees of freedom
-Multiple R-squared:  0.1118,    Adjusted R-squared:  0.1065 
-F-statistic: 21.03 on 1 and 167 DF,  p-value: 8.846e-06</code></pre>
-</div>
-</div>
-</section>
-<section id="for-the-effect-of-vocabulary-shipley-we-have" class="level3" data-number="6.6.5">
-<h3 data-number="6.6.5" class="anchored" data-anchor-id="for-the-effect-of-vocabulary-shipley-we-have"><span class="header-section-number">6.6.5</span> For the effect of vocabulary (SHIPLEY), we have:</h3>
-<ul>
-<li>The coefficient for the slope of the effect of variation in vocabulary scores: <code>0.01050</code></li>
-<li>The <code>Std. Error</code> (standard error) <code>0.00229</code> for that estimate</li>
-<li>The <code>t</code>value <code>4.585</code> and associated <code>Pr(&gt;|t|)</code> p-value <code>8.85e-06</code> for the null hypothesis test of the coefficient</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean.acc <span class="sc">~</span> SHIPLEY, <span class="at">data =</span> clearly.one.subjects)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = mean.acc ~ SHIPLEY, data = clearly.one.subjects)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--0.42871 -0.04921  0.02079  0.07480  0.18430 
-
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  0.44914    0.08053   5.577 9.67e-08 ***
-SHIPLEY      0.01050    0.00229   4.585 8.85e-06 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.1115 on 167 degrees of freedom
-Multiple R-squared:  0.1118,    Adjusted R-squared:  0.1065 
-F-statistic: 21.03 on 1 and 167 DF,  p-value: 8.846e-06</code></pre>
-</div>
-</div>
-</section>
-<section id="identifying-the-key-information-in-the-results" class="level3" data-number="6.6.6">
-<h3 data-number="6.6.6" class="anchored" data-anchor-id="identifying-the-key-information-in-the-results"><span class="header-section-number">6.6.6</span> Identifying the key information in the results</h3>
-<ul>
-<li>Pay attention to the <strong>sign and the size</strong> of the coefficient estimate:</li>
-<li>Is the coefficient (e.g., SHIPLEY <code>0.01050</code>) a positive or a negative number?</li>
-<li>Is it relatively large or small?</li>
-<li>We come back to this, shortly, in the context of interpretation and reporting</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean.acc <span class="sc">~</span> SHIPLEY, <span class="at">data =</span> clearly.one.subjects)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = mean.acc ~ SHIPLEY, data = clearly.one.subjects)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--0.42871 -0.04921  0.02079  0.07480  0.18430 
-
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  0.44914    0.08053   5.577 9.67e-08 ***
-SHIPLEY      0.01050    0.00229   4.585 8.85e-06 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.1115 on 167 degrees of freedom
-Multiple R-squared:  0.1118,    Adjusted R-squared:  0.1065 
-F-statistic: 21.03 on 1 and 167 DF,  p-value: 8.846e-06</code></pre>
-</div>
-</div>
-</section>
-<section id="the-t-tests-in-the-linear-model" class="level3" data-number="6.6.7">
-<h3 data-number="6.6.7" class="anchored" data-anchor-id="the-t-tests-in-the-linear-model"><span class="header-section-number">6.6.7</span> The t-tests in the linear model</h3>
-<!-- -- gelman -- p.147 -->
-<!-- -- howell -- p.261, 275 pp.543-545 -->
-<!-- -- cohen -- p.86 -->
-<p><span class="math display">\[t = \frac{\beta_j}{s_{\beta_j}}\]</span></p>
-<!-- - We follow statistical convention and refer to the coefficient estimate as $\beta_j$ (b) -->
-<ul>
-<li>For each coefficient, the t-test is used to evaluate if the coefficient <span class="math inline">\(\beta_j\)</span> is significantly different from zero</li>
-<li>We assume the <strong>null hypothesis</strong> that the coefficient <span class="math inline">\(\beta_j\)</span> is zero</li>
-<li>We do the test by comparing the estimated coefficient <span class="math inline">\(\beta_j\)</span> with the standard error of the estimate</li>
-</ul>
-</section>
-<section id="the-t-tests-in-the-linear-model-1" class="level3" data-number="6.6.8">
-<h3 data-number="6.6.8" class="anchored" data-anchor-id="the-t-tests-in-the-linear-model-1"><span class="header-section-number">6.6.8</span> The t-tests in the linear model</h3>
-<!-- -- gelman -- p.147 -->
-<!-- -- howell -- p.261, 275 pp.543-545 -->
-<!-- -- cohen -- p.86 -->
-<p><span class="math display">\[t = \frac{\beta_j}{s_{\beta_j}}\]</span></p>
-<ul>
-<li>The standard error <span class="math inline">\(s_{\beta_j}\)</span> indicates our <strong>uncertainty</strong> about the estimate</li>
-<li>Larger standard errors represent greater uncertainty</li>
-</ul>
-</section>
-<section id="the-t-tests-in-the-linear-model-2" class="level3" data-number="6.6.9">
-<h3 data-number="6.6.9" class="anchored" data-anchor-id="the-t-tests-in-the-linear-model-2"><span class="header-section-number">6.6.9</span> The t-tests in the linear model</h3>
-<!-- -- gelman -- p.147 -->
-<!-- -- howell -- p.261, 275 pp.543-545 -->
-<!-- -- cohen -- p.86 -->
-<p><span class="math display">\[t = \frac{\beta_j}{s_{\beta_j}}\]</span></p>
-<ul>
-<li>Standard errors can be calculated using information about:</li>
-<li>Error in the model — think of the distribution of residuals</li>
-<li>Variation of values in the predictor — how widely they range</li>
-<li>The sample size</li>
-<li>Standard errors will be smaller for the coefficients of effects that appear to have bigger impacts, in models that describe outcomes better, in larger samples</li>
-</ul>
-</section>
-<section id="identifying-the-key-information-in-the-results-1" class="level3 smaller" data-number="6.6.10">
-<h3 class="smaller anchored" data-number="6.6.10" data-anchor-id="identifying-the-key-information-in-the-results-1"><span class="header-section-number">6.6.10</span> Identifying the key information in the results</h3>
-<ul>
-<li>Pay attention to R-squared:</li>
-<li>The model summary gives us the <code>Multiple R-squared</code> and <code>Adjusted R-squared</code></li>
-<li>These numbers represent how much of the variation in the outcome can be predicted by the model</li>
-<li>We usually report <code>Adjusted R-squared</code> because it tends to be more accurate</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean.acc <span class="sc">~</span> SHIPLEY, <span class="at">data =</span> clearly.one.subjects)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = mean.acc ~ SHIPLEY, data = clearly.one.subjects)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--0.42871 -0.04921  0.02079  0.07480  0.18430 
-
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  0.44914    0.08053   5.577 9.67e-08 ***
-SHIPLEY      0.01050    0.00229   4.585 8.85e-06 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.1115 on 167 degrees of freedom
-Multiple R-squared:  0.1118,    Adjusted R-squared:  0.1065 
-F-statistic: 21.03 on 1 and 167 DF,  p-value: 8.846e-06</code></pre>
-</div>
-</div>
-</section>
-<section id="r-squared-what-is-it-an-indicator-of-the-proportion-of-outcome-variation-we-can-predict" class="level3" data-number="6.6.11">
-<h3 data-number="6.6.11" class="anchored" data-anchor-id="r-squared-what-is-it-an-indicator-of-the-proportion-of-outcome-variation-we-can-predict"><span class="header-section-number">6.6.11</span> R-squared – what is it? – an indicator of the proportion of outcome variation we can predict</h3>
-<ul>
-<li>Better models should show smaller differences between observed and predicted outcomes</li>
-<li>R-squared (<span class="math inline">\(R^2\)</span>) gives the proportion of outcome variance</li>
-<li>we can predict given information about differences in vocabulary</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-abline-predict-residuals-5" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="lm-dev_files/figure-html/fig-abline-predict-residuals-5-1.png" class="img-fluid figure-img" alt="The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction." width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.16: The difference between predicted and observed outcomes, given variation in vocabulary</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="r-squared-as-an-indicator-of-the-proportion-of-the-outcome-variation-we-can-predict" class="level3 smaller" data-number="6.6.12">
-<h3 class="smaller anchored" data-number="6.6.12" data-anchor-id="r-squared-as-an-indicator-of-the-proportion-of-the-outcome-variation-we-can-predict"><span class="header-section-number">6.6.12</span> R-squared as an indicator of the proportion of the outcome variation we can predict</h3>
-<ul>
-<li>To understand what this means, look at the scatterplot</li>
-<li>On average, values in outcome (accuracy) increase with increasing values in the predictor (vocabulary)</li>
-<li>But different people got different outcomes even with same vocabulary scores</li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-abline-predict-residuals-6" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="lm-dev_files/figure-html/fig-abline-predict-residuals-6-1.png" class="img-fluid figure-img" alt="The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction." width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.17: The difference between predicted and observed outcomes, given variation in vocabulary</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="r-squared-as-an-indicator-of-the-proportion-of-the-outcome-variation-we-can-predict-1" class="level3 smaller" data-number="6.6.13">
-<h3 class="smaller anchored" data-number="6.6.13" data-anchor-id="r-squared-as-an-indicator-of-the-proportion-of-the-outcome-variation-we-can-predict-1"><span class="header-section-number">6.6.13</span> R-squared as an indicator of the proportion of the outcome variation we can predict</h3>
-<ul>
-<li>So: we have variation in the outcome that is related to variation in the predictor</li>
-<li>And: we have variation in the outcome that seems unrelated to the predictor</li>
-<li><span class="math inline">\(R^2\)</span> tells us how much variation in the outcome is explained by the model</li>
-<li><span class="math inline">\(R^2\)</span> gives us a proportion where <span class="math inline">\(R^2 = \frac{\text{predicted outcome variation}}{\text{total outcome variation}}\)</span></li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div id="fig-abline-predict-residuals-7" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="lm-dev_files/figure-html/fig-abline-predict-residuals-7-1.png" class="img-fluid figure-img" alt="The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction." width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;6.18: The difference between predicted and observed outcomes, given variation in vocabulary</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="identifying-the-key-information-in-the-results-2" class="level3" data-number="6.6.14">
-<h3 data-number="6.6.14" class="anchored" data-anchor-id="identifying-the-key-information-in-the-results-2"><span class="header-section-number">6.6.14</span> Identifying the key information in the results</h3>
-<ul>
-<li>Pay attention to F:</li>
-<li>The model summary gives us the F-statistic:</li>
-<li>This is the test statistic for the test of the null hypothesis that the model does not predict the outcome</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean.acc <span class="sc">~</span> SHIPLEY, <span class="at">data =</span> clearly.one.subjects)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = mean.acc ~ SHIPLEY, data = clearly.one.subjects)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--0.42871 -0.04921  0.02079  0.07480  0.18430 
-
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  0.44914    0.08053   5.577 9.67e-08 ***
-SHIPLEY      0.01050    0.00229   4.585 8.85e-06 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.1115 on 167 degrees of freedom
-Multiple R-squared:  0.1118,    Adjusted R-squared:  0.1065 
-F-statistic: 21.03 on 1 and 167 DF,  p-value: 8.846e-06</code></pre>
-</div>
-</div>
-</section>
-<section id="reporting-the-results-of-a-linear-model" class="level3" data-number="6.6.15">
-<h3 data-number="6.6.15" class="anchored" data-anchor-id="reporting-the-results-of-a-linear-model"><span class="header-section-number">6.6.15</span> Reporting the results of a linear model</h3>
-<ul>
-<li>You will need to report three bits of information:</li>
-</ul>
-<ol type="1">
-<li><span class="math inline">\(R^2\)</span> how much outcome variation is explained by the model</li>
-<li><span class="math inline">\(F\)</span> test for the null hypothesis that none of the predictors actually predict the outcome</li>
-<li>Coefficient estimates with the t-tests for the null hypothesis for each coefficient</li>
-</ol>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean.acc <span class="sc">~</span> SHIPLEY, <span class="at">data =</span> clearly.one.subjects)</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>
-Call:
-lm(formula = mean.acc ~ SHIPLEY, data = clearly.one.subjects)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--0.42871 -0.04921  0.02079  0.07480  0.18430 
-
-Coefficients:
-            Estimate Std. Error t value Pr(&gt;|t|)    
-(Intercept)  0.44914    0.08053   5.577 9.67e-08 ***
-SHIPLEY      0.01050    0.00229   4.585 8.85e-06 ***
----
-Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-
-Residual standard error: 0.1115 on 167 degrees of freedom
-Multiple R-squared:  0.1118,    Adjusted R-squared:  0.1065 
-F-statistic: 21.03 on 1 and 167 DF,  p-value: 8.846e-06</code></pre>
-</div>
-</div>
-</section>
-<section id="the-language-and-style-of-reporting-linear-model-results" class="level3" data-number="6.6.16">
-<h3 data-number="6.6.16" class="anchored" data-anchor-id="the-language-and-style-of-reporting-linear-model-results"><span class="header-section-number">6.6.16</span> The language and style of reporting linear model results</h3>
-<p>Here is an example of results reporting text that is conventional:</p>
-<blockquote class="blockquote">
-<p>We fitted a linear model with mean comprehension accuracy as the outcome and vocabulary (Shipley) as the predictor. Our analysis indicated a significant effect of vocabulary knowledge. The model is significant overall, with <span class="math inline">\(F(1, 167) = 21.03, p &lt; .001\)</span>, and explains 11% of variance (<span class="math inline">\(\text{adjusted } R^2 = 0.11\)</span>). The model estimates showed that the accuracy of comprehension increased with increasing levels of participant vocabulary knowledge (<span class="math inline">\(\beta = .011, t = 4.59, p &lt;.001\)</span>).</p>
-</blockquote>
-</section>
-<section id="look-at-what-we-do-with-the-text" class="level3" data-number="6.6.17">
-<h3 data-number="6.6.17" class="anchored" data-anchor-id="look-at-what-we-do-with-the-text"><span class="header-section-number">6.6.17</span> Look at what we do with the text</h3>
-<ol type="1">
-<li>Explain what I did, specifying the method (linear model), the outcome variable (accuracy) and the predictor variables (health literacy, reading strategy, reading skill and vocabulary)</li>
-<li>Report the model fit statistics overall (<span class="math inline">\(F, R^2\)</span>)</li>
-<li>Report the significant effects (<span class="math inline">\(\beta, t, p\)</span>) and describe the nature of the effects (does the outcome increase or decrease?)</li>
-</ol>
-<blockquote class="blockquote">
-<p>We fitted a linear model with mean comprehension accuracy as the outcome and vocabulary (Shipley) as the predictor. Our analysis indicated a significant effect of vocabulary knowledge. The model is significant overall, with <span class="math inline">\(F(1, 167) = 21.03, p &lt; .001\)</span>, and explains 11% of variance (<span class="math inline">\(\text{adjusted } R^2 = 0.11\)</span>). The model estimates showed that the accuracy of comprehension increased with increasing levels of participant vocabulary knowledge (<span class="math inline">\(\beta = .011, t = 4.59, p &lt;.001\)</span>).</p>
-</blockquote>
-</section>
-</section>
-<section id="summary" class="level2" data-number="6.7">
-<h2 data-number="6.7" class="anchored" data-anchor-id="summary"><span class="header-section-number">6.7</span> Summary</h2>
-<ul>
-<li>In psychological science, we often ask questions like:</li>
-</ul>
-<ol type="1">
-<li>Does variation in X predict variation in Y?</li>
-<li>What are the factors that influence outcome Y?</li>
-<li>Is a theoretical model consistent with observed behaviour?</li>
-</ol>
-<ul>
-<li>We can answer these questions using the linear model</li>
-<li>Given sample data, we can predict the average difference in outcome values, for different levels of a predictor variable</li>
-<li>We (or the math engine R uses) calculate the predictions so that they minimize the residuals, the errors of prediction or the mismatch between predicted and observed outcomes</li>
-<li>Our results report tells the reader about the model and the estimated effects</li>
-</ul>
+<!-- ## Analyze + visualize + present -->
+<!-- ```{dot} -->
+<!-- //| label: fig-pipeline -->
+<!-- //| fig-cap: "The data analysis pipeline or workflow: we focus on the linear model" -->
+<!-- //| fig-alt: "The diagram shows a flowchart. The flowchart starts at the top with 'get raw data' and finishes at the bottom with 'present'. 'get raw data' has an arrow to 'tidy data'. 'tidy data' has arrows to 'analyze', 'explore' and 'visualize'. On the same level as 'tidy 'data', 'assumptions' also has arrows to 'analyze', 'explore' and 'visualize'. Then 'analyze', 'explore' and 'visualize' have arrows to 'present'. The 'analyze', 'visualize' and 'present' boxes are outlined in red." -->
+<!-- digraph Q { -->
+<!--   node [shape=record]; -->
+<!--   nd_1   [label = "Get raw data"]; -->
+<!--   nd_2   [label = "Tidy data"]; -->
+<!--   nd_3_a [label = "Assumptions"]; -->
+<!--   nd_3_l [label = "Visualize", color = red]; -->
+<!--   nd_3   [label = "Analyze", color = red]; -->
+<!--   nd_3_r [label = "Explore"]; -->
+<!--   nd_4   [label = "Present", color = red]; -->
+<!--   nd_3_a -> nd_3 [color = grey]; -->
+<!--   nd_3_a -> nd_3_r [color = grey]; -->
+<!--   nd_3_a -> nd_3_l [color = grey]; -->
+<!--   nd_2 -> nd_3_r [color = grey]; -->
+<!--   nd_2 -> nd_3_l [color = grey]; -->
+<!--   nd_1 -> nd_2 -> nd_3 -> nd_4 [color = grey]; -->
+<!--   nd_3_l -> nd_4 [color = grey]; -->
+<!--   subgraph cluster_R { -->
+<!--     {rank=same nd_3_l nd_3 nd_3_r} -->
+<!--     nd_3_l -> nd_3 -> nd_3_r [color= none arrowhead=none]; -->
+<!--   } -->
+<!-- } -->
+<!-- ``` -->
+<!-- ## Develop the linear model: our aims -->
+<!-- -   We will learn how to: -->
+<!-- 1.  Extend our capacity to code models so that we can incorporate **multiple predictors** -->
+<!-- 2.  Develop the thought processes required to make **decisions about what predictors to include** -->
+<!-- 3.  Develop the skills required to **critically evaluate results** -->
+<!-- -   Especially considering potential variation across samples -->
+<!-- ## Develop the linear model: our aims -->
+<!-- -   We will revise how to: -->
+<!-- 5.  Identify and interpret model statistics -->
+<!-- 6.  Critically evaluate the results -->
+<!-- 7.  Communicate the results -->
+<!-- -   We will learn how to: explore **extensions** of the linear model -->
+<!-- ## We close the loop: Our *context*, the health comprehension project -->
+<!-- ::: columns -->
+<!-- ::: {.column width=".4"} -->
+<!-- 1.  Because public health impacts depend on giving people information they can understand -->
+<!-- 2.  We want to know: **What makes it easy or difficult to understand written health information?** -->
+<!-- ::: -->
+<!-- ::: {.column width=".6"} -->
+<!-- ```{r nurse-patient-talk-1, echo=FALSE, out.width='100%', fig.cap="flickr: Sasin Tipchair 'Senior woman in wheelchair talking to a nurse in a hospital'"} -->
+<!-- knitr::include_graphics("nurse-patient-talk.png") -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ## We close the loop: Health comprehension project, questions and analyses -->
+<!-- 1.  We want to know: **What makes it easy or difficult to understand written health information?** -->
+<!-- 2.  So our research questions are: -->
+<!-- -   What person attributes predict success in understanding? -->
+<!-- -   Can people accurately evaluate whether they correctly understand written health information? -->
+<!-- ## Extensions to the linear model: Multiple predictors -->
+<!-- -   We need only a **limited change to R code** -->
+<!-- -   To specify a model with **multiple predictors** -->
+<!-- ## How we *estimate* the association between two variables: One outcome and one predictor -->
+<!-- ```{r} -->
+<!-- #| echo: true -->
+<!-- #| eval: false -->
+<!-- #| code-line-numbers: "1|2|3" -->
+<!-- model <- lm(mean.acc ~ SHIPLEY,  -->
+<!--             data = all.studies.subjects) -->
+<!-- summary(model) -->
+<!-- ``` -->
+<!-- 1.  Specify the `lm` function and the model `mean.acc ~ ...` -->
+<!-- 2.  Specify what data we use `data = all.studies.subjects` -->
+<!-- 3.  Get the results `summary(model)` -->
+<!-- ## How we *estimate* the association between multiple variables: One outcome and *multiple* predictors -->
+<!-- ```{r} -->
+<!-- #| echo: true -->
+<!-- #| eval: false -->
+<!-- #| code-line-numbers: "1|2|3" -->
+<!-- model <- lm(mean.acc ~ SHIPLEY + HLVA + FACTOR3 + AGE + NATIVE.LANGUAGE,  -->
+<!--             data = all.studies.subjects) -->
+<!-- summary(model) -->
+<!-- ``` -->
+<!-- 4.  Specify the `lm` function and the model: -->
+<!-- -   `mean.acc ~ SHIPLEY + HLVA + FACTOR3 + AGE + NATIVE.LANGUAGE` -->
+<!-- ## The sentence structure of model code in R {background-color="lightblue"} -->
+<!-- Take a good look: -->
+<!-- ```{r} -->
+<!-- #| echo: true -->
+<!-- #| eval: false -->
+<!-- lm(mean.acc ~ SHIPLEY + HLVA + FACTOR3 + AGE + NATIVE.LANGUAGE, ...) -->
+<!-- ``` -->
+<!-- You will see this sentence structure in coding for *many* different analysis types -->
+<!-- -   `method(outcome ~ predictors)` -->
+<!-- -   `predictors` could be `SHIPLEY + HLVA + FACTOR3 + AGE + NATIVE.LANGUAGE ...` -->
+<!-- ## Extensions to the linear model: Multiple predictors -->
+<!-- -   We assume that the outcome prediction errors *residuals* are normally distributed -->
+<!-- -   We do not assume that the distributions of *predictor variables* are normal -->
+<!-- ## Revision: What differences between observed and predicted outcome values look like {.smaller} -->
+<!-- ::: columns -->
+<!-- ::: {.column width=".4"} -->
+<!-- -   Differences between observed and predicted outcomes are shown by the vertical lines -- outcome prediction errors: **residuals** -->
+<!-- -   Better models should show smaller differences between observed and predicted outcome values -->
+<!-- ::: -->
+<!-- ::: {.column width=".6"} -->
+<!-- ```{r} -->
+<!-- #| label: fig-abline-predict-residuals-1 -->
+<!-- #| fig-cap: "The predicted change in mean comprehension accuracy, given variation in vocabulary scores. Observed values are shown in orange-red. Predicted values are shown in blue" -->
+<!-- #| fig-alt: "The figure presents a scatterplot indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in different shades of orange to red, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The predicted trend is indicated by a thick blue line. Predicted outcomes, given different sample values of vocabulary are circled in black along the blue line. Light grey lines indicate the difference between predicted and observed outcomes. The observed points are darker red the further they are from the prediction." -->
+<!-- #| fig-height: 5 -->
+<!-- #| fig-width: 5 -->
+<!-- #| fig-align: center -->
+<!-- # -- plot residuals against predicted values -->
+<!-- # https://drsimonj.svbtle.com/visualising-residuals -->
+<!-- # clearly.one.subjects -->
+<!-- fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects) -->
+<!-- # -- then -->
+<!-- clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values -->
+<!-- clearly.one.subjects$residuals <- residuals(fit) # Save the residual values -->
+<!-- # -- plot observed vs. predicted values -->
+<!-- ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) + -->
+<!--   geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope -->
+<!--   geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines -->
+<!--   # > Color adjustments made here... -->
+<!--   geom_point(aes(color = abs(residuals))) + # Color mapped to abs(residuals) -->
+<!--   scale_color_continuous(low = "orange", high = "darkred") +  # Colors to use here -->
+<!--   guides(color = FALSE) +  # Color legend removed -->
+<!--   geom_point(aes(y = predicted), shape = 1) + -->
+<!--   theme_bw() + -->
+<!--   ylim(0,1.1) + xlim(20,40) + -->
+<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ## Revision: We typically assume that the residuals are normally distributed -->
+<!-- ::: columns -->
+<!-- ::: {.column width=".4"} -->
+<!-- -   Some outcome prediction errors -- **residuals** -- are positive -->
+<!-- -   Some residuals are negative -->
+<!-- -   The average of the residuals will be zero overall -->
+<!-- ::: -->
+<!-- ::: {.column width=".6"} -->
+<!-- ```{r} -->
+<!-- #| label: fig-residuals-density-1 -->
+<!-- #| fig-cap: "Plot showing the distribution of prediction errors -- residuals -- for the linear model of comprehension accuracy" -->
+<!-- #| fig-alt: "The figure a histogram of the residuals, the prediction errors, for the linear model of the association between mean comprehension accuracy and vocabulary. The histogram is shown in grey, and the peak is centered at residuals = 0. A dashed red line is drawn at resdiduals = 0. A red density curve is superimposed on the histogram to indicate the theoretical normal distribution of residuals." -->
+<!-- #| fig-height: 4 -->
+<!-- #| fig-width: 4 -->
+<!-- #| fig-align: center -->
+<!-- # -- plot residuals vs. theoretical normal -->
+<!-- # https://stackoverflow.com/questions/6967664/ggplot2-histogram-with-normal-curve -->
+<!-- ggplot(clearly.one.subjects, aes(x = residuals)) + -->
+<!--   geom_histogram(aes(y = ..density..), alpha = .75, binwidth = .1) + -->
+<!--   stat_function(fun = dnorm, args = -->
+<!--                   list(mean = mean(clearly.one.subjects$residuals),  -->
+<!--                        sd = sd(clearly.one.subjects$residuals)), -->
+<!--                 colour = "red", size = 1.5) + -->
+<!--   geom_vline(xintercept = 0, linetype = "dashed", colour = "darkred", size = 1.1, alpha = .75) + -->
+<!--   xlim(-.5, .5) + -->
+<!--   theme_bw() -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ## Multiple candidate predictor variables -->
+<!-- ```{r} -->
+<!-- #| warning: false -->
+<!-- #| echo: false -->
+<!-- #| label: fig-scatterplot-grid -->
+<!-- #| fig-cap: "Scatterplot showing the potential association between accuracy of comprehension and variation on each of a series of potential predictor variables. Data from 8 studies" -->
+<!-- #| fig-alt: "The figure presents a grid of scatterplots indicating the association between outcome mean accuracy (on y-axis) and (x-axis) scores on a range of predictor variables. The points are shown in grey, and higher points are associated with higher accuracy scores. The grid includes as predictors: self-rated accuracy; vocabulary (SHIPLEY); health literacy (HLVA); reading strategy (FACTOR3); age (years); gender; education, and ethnicity. The plots indicate that mean accuracy increases with increasing self-rated accuracy, vocabulary, health literacy, and reading strategy scores. Trends are indicated by red lines." -->
+<!-- #| fig-width: 20 -->
+<!-- #| fig-height: 10 -->
+<!-- p.self <- all.studies.subjects %>% -->
+<!--   ggplot(aes(x = mean.self, y = mean.acc)) + -->
+<!--   geom_point(alpha = .35, colour = "darkgrey") + -->
+<!--   geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) + -->
+<!--   ylim(0, 1.1)+ -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Mean self-rated accuracy") + ylab("Mean accuracy") -->
+<!-- p.SHIPLEY <- all.studies.subjects %>% -->
+<!--   ggplot(aes(x = SHIPLEY, y = mean.acc)) + -->
+<!--   geom_point(alpha = .35, colour = "darkgrey") + -->
+<!--   geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) + -->
+<!--   ylim(0, 1.1)+ -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") -->
+<!-- p.HLVA <- all.studies.subjects %>% -->
+<!--   ggplot(aes(x = HLVA, y = mean.acc)) + -->
+<!--   geom_point(alpha = .35, colour = "darkgrey") + -->
+<!--   geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) + -->
+<!--   ylim(0, 1.1)+ -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Health literacy (HLVA)") + ylab("Mean accuracy") -->
+<!-- p.FACTOR3 <- all.studies.subjects %>% -->
+<!--   ggplot(aes(x = FACTOR3, y = mean.acc)) + -->
+<!--   geom_point(alpha = .35, colour = "darkgrey") + -->
+<!--   geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) + -->
+<!--   ylim(0, 1.1)+ -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Reading strategy (FACTOR3)") + ylab("Mean accuracy") -->
+<!-- p.AGE <- all.studies.subjects %>% -->
+<!--   ggplot(aes(x = AGE, y = mean.acc)) + -->
+<!--   geom_point(alpha = .35, colour = "darkgrey") + -->
+<!--   geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) + -->
+<!--   ylim(0, 1.1)+ -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Age (years)") + ylab("Mean accuracy") -->
+<!-- p.GENDER <- all.studies.subjects %>% -->
+<!--   mutate(GENDER = fct_recode(GENDER,  -->
+<!--             "Prefer-not-to-say" = "prefer-not-to-say"                  -->
+<!--                              )) %>% -->
+<!--   ggplot(aes(x = GENDER, y = mean.acc)) + -->
+<!--   geom_jitter(alpha = .35, colour = "darkgrey") + -->
+<!--   geom_boxplot(outlier.shape = NA, colour = "red", alpha = .1) +  -->
+<!--   ylim(0, 1.1)+ -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Gender") + ylab("Mean accuracy") -->
+<!-- p.EDUCATION <- all.studies.subjects %>% -->
+<!--   ggplot(aes(x = EDUCATION, y = mean.acc)) + -->
+<!--   geom_jitter(alpha = .35, colour = "darkgrey") + -->
+<!--   geom_boxplot(outlier.shape = NA, colour = "red", alpha = .1) +  -->
+<!--   ylim(0, 1.1)+ -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Education") + ylab("Mean accuracy") -->
+<!-- p.ETHNICITY <- all.studies.subjects %>% -->
+<!--   ggplot(aes(x = ETHNICITY, y = mean.acc)) + -->
+<!--   geom_jitter(alpha = .35, colour = "darkgrey") + -->
+<!--   geom_boxplot(outlier.shape = NA, colour = "red", alpha = .1) +  -->
+<!--   ylim(0, 1.1)+ -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Ethnicity") + ylab("Mean accuracy") -->
+<!-- p.self + p.SHIPLEY + p.HLVA + p.FACTOR3 + p.AGE + p.GENDER + p.EDUCATION + p.ETHNICITY +  -->
+<!--   plot_layout(ncol = 4) -->
+<!-- ``` -->
+<!-- ## We do not assume normal *predictors* -->
+<!-- ```{r} -->
+<!-- #| warning: false -->
+<!-- #| echo: false -->
+<!-- #| label: fig-histogram-grid-1 -->
+<!-- #| fig-cap: "Grid of plots showing the distribution of potential predictor variables. Data from 8 studies" -->
+<!-- #| fig-alt: "The figure presents a grid of histograms indicating the distribution of (x-axis) scores on a range of predictor variables. The grid includes as predictors: self-rated accuracy; vocabulary (SHIPLEY); health literacy (HLVA); reading strategy (FACTOR3); age (years); gender; education, and ethnicity. The plots indicate: (1.) most self-rated accuracy scores are high (over 6); (2.) many participants with vocabulary scores greater than 30, a few with lower scores; (3.) health literacy scores centered on 8 or some, with lower and higher scores; (4.) a skewed distribution of reading strategy scores, with many around 20-40, and a tail of higher scores; (5.) most participants are 20-40 years of age, some older; (6.) many more female than male participants, very few non-binary reported; (7.) many more participants with higher education than further, very few with secondary; and (8.) many White participants (ONS categories), far fewer Asian or Mixed or Black ethnicity participants." -->
+<!-- #| fig-width: 14 -->
+<!-- #| fig-height: 7.5 -->
+<!-- p.self <- ggplot(data = all.studies.subjects, aes(x = mean.self)) +  -->
+<!--   geom_histogram(binwidth = 1) + -->
+<!--   theme_bw() + -->
+<!--   labs(x = "Self-rated accuracy", y = "frequency count")    -->
+<!-- p.shipley <- ggplot(data = all.studies.subjects, aes(x = SHIPLEY)) +  -->
+<!--   geom_histogram(binwidth = 2) + -->
+<!--   theme_bw() + -->
+<!--   labs(x = "Vocabulary (SHIPLEY)", y = "frequency count")    -->
+<!-- p.HLVA <- ggplot(data = all.studies.subjects, aes(x = HLVA)) +  -->
+<!--   geom_histogram(binwidth = 2) + -->
+<!--   theme_bw() + -->
+<!--   labs(x = "HLVA", y = "frequency count")  -->
+<!-- p.FACTOR3 <- ggplot(data = all.studies.subjects, aes(x = AGE)) +  -->
+<!--   geom_histogram(binwidth = 5) + -->
+<!--   theme_bw() + -->
+<!--   labs(x = "Reading strategy (FACTOR3)", y = "frequency count")  -->
+<!-- p.age <- ggplot(data = all.studies.subjects, aes(x = AGE)) +  -->
+<!--   geom_histogram(binwidth = 5) + -->
+<!--   theme_bw() + -->
+<!--   labs(x = "Age (years)", y = "frequency count")  -->
+<!-- p.GENDER <- all.studies.subjects %>% -->
+<!--   mutate(GENDER = fct_recode(GENDER,  -->
+<!--             "Prefer-not-to-say" = "prefer-not-to-say"                  -->
+<!--                              )) %>% -->
+<!--   group_by(GENDER) %>% -->
+<!--   summarise(count = n()) %>% -->
+<!--   ungroup() %>% -->
+<!--   mutate(GENDER = fct_reorder(GENDER, count)) %>% -->
+<!--   ggplot(aes(y = GENDER, x = count)) + -->
+<!--   geom_point(size = 3, aes(colour = GENDER)) + -->
+<!--   theme_bw() +  -->
+<!--   labs(y = "Gender", x = "frequency count")  -->
+<!-- p.EDUCATION <- all.studies.subjects %>% -->
+<!--   group_by(EDUCATION) %>% -->
+<!--   summarise(count = n()) %>% -->
+<!--   ungroup() %>% -->
+<!--   mutate(EDUCATION = fct_reorder(EDUCATION, count)) %>% -->
+<!--   ggplot(aes(y = EDUCATION, x = count)) + -->
+<!--   geom_point(size = 3, aes(colour = EDUCATION)) + -->
+<!--   theme_bw() +  -->
+<!--   labs(y = "Education", x = "frequency count")  -->
+<!-- p.ETHNICITY <- all.studies.subjects %>% -->
+<!--   group_by(ETHNICITY) %>% -->
+<!--   summarise(count = n()) %>% -->
+<!--   ungroup() %>% -->
+<!--   mutate(ETHNICITY = fct_reorder(ETHNICITY, count)) %>% -->
+<!--   ggplot(aes(y = ETHNICITY, x = count)) + -->
+<!--   geom_point(size = 3, aes(colour = ETHNICITY)) + -->
+<!--   theme_bw() +  -->
+<!--   labs(y = "Education", x = "frequency count") -->
+<!-- p.self + p.shipley + p.HLVA + p.FACTOR3 + p.age + p.GENDER + p.EDUCATION + p.ETHNICITY +  -->
+<!--   plot_layout(ncol = 3) -->
+<!-- ``` -->
+<!-- ## Extensions to the linear model: Multiple predictors -->
+<!-- ::: callout-tip -->
+<!-- We can try to model *anything* using linear models: that is the **real challenge we face** -->
+<!-- -   Any analysis you have learned can instead be done using a linear model: ANOVA, t-test, correlation, $\chi^2$ test, ... -->
+<!-- -   We can work with any kind of dependent or independent variable you can think of -->
+<!-- **This is why we need to be careful** -->
+<!-- ::: -->
+<!-- ## Analyses are done in context so when we conduct analyses we *must* use contextual information -->
+<!-- **Closing the loop: The health comprehension project questions** -->
+<!-- ::: nonincremental -->
+<!-- 1.  We want to know: *What makes it easy or difficult to understand written health information?* -->
+<!-- 2.  So our research questions include: -->
+<!-- -   What person attributes predict success in understanding? -->
+<!-- ::: -->
+<!-- ## We *must* use contextual information: theory of comprehension -->
+<!-- ```{dot} -->
+<!-- //| label: fig-comprehension-drivers-1 -->
+<!-- //| fig-cap: "Understanding text depends on (1.) language experience and (2.) reasoning ability [@freed2017]" -->
+<!-- //| fig-alt: "The diagram shows a flowchart, from left to right, nodes 'Language experience' and 'Reasoning capacity' are both connected by arrows to 'Comprehension outcome'."  -->
+<!-- digraph Q { -->
+<!--   rankdir="LR" -->
+<!--   node [shape=box]; -->
+<!--   node [style=rounded]; -->
+<!--   nd_1_l   [label = "Language experience"]; -->
+<!--   nd_1_r   [label = "Reasoning capacity"]; -->
+<!--   nd_2   [label = "Comprehension outcome"]; -->
+<!--   nd_1_l -> nd_2; -->
+<!--   nd_1_r -> nd_2; -->
+<!-- } -->
+<!-- <!-- Freed et al., 2017; structural equation model, adult reading comprehension](freed-2017-fig1-sem-model-1.png){fig-alt="Freed et al., 2017; structural equation model, adult reading comprehension"} -->
+<p>–&gt;</p>
+<!-- ``` -->
+<!-- ## Given theory, model of comprehension accuracy *should* include measures of -->
+<!-- (1.) experience (HLVA, SHIPLEY) and (2.) reasoning ability (reading strategy) -->
+<!-- ```{dot} -->
+<!-- //| label: fig-comprehension-drivers-2 -->
+<!-- //| fig-cap: "Understanding text depends on (1.) language experience and (2.) reasoning ability [@freed2017]" -->
+<!-- //| fig-alt: "The diagram shows a flowchart, from left to right, nodes 'Language experience' and 'Reasoning capacity' are both connected by arrows to 'Comprehension outcome'."  -->
+<!-- digraph Q { -->
+<!--   rankdir="LR" -->
+<!--   node [shape=box]; -->
+<!--   node [style=rounded]; -->
+<!--   nd_1_l   [label = "Language experience"]; -->
+<!--   nd_1_r   [label = "Reasoning capacity"]; -->
+<!--   nd_2   [label = "Comprehension outcome"]; -->
+<!--   nd_1_l -> nd_2; -->
+<!--   nd_1_r -> nd_2; -->
+<!-- } -->
+<!-- <!-- Freed et al., 2017; structural equation model, adult reading comprehension](freed-2017-fig1-sem-model-1.png){fig-alt="Freed et al., 2017; structural equation model, adult reading comprehension"} -->
+<p>–&gt;</p>
+<!-- ``` -->
+<!-- ## The flexibility and power of linear models requires us to be aware of the *garden of forking paths* -->
+<!-- ::: columns -->
+<!-- ::: {.column width=".5"} -->
+<!-- -   Which variables *should be included* in an analysis? -->
+<!-- -   All of them; some of them; why? -->
+<!-- -   Will others disagree with reason? -->
+<!-- ::: -->
+<!-- ::: {.column width=".5"} -->
+<!-- ```{dot} -->
+<!-- //| fig-width: 5 -->
+<!-- //| label: fig-forking -->
+<!-- //| fig-cap: Forking paths in data analysis -->
+<!-- //| fig-alt: The diagram shows a hierarchy of nodes. At the top, node A has arrows down to nodes B1 and B2. Nodes B1 and B2 are on the same level. B1 has arrows to nodes C1, C2 and C3. B2 has arrows to nodes C4, C5 and C6.  -->
+<!-- digraph D { -->
+<!--   A -> {B1, B2} -->
+<!--   B1 -> {C1, C2, C3} -->
+<!--   B2 -> {C4, C5, C6} -->
+<!-- } -->
+<!-- ``` -->
+<!-- ::: -->
+<!-- ::: -->
+<!-- ## Different researchers can reasonably make different choices -->
+<!-- This is why we care about open science -->
+<!-- -   Theory- and evidence-based selection of critical variables for analysis $\rightarrow$ *literature review* -->
+<!-- -   Share usable data and analysis code in open repositories $\rightarrow$ *research report exercise*, PSYC403 data archiving -->
+<!-- ## Let's take a break {background-color="aquamarine"} -->
+<!-- ::: nonincremental -->
+<!-- -   End of part 1 -->
+<!-- ::: -->
+<!-- ## Coding, thinking about, and reporting linear models with multiple predictors {background-color="lightblue"} -->
+<!-- ```{r} -->
+<!-- #| echo: true -->
+<!-- #| eval: false -->
+<!-- lm(mean.acc ~ SHIPLEY + HLVA + FACTOR3 + AGE + NATIVE.LANGUAGE, ...) -->
+<!-- ``` -->
+<!-- ## Coding the linear model with multiple predictors -->
+<!-- ```{r} -->
+<!-- #| echo: true -->
+<!-- #| eval: false -->
+<!-- lm(mean.acc ~ SHIPLEY + HLVA + FACTOR3 + AGE + NATIVE.LANGUAGE, ...) -->
+<!-- ``` -->
+<!-- -   The code represents a linear model with multiple predictors: -->
+<!-- -   $y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \dots + \epsilon$ -->
+<!-- ## Thinking about the linear model with multiple predictors -->
+<!-- $y = \beta_0 + \beta_1x_1 + \beta_2x_2 + \dots + \epsilon$ -->
+<!-- Outcome $y$ is calculated as the sum of: -->
+<!-- -   The intercept $\beta_0$ plus -->
+<!-- -   The product of the coefficient of the effect of e.g. `AGE` $\beta_1$ multiplied by $x_1$ a person's age `+` -->
+<!-- -   `+` any number of other variables `+` -->
+<!-- -   The error $\epsilon$: mismatches between observed and predicted outcomes -->
+<!-- ## Identifying key information in results {.smaller} -->
+<!-- ```{r} -->
+<!-- #| echo: false -->
+<!-- #| label: fig-lm-output-summary-1 -->
+<!-- #| fig-cap: "Output summary for a linear model with mean accuracy of comprehension as the outcome and vocabulary (SHIPLEY), health literacy (HLVA), reading strategy (FACTOR3), age, and native language status as predictors" -->
+<!-- #| fig-alt: "The figure presents the output summary for a linear model with mean accuracy of comprehension as the outcome and vocabulary (SHIPLEY), health literacy (HLVA), reading strategy (FACTOR3), age, and native language status as predictors. The summary indicates significant positive effects of vocabulary, health literacy and reading strategy, and significant negative effects of age and native language (other). Overall, the model is significant, and eplains about 42% of outcome variance." -->
+<!-- model <- lm(mean.acc ~ SHIPLEY + HLVA + FACTOR3 + AGE + NATIVE.LANGUAGE,  -->
+<!--             data = all.studies.subjects) -->
+<!-- summary(model) -->
+<!-- ``` -->
+<!-- ## Identifying key information in results -->
+<!-- 1.  The `summary()` of the linear model shows: -->
+<!-- 2.  Estimates of the coefficients of the effects of the predictors we included, with null hypothesis significance tests of those estimates -->
+<!-- 3.  Model fit statistics including `R-squared` and `F-statistic` estimates -->
+<!-- ## For each predictor, e.g. HLVA, we see {.smaller} -->
+<!-- ```{r} -->
+<!-- #| echo: false -->
+<!-- #| label: fig-lm-output-summary-2 -->
+<!-- #| fig-cap: "Output summary for a linear model with mean accuracy of comprehension as the outcome and vocabulary (SHIPLEY), health literacy (HLVA), reading strategy (FACTOR3), age, and native language status as predictors" -->
+<!-- #| fig-alt: "The figure presents the output summary for a linear model with mean accuracy of comprehension as the outcome and vocabulary (SHIPLEY), health literacy (HLVA), reading strategy (FACTOR3), age, and native language status as predictors. The summary indicates significant positive effects of vocabulary, health literacy and reading strategy, and significant negative effects of age and native language (other). Overall, the model is significant, and eplains about 42% of outcome variance." -->
+<!-- model <- lm(mean.acc ~ SHIPLEY + HLVA + FACTOR3 + AGE + NATIVE.LANGUAGE,  -->
+<!--             data = all.studies.subjects) -->
+<!-- summary(model) -->
+<!-- ``` -->
+<!-- 1.  The Coefficient `Estimate`: `0.0242787` for the slope of the effect of variation in HLVA scores -->
+<!-- 2.  The `Std. Error` (standard error) `0.0031769` for the estimate -->
+<!-- 3.  The `t value` of `7.642` and associated `Pr(>|t|)` p-value `9.44e-14` for the null hypothesis test of the coefficient -->
+<!-- ## Identifying the key information in the linear model results: Coefficients {.smaller} -->
+<!-- ```{r} -->
+<!-- #| echo: false -->
+<!-- #| label: fig-lm-output-summary-3 -->
+<!-- #| fig-cap: "Output summary for a linear model with mean accuracy of comprehension as the outcome and vocabulary (SHIPLEY), health literacy (HLVA), reading strategy (FACTOR3), age, and native language status as predictors" -->
+<!-- #| fig-alt: "The figure presents the output summary for a linear model with mean accuracy of comprehension as the outcome and vocabulary (SHIPLEY), health literacy (HLVA), reading strategy (FACTOR3), age, and native language status as predictors. The summary indicates significant positive effects of vocabulary, health literacy and reading strategy, and significant negative effects of age and native language (other). Overall, the model is significant, and eplains about 42% of outcome variance." -->
+<!-- model <- lm(mean.acc ~ SHIPLEY + HLVA + FACTOR3 + AGE + NATIVE.LANGUAGE,  -->
+<!--             data = all.studies.subjects) -->
+<!-- summary(model) -->
+<!-- ``` -->
+<!-- -   Pay attention to **sign and the size** of coefficient estimate: -->
+<!-- -   Is the coefficient (e.g., HLVA `0.0242787`) a positive or a negative number? is it relatively large or small? -->
+<!-- ## Identifying the key information in the linear model results: R-squared {.smaller} -->
+<!-- ```{r} -->
+<!-- #| echo: false -->
+<!-- #| label: fig-lm-output-summary-4 -->
+<!-- #| fig-cap: "Output summary for a linear model with mean accuracy of comprehension as the outcome and vocabulary (SHIPLEY), health literacy (HLVA), reading strategy (FACTOR3), age, and native language status as predictors" -->
+<!-- #| fig-alt: "The figure presents the output summary for a linear model with mean accuracy of comprehension as the outcome and vocabulary (SHIPLEY), health literacy (HLVA), reading strategy (FACTOR3), age, and native language status as predictors. The summary indicates significant positive effects of vocabulary, health literacy and reading strategy, and significant negative effects of age and native language (other). Overall, the model is significant, and eplains about 42% of outcome variance." -->
+<!-- model <- lm(mean.acc ~ SHIPLEY + HLVA + FACTOR3 + AGE + NATIVE.LANGUAGE,  -->
+<!--             data = all.studies.subjects) -->
+<!-- summary(model) -->
+<!-- ``` -->
+<!-- -   Revision: Pay attention to R-squared -->
+<!-- -   R-squared indicates how much outcome variation we can predict, given our model -->
+<!-- -   Revision: we report `Adjusted R-squared` because it tends to be more accurate -->
+<!-- ## Identifying the key information in the linear model results: F {.smaller} -->
+<!-- ```{r} -->
+<!-- #| echo: false -->
+<!-- #| label: fig-lm-output-summary-5 -->
+<!-- #| fig-cap: "Output summary for a linear model with mean accuracy of comprehension as the outcome and vocabulary (SHIPLEY), health literacy (HLVA), reading strategy (FACTOR3), age, and native language status as predictors" -->
+<!-- #| fig-alt: "The figure presents the output summary for a linear model with mean accuracy of comprehension as the outcome and vocabulary (SHIPLEY), health literacy (HLVA), reading strategy (FACTOR3), age, and native language status as predictors. The summary indicates significant positive effects of vocabulary, health literacy and reading strategy, and significant negative effects of age and native language (other). Overall, the model is significant, and eplains about 42% of outcome variance." -->
+<!-- model <- lm(mean.acc ~ SHIPLEY + HLVA + FACTOR3 + AGE + NATIVE.LANGUAGE,  -->
+<!--             data = all.studies.subjects) -->
+<!-- summary(model) -->
+<!-- ``` -->
+<!-- -   The model summary gives us the F-statistic: -->
+<!-- -   Revision: the F-test of the null hypothesis that the model *does not* predict the outcome -->
+<!-- ## Plot predictions to interpret effects -->
+<!-- ```{r} -->
+<!-- #| warning: false -->
+<!-- #| label: fig-marginal-effects-plots-1 -->
+<!-- #| fig-cap: "A grid of plots showing model predictions, for outcome accuracy, given variation in (a.) age, (b.) vocabulary, (c.) health literacy, (d) reading strategy and (e.) native language. Data from eight studies" -->
+<!-- #| fig-alt: "The figure presents grid of plots showing model predictions, for outcome accuracy, given variation in (a.) age, (b.) vocabulary, (c.) health literacy, (d) reading strategy and (e.) native language. The plots are a series of scatterplots: raw data points are shown in grey; predicted outcome change, given variation on predictors, are indicated by a red line. The plots indicate that accuracy of comprehension is predicted to increase given increase in voccabulary, health literacy, and reading  strategy. Native speakers of English are predicted to show greater accuracy than speakers of English as another language. Older participants are predicted to show lower levels of accuracy." -->
+<!-- #| fig-width: 10 -->
+<!-- #| fig-height: 7 -->
+<!-- # https://strengejacke.github.io/ggeffects/articles/introduction_plotmethod.html -->
+<!-- model <- lm(mean.acc ~ SHIPLEY + HLVA + FACTOR3 + AGE + NATIVE.LANGUAGE,  -->
+<!--             data = all.studies.subjects) -->
+<!-- dat <- ggpredict(model, terms = "AGE") -->
+<!-- p.AGE <- plot(dat) -->
+<!-- p.AGE <- p.AGE + -->
+<!--   geom_point(data = all.studies.subjects,  -->
+<!--              aes(x = AGE, y = mean.acc), size = 1.5, colour = "darkgrey", alpha = .2) + -->
+<!--   geom_line(size = 1.5, colour = "red") + -->
+<!--   ylim(0, 1.1)+ -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Age (years)") + ylab("Mean accuracy") + -->
+<!--   ggtitle("(a.)") -->
+<!-- dat <- ggpredict(model, terms = "SHIPLEY") -->
+<!-- p.SHIPLEY <- plot(dat) -->
+<!-- p.SHIPLEY <- p.SHIPLEY + -->
+<!--   geom_point(data = all.studies.subjects, -->
+<!--              aes(x = SHIPLEY, y = mean.acc), size = 1.5, colour = "darkgrey", alpha = .2) + -->
+<!--   geom_line(size = 1.5, colour = "red") + -->
+<!--   ylim(0, 1.1)+ -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") + -->
+<!--   ggtitle("(b.)") -->
+<!-- dat <- ggpredict(model, terms = "HLVA") -->
+<!-- p.HLVA <- plot(dat) -->
+<!-- p.HLVA <- p.HLVA + -->
+<!--   geom_point(data = all.studies.subjects, -->
+<!--              aes(x = HLVA, y = mean.acc), size = 1.5, colour = "darkgrey", alpha = .2) + -->
+<!--   geom_line(size = 1.5, colour = "red") + -->
+<!--   ylim(0, 1.1)+ -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Health literacy (HLVA)") + ylab("Mean accuracy") + -->
+<!--   ggtitle("(c.)") -->
+<!-- dat <- ggpredict(model, terms = "FACTOR3") -->
+<!-- p.FACTOR3 <- plot(dat) -->
+<!-- p.FACTOR3 <- p.FACTOR3 + -->
+<!--   geom_point(data = all.studies.subjects, -->
+<!--              aes(x = FACTOR3, y = mean.acc), size = 1.5, colour = "darkgrey", alpha = .2) + -->
+<!--   geom_line(size = 1.5, colour = "red") + -->
+<!--   ylim(0, 1.1)+ -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Reading strategy (FACTOR3)") + ylab("Mean accuracy") + -->
+<!--   ggtitle("(d.)") -->
+<!-- dat <- ggpredict(model, terms = "NATIVE.LANGUAGE") -->
+<!-- p.NATIVE.LANGUAGE <- plot(dat) -->
+<!-- p.NATIVE.LANGUAGE <- p.NATIVE.LANGUAGE + -->
+<!--   ylim(0, 1.1) + -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Native language") + ylab("Mean accuracy") + -->
+<!--   ggtitle("(e.)") -->
+<!-- p.AGE + p.SHIPLEY + p.HLVA + p.FACTOR3 + p.NATIVE.LANGUAGE + plot_layout(ncol = 3) -->
+<!-- ``` -->
+<!-- ## Compare estimates with effects plots {.smaller} -->
+<!-- ```{r} -->
+<!-- #| warning: false -->
+<!-- #| fig-alt: "The figure presents grid of plots showing model predictions, for outcome accuracy, given variation in (a.) age, (b.) vocabulary, (c.) health literacy, (d) reading strategy and (e.) native language. The plots are a series of scatterplots: raw data points are shown in grey; predicted outcome change, given variation on predictors, are indicated by a red line. The plots indicate that accuracy of comprehension is predicted to increase given increase in voccabulary, health literacy, and reading  strategy. Native speakers of English are predicted to show greater accuracy than speakers of English as another language. Older participants are predicted to show lower levels of accuracy." -->
+<!-- #| #| fig-width: 10 -->
+<!-- #| fig-height: 7 -->
+<!-- #| fig-align: center -->
+<!-- # https://strengejacke.github.io/ggeffects/articles/introduction_plotmethod.html -->
+<!-- model <- lm(mean.acc ~ SHIPLEY + HLVA + FACTOR3 + AGE + NATIVE.LANGUAGE,  -->
+<!--             data = all.studies.subjects) -->
+<!-- dat <- ggpredict(model, terms = "AGE") -->
+<!-- p.AGE <- plot(dat) -->
+<!-- p.AGE <- p.AGE + -->
+<!--   geom_point(data = all.studies.subjects,  -->
+<!--              aes(x = AGE, y = mean.acc), size = 1.5, colour = "darkgrey", alpha = .2) + -->
+<!--   geom_line(size = 1.5, colour = "red") + -->
+<!--   ylim(0, 1.1)+ -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Age (years)") + ylab("Mean accuracy") + -->
+<!--   ggtitle("(a.)") -->
+<!-- dat <- ggpredict(model, terms = "SHIPLEY") -->
+<!-- p.SHIPLEY <- plot(dat) -->
+<!-- p.SHIPLEY <- p.SHIPLEY + -->
+<!--   geom_point(data = all.studies.subjects, -->
+<!--              aes(x = SHIPLEY, y = mean.acc), size = 1.5, colour = "darkgrey", alpha = .2) + -->
+<!--   geom_line(size = 1.5, colour = "red") + -->
+<!--   ylim(0, 1.1)+ -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") + -->
+<!--   ggtitle("(b.)") -->
+<!-- dat <- ggpredict(model, terms = "HLVA") -->
+<!-- p.HLVA <- plot(dat) -->
+<!-- p.HLVA <- p.HLVA + -->
+<!--   geom_point(data = all.studies.subjects, -->
+<!--              aes(x = HLVA, y = mean.acc), size = 1.5, colour = "darkgrey", alpha = .2) + -->
+<!--   geom_line(size = 1.5, colour = "red") + -->
+<!--   ylim(0, 1.1)+ -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Health literacy (HLVA)") + ylab("Mean accuracy") + -->
+<!--   ggtitle("(c.)") -->
+<!-- dat <- ggpredict(model, terms = "FACTOR3") -->
+<!-- p.FACTOR3 <- plot(dat) -->
+<!-- p.FACTOR3 <- p.FACTOR3 + -->
+<!--   geom_point(data = all.studies.subjects, -->
+<!--              aes(x = FACTOR3, y = mean.acc), size = 1.5, colour = "darkgrey", alpha = .2) + -->
+<!--   geom_line(size = 1.5, colour = "red") + -->
+<!--   ylim(0, 1.1)+ -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Reading strategy (FACTOR3)") + ylab("Mean accuracy") + -->
+<!--   ggtitle("(d.)") -->
+<!-- dat <- ggpredict(model, terms = "NATIVE.LANGUAGE") -->
+<!-- p.NATIVE.LANGUAGE <- plot(dat) -->
+<!-- p.NATIVE.LANGUAGE <- p.NATIVE.LANGUAGE + -->
+<!--   ylim(0, 1.1) + -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Native language") + ylab("Mean accuracy") + -->
+<!--   ggtitle("(e.)") -->
+<!-- p.AGE + p.SHIPLEY + p.HLVA + p.FACTOR3 + p.NATIVE.LANGUAGE + plot_layout(ncol = 3) -->
+<!-- ``` -->
+<!-- -   Coefficients estimates in the summary match what we see -->
+<!-- -   Positive coefficients show upward slopes -->
+<!-- -   Larger coefficients show steeper slopes -->
+<!-- ## The language and style of reporting linear model results {.smaller} -->
+<!-- > We fitted a linear model with mean comprehension accuracy as the outcome and, as predictors: vocabulary knowledge (Shipley), health literacy (HLVA), reading strategy (FACTOR3), age (years) and native language status. Our analysis indicated significant effects of all predictor variables. The model is significant overall, with $F(5, 555) = 81.09, p < .001$, and explains 42% of variance ($\text{adjusted } R^2 = 0.42$). The model estimates showed that the accuracy of comprehension increased with higher levels of participant vocabulary knowledge ($\beta = .007, t = 6.64, p <.001$), health literacy ($\beta = .024, t = 7.64, p <.001$), and reading strategy ($\beta = .005, t = 5.98, p = < .001$). Younger participants ($\beta = -0.003, t = -5.39, p <.001$) and native speakers of English as another language ($\beta = -.090, t = -6.37, p <.001$) tended to show lower levels of accuracy. -->
+<!-- ## Look at what we do with the text {.smaller} -->
+<!-- > We fitted a linear model with mean comprehension accuracy as the outcome and, as predictors: vocabulary knowledge (Shipley), health literacy (HLVA), reading strategy (FACTOR3), age (years) and native language status. Our analysis indicated significant effects of all predictor variables. The model is significant overall, with $F(5, 555) = 81.09, p < .001$, and explains 42% of variance ($\text{adjusted } R^2 = 0.42$). The model estimates showed that the accuracy of comprehension increased with higher levels of participant vocabulary knowledge ($\beta = .007, t = 6.64, p <.001$), health literacy ($\beta = .024, t = 7.64, p <.001$), and reading strategy ($\beta = .005, t = 5.98, p = < .001$). Younger participants ($\beta = -0.003, t = -5.39, p <.001$) and native speakers of English as another language ($\beta = -.090, t = -6.37, p <.001$) tended to show lower levels of accuracy. -->
+<!-- 1.  Explain: the method (linear model); the outcome (accuracy) and the predictors -->
+<!-- 2.  Report the model fit statistics overall ($F, R^2$) -->
+<!-- 3.  Report the significant effects ($\beta, t, p$) and describe the nature of the effects -->
+<!-- ## Let's take a break {background-color="aquamarine"} -->
+<!-- ::: nonincremental -->
+<!-- -   End of part 2 -->
+<!-- ::: -->
+<!-- ## Critically evaluating the results of analyses involving linear models -->
+<!-- There are three levels of **uncertainty** when we look at sample data [@mcelreath2020] -- uncertainty over: -->
+<!-- 1.  The nature of the expected change in outcome -->
+<!-- 2.  The ways that expected changes might vary between individual participants or between groups of participants -->
+<!-- 3.  The random ways that specific responses can be produced -->
+<!-- ## Critically evaluating the results of analyses involving linear models -->
+<!-- -   These uncertainties require us to carefully qualify the conclusions we draw from data analyses -->
+<!-- -   This does not mean we should avoid *causal language* when we think that psychological processes cause the behaviours we examine [@Grosz2020] -->
+<!-- -   But it *does mean* we can be careful to identify the limits in the evidence we analyse -->
+<!-- ## Revision: As we move into thinking about the data analysis, we need to identify our assumptions -->
+<!-- 1.  **validity**: that differences in knowledge or ability cause differences in test scores -->
+<!-- 2.  **measurement**: that this is equally true across the different kinds of people we tested -->
+<!-- 3.  **generalizability**: that the sample of people we recruited resembles the population -->
+<!-- ## How do *you* do this work? -->
+<!-- 1.  **validity** -->
+<!-- -   We want to work with valid measures but *validity* requires explaining [@borsboom2004]: -->
+<!-- a.  Does the thing exist in the world? -->
+<!-- b.  Is variation in that thing be reflected in variation in our measurement? -->
+<!-- -   What you can do: literature review $\rightarrow$ to identify your reasoning in answer to these questions -->
+<!-- ## How do *you* do this work? -->
+<!-- 2.  **measurement** -->
+<!-- 3.  **generalizability** -->
+<!-- -   It is most helpful to assume from the start that effects estimates will vary [@Gelman2015; @vasishth2021] -->
+<!-- -   So then we ask ourselves: will this test work in the same way in different groups? -->
+<!-- -   And we ask: how will these effects estimates vary across different groups -->
+<!-- ## Why we need replication studies -->
+<!-- ```{r} -->
+<!-- #| warning: false -->
+<!-- #| echo: false -->
+<!-- #| label: fig-scatterplot-facet-2 -->
+<!-- #| fig-cap: "Scatterplot showing the potential association between accuracy of comprehension and vocabulary scores: Data from eight studies. Effects *will* vary between different samples so: expect the variation [@Gelman2015; @vasishth2021] >>> important to evaluating claims in the literature, and to evaluation of your own results" -->
+<!-- #| fig-alt: "The figure presents a grid of scatterplots indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line. Each plot in the grid represents the pattern for data from one of eight studies. The scatter of points and the steepness if not the direction of the trend clearly varies between studies." -->
+<!-- #| fig-width: 7.5 -->
+<!-- #| fig-height: 7.5 -->
+<!-- all.studies %>% -->
+<!--   group_by(ResponseId) %>% -->
+<!--   mutate(mean.acc = mean(response)) %>% -->
+<!--   ungroup() %>% -->
+<!--   distinct(ResponseId, .keep_all = TRUE) %>% -->
+<!--   select(SHIPLEY, mean.acc, ResponseId, study) %>% -->
+<!--   ggplot(aes(x = SHIPLEY, y = mean.acc)) + -->
+<!--   geom_point(size = 2, alpha = .5, colour = "darkgrey") + -->
+<!--   geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) + -->
+<!--   xlim(0, 40) + -->
+<!--   ylim(0, 1.1)+ -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") + -->
+<!--   facet_wrap(~ study) -->
+<!-- ``` -->
+<!-- ## Why we need replication studies -->
+<!-- ```{r} -->
+<!-- #| warning: false -->
+<!-- #| echo: false -->
+<!-- #| label: fig-scatterplot-facet-3 -->
+<!-- #| fig-cap: "Effects will vary between samples *so* expect the variation [@Gelman2015; @vasishth2021] >>> ask what variation may result from *systematic differences between groups*" -->
+<!-- #| fig-alt: "The figure presents a grid of scatterplots indicating the association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. The points are shown in grey, and clustered such that higher vocabulary scores tend to be associated with higher accuracy scores. The trend is indicated by a thick red line. Each plot in the grid represents the pattern for data from one of eight studies. The scatter of points and the steepness if not the direction of the trend clearly varies between studies." -->
+<!-- #| fig-width: 7.5 -->
+<!-- #| fig-height: 7.5 -->
+<!-- all.studies %>% -->
+<!--   group_by(ResponseId) %>% -->
+<!--   mutate(mean.acc = mean(response)) %>% -->
+<!--   ungroup() %>% -->
+<!--   distinct(ResponseId, .keep_all = TRUE) %>% -->
+<!--   select(HLVA, mean.acc, ResponseId, study) %>% -->
+<!--   ggplot(aes(x = HLVA, y = mean.acc)) + -->
+<!--   geom_point(size = 2, alpha = .5, colour = "darkgrey") + -->
+<!--   geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) + -->
+<!--   xlim(0, 15) + -->
+<!--   ylim(0, 1.1)+ -->
+<!--   theme_bw() + -->
+<!--   theme( -->
+<!--     axis.text = element_text(size = rel(1.15)), -->
+<!--     axis.title = element_text(size = rel(1.5)) -->
+<!--   ) + -->
+<!--   xlab("Health literacy (HLVA)") + ylab("Mean accuracy") + -->
+<!--   facet_wrap(~ study) -->
+<!-- ``` -->
+<!-- ## Why we need to consider the generalizability of sample data -->
+<!-- ```{r} -->
+<!-- #| warning: false -->
+<!-- #| echo: false -->
+<!-- #| label: fig-factor-counts-grid -->
+<!-- #| fig-cap: "Grid of plots showing the distribution of potential predictor variables" -->
+<!-- #| fig-alt: "The figure presents a grid of plots indicating the distribution of (x-axis) scores on a range of predictor variables. The grid includes as predictors: age (years); gender; education, and ethnicity. The plots indicate: most participants are 20-40 years of age, some older; many more female than male participants, very few non-binary reported; many more participants with higher education than further, very few with secondary; and many White participants (ONS categories), far fewer Asian or Mixed or Black ethnicity participants." -->
+<!-- #| fig-width: 12 -->
+<!-- #| fig-height: 8 -->
+<!-- p.age <- ggplot(data = all.studies.subjects, aes(x = AGE)) +  -->
+<!--   geom_histogram(binwidth = 5) + -->
+<!--   theme_bw() + -->
+<!--   labs(x = "Age (years)", y = "frequency count")  -->
+<!-- p.GENDER <- all.studies.subjects %>% -->
+<!--   mutate(GENDER = fct_recode(GENDER,  -->
+<!--             "Prefer-not-to-say" = "prefer-not-to-say"                  -->
+<!--                              )) %>% -->
+<!--   group_by(GENDER) %>% -->
+<!--   summarise(count = n()) %>% -->
+<!--   ungroup() %>% -->
+<!--   mutate(GENDER = fct_reorder(GENDER, count)) %>% -->
+<!--   ggplot(aes(y = GENDER, x = count)) + -->
+<!--   geom_point(size = 3, aes(colour = GENDER)) + -->
+<!--   theme_bw() +  -->
+<!--   labs(y = "Gender", x = "frequency count")  -->
+<!-- p.EDUCATION <- all.studies.subjects %>% -->
+<!--   group_by(EDUCATION) %>% -->
+<!--   summarise(count = n()) %>% -->
+<!--   ungroup() %>% -->
+<!--   mutate(EDUCATION = fct_reorder(EDUCATION, count)) %>% -->
+<!--   ggplot(aes(y = EDUCATION, x = count)) + -->
+<!--   geom_point(size = 3, aes(colour = EDUCATION)) + -->
+<!--   theme_bw() +  -->
+<!--   labs(y = "Education", x = "frequency count")  -->
+<!-- p.ETHNICITY <- all.studies.subjects %>% -->
+<!--   group_by(ETHNICITY) %>% -->
+<!--   summarise(count = n()) %>% -->
+<!--   ungroup() %>% -->
+<!--   mutate(ETHNICITY = fct_reorder(ETHNICITY, count)) %>% -->
+<!--   ggplot(aes(y = ETHNICITY, x = count)) + -->
+<!--   geom_point(size = 3, aes(colour = ETHNICITY)) + -->
+<!--   theme_bw() +  -->
+<!--   labs(y = "Education", x = "frequency count") -->
+<!-- p.age + p.GENDER + p.EDUCATION + p.ETHNICITY +  -->
+<!--   plot_layout(ncol = 2) -->
+<!-- ``` -->
+<!-- ## Convenience samples are common in Psychology -->
+<!-- -   We test who we can -- convenience sampling -- and who we can test has an impact on the quality of evidence [@bornstein2013] -->
+<!-- -   If age, ethnicity or gender are not balanced $\rightarrow$ does this matter to your research question? -->
+<!-- -   If samples are limited in size $\rightarrow$ how does that affect our uncertainty over effects estimates? -->
+<!-- ## Let's take a break {background-color="aquamarine"} -->
+<!-- ::: nonincremental -->
+<!-- -   End of part 3 -->
+<!-- ::: -->
+<!-- ## The linear model is very flexible, powerful and general -->
+<!-- -   Most introductory statistics classes teach each statistical test *as if* they are independent -->
+<!-- ::: callout-tip -->
+<!-- Most common statistical tests are special cases of linear models, or are close approximations -->
+<!-- ::: -->
+<!-- ## The t-test as linear model -->
+<!-- $y_i = \beta_0 + \beta_1X$ -->
+<!-- -   If you have two groups, with a variable `X` coding for group membership -->
+<!-- -   Then the mean outcome for one group $= \beta_0$ -->
+<!-- -   The estimate of the slope $\beta_1$ tells about the average difference between groups -->
+<!-- -   And we can code the model like this: `lm(y ~ group)` -->
+<!-- ## ANOVA as linear model {.smaller} -->
+<!-- $y_i = \beta_0 + \beta_1X + \beta_2Z + \beta_3XZ$ -->
+<!-- -   If you have a 2 x 2 factorial design, with two factors `factor.1, factor.2`, and a dataset with variables `X, Z` coding for group membership -->
+<!-- -   Then the mean outcome for baseline conditions $= \beta_0$ -->
+<!-- -   The estimates of the slopes $\beta_1, \beta_2$ tells about the average difference between groups -->
+<!-- -   The estimate of the slope $\beta_3$ tells us about the interaction -->
+<!-- -   And we can code the model like this: `lm(y ~ factor.1*factor.2)` -->
+<!-- -   Or this `Anova(aov(y ~ factor.1*factor.2, data), type='II')` -->
+<!-- ## ANOVA as linear model {.smaller} -->
+<!-- -   In general, the psychological literature is full of ANOVA -->
+<!-- -   But the field is moving away from ANOVA towards mixed-effects models -->
+<!-- ::: callout-tip -->
+<!-- We have to make choices in teaching and, here, we are choosing to focus on a powerful, flexible, and generally applicable method we can explain *in depth*: linear models -->
+<!-- -   Our aim is for students to better understand how to use a general approach -->
+<!-- ::: -->
+<!-- ## Extensions to the linear model -->
+<!-- $outcome ~ predictors + error$ -->
+<!-- -   `outcome` can generalize to analyse data that are not metric, do not come from normal distributions -->
+<!-- -   `predictors` can be curvilinear, categorical, involve interactions -->
+<!-- -   `error` can be independent; can be non-independent -->
+<!-- ## Look ahead: extensions to the linear model -->
+<!-- -   What if the outcome measurement data cannot be understood to be metric or to come from a normal probability distribution? -->
+<!-- ## Extensions to the linear model -- binary or dichotomous outcomes -->
+<!-- 1.  Binary outcomes are very common in Psychology: yes or no; correct or incorrect; left or right visual field etc. -->
+<!-- 2.  The change in coding is e.g. `glm(ratings ~ predictors, family = "binomial")` -->
+<!-- ## Extensions to the linear model -- ordinal outcomes -->
+<!-- 1.  Likert scale or ratings data are best analysed using ordinal models [@liddell2018analyzing] -->
+<!-- 2.  The change in coding [see @christensen2022] is e.g. `clm(ratings ~ predictors)` -->
+<!-- ## Extensions to the linear model -- non-independence of observations -->
+<!-- 1.  Much -- maybe most -- psychological data are collected in ways that guarantee the non-independence of observations -->
+<!-- -   We test children in classes, patients in clinics, individuals in regions -->
+<!-- -   We test participants in multiple trials in an experiment, recording responses to multiple stimuli -->
+<!-- 2.  These data should be analysed using **linear mixed-effects models** [@meteyard2020best] -->
+<!-- ## General advice -->
+<!-- An old saying goes:  -->
+<!-- >All models are wrong but some are useful -->
+<!-- (attributed to George Box). -->
+<!-- ::: callout-tip -->
+<!-- - Sometimes, it can be useful to adopt a simpler approach as a way to approximate *get closer to* better methods -->
+<!-- - Box also advises "Since all models are wrong the scientist must be alert to what is importantly wrong. It is inappropriate to be concerned about mice when there are tigers abroad." -->
+<!-- - Here, we focus on validity, measurement, generalizability and *critical thinking* -->
+<!-- ::: -->
+<!-- ## Summary -->
+<!-- - Linear models are a very general, flexible, and powerful analysis method -->
+<!-- - We can use assuming that prediction outcomes (residuals) are normally distributed -->
+<!-- - With potentially multiple predictor variables -->
+<!-- ## Summary -->
+<!-- - Closing the loop: when we plan an analysis we should try to use contextual information -- theory and measurement understanding -- to specify our model -->
+<!-- - Closing the loop: when we critically evaluate our or others' findings, we should consider validity, measurement, and generalizability -->
+<!-- ## Summary -->
+<!-- - When we report an analysis, we should report: -->
+<!-- 1. Explain what I did, specifying the method (linear model), the outcome variable (accuracy) and the predictor variables (health literacy, reading strategy, reading skill and vocabulary) -->
+<!-- 2. Report the model fit statistics overall ($F, R^2$) -->
+<!-- 3. Report the significant effects ($\beta, t, p$) and describe the nature of the effects (does the outcome increase or decrease?) -->
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
-<div id="ref-freed2017" class="csl-entry" role="listitem">
-Freed, E. M., Hamilton, S. T., &amp; Long, D. L. (2017). Comprehension in proficient readers: The nature of individual variation. <em>Journal of Memory and Language</em>, <em>97</em>, 135–153. <a href="https://doi.org/10.1016/j.jml.2017.07.008">https://doi.org/10.1016/j.jml.2017.07.008</a>
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->
