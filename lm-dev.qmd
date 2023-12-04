@@ -123,53 +123,52 @@ To do this, we will learn to think about and work with *linear models*.
 
 You will see in the *next section* links to the lectures we created both to explain the concepts we want to help you to learn about, and to explain the practical data analysis skills we want to help you to develop (@sec-lm-dev-lectures). We *then* share links to information about the practical materials we have provided to help you to practise those skills (@sec-lm-dev-practical).
 
-All the links to the lecture videos, the lecture slides, and everything you need for your practical work can *also* be found in the Week 9 files folder on Moodle [here](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse10){target="_blank"}
+All the links to the lecture videos, the lecture slides, and everything you need for your practical work can *also* be found in the Week 10 files folder on Moodle [here](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse11){target="_blank"}
 
 In @sec-lm-dev-notes, we present the lecture slide points.
 
-::: callout-tip
-**Linked resources** include:
+<!-- ::: callout-tip -->
+<!-- **Linked resources** include: -->
 
--   In @sec-associations, we present an overview of the materials we have shared to support your development of critical thinking in relation to associations, and to support your learning about conducting correlation-based analyses of associations.
-- It may help you to revise these materials.
-:::
+<!-- -   In @sec-associations, we present an overview of the materials we have shared to support your development of critical thinking in relation to associations, and to support your learning about conducting correlation-based analyses of associations. -->
+<!-- - It may help you to revise these materials. -->
+<!-- ::: -->
 
 ### Lectures {#sec-lm-dev-lectures}
 
 The lecture material for this week is presented in four short parts. Click on a link and your browser should open a tab showing the *Panopto* video for the lecture part.
 
-[Part 1 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9d4653c0-9ea2-4437-a74f-af5f00b2fd2e){target="_blank"}
+[Part 1 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6bc16beb-f7f1-4fb7-ab5c-af630105f8eb){target="_blank"}
 
-[Part 2 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=71eaffe1-5066-425c-9ce2-af5f00b79730){target="_blank"}
+[Part 2 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=cce303a1-392c-4607-aecd-af63010c4070){target="_blank"}
 
-[Part 3 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a08f12af-606a-4be0-90ae-af5f00bc1491){target="_blank"}
+[Part 3 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5f02f90d-5a7f-4742-9638-af63011046b8){target="_blank"}
 
-[Part 4 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a16c627e-609b-49db-b683-af5f00bfb15f){target="_blank"}
+[Part 4 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b559ac42-6752-4eaa-b3a9-af630116c7e8){target="_blank"}
 
 You can download the slides we presented in the lecture in two different formats, depending on what you think will be most useful to you:
 
--   Download the slides exactly as they appear in the lecture from [this link](files/401-linear-model-intro.html). The .html file can be opened and viewed in any web browser (e.g., Chrome, Firefox, Safari).
--   Or you can download a printable Word .docx presentation of the slides from [this link](files/401-linear-model-intro-printable-edit.docx). The .docx can be opened in Microsoft Word. The figures will not appear exactly as they do in the lecture recording because Word cannot cope with images so well but the trade-off is that you get a document you can print and edit to add notes.
+-   Download the slides exactly as they appear in the lecture from [this link](files/401-linear-model-develop.html). The .html file can be opened and viewed in any web browser (e.g., Chrome, Firefox, Safari).
+-   Or you can download a printable Word .docx presentation of the slides from [this link](files/401-linear-model-develop-printable-edit.docx). The .docx can be opened in Microsoft Word. The figures will not appear exactly as they do in the lecture recording because Word cannot cope with images so well but the trade-off is that you get a document you can print and edit to add notes.
 
 ### Practical materials {#sec-lm-dev-practical}
 
 We have collected the practical materials together into a folder.
 
-The folder includes the data files:
+The folder includes the data file:
 
--   `study-one-general-participants.csv`
--   `study-two-general-participants.csv`
+-   `2022-12-08_all-studies-subject-scores.csv`
 
 and .R code files:
 
--   `401-lm-intro-how-to.R`
--   `401-lm-intro-workbook.R`
+-   `401-lm-dev-how-to.R`
+-   `401-lm-dev-workbook.R`
 
 You will use these files for your practical learning.
 
-You can download the .R files and the data .csv files in a single folder, using the link [here](files/PSYC401_lm-intro_materials.zip).
+You can download the .R files and the data .csv files in a single folder, using the link [here](files/PSYC401_lm-dev_materials.zip).
 
-Or you can download the files as individual files from the module [Moodle page for PSYC401](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse10){target="_blank"}.
+Or you can download the files as individual files from the module [Moodle page for PSYC401](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse11){target="_blank"}.
 
 Once you have downloaded the file folder, you will need to upload it to the R-Studio server to access and use the R files.
 
@@ -177,13 +176,13 @@ Once you have downloaded the file folder, you will need to upload it to the R-St
 
 In the `how-to` guide:
 
--   `401-lm-intro-how-to.R`
+-   `401-lm-dev-how-to.R`
 
-we show you how to do everything you need to do in the practical workbook (see @sec-lm-dev-practical-workbook). The guide comprises an .R file `401-lm-intro-how-to.R` with code and advice.
+we show you how to do everything you need to do in the practical workbook (see @sec-lm-dev-practical-workbook). The guide comprises an .R file `401-lm-dev-how-to.R` with code and advice.
 
 The code in the .R file was written to work with the data file
 
--   `study-one-general-participants.csv`.
+-   `2022-12-08_all-studies-subject-scores.csv`.
 
 ::: callout-tip
 -   Work through the steps in the `how-to` guide first, this practice will help you to understand what you need to do for the `workbook` tasks.
@@ -195,11 +194,11 @@ The code in the .R file was written to work with the data file
 
 In the `workbook`:
 
--   `401-lm-intro-workbook.R`
+-   `401-lm-dev-workbook.R`
 
 you will work with the data file
 
--   `study-two-general-participants.csv`
+-   `2022-12-08_all-studies-subject-scores.csv`
 
 We split .R scripts into parts, tasks and questions.
 
@@ -228,13 +227,13 @@ You will see that you can match a task in the `activity` to the same task in the
 
 Each of the data files we will work with has a similar structure.
 
-<!-- Here are what the first few rows in the data file `study-two-general-participants.csv` looks like: -->
+Here are what the first few rows in the data file `2022-12-08_all-studies-subject-scores.csv` looks like:
 
-<!-- # ```{r head} -->
-<!-- # #| warning: false -->
-<!-- # #| echo: false -->
-<!-- # kable(head(clearly.two.subjects)) -->
-<!-- # ``` -->
+```{r head}
+#| warning: false
+#| echo: false
+kable(head(all.studies.subjects))
+```
 
 You can see the columns:
 
