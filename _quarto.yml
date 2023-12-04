@@ -16,6 +16,7 @@ book:
     - visualization-intro.qmd
     - visualization.qmd
     - lm-intro.qmd
+    - lm-dev.qmd
     - part: "THE RESEARCH REPORT ASSIGNMENT"
     - report-preface.qmd
     - intro.qmd
