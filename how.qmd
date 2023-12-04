@@ -2,7 +2,7 @@
 
 The PSYC401 Research Report assignment requires students to locate, access, analyse and report previously collected data. 
 
-::: callout-tio
+::: callout-tip
 Here, we answer the question:
 
 - How can the assignment be done?
