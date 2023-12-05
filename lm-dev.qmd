@@ -84,40 +84,44 @@ all.studies.subjects <- all.studies %>%
 
 ## Overview {#sec-lm-dev-overview}
 
-Welcome to our overview of the materials you will work with in our class introducing you to the **linear model** in *PSYC401* Week 9.
+Welcome to our overview of the materials for our class on developing the **linear model** in *PSYC401* Week 10.
 
-We will return to locate our learning in the context of the *Clearly understood* project. We will present our PSYC401 lessons in the context of this research project because we think that this context will help you to make sense of the data (as we explain in @sec-preface).
+We will continue to locate our learning in the context of the *Clearly understood* project. We present our PSYC401 lessons in the context of this research project because we think that this context will help you to make sense of the data (as we explain in @sec-preface).
 
-Remember: it is unclear how to make health communication more effective. The problem is that we are not sure how health information should be communicated so that everyone can understand it. This is why we ask the research questions:
+In this chapter, we focus on extending your understanding and skills so that you can apply the linear model analysis approach to a wider range of research questions.
+
+In the context of the *Clearly understood* project, we frame our analysis concerns and methods in relation to two example research questions:
 
 1.  What person attributes predict success in understanding?
 2.  Can people accurately evaluate whether they correctly understand written health information?
 
-As we work together, we will be revisiting some of the ideas and techniques you have seen in previous classes. This is to give you the opportunity to consolidate your learning. We will be extending your development with some new ideas to strengthen your skills.
+It will be seen that to answer these research questions, we need to think about how we analyze data when *multiple* different predictor variables could be included in our model of outcome data, and when these variables may consist of *different kinds* of observations.
 
 You can read a bit more about the project and the project data in @sec-associations.
 
 ## Our learning goals {#sec-lm-dev-goals}
 
-This week, we focus on learning how to predict people: predicting observations about us (e.g., our attributes) or about the things we make or do.
-To do this, we will learn to think about and work with *linear models*.
+This week, we build on what we have learnt so far about how we can analyze data to *predict* data about people (e.g., our attributes) or about the things we make or do. To do this, we will learn to think about and work with *linear models*.
 
 **Our learning objectives: --- what are we learning about?**
 
-### Using the linear model to answer research questions
+### Develop the linear model: our aims
 
-- We will learn how to:
+-   We will learn how to:
 
-1. code linear models
-2. identify and interpret model statistics
-3. critically evaluate the results
-4. communicate the results
+1.  Extend our capacity to code models so that we can incorporate **multiple predictors**
+2.  Develop the thought processes required to make **decisions about what predictors to include**
+3.  Develop the skills required to **critically evaluate results**
 
-- Because we often want to know about relationships, asking questions like:
+Especially considering potential variation across samples
 
-1. Does variation in X predict variation in Y?
-2. What are the factors that influence outcome Y?
-3. Is a theoretical model consistent with observed behaviour?
+-   We will revise how to:
+
+4.  Identify and interpret model statistics
+5.  Critically evaluate the results
+6.  Communicate the results
+
+-   We will learn how to: explore **extensions** or **generalisations** of the linear model
 
 ## Learning resources {#sec-lm-dev-resources}
 
@@ -127,12 +131,12 @@ All the links to the lecture videos, the lecture slides, and everything you need
 
 In @sec-lm-dev-notes, we present the lecture slide points.
 
-<!-- ::: callout-tip -->
-<!-- **Linked resources** include: -->
+::: callout-tip
+**Linked resources** include:
 
-<!-- -   In @sec-associations, we present an overview of the materials we have shared to support your development of critical thinking in relation to associations, and to support your learning about conducting correlation-based analyses of associations. -->
-<!-- - It may help you to revise these materials. -->
-<!-- ::: -->
+-   In @sec-associations, we present an overview of our materials in relation to thinking about associations, and working with correlation-based analyses of associations.
+-   In @sec-lm-intro-intro, we introduce you to the main ideas and practical steps involved in conducting linear model analyses.
+:::
 
 ### Lectures {#sec-lm-dev-lectures}
 
@@ -186,8 +190,8 @@ The code in the .R file was written to work with the data file
 
 ::: callout-tip
 -   Work through the steps in the `how-to` guide first, this practice will help you to understand what you need to do for the `workbook` tasks.
-
--   The `how-to` guide and the `workbook` have similar structures. This is intentional: so that you can copy and *adapt* code from the `how-to` guide to do the practical tasks in the `workbook`.
+-   The `how-to` guide and the `workbook` have similar structures.
+-   This is intentional: so that you can copy and *adapt* code from the `how-to` guide to do the practical tasks in the `workbook`.
 :::
 
 ### The workbook {#sec-lm-dev-practical-workbook}
@@ -202,30 +206,40 @@ you will work with the data file
 
 We split .R scripts into parts, tasks and questions.
 
-For this class on linear models, our practical materials have two aims:
+For this class on developing the linear model, our practical materials have two aims:
 
-1.  Helping you to learn how to use linear models to address questions about associations, questions like "What person attributes predict success in understanding?";
-2.  Helping you to learn how to interpret linear model results, including how to work with data visualizations displaying distributions or associations.
+1.  Helping you to consolidate your learning on how to use linear models to estimate and to visualize the hypothetical association between outcome and predictor variables.
 
-We progress a series of parts, each designed to enable learning or developing concepts or skills:
+-   You will work to code linear models, to identify key statistical information in model outputs, and to interpret and report the results of the models.
+-   We refresh your learning by working with a data-set you have not encountered before
+-   We extend your skills by using a new function to generate predictions from fitted models.
 
-- **Part 3** refreshes your development of skills for working with histogram-based visualizations of data distributions. Here, we are aiming to advance your skills so that you can develop nicer looking histograms that present more accurate accounts of distributions (by showing the full range of potential values), and so that you can annotate histograms to direct the attention of your audience [as we discuss in @sec-vis-intro-intro].
-- **Part 4** helps you to learn how you can present grids of histograms for easy comparison of variable distributions.
-- **Part 5** refreshes your development of skills for working with scatterplot-based visualizations of associations or of the relationships between two or more numeric variables. We look at how you can edit the appearance of the plots, element by element. And we look at how you can produce grids of scatterplots, again, to enable comparisons --- here, of the potential relationships between one outcome and multiple other variables.
-- **Part 6** offers the opportunity to revise the calculation and interpretation of correlation analyses.
-- **Part 7** provides exercises designed to help you to learn how to conduct linear model analyses.
-- **Part 8** helps you to develop skills in calculating and presenting model predictions.
-- **Part 9** is optional and focuses on working with R-community information to find out how to annotate plots using `geom_vline()` or `geom_hline()`.
+2.  Helping you to learn how to extend your capacity to work with data to answer research questions by developing linear models that include multiple predictor variables.
 
-The activity `401-lm-intro-workbook.R` file takes you through the tasks, one by one.
+-   We extend your skills by looking at how you work with categorical predictor variables: *factors*.
+-   Because factors are so important to research in Psychology, we examine how to code or recode factor levels, and how to visualize the effects on outcomes of differences between factor levels.
 
-If you are unsure about what you need to do, check the advice in `401-lm-intro-how-to.R`.
+To meet these aims, we progress through a series of parts:
+
+-   **Part 2** shows you how you can read in data *and* at the same time ensure that different kinds of variables (e.g., factors versus numeric variables) are handled differently by R.
+-   **Part 3** consolidates your learning on how to work with linear models when there is one outcome variable and just one predictor variable. Learning to work with linear models involves not just coding models but also being able to identify and interpret the results of the models you fit.
+-   **Part 5** extends your capacities by helping you to learn how to code linear models that include multiple predictor variables.
+-   **Part 6** builds your understanding of what linear models do, and what model estimates mean, by demonstrating a key point: linear models are coded to fit sample outcome data. When you look at model results, your interpretation is based on how the outcome is predicted to change, on average, given differences in values of one or more predictor variables.
+-   **Part 7** builds your skills by helping you to learn how to code, visualize and interpret the impact on outcomes of the differences between factor levels.
+
+Throughout, we help you to develop skills in calculating and presenting model predictions.
+
+-   **Parts optional** are designed to help you to examine the ways in which the association between variables may, itself, differ between different samples, and to help you to consolidate skills on exporting plots for use in reports.
+
+The activity `401-lm-dev-workbook.R` file takes you through the tasks, one by one.
+
+If you are unsure about what you need to do, check the advice in `401-lm-dev-how-to.R`.
 
 You will see that you can match a task in the `activity` to the same task in the `how-to`. The `how-to` shows you what function you need and how you should write the function code. You will need to change the names of the data-set or the variables to complete the tasks in the activity.
 
 ### The data files
 
-Each of the data files we will work with has a similar structure.
+The data file we will work with has a similar structure to the structure you have seen before.
 
 Here are what the first few rows in the data file `2022-12-08_all-studies-subject-scores.csv` looks like:
 
@@ -235,19 +249,24 @@ Here are what the first few rows in the data file `2022-12-08_all-studies-subjec
 kable(head(all.studies.subjects))
 ```
 
-You can see the columns:
+There are two new columns:
 
--   `participant_ID` participant code
+-   `NATIVE.LANGUAGE` self reported language status, whether the participant reports whether they are or are not a `native speaker` of English
+-   `study` codes for which study participant data were collected in
+
+You can also see the columns you have seen before:
+
+-   `ResponseId` participant code
 -   `mean.acc` average accuracy of response to questions testing understanding of health guidance
 -   `mean.self` average self-rated accuracy of understanding of health guidance
 -   `study` variable coding for what study the data were collected in
 -   `AGE` age in years
--   `HLVA` health literacy test score
--   `SHIPLEY` vocabulary knowledge test score
--   `FACTOR3` reading strategy survey score
 -   `GENDER` gender code
 -   `EDUCATION` education level code
 -   `ETHNICITY` ethnicity (Office National Statistics categories) code
+-   `SHIPLEY` vocabulary knowledge test score
+-   `HLVA` health literacy test score
+-   `FACTOR3` reading strategy survey score
 
 ### The answers
 
@@ -262,9 +281,11 @@ The answers version will present my answers for questions, and some extra inform
 Some people find it easier to read notes than to watch video recordings. This is why we also include the lecture notes here.
 
 <!-- ::: callout-tip -->
+
 <!-- In these notes, I provide notes on the code steps that result in plots. -->
 
 <!-- -   Click on the `Notes` tab to see them. -->
+
 <!-- ::: -->
 
 ### Analyze + visualize + present
@@ -763,7 +784,7 @@ This is why we care about open science
 -   Theory- and evidence-based selection of critical variables for analysis $\rightarrow$ *literature review*
 -   Share usable data and analysis code in open repositories $\rightarrow$ *research report exercise*, PSYC403 data archiving
 
-### Coding, thinking about, and reporting linear models with multiple predictors 
+### Coding, thinking about, and reporting linear models with multiple predictors
 
 ```{r}
 #| echo: true
@@ -1302,8 +1323,8 @@ $outcome ~ predictors + error$
 
 ### Extensions to the linear model -- ordinal outcomes
 
-1.  Likert scale or ratings data are best analysed using ordinal models [@liddell2018analyzing]
-2.  The change in coding [see @christensen2022] is e.g. `clm(ratings ~ predictors)`
+1.  Likert scale or ratings data are best analysed using ordinal models [@liddell2018]
+2.  The change in coding \[@christensen\] is e.g. `clm(ratings ~ predictors)`
 
 ### Extensions to the linear model -- non-independence of observations
 
@@ -1312,39 +1333,39 @@ $outcome ~ predictors + error$
 -   We test children in classes, patients in clinics, individuals in regions
 -   We test participants in multiple trials in an experiment, recording responses to multiple stimuli
 
-2.  These data should be analysed using **linear mixed-effects models** [@meteyard2020best]
+2.  These data should be analysed using **linear mixed-effects models [@meteyard2020]**
 
 ### General advice
 
 An old saying goes:
 
->All models are wrong but some are useful
+> All models are wrong but some are useful
 
 (attributed to George Box).
 
 ::: callout-tip
-- Sometimes, it can be useful to adopt a simpler approach as a way to approximate *get closer to* better methods
-- Box also advises "Since all models are wrong the scientist must be alert to what is importantly wrong. It is inappropriate to be concerned about mice when there are tigers abroad."
-- Here, we focus on validity, measurement, generalizability and *critical thinking*
+-   Sometimes, it can be useful to adopt a simpler approach as a way to approximate *get closer to* better methods
+-   Box also advises "Since all models are wrong the scientist must be alert to what is importantly wrong. It is inappropriate to be concerned about mice when there are tigers abroad."
+-   Here, we focus on validity, measurement, generalizability and *critical thinking*
 :::
 
 ### Summary
 
-1. Linear models
+1.  Linear models
 
-- Linear models are a very general, flexible, and powerful analysis method
-- We can use assuming that prediction outcomes (residuals) are normally distributed
-- With potentially multiple predictor variables
+-   Linear models are a very general, flexible, and powerful analysis method
+-   We can use assuming that prediction outcomes (residuals) are normally distributed
+-   With potentially multiple predictor variables
 
-2. Thinking about linear models
+2.  Thinking about linear models
 
-- Closing the loop: when we plan an analysis we should try to use contextual information -- theory and measurement understanding -- to specify our model
-- Closing the loop: when we critically evaluate our or others' findings, we should consider validity, measurement, and generalizability
+-   Closing the loop: when we plan an analysis we should try to use contextual information -- theory and measurement understanding -- to specify our model
+-   Closing the loop: when we critically evaluate our or others' findings, we should consider validity, measurement, and generalizability
 
-3. Reporting linear models
+3.  Reporting linear models
 
-- When we report an analysis, we should report:
+-   When we report an analysis, we should report:
 
-1. Explain what I did, specifying the method (linear model), the outcome variable (accuracy) and the predictor variables (health literacy, reading strategy, reading skill and vocabulary)
-2. Report the model fit statistics overall ($F, R^2$)
-3. Report the significant effects ($\beta, t, p$) and describe the nature of the effects (does the outcome increase or decrease?)
+1.  Explain what I did, specifying the method (linear model), the outcome variable (accuracy) and the predictor variables (health literacy, reading strategy, reading skill and vocabulary)
+2.  Report the model fit statistics overall ($F, R^2$)
+3.  Report the significant effects ($\beta, t, p$) and describe the nature of the effects (does the outcome increase or decrease?)

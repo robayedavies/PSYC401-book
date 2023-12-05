@@ -261,7 +261,7 @@ div.csl-indent {
   <li><a href="#sec-lm-dev-overview" id="toc-sec-lm-dev-overview" class="nav-link active" data-scroll-target="#sec-lm-dev-overview"><span class="header-section-number">6.1</span> Overview</a></li>
   <li><a href="#sec-lm-dev-goals" id="toc-sec-lm-dev-goals" class="nav-link" data-scroll-target="#sec-lm-dev-goals"><span class="header-section-number">6.2</span> Our learning goals</a>
   <ul class="collapse">
-  <li><a href="#using-the-linear-model-to-answer-research-questions" id="toc-using-the-linear-model-to-answer-research-questions" class="nav-link" data-scroll-target="#using-the-linear-model-to-answer-research-questions"><span class="header-section-number">6.2.1</span> Using the linear model to answer research questions</a></li>
+  <li><a href="#develop-the-linear-model-our-aims" id="toc-develop-the-linear-model-our-aims" class="nav-link" data-scroll-target="#develop-the-linear-model-our-aims"><span class="header-section-number">6.2.1</span> Develop the linear model: our aims</a></li>
   </ul></li>
   <li><a href="#sec-lm-dev-resources" id="toc-sec-lm-dev-resources" class="nav-link" data-scroll-target="#sec-lm-dev-resources"><span class="header-section-number">6.3</span> Learning resources</a>
   <ul class="collapse">
@@ -274,8 +274,8 @@ div.csl-indent {
   <li><a href="#sec-lm-dev-notes" id="toc-sec-lm-dev-notes" class="nav-link" data-scroll-target="#sec-lm-dev-notes"><span class="header-section-number">6.4</span> Lecture notes</a>
   <ul class="collapse">
   <li><a href="#analyze-visualize-present" id="toc-analyze-visualize-present" class="nav-link" data-scroll-target="#analyze-visualize-present"><span class="header-section-number">6.4.1</span> Analyze + visualize + present</a></li>
-  <li><a href="#develop-the-linear-model-our-aims" id="toc-develop-the-linear-model-our-aims" class="nav-link" data-scroll-target="#develop-the-linear-model-our-aims"><span class="header-section-number">6.4.2</span> Develop the linear model: our aims</a></li>
-  <li><a href="#develop-the-linear-model-our-aims-1" id="toc-develop-the-linear-model-our-aims-1" class="nav-link" data-scroll-target="#develop-the-linear-model-our-aims-1"><span class="header-section-number">6.4.3</span> Develop the linear model: our aims</a></li>
+  <li><a href="#develop-the-linear-model-our-aims-1" id="toc-develop-the-linear-model-our-aims-1" class="nav-link" data-scroll-target="#develop-the-linear-model-our-aims-1"><span class="header-section-number">6.4.2</span> Develop the linear model: our aims</a></li>
+  <li><a href="#develop-the-linear-model-our-aims-2" id="toc-develop-the-linear-model-our-aims-2" class="nav-link" data-scroll-target="#develop-the-linear-model-our-aims-2"><span class="header-section-number">6.4.3</span> Develop the linear model: our aims</a></li>
   <li><a href="#we-close-the-loop-our-context-the-health-comprehension-project" id="toc-we-close-the-loop-our-context-the-health-comprehension-project" class="nav-link" data-scroll-target="#we-close-the-loop-our-context-the-health-comprehension-project"><span class="header-section-number">6.4.4</span> We close the loop: Our <em>context</em>, the health comprehension project</a></li>
   <li><a href="#we-close-the-loop-health-comprehension-project-questions-and-analyses" id="toc-we-close-the-loop-health-comprehension-project-questions-and-analyses" class="nav-link" data-scroll-target="#we-close-the-loop-health-comprehension-project-questions-and-analyses"><span class="header-section-number">6.4.5</span> We close the loop: Health comprehension project, questions and analyses</a></li>
   <li><a href="#extensions-to-the-linear-model-multiple-predictors" id="toc-extensions-to-the-linear-model-multiple-predictors" class="nav-link" data-scroll-target="#extensions-to-the-linear-model-multiple-predictors"><span class="header-section-number">6.4.6</span> Extensions to the linear model: Multiple predictors</a></li>
@@ -365,39 +365,43 @@ Warning
 </div>
 <section id="sec-lm-dev-overview" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="sec-lm-dev-overview"><span class="header-section-number">6.1</span> Overview</h2>
-<p>Welcome to our overview of the materials you will work with in our class introducing you to the <strong>linear model</strong> in <em>PSYC401</em> Week 9.</p>
-<p>We will return to locate our learning in the context of the <em>Clearly understood</em> project. We will present our PSYC401 lessons in the context of this research project because we think that this context will help you to make sense of the data (as we explain in <a href="index.html"><span>Chapter&nbsp;1</span></a>).</p>
-<p>Remember: it is unclear how to make health communication more effective. The problem is that we are not sure how health information should be communicated so that everyone can understand it. This is why we ask the research questions:</p>
+<p>Welcome to our overview of the materials for our class on developing the <strong>linear model</strong> in <em>PSYC401</em> Week 10.</p>
+<p>We will continue to locate our learning in the context of the <em>Clearly understood</em> project. We present our PSYC401 lessons in the context of this research project because we think that this context will help you to make sense of the data (as we explain in <a href="index.html"><span>Chapter&nbsp;1</span></a>).</p>
+<p>In this chapter, we focus on extending your understanding and skills so that you can apply the linear model analysis approach to a wider range of research questions.</p>
+<p>In the context of the <em>Clearly understood</em> project, we frame our analysis concerns and methods in relation to two example research questions:</p>
 <ol type="1">
 <li>What person attributes predict success in understanding?</li>
 <li>Can people accurately evaluate whether they correctly understand written health information?</li>
 </ol>
-<p>As we work together, we will be revisiting some of the ideas and techniques you have seen in previous classes. This is to give you the opportunity to consolidate your learning. We will be extending your development with some new ideas to strengthen your skills.</p>
+<p>It will be seen that to answer these research questions, we need to think about how we analyze data when <em>multiple</em> different predictor variables could be included in our model of outcome data, and when these variables may consist of <em>different kinds</em> of observations.</p>
 <p>You can read a bit more about the project and the project data in <a href="hypotheses-associations.html"><span>Chapter&nbsp;1</span></a>.</p>
 </section>
 <section id="sec-lm-dev-goals" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="sec-lm-dev-goals"><span class="header-section-number">6.2</span> Our learning goals</h2>
-<p>This week, we focus on learning how to predict people: predicting observations about us (e.g., our attributes) or about the things we make or do. To do this, we will learn to think about and work with <em>linear models</em>.</p>
+<p>This week, we build on what we have learnt so far about how we can analyze data to <em>predict</em> data about people (e.g., our attributes) or about the things we make or do. To do this, we will learn to think about and work with <em>linear models</em>.</p>
 <p><strong>Our learning objectives: — what are we learning about?</strong></p>
-<section id="using-the-linear-model-to-answer-research-questions" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="using-the-linear-model-to-answer-research-questions"><span class="header-section-number">6.2.1</span> Using the linear model to answer research questions</h3>
+<section id="develop-the-linear-model-our-aims" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="develop-the-linear-model-our-aims"><span class="header-section-number">6.2.1</span> Develop the linear model: our aims</h3>
 <ul>
 <li>We will learn how to:</li>
 </ul>
 <ol type="1">
-<li>code linear models</li>
-<li>identify and interpret model statistics</li>
-<li>critically evaluate the results</li>
-<li>communicate the results</li>
+<li>Extend our capacity to code models so that we can incorporate <strong>multiple predictors</strong></li>
+<li>Develop the thought processes required to make <strong>decisions about what predictors to include</strong></li>
+<li>Develop the skills required to <strong>critically evaluate results</strong></li>
+</ol>
+<p>Especially considering potential variation across samples</p>
+<ul>
+<li>We will revise how to:</li>
+</ul>
+<ol start="4" type="1">
+<li>Identify and interpret model statistics</li>
+<li>Critically evaluate the results</li>
+<li>Communicate the results</li>
 </ol>
 <ul>
-<li>Because we often want to know about relationships, asking questions like:</li>
+<li>We will learn how to: explore <strong>extensions</strong> or <strong>generalisations</strong> of the linear model</li>
 </ul>
-<ol type="1">
-<li>Does variation in X predict variation in Y?</li>
-<li>What are the factors that influence outcome Y?</li>
-<li>Is a theoretical model consistent with observed behaviour?</li>
-</ol>
 </section>
 </section>
 <section id="sec-lm-dev-resources" class="level2" data-number="6.3">
@@ -405,11 +409,23 @@ Warning
 <p>You will see in the <em>next section</em> links to the lectures we created both to explain the concepts we want to help you to learn about, and to explain the practical data analysis skills we want to help you to develop (<a href="#sec-lm-dev-lectures"><span>Section&nbsp;6.3.1</span></a>). We <em>then</em> share links to information about the practical materials we have provided to help you to practise those skills (<a href="#sec-lm-dev-practical"><span>Section&nbsp;6.3.2</span></a>).</p>
 <p>All the links to the lecture videos, the lecture slides, and everything you need for your practical work can <em>also</em> be found in the Week 10 files folder on Moodle <a href="https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse11" target="_blank">here</a></p>
 <p>In <a href="#sec-lm-dev-notes"><span>Section&nbsp;6.4</span></a>, we present the lecture slide points.</p>
-<!-- ::: callout-tip -->
-<!-- **Linked resources** include: -->
-<!-- -   In @sec-associations, we present an overview of the materials we have shared to support your development of critical thinking in relation to associations, and to support your learning about conducting correlation-based analyses of associations. -->
-<!-- - It may help you to revise these materials. -->
-<!-- ::: -->
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Linked resources</strong> include:</p>
+<ul>
+<li>In <a href="hypotheses-associations.html"><span>Chapter&nbsp;1</span></a>, we present an overview of our materials in relation to thinking about associations, and working with correlation-based analyses of associations.</li>
+<li>In <a href="lm-intro.html"><span>Chapter&nbsp;5</span></a>, we introduce you to the main ideas and practical steps involved in conducting linear model analyses.</li>
+</ul>
+</div>
+</div>
 <section id="sec-lm-dev-lectures" class="level3" data-number="6.3.1">
 <h3 data-number="6.3.1" class="anchored" data-anchor-id="sec-lm-dev-lectures"><span class="header-section-number">6.3.1</span> Lectures</h3>
 <p>The lecture material for this week is presented in four short parts. Click on a link and your browser should open a tab showing the <em>Panopto</em> video for the lecture part.</p>
@@ -461,8 +477,9 @@ Tip
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><p>Work through the steps in the <code>how-to</code> guide first, this practice will help you to understand what you need to do for the <code>workbook</code> tasks.</p></li>
-<li><p>The <code>how-to</code> guide and the <code>workbook</code> have similar structures. This is intentional: so that you can copy and <em>adapt</em> code from the <code>how-to</code> guide to do the practical tasks in the <code>workbook</code>.</p></li>
+<li>Work through the steps in the <code>how-to</code> guide first, this practice will help you to understand what you need to do for the <code>workbook</code> tasks.</li>
+<li>The <code>how-to</code> guide and the <code>workbook</code> have similar structures.</li>
+<li>This is intentional: so that you can copy and <em>adapt</em> code from the <code>how-to</code> guide to do the practical tasks in the <code>workbook</code>.</li>
 </ul>
 </div>
 </div>
@@ -479,28 +496,41 @@ Tip
 <li><code>2022-12-08_all-studies-subject-scores.csv</code></li>
 </ul>
 <p>We split .R scripts into parts, tasks and questions.</p>
-<p>For this class on linear models, our practical materials have two aims:</p>
+<p>For this class on developing the linear model, our practical materials have two aims:</p>
 <ol type="1">
-<li>Helping you to learn how to use linear models to address questions about associations, questions like “What person attributes predict success in understanding?”;</li>
-<li>Helping you to learn how to interpret linear model results, including how to work with data visualizations displaying distributions or associations.</li>
+<li>Helping you to consolidate your learning on how to use linear models to estimate and to visualize the hypothetical association between outcome and predictor variables.</li>
 </ol>
-<p>We progress a series of parts, each designed to enable learning or developing concepts or skills:</p>
 <ul>
-<li><strong>Part 3</strong> refreshes your development of skills for working with histogram-based visualizations of data distributions. Here, we are aiming to advance your skills so that you can develop nicer looking histograms that present more accurate accounts of distributions (by showing the full range of potential values), and so that you can annotate histograms to direct the attention of your audience <a href="visualization-intro.html">as we discuss in&nbsp;<span>3</span></a>.</li>
-<li><strong>Part 4</strong> helps you to learn how you can present grids of histograms for easy comparison of variable distributions.</li>
-<li><strong>Part 5</strong> refreshes your development of skills for working with scatterplot-based visualizations of associations or of the relationships between two or more numeric variables. We look at how you can edit the appearance of the plots, element by element. And we look at how you can produce grids of scatterplots, again, to enable comparisons — here, of the potential relationships between one outcome and multiple other variables.</li>
-<li><strong>Part 6</strong> offers the opportunity to revise the calculation and interpretation of correlation analyses.</li>
-<li><strong>Part 7</strong> provides exercises designed to help you to learn how to conduct linear model analyses.</li>
-<li><strong>Part 8</strong> helps you to develop skills in calculating and presenting model predictions.</li>
-<li><strong>Part 9</strong> is optional and focuses on working with R-community information to find out how to annotate plots using <code>geom_vline()</code> or <code>geom_hline()</code>.</li>
+<li>You will work to code linear models, to identify key statistical information in model outputs, and to interpret and report the results of the models.</li>
+<li>We refresh your learning by working with a data-set you have not encountered before</li>
+<li>We extend your skills by using a new function to generate predictions from fitted models.</li>
 </ul>
-<p>The activity <code>401-lm-intro-workbook.R</code> file takes you through the tasks, one by one.</p>
-<p>If you are unsure about what you need to do, check the advice in <code>401-lm-intro-how-to.R</code>.</p>
+<ol start="2" type="1">
+<li>Helping you to learn how to extend your capacity to work with data to answer research questions by developing linear models that include multiple predictor variables.</li>
+</ol>
+<ul>
+<li>We extend your skills by looking at how you work with categorical predictor variables: <em>factors</em>.</li>
+<li>Because factors are so important to research in Psychology, we examine how to code or recode factor levels, and how to visualize the effects on outcomes of differences between factor levels.</li>
+</ul>
+<p>To meet these aims, we progress through a series of parts:</p>
+<ul>
+<li><strong>Part 2</strong> shows you how you can read in data <em>and</em> at the same time ensure that different kinds of variables (e.g., factors versus numeric variables) are handled differently by R.</li>
+<li><strong>Part 3</strong> consolidates your learning on how to work with linear models when there is one outcome variable and just one predictor variable. Learning to work with linear models involves not just coding models but also being able to identify and interpret the results of the models you fit.</li>
+<li><strong>Part 5</strong> extends your capacities by helping you to learn how to code linear models that include multiple predictor variables.</li>
+<li><strong>Part 6</strong> builds your understanding of what linear models do, and what model estimates mean, by demonstrating a key point: linear models are coded to fit sample outcome data. When you look at model results, your interpretation is based on how the outcome is predicted to change, on average, given differences in values of one or more predictor variables.</li>
+<li><strong>Part 7</strong> builds your skills by helping you to learn how to code, visualize and interpret the impact on outcomes of the differences between factor levels.</li>
+</ul>
+<p>Throughout, we help you to develop skills in calculating and presenting model predictions.</p>
+<ul>
+<li><strong>Parts optional</strong> are designed to help you to examine the ways in which the association between variables may, itself, differ between different samples, and to help you to consolidate skills on exporting plots for use in reports.</li>
+</ul>
+<p>The activity <code>401-lm-dev-workbook.R</code> file takes you through the tasks, one by one.</p>
+<p>If you are unsure about what you need to do, check the advice in <code>401-lm-dev-how-to.R</code>.</p>
 <p>You will see that you can match a task in the <code>activity</code> to the same task in the <code>how-to</code>. The <code>how-to</code> shows you what function you need and how you should write the function code. You will need to change the names of the data-set or the variables to complete the tasks in the activity.</p>
 </section>
 <section id="the-data-files" class="level3" data-number="6.3.4">
 <h3 data-number="6.3.4" class="anchored" data-anchor-id="the-data-files"><span class="header-section-number">6.3.4</span> The data files</h3>
-<p>Each of the data files we will work with has a similar structure.</p>
+<p>The data file we will work with has a similar structure to the structure you have seen before.</p>
 <p>Here are what the first few rows in the data file <code>2022-12-08_all-studies-subject-scores.csv</code> looks like:</p>
 <div class="cell">
 <div class="cell-output-display">
@@ -624,19 +654,24 @@ Tip
 </table>
 </div>
 </div>
-<p>You can see the columns:</p>
+<p>There are two new columns:</p>
 <ul>
-<li><code>participant_ID</code> participant code</li>
+<li><code>NATIVE.LANGUAGE</code> self reported language status, whether the participant reports whether they are or are not a <code>native speaker</code> of English</li>
+<li><code>study</code> codes for which study participant data were collected in</li>
+</ul>
+<p>You can also see the columns you have seen before:</p>
+<ul>
+<li><code>ResponseId</code> participant code</li>
 <li><code>mean.acc</code> average accuracy of response to questions testing understanding of health guidance</li>
 <li><code>mean.self</code> average self-rated accuracy of understanding of health guidance</li>
 <li><code>study</code> variable coding for what study the data were collected in</li>
 <li><code>AGE</code> age in years</li>
-<li><code>HLVA</code> health literacy test score</li>
-<li><code>SHIPLEY</code> vocabulary knowledge test score</li>
-<li><code>FACTOR3</code> reading strategy survey score</li>
 <li><code>GENDER</code> gender code</li>
 <li><code>EDUCATION</code> education level code</li>
 <li><code>ETHNICITY</code> ethnicity (Office National Statistics categories) code</li>
+<li><code>SHIPLEY</code> vocabulary knowledge test score</li>
+<li><code>HLVA</code> health literacy test score</li>
+<li><code>FACTOR3</code> reading strategy survey score</li>
 </ul>
 </section>
 <section id="the-answers" class="level3" data-number="6.3.5">
@@ -746,8 +781,8 @@ nd_3-&gt;nd_4
 </div>
 </div>
 </section>
-<section id="develop-the-linear-model-our-aims" class="level3" data-number="6.4.2">
-<h3 data-number="6.4.2" class="anchored" data-anchor-id="develop-the-linear-model-our-aims"><span class="header-section-number">6.4.2</span> Develop the linear model: our aims</h3>
+<section id="develop-the-linear-model-our-aims-1" class="level3" data-number="6.4.2">
+<h3 data-number="6.4.2" class="anchored" data-anchor-id="develop-the-linear-model-our-aims-1"><span class="header-section-number">6.4.2</span> Develop the linear model: our aims</h3>
 <ul>
 <li>We will learn how to:</li>
 </ul>
@@ -760,8 +795,8 @@ nd_3-&gt;nd_4
 <li>Especially considering potential variation across samples</li>
 </ul>
 </section>
-<section id="develop-the-linear-model-our-aims-1" class="level3" data-number="6.4.3">
-<h3 data-number="6.4.3" class="anchored" data-anchor-id="develop-the-linear-model-our-aims-1"><span class="header-section-number">6.4.3</span> Develop the linear model: our aims</h3>
+<section id="develop-the-linear-model-our-aims-2" class="level3" data-number="6.4.3">
+<h3 data-number="6.4.3" class="anchored" data-anchor-id="develop-the-linear-model-our-aims-2"><span class="header-section-number">6.4.3</span> Develop the linear model: our aims</h3>
 <ul>
 <li>We will revise how to:</li>
 </ul>
@@ -1577,8 +1612,8 @@ Tip
 <section id="extensions-to-the-linear-model-ordinal-outcomes" class="level3" data-number="6.4.50">
 <h3 data-number="6.4.50" class="anchored" data-anchor-id="extensions-to-the-linear-model-ordinal-outcomes"><span class="header-section-number">6.4.50</span> Extensions to the linear model – ordinal outcomes</h3>
 <ol type="1">
-<li>Likert scale or ratings data are best analysed using ordinal models <span class="citation" data-cites="liddell2018analyzing">(<a href="references.html#ref-liddell2018analyzing" role="doc-biblioref"><strong>liddell2018analyzing?</strong></a>)</span></li>
-<li>The change in coding <span class="citation" data-cites="christensen2022">(see <a href="references.html#ref-christensen2022" role="doc-biblioref"><strong>christensen2022?</strong></a>)</span> is e.g.&nbsp;<code>clm(ratings ~ predictors)</code></li>
+<li>Likert scale or ratings data are best analysed using ordinal models <span class="citation" data-cites="liddell2018">(<a href="references.html#ref-liddell2018" role="doc-biblioref">Liddell &amp; Kruschke, 2018</a>)</span></li>
+<li>The change in coding [<span class="citation" data-cites="christensen">Christensen (<a href="references.html#ref-christensen" role="doc-biblioref">n.d.</a>)</span>] is e.g.&nbsp;<code>clm(ratings ~ predictors)</code></li>
 </ol>
 </section>
 <section id="extensions-to-the-linear-model-non-independence-of-observations" class="level3" data-number="6.4.51">
@@ -1591,7 +1626,7 @@ Tip
 <li>We test participants in multiple trials in an experiment, recording responses to multiple stimuli</li>
 </ul>
 <ol start="2" type="1">
-<li>These data should be analysed using <strong>linear mixed-effects models</strong> <span class="citation" data-cites="meteyard2020best">(<a href="references.html#ref-meteyard2020best" role="doc-biblioref"><strong>meteyard2020best?</strong></a>)</span></li>
+<li>These data should be analysed using <strong>linear mixed-effects models <span class="citation" data-cites="meteyard2020">(<a href="references.html#ref-meteyard2020" role="doc-biblioref">Meteyard &amp; Davies, 2020</a>)</span></strong></li>
 </ol>
 </section>
 <section id="general-advice" class="level3" data-number="6.4.52">
@@ -1656,11 +1691,20 @@ Bornstein, M. H., Jager, J., &amp; Putnick, D. L. (2013). Sampling in developmen
 <div id="ref-borsboom2004" class="csl-entry" role="listitem">
 Borsboom, D., Mellenbergh, G. J., &amp; Heerden, J. van. (2004). The concept of validity. <em>Psychological Review</em>, <em>111</em>(4), 1061–1071. <a href="https://doi.org/10.1037/0033-295X.111.4.1061">https://doi.org/10.1037/0033-295X.111.4.1061</a>
 </div>
+<div id="ref-christensen" class="csl-entry" role="listitem">
+Christensen, R. H. B. (n.d.). <em>Cumulative Link Models for Ordinal Regression with the R Package ordinal</em>.
+</div>
 <div id="ref-freed2017" class="csl-entry" role="listitem">
 Freed, E. M., Hamilton, S. T., &amp; Long, D. L. (2017). Comprehension in proficient readers: The nature of individual variation. <em>Journal of Memory and Language</em>, <em>97</em>, 135–153. <a href="https://doi.org/10.1016/j.jml.2017.07.008">https://doi.org/10.1016/j.jml.2017.07.008</a>
 </div>
 <div id="ref-Gelman2015" class="csl-entry" role="listitem">
 Gelman, a. (2015). The connection between varying treatment effects and the crisis of unreplicable research: A bayesian perspective. <em>Journal of Management</em>, <em>41</em>(2), 632–643. <a href="https://doi.org/10.1177/0149206314525208">https://doi.org/10.1177/0149206314525208</a>
+</div>
+<div id="ref-liddell2018" class="csl-entry" role="listitem">
+Liddell, T. M., &amp; Kruschke, J. K. (2018). Analyzing ordinal data with metric models: What could possibly go wrong? <em>Journal of Experimental Social Psychology</em>, <em>79</em>(September), 328–348. <a href="https://doi.org/10.1016/j.jesp.2018.08.009">https://doi.org/10.1016/j.jesp.2018.08.009</a>
+</div>
+<div id="ref-meteyard2020" class="csl-entry" role="listitem">
+Meteyard, L., &amp; Davies, R. A. I. (2020). Best practice guidance for linear mixed-effects models in psychological science. <em>Journal of Memory and Language</em>, <em>112</em>. <a href="https://doi.org/10.1016/j.jml.2020.104092">https://doi.org/10.1016/j.jml.2020.104092</a>
 </div>
 <div id="ref-vasishth2021" class="csl-entry" role="listitem">
 Vasishth, S., &amp; Gelman, A. (2021). How to embrace variation and accept uncertainty in linguistic and psycholinguistic data analysis. <em>Linguistics</em>, <em>59</em>(5), 1311–1342. <a href="https://doi.org/10.1515/ling-2019-0051">https://doi.org/10.1515/ling-2019-0051</a>
