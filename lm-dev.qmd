@@ -1,9 +1,5 @@
 # Developing the linear model {#sec-lm-dev-intro}
 
-::: callout-warning
-Under construction
-:::
-
 ```{r library}
 #| echo: false
 #| warning: false
