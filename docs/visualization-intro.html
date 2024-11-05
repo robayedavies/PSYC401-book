@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.5.54">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Psychological data analysis for graduate students: PSYC401 - 3&nbsp; Introduction to visualization</title>
+<title>3&nbsp; Introduction to visualization – Psychological data analysis for graduate students: *PSYC401*</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -58,6 +58,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -100,7 +101,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -109,17 +116,44 @@ div.csl-indent {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
   }
 }</script>
-
 <script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
 <link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -129,13 +163,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./visualization-intro.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to visualization</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./visualization-intro.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Introduction to visualization</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -144,7 +178,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Psychological data analysis for graduate students: <em>PSYC401</em></a> 
@@ -209,20 +243,20 @@ div.csl-indent {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Reasons why we do the research report assignment: What you will learn</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
   <a href="./what.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">What you have to do</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">What you have to do</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./how.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">How you can do it</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">How you can do it</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Reasons why we do the research report assignment: What you will learn</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -254,7 +288,7 @@ div.csl-indent {
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -344,14 +378,16 @@ div.csl-indent {
   </div>
   
 
+
 </header>
+
 
 <section id="sec-vis-intro-overview" class="level2" data-number="3.1">
 <h2 data-number="3.1" class="anchored" data-anchor-id="sec-vis-intro-overview"><span class="header-section-number">3.1</span> Overview</h2>
 <p>Welcome to our overview of the materials you will work with in our data visualization class in <em>PSYC401</em> Week 8. This week, we will focus on perspectives and practices in data visualization.</p>
 <p>Our materials are designed to help you to think about what you are doing, to understand the aims of the practical steps, as well as to learn about producing professional effective data visualizations.</p>
 <p>We will continue to work with data collected for the <em>Clearly understood</em> project because we think that working with these data in this research <strong>context</strong> will help you to make sense of the data, and to see why we ask you to practise the skills we are teaching.</p>
-<p>You can read a bit more about the project and the project data in <a href="hypotheses-associations.html"><span>Chapter&nbsp;1</span></a>.</p>
+<p>You can read a bit more about the project and the project data in <a href="hypotheses-associations.html" class="quarto-xref"><span>Chapter 2</span></a>.</p>
 <p>As we work together, we will be revisiting some of the ideas and techniques you have seen in previous classes. This is to give you the opportunity to consolidate your learning. We will be extending your development with some new ideas to strengthen your skills.</p>
 </section>
 <section id="sec-vis-intro-goals" class="level2" data-number="3.2">
@@ -376,9 +412,9 @@ div.csl-indent {
 </section>
 <section id="sec-vis-intro-resources" class="level2" data-number="3.3">
 <h2 data-number="3.3" class="anchored" data-anchor-id="sec-vis-intro-resources"><span class="header-section-number">3.3</span> Learning resources</h2>
-<p>You will see <em>next</em> links to the lectures we created to explain the concepts we want you to learn about and the practical visualization skills we want you to develop (<a href="#sec-vis-intro-lectures"><span>Section&nbsp;3.3.1</span></a>), <em>then</em> information about the practical materials we have provided to help you to practise your skills (<a href="#sec-vis-intro-practical"><span>Section&nbsp;3.3.2</span></a>).</p>
+<p>You will see <em>next</em> links to the lectures we created to explain the concepts we want you to learn about and the practical visualization skills we want you to develop (<a href="#sec-vis-intro-lectures" class="quarto-xref"><span>Section 3.3.1</span></a>), <em>then</em> information about the practical materials we have provided to help you to practise your skills (<a href="#sec-vis-intro-practical" class="quarto-xref"><span>Section 3.3.2</span></a>).</p>
 <p>All the links to the lecture videos, the lecture slides, and everything you need for your practical work can <em>also</em> be found in the Week 8 files folder on Moodle <a href="https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse9" target="_blank">here</a></p>
-<p>In <a href="#sec-vis-intro-notes"><span>Section&nbsp;3.4</span></a>, we present the lecture slide points. We do this here because we can share the code we used to generate the plots we use in some of the slides <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<p>In <a href="#sec-vis-intro-notes" class="quarto-xref"><span>Section 3.4</span></a>, we present the lecture slide points. We do this here because we can share the code we used to generate the plots we use in some of the slides <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -391,7 +427,7 @@ Tip
 <div class="callout-body-container callout-body">
 <p><strong>Linked resources</strong> include:</p>
 <ul>
-<li>In <a href="visualization.html"><span>Chapter&nbsp;4</span></a>, we present a more extensive discussion of data visualization, elaborating on some ideas, incorporating additional example plots and enabling you to work with alternate data-sets. This is provided as <em>optional</em> reading and may support more advanced development for students interested in future professional roles involving data analysis or data visualization.</li>
+<li>In <a href="visualization.html" class="quarto-xref"><span>Chapter 4</span></a>, we present a more extensive discussion of data visualization, elaborating on some ideas, incorporating additional example plots and enabling you to work with alternate data-sets. This is provided as <em>optional</em> reading and may support more advanced development for students interested in future professional roles involving data analysis or data visualization.</li>
 <li>In the <em>PSYC403</em> Week 8, I present a lecture that outlines some <em>perspectives</em> or useful ways of thinking about data visualization: the history; the context in professional work; and what research suggests are effective ways to produce visualizations. You can access the resources for that class <a href="https://modules.lancaster.ac.uk/course/view.php?id=40624#coursecontentcollapse9" target="_blank">here</a>.</li>
 </ul>
 </div>
@@ -432,7 +468,7 @@ Tip
 <ul>
 <li><code>401-visualization-how-to.R</code></li>
 </ul>
-<p>we show you how to do everything you need to do in the practical workbook (see <a href="#sec-vis-intro-practical-workbook"><span>Section&nbsp;3.3.3</span></a>). The guide comprises an .R file <code>401-visualization-how-to.R</code> with code and advice.</p>
+<p>we show you how to do everything you need to do in the practical workbook (see <a href="#sec-vis-intro-practical-workbook" class="quarto-xref"><span>Section 3.3.3</span></a>). The guide comprises an .R file <code>401-visualization-how-to.R</code> with code and advice.</p>
 <p>The code in the .R file was written to work with the data file</p>
 <ul>
 <li><code>study-one-general-participants.csv</code>.</li>
@@ -472,7 +508,7 @@ Tip
 <li>Helping you to learn how to help yourself by accessing, evaluating and exploiting the rich R knowledge ecosystem.</li>
 </ol>
 <p>This means that in both the <code>how-to</code> and the <code>workbook</code> the different parts concern different sources of online information and how to access each.</p>
-<p>In the <code>how-to</code> and the <code>workbook</code> we look at methods to produce visualizations that display information about both summary statistics (e.g., the average outcome) and raw or individual outcome variability. We explain why we should visualize data like this in the lecture (as you can see in <a href="#sec-vis-intro-lectures"><span>Section&nbsp;3.3.1</span></a> or <a href="#sec-vis-intro-notes"><span>Section&nbsp;3.4</span></a>).</p>
+<p>In the <code>how-to</code> and the <code>workbook</code> we look at methods to produce visualizations that display information about both summary statistics (e.g., the average outcome) and raw or individual outcome variability. We explain why we should visualize data like this in the lecture (as you can see in <a href="#sec-vis-intro-lectures" class="quarto-xref"><span>Section 3.3.1</span></a> or <a href="#sec-vis-intro-notes" class="quarto-xref"><span>Section 3.4</span></a>).</p>
 <p>Specifically, the materials are written to support learning how to work with visualizations called <em>boxplots</em> and <em>rain cloud</em> plots. These are popular data visualization techniques so it is important to learn how to build them and how to interpret them. If you have already been introduced to them, you will find that our materials here show how to edit or polish the visualizations to make them more effective.</p>
 <p>There are three main sources of information you can access for free online.</p>
 <ol type="1">
@@ -517,7 +553,7 @@ Tip
 <p>Here are what the first few rows in the data file <code>study-two-general-participants.csv</code> looks like:</p>
 <div class="cell">
 <div class="cell-output-display">
-<table data-quarto-postprocess="true" class="table table-sm table-striped small">
+<table class="caption-top table table-sm table-striped small" data-quarto-postprocess="true">
 <thead>
 <tr class="header">
 <th style="text-align: left;" data-quarto-table-cell-role="th">participant_ID</th>
@@ -729,20 +765,28 @@ Tip
 <!-- -- Quantifying uncertainty is critical for analysts and sci- entists who want to make informed decisions from data. Uncertainty is inherent in the generation of data and models, and it comes from multiple sources. -->
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-sleep-study-scatterplot-all" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualization-intro_files/figure-html/fig-sleep-study-scatterplot-all-1.png" class="img-fluid figure-img" alt="Scatterplot showing the relation between reaction time and days in the `sleepstudy` data. Points are ordered on x-axis from 0 to 9 days, on y-axis from 200 to 500 ms reaction time. The plot indicates that reaction time increases with increasing number of days." width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.1: Scatterplot of the relation between reaction time and days in the <code>sleepstudy</code> data</figcaption>
+<div id="fig-sleep-study-scatterplot-all" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Scatterplot showing the relation between reaction time and days in the `sleepstudy` data. Points are ordered on x-axis from 0 to 9 days, on y-axis from 200 to 500 ms reaction time. The plot indicates that reaction time increases with increasing number of days." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sleep-study-scatterplot-all-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualization-intro_files/figure-html/fig-sleep-study-scatterplot-all-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Scatterplot showing the relation between reaction time and days in the `sleepstudy` data. Points are ordered on x-axis from 0 to 9 days, on y-axis from 200 to 500 ms reaction time. The plot indicates that reaction time increases with increasing number of days." width="480">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sleep-study-scatterplot-all-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: Scatterplot of the relation between reaction time and days in the <code>sleepstudy</code> data
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-sleep-study-scatterplot-by-subject-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualization-intro_files/figure-html/fig-sleep-study-scatterplot-by-subject-1-1.png" class="img-fluid figure-img" alt="The figure presents a grid of scatterplots showing the relation between reaction time and days in the `sleepstudy` data separately for each participant. Points are ordered on x-axis from 0 to 9 days, on y-axis from 200 to 500 ms reaction time. Most plots indicate that reaction time increases with increasing number of days. However, different participants show this trend to differing extents." width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.2: The relation between reaction time and days: here, we plot the data for each participant separately</figcaption>
+<div id="fig-sleep-study-scatterplot-by-subject-1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The figure presents a grid of scatterplots showing the relation between reaction time and days in the `sleepstudy` data separately for each participant. Points are ordered on x-axis from 0 to 9 days, on y-axis from 200 to 500 ms reaction time. Most plots indicate that reaction time increases with increasing number of days. However, different participants show this trend to differing extents." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sleep-study-scatterplot-by-subject-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualization-intro_files/figure-html/fig-sleep-study-scatterplot-by-subject-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The figure presents a grid of scatterplots showing the relation between reaction time and days in the `sleepstudy` data separately for each participant. Points are ordered on x-axis from 0 to 9 days, on y-axis from 200 to 500 ms reaction time. Most plots indicate that reaction time increases with increasing number of days. However, different participants show this trend to differing extents." width="480">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sleep-study-scatterplot-by-subject-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.2: The relation between reaction time and days: here, we plot the data for each participant separately
+</figcaption>
 </figure>
 </div>
 </div>
@@ -785,7 +829,6 @@ Tip
 <!-- -- audience cognition: visual perception; schemas; biases -->
 <!-- -- conventions within a research tradition -->
 <!-- -- use example plots from health comprehension data: -->
-
 <!-- -- tables or visualizations -- the utility of visualization -->
 <!-- -- precision ranking of different visual channels -->
 <!-- -- the risks of illusions and confusions -->
@@ -824,7 +867,7 @@ Tip
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="franconeri_2021_fig2_global-statistics.png" class="img-fluid figure-img" style="width:50.0%" alt="We show a schematic grid of plots, from top to bottom: dot plot; stacked bar plot; area or bubblen plot; line plot; area plot, rectangles varying in intensity. Each plot schematic is marked to show what statistics can be extracted"></p>
-<figcaption class="figure-caption"><span class="citation" data-cites="franconeri2021">Franconeri et al. (<a href="references.html#ref-franconeri2021" role="doc-biblioref">2021</a>)</span> Fig. 2</figcaption>
+<figcaption><span class="citation" data-cites="franconeri2021">Franconeri et al. (<a href="references.html#ref-franconeri2021" role="doc-biblioref">2021</a>)</span> Fig. 2</figcaption>
 </figure>
 </div>
 </section>
@@ -839,7 +882,7 @@ Tip
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="zhang_et_al_2023_An_illusion_of_predictability_in_scientific_results_--_Even_experts_confuse_inferential_uncertainty_and_outcome_variability.png" class="img-fluid figure-img" style="width:100.0%" alt="We show a grid of four plots. In a column of two plots on the left, there are error bars indicating average outcomes given smaller (top) and larger (bottom) samples. The error bars are more narrow for the larger sample. On the right, the same estimates are shown but with raw individual level outcomes. The variability in outcomes is very wide."></p>
-<figcaption class="figure-caption"><span class="citation" data-cites="zhang2023">Zhang et al. (<a href="references.html#ref-zhang2023" role="doc-biblioref">2023</a>)</span>: The difference between uncertainty over estimates and uncertainty over the predictability of outcomes</figcaption>
+<figcaption><span class="citation" data-cites="zhang2023">Zhang et al. (<a href="references.html#ref-zhang2023" role="doc-biblioref">2023</a>)</span>: The difference between uncertainty over estimates and uncertainty over the predictability of outcomes</figcaption>
 </figure>
 </div>
 </section>
@@ -853,7 +896,7 @@ Tip
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="franconeri_2021_fig5-colour-blindness.png" class="img-fluid figure-img" style="width:70.0%" alt="We show a grid of six plots. The plots indicate how for some colour blindness the difference between points will not be apparent."></p>
-<figcaption class="figure-caption"><span class="citation" data-cites="franconeri2021">Franconeri et al. (<a href="references.html#ref-franconeri2021" role="doc-biblioref">2021</a>)</span> Fig.5</figcaption>
+<figcaption><span class="citation" data-cites="franconeri2021">Franconeri et al. (<a href="references.html#ref-franconeri2021" role="doc-biblioref">2021</a>)</span> Fig.5</figcaption>
 </figure>
 </div>
 </section>
@@ -921,9 +964,9 @@ Tip
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
 <div class="cell">
-<div id="fig-anscombe-raw-data" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-
+<div id="fig-anscombe-raw-data" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-anscombe-raw-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1241,18 +1284,20 @@ y4
 </td>
 </tr>
 </tbody>
-
 </table>
-<figcaption class="figure-caption">Figure&nbsp;3.3: Data table view of Anscombe’s Quartet dataset</figcaption>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-anscombe-raw-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.3: Data table view of Anscombe’s Quartet dataset
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell">
-<div id="fig-anscombe-summary-x" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-
+<div id="fig-anscombe-summary-x" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-anscombe-summary-x-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1370,18 +1415,20 @@ Max. :19
 </td>
 </tr>
 </tbody>
-
 </table>
-<figcaption class="figure-caption">Figure&nbsp;3.4: Summary table view of descriptive statistics for x variables</figcaption>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-anscombe-summary-x-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.4: Summary table view of descriptive statistics for x variables
+</figcaption>
 </figure>
 </div>
 </div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <div class="cell">
-<div id="fig-anscombe-summary-y" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-
+<div id="fig-anscombe-summary-y" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-anscombe-summary-y-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table class=" lightable-material lightable-striped lightable-hover" style="font-family: &quot;Source Sans Pro&quot;, helvetica, sans-serif; margin-left: auto; margin-right: auto;">
 <thead>
 <tr>
@@ -1499,9 +1546,11 @@ Max. :12.500
 </td>
 </tr>
 </tbody>
-
 </table>
-<figcaption class="figure-caption">Figure&nbsp;3.5: Summary table view of descriptive statistics for y variables</figcaption>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-anscombe-summary-y-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.5: Summary table view of descriptive statistics for y variables
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1513,10 +1562,14 @@ Max. :12.500
 <h3 data-number="3.4.20" class="anchored" data-anchor-id="anscombe1973-visualizations-show-data-features-quickly-and-vividly-1"><span class="header-section-number">3.4.20</span> <span class="citation" data-cites="anscombe1973">Anscombe (<a href="references.html#ref-anscombe1973" role="doc-biblioref">1973</a>)</span>: visualizations show data features quickly and vividly</h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-anscombe-plots" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualization-intro_files/figure-html/fig-anscombe-plots-1.png" class="img-fluid figure-img" alt="Grid of scatterplots showing the relation between x,y variables in the Anscombe 1973 dataset. The plots show: (top left) a typical scatterplot indicating a positive correlation; (top right) a curvilinear association; (bottom left) a more or less coherent positive trend with a marked outlier; and (bottom right) a scatter showing all data grouped at one value of x, with only one point at a second value of x" width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.6: All 4 of the <span class="citation" data-cites="anscombe1973">Anscombe (<a href="references.html#ref-anscombe1973" role="doc-biblioref">1973</a>)</span> <code>x,y</code> datasets are identical when examined using summary statistics but we see how they vary when we use scatterplots to visualize them</figcaption>
+<div id="fig-anscombe-plots" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Grid of scatterplots showing the relation between x,y variables in the Anscombe 1973 dataset. The plots show: (top left) a typical scatterplot indicating a positive correlation; (top right) a curvilinear association; (bottom left) a more or less coherent positive trend with a marked outlier; and (bottom right) a scatter showing all data grouped at one value of x, with only one point at a second value of x">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-anscombe-plots-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualization-intro_files/figure-html/fig-anscombe-plots-1.png" class="img-fluid figure-img" alt="Grid of scatterplots showing the relation between x,y variables in the Anscombe 1973 dataset. The plots show: (top left) a typical scatterplot indicating a positive correlation; (top right) a curvilinear association; (bottom left) a more or less coherent positive trend with a marked outlier; and (bottom right) a scatter showing all data grouped at one value of x, with only one point at a second value of x" width="480">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-anscombe-plots-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.6: All 4 of the <span class="citation" data-cites="anscombe1973">Anscombe (<a href="references.html#ref-anscombe1973" role="doc-biblioref">1973</a>)</span> <code>x,y</code> datasets are identical when examined using summary statistics but we see how they vary when we use scatterplots to visualize them
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1526,10 +1579,14 @@ Max. :12.500
 <h3 data-number="3.4.21" class="anchored" data-anchor-id="matejka2017-give-us-the-datasaurus-dozen"><span class="header-section-number">3.4.21</span> <span class="citation" data-cites="matejka2017">Matejka &amp; Fitzmaurice (<a href="references.html#ref-matejka2017" role="doc-biblioref">2017</a>)</span> give us the <code>Datasaurus dozen</code></h3>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-datasaurus-plots" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualization-intro_files/figure-html/fig-datasaurus-plots-1.png" class="img-fluid figure-img" alt="Grid of scatterplots showing the relation between x,y variables in the Datasaurus dozen datasets. The plots show different shapes, made by the points, even though the summary statistics for the underlying data are the same" width="768"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.7: All 12 <span class="citation" data-cites="matejka2017">Matejka &amp; Fitzmaurice (<a href="references.html#ref-matejka2017" role="doc-biblioref">2017</a>)</span> <code>x,y</code> datasets (via <span class="citation" data-cites="jumpingrivers">jumpingrivers (<a href="references.html#ref-jumpingrivers" role="doc-biblioref">n.d.</a>)</span>) have the same mean and standard deviation summary statistics but we only understand how the data are structured when we plot them and can <em>look at</em> the structure</figcaption>
+<div id="fig-datasaurus-plots" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Grid of scatterplots showing the relation between x,y variables in the Datasaurus dozen datasets. The plots show different shapes, made by the points, even though the summary statistics for the underlying data are the same">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-datasaurus-plots-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualization-intro_files/figure-html/fig-datasaurus-plots-1.png" class="img-fluid figure-img" alt="Grid of scatterplots showing the relation between x,y variables in the Datasaurus dozen datasets. The plots show different shapes, made by the points, even though the summary statistics for the underlying data are the same" width="768">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-datasaurus-plots-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.7: All 12 <span class="citation" data-cites="matejka2017">Matejka &amp; Fitzmaurice (<a href="references.html#ref-matejka2017" role="doc-biblioref">2017</a>)</span> <code>x,y</code> datasets (via <span class="citation" data-cites="jumpingrivers">jumpingrivers (<a href="references.html#ref-jumpingrivers" role="doc-biblioref">n.d.</a>)</span>) have the same mean and standard deviation summary statistics but we only understand how the data are structured when we plot them and can <em>look at</em> the structure
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1539,10 +1596,14 @@ Max. :12.500
 <h3 data-number="3.4.22" class="anchored" data-anchor-id="develop-visualizations-to-discover-and-communicate-variability-in-outcomes"><span class="header-section-number">3.4.22</span> Develop visualizations to discover and communicate variability in outcomes</h3>
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
-<div id="fig-sleep-study-scatterplot-by-subject-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualization-intro_files/figure-html/fig-sleep-study-scatterplot-by-subject-2-1.png" class="img-fluid figure-img" alt="The figure presents a grid of scatterplots showing the relation between reaction time and days in the `sleepstudy` data separately for each participant. Points are ordered on x-axis from 0 to 9 days, on y-axis from 200 to 500 ms reaction time. Most plots indicate that reaction time increases with increasing number of days. However, different participants show this trend to differing extents." width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.8: In this plot we show data on the impact of sleep deprivation on reaction time, from <span class="citation" data-cites="belenky2003 R-lme4">Belenky et al. (<a href="references.html#ref-belenky2003" role="doc-biblioref">2003</a>; via <a href="references.html#ref-R-lme4" role="doc-biblioref">Bates et al., 2015</a>)</span>. We can see how reaction time slows with increasing deprivation on average (grey line) but that the rate of slowing <em>varies</em> between individuals</figcaption>
+<div id="fig-sleep-study-scatterplot-by-subject-2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="The figure presents a grid of scatterplots showing the relation between reaction time and days in the `sleepstudy` data separately for each participant. Points are ordered on x-axis from 0 to 9 days, on y-axis from 200 to 500 ms reaction time. Most plots indicate that reaction time increases with increasing number of days. However, different participants show this trend to differing extents." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-sleep-study-scatterplot-by-subject-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualization-intro_files/figure-html/fig-sleep-study-scatterplot-by-subject-2-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="The figure presents a grid of scatterplots showing the relation between reaction time and days in the `sleepstudy` data separately for each participant. Points are ordered on x-axis from 0 to 9 days, on y-axis from 200 to 500 ms reaction time. Most plots indicate that reaction time increases with increasing number of days. However, different participants show this trend to differing extents." width="480">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-sleep-study-scatterplot-by-subject-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.8: In this plot we show data on the impact of sleep deprivation on reaction time, from <span class="citation" data-cites="belenky2003 R-lme4">Belenky et al. (<a href="references.html#ref-belenky2003" role="doc-biblioref">2003</a>; via <a href="references.html#ref-R-lme4" role="doc-biblioref">Bates et al., 2015</a>)</span>. We can see how reaction time slows with increasing deprivation on average (grey line) but that the rate of slowing <em>varies</em> between individuals
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1572,7 +1633,7 @@ Max. :12.500
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="zhang_et_al_2023_An_illusion_of_predictability_in_scientific_results_--_Even_experts_confuse_inferential_uncertainty_and_outcome_variability.png" class="img-fluid figure-img" style="width:100.0%" alt="We show a grid of four plots. In a column of two plots on the left, there are error bars indicating average outcomes given smaller (top) and larger (bottom) samples. The error bars are more narrow for the larger sample. On the right, the same estimates are shown but with raw individual level outcomes. The variability in outcomes is very wide."></p>
-<figcaption class="figure-caption"><span class="citation" data-cites="zhang2023">Zhang et al. (<a href="references.html#ref-zhang2023" role="doc-biblioref">2023</a>)</span>: The difference between uncertainty over estimates and uncertainty over the predictability of outcomes</figcaption>
+<figcaption><span class="citation" data-cites="zhang2023">Zhang et al. (<a href="references.html#ref-zhang2023" role="doc-biblioref">2023</a>)</span>: The difference between uncertainty over estimates and uncertainty over the predictability of outcomes</figcaption>
 </figure>
 </div>
 </section>
@@ -1586,7 +1647,7 @@ Max. :12.500
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="zhang_et_al_2023_An_illusion_of_predictability_in_scientific_results_--_Even_experts_confuse_inferential_uncertainty_and_outcome_variability.png" class="img-fluid figure-img" style="width:100.0%" alt="We show a grid of four plots. In a column of two plots on the left, there are error bars indicating average outcomes given smaller (top) and larger (bottom) samples. The error bars are more narrow for the larger sample. On the right, the same estimates are shown but with raw individual level outcomes. The variability in outcomes is very wide."></p>
-<figcaption class="figure-caption"><span class="citation" data-cites="zhang2023">Zhang et al. (<a href="references.html#ref-zhang2023" role="doc-biblioref">2023</a>)</span>: The difference between uncertainty over estimates and uncertainty over the predictability of outcomes</figcaption>
+<figcaption><span class="citation" data-cites="zhang2023">Zhang et al. (<a href="references.html#ref-zhang2023" role="doc-biblioref">2023</a>)</span>: The difference between uncertainty over estimates and uncertainty over the predictability of outcomes</figcaption>
 </figure>
 </div>
 </section>
@@ -1599,7 +1660,7 @@ Max. :12.500
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="zhang_et_al_2023_An_illusion_of_predictability_in_scientific_results_--_Even_experts_confuse_inferential_uncertainty_and_outcome_variability.png" class="img-fluid figure-img" style="width:100.0%" alt="We show a grid of four plots. In a column of two plots on the left, there are error bars indicating average outcomes given smaller (top) and larger (bottom) samples. The error bars are more narrow for the larger sample. On the right, the same estimates are shown but with raw individual level outcomes. The variability in outcomes is very wide."></p>
-<figcaption class="figure-caption"><span class="citation" data-cites="zhang2023">Zhang et al. (<a href="references.html#ref-zhang2023" role="doc-biblioref">2023</a>)</span>: The difference between uncertainty over estimates and uncertainty over the predictability of outcomes</figcaption>
+<figcaption><span class="citation" data-cites="zhang2023">Zhang et al. (<a href="references.html#ref-zhang2023" role="doc-biblioref">2023</a>)</span>: The difference between uncertainty over estimates and uncertainty over the predictability of outcomes</figcaption>
 </figure>
 </div>
 </section>
@@ -1662,10 +1723,14 @@ Tip
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-health-study-one-HLVA-SHIPLEY-1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-1-1.png" class="img-fluid figure-img" alt="A scatterplot: points are shown in grey, a smoother line is shown in red. Points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores" width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.9: A scatterplot showing the potential association between health literacy and vocabulary</figcaption>
+<div id="fig-health-study-one-HLVA-SHIPLEY-1" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A scatterplot: points are shown in grey, a smoother line is shown in red. Points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-health-study-one-HLVA-SHIPLEY-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-1-1.png" class="img-fluid figure-img" alt="A scatterplot: points are shown in grey, a smoother line is shown in red. Points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores" width="480">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-health-study-one-HLVA-SHIPLEY-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.9: A scatterplot showing the potential association between health literacy and vocabulary
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1674,9 +1739,9 @@ Tip
 <section id="we-begin-with-data-here-from-the-health-comprehension-project" class="level3" data-number="3.4.33">
 <h3 data-number="3.4.33" class="anchored" data-anchor-id="we-begin-with-data-here-from-the-health-comprehension-project"><span class="header-section-number">3.4.33</span> We begin with data: here, from the Health Comprehension project</h3>
 <div class="cell">
-<div id="fig-health-study-one-data" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-
+<div id="fig-health-study-one-data" class="cell-output-display quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-health-study-one-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <table>
 <thead>
 <tr>
@@ -1948,9 +2013,11 @@ Asian
 </td>
 </tr>
 </tbody>
-
 </table>
-<figcaption class="figure-caption">Figure&nbsp;3.10: Data table view of Health Comprehension project Study One dataset</figcaption>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-health-study-one-data-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.10: Data table view of Health Comprehension project Study One dataset
+</figcaption>
 </figure>
 </div>
 </div>
@@ -1969,10 +2036,14 @@ Asian
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-health-study-one-HLVA-SHIPLEY-2" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-2-1.png" class="img-fluid figure-img" alt="An empty scatterplot: axes show that vocabulary scores are on the x-axis and health literacy scores are on the y-axis" width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.11: Scatterplot showing association between health literacy and vocabulary</figcaption>
+<div id="fig-health-study-one-HLVA-SHIPLEY-2" class="quarto-float quarto-figure quarto-figure-center anchored" alt="An empty scatterplot: axes show that vocabulary scores are on the x-axis and health literacy scores are on the y-axis">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-health-study-one-HLVA-SHIPLEY-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-2-1.png" class="img-fluid figure-img" alt="An empty scatterplot: axes show that vocabulary scores are on the x-axis and health literacy scores are on the y-axis" width="480">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-health-study-one-HLVA-SHIPLEY-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.11: Scatterplot showing association between health literacy and vocabulary
+</figcaption>
 </figure>
 </div>
 </div>
@@ -2007,10 +2078,14 @@ Asian
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-health-study-one-HLVA-SHIPLEY-4" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-4-1.png" class="img-fluid figure-img" alt="A scatterplot showing only points: vocabulary scores are on the x-axis and health literacy scores are on the y-axis; but only the points are shown" width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.12: Scatterplot showing association between health literacy and vocabulary</figcaption>
+<div id="fig-health-study-one-HLVA-SHIPLEY-4" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A scatterplot showing only points: vocabulary scores are on the x-axis and health literacy scores are on the y-axis; but only the points are shown">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-health-study-one-HLVA-SHIPLEY-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-4-1.png" class="img-fluid figure-img" alt="A scatterplot showing only points: vocabulary scores are on the x-axis and health literacy scores are on the y-axis; but only the points are shown" width="480">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-health-study-one-HLVA-SHIPLEY-4-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.12: Scatterplot showing association between health literacy and vocabulary
+</figcaption>
 </figure>
 </div>
 </div>
@@ -2073,10 +2148,14 @@ Tip
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-health-study-one-HLVA-SHIPLEY-6" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-6-1.png" class="img-fluid figure-img" alt="A scatterplot showing points and a smoother. Vocabulary scores are on the x-axis and health literacy scores are on the y-axis. Each point represents the pairing of vocabulary and health literacy scores for one person. A smoother is added indicating the average association between vocabulary and health literacy scores across all people in our sample. The points and the smoother suggest a trend so that higher vocabulary scores are associated with higher health literacy scores" width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.13: Scatterplot showing association between health literacy and vocabulary</figcaption>
+<div id="fig-health-study-one-HLVA-SHIPLEY-6" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A scatterplot showing points and a smoother. Vocabulary scores are on the x-axis and health literacy scores are on the y-axis. Each point represents the pairing of vocabulary and health literacy scores for one person. A smoother is added indicating the average association between vocabulary and health literacy scores across all people in our sample. The points and the smoother suggest a trend so that higher vocabulary scores are associated with higher health literacy scores">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-health-study-one-HLVA-SHIPLEY-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-6-1.png" class="img-fluid figure-img" alt="A scatterplot showing points and a smoother. Vocabulary scores are on the x-axis and health literacy scores are on the y-axis. Each point represents the pairing of vocabulary and health literacy scores for one person. A smoother is added indicating the average association between vocabulary and health literacy scores across all people in our sample. The points and the smoother suggest a trend so that higher vocabulary scores are associated with higher health literacy scores" width="480">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-health-study-one-HLVA-SHIPLEY-6-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.13: Scatterplot showing association between health literacy and vocabulary
+</figcaption>
 </figure>
 </div>
 </div>
@@ -2164,10 +2243,14 @@ Tip
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-health-study-one-HLVA-SHIPLEY-10" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-10-1.png" class="img-fluid figure-img" alt="A scatterplot: points and smoothers are shown in red, green or blue. Points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores. The trend appears to be steeper for people with secondary education" width="432"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.14: Using colour</figcaption>
+<div id="fig-health-study-one-HLVA-SHIPLEY-10" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A scatterplot: points and smoothers are shown in red, green or blue. Points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores. The trend appears to be steeper for people with secondary education">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-health-study-one-HLVA-SHIPLEY-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-10-1.png" class="img-fluid figure-img" alt="A scatterplot: points and smoothers are shown in red, green or blue. Points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores. The trend appears to be steeper for people with secondary education" width="432">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-health-study-one-HLVA-SHIPLEY-10-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.14: Using colour
+</figcaption>
 </figure>
 </div>
 </div>
@@ -2223,10 +2306,14 @@ Tip
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-health-study-one-HLVA-SHIPLEY-12" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-12-1.png" class="img-fluid figure-img" alt="A grid of scatterplots: points and smoothers are shown in red, green or blue. Points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores. The trend appears to be steeper for people with secondary education. Plots are split into separate facets by education" width="672"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.15: The association between health literacy and vocabulary <em>varies by education level</em></figcaption>
+<div id="fig-health-study-one-HLVA-SHIPLEY-12" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A grid of scatterplots: points and smoothers are shown in red, green or blue. Points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores. The trend appears to be steeper for people with secondary education. Plots are split into separate facets by education">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-health-study-one-HLVA-SHIPLEY-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-12-1.png" class="img-fluid figure-img" alt="A grid of scatterplots: points and smoothers are shown in red, green or blue. Points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores. The trend appears to be steeper for people with secondary education. Plots are split into separate facets by education" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-health-study-one-HLVA-SHIPLEY-12-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.15: The association between health literacy and vocabulary <em>varies by education level</em>
+</figcaption>
 </figure>
 </div>
 </div>
@@ -2263,10 +2350,14 @@ Tip
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-health-study-one-HLVA-SHIPLEY-14" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-14-1.png" class="img-fluid figure-img" alt="A scatterplot: points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores. Plot labels for title, and each axis have been edited to be more informative" width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.16: A labelled plot</figcaption>
+<div id="fig-health-study-one-HLVA-SHIPLEY-14" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A scatterplot: points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores. Plot labels for title, and each axis have been edited to be more informative">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-health-study-one-HLVA-SHIPLEY-14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-14-1.png" class="img-fluid figure-img" alt="A scatterplot: points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores. Plot labels for title, and each axis have been edited to be more informative" width="480">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-health-study-one-HLVA-SHIPLEY-14-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.16: A labelled plot
+</figcaption>
 </figure>
 </div>
 </div>
@@ -2303,10 +2394,14 @@ Tip
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-health-study-one-HLVA-SHIPLEY-16" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-16-1.png" class="img-fluid figure-img" alt="A scatterplot: points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores. We have added a horizontal grey line to indicate the average health literacy (HLVA) score for this sample" width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.17: An annotated plot</figcaption>
+<div id="fig-health-study-one-HLVA-SHIPLEY-16" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A scatterplot: points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores. We have added a horizontal grey line to indicate the average health literacy (HLVA) score for this sample">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-health-study-one-HLVA-SHIPLEY-16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-16-1.png" class="img-fluid figure-img" alt="A scatterplot: points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores. We have added a horizontal grey line to indicate the average health literacy (HLVA) score for this sample" width="480">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-health-study-one-HLVA-SHIPLEY-16-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.17: An annotated plot
+</figcaption>
 </figure>
 </div>
 </div>
@@ -2349,10 +2444,14 @@ Tip
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-health-study-one-HLVA-SHIPLEY-18" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-18-1.png" class="img-fluid figure-img" alt="A grid of scatterplots: points and smoothers are shown in red, green or blue. Points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores. The trend appears to be steeper for people with secondary education. Plots are split into separate facets by education" width="480"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.18: A scatterplot showing the potential association between health literacy and vocabulary</figcaption>
+<div id="fig-health-study-one-HLVA-SHIPLEY-18" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A grid of scatterplots: points and smoothers are shown in red, green or blue. Points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores. The trend appears to be steeper for people with secondary education. Plots are split into separate facets by education">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-health-study-one-HLVA-SHIPLEY-18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-18-1.png" class="img-fluid figure-img" alt="A grid of scatterplots: points and smoothers are shown in red, green or blue. Points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores. The trend appears to be steeper for people with secondary education. Plots are split into separate facets by education" width="480">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-health-study-one-HLVA-SHIPLEY-18-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.18: A scatterplot showing the potential association between health literacy and vocabulary
+</figcaption>
 </figure>
 </div>
 </div>
@@ -2385,10 +2484,14 @@ Tip
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-health-study-one-HLVA-SHIPLEY-1-themes" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-1-themes-1.png" class="img-fluid figure-img" alt="A grid of scatterplots: points are shown in grey, a smoother line is shown in red. Points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores. The different plots illustrate different themes: (left) `theme_dark()`, background is shown in dark grey; (middle) `theme_bw()`, background is white with grey grid lines; and (right) `theme_classic()`, background is white with no grid lines." width="1152"></p>
-<figcaption class="figure-caption">Figure&nbsp;3.19: Different themes: (left) <code>theme_dark()</code>; (middle) <code>theme_bw()</code>; and (right) <code>theme_classic()</code></figcaption>
+<div id="fig-health-study-one-HLVA-SHIPLEY-1-themes" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A grid of scatterplots: points are shown in grey, a smoother line is shown in red. Points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores. The different plots illustrate different themes: (left) `theme_dark()`, background is shown in dark grey; (middle) `theme_bw()`, background is white with grey grid lines; and (right) `theme_classic()`, background is white with no grid lines.">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-health-study-one-HLVA-SHIPLEY-1-themes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="visualization-intro_files/figure-html/fig-health-study-one-HLVA-SHIPLEY-1-themes-1.png" class="img-fluid figure-img" alt="A grid of scatterplots: points are shown in grey, a smoother line is shown in red. Points represent the pairing of health literacy and vocabulary scores for each participant. An upward trend is apparent, such that higher vocabulary scores (on the x-axis) are associated with higher health literacy scores. The different plots illustrate different themes: (left) `theme_dark()`, background is shown in dark grey; (middle) `theme_bw()`, background is white with grey grid lines; and (right) `theme_classic()`, background is white with no grid lines." width="1152">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-health-study-one-HLVA-SHIPLEY-1-themes-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.19: Different themes: (left) <code>theme_dark()</code>; (middle) <code>theme_bw()</code>; and (right) <code>theme_classic()</code>
+</figcaption>
 </figure>
 </div>
 </div>
@@ -2429,7 +2532,7 @@ Tip
 </div>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="list" style="display: none">
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" data-line-spacing="2" role="list" style="display: none">
 <div id="ref-anscombe1973" class="csl-entry" role="listitem">
 Anscombe, F. J. (1973). Graphs in statistical analysis. <em>The American Statistician</em>, <em>27</em>(1), 17–21. <a href="https://doi.org/10.2307/2682899">https://doi.org/10.2307/2682899</a>
 </div>
@@ -2521,18 +2624,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -2564,11 +2656,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -2578,8 +2716,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -2591,7 +2738,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -2635,6 +2905,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -2660,6 +2931,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -2717,37 +3014,22 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       });
     }
   }
-    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
-    var isInternal = (href) => {
-        return filterRegex.test(href) || localhostRegex.test(href);
-    }
-    // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-    for (var i=0; i<links.length; i++) {
-      const link = links[i];
-      if (!isInternal(link.href)) {
-          // target, if specified
-          link.setAttribute("target", "_blank");
-          // default icon
-          link.classList.add("external");
-      }
-    }
 });
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./hypotheses-associations.html" class="pagination-link">
+      <a href="./hypotheses-associations.html" class="pagination-link" aria-label="Hypotheses and associations">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Hypotheses and associations</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./visualization.html" class="pagination-link">
+      <a href="./visualization.html" class="pagination-link" aria-label="Data visualization">
         <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Data visualization</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 
