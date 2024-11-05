@@ -19,9 +19,9 @@ book:
     - lm-dev.qmd
     - part: "THE RESEARCH REPORT ASSIGNMENT"
     - report-preface.qmd
-    - intro.qmd
     - what.qmd
     - how.qmd
+    - intro.qmd
     - part: "MAKING THE MOST OF R"
     - knowledge-ecosystem.qmd
     - part: "END"
