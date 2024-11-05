@@ -3,12 +3,12 @@ project:
   output-dir: docs
 
 book:
-  title: "Psychological data analysis for graduate students: *PSYC401*"
+  title: "Psychological data analysis for graduate students: *PSYC411*"
   author: 
     name: "Rob Davies"
     affiliation: "Department of Psychology, Lancaster University"
     email: r.davies1@lancaster.ac.uk
-  date: "2023-10-01"
+  date: "2024-11-05"
   chapters:
     - index.qmd
     - part: "DATA ANALYSIS"
@@ -19,7 +19,6 @@ book:
     - lm-dev.qmd
     - part: "THE RESEARCH REPORT ASSIGNMENT"
     - report-preface.qmd
-    - what.qmd
     - how.qmd
     - intro.qmd
     - part: "MAKING THE MOST OF R"
