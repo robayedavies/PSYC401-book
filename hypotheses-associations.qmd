@@ -112,9 +112,9 @@ The slides presented in the videos can be downloaded here:
 You can download the web page `.html` file and click on it to open it in any browser (e.g., Chrome, Edge or Safari). The slide images are high quality so the file is quite big and may take a few seconds to download.
 :::
 
-### Practical materials {#sec-associations-practical}
-
 We are going to work through some practical exercises, next, to stimulate your thinking and learn the practical skills you need to see, test and talk about correlation analyses of the associations between variables.
+
+### Practical materials: data and R-Studio {#sec-associations-practical}
 
 We will work with two data files which you can download by clicking on their names (below):
 
@@ -127,7 +127,7 @@ Once you have downloaded the files, you will need to upload them to the R-Studio
 Here is a link to the sign-in page for [R-Studio Server](https://psy-rstudio.lancaster.ac.uk/auth-sign-in?appUri=%2F)
 :::
 
-#### Practical materials guide {#sec-associations-practical-guide}
+### Practical materials guide {#sec-associations-practical-guide}
 
 You will find that the practical exercises are simpler to do if you follow these steps in order.
 
@@ -194,18 +194,18 @@ We split .Rmd scripts by steps, tasks and questions:
 - Complete each task before you move on to the next task.
 :::
 
-##### How-to Part 1: Set-up
+#### How-to Part 1: Set-up
 
 To begin, we set up our environment in R.
 
-###### How-to Task 1 -- Run code to empty the R environment
+##### How-to Task 1 -- Run code to empty the R environment
 
 ```{r}
 #| eval: false
 rm(list=ls())                            
 ```
 
-###### How-to Task 2 -- Run code to load libraries
+##### How-to Task 2 -- Run code to load libraries
 
 Load libraries using `library()`.
 
@@ -214,9 +214,9 @@ Load libraries using `library()`.
 library("tidyverse")
 ```
 
-##### How-to Part 2: Load and examine the data
+#### How-to Part 2: Load and examine the data
 
-###### How-to Task 3 -- Read in the data file we will be using
+##### How-to Task 3 -- Read in the data file we will be using
 
 The code in the `how-to` guide was written to work with the data file:
 
@@ -233,7 +233,7 @@ study.one.gen <- read_csv("study-one-general-participants.csv")
 You can choose your own file name, but be sure to give the data-set a *distinct* name, e.g., `study.one.gen` so that R can distinguish between the different data you will work with.
 :::
 
-###### How-to Task 4 -- Inspect the data file
+##### How-to Task 4 -- Inspect the data file
 
 Use the `summary()` function to take a look.
 
@@ -258,7 +258,7 @@ summary(study.one.gen)
 
 > A.3. No
 
-###### How-to Task 5 -- Change the class or type of a variable
+##### How-to Task 5 -- Change the class or type of a variable
 
 You can use the `as.factor()` function you used in Week 5.
 
@@ -276,9 +276,9 @@ observations, in the column, each one is a value: the word or character string `
 Remember from Week 3 that we can only count how many times a category value (or factor level) occurs: here, we are counting how many times the word `studyone` occurs in the factor column `study`.
 :::
 
-##### How-to Part 3: Visualize associations
+#### How-to Part 3: Visualize associations
 
-###### How-to Task 6 -- Draw scatterplots to examine associations between variables
+##### How-to Task 6 -- Draw scatterplots to examine associations between variables
 
 You have seen these code moves before, in previous classes (weeks 3 and 4): we are **consolidating** skills by practising your coding in different contexts, using different data.
 
@@ -342,7 +342,7 @@ ggplot(data = study.one.gen, aes(x = HLVA, y = mean.self)) +
   geom_point()  
 ```
 
-###### How-to Task 7 -- Edit the scatterplots to change how they look
+##### How-to Task 7 -- Edit the scatterplots to change how they look
 
 Edit the appearance of a plot step-by-step.
 
@@ -397,7 +397,7 @@ The arguments `alpha` and `size` can change the appearance of most geometric obj
 - and we vary the size number to vary the size of the points.
 :::
 
-###### How-to Task 8 -- Now experiment
+##### How-to Task 8 -- Now experiment
 
 There are no right answers here: edit the appearance of your plots by changing alpha, size and colour of points.
 
@@ -453,9 +453,9 @@ ggplot(data = study.one.gen, aes(x = HLVA, y = mean.self)) +
 Now you: experiment!
 :::
 
-##### How-to Part 4: Analyse associations
+#### How-to Part 4: Analyse associations
 
-###### How-to Task 9 -- Use correlation to to answer a research question
+##### How-to Task 9 -- Use correlation to to answer a research question
 
 Examine associations between variables using correlation.
 
@@ -553,27 +553,27 @@ In the following, we will guide you through the tasks and questions step by step
 
 An answers version of the workbook will be provided after the practical class.
 
-##### Practical Part 1: Set-up
+#### Practical Part 1: Set-up
 
 To begin, we set up our environment in R.
 
-###### Practical Task 1 -- Run code to empty the R environment
+##### Practical Task 1 -- Run code to empty the R environment
 
 ```{r}
 #| eval: false
 rm(list=ls())                            
 ```
 
-###### Practical Task 2 -- Run code to load relevant libraries
+##### Practical Task 2 -- Run code to load relevant libraries
 
 ```{r}
 #| eval: false
 library("tidyverse")
 ```
 
-##### Practical Part 2: Load the data
+#### Practical Part 2: Load the data
 
-###### Practical Task 3 -- Read in the data file we will be using
+##### Practical Task 3 -- Read in the data file we will be using
 
 The data file for the *workbook* is called:
 
@@ -591,7 +591,7 @@ study.two.gen <- read_csv("study-two-general-participants.csv")
 
 When you code this, you can choose your own file name, but be sure to give the data object you create a distinct name e.g. `study.two.gen`.
 
-###### Practical Task 4 -- Inspect the data file
+##### Practical Task 4 -- Inspect the data file
 
 Use the `summary()` or `head()` functions to take a look
 
@@ -615,7 +615,7 @@ summary(study.two.gen)
 
 <!-- - Q.3. No -->
 
-###### Practical Task 5 -- Change the class or type of the variable `ETHNICITY` to factor
+##### Practical Task 5 -- Change the class or type of the variable `ETHNICITY` to factor
 
 You can use the `as.factor()` function you have used before: how do you write the code for these data?
 Try it for yourself before revealing the code.
@@ -646,9 +646,9 @@ summary(study.two.gen)
 <!-- - Mixed: 7 -->
 <!-- - White: 145 -->
 
-##### Practical Part 3: Visualise the associations between variables
+#### Practical Part 3: Visualise the associations between variables
 
-###### Practical Task 6 -- Create a scatterplot to examine the association between some variables
+##### Practical Task 6 -- Create a scatterplot to examine the association between some variables
 
 For this practical exercise, uou always want to use the outcome `mean.acc` as the y-axis variable so:
 
@@ -770,9 +770,9 @@ ggplot(data = study.two.gen, aes(x = QRITOTAL, y = mean.acc)) +
 ```
 :::
 
-##### Practical Part 4: Learn how to edit plotting code
+#### Practical Part 4: Learn how to edit plotting code
 
-###### Practical Task 7 -- Edit the appearance of one plot step-by-step
+##### Practical Task 7 -- Edit the appearance of one plot step-by-step
 
 Edit your plotting code to make plots with a professional appearance.
 
@@ -837,9 +837,9 @@ Now it's your turn: experiment!
 - What about a different level of transparency (alpha)? Replace `alpha = 0.5` with `alpha =  ...` using a different fraction.
 :::
 
-##### Practical Part 5: Use correlation to to answer the research questions
+#### Practical Part 5: Use correlation to to answer the research questions
 
-###### Practical Task 8 -- Examine the correlation between mean accuracy (mean.acc) and some numeric predictor variables
+##### Practical Task 8 -- Examine the correlation between mean accuracy (mean.acc) and some numeric predictor variables
 
 >**Q.15.** What is r (given as `cor` in the output) for the correlation between `HLVA` and `mean.acc`?
 

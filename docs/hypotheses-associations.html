@@ -243,10 +243,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#sec-associations-resources" id="toc-sec-associations-resources" class="nav-link" data-scroll-target="#sec-associations-resources"><span class="header-section-number">2.3</span> Learning resources</a>
   <ul class="collapse">
   <li><a href="#sec-associations-lectures" id="toc-sec-associations-lectures" class="nav-link" data-scroll-target="#sec-associations-lectures"><span class="header-section-number">2.3.1</span> Lectures</a></li>
-  <li><a href="#sec-associations-practical" id="toc-sec-associations-practical" class="nav-link" data-scroll-target="#sec-associations-practical"><span class="header-section-number">2.3.2</span> Practical materials</a></li>
-  <li><a href="#the-answers" id="toc-the-answers" class="nav-link" data-scroll-target="#the-answers"><span class="header-section-number">2.3.3</span> The answers</a></li>
-  <li><a href="#look-ahead-growing-in-independence" id="toc-look-ahead-growing-in-independence" class="nav-link" data-scroll-target="#look-ahead-growing-in-independence"><span class="header-section-number">2.3.4</span> Look ahead: growing in independence</a></li>
-  <li><a href="#optional-exercises-to-stretch-you" id="toc-optional-exercises-to-stretch-you" class="nav-link" data-scroll-target="#optional-exercises-to-stretch-you"><span class="header-section-number">2.3.5</span> Optional exercises: to stretch you</a></li>
+  <li><a href="#sec-associations-practical" id="toc-sec-associations-practical" class="nav-link" data-scroll-target="#sec-associations-practical"><span class="header-section-number">2.3.2</span> Practical materials: data and R-Studio</a></li>
+  <li><a href="#sec-associations-practical-guide" id="toc-sec-associations-practical-guide" class="nav-link" data-scroll-target="#sec-associations-practical-guide"><span class="header-section-number">2.3.3</span> Practical materials guide</a></li>
+  <li><a href="#the-answers" id="toc-the-answers" class="nav-link" data-scroll-target="#the-answers"><span class="header-section-number">2.3.4</span> The answers</a></li>
+  <li><a href="#look-ahead-growing-in-independence" id="toc-look-ahead-growing-in-independence" class="nav-link" data-scroll-target="#look-ahead-growing-in-independence"><span class="header-section-number">2.3.5</span> Look ahead: growing in independence</a></li>
+  <li><a href="#optional-exercises-to-stretch-you" id="toc-optional-exercises-to-stretch-you" class="nav-link" data-scroll-target="#optional-exercises-to-stretch-you"><span class="header-section-number">2.3.6</span> Optional exercises: to stretch you</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -373,10 +374,10 @@ Tip
 <p>You can download the web page <code>.html</code> file and click on it to open it in any browser (e.g., Chrome, Edge or Safari). The slide images are high quality so the file is quite big and may take a few seconds to download.</p>
 </div>
 </div>
+<p>We are going to work through some practical exercises, next, to stimulate your thinking and learn the practical skills you need to see, test and talk about correlation analyses of the associations between variables.</p>
 </section>
 <section id="sec-associations-practical" class="level3" data-number="2.3.2">
-<h3 data-number="2.3.2" class="anchored" data-anchor-id="sec-associations-practical"><span class="header-section-number">2.3.2</span> Practical materials</h3>
-<p>We are going to work through some practical exercises, next, to stimulate your thinking and learn the practical skills you need to see, test and talk about correlation analyses of the associations between variables.</p>
+<h3 data-number="2.3.2" class="anchored" data-anchor-id="sec-associations-practical"><span class="header-section-number">2.3.2</span> Practical materials: data and R-Studio</h3>
 <p>We will work with two data files which you can download by clicking on their names (below):</p>
 <ul>
 <li><a href="files/study-one-general-participants.csv"><code>study-one-general-participants.csv</code></a>.</li>
@@ -396,8 +397,9 @@ Important
 <p>Here is a link to the sign-in page for <a href="https://psy-rstudio.lancaster.ac.uk/auth-sign-in?appUri=%2F">R-Studio Server</a></p>
 </div>
 </div>
-<section id="sec-associations-practical-guide" class="level4" data-number="2.3.2.1">
-<h4 data-number="2.3.2.1" class="anchored" data-anchor-id="sec-associations-practical-guide"><span class="header-section-number">2.3.2.1</span> Practical materials guide</h4>
+</section>
+<section id="sec-associations-practical-guide" class="level3" data-number="2.3.3">
+<h3 data-number="2.3.3" class="anchored" data-anchor-id="sec-associations-practical-guide"><span class="header-section-number">2.3.3</span> Practical materials guide</h3>
 <p>You will find that the practical exercises are simpler to do if you follow these steps in order.</p>
 <ol type="1">
 <li><strong>The data</strong> — We will take a quick look at what is inside the data files so you know what everything means.</li>
@@ -427,9 +429,8 @@ Tip
 <li>different tasks for different things you need to do;</li>
 <li>different questions to examine different ideas or coding challenges.</li>
 </ul>
-</section>
-<section id="sec-associations-practical-data" class="level4" data-number="2.3.2.2">
-<h4 data-number="2.3.2.2" class="anchored" data-anchor-id="sec-associations-practical-data"><span class="header-section-number">2.3.2.2</span> The data files</h4>
+<section id="sec-associations-practical-data" class="level4" data-number="2.3.3.1">
+<h4 data-number="2.3.3.1" class="anchored" data-anchor-id="sec-associations-practical-data"><span class="header-section-number">2.3.3.1</span> The data files</h4>
 <p>Each of the data files we will work with has a similar structure.</p>
 <p>Here are what the first few rows in the data file <code>study.one.gen</code> looks like:</p>
 <div class="cell">
@@ -570,8 +571,8 @@ Tip
 <li><code>ETHNICITY</code> ethnicity (Office National Statistics categories) code</li>
 </ul>
 </section>
-<section id="sec-associations-practical-how-to" class="level4" data-number="2.3.2.3">
-<h4 data-number="2.3.2.3" class="anchored" data-anchor-id="sec-associations-practical-how-to"><span class="header-section-number">2.3.2.3</span> The how-to guide</h4>
+<section id="sec-associations-practical-how-to" class="level4" data-number="2.3.3.2">
+<h4 data-number="2.3.3.2" class="anchored" data-anchor-id="sec-associations-practical-how-to"><span class="header-section-number">2.3.3.2</span> The how-to guide</h4>
 <p>We will take things <em>step-by-step</em>.</p>
 <p>We split .Rmd scripts by steps, tasks and questions:</p>
 <ul>
@@ -595,27 +596,28 @@ Tip
 </ul>
 </div>
 </div>
-<section id="how-to-part-1-set-up" class="level5" data-number="2.3.2.3.1">
-<h5 data-number="2.3.2.3.1" class="anchored" data-anchor-id="how-to-part-1-set-up"><span class="header-section-number">2.3.2.3.1</span> How-to Part 1: Set-up</h5>
+</section>
+<section id="how-to-part-1-set-up" class="level4" data-number="2.3.3.3">
+<h4 data-number="2.3.3.3" class="anchored" data-anchor-id="how-to-part-1-set-up"><span class="header-section-number">2.3.3.3</span> How-to Part 1: Set-up</h4>
 <p>To begin, we set up our environment in R.</p>
-<section id="how-to-task-1-run-code-to-empty-the-r-environment" class="level6" data-number="2.3.2.3.1.1">
-<h6 data-number="2.3.2.3.1.1" class="anchored" data-anchor-id="how-to-task-1-run-code-to-empty-the-r-environment"><span class="header-section-number">2.3.2.3.1.1</span> How-to Task 1 – Run code to empty the R environment</h6>
+<section id="how-to-task-1-run-code-to-empty-the-r-environment" class="level5" data-number="2.3.3.3.1">
+<h5 data-number="2.3.3.3.1" class="anchored" data-anchor-id="how-to-task-1-run-code-to-empty-the-r-environment"><span class="header-section-number">2.3.3.3.1</span> How-to Task 1 – Run code to empty the R environment</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())                            </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="how-to-task-2-run-code-to-load-libraries" class="level6" data-number="2.3.2.3.1.2">
-<h6 data-number="2.3.2.3.1.2" class="anchored" data-anchor-id="how-to-task-2-run-code-to-load-libraries"><span class="header-section-number">2.3.2.3.1.2</span> How-to Task 2 – Run code to load libraries</h6>
+<section id="how-to-task-2-run-code-to-load-libraries" class="level5" data-number="2.3.3.3.2">
+<h5 data-number="2.3.3.3.2" class="anchored" data-anchor-id="how-to-task-2-run-code-to-load-libraries"><span class="header-section-number">2.3.3.3.2</span> How-to Task 2 – Run code to load libraries</h5>
 <p>Load libraries using <code>library()</code>.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
-<section id="how-to-part-2-load-and-examine-the-data" class="level5" data-number="2.3.2.3.2">
-<h5 data-number="2.3.2.3.2" class="anchored" data-anchor-id="how-to-part-2-load-and-examine-the-data"><span class="header-section-number">2.3.2.3.2</span> How-to Part 2: Load and examine the data</h5>
-<section id="how-to-task-3-read-in-the-data-file-we-will-be-using" class="level6" data-number="2.3.2.3.2.1">
-<h6 data-number="2.3.2.3.2.1" class="anchored" data-anchor-id="how-to-task-3-read-in-the-data-file-we-will-be-using"><span class="header-section-number">2.3.2.3.2.1</span> How-to Task 3 – Read in the data file we will be using</h6>
+<section id="how-to-part-2-load-and-examine-the-data" class="level4" data-number="2.3.3.4">
+<h4 data-number="2.3.3.4" class="anchored" data-anchor-id="how-to-part-2-load-and-examine-the-data"><span class="header-section-number">2.3.3.4</span> How-to Part 2: Load and examine the data</h4>
+<section id="how-to-task-3-read-in-the-data-file-we-will-be-using" class="level5" data-number="2.3.3.4.1">
+<h5 data-number="2.3.3.4.1" class="anchored" data-anchor-id="how-to-task-3-read-in-the-data-file-we-will-be-using"><span class="header-section-number">2.3.3.4.1</span> How-to Task 3 – Read in the data file we will be using</h5>
 <p>The code in the <code>how-to</code> guide was written to work with the data file:</p>
 <ul>
 <li><code>study-one-general-participants.csv</code>.</li>
@@ -638,8 +640,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="how-to-task-4-inspect-the-data-file" class="level6" data-number="2.3.2.3.2.2">
-<h6 data-number="2.3.2.3.2.2" class="anchored" data-anchor-id="how-to-task-4-inspect-the-data-file"><span class="header-section-number">2.3.2.3.2.2</span> How-to Task 4 – Inspect the data file</h6>
+<section id="how-to-task-4-inspect-the-data-file" class="level5" data-number="2.3.3.4.2">
+<h5 data-number="2.3.3.4.2" class="anchored" data-anchor-id="how-to-task-4-inspect-the-data-file"><span class="header-section-number">2.3.3.4.2</span> How-to Task 4 – Inspect the data file</h5>
 <p>Use the <code>summary()</code> function to take a look.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(study.one.gen)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -702,8 +704,8 @@ Tip
 <p>A.3. No</p>
 </blockquote>
 </section>
-<section id="how-to-task-5-change-the-class-or-type-of-a-variable" class="level6" data-number="2.3.2.3.2.3">
-<h6 data-number="2.3.2.3.2.3" class="anchored" data-anchor-id="how-to-task-5-change-the-class-or-type-of-a-variable"><span class="header-section-number">2.3.2.3.2.3</span> How-to Task 5 – Change the class or type of a variable</h6>
+<section id="how-to-task-5-change-the-class-or-type-of-a-variable" class="level5" data-number="2.3.3.4.3">
+<h5 data-number="2.3.3.4.3" class="anchored" data-anchor-id="how-to-task-5-change-the-class-or-type-of-a-variable"><span class="header-section-number">2.3.3.4.3</span> How-to Task 5 – Change the class or type of a variable</h5>
 <p>You can use the <code>as.factor()</code> function you used in Week 5.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>study.one.gen<span class="sc">$</span>study <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(study.one.gen<span class="sc">$</span>study)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -729,10 +731,10 @@ Tip
 </div>
 </section>
 </section>
-<section id="how-to-part-3-visualize-associations" class="level5" data-number="2.3.2.3.3">
-<h5 data-number="2.3.2.3.3" class="anchored" data-anchor-id="how-to-part-3-visualize-associations"><span class="header-section-number">2.3.2.3.3</span> How-to Part 3: Visualize associations</h5>
-<section id="how-to-task-6-draw-scatterplots-to-examine-associations-between-variables" class="level6" data-number="2.3.2.3.3.1">
-<h6 data-number="2.3.2.3.3.1" class="anchored" data-anchor-id="how-to-task-6-draw-scatterplots-to-examine-associations-between-variables"><span class="header-section-number">2.3.2.3.3.1</span> How-to Task 6 – Draw scatterplots to examine associations between variables</h6>
+<section id="how-to-part-3-visualize-associations" class="level4" data-number="2.3.3.5">
+<h4 data-number="2.3.3.5" class="anchored" data-anchor-id="how-to-part-3-visualize-associations"><span class="header-section-number">2.3.3.5</span> How-to Part 3: Visualize associations</h4>
+<section id="how-to-task-6-draw-scatterplots-to-examine-associations-between-variables" class="level5" data-number="2.3.3.5.1">
+<h5 data-number="2.3.3.5.1" class="anchored" data-anchor-id="how-to-task-6-draw-scatterplots-to-examine-associations-between-variables"><span class="header-section-number">2.3.3.5.1</span> How-to Task 6 – Draw scatterplots to examine associations between variables</h5>
 <p>You have seen these code moves before, in previous classes (weeks 3 and 4): we are <strong>consolidating</strong> skills by practising your coding in different contexts, using different data.</p>
 <p>We <strong>extend</strong> your skills by adding some new moves.</p>
 <p>Create scatterplots to examine the association between some variables.</p>
@@ -807,8 +809,8 @@ Tip
 <span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="how-to-task-7-edit-the-scatterplots-to-change-how-they-look" class="level6" data-number="2.3.2.3.3.2">
-<h6 data-number="2.3.2.3.3.2" class="anchored" data-anchor-id="how-to-task-7-edit-the-scatterplots-to-change-how-they-look"><span class="header-section-number">2.3.2.3.3.2</span> How-to Task 7 – Edit the scatterplots to change how they look</h6>
+<section id="how-to-task-7-edit-the-scatterplots-to-change-how-they-look" class="level5" data-number="2.3.3.5.2">
+<h5 data-number="2.3.3.5.2" class="anchored" data-anchor-id="how-to-task-7-edit-the-scatterplots-to-change-how-they-look"><span class="header-section-number">2.3.3.5.2</span> How-to Task 7 – Edit the scatterplots to change how they look</h5>
 <p>Edit the appearance of a plot step-by-step.</p>
 <p>We are going to edit:</p>
 <ol type="1">
@@ -926,8 +928,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="how-to-task-8-now-experiment" class="level6" data-number="2.3.2.3.3.3">
-<h6 data-number="2.3.2.3.3.3" class="anchored" data-anchor-id="how-to-task-8-now-experiment"><span class="header-section-number">2.3.2.3.3.3</span> How-to Task 8 – Now experiment</h6>
+<section id="how-to-task-8-now-experiment" class="level5" data-number="2.3.3.5.3">
+<h5 data-number="2.3.3.5.3" class="anchored" data-anchor-id="how-to-task-8-now-experiment"><span class="header-section-number">2.3.3.5.3</span> How-to Task 8 – Now experiment</h5>
 <p>There are no right answers here: edit the appearance of your plots by changing alpha, size and colour of points.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1045,10 +1047,10 @@ Important
 </div>
 </section>
 </section>
-<section id="how-to-part-4-analyse-associations" class="level5" data-number="2.3.2.3.4">
-<h5 data-number="2.3.2.3.4" class="anchored" data-anchor-id="how-to-part-4-analyse-associations"><span class="header-section-number">2.3.2.3.4</span> How-to Part 4: Analyse associations</h5>
-<section id="how-to-task-9-use-correlation-to-to-answer-a-research-question" class="level6" data-number="2.3.2.3.4.1">
-<h6 data-number="2.3.2.3.4.1" class="anchored" data-anchor-id="how-to-task-9-use-correlation-to-to-answer-a-research-question"><span class="header-section-number">2.3.2.3.4.1</span> How-to Task 9 – Use correlation to to answer a research question</h6>
+<section id="how-to-part-4-analyse-associations" class="level4" data-number="2.3.3.6">
+<h4 data-number="2.3.3.6" class="anchored" data-anchor-id="how-to-part-4-analyse-associations"><span class="header-section-number">2.3.3.6</span> How-to Part 4: Analyse associations</h4>
+<section id="how-to-task-9-use-correlation-to-to-answer-a-research-question" class="level5" data-number="2.3.3.6.1">
+<h5 data-number="2.3.3.6.1" class="anchored" data-anchor-id="how-to-task-9-use-correlation-to-to-answer-a-research-question"><span class="header-section-number">2.3.3.6.1</span> How-to Task 9 – Use correlation to to answer a research question</h5>
 <p>Examine associations between variables using correlation.</p>
 <p>One of our research questions is:</p>
 <ol start="2" type="1">
@@ -1211,9 +1213,8 @@ Answer
 </div>
 </section>
 </section>
-</section>
-<section id="sec-associations-practical-workbook" class="level4" data-number="2.3.2.4">
-<h4 data-number="2.3.2.4" class="anchored" data-anchor-id="sec-associations-practical-workbook"><span class="header-section-number">2.3.2.4</span> The practical exercises</h4>
+<section id="sec-associations-practical-workbook" class="level4" data-number="2.3.3.7">
+<h4 data-number="2.3.3.7" class="anchored" data-anchor-id="sec-associations-practical-workbook"><span class="header-section-number">2.3.3.7</span> The practical exercises</h4>
 <p>Now you will progress through a series of tasks, and challenges, to test what you have learnt.</p>
 <div class="callout callout-style-default callout-warning callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -1261,26 +1262,27 @@ Tip
 </div>
 <p>In the following, we will guide you through the tasks and questions step by step.</p>
 <p>An answers version of the workbook will be provided after the practical class.</p>
-<section id="practical-part-1-set-up" class="level5" data-number="2.3.2.4.1">
-<h5 data-number="2.3.2.4.1" class="anchored" data-anchor-id="practical-part-1-set-up"><span class="header-section-number">2.3.2.4.1</span> Practical Part 1: Set-up</h5>
+</section>
+<section id="practical-part-1-set-up" class="level4" data-number="2.3.3.8">
+<h4 data-number="2.3.3.8" class="anchored" data-anchor-id="practical-part-1-set-up"><span class="header-section-number">2.3.3.8</span> Practical Part 1: Set-up</h4>
 <p>To begin, we set up our environment in R.</p>
-<section id="practical-task-1-run-code-to-empty-the-r-environment" class="level6" data-number="2.3.2.4.1.1">
-<h6 data-number="2.3.2.4.1.1" class="anchored" data-anchor-id="practical-task-1-run-code-to-empty-the-r-environment"><span class="header-section-number">2.3.2.4.1.1</span> Practical Task 1 – Run code to empty the R environment</h6>
+<section id="practical-task-1-run-code-to-empty-the-r-environment" class="level5" data-number="2.3.3.8.1">
+<h5 data-number="2.3.3.8.1" class="anchored" data-anchor-id="practical-task-1-run-code-to-empty-the-r-environment"><span class="header-section-number">2.3.3.8.1</span> Practical Task 1 – Run code to empty the R environment</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list=</span><span class="fu">ls</span>())                            </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="practical-task-2-run-code-to-load-relevant-libraries" class="level6" data-number="2.3.2.4.1.2">
-<h6 data-number="2.3.2.4.1.2" class="anchored" data-anchor-id="practical-task-2-run-code-to-load-relevant-libraries"><span class="header-section-number">2.3.2.4.1.2</span> Practical Task 2 – Run code to load relevant libraries</h6>
+<section id="practical-task-2-run-code-to-load-relevant-libraries" class="level5" data-number="2.3.3.8.2">
+<h5 data-number="2.3.3.8.2" class="anchored" data-anchor-id="practical-task-2-run-code-to-load-relevant-libraries"><span class="header-section-number">2.3.3.8.2</span> Practical Task 2 – Run code to load relevant libraries</h5>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
-<section id="practical-part-2-load-the-data" class="level5" data-number="2.3.2.4.2">
-<h5 data-number="2.3.2.4.2" class="anchored" data-anchor-id="practical-part-2-load-the-data"><span class="header-section-number">2.3.2.4.2</span> Practical Part 2: Load the data</h5>
-<section id="practical-task-3-read-in-the-data-file-we-will-be-using" class="level6" data-number="2.3.2.4.2.1">
-<h6 data-number="2.3.2.4.2.1" class="anchored" data-anchor-id="practical-task-3-read-in-the-data-file-we-will-be-using"><span class="header-section-number">2.3.2.4.2.1</span> Practical Task 3 – Read in the data file we will be using</h6>
+<section id="practical-part-2-load-the-data" class="level4" data-number="2.3.3.9">
+<h4 data-number="2.3.3.9" class="anchored" data-anchor-id="practical-part-2-load-the-data"><span class="header-section-number">2.3.3.9</span> Practical Part 2: Load the data</h4>
+<section id="practical-task-3-read-in-the-data-file-we-will-be-using" class="level5" data-number="2.3.3.9.1">
+<h5 data-number="2.3.3.9.1" class="anchored" data-anchor-id="practical-task-3-read-in-the-data-file-we-will-be-using"><span class="header-section-number">2.3.3.9.1</span> Practical Task 3 – Read in the data file we will be using</h5>
 <p>The data file for the <em>workbook</em> is called:</p>
 <ul>
 <li><code>study-two-general-participants.csv</code></li>
@@ -1306,8 +1308,8 @@ Code
 </div>
 <p>When you code this, you can choose your own file name, but be sure to give the data object you create a distinct name e.g.&nbsp;<code>study.two.gen</code>.</p>
 </section>
-<section id="practical-task-4-inspect-the-data-file" class="level6" data-number="2.3.2.4.2.2">
-<h6 data-number="2.3.2.4.2.2" class="anchored" data-anchor-id="practical-task-4-inspect-the-data-file"><span class="header-section-number">2.3.2.4.2.2</span> Practical Task 4 – Inspect the data file</h6>
+<section id="practical-task-4-inspect-the-data-file" class="level5" data-number="2.3.3.9.2">
+<h5 data-number="2.3.3.9.2" class="anchored" data-anchor-id="practical-task-4-inspect-the-data-file"><span class="header-section-number">2.3.3.9.2</span> Practical Task 4 – Inspect the data file</h5>
 <p>Use the <code>summary()</code> or <code>head()</code> functions to take a look</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-33-contents" aria-controls="callout-33" aria-expanded="false" aria-label="Toggle callout">
@@ -1340,8 +1342,8 @@ Code
 </blockquote>
 <!-- - Q.3. No -->
 </section>
-<section id="practical-task-5-change-the-class-or-type-of-the-variable-ethnicity-to-factor" class="level6" data-number="2.3.2.4.2.3">
-<h6 data-number="2.3.2.4.2.3" class="anchored" data-anchor-id="practical-task-5-change-the-class-or-type-of-the-variable-ethnicity-to-factor"><span class="header-section-number">2.3.2.4.2.3</span> Practical Task 5 – Change the class or type of the variable <code>ETHNICITY</code> to factor</h6>
+<section id="practical-task-5-change-the-class-or-type-of-the-variable-ethnicity-to-factor" class="level5" data-number="2.3.3.9.3">
+<h5 data-number="2.3.3.9.3" class="anchored" data-anchor-id="practical-task-5-change-the-class-or-type-of-the-variable-ethnicity-to-factor"><span class="header-section-number">2.3.3.9.3</span> Practical Task 5 – Change the class or type of the variable <code>ETHNICITY</code> to factor</h5>
 <p>You can use the <code>as.factor()</code> function you have used before: how do you write the code for these data? Try it for yourself before revealing the code.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
@@ -1389,10 +1391,10 @@ Code
 <!-- - White: 145 -->
 </section>
 </section>
-<section id="practical-part-3-visualise-the-associations-between-variables" class="level5" data-number="2.3.2.4.3">
-<h5 data-number="2.3.2.4.3" class="anchored" data-anchor-id="practical-part-3-visualise-the-associations-between-variables"><span class="header-section-number">2.3.2.4.3</span> Practical Part 3: Visualise the associations between variables</h5>
-<section id="practical-task-6-create-a-scatterplot-to-examine-the-association-between-some-variables" class="level6" data-number="2.3.2.4.3.1">
-<h6 data-number="2.3.2.4.3.1" class="anchored" data-anchor-id="practical-task-6-create-a-scatterplot-to-examine-the-association-between-some-variables"><span class="header-section-number">2.3.2.4.3.1</span> Practical Task 6 – Create a scatterplot to examine the association between some variables</h6>
+<section id="practical-part-3-visualise-the-associations-between-variables" class="level4" data-number="2.3.3.10">
+<h4 data-number="2.3.3.10" class="anchored" data-anchor-id="practical-part-3-visualise-the-associations-between-variables"><span class="header-section-number">2.3.3.10</span> Practical Part 3: Visualise the associations between variables</h4>
+<section id="practical-task-6-create-a-scatterplot-to-examine-the-association-between-some-variables" class="level5" data-number="2.3.3.10.1">
+<h5 data-number="2.3.3.10.1" class="anchored" data-anchor-id="practical-task-6-create-a-scatterplot-to-examine-the-association-between-some-variables"><span class="header-section-number">2.3.3.10.1</span> Practical Task 6 – Create a scatterplot to examine the association between some variables</h5>
 <p>For this practical exercise, uou always want to use the outcome <code>mean.acc</code> as the y-axis variable so:</p>
 <ul>
 <li><code>y = mean.acc</code></li>
@@ -1591,10 +1593,10 @@ Code
 </div>
 </section>
 </section>
-<section id="practical-part-4-learn-how-to-edit-plotting-code" class="level5" data-number="2.3.2.4.4">
-<h5 data-number="2.3.2.4.4" class="anchored" data-anchor-id="practical-part-4-learn-how-to-edit-plotting-code"><span class="header-section-number">2.3.2.4.4</span> Practical Part 4: Learn how to edit plotting code</h5>
-<section id="practical-task-7-edit-the-appearance-of-one-plot-step-by-step" class="level6" data-number="2.3.2.4.4.1">
-<h6 data-number="2.3.2.4.4.1" class="anchored" data-anchor-id="practical-task-7-edit-the-appearance-of-one-plot-step-by-step"><span class="header-section-number">2.3.2.4.4.1</span> Practical Task 7 – Edit the appearance of one plot step-by-step</h6>
+<section id="practical-part-4-learn-how-to-edit-plotting-code" class="level4" data-number="2.3.3.11">
+<h4 data-number="2.3.3.11" class="anchored" data-anchor-id="practical-part-4-learn-how-to-edit-plotting-code"><span class="header-section-number">2.3.3.11</span> Practical Part 4: Learn how to edit plotting code</h4>
+<section id="practical-task-7-edit-the-appearance-of-one-plot-step-by-step" class="level5" data-number="2.3.3.11.1">
+<h5 data-number="2.3.3.11.1" class="anchored" data-anchor-id="practical-task-7-edit-the-appearance-of-one-plot-step-by-step"><span class="header-section-number">2.3.3.11.1</span> Practical Task 7 – Edit the appearance of one plot step-by-step</h5>
 <p>Edit your plotting code to make plots with a professional appearance.</p>
 <p>Edit a scatterplot to adjust</p>
 <ol type="1">
@@ -1688,10 +1690,10 @@ Code
 </div>
 </section>
 </section>
-<section id="practical-part-5-use-correlation-to-to-answer-the-research-questions" class="level5" data-number="2.3.2.4.5">
-<h5 data-number="2.3.2.4.5" class="anchored" data-anchor-id="practical-part-5-use-correlation-to-to-answer-the-research-questions"><span class="header-section-number">2.3.2.4.5</span> Practical Part 5: Use correlation to to answer the research questions</h5>
-<section id="practical-task-8-examine-the-correlation-between-mean-accuracy-mean.acc-and-some-numeric-predictor-variables" class="level6" data-number="2.3.2.4.5.1">
-<h6 data-number="2.3.2.4.5.1" class="anchored" data-anchor-id="practical-task-8-examine-the-correlation-between-mean-accuracy-mean.acc-and-some-numeric-predictor-variables"><span class="header-section-number">2.3.2.4.5.1</span> Practical Task 8 – Examine the correlation between mean accuracy (mean.acc) and some numeric predictor variables</h6>
+<section id="practical-part-5-use-correlation-to-to-answer-the-research-questions" class="level4" data-number="2.3.3.12">
+<h4 data-number="2.3.3.12" class="anchored" data-anchor-id="practical-part-5-use-correlation-to-to-answer-the-research-questions"><span class="header-section-number">2.3.3.12</span> Practical Part 5: Use correlation to to answer the research questions</h4>
+<section id="practical-task-8-examine-the-correlation-between-mean-accuracy-mean.acc-and-some-numeric-predictor-variables" class="level5" data-number="2.3.3.12.1">
+<h5 data-number="2.3.3.12.1" class="anchored" data-anchor-id="practical-task-8-examine-the-correlation-between-mean-accuracy-mean.acc-and-some-numeric-predictor-variables"><span class="header-section-number">2.3.3.12.1</span> Practical Task 8 – Examine the correlation between mean accuracy (mean.acc) and some numeric predictor variables</h5>
 <blockquote class="blockquote">
 <p><strong>Q.15.</strong> What is r (given as <code>cor</code> in the output) for the correlation between <code>HLVA</code> and <code>mean.acc</code>?</p>
 </blockquote>
@@ -1822,14 +1824,13 @@ Code
 </section>
 </section>
 </section>
-</section>
-<section id="the-answers" class="level3" data-number="2.3.3">
-<h3 data-number="2.3.3" class="anchored" data-anchor-id="the-answers"><span class="header-section-number">2.3.3</span> The answers</h3>
+<section id="the-answers" class="level3" data-number="2.3.4">
+<h3 data-number="2.3.4" class="anchored" data-anchor-id="the-answers"><span class="header-section-number">2.3.4</span> The answers</h3>
 <p>After the practical class, we will reveal the answers that are currently hidden.</p>
 <p>The answers version of the webpage will present my answers for questions, and some extra information where that is helpful.</p>
 </section>
-<section id="look-ahead-growing-in-independence" class="level3" data-number="2.3.4">
-<h3 data-number="2.3.4" class="anchored" data-anchor-id="look-ahead-growing-in-independence"><span class="header-section-number">2.3.4</span> Look ahead: growing in independence</h3>
+<section id="look-ahead-growing-in-independence" class="level3" data-number="2.3.5">
+<h3 data-number="2.3.5" class="anchored" data-anchor-id="look-ahead-growing-in-independence"><span class="header-section-number">2.3.5</span> Look ahead: growing in independence</h3>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1848,8 +1849,8 @@ Important
 </div>
 </div>
 </section>
-<section id="optional-exercises-to-stretch-you" class="level3" data-number="2.3.5">
-<h3 data-number="2.3.5" class="anchored" data-anchor-id="optional-exercises-to-stretch-you"><span class="header-section-number">2.3.5</span> Optional exercises: to stretch you</h3>
+<section id="optional-exercises-to-stretch-you" class="level3" data-number="2.3.6">
+<h3 data-number="2.3.6" class="anchored" data-anchor-id="optional-exercises-to-stretch-you"><span class="header-section-number">2.3.6</span> Optional exercises: to stretch you</h3>
 <p>One of the convenient and powerful things about R plotting code is that you can create a series of plots and put them together in a grid of plots for east comparison: we do that here.</p>
 <p>We will use the patchwork library: check it out</p>
 <p><a href="https://patchwork.data-imaginist.com/articles/patchwork.html" class="uri">https://patchwork.data-imaginist.com/articles/patchwork.html</a></p>
