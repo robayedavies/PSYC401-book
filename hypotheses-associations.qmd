@@ -37,34 +37,36 @@ study.two.gen <- read_csv("study-two-general-participants.csv",
 
 ## Overview {#sec-associations-overview}
 
-Welcome to our overview of the materials you will work with in our data analysis class in the *PSYC401* module, Week 7.
+Welcome to your overview of the work we will do together in **Week 6**.
 
-We are completing five classes together in weeks 6-10. These classes are designed to help students to learn about some very common and powerful psychological data analysis methods. We will focus on methods that allow us to visualize and make sense of evidence for **associations** between variables. Our materials are designed to help you to think about what you are doing, to understand the aims of the practical steps.
+This week, we focus on methods that allow us to make sense of the evidence for **associations**.
+Looking ahead to your professional lives, our aim is to help you to build the understanding *and* learn the skills that will ensure that you can do, inspire and manage the best ways to do this.
 
-We will do this in the context of a live research project with potential real world impacts: the *Clearly understood* project. We will present our PSYC401 lessons in the context of this research project because we think that this **context** will help you to make sense of the data, and to see why we ask you to practise the skills we are teaching.
+We will work in the context of a live research project with potential real world impacts: the **Clearly understood** project.
+Working in a concrete **context** will help you to make sense of what you are doing, even if you are interested in other topics.
 
-We encounter written health information all the time: on medication labels, in letters from doctors, and online when we research things we are worried about. It is not always easy to understand this information.
-
-It is unclear how to make health communication more effective. The problem is that we are not sure how health information should be communicated so that everyone can understand it. This is why we ask the research questions:
+::: callout-tip
+The **Clearly understood** project aims to fix this problem: we are not sure how health information should be communicated so that everyone can understand it. This is why we ask the research questions:
 
 1.  What person attributes predict success in understanding?
 2.  Can people accurately evaluate whether they correctly understand written health information?
+:::
 
-As we work together, we will be revisiting some of the ideas and techniques you have seen in previous classes. This is to give you the opportunity to consolidate your learning. We will be extending your development with some new ideas to strengthen your skills.
+As we work together, we will be revisiting some of the ideas and techniques you have seen in previous classes, so that you can *consolidate* your learning.
+Then, we will *extend* your development with some new ideas to strengthen your skills.
 
 ## Our learning goals {#sec-associations-goals}
 
-This week, we focus on both developing your critical thinking and strengthening your practical skills in data analysis.
+This week, we develop your critical thinking and we strengthen your practical skills.
 
 **1. Critical thinking**
 
--   *Concepts*: begin with critical thinking
--   *Skills*: developing hypotheses
+-   *Concepts*: how we go from ideas and questions to hypotheses
 
 **2. Practical skills**
 
 -   *Concepts* -- associations: correlations, estimates and hypothesis tests
--   *Skills* -- visualizing variation and covariation
+-   *Skills* -- visualizing covariation
 -   *Skills* -- writing the code
 -   *Skills* -- estimating correlations
 -   *Skills* -- hypothesis tests for correlations
@@ -72,80 +74,55 @@ This week, we focus on both developing your critical thinking and strengthening 
 
 ## Learning resources {#sec-associations-resources}
 
-You will see *next* links to the lectures we created to explain the concepts behind the critical thinking and analysis skills we want you to develop (@sec-associations-lectures), *then* information about the practical materials we have provided to help you to practise your skills (@sec-associations-practical).
+You will see, next, the lectures we share to explain the concepts behind the critical thinking and analysis skills you will develop (@sec-associations-lectures), then you will see information about the practical materials you can use to practise your skills (@sec-associations-practical).
 
-All the links to the lecture videos, the lecture slides, and everything you need for your practical work can *also* be found in the Week 7 files folder on Moodle [here](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse8){target="_blank"}
-
-In @sec-associations-notes, we present the lecture slide points. We do this here because we can share the code we used to generate the plots we use in some of the slides [^hypotheses-associations-1]
-
-[^hypotheses-associations-1]: We write the slides and this book in [Quarto](https://quarto.org){target="_blank"} in R-Studio. Quarto scripts can be rendered as .html to share web-books like this one, or to share slides like those we use in presenting the lecture. One advantage of using Quarto is that we can share a plot and the code we used to generate the plot in the same page.
+::: callout-tip
+We think your learning best if you *first* watch the lectures *then* do the practical exercises.
+:::
 
 ### Lectures {#sec-associations-lectures}
 
-The lecture material for this week is presented in five short parts. Click on a link and your browser should open a tab showing the *Panopto* video for the lecture part.
+The lecture material for this week is presented in five short parts. 
 
-[Part 1 of 5](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=3e5f2ca1-fc6d-4e31-8f7c-af5000c9916f){target="_blank"}
+Click on a link and your browser should open a tab showing the *Panopto* video for the lecture part.
 
-[Part 2 of 5](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9a10462c-e185-4069-b72a-af5000cc076a){target="_blank"}
+1. Part 1 (12 minutes) **Overview**: The concepts and skills we will learn about in weeks 6-10, and why it helps to embed the classes in the context of a research project.
 
-[Part 3 of 5](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1653a285-fa5b-45c4-a850-af5000d1c8d5){target="_blank"}
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=768a9621-a440-4a1a-a3f8-b22200c1d4e2&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-associations-1" ></iframe>
+```
 
-[Part 4 of 5](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ca174423-d385-40d5-9068-af5000d60688){target="_blank"}
+2. Part 2 (18 minutes): Hypotheses, measurements and associations -- how you can think critically.
 
-[Part 5 of 5](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9d53628e-3133-43aa-b78f-af5000dc0d0b){target="_blank"}
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=9a10462c-e185-4069-b72a-af5000cc076a&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-associations-2" ></iframe>
+```
 
-You can download the slides we presented in the lecture in two different formats, depending on what you think will be most useful to you:
+3. Part 3 (14 minutes): The live research project we will use to put our practical skills exercises and critical thinking challenges into context.
 
--   Download the slides exactly as they appear in the lecture from [this link](files/401-hypotheses-assocations.html). The .html file can be opened and viewed in any web browser (e.g., Chrome, Firefox, Safari).
--   Or you can download a printable Word .docx presentation of the slides from [this link](files/401-hypotheses-associations-printable-edited.docx). The .docx can be opened in Microsoft Word. The figures will not appear exactly as they do in the lecture recording because Word cannot cope with images so well but the trade-off is that you get a document you can print and edit to add notes.
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=1653a285-fa5b-45c4-a850-af5000d1c8d5&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-associations-3" ></iframe>
+```
 
-<!-- ## Pre-lab activity 1 -->
+4. Part 4 (20 minutes): Seeing, thinking and talking about associations, correlations.
 
-<!-- In weeks 16-19, we will be working together on a research project to investigate how people vary in their response to health advice. -->
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=ca174423-d385-40d5-9068-af5000d60688&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-associations-4" ></iframe>
+```
 
-<!-- Completing the project involves collecting responses from PSYC122 students. -->
+5. Part 5 (12 minutes): How we use R to estimate and test correlations. How we write about correlation results
 
-<!-- In our class activities, we can then analyze the data we collect. -->
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=9d53628e-3133-43aa-b78f-af5000dc0d0b&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-associations-5" ></iframe>
+```
 
-<!-- To enter your responses, we invite you to complete a short survey. -->
+::: callout-tip
+The slides presented in the videos can be downloaded here:
 
-<!-- You can complete the survey here (just click on the web address to get started): -->
+- [The slides](files/411-hypotheses-assocations.html) exactly as presented (22 MB). 
 
-<!-- [Complete the survey](https://lancasteruni.eu.qualtrics.com/jfe/form/SV_0ww8HHxx172TPJs){target="_blank"} -->
-
-<!-- ### Survey information -->
-
-<!-- The survey asks you to: -->
-
-<!-- - complete some questions about who you are; -->
-
-<!-- - and then answer some questions about what you know about some English words, about what you know about health matters, and about how you approach reading. -->
-
-<!-- The survey then asks you to: -->
-
-<!-- - read five short extracts from patient information leaflets about different kinds of health issue; -->
-
-<!-- - respond to some multiple choice questions about each extract; -->
-
-<!-- - and rate how well you think you understand the advice. -->
-
-<!-- The survey should take about 20 minutes to complete. -->
-
-<!-- Some people will take less time, and some people might take a little more time. -->
-
-<!-- Taking part in the survey is **completely voluntary**. -->
-
-<!-- You can stop at any time without completing the survey if you do not want to finish it. -->
-
-<!-- If you do not want to do the survey, you can do an alternative activity (see below). -->
-
-<!-- All responses will be recorded completely anonymously. -->
-
-<!-- ## Pre-lab activity 1 alternative -->
-
-<!-- If you do not want to complete the survey, we invite you to read the pre-registered research plan for the *PSYC122 health advice* research project. -->
-
-<!-- [Read the project pre-registration](https://osf.io/p6fsc/){target="_blank"} -->
+You can download the web page `.html` file and click on it to open it in any browser (e.g., Chrome, Edge or Safari). The slide images are high quality so the file is quite big and may take a few seconds to download.
+:::
 
 ### Practical materials {#sec-associations-practical}
 
