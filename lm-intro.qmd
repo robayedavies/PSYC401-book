@@ -278,6 +278,9 @@ observations, in the column, each one is a value: the word or character string `
 Remember from Week 3 that we can only count how many times a category value (or factor level) occurs: here, we are counting how many times the word `studyone` occurs in the factor column `study`.
 :::
 
+
+
+
 #### How-to Part 3: Visualize associations
 
 ##### How-to Task 6 -- Draw scatterplots to examine associations between variables
