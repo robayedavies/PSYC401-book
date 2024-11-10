@@ -65,12 +65,12 @@ This week, we develop your critical thinking and we strengthen your practical sk
 You will see, next, the lectures we share to explain the concepts behind the critical thinking and analysis skills you will develop (@sec-associations-lectures), then you will see information about the practical materials you can use to practise your skills (@sec-associations-practical).
 
 ::: callout-tip
-We think your learning best if you *first* watch the lectures *then* do the practical exercises.
+We think you will learn best if you *first* watch the lectures *then* do the practical exercises.
 :::
 
 ### Lectures {#sec-associations-lectures}
 
-The lecture material for this week is presented in five short parts. 
+The lecture materials for this week are presented in five short parts. 
 
 Click on a link and your browser should open a tab showing the *Panopto* video for the lecture part.
 
