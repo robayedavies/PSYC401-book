@@ -15,40 +15,22 @@ library(tidyverse)
 ```
 
 ```{r readin-hide}
-#| echo: false
 #| warning: false
-
+#| echo: false
 # -- code to read in the aggregated subject level data from the clearly-understood data set
+
 # -- study one
-clearly.one.subjects <- read_csv("study-one-general-participants.csv", 
-                                  col_types = cols(
-                                    participant_ID = col_factor(),
-                                    study = col_factor(),
-                                    EDUCATION = col_factor(),
-                                    GENDER = col_factor(),
-                                    ETHNICITY = col_factor()
-                                    )
-                                   )
+study.one.gen <- read_csv("study-one-general-participants.csv")
 
-# -- code to read in the aggregated subject level data from the clearly-understood data set
-# -- study two -- general texts
-clearly.two.subjects <- read_csv("study-two-general-participants.csv", 
-                                 col_types = cols(
-                                   participant_ID = col_factor(),
-                                   study = col_factor(),
-                                   EDUCATION = col_factor(),
-                                   GENDER = col_factor(),
-                                   ETHNICITY = col_factor()
-                                   )
-                                  )
-
+# -- study two
+study.two.gen <- read_csv("study-two-general-participants.csv")
 ```
 
 ## Overview {#sec-lm-intro-overview}
 
 Welcome to your overview of the work we will do together in **Week 8**.
 
-This week, we focus on learning how to predict people: predicting observations about us (e.g., our attributes) or about the things we make or do.
+This week, we focus on learning **how to predict** people: predicting observations about us (e.g., our attributes) or about the things we make or do.
 To do this, we will learn to think about and work with **linear models**.
 
 Looking ahead to your professional lives, learning about linear models will equip you to do behavioural analysis in a wide range of contexts, from clinical research to business intelligence. 
@@ -82,15 +64,14 @@ To enable you to answer questions like these, you will learn how to:
 
 ## Learning resources {#sec-lm-intro-resources}
 
-You will see, next, the lectures we share to explain the concepts you will learn about, and the practical data analysis skills you wil develop (@sec-lm-intro-lectures). Then you will see information about the practical materials you can use to build and practise your skills (@sec-lm-intro-practical).
+You will see, next, the lectures we share to explain the concepts you will learn about, and the practical data analysis skills you will develop (@sec-lm-intro-lectures). Then you will see information about the practical materials you can use to build and practise your skills (@sec-lm-intro-practical).
 
-::: callout-tip
 Every week, you will learn best if you *first* watch the lectures *then* do the practical exercises.
 
-**Linked resources** include:
-
+::: callout-tip
+## Linked resources
 1. In @sec-associations, we share materials to support your development of critical thinking about associations, and your development of practical skills in working with correlation-based analyses.
-2. In @sec-lm-dev, we share materials to extend your capacity to use linear models, to answer more and different kinds of research questions.
+2. In @sec-lm-dev-intro, we share materials to extend your capacity to use linear models, to answer more and different kinds of research questions.
 :::
 
 ### Lectures {#sec-lm-intro-lectures}
@@ -124,6 +105,7 @@ Click on a link and your browser should open a tab showing the *Panopto* video f
 ```
 
 ::: callout-tip
+## Download the lecture slides
 The slides presented in the videos can be downloaded here:
 
 - [The slides](files/401-linear-model-intro.html) exactly as presented (12 MB). 
@@ -131,29 +113,20 @@ The slides presented in the videos can be downloaded here:
 You can download the web page `.html` file and click on it to open it in any browser (e.g., Chrome, Edge or Safari). The slide images are high quality so the file is quite big and may take a few seconds to download.
 :::
 
-We are going to work through some practical exercises, next, to stimulate your thinking and learn the practical skills you need to see, test and talk about correlation analyses of the associations between variables.
+We are going to work through some practical exercises, next, to develop your critical thinking and practical skills for working with linear models.
 
-### Practical materials {#sec-lm-intro-practical}
+### Practical materials: data and R-Studio {#sec-lm-intro-practical}
 
-We have collected the practical materials together into a folder.
+We will work with two data files which you can download by clicking on their names (below):
 
-The folder includes the data files:
+-   [`study-one-general-participants.csv`](files/study-one-general-participants.csv).
+-   [`study-two-general-participants.csv`](files/study-two-general-participants.csv).
 
--   `study-one-general-participants.csv`
--   `study-two-general-participants.csv`
+Once you have downloaded the files, you will need to upload them to the R-Studio server to access and use the R files.
 
-and .R code files:
-
--   `401-lm-intro-how-to.R`
--   `401-lm-intro-workbook.R`
-
-You will use these files for your practical learning.
-
-You can download the .R files and the data .csv files in a single folder, using the link [here](files/PSYC401_lm-intro_materials.zip).
-
-Or you can download the files as individual files from the module [Moodle page for PSYC401](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse10){target="_blank"}.
-
-Once you have downloaded the file folder, you will need to upload it to the R-Studio server to access and use the R files.
+::: callout-important
+Here is a link to the sign-in page for [R-Studio Server](https://psy-rstudio.lancaster.ac.uk/auth-sign-in?appUri=%2F)
+:::
 
 #### The how-to guide {#sec-lm-intro-practical-how-to}
 
@@ -215,7 +188,7 @@ Here are what the first few rows in the data file `study-two-general-participant
 ```{r head}
 #| warning: false
 #| echo: false
-kable(head(clearly.two.subjects))
+kable(head(study.two.gen))
 ```
 
 You can see the columns:
@@ -268,7 +241,7 @@ models <- tibble(
             a2 = runif(250, -.05, .05)
             )
 
-  ggplot(data = clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+  ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
   geom_abline(data = models, aes(intercept = a1, slope = a2), alpha = .05, colour = "darkred") +
   geom_point(size = 2.5, colour = "darkgrey", alpha = 0.75) +
   geom_smooth(method = "lm", colour = "red", size = 1.5, se = FALSE) +
@@ -336,7 +309,7 @@ digraph Q {
 #| fig-width: 5
 #| fig-height: 5
 
-clearly.one.subjects %>%
+study.one.gen %>%
   ggplot(aes(x = SHIPLEY, y = mean.acc)) +
   geom_point(size = 2.5, alpha = .5, colour = "darkgrey") +
   geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) +
@@ -483,7 +456,7 @@ Link: concepts, questions $\rightarrow$ assumptions $\rightarrow$ testable predi
 #| fig-width: 5
 #| fig-height: 5
 
-clearly.one.subjects %>%
+study.one.gen %>%
   ggplot(aes(x = SHIPLEY, y = mean.acc)) +
   geom_point(size = 2.5, alpha = .5, colour = "darkgrey") +
   geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) +
@@ -521,7 +494,7 @@ clearly.one.subjects %>%
 #| fig-width: 6
 #| fig-height: 6
 
-clearly.one.subjects %>%
+study.one.gen %>%
   ggplot(aes(y = SHIPLEY, x = mean.acc, group = SHIPLEY)) +
   stat_density_ridges(
     quantile_lines = TRUE, quantiles = 2,
@@ -547,12 +520,12 @@ clearly.one.subjects %>%
 #| eval: false
 #| code-line-numbers: "1|2|3"
 model <- lm(mean.acc ~ SHIPLEY,
-            data = clearly.one.subjects)
+            data = study.one.gen)
 summary(model)
 ```
 
 1.  Specify the `lm` function and the model `mean.acc ~ SHIPLEY`
-2.  Specify what data we use `data = clearly.one.subjects`
+2.  Specify what data we use `data = study.one.gen`
 3.  Get the results `summary(model)`
 
 ### The sentence structure of models in R
@@ -574,7 +547,7 @@ You will see this sentence structure in coding for *many* different analysis typ
 
 ```{r}
 model <- lm(mean.acc ~ SHIPLEY,
-            data = clearly.one.subjects)
+            data = study.one.gen)
 summary(model)
 ```
 
@@ -620,7 +593,7 @@ $$y = a + bx$$
 #| fig-alt: "The figure presents a line indicating the predicted association between variables mean accuracy (on y-axis) and vocabulary (x-axis) scores. In the plot, higher vocabulary scores are predicted to be associated with higher accuracy scores. Model prediction of change in outcome is shown with a red line."
 #| fig-width: 5
 #| fig-height: 5
-clearly.one.subjects %>%
+study.one.gen %>%
   ggplot(aes(x = SHIPLEY, y = mean.acc)) +
   geom_abline(intercept = 0.449, slope = 0.011, colour = "red", size = 1.5) +
   theme_bw() +
@@ -653,7 +626,7 @@ $\text{predicted y} = 0.449 + \text{0.011 } \times \text{ Shipley score of } 20$
 
 y.pred <- 0.449 + 0.011 * 20
 
-clearly.one.subjects %>%
+study.one.gen %>%
   ggplot(aes(x = SHIPLEY, y = mean.acc)) +
   geom_point(size = 1.5, alpha = .5, colour = "darkgrey") +
   geom_point(aes(x = 20, y = y.pred), colour = "red", size = 2) +
@@ -687,7 +660,7 @@ clearly.one.subjects %>%
 #| fig-width: 5
 #| fig-height: 5
 
-clearly.one.subjects %>%
+study.one.gen %>%
   ggplot(aes(x = SHIPLEY, y = mean.acc)) +
   geom_point(size = 1.5, alpha = .5, colour = "darkgrey") +
   geom_point(aes(x = 20, y = 0.449 + 0.011 * 20), colour = "darkred", size = 2) +
@@ -714,7 +687,7 @@ clearly.one.subjects %>%
 #| fig-width: 5
 #| fig-height: 5
 
-clearly.one.subjects %>%
+study.one.gen %>%
   ggplot(aes(x = SHIPLEY, y = mean.acc)) +
   geom_point(size = 1.5, alpha = .5, colour = "darkgrey") +
   geom_abline(intercept = 0.449, slope = 0.011, colour = "blue") +
@@ -750,7 +723,7 @@ models <- tibble(
             a2 = runif(250, -.05, .05)
             )
 
-  ggplot(data = clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+  ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
   geom_abline(data = models, aes(intercept = a1, slope = a2), alpha = .05, colour = "darkred") +
   geom_point(size = 2.5, colour = "darkgrey", alpha = 0.75) +
   geom_smooth(method = "lm", colour = "red", size = 1.5, se = FALSE) +
@@ -813,14 +786,14 @@ Usually, this means there are differences between the expected outcomes that the
 
 # -- plot residuals against predicted values
 # https://drsimonj.svbtle.com/visualising-residuals
-# clearly.one.subjects
-fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+# study.one.gen
+fit <- lm(mean.acc ~ SHIPLEY, data = study.one.gen)
 # -- then
-clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values
-clearly.one.subjects$residuals <- residuals(fit) # Save the residual values
+study.one.gen$predicted <- predict(fit)   # Save the predicted values
+study.one.gen$residuals <- residuals(fit) # Save the residual values
 
 # -- plot observed vs. predicted values
-ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+ggplot(study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
   geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope
   geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines
   # > Color adjustments made here...
@@ -853,14 +826,14 @@ ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
 
 # -- plot residuals against predicted values
 # https://drsimonj.svbtle.com/visualising-residuals
-# clearly.one.subjects
-fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+# study.one.gen
+fit <- lm(mean.acc ~ SHIPLEY, data = study.one.gen)
 # -- then
-clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values
-clearly.one.subjects$residuals <- residuals(fit) # Save the residual values
+study.one.gen$predicted <- predict(fit)   # Save the predicted values
+study.one.gen$residuals <- residuals(fit) # Save the residual values
 
 # -- plot observed vs. predicted values
-ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+ggplot(study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
   geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope
   geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines
   # > Color adjustments made here...
@@ -891,14 +864,14 @@ ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
 
 # -- plot residuals against predicted values
 # https://drsimonj.svbtle.com/visualising-residuals
-# clearly.one.subjects
-fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+# study.one.gen
+fit <- lm(mean.acc ~ SHIPLEY, data = study.one.gen)
 # -- then
-clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values
-clearly.one.subjects$residuals <- residuals(fit) # Save the residual values
+study.one.gen$predicted <- predict(fit)   # Save the predicted values
+study.one.gen$residuals <- residuals(fit) # Save the residual values
 
 # -- plot observed vs. predicted values
-ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+ggplot(study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
   geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope
   geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines
   # > Color adjustments made here...
@@ -930,14 +903,14 @@ ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
 
 # -- plot residuals against predicted values
 # https://drsimonj.svbtle.com/visualising-residuals
-# clearly.one.subjects
-fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+# study.one.gen
+fit <- lm(mean.acc ~ SHIPLEY, data = study.one.gen)
 # -- then
-clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values
-clearly.one.subjects$residuals <- residuals(fit) # Save the residual values
+study.one.gen$predicted <- predict(fit)   # Save the predicted values
+study.one.gen$residuals <- residuals(fit) # Save the residual values
 
 # -- plot observed vs. predicted values
-ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+ggplot(study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
   geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope
   geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines
   # > Color adjustments made here...
@@ -969,11 +942,11 @@ ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
 
 # -- plot residuals vs. theoretical normal
 # https://stackoverflow.com/questions/6967664/ggplot2-histogram-with-normal-curve
-ggplot(clearly.one.subjects, aes(x = residuals)) +
+ggplot(study.one.gen, aes(x = residuals)) +
   geom_histogram(aes(y = ..density..), alpha = .75, binwidth = .1) +
   stat_function(fun = dnorm, args =
-                  list(mean = mean(clearly.one.subjects$residuals),
-                       sd = sd(clearly.one.subjects$residuals)),
+                  list(mean = mean(study.one.gen$residuals),
+                       sd = sd(study.one.gen$residuals)),
                 colour = "red", size = 1.5) +
   geom_vline(xintercept = 0, linetype = "dashed", colour = "darkred", size = 1.1, alpha = .75) +
   xlim(-.5, .5) +
@@ -1000,7 +973,7 @@ models <- tibble(
             a2 = runif(250, -.05, .05)
             )
 
-  ggplot(data = clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+  ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
   geom_abline(data = models, aes(intercept = a1, slope = a2), alpha = .05, colour = "darkred") +
   geom_point(size = 2.5, colour = "darkgrey", alpha = 0.75) +
   geom_smooth(method = "lm", colour = "red", size = 1.5, se = FALSE) +
@@ -1022,7 +995,7 @@ models <- tibble(
 - Model fit statistics: `R-squared` and `F-statistic`
 
 ```{r}
-model <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+model <- lm(mean.acc ~ SHIPLEY, data = study.one.gen)
 summary(model)
 ```
 
@@ -1033,7 +1006,7 @@ summary(model)
 - The `t `value `4.585` and associated `Pr(>|t|)` p-value `8.85e-06` for the null hypothesis test of the coefficient
 
 ```{r}
-model <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+model <- lm(mean.acc ~ SHIPLEY, data = study.one.gen)
 summary(model)
 ```
 
@@ -1045,7 +1018,7 @@ summary(model)
 - We come back to this, shortly, in the context of interpretation and reporting
 
 ```{r}
-model <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+model <- lm(mean.acc ~ SHIPLEY, data = study.one.gen)
 summary(model)
 ```
 
@@ -1095,7 +1068,7 @@ $$t = \frac{\beta_j}{s_{\beta_j}}$$
 - We usually report `Adjusted R-squared` because it tends to be more accurate
 
 ```{r}
-model <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+model <- lm(mean.acc ~ SHIPLEY, data = study.one.gen)
 summary(model)
 ```
 
@@ -1117,14 +1090,14 @@ summary(model)
 
 # -- plot residuals against predicted values
 # https://drsimonj.svbtle.com/visualising-residuals
-# clearly.one.subjects
-fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+# study.one.gen
+fit <- lm(mean.acc ~ SHIPLEY, data = study.one.gen)
 # -- then
-clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values
-clearly.one.subjects$residuals <- residuals(fit) # Save the residual values
+study.one.gen$predicted <- predict(fit)   # Save the predicted values
+study.one.gen$residuals <- residuals(fit) # Save the residual values
 
 # -- plot observed vs. predicted values
-ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+ggplot(study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
   geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope
   geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines
   # > Color adjustments made here...
@@ -1156,14 +1129,14 @@ ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
 
 # -- plot residuals against predicted values
 # https://drsimonj.svbtle.com/visualising-residuals
-# clearly.one.subjects
-fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+# study.one.gen
+fit <- lm(mean.acc ~ SHIPLEY, data = study.one.gen)
 # -- then
-clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values
-clearly.one.subjects$residuals <- residuals(fit) # Save the residual values
+study.one.gen$predicted <- predict(fit)   # Save the predicted values
+study.one.gen$residuals <- residuals(fit) # Save the residual values
 
 # -- plot observed vs. predicted values
-ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+ggplot(study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
   geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope
   geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines
   # > Color adjustments made here...
@@ -1196,14 +1169,14 @@ ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
 
 # -- plot residuals against predicted values
 # https://drsimonj.svbtle.com/visualising-residuals
-# clearly.one.subjects
-fit <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+# study.one.gen
+fit <- lm(mean.acc ~ SHIPLEY, data = study.one.gen)
 # -- then
-clearly.one.subjects$predicted <- predict(fit)   # Save the predicted values
-clearly.one.subjects$residuals <- residuals(fit) # Save the residual values
+study.one.gen$predicted <- predict(fit)   # Save the predicted values
+study.one.gen$residuals <- residuals(fit) # Save the residual values
 
 # -- plot observed vs. predicted values
-ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
+ggplot(study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
   geom_smooth(method = "lm", se = FALSE, colour = "lightblue") +  # Plot regression slope
   geom_segment(aes(xend = SHIPLEY, yend = predicted), alpha = .25) +  # alpha to fade lines
   # > Color adjustments made here...
@@ -1224,7 +1197,7 @@ ggplot(clearly.one.subjects, aes(x = SHIPLEY, y = mean.acc)) +
 - This is the test statistic for the test of the null hypothesis that the model does not predict the outcome
 
 ```{r}
-model <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+model <- lm(mean.acc ~ SHIPLEY, data = study.one.gen)
 summary(model)
 ```
 
@@ -1237,7 +1210,7 @@ summary(model)
 3. Coefficient estimates with the t-tests for the null hypothesis for each coefficient
 
 ```{r}
-model <- lm(mean.acc ~ SHIPLEY, data = clearly.one.subjects)
+model <- lm(mean.acc ~ SHIPLEY, data = study.one.gen)
 summary(model)
 ```
 

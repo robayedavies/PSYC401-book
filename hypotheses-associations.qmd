@@ -105,6 +105,7 @@ Click on a link and your browser should open a tab showing the *Panopto* video f
 ```
 
 ::: callout-tip
+## Download the lecture slides
 The slides presented in the videos can be downloaded here:
 
 - [The slides](files/411-hypotheses-assocations.html) exactly as presented (22 MB). 
