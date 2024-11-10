@@ -1,6 +1,6 @@
 # Introduction to the linear model {#sec-lm-intro-intro}
 
-```{r library}
+```{r libraries-hide}
 #| echo: false
 #| warning: false
 library(datasauRus)
@@ -14,7 +14,7 @@ library(patchwork)
 library(tidyverse)
 ```
 
-```{r readin}
+```{r readin-hide}
 #| echo: false
 #| warning: false
 
@@ -46,40 +46,39 @@ clearly.two.subjects <- read_csv("study-two-general-participants.csv",
 
 ## Overview {#sec-lm-intro-overview}
 
-Welcome to our overview of the materials you will work with in our class introducing you to the **linear model** in *PSYC401* Week 9.
+Welcome to your overview of the work we will do together in **Week 8**.
 
-We will return to locate our learning in the context of the *Clearly understood* project. We will present our PSYC401 lessons in the context of this research project because we think that this context will help you to make sense of the data (as we explain in @sec-preface).
+This week, we focus on learning how to predict people: predicting observations about us (e.g., our attributes) or about the things we make or do.
+To do this, we will learn to think about and work with **linear models**.
 
-Remember: it is unclear how to make health communication more effective. The problem is that we are not sure how health information should be communicated so that everyone can understand it. This is why we ask the research questions:
+Looking ahead to your professional lives, learning about linear models will equip you to do behavioural analysis in a wide range of contexts, from clinical research to business intelligence. 
 
-1.  What person attributes predict success in understanding?
-2.  Can people accurately evaluate whether they correctly understand written health information?
+As students, now, learning about linear model analyses in the context of the **Clearly understood** project will help you to understand how to critically evaluate research when you read about it (or write about it) in research reports.
 
-As we work together, we will be revisiting some of the ideas and techniques you have seen in previous classes. This is to give you the opportunity to consolidate your learning. We will be extending your development with some new ideas to strengthen your skills.
-
-You can read a bit more about the project and the project data in @sec-associations.
+You will see that the linear model is *very* flexible and powerful so learning to use it effectively involves not only learning to code analyses but also learning to think critically about what it is you want to do with it.
 
 ## Our learning goals {#sec-lm-intro-goals}
 
-This week, we focus on learning how to predict people: predicting observations about us (e.g., our attributes) or about the things we make or do.
-To do this, we will learn to think about and work with *linear models*.
+We continue to develop your critical thinking while we strengthen your practical skills.
 
-**Our learning objectives: --- what are we learning about?**
+**1. Critical thinking**
 
-### Using the linear model to answer research questions
+-   *Concepts*: how we go from ideas and questions to hypotheses
 
-- We will learn how to:
+As psychologists, we often want to ask questions like these:
 
-1. code linear models
-2. identify and interpret model statistics
-3. critically evaluate the results
-4. communicate the results
+- Does variation in one measure (X) predict variation in another variable (Y)?
+- What are the factors that influence outcome Y?
+- Is a theoretical model consistent with observed behaviour?
 
-- Because we often want to know about relationships, asking questions like:
+**2. Practical skills**
 
-1. Does variation in X predict variation in Y?
-2. What are the factors that influence outcome Y?
-3. Is a theoretical model consistent with observed behaviour?
+To enable you to answer questions like these, you will learn how to:
+
+-   *Skills* -- code linear models;
+-   *Skills* -- identify and interpret model statistics;
+-   *Concepts and skills* -- critically evaluate the results;
+-   *Concepts and skills* -- communicate the results.
 
 ## Learning resources {#sec-lm-intro-resources}
 
