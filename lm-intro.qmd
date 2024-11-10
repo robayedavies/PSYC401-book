@@ -63,7 +63,7 @@ We continue to develop your critical thinking while we strengthen your practical
 
 **1. Critical thinking**
 
--   *Concepts*: how we go from ideas and questions to hypotheses
+-   *Concepts*: how we go from ideas and questions to hypotheses.
 
 As psychologists, we often want to ask questions like these:
 
@@ -82,35 +82,56 @@ To enable you to answer questions like these, you will learn how to:
 
 ## Learning resources {#sec-lm-intro-resources}
 
-You will see in the *next section* links to the lectures we created both to explain the concepts we want to help you to learn about, and to explain the practical data analysis skills we want to help you to develop (@sec-lm-intro-lectures). We *then* share links to information about the practical materials we have provided to help you to practise those skills (@sec-lm-intro-practical).
-
-All the links to the lecture videos, the lecture slides, and everything you need for your practical work can *also* be found in the Week 9 files folder on Moodle [here](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse10){target="_blank"}
-
-In @sec-lm-intro-notes, we present the lecture slide points.
+You will see, next, the lectures we share to explain the concepts you will learn about, and the practical data analysis skills you wil develop (@sec-lm-intro-lectures). Then you will see information about the practical materials you can use to build and practise your skills (@sec-lm-intro-practical).
 
 ::: callout-tip
+Every week, you will learn best if you *first* watch the lectures *then* do the practical exercises.
+
 **Linked resources** include:
 
--   In @sec-associations, we present an overview of the materials we have shared to support your development of critical thinking in relation to associations, and to support your learning about conducting correlation-based analyses of associations.
-- It may help you to revise these materials.
+1. In @sec-associations, we share materials to support your development of critical thinking about associations, and your development of practical skills in working with correlation-based analyses.
+2. In @sec-lm-dev, we share materials to extend your capacity to use linear models, to answer more and different kinds of research questions.
 :::
 
 ### Lectures {#sec-lm-intro-lectures}
 
-The lecture material for this week is presented in four short parts. Click on a link and your browser should open a tab showing the *Panopto* video for the lecture part.
+The lecture materials for this week are presented in four short parts. 
 
-[Part 1 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=9d4653c0-9ea2-4437-a74f-af5f00b2fd2e){target="_blank"}
+Click on a link and your browser should open a tab showing the *Panopto* video for the lecture part.
 
-[Part 2 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=71eaffe1-5066-425c-9ce2-af5f00b79730){target="_blank"}
+1. Part 1 (13 minutes) **Focus on the linear model**: The concepts and skills we will learn about in week 8: our aims, the kind of questions we can answer with linear models, and how we get from those questions to sensible linear model analyses.
 
-[Part 3 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a08f12af-606a-4be0-90ae-af5f00bc1491){target="_blank"}
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=9d4653c0-9ea2-4437-a74f-af5f00b2fd2e&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC401-lm-intro-1" ></iframe>
+```
 
-[Part 4 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a16c627e-609b-49db-b683-af5f00bfb15f){target="_blank"}
+2. Part 2 (15 minutes): the first key concept --- how we use linear models to predict average outcomes.
 
-You can download the slides we presented in the lecture in two different formats, depending on what you think will be most useful to you:
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=71eaffe1-5066-425c-9ce2-af5f00b79730&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-lm-intro-2" ></iframe>
+```
 
--   Download the slides exactly as they appear in the lecture from [this link](files/401-linear-model-intro.html). The .html file can be opened and viewed in any web browser (e.g., Chrome, Firefox, Safari).
--   Or you can download a printable Word .docx presentation of the slides from [this link](files/401-linear-model-intro-printable-edit.docx). The .docx can be opened in Microsoft Word. The figures will not appear exactly as they do in the lecture recording because Word cannot cope with images so well but the trade-off is that you get a document you can print and edit to add notes.
+3. Part 3 (12 minutes): the second key concept --- how we ensure that linear models make the best predictions given the data we have.
+
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a08f12af-606a-4be0-90ae-af5f00bc1491&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-lm-intro-3" ></iframe>
+```
+
+4. Part 4 (14 minutes): the key skills --- coding linear models, reading model results, and writing reports of those results.
+
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a16c627e-609b-49db-b683-af5f00bfb15f&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-lm-intro-4" ></iframe>
+```
+
+::: callout-tip
+The slides presented in the videos can be downloaded here:
+
+- [The slides](files/401-linear-model-intro.html) exactly as presented (12 MB). 
+
+You can download the web page `.html` file and click on it to open it in any browser (e.g., Chrome, Edge or Safari). The slide images are high quality so the file is quite big and may take a few seconds to download.
+:::
+
+We are going to work through some practical exercises, next, to stimulate your thinking and learn the practical skills you need to see, test and talk about correlation analyses of the associations between variables.
 
 ### Practical materials {#sec-lm-intro-practical}
 
