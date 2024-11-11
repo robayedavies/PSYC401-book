@@ -739,7 +739,7 @@ Tip
 <li><strong>new</strong> – the appearance of the bars using <code>binwidth</code>;</li>
 <li><strong>revision</strong> – the colour of the background using <code>theme_bw()</code>;</li>
 <li><strong>revision</strong> – the appearance of the labels using <code>labs()</code>;</li>
-<li><strong>new</strong> – setting the x-axis limits to reflect the full range of possible scores on the x-axis variable using <code>lim()</code>;</li>
+<li><strong>new</strong> – setting the x-axis limits to reflect the full range of possible scores on the x-axis variable using <code>xlim()</code>;</li>
 <li><strong>new</strong> – adding annotation – here, a vertical line using <code>geom_vline()</code> – to focus the attention of the audience for a plot on specific information about the variable distribution (here, the sample average for the variable).</li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -843,7 +843,7 @@ Tip
 </div>
 </div>
 <ol start="4" type="1">
-<li><strong>new</strong> – setting the x-axis limits using <code>lim()</code></li>
+<li><strong>new</strong> – setting the x-axis limits using <code>xlim()</code></li>
 </ol>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-4-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-1" role="tab" aria-controls="tabset-4-1" aria-selected="true">Code</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-4-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-4-2" role="tab" aria-controls="tabset-4-2" aria-selected="false">Why</a></li></ul>
@@ -1763,11 +1763,11 @@ Code
 <li><strong>new</strong> – the appearance of the bars using <code>binwidth</code>;</li>
 <li><strong>revision</strong> – the appearance of the background;</li>
 <li><strong>revision</strong> – the appearance of the labels using <code>labs()</code>;</li>
-<li><strong>new</strong> – setting the x-axis limits to reflect the full range of possible scores on the x-axis variable using <code>lim()</code>;</li>
+<li><strong>new</strong> – setting the x-axis limits to reflect the full range of possible scores on the x-axis variable using <code>xlim()</code>;</li>
 <li><strong>new</strong> – adding annotation – here, a vertical line using <code>geom_vline()</code>.</li>
 </ol>
 <blockquote class="blockquote">
-<p><strong>Q.1.</strong> Edit the appearance of the bars by specifying a <code>binwidth</code> value.</p>
+<p><strong>Q.1.</strong> Can you edit the appearance of the bars by specifying a <code>binwidth</code> value?</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-37-contents" aria-controls="callout-37" aria-expanded="false" aria-label="Toggle callout">
@@ -1809,7 +1809,7 @@ Code
 </div>
 </div>
 <blockquote class="blockquote">
-<p><strong>Q.2.</strong> Then edit the appearance of the background using <code>theme_bw()</code>.</p>
+<p><strong>Q.2.</strong> Can you edit the appearance of the background?</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-39-contents" aria-controls="callout-39" aria-expanded="false" aria-label="Toggle callout">
@@ -1849,7 +1849,7 @@ Code
 </div>
 </div>
 <blockquote class="blockquote">
-<p><strong>Q.3.</strong> Then edit the appearance of the labels using <code>labs()</code>.</p>
+<p><strong>Q.3.</strong> Can you edit the appearance of the labels?</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-41-contents" aria-controls="callout-41" aria-expanded="false" aria-label="Toggle callout">
@@ -1873,7 +1873,7 @@ Code
 </div>
 </div>
 <blockquote class="blockquote">
-<p><strong>Q.4.</strong> Then set the x-axis limits using <code>x.lim()</code>.</p>
+<p><strong>Q.4.</strong> Can you edit the x-axis limits?</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-42-contents" aria-controls="callout-42" aria-expanded="false" aria-label="Toggle callout">
@@ -1919,7 +1919,7 @@ Code
 </div>
 </div>
 <blockquote class="blockquote">
-<p><strong>Q.5.</strong> Then add annotation: a vertical line to show the mean value of the variable you are plotting.</p>
+<p><strong>Q.5.</strong> Can you add annotation: a vertical line to show the mean value of the variable you are plotting?</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-44-contents" aria-controls="callout-44" aria-expanded="false" aria-label="Toggle callout">
@@ -2390,8 +2390,8 @@ Code
 </section>
 <section id="practical-part-7-using-a-linear-model-to-make-predictions" class="level4" data-number="5.3.3.17">
 <h4 data-number="5.3.3.17" class="anchored" data-anchor-id="practical-part-7-using-a-linear-model-to-make-predictions"><span class="header-section-number">5.3.3.17</span> Practical Part 7: Using a linear model to make predictions</h4>
-<section id="practical-task-10-we-can-use-linear-model-results-to-make-predictions" class="level5" data-number="5.3.3.17.1">
-<h5 data-number="5.3.3.17.1" class="anchored" data-anchor-id="practical-task-10-we-can-use-linear-model-results-to-make-predictions"><span class="header-section-number">5.3.3.17.1</span> Practical Task 10 – We can use linear model results to make predictions</h5>
+<section id="practical-task-10-fit-a-linear-model-and-use-the-results-to-plot-the-model-predictions" class="level5" data-number="5.3.3.17.1">
+<h5 data-number="5.3.3.17.1" class="anchored" data-anchor-id="practical-task-10-fit-a-linear-model-and-use-the-results-to-plot-the-model-predictions"><span class="header-section-number">5.3.3.17.1</span> Practical Task 10 – Fit a linear model and use the results to plot the model predictions</h5>
 <p>We are going to draw a scatterplot and add a line.</p>
 <ul>
 <li>The line will show the model predictions, given the model intercept and effect coefficient estimates.</li>

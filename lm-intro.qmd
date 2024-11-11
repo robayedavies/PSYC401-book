@@ -313,7 +313,7 @@ These are the things we want to do:
 1. **new** -- the appearance of the bars using `binwidth`;
 2. **revision** -- the colour of the background using `theme_bw()`;
 3. **revision** -- the appearance of the labels using `labs()`;
-4. **new** -- setting the x-axis limits to reflect the full range of possible scores on the x-axis variable using `lim()`;
+4. **new** -- setting the x-axis limits to reflect the full range of possible scores on the x-axis variable using `xlim()`;
 5. **new** -- adding annotation -- here, a vertical line using `geom_vline()` -- to focus the attention of the audience for a plot on specific information about the variable distribution (here, the sample average for the variable).
 
 ::: callout-tip
@@ -372,7 +372,7 @@ ggplot(data = study.one.gen, aes(x = SHIPLEY)) +
 You cannot assume that the audience for your plots will understand what you are referring to, if you just use data-set variable names e.g. `SHIPLEY`. They may not be familiar with your data-set. This means you need to use axis labels that will make sense to most people in your audience.
 :::
 
-4. **new** -- setting the x-axis limits using `lim()`
+4. **new** -- setting the x-axis limits using `xlim()`
 
 ::: panel-tabset
 ## Code
@@ -894,10 +894,10 @@ Next, we are going to edit:
 1. **new** -- the appearance of the bars using `binwidth`;
 2. **revision** -- the appearance of the background;
 3. **revision** -- the appearance of the labels using `labs()`;
-4. **new** -- setting the x-axis limits to reflect the full range of possible scores on the x-axis variable using `lim()`;
+4. **new** -- setting the x-axis limits to reflect the full range of possible scores on the x-axis variable using `xlim()`;
 5. **new** -- adding annotation -- here, a vertical line using `geom_vline()`.
 
->**Q.1.** Edit the appearance of the bars by specifying a `binwidth` value.
+>**Q.1.** Can you edit the appearance of the bars by specifying a `binwidth` value?
 
 :::{.callout-tip collapse="true"}
 ## Hint
@@ -916,7 +916,7 @@ ggplot(data = study.two.gen, aes(x = SHIPLEY)) +
 ```
 :::
 
->**Q.2.** Then edit the appearance of the background using `theme_bw()`.
+>**Q.2.** Can you edit the appearance of the background?
 
 :::{.callout-tip collapse="true"}
 ## Hint
@@ -935,7 +935,7 @@ ggplot(data = study.two.gen, aes(x = SHIPLEY)) +
 ```
 :::
 
->**Q.3.** Then edit the appearance of the labels using `labs()`.
+>**Q.3.** Can you edit the appearance of the labels?
 
 :::{.callout-tip collapse="true"}
 ## Code
@@ -948,7 +948,7 @@ ggplot(data = study.two.gen, aes(x = SHIPLEY)) +
 ```
 :::
 
->**Q.4.** Then set the x-axis limits using `x.lim()`.
+>**Q.4.** Can you edit the x-axis limits?
 
 :::{.callout-tip collapse="true"}
 ## Hint
@@ -972,8 +972,8 @@ ggplot(data = study.two.gen, aes(x = SHIPLEY)) +
 ```
 :::
 
->**Q.5.** Then add annotation: a vertical line to show the mean value of 
-the variable you are plotting.
+>**Q.5.** Can you add annotation: a vertical line to show the mean value of 
+the variable you are plotting?
 
 :::{.callout-tip collapse="true"}
 ## Code
@@ -1305,7 +1305,7 @@ If you look at the model summary you can answer the following questions.
 
 #### Practical Part 7: Using a linear model to make predictions
 
-##### Practical Task 10 -- We can use linear model results to make predictions
+##### Practical Task 10 -- Fit a linear model and use the results to plot the model predictions
 
 We are going to draw a scatterplot and add a line.
 
