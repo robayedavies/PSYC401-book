@@ -103,6 +103,9 @@ We will revise how to:
 -   *Concepts and skills* -- critically evaluate the results;
 -   *Concepts and skills* -- communicate the results.
 
+As we progress, we will continue to strengthen your skills in building *professional visualizations*.
+This week, we will learn how to exploit professional tools to *automatically* generate and plot model predictions, when previously we produced model predictions by hand.
+
 ## Learning resources {#sec-lm-dev-resources}
 
 You will see in the *next section* links to the lectures we created both to explain the concepts we want to help you to learn about, and to explain the practical data analysis skills we want to help you to develop (@sec-lm-dev-lectures). We *then* share links to information about the practical materials we have provided to help you to practise those skills (@sec-lm-dev-practical).

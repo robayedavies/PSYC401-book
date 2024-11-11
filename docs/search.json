@@ -344,7 +344,7 @@
     "href": "lm-dev.html#sec-lm-dev-goals",
     "title": "6  Developing the linear model",
     "section": "6.2 Our learning goals",
-    "text": "6.2 Our learning goals\nWe will learn how to:\n\nSkills – extend our capacity to code models so that we can incorporate multiple predictors;\nConcepts – develop the critical thinking processes required to make decisions about what predictors to include when you code your model;\nConcepts and skills – learn how to critically evaluate results, given variation between samples.\n\nWe will revise how to:\n\nSkills – identify and interpret model statistics;\nConcepts and skills – critically evaluate the results;\nConcepts and skills – communicate the results.",
+    "text": "6.2 Our learning goals\nWe will learn how to:\n\nSkills – extend our capacity to code models so that we can incorporate multiple predictors;\nConcepts – develop the critical thinking processes required to make decisions about what predictors to include when you code your model;\nConcepts and skills – learn how to critically evaluate results, given variation between samples.\n\nWe will revise how to:\n\nSkills – identify and interpret model statistics;\nConcepts and skills – critically evaluate the results;\nConcepts and skills – communicate the results.\n\nAs we progress, we will continue to strengthen your skills in building professional visualizations. This week, we will learn how to exploit professional tools to automatically generate and plot model predictions, when previously we produced model predictions by hand.",
     "crumbs": [
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>Developing the linear model</span>"
     ]
