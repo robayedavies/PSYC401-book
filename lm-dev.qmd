@@ -108,35 +108,56 @@ This week, we will learn how to exploit professional tools to *automatically* ge
 
 ## Learning resources {#sec-lm-dev-resources}
 
-You will see in the *next section* links to the lectures we created both to explain the concepts we want to help you to learn about, and to explain the practical data analysis skills we want to help you to develop (@sec-lm-dev-lectures). We *then* share links to information about the practical materials we have provided to help you to practise those skills (@sec-lm-dev-practical).
+You will see, next, the lectures we share to explain the concepts you will learn about, and the practical data analysis skills you will develop (@sec-lm-dev-lectures). Then you will see information about the practical materials you can use to build and practise your skills (@sec-lm-dev-practical).
 
-All the links to the lecture videos, the lecture slides, and everything you need for your practical work can *also* be found in the Week 10 files folder on Moodle [here](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse11){target="_blank"}
-
-In @sec-lm-dev-notes, we present the lecture slide points.
+Every week, you will learn best if you *first* watch the lectures *then* do the practical exercises.
 
 ::: callout-tip
-**Linked resources** include:
-
--   In @sec-associations, we present an overview of our materials in relation to thinking about associations, and working with correlation-based analyses of associations.
--   In @sec-lm-intro-intro, we introduce you to the main ideas and practical steps involved in conducting linear model analyses.
+## Linked resources
+1. In @sec-associations, we share materials to support your development of critical thinking about associations, and your development of practical skills in working with correlation-based analyses.
+2. In @sec-lm-intro-intro, we introduce you to the main ideas and practical steps involved in conducting linear model analyses.
 :::
 
 ### Lectures {#sec-lm-dev-lectures}
 
-The lecture material for this week is presented in four short parts. Click on a link and your browser should open a tab showing the *Panopto* video for the lecture part.
+The lecture materials for this week are presented in four short parts. 
 
-[Part 1 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=6bc16beb-f7f1-4fb7-ab5c-af630105f8eb){target="_blank"}
+Click on a link and your browser should open a tab showing the *Panopto* video for the lecture part.
 
-[Part 2 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=cce303a1-392c-4607-aecd-af63010c4070){target="_blank"}
+1. Part 1 (20 minutes) **Developing the linear model**: The concepts and skills we will learn about in week 10: our aims, the research questions we can answer with linear models, making the move to working with linear models with multiple predictors, why the main challenge is not the coding but the *choices* (over which predictors to include in a model).
 
-[Part 3 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=5f02f90d-5a7f-4742-9638-af63011046b8){target="_blank"}
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=6bc16beb-f7f1-4fb7-ab5c-af630105f8eb&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC401-lm-dev-1" ></iframe>
+```
 
-[Part 4 of 4](https://lancaster.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b559ac42-6752-4eaa-b3a9-af630116c7e8){target="_blank"}
+2. Part 2 (13 minutes): Coding, thinking about, and reporting linear models with multiple predictors.
 
-You can download the slides we presented in the lecture in two different formats, depending on what you think will be most useful to you:
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=cce303a1-392c-4607-aecd-af63010c4070&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-lm-dev-2" ></iframe>
+```
 
--   Download the slides exactly as they appear in the lecture from [this link](files/401-linear-model-develop.html). The .html file can be opened and viewed in any web browser (e.g., Chrome, Firefox, Safari).
--   Or you can download a printable Word .docx presentation of the slides from [this link](files/401-linear-model-develop-printable-edit.docx). The .docx can be opened in Microsoft Word. The figures will not appear exactly as they do in the lecture recording because Word cannot cope with images so well but the trade-off is that you get a document you can print and edit to add notes.
+3. Part 3 (21 minutes): Critically evaluating the results of analyses involving linear models.
+
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5f02f90d-5a7f-4742-9638-af63011046b8&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-lm-dev-3" ></iframe>
+```
+
+4. Part 4 (19 minutes): The linear model is very flexible, powerful and general.
+
+```{=html}
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b559ac42-6752-4eaa-b3a9-af630116c7e8&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-lm-dev-4" ></iframe>
+```
+
+::: callout-tip
+## Download the lecture slides
+The slides presented in the videos can be downloaded here:
+
+- [The slides](files/401-linear-model-develop.html) exactly as presented (12 MB). 
+
+You can download the web page `.html` file and click on it to open it in any browser (e.g., Chrome, Edge or Safari). The slide images are high quality so the file is quite big and may take a few seconds to download.
+:::
+
+We are going to work through some practical exercises, next, to develop your critical thinking and practical skills for working with linear models.
 
 ### Practical materials {#sec-lm-dev-practical}
 
