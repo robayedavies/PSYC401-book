@@ -3,13 +3,7 @@
 ```{r libraries-hide}
 #| echo: false
 #| warning: false
-library(datasauRus)
-library(faux)
-library(ggExtra)
-library(ggridges)
 library(kableExtra)
-library(knitr)
-library(lme4)
 library(patchwork)
 library(tidyverse)
 ```
