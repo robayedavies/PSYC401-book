@@ -300,6 +300,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><em>Concepts and skills</em> – critically evaluate the results;</li>
 <li><em>Concepts and skills</em> – communicate the results.</li>
 </ul>
+<p>As we progress, we will continue to strengthen your skills in building <em>professional visualizations</em>.</p>
 </section>
 <section id="sec-lm-intro-resources" class="level2" data-number="5.3">
 <h2 data-number="5.3" class="anchored" data-anchor-id="sec-lm-intro-resources"><span class="header-section-number">5.3</span> Learning resources</h2>
@@ -404,9 +405,9 @@ Week 8 parts
 <ol type="1">
 <li>Set-up</li>
 <li>Load the data</li>
-<li>Revision: developing histograms to examine the distributions of variables.</li>
-<li>Revision: developing scatterplots to examine associations between variables.</li>
-<li>Revision: using correlations to to answer research questions — making sure you are comfortable with the calculation and interpretation of correlation analyses.</li>
+<li><strong>Revision</strong>: developing histograms to examine the distributions of variables.</li>
+<li><strong>Revision</strong>: developing scatterplots to examine associations between variables.</li>
+<li><strong>Revision</strong>: using correlations to to answer research questions, making sure you are comfortable.</li>
 <li><strong>New</strong>: using a linear model to answer research questions.</li>
 <li><strong>New</strong>: using a linear model to make predictions.</li>
 </ol>
@@ -424,7 +425,7 @@ Week 8 parts
 <li>We will need to report the nature of the association estimated in our model;</li>
 <li>We usually need to decide if (i.) the association is significant? (ii.) does the association reflect a positive or negative relationship between outcome and predictor? (iii.) is the association we see in our sample data relatively strong or weak?</li>
 </ul>
-<p>As we progress, we will consolidate and extend learning on data visualization so that we can produce eye-catching, appealing, plots for professional audiences.</p>
+<p>We will consolidate and extend learning on data visualization so that we can produce eye-catching, appealing, plots for professional audiences.</p>
 <section id="sec-lm-intro-practical-data" class="level4" data-number="5.3.3.1">
 <h4 data-number="5.3.3.1" class="anchored" data-anchor-id="sec-lm-intro-practical-data"><span class="header-section-number">5.3.3.1</span> The data files</h4>
 <p>Each of the data files we will work with has a similar structure.</p>
@@ -612,10 +613,9 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Last week, we started working with the <strong>online help</strong> information on R functions. Let’s build on that.</p>
-<ul>
-<li>You can read the technical information about the <code>read_csv()</code> function here:</li>
-</ul>
+<p>Last week, we started working with the <strong>online help</strong> information on R functions.</p>
+<p>Let’s build on that.</p>
+<p>You can read the technical information about the <code>read_csv()</code> function here:</p>
 <p><a href="https://readr.tidyverse.org/reference/read_delim.html" class="uri">https://readr.tidyverse.org/reference/read_delim.html</a></p>
 <ul>
 <li>Take a look around the <code>{tidyverse}</code> webpages: expert professionals use information like this whenever they try to figure out how to do something.</li>
@@ -927,9 +927,9 @@ Further information you can explore
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We can define the limits on the x-axis and on the y-axis, see the ggplot reference information on setting limits here:</p>
+<p>We can define the limits on the x-axis and on the y-axis, see the <code>{ggplot2}</code> library reference information on setting limits is here:</p>
 <p><a href="https://ggplot2.tidyverse.org/reference/lims.html" class="uri">https://ggplot2.tidyverse.org/reference/lims.html</a></p>
-<p>The ggplot() reference information for drawing lines is here:</p>
+<p>The <code>{ggplot2}</code> reference information for drawing lines is here:</p>
 <p><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html" class="uri">https://ggplot2.tidyverse.org/reference/geom_abline.html</a></p>
 </div>
 </div>
@@ -1112,7 +1112,7 @@ Further information you can explore
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>The ggplot geom_point() reference information is here:</p>
+<p>The <code>{ggplot2}</code> <code>geom_point()</code> reference information is here:</p>
 <p><a href="https://ggplot2.tidyverse.org/reference/geom_point.html" class="uri">https://ggplot2.tidyverse.org/reference/geom_point.html</a></p>
 <ul>
 <li>where you can see some examples of the edits we have done.</li>
@@ -1138,38 +1138,20 @@ Important
 </div>
 </section>
 </section>
-<section id="how-to-part-4-analyse-associations" class="level4" data-number="5.3.3.7">
-<h4 data-number="5.3.3.7" class="anchored" data-anchor-id="how-to-part-4-analyse-associations"><span class="header-section-number">5.3.3.7</span> How-to Part 4: Analyse associations</h4>
-<section id="how-to-task-9-use-correlation-to-to-answer-a-research-question" class="level5" data-number="5.3.3.7.1">
-<h5 data-number="5.3.3.7.1" class="anchored" data-anchor-id="how-to-task-9-use-correlation-to-to-answer-a-research-question"><span class="header-section-number">5.3.3.7.1</span> How-to Task 9 – Use correlation to to answer a research question</h5>
-<p>Examine associations between variables using correlation.</p>
-<p>One of our research questions is:</p>
-<ol start="2" type="1">
-<li>Can people accurately evaluate whether they correctly understand written health information?</li>
+<section id="how-to-part-5-using-correlations-to-to-answer-research-questions" class="level4" data-number="5.3.3.7">
+<h4 data-number="5.3.3.7" class="anchored" data-anchor-id="how-to-part-5-using-correlations-to-to-answer-research-questions"><span class="header-section-number">5.3.3.7</span> How-to Part 5: Using correlations to to answer research questions</h4>
+<section id="how-to-task-7-examine-the-correlation-between-a-pair-of-variables" class="level5" data-number="5.3.3.7.1">
+<h5 data-number="5.3.3.7.1" class="anchored" data-anchor-id="how-to-task-7-examine-the-correlation-between-a-pair-of-variables"><span class="header-section-number">5.3.3.7.1</span> How-to Task 7 – Examine the correlation between a pair of variables</h5>
+<p>In the <strong>Clearly understood</strong> project, one of our research questions is:</p>
+<ol type="1">
+<li>What person attributes predict success in understanding?</li>
 </ol>
-<p>We can answer this question by examining whether mean self-rated accuracy of understanding correlates with mean accuracy of understanding. The logic is that if we can accurately rate our own understanding (from bad to good) then that rating should be associated – should be correlated with – how accurately we can actually respond to questions that test that understanding.</p>
-<blockquote class="blockquote">
-<p>Q.7. How do we examine the correlation between mean self-rated accuracy (<code>mean.self</code>) and mean accuracy (<code>mean.acc</code>)?</p>
-</blockquote>
+<p>We can answer this question by doing a correlation analysis. This is because we can expect that <em>if</em> vocabulary knowledge predicts success in understanding <em>then</em> variation in vocabulary knowledge should be associated with variation in success of understanding. We measured how successful study participants were in understanding health information: recording outcome <code>mean.acc</code> as the accuracy of response to questions designed to examine understanding. We measured a key person attribute, vocabulary knowledge using the <code>SHIPLEY</code> vocabulary test. We can then examine the association between this pair of variables using correlation.</p>
+<p>Here, we examine the correlation between the mean accuracy (<code>mean.acc</code>) of understanding of health information, and vocabulary (<code>SHIPLEY</code>) knowledge, for each person in our participant sample.</p>
+<p>Can you figure out how to code the correlation analysis?</p>
+<p>It helps with your learning if you first try to predict what the code will look like. Then reveal the code, below, to see what you guessed right.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Hint
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Remember from the Week 6 lecture, that we use <code>cor.test()</code>:</p>
-</div>
-</div>
-</div>
-<p>Can you figure out how to code a correlation test? It helps with your learning if you first try to anticipate what the code will look like. Then reveal the code, below, to see what you guessed right. (Getting some things right, and some things wrong, is part of the learning process.)</p>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1178,32 +1160,50 @@ Code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<blockquote class="blockquote">
-<p>A.7. Here is how you do it: take a look at the code and the results of the correlation test.</p>
-</blockquote>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(study.one.gen<span class="sc">$</span>mean.acc, study.one.gen<span class="sc">$</span>mean.self, <span class="at">method =</span> <span class="st">"pearson"</span>,  <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(study.one.gen<span class="sc">$</span>SHIPLEY, study.one.gen<span class="sc">$</span>mean.acc, <span class="at">method =</span> <span class="st">"pearson"</span>,  <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's product-moment correlation
 
-data:  study.one.gen$mean.acc and study.one.gen$mean.self
-t = 7.1936, df = 167, p-value = 2.026e-11
+data:  study.one.gen$SHIPLEY and study.one.gen$mean.acc
+t = 4.5855, df = 167, p-value = 8.846e-06
 alternative hypothesis: true correlation is not equal to 0
 95 percent confidence interval:
- 0.3619961 0.5937425
+ 0.1931990 0.4620413
 sample estimates:
-      cor 
-0.4863771 </code></pre>
+     cor 
+0.334406 </code></pre>
 </div>
 </div>
 </div>
 </div>
 </div>
 <blockquote class="blockquote">
-<p>Q.3. What is r, the correlation coefficient?</p>
+<p>Q.1. What is r, the correlation coefficient?</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>A.1. r = 0.334406</p>
+</blockquote>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Q.2. Is the correlation significant?</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
@@ -1218,13 +1218,13 @@ Answer
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <blockquote class="blockquote">
-<p>A.3. r = 0.4863771</p>
+<p>A.2. r is significant, p &lt; .05</p>
 </blockquote>
 </div>
 </div>
 </div>
 <blockquote class="blockquote">
-<p>Q.4. Is the correlation significant?</p>
+<p>Q.3. What are the values for t and p for the significance test for the correlation?</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
@@ -1239,37 +1239,16 @@ Answer
 <div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <blockquote class="blockquote">
-<p>A.4. r is significant</p>
+<p>A.3. t = 4.5855, p = 8.846e-06</p>
 </blockquote>
 </div>
 </div>
 </div>
 <blockquote class="blockquote">
-<p>Q.5. What are the values for t and p for the significance test for the correlation?</p>
+<p>Q.4. What do you conclude is the answer to the research question, given the correlation results?</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<blockquote class="blockquote">
-<p>A.5. t = 7.1936, p = 2.026e-11</p>
-</blockquote>
-</div>
-</div>
-</div>
-<blockquote class="blockquote">
-<p>Q.6. What do you conclude, given the correlation results?</p>
-</blockquote>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1278,14 +1257,14 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Review the scatterplot you drew earlier (or draw one now) to examine the shape of the association between these variables.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1294,12 +1273,299 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <blockquote class="blockquote">
-<p>A.6. <code>mean.acc</code> and <code>mean.self</code> are positively correlated suggesting that as # <code>mean.acc</code> scores increase so also do <code>mean.self</code> scores</p>
+<p>A.4. Vocabulary and <code>mean.acc</code> are positively correlated suggesting that as <code>SHIPLEY</code> scores increase so also do <code>mean.acc</code> scores.</p>
 </blockquote>
 </div>
+</div>
+</div>
+</section>
+</section>
+<section id="how-to-part-6-new-using-a-linear-model-to-answer-research-questions" class="level4" data-number="5.3.3.8">
+<h4 data-number="5.3.3.8" class="anchored" data-anchor-id="how-to-part-6-new-using-a-linear-model-to-answer-research-questions"><span class="header-section-number">5.3.3.8</span> How-to Part 6: <strong>New</strong>: using a linear model to answer research questions</h4>
+<section id="how-to-task-8-code-and-read-the-results-from-a-linear-model-analysis" class="level5" data-number="5.3.3.8.1">
+<h5 data-number="5.3.3.8.1" class="anchored" data-anchor-id="how-to-task-8-code-and-read-the-results-from-a-linear-model-analysis"><span class="header-section-number">5.3.3.8.1</span> How-to Task 8 – Code and read the results from a linear model analysis</h5>
+<p>As we have seen, one of our research questions is:</p>
+<ol type="1">
+<li>What person attributes predict success in understanding?</li>
+</ol>
+<p>We can examine the relation between outcome mean accuracy (<code>mean.acc</code>) of understanding and vocabulary (<code>SHIPLEY</code>) knowledge by testing if person vocabulary score predicts understanding.</p>
+<p>We do this through a linear model analysis.</p>
+<p>We complete the analysis using the <code>lm()</code> function.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean.acc <span class="sc">~</span> SHIPLEY, <span class="at">data =</span> study.one.gen)</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mean.acc ~ SHIPLEY, data = study.one.gen)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.42871 -0.04921  0.02079  0.07480  0.18430 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  0.44914    0.08053   5.577 9.67e-08 ***
+SHIPLEY      0.01050    0.00229   4.585 8.85e-06 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1115 on 167 degrees of freedom
+Multiple R-squared:  0.1118,    Adjusted R-squared:  0.1065 
+F-statistic: 21.03 on 1 and 167 DF,  p-value: 8.846e-06</code></pre>
+</div>
+</div>
+<p>Let’s work through the elements of the linear model code so we can see what everything does:</p>
+<ol type="1">
+<li><code>model &lt;- lm(...)</code> – fit the model using <code>lm(...)</code>, giving the model a name here, we just call it “model”.</li>
+<li><code>...lm(mean.acc ~ SHIPLEY...)</code> – tell R you want a model of the outcome <code>mean.acc</code> predicted <code>~</code> by the predictor <code>SHIPLEY</code>.</li>
+<li><code>...data = study.one)</code> – tell R that the variables you name in the formula are in the <code>study.one</code> dataset.</li>
+<li><code>summary(model)</code> – ask R for a summary of the model you called “model”: <strong>this is how you get the results</strong>.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Notice that R has a general formula syntax: <code>outcome ~ predictor</code> <em>or</em> <code>y ~ x</code></p>
+<ul>
+<li>and uses the same format across a number of different functions;</li>
+<li>each time, on the left of the tilde symbol <code>~</code> you identify the output or outcome variable;</li>
+<li>but on the right of the tilde <code>~</code> you identify an input or predictor variable or set of predictor variables.</li>
+</ul>
+</div>
+</div>
+<p>If you look at the model summary you can answer the following questions.</p>
+<blockquote class="blockquote">
+<p>Q.5. What is the estimate for the coefficient of the effect of the predictor, SHIPLEY?</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-24" class="callout-24-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>A.5. 0.01050</p>
+</blockquote>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Q.6. Is the effect significant?</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>A.6. It is significant, p &lt; .05</p>
+</blockquote>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Q.7. What are the values for t and p for the significance test for the coefficient?</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>A.7. t = 4.585, p = 8.85e-06</p>
+</blockquote>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Q.8. What do you conclude is the answer to the research question, given the linear model results?</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>A.8. The model slope estimate suggests that as <code>SHIPLEY</code> scores increase so also do <code>mean.acc</code> scores.</p>
+</blockquote>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="how-to-part-7-new-using-a-linear-model-to-generate-predictions" class="level4" data-number="5.3.3.9">
+<h4 data-number="5.3.3.9" class="anchored" data-anchor-id="how-to-part-7-new-using-a-linear-model-to-generate-predictions"><span class="header-section-number">5.3.3.9</span> How-to Part 7: <strong>New</strong>: using a linear model to generate predictions</h4>
+<section id="how-to-task-9-fit-a-linear-model-and-plot-the-model-predictions" class="level5" data-number="5.3.3.9.1">
+<h5 data-number="5.3.3.9.1" class="anchored" data-anchor-id="how-to-task-9-fit-a-linear-model-and-plot-the-model-predictions"><span class="header-section-number">5.3.3.9.1</span> How-to Task 9 – Fit a linear model and plot the model predictions</h5>
+<p>We can use the model we have just fitted to plot the model predictions.</p>
+<ul>
+<li>The estimates of the coefficients (given in summary results) are the information we need to generate predictions.</li>
+<li>What we are predicting is how values of the outcome variable change, on average, given different values in one or more predictor variables.</li>
+<li>We can produce predictions by working with linear model estimates of (1.) the intercept and (2.) the coefficient of the effect of each predictor variable.</li>
+<li>The effect of a predictor tells you <em>how</em> the outcome changes (how much the outcome increases or decreases), given different values of the predictor.</li>
+</ul>
+<p>We are going to do this prediction in two steps:</p>
+<ol type="1">
+<li><strong>revision</strong> – fit a linear model to estimate the relationship between the outcome and the predictor variables.</li>
+<li><strong>new</strong> – draw a scatterplot and add a line to show the model predictions, given the model estimates.</li>
+</ol>
+<p>We work through these steps in turn.</p>
+<p><strong>Step 1. First fit a linear model and get a summary of the estimates</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean.acc <span class="sc">~</span> SHIPLEY, <span class="at">data =</span> study.one.gen)</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Call:
+lm(formula = mean.acc ~ SHIPLEY, data = study.one.gen)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-0.42871 -0.04921  0.02079  0.07480  0.18430 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  0.44914    0.08053   5.577 9.67e-08 ***
+SHIPLEY      0.01050    0.00229   4.585 8.85e-06 ***
+---
+Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+Residual standard error: 0.1115 on 167 degrees of freedom
+Multiple R-squared:  0.1118,    Adjusted R-squared:  0.1065 
+F-statistic: 21.03 on 1 and 167 DF,  p-value: 8.846e-06</code></pre>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Q.9. What is the coefficient estimate for the intercept?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>A.9. 0.44914</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Q.10. What is the coefficient estimate for the slope of SHIPLEY?</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>A.10. 0.01050</p>
+</blockquote>
+<p><strong>Step 2. Second, draw a scatterplot and add a line to show the model predictions,</strong></p>
+<p>We use the <code>geom_abline()</code> function to draw the line.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one.gen, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">size =</span> <span class="dv">2</span>, <span class="at">colour =</span> <span class="st">"blue"</span>, <span class="at">shape =</span> <span class="st">'square'</span>)   <span class="sc">+</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="fl">0.44914</span>, <span class="at">slope =</span> <span class="fl">0.01050</span>, <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">linewidth =</span> <span class="fl">1.5</span>) <span class="sc">+</span></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"SHIPLEY"</span>, <span class="at">y =</span> <span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">40</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lm-intro_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>You can see that the only <strong>new</strong> thing we do here is to:</p>
+<ol type="1">
+<li>add the <code>geom_abline(...)</code> function;</li>
+<li>and, inside the brackets, add information about the intercept and the slope estimates.</li>
+</ol>
+<p>Note that we can get the prediction line drawn for us automatically.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> study.one.gen, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">'lm'</span>, <span class="at">colour =</span> <span class="st">"purple"</span>, <span class="at">alpha =</span> .<span class="dv">2</span>, <span class="at">linewidth =</span> <span class="fl">2.5</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_abline</span>(<span class="at">intercept =</span> <span class="fl">0.44914</span>, <span class="at">slope =</span> <span class="fl">0.01050</span>, <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb29-5"><a href="#cb29-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb29-6"><a href="#cb29-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"SHIPLEY"</span>, <span class="at">y =</span> <span class="st">"mean accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb29-7"><a href="#cb29-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">40</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">1</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="lm-intro_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Here, I turned the points off by commenting them out, adding <code>#</code> to the start of the line.</p>
+<ul>
+<li>I added <code>geom_smooth(method = 'lm', ...)</code> to draw a prediction line.</li>
+</ul>
+<p>You can compare the red prediction line I drew using the model estimates with the purple line I used <code>geom_smooth()</code> to draw automatically, to see that they are identical.</p>
+<p>You have seen <code>geom_smooth()</code> before: this shows you how it works.</p>
+</div>
+</div>
+</div>
+<p><strong>What are we learning here?</strong></p>
+<p>We want to generate model predictions because doing this unlocks a key concept in understanding why we use linear models and what we do.</p>
+<ul>
+<li>Linear models are an analysis method based on the <em>prediction</em> of the average change in outcome variable values, given different values of one or more predictor variables.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Further information you can explore
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can get <code>{ggplot2}</code> reference information to see what <code>geom_smooth()</code> does:</p>
+<p><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html" class="uri">https://ggplot2.tidyverse.org/reference/geom_smooth.html</a></p>
+<p>You can see reference information on drawing lines here:</p>
+<p><a href="https://ggplot2.tidyverse.org/reference/geom_abline.html" class="uri">https://ggplot2.tidyverse.org/reference/geom_abline.html</a></p>
 </div>
 </div>
 

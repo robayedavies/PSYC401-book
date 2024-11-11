@@ -62,6 +62,8 @@ To enable you to answer questions like these, you will learn how to:
 -   *Concepts and skills* -- critically evaluate the results;
 -   *Concepts and skills* -- communicate the results.
 
+As we progress, we will continue to strengthen your skills in building *professional visualizations*.
+
 ## Learning resources {#sec-lm-intro-resources}
 
 You will see, next, the lectures we share to explain the concepts you will learn about, and the practical data analysis skills you will develop (@sec-lm-intro-lectures). Then you will see information about the practical materials you can use to build and practise your skills (@sec-lm-intro-practical).
@@ -143,9 +145,9 @@ This week --- **Week 8** --- we consolidate what you have been learning, so your
 
 1. Set-up
 2. Load the data
-3. Revision: developing histograms to examine the distributions of variables.
-4. Revision: developing scatterplots to examine associations between variables.
-5. Revision: using correlations to to answer research questions --- making sure you are comfortable with the calculation and interpretation of correlation analyses.
+3. **Revision**: developing histograms to examine the distributions of variables.
+4. **Revision**: developing scatterplots to examine associations between variables.
+5. **Revision**: using correlations to to answer research questions, making sure you are comfortable.
 6. **New**: using a linear model to answer research questions.
 7. **New**: using a linear model to make predictions.
 :::
@@ -164,7 +166,7 @@ When we do these analyses, we need to think about how we report the results:
 - We will need to report the nature of the association estimated in our model;
 - We usually need to decide if (i.) the association is significant? (ii.) does the association reflect a positive or negative relationship between outcome and predictor? (iii.) is the association we see in our sample data relatively strong or weak?
 
-As we progress, we will consolidate and extend learning on data visualization so that we can produce eye-catching, appealing, plots for professional audiences.
+We will consolidate and extend learning on data visualization so that we can produce eye-catching, appealing, plots for professional audiences.
 
 #### The data files {#sec-lm-intro-practical-data}
 
@@ -239,9 +241,11 @@ study.one.gen <- read_csv("study-one-general-participants.csv")
 ```
 
 ::: callout-tip
-Last week, we started working with the **online help** information on R functions. Let's build on that.
+Last week, we started working with the **online help** information on R functions. 
 
-- You can read the technical information about the `read_csv()` function here:
+Let's build on that.
+
+You can read the technical information about the `read_csv()` function here:
 
 <https://readr.tidyverse.org/reference/read_delim.html>
 
@@ -420,11 +424,11 @@ The lesson that we are learning, here, is not just that you can arrange plotting
 ::: callout-tip
 ## Further information you can explore
 
-We can define the limits on the x-axis and on the y-axis, see the ggplot reference information on setting limits here:
+We can define the limits on the x-axis and on the y-axis, see the `{ggplot2}` library reference information on setting limits is here:
 
 <https://ggplot2.tidyverse.org/reference/lims.html>
 
-The ggplot() reference information for drawing lines is here:
+The `{ggplot2}` reference information for drawing lines is here:
 
 <https://ggplot2.tidyverse.org/reference/geom_abline.html>
 :::
@@ -529,7 +533,7 @@ added to a plot.
 ::: callout-tip
 ## Further information you can explore
 
-The ggplot geom_point() reference information is here: 
+The `{ggplot2}` `geom_point()` reference information is here: 
 
 <https://ggplot2.tidyverse.org/reference/geom_point.html>
 
@@ -548,62 +552,56 @@ Some useful information about colour options is here:
 Now you: experiment!
 :::
 
-#### How-to Part 4: Analyse associations
+#### How-to Part 5: Using correlations to to answer research questions
 
-##### How-to Task 9 -- Use correlation to to answer a research question
+##### How-to Task 7 -- Examine the correlation between a pair of variables
 
-Examine associations between variables using correlation.
+In the **Clearly understood** project, one of our research questions is:
 
-One of our research questions is:
+1. What person attributes predict success in understanding?
 
-2. Can people accurately evaluate whether they correctly understand written health information?
+We can answer this question by doing a correlation analysis.
+This is because we can expect that *if* vocabulary knowledge predicts success in understanding *then* variation in vocabulary knowledge should be associated with variation in success of understanding.
+We measured how successful study participants were in understanding health information: recording outcome `mean.acc` as the accuracy of response to questions designed to examine understanding.
+We measured a key person attribute, vocabulary knowledge using the `SHIPLEY` vocabulary test.
+We can then examine the association between this pair of variables using correlation.
 
-We can answer this question by examining whether mean self-rated accuracy of understanding correlates with mean accuracy of understanding.
-The logic is that if we can accurately rate our own understanding (from bad to good) then that rating should be associated -- should be correlated with -- how accurately we can actually respond to questions that test that understanding.
+Here, we examine the correlation between the mean accuracy (`mean.acc`) of understanding of health information, and vocabulary (`SHIPLEY`) knowledge, for each person in our participant sample.
 
-> Q.7. How do we examine the correlation between mean self-rated accuracy (`mean.self`) and mean accuracy (`mean.acc`)?
+Can you figure out how to code the correlation analysis?
 
-:::{.callout-tip collapse="true"}
-## Hint
-Remember from the Week 6 lecture, that we use `cor.test()`:
-:::
-
-Can you figure out how to code a correlation test?
-It helps with your learning if you first try to anticipate what the code will look like.
+It helps with your learning if you first try to predict what the code will look like.
 Then reveal the code, below, to see what you guessed right.
-(Getting some things right, and some things wrong, is part of the learning process.)
 
 :::{.callout-tip collapse="true"}
 ## Code
-> A.7. Here is how you do it: take a look at the code and the results of the correlation test.
-
 ```{r}
-cor.test(study.one.gen$mean.acc, study.one.gen$mean.self, method = "pearson",  alternative = "two.sided")
+cor.test(study.one.gen$SHIPLEY, study.one.gen$mean.acc, method = "pearson",  alternative = "two.sided")
 ```
 :::
 
-> Q.3. What is r, the correlation coefficient?
+> Q.1. What is r, the correlation coefficient?
 
 :::{.callout-tip collapse="true"}
 ## Answer
-> A.3. r = 0.4863771
+> A.1. r = 0.334406
 :::
 
-> Q.4. Is the correlation significant?
+> Q.2. Is the correlation significant?
 
 :::{.callout-tip collapse="true"}
 ## Answer
-> A.4. r is significant
+> A.2. r is significant, p < .05
 :::
 
-> Q.5. What are the values for t and p for the significance test for the correlation?
+> Q.3. What are the values for t and p for the significance test for the correlation?
 
 :::{.callout-tip collapse="true"}
 ## Answer
-> A.5. t = 7.1936, p = 2.026e-11
+> A.3. t = 4.5855, p = 8.846e-06
 :::
 
-> Q.6. What do you conclude, given the correlation results?
+> Q.4. What do you conclude is the answer to the research question, given the correlation results?
 
 :::{.callout-tip collapse="true"}
 ## Hint
@@ -612,18 +610,167 @@ Review the scatterplot you drew earlier (or draw one now) to examine the shape o
 
 :::{.callout-tip collapse="true"}
 ## Answer
-> A.6. `mean.acc` and `mean.self` are positively correlated suggesting that as 
-# `mean.acc` scores increase so also do `mean.self` scores
+> A.4. Vocabulary and `mean.acc` are positively correlated suggesting that as `SHIPLEY` scores increase so also do `mean.acc` scores.
 :::
 
+#### How-to Part 6: **New**: using a linear model to answer research questions
+
+##### How-to Task 8 -- Code and read the results from a linear model analysis
+
+As we have seen, one of our research questions is:
+
+1. What person attributes predict success in understanding?
+
+We can examine the relation between outcome mean accuracy (`mean.acc`) of understanding and vocabulary (`SHIPLEY`) knowledge by testing if person vocabulary score predicts understanding.
+
+We do this through a linear model analysis.
+
+We complete the analysis using the `lm()` function.
+
+```{r}
+model <- lm(mean.acc ~ SHIPLEY, data = study.one.gen)
+summary(model)
+```
+
+Let's work through the elements of the linear model code so we can see what everything does:
+
+1. `model <- lm(...)` -- fit the model using `lm(...)`, giving the model a name 
+here, we just call it "model".
+2. `...lm(mean.acc ~ SHIPLEY...)` -- tell R you want a model of the outcome 
+`mean.acc` predicted `~` by the predictor `SHIPLEY`.
+3. `...data = study.one)` -- tell R that the variables you name in the 
+ formula are in the `study.one` dataset.
+4. `summary(model)` -- ask R for a summary of the model you called "model": **this is how you get the results**.
+
+::: callout-tip
+Notice that R has a general formula syntax: `outcome ~ predictor` *or* `y ~ x`
+
+- and uses the same format across a number of different functions;
+- each time, on the left of the tilde symbol `~` you identify the output or outcome variable;
+- but on the right of the tilde `~` you identify an input or predictor variable or set of predictor variables.
+:::
+  
+If you look at the model summary you can answer the following questions.
+
+> Q.5. What is the estimate for the coefficient of the effect of the predictor, SHIPLEY?
+
+:::{.callout-tip collapse="true"}
+## Answer
+> A.5. 0.01050 
+:::
+
+> Q.6. Is the effect significant?
+
+:::{.callout-tip collapse="true"}
+## Answer
+> A.6. It is significant, p < .05
+:::
+
+> Q.7. What are the values for t and p for the significance test for the coefficient?
+
+:::{.callout-tip collapse="true"}
+## Answer
+> A.7. t = 4.585, p = 8.85e-06
+:::
+
+> Q.8. What do you conclude is the answer to the research question, given the linear model results?
+
+:::{.callout-tip collapse="true"}
+## Answer
+> A.8. The model slope estimate suggests that as `SHIPLEY` scores increase so also do `mean.acc` scores.
+:::
+
+#### How-to Part 7: **New**: using a linear model to generate predictions
+
+##### How-to Task 9 -- Fit a linear model and plot the model predictions
+
+We can use the model we have just fitted to plot the model predictions.
+
+- The estimates of the coefficients (given in summary results) are the information we need to generate predictions.
+- What we are predicting is how values of the outcome variable change, on average, given different values in one or more predictor variables.
+- We can produce predictions by working with linear model estimates of (1.) the intercept and (2.) the coefficient of the effect of each predictor variable.
+- The effect of a predictor tells you *how* the outcome changes (how much the outcome increases or decreases), given different values of the predictor.
+
+We are going to do this prediction in two steps:
+
+1. **revision** -- fit a linear model to estimate the relationship between the outcome and the predictor variables.
+2. **new** -- draw a scatterplot and add a line to show the model predictions, given the model estimates.
+
+We work through these steps in turn.
+
+**Step 1. First fit a linear model and get a summary of the estimates**
+
+```{r}
+model <- lm(mean.acc ~ SHIPLEY, data = study.one.gen)
+summary(model)
+```
+
+> Q.9. What is the coefficient estimate for the intercept?
+
+> A.9. 0.44914
+
+> Q.10. What is the coefficient estimate for the slope of SHIPLEY?
+
+> A.10. 0.01050
 
 
+**Step 2. Second, draw a scatterplot and add a line to show the model predictions,**
 
+We use the `geom_abline()` function to draw the line.
 
+```{r}
+ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
+  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
+  geom_abline(intercept = 0.44914, slope = 0.01050, colour = "red", linewidth = 1.5) +
+  theme_bw() +
+  labs(x = "SHIPLEY", y = "mean accuracy") +
+  xlim(0, 40) + ylim(0, 1)
+```
 
+You can see that the only **new** thing we do here is to:
 
+1. add the `geom_abline(...)` function;
+2. and, inside the brackets, add information about the intercept and the slope estimates.
 
+Note that we can get the prediction line drawn for us automatically.
 
+:::{.callout-tip collapse="true"}
+## Hint
+```{r}
+ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
+  # geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
+  geom_smooth(method = 'lm', colour = "purple", alpha = .2, linewidth = 2.5, se = FALSE) +
+  geom_abline(intercept = 0.44914, slope = 0.01050, colour = "red", linewidth = 1) +
+  theme_bw() +
+  labs(x = "SHIPLEY", y = "mean accuracy") +
+  xlim(0, 40) + ylim(0, 1)  
+```
+
+Here, I turned the points off by commenting them out, adding `#` to the start of the line.
+
+- I added `geom_smooth(method = 'lm', ...)` to draw a prediction line.
+
+You can compare the red prediction line I drew using the model estimates with the purple line I used `geom_smooth()` to draw automatically, to see that they are identical.
+
+You have seen `geom_smooth()` before: this shows you how it works.
+:::
+
+**What are we learning here?**
+
+We want to generate model predictions because doing this unlocks a key concept in understanding why we use linear models and what we do.
+
+- Linear models are an analysis method based on the *prediction* of the average change in outcome variable values, given different values of one or more predictor variables.
+
+::: callout-tip
+## Further information you can explore
+You can get `{ggplot2}` reference information to see what `geom_smooth()` does:
+
+<https://ggplot2.tidyverse.org/reference/geom_smooth.html>
+
+You can see reference information on drawing lines here:
+
+<https://ggplot2.tidyverse.org/reference/geom_abline.html>
+:::
 
 
 
