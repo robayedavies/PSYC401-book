@@ -478,7 +478,7 @@ ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
 :::{.callout-tip collapse="true"}
 ## Code
 ```{r}
-ggplot(data = study.one, aes(x = SHIPLEY, y = mean.acc)) +
+ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
   geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
   theme_bw()
 ```
@@ -489,7 +489,7 @@ ggplot(data = study.one, aes(x = SHIPLEY, y = mean.acc)) +
 :::{.callout-tip collapse="true"}
 ## Code
 ```{r}
-ggplot(data = study.one, aes(x = SHIPLEY, y = mean.acc)) +
+ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
   geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
   theme_bw() +
   labs(x = "Vocabulary (SHIPLEY)", y = "mean accuracy")
@@ -501,7 +501,7 @@ ggplot(data = study.one, aes(x = SHIPLEY, y = mean.acc)) +
 :::{.callout-tip collapse="true"}
 ## Code
 ```{r}
-ggplot(data = study.one, aes(x = SHIPLEY, y = mean.acc)) +
+ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
   geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
   theme_bw() +
   labs(x = "SHIPLEY", y = "mean accuracy") +
