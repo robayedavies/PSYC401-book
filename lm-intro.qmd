@@ -143,8 +143,8 @@ This week --- **Week 8** --- we consolidate what you have been learning, so your
 
 1. Set-up
 2. Load the data
-3. Revision: using histograms to examine the distributions of variables. Then something **new**: adding annotations to plots to focus the attention of your audience.
-4. Revision: using scatterplots to examine associations between variables. Then something **new**: producing grids of scatterplots to show comparisons.
+3. Revision: developing histograms to examine the distributions of variables.
+4. Revision: developing scatterplots to examine associations between variables.
 5. Revision: using correlations to to answer research questions --- making sure you are comfortable with the calculation and interpretation of correlation analyses.
 6. **New**: using a linear model to answer research questions.
 7. **New**: using a linear model to make predictions.
@@ -223,7 +223,7 @@ library("patchwork")
 library("tidyverse")
 ```
 
-#### How-to Part 2: Load and examine the data
+#### How-to Part 2: Load the data
 
 ##### How-to Task 3 -- Read in the data file we will be using
 
@@ -260,198 +260,288 @@ summary(study.one.gen)
 - `summary()` will give you either descriptive statistics for variable columns classified as numeric or will tell you that columns in the dataset are not numeric.
 :::
 
-##### How-to Task 5 -- Draw histograms to examine the distributions of variables
+#### How-to Part 3: Developing histograms to examine the distributions of variables
 
-You can use the `as.factor()` function you used in Week 5.
+##### How-to Task 5 -- Edit histogram plotting code to visualize distributions like a pro
+
+You have seen how to produce histograms before, in a previous class (week 3): here we are **consolidating** skills by practising them in different contexts, using different data.
+
+We **extend** your skills by adding some new moves.
+
+When we learn about creating a plot, it helps us to identify what each code element is doing.  Here's an example: run the line of code and see the result in the Plots window in R-Studio:
 
 ```{r}
-#| eval: false
-study.one.gen$study <- as.factor(study.one.gen$study)
+ggplot(data = study.one.gen, aes(x = mean.acc)) + geom_histogram()
 ```
 
-> Q.4. After you have done this, what information does `summary()` give you about the variable `study`?
+These are the plotting code elements and what they are doing:
 
-> A.4. We can see the number 169 beside the word `studyone`: this tells us that there are 169
-observations, in the column, each one is a value: the word or character string `studyone`.
+1. `ggplot(...)` you tell R you want to make a plot using the `ggplot()` function;
+2. `ggplot(data = study.one.gen ...)` you tell R you want to make a plot with the `study.one.gen` data;
+3. `ggplot(..., aes(x = mean.acc))` you tell R that you want to make a plot with the variable `mean.acc`;
+3. here, you specify the aesthetic mapping, `x = mean.acc`;
+4. `ggplot(...) + geom_histogram()` you tell R you want to show the distribution of values of `mean.acc` as a geometric object: a histogram.
+
+You have seen the plotting code arranged in two different ways, in one line, as above, or in a series of steps, like this:
+
+```{r}
+ggplot(data = study.one.gen, aes(x = mean.acc)) + 
+  geom_histogram()
+```
 
 ::: callout-tip
-Remember from Week 3 that we can only count how many times a category value (or factor level) occurs: here, we are counting how many times the word `studyone` occurs in the factor column `study`.
+Notice that it has no impact whether you write the plotting code in one line, or in a series of lines.
+
+- R cares very much about how you spell function or variable names.
+
+- R does not usually care about line breaks.
+
+Learning what does or does not matter is a key lesson, when you learn a language, whatever the language.
 :::
 
+If we break the plotting code into steps, it makes the code easier for you to read, and it will make it easier to add edits, one at a time.
+Let's see how that works, next.
 
+To help you learn, we are going to work on editing the code to do things, and we are going to explain *why* we want to be able to do these things.
 
+These are the things we want to do:
 
-#### How-to Part 3: Visualize associations
+1. **new** -- the appearance of the bars using `binwidth`;
+2. **revision** -- the colour of the background using `theme_bw()`;
+3. **revision** -- the appearance of the labels using `labs()`;
+4. **new** -- setting the x-axis limits to reflect the full range of possible scores on the x-axis variable using `lim()`;
+5. **new** -- adding annotation -- here, a vertical line using `geom_vline()` -- to focus the attention of the audience for a plot on specific information about the variable distribution (here, the sample average for the variable).
 
-##### How-to Task 6 -- Draw scatterplots to examine associations between variables
+::: callout-tip
+- Click on each `Code` tab to see how the code changes, and to see how the plot changes as a result.
+- Click on each `Why` tab for an explanation of why we want to do this.
+:::
+
+1. **new** -- the appearance of the bars using `binwidth`
+
+::: panel-tabset
+## Code
+```{r}
+ggplot(data = study.one.gen, aes(x = SHIPLEY)) + 
+  geom_histogram(binwidth = 2)
+```
+
+## Why
+Histogram `binwidth` has to be a number. The best way to learn what the number tells R to do is to experiment with different values.
+
+- Notice that in the code we set the `binwidth` to 2.
+- If you are producing a histogram, `binwidth` has to be a number larger than the potential minimum and smaller than the potential maximum for the variable you are plotting: *so* for the `SHIPLEY` vocabulary test, because the test scores can only range between 0-40, the `binwidth` number you use in your plotting code has to be bigger than 0 but smaller than 40.
+
+In general, the larger (wider) the `binwidth`, the less detail you see about the distribution of values in the variable. 
+
+- In a histogram, each bar you draw represents a collection of values. The `binwidth` tells R how many values to collect together, for each bar. So, the bigger the width, the bigger (wider and taller) the bar because it represents more observations.
+
+Whether or not you want to present detail is then a question concerning your communication aims: do you want to give an impression, or identify a specific detail?
+:::
+
+2. **revision** -- the colour of the background using `theme_bw()`
+
+::: panel-tabset
+## Code
+```{r}
+ggplot(data = study.one.gen, aes(x = SHIPLEY)) + 
+  geom_histogram(binwidth = 2) +
+  theme_bw()
+```
+
+## Why
+In general, a grey background is argued to be a good way to present information visually but we often use a white background because it helps the plot elements to be visible, especially, for example, if we are giving a presentation.
+:::
+
+3. **revision** -- the appearance of the labels using `labs()`
+
+::: panel-tabset
+## Code
+```{r}
+ggplot(data = study.one.gen, aes(x = SHIPLEY)) + 
+  geom_histogram(binwidth = 2) +
+  theme_bw() +
+  labs(x = "Vocabulary (SHIPLEY)", y = "frequency count")
+```
+
+## Why
+You cannot assume that the audience for your plots will understand what you are referring to, if you just use data-set variable names e.g. `SHIPLEY`. They may not be familiar with your data-set. This means you need to use axis labels that will make sense to most people in your audience.
+:::
+
+4. **new** -- setting the x-axis limits using `lim()`
+
+::: panel-tabset
+## Code
+```{r}
+ggplot(data = study.one.gen, aes(x = SHIPLEY)) + 
+  geom_histogram(binwidth = 2) +
+  theme_bw() +
+  labs(x = "Vocabulary (SHIPLEY)", y = "frequency count") +
+  xlim(0,40)
+```
+
+## Why
+1. It is often useful to set the axis limits like this: because we want to show the audience where the sample values are distributed compared to where they *could* be distributed, given the measure. 
+2. This makes sense, e.g., if you want to see the relative age distribution of a sample compared to the population, or because we want to give the audience a more accurate picture of the data.
+:::
+
+5. **new** -- adding annotation -- here, a vertical line
+
+::: panel-tabset
+## Code
+```{r}
+ggplot(data = study.one.gen, aes(x = SHIPLEY)) + 
+  geom_histogram(binwidth = 2) +
+  theme_bw() +
+  labs(x = "Vocabulary (SHIPLEY)", y = "frequency count") +
+  xlim(0,40) +
+  geom_vline(xintercept = mean(study.one.gen$SHIPLEY), colour = "red", linewidth = 1.5)
+```
+
+Notice that we used the `geom_vline()` element to plot a vertical line at the location on the x-axis we define.
+
+We do this in the steps:
+
+1. `geom_vline(...)` -- draw a vertical line;
+2. `...xintercept...` -- draw the line so it hits the x-axis (intercepts the x-axis);
+3. `...xintercept = mean(study.one.gen$SHIPLEY... ` -- at a location defined by the mean of the variable `mean(study.one.gen$SHIPLEY)`;
+4. `...colour = "red", size = 1.5..` -- make the line red and one and a half times the default thickness.
+
+## Why
+We can use annotations, like this vertical line, when we want to draw the attention of the audience for our plot to a specific feature of the data.
+:::
+
+**What are we learning here?**
+
+You can see that while the data stays the same, the appearance of the plot changes, as we add each edit to the plotting code.
+
+The lesson that we are learning, here, is not just that you can arrange plotting code in steps but that *in general* in R you can build things (like plots) one action at a time.
+
+::: callout-tip
+## Further information you can explore
+
+We can define the limits on the x-axis and on the y-axis, see the ggplot reference information on setting limits here:
+
+<https://ggplot2.tidyverse.org/reference/lims.html>
+
+The ggplot() reference information for drawing lines is here:
+
+<https://ggplot2.tidyverse.org/reference/geom_abline.html>
+:::
+
+#### How-to Part 4: Developing scatterplots to examine associations between variables
+
+##### How-to Task 6 -- Edit scatterplot code to visualize associations like a pro
 
 You have seen these code moves before, in previous classes (weeks 3 and 4): we are **consolidating** skills by practising your coding in different contexts, using different data.
 
 We **extend** your skills by adding some new moves.
 
-Create scatterplots to examine the association between some variables.
-
-::: callout-tip
-We are working with `geom_point()` and you need `x` and `y` aesthetic mappings.
-:::
-
-For example, we can draw a scatterplot to examine the association between `mean.self` and `mean.acc`.
+We create scatterplots to examine the association between pairs of variables.
+For example, we can draw a scatterplot to examine the association between variation in the values of `SHIPLEY` and of `mean.acc`.
 
 ```{r}
-ggplot(data = study.one.gen, aes(x = mean.self, y = mean.acc)) + 
-    geom_point()
+ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
+  geom_point()
 ```  
-
-Examine this plot --- it shows: the possible association between x-axis variable `mean.self` and y-axis variable `mean.acc`.
-
-You have seen this kind of code before but it will help your learning if, now, we take a look at the code step-by-step.
 
 The plot code moves through the following steps:  
 
 1. `ggplot(...)` makes a plot.
 2. `ggplot(data = study.one.gen, ...)` uses the `study.one.gen` data-set.
-3. `ggplot(...aes(x = mean.self, y = mean.acc))` uses two aesthetic mappings.
+3. `ggplot(...aes(x = SHIPLEY, y = mean.acc))` uses two aesthetic mappings.
 4. `geom_point()` show the mappings as points.
 
-::: callout-tip
-What are *aesthetic mappings*?
+We are now going to edit:
 
-Aesthetic mappings translate data information -- numbers or values in column variables -- into things you can see in plots.
-
-For a scatterplot, we need to translate values for two variables into the position of each point in the plot.
-
-Here:
-
-- `x = mean.self` maps `mean.self` values to x-axis (horizontal, left to right) positions.
-- `y = mean.acc` maps `mean.acc` values to y-axis (vertical, bottom to top) positions.
-:::
-  
-Now do scatterplots with any pair of numeric variables you like. 
-
-Remember that we saw with `summary()` that not every variable consists of numbers.
-
-Check out the example code, below.
-
-```{r}  
-#| eval: false
-ggplot(data = study.one.gen, aes(y = mean.self, x = mean.acc)) +
-    geom_point()  
-
-ggplot(data = study.one.gen, aes(x = AGE, y = mean.self)) +
-  geom_point()  
-  
-ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.self)) +
-  geom_point()  
-
-ggplot(data = study.one.gen, aes(x = HLVA, y = mean.self)) +
-  geom_point()  
-```
-
-##### How-to Task 7 -- Edit the scatterplots to change how they look
-
-Edit the appearance of a plot step-by-step.
-
-We are going to edit:
-
-1. the appearance of the points using alpha and size;
-2. the colour of the background using `theme_bw()`;
-3. the appearance of the labels using `labs()`.
+1. **revision and new** -- the appearance of the points using alpha, size, **shape**, and **colour**;
+2. **revision** -- the colour of the background using `theme_bw()`;
+3. **revision** -- the appearance of the labels using `labs()`;
+4. **new** -- the x-axis and y-axis limits using `lim()`.
 
 We make the changes, one change at a time.
 
-You have seen one of these moves before and you can guess at how to do the others.
-Click on the drop-down view to see the code but, if you want a challenge, try first to write the code on your own.
+Click on the drop-down view to see the code but, if you want a challenge, first try to write the code on your own, using what you have learned so far.
 
-1. the appearance of the points using alpha and size
+1. **revision and new** -- the appearance of the points using alpha, size, **shape**, and **colour**
 
 :::{.callout-tip collapse="true"}
 ## Code
 ```{r}
-ggplot(data = study.one.gen, aes(x = HLVA, y = mean.self)) +
-  geom_point(alpha = 0.5, size = 2) 
+ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
+  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square') 
 ```
 :::
 
-2. the colour of the background using `theme_bw()`
+2. **revision** -- the colour of the background using `theme_bw()`
 
 :::{.callout-tip collapse="true"}
 ## Code
 ```{r}
-ggplot(data = study.one.gen, aes(x = HLVA, y = mean.self)) +
-  geom_point(alpha = 0.5, size = 2)  +
+ggplot(data = study.one, aes(x = SHIPLEY, y = mean.acc)) +
+  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
   theme_bw()
 ```
 :::
 
-3. the appearance of the labels using `labs()`
+3. **revision** -- the appearance of the labels using `labs()`
 
 :::{.callout-tip collapse="true"}
 ## Code
 ```{r}
-ggplot(data = study.one.gen, aes(x = HLVA, y = mean.self)) +
-  geom_point(alpha = 0.5, size = 2)  +
+ggplot(data = study.one, aes(x = SHIPLEY, y = mean.acc)) +
+  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
   theme_bw() +
-  labs(x = "HLVA", y = "mean self rated accuracy")
+  labs(x = "Vocabulary (SHIPLEY)", y = "mean accuracy")
 ```  
 :::
 
+4. **new** -- the x-axis and y-axis limits using `lim()`
+
+:::{.callout-tip collapse="true"}
+## Code
+```{r}
+ggplot(data = study.one, aes(x = SHIPLEY, y = mean.acc)) +
+  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
+  theme_bw() +
+  labs(x = "SHIPLEY", y = "mean accuracy") +
+  xlim(0, 40) + ylim(0, 1)
+```  
+
+Notice that:
+
+- I set the x-axis limits to the minimum (0) and maximum (40) possible values for the `SHIPLEY` variable.
+
+- I set the y-axis limits to the minimum (0) and maximum (1) possible values for the mean accuracy variable `mean.acc`.
+:::
+
+**What are we learning here?**
+
+It is generally a good idea to show the minimum value (the origin) for each variable.
+
+- Not doing this, i.e., showing a more narrow slice of the sample range is an easy way to exaggerate the strength of associations or to imply incorrectly the breadth in variation.
+
+You can change the transparency (alpha), size, colour and shape of important parts of a plot.
+Here, we are changing the appearance of the points.
+But you can also change the transparency (alpha), size, colour and shape of reference lines
+added to a plot.
+
 ::: callout-tip
-The arguments `alpha` and `size` can change the appearance of most geometric objects (geoms) in ggplot:
+## Further information you can explore
 
-- in the code example, here, we vary the `alpha` number to change how opaque or transparent the points are;
-- and we vary the size number to vary the size of the points.
-:::
+The ggplot geom_point() reference information is here: 
 
-##### How-to Task 8 -- Now experiment
+<https://ggplot2.tidyverse.org/reference/geom_point.html>
 
-There are no right answers here: edit the appearance of your plots by changing alpha, size and colour of points.
+- where you can see some examples of the edits we have done.
 
-::: callout-tip
-Play is an important part of learning.
+Some useful information about shape options is here:
 
-- Experimenting with how plots look is a key element in becoming a master at data visualization. You won't know what looks good to you unless you try different things.
-:::
+<http://www.cookbook-r.com/Graphs/Shapes_and_line_types/>
 
-If you really want to extend your skills, it is really important that you learn how to find useful online help.
-
-> Q.5. Can you find the ggplot reference page on scatterplots? 
-
-:::{.callout-tip collapse="true"}
-## Hint
-Do a search with the keywords: `ggplot reference geom_point`
-:::
-
-:::{.callout-tip collapse="true"}
-## Answer
-> A.5. You can find reference information here: <https://ggplot2.tidyverse.org/reference/geom_point.html>
-:::
-
-> Q.6. Can you change the colour of the points to a colour you like?
-
-:::{.callout-tip collapse="true"}
-## Hint
-Do a search with the keywords: `ggplot colours`.
-
-Useful information on colour can be found here:
-
-<https://r-graphics.org/recipe-colors-setting>
-
-or 
+Some useful information about colour options is here:
 
 <http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/>
-:::
-
-:::{.callout-tip collapse="true"}
-## Answer
-> A.6. Here is how you do it: R will recognize many English colour names.
-
-```{r}
-#| eval: false
-ggplot(data = study.one.gen, aes(x = HLVA, y = mean.self)) +
-  geom_point(alpha = 0.5, size = 2, colour = "hotpink")  +
-  theme_bw() +
-  labs(x = "HLVA", y = "mean self rated accuracy")
-```
 :::
 
 ::: callout-important
