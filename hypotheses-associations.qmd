@@ -552,7 +552,9 @@ We are going to work through the following workflow steps:
 
 In the following, we will guide you through the tasks and questions step by step.
 
+::: callout-important
 An answers version of the workbook will be provided after the practical class.
+:::
 
 #### Practical Part 1: Set-up
 
@@ -576,7 +578,7 @@ library("tidyverse")
 
 ##### Practical Task 3 -- Read in the data file we will be using
 
-The data file for the *workbook* is called:
+The data file for the practical exercises is:
 
 - `study-two-general-participants.csv`
 
