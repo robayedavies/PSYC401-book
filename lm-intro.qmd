@@ -192,7 +192,7 @@ When you look at the data table, you can see the columns:
 -   `EDUCATION` education level code
 -   `ETHNICITY` ethnicity (Office National Statistics categories) code
 
-#### The how-to guide {#sec-associations-practical-how-to}
+#### The how-to guide {#sec-lm-intro-practical-how-to}
 
 We will take things *step-by-step*.
 
