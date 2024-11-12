@@ -161,24 +161,15 @@ We are going to work through some practical exercises, next, to develop your cri
 
 ### Practical materials: data and R-Studio {#sec-lm-dev-practical}
 
-We have collected the practical materials together into a folder.
+We will work with one data file which you can download by clicking on its name (below):
 
-The folder includes the data file:
+-   [`2022-12-08_all-studies-subject-scores.csv`](files/2022-12-08_all-studies-subject-scores.csv).
 
--   `2022-12-08_all-studies-subject-scores.csv`
+Once you have downloaded the file, you will need to upload it to the R-Studio server to access it so that you can do the practical exercises.
 
-and .R code files:
-
--   `401-lm-dev-how-to.R`
--   `401-lm-dev-workbook.R`
-
-You will use these files for your practical learning.
-
-You can download the .R files and the data .csv files in a single folder, using the link [here](files/PSYC401_lm-dev_materials.zip).
-
-Or you can download the files as individual files from the module [Moodle page for PSYC401](https://modules.lancaster.ac.uk/course/view.php?id=40622#coursecontentcollapse11){target="_blank"}.
-
-Once you have downloaded the file folder, you will need to upload it to the R-Studio server to access and use the R files.
+::: callout-important
+Here is a link to the sign-in page for [R-Studio Server](https://psy-rstudio.lancaster.ac.uk/auth-sign-in?appUri=%2F)
+:::
 
 #### The how-to guide {#sec-lm-dev-practical-how-to}
 
