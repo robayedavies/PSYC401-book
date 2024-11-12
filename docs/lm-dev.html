@@ -625,8 +625,10 @@ Tip
 <h5 data-number="6.3.3.3.2" class="anchored" data-anchor-id="how-to-task-2-run-code-to-load-libraries"><span class="header-section-number">6.3.3.3.2</span> How-to Task 2 – Run code to load libraries</h5>
 <p>Load libraries using <code>library()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"patchwork"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"ggeffects"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"patchwork"</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"psych"</span>)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">"tidyverse"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -634,32 +636,13 @@ Tip
 <h4 data-number="6.3.3.4" class="anchored" data-anchor-id="how-to-part-2-load-the-data"><span class="header-section-number">6.3.3.4</span> How-to Part 2: Load the data</h4>
 <section id="how-to-task-3-read-in-the-data-file-we-will-be-using" class="level5" data-number="6.3.3.4.1">
 <h5 data-number="6.3.3.4.1" class="anchored" data-anchor-id="how-to-task-3-read-in-the-data-file-we-will-be-using"><span class="header-section-number">6.3.3.4.1</span> How-to Task 3 – Read in the data file we will be using</h5>
-<p>The code in the <code>how-to</code> guide was written to work with the data file:</p>
+<p>We will be working with the data file:</p>
 <ul>
-<li><code>study-one-general-participants.csv</code>.</li>
+<li><code>2022-12-08_all-studies-subject-scores.csv</code>.</li>
 </ul>
-<p>Read in the data file – using <code>read_csv()</code>.</p>
+<p>Read in the file – using <code>read_csv()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>all.studies.subjects <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"study-one-general-participants.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Tip
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Last week, we started working with the <strong>online help</strong> information on R functions.</p>
-<p>Let’s build on that.</p>
-<p>You can read the technical information about the <code>read_csv()</code> function here:</p>
-<p><a href="https://readr.tidyverse.org/reference/read_delim.html" class="uri">https://readr.tidyverse.org/reference/read_delim.html</a></p>
-<ul>
-<li>Take a look around the <code>{tidyverse}</code> webpages: expert professionals use information like this whenever they try to figure out how to do something.</li>
-</ul>
-</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>all.studies.subjects <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"2022-12-08_all-studies-subject-scores.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="how-to-task-4-inspect-the-data-file" class="level5" data-number="6.3.3.4.2">
@@ -1027,7 +1010,7 @@ Further information you can explore
 <li><strong>revision and new</strong> – the appearance of the points using alpha, size, <strong>shape</strong>, and <strong>colour</strong></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1036,7 +1019,7 @@ Code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> all.studies.subjects, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
@@ -1060,7 +1043,7 @@ Code
 <li><strong>revision</strong> – the colour of the background using <code>theme_bw()</code></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1069,7 +1052,7 @@ Code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> all.studies.subjects, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
@@ -1094,7 +1077,7 @@ Code
 <li><strong>revision</strong> – the appearance of the labels using <code>labs()</code></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1103,7 +1086,7 @@ Code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> all.studies.subjects, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
@@ -1129,7 +1112,7 @@ Code
 <li><strong>new</strong> – the x-axis and y-axis limits using <code>lim()</code></li>
 </ol>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1138,7 +1121,7 @@ Code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> all.studies.subjects, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
@@ -1221,7 +1204,7 @@ Important
 <p>Can you figure out how to code the correlation analysis?</p>
 <p>It helps with your learning if you first try to predict what the code will look like. Then reveal the code, below, to see what you guessed right.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1230,7 +1213,7 @@ Code
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(all.studies.subjects<span class="sc">$</span>SHIPLEY, all.studies.subjects<span class="sc">$</span>mean.acc, <span class="at">method =</span> <span class="st">"pearson"</span>,  <span class="at">alternative =</span> <span class="st">"two.sided"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1255,6 +1238,27 @@ sample estimates:
 <p>Q.1. What is r, the correlation coefficient?</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>A.1. r = 0.334406</p>
+</blockquote>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Q.2. Is the correlation significant?</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1267,13 +1271,13 @@ Answer
 <div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <blockquote class="blockquote">
-<p>A.1. r = 0.334406</p>
+<p>A.2. r is significant, p &lt; .05</p>
 </blockquote>
 </div>
 </div>
 </div>
 <blockquote class="blockquote">
-<p>Q.2. Is the correlation significant?</p>
+<p>Q.3. What are the values for t and p for the significance test for the correlation?</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
@@ -1288,27 +1292,6 @@ Answer
 <div id="callout-19" class="callout-19-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <blockquote class="blockquote">
-<p>A.2. r is significant, p &lt; .05</p>
-</blockquote>
-</div>
-</div>
-</div>
-<blockquote class="blockquote">
-<p>Q.3. What are the values for t and p for the significance test for the correlation?</p>
-</blockquote>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-20" class="callout-20-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<blockquote class="blockquote">
 <p>A.3. t = 4.5855, p = 8.846e-06</p>
 </blockquote>
 </div>
@@ -1318,7 +1301,7 @@ Answer
 <p>Q.4. What do you conclude is the answer to the research question, given the correlation results?</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-20-contents" aria-controls="callout-20" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1327,14 +1310,14 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div id="callout-20" class="callout-20-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Review the scatterplot you drew earlier (or draw one now) to examine the shape of the association between these variables.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1343,7 +1326,7 @@ Answer
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <blockquote class="blockquote">
 <p>A.4. Vocabulary and <code>mean.acc</code> are positively correlated suggesting that as <code>SHIPLEY</code> scores increase so also do <code>mean.acc</code> scores.</p>
@@ -1419,6 +1402,27 @@ Tip
 <p>Q.5. What is the estimate for the coefficient of the effect of the predictor, SHIPLEY?</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-23-contents" aria-controls="callout-23" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Answer
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-23" class="callout-23-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<blockquote class="blockquote">
+<p>A.5. 0.01050</p>
+</blockquote>
+</div>
+</div>
+</div>
+<blockquote class="blockquote">
+<p>Q.6. Is the effect significant?</p>
+</blockquote>
+<div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-24-contents" aria-controls="callout-24" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
@@ -1431,13 +1435,13 @@ Answer
 <div id="callout-24" class="callout-24-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <blockquote class="blockquote">
-<p>A.5. 0.01050</p>
+<p>A.6. It is significant, p &lt; .05</p>
 </blockquote>
 </div>
 </div>
 </div>
 <blockquote class="blockquote">
-<p>Q.6. Is the effect significant?</p>
+<p>Q.7. What are the values for t and p for the significance test for the coefficient?</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
@@ -1452,13 +1456,13 @@ Answer
 <div id="callout-25" class="callout-25-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <blockquote class="blockquote">
-<p>A.6. It is significant, p &lt; .05</p>
+<p>A.7. t = 4.585, p = 8.85e-06</p>
 </blockquote>
 </div>
 </div>
 </div>
 <blockquote class="blockquote">
-<p>Q.7. What are the values for t and p for the significance test for the coefficient?</p>
+<p>Q.8. What do you conclude is the answer to the research question, given the linear model results?</p>
 </blockquote>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
@@ -1471,27 +1475,6 @@ Answer
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-26" class="callout-26-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<blockquote class="blockquote">
-<p>A.7. t = 4.585, p = 8.85e-06</p>
-</blockquote>
-</div>
-</div>
-</div>
-<blockquote class="blockquote">
-<p>Q.8. What do you conclude is the answer to the research question, given the linear model results?</p>
-</blockquote>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Answer
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <blockquote class="blockquote">
 <p>A.8. The model slope estimate suggests that as <code>SHIPLEY</code> scores increase so also do <code>mean.acc</code> scores.</p>
@@ -1584,7 +1567,7 @@ F-statistic: 173.9 on 1 and 559 DF,  p-value: &lt; 2.2e-16</code></pre>
 </ol>
 <p>Note that we can get the prediction line drawn for us automatically.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-27-contents" aria-controls="callout-27" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1593,7 +1576,7 @@ Hint
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div id="callout-27" class="callout-27-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> all.studies.subjects, <span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>

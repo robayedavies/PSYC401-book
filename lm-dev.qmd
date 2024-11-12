@@ -223,7 +223,9 @@ Load libraries using `library()`.
 
 ```{r}
 #| eval: false
+library("ggeffects")
 library("patchwork")
+library("psych")
 library("tidyverse")
 ```
 
@@ -231,28 +233,16 @@ library("tidyverse")
 
 ##### How-to Task 3 -- Read in the data file we will be using
 
-The code in the `how-to` guide was written to work with the data file:
+We will be working with the data file:
 
-- `study-one-general-participants.csv`.
+- `2022-12-08_all-studies-subject-scores.csv`.
 
-Read in the data file -- using `read_csv()`.
+Read in the file -- using `read_csv()`.
 
 ```{r}
 #| eval: false
-all.studies.subjects <- read_csv("study-one-general-participants.csv")
+all.studies.subjects <- read_csv("2022-12-08_all-studies-subject-scores.csv")
 ```
-
-::: callout-tip
-Last week, we started working with the **online help** information on R functions. 
-
-Let's build on that.
-
-You can read the technical information about the `read_csv()` function here:
-
-<https://readr.tidyverse.org/reference/read_delim.html>
-
-- Take a look around the `{tidyverse}` webpages: expert professionals use information like this whenever they try to figure out how to do something.
-:::
 
 ##### How-to Task 4 -- Inspect the data file
 
