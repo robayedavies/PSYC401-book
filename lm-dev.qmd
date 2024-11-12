@@ -152,14 +152,14 @@ Click on a link and your browser should open a tab showing the *Panopto* video f
 ## Download the lecture slides
 The slides presented in the videos can be downloaded here:
 
-- [The slides](files/401-linear-model-develop.html) exactly as presented (12 MB). 
+- [The slides](files/401-linear-model-develop.html) exactly as presented (11 MB). 
 
 You can download the web page `.html` file and click on it to open it in any browser (e.g., Chrome, Edge or Safari). The slide images are high quality so the file is quite big and may take a few seconds to download.
 :::
 
 We are going to work through some practical exercises, next, to develop your critical thinking and practical skills for working with linear models.
 
-### Practical materials {#sec-lm-dev-practical}
+### Practical materials: data and R-Studio {#sec-lm-dev-practical}
 
 We have collected the practical materials together into a folder.
 
