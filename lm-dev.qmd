@@ -6,6 +6,7 @@
 library(ggeffects)
 library(kableExtra)
 library(patchwork)
+library(psych)
 library(tidyverse)
 ```
 
@@ -246,392 +247,207 @@ all.studies.subjects <- read_csv("2022-12-08_all-studies-subject-scores.csv")
 
 ##### How-to Task 4 -- Inspect the data file
 
-Use the `summary()` function to take a look.
+In previous classes, we have used the `summary()` function to inspect the data.
+
+Now, let's do something new.
+
+We use the `describe()` function from the `{psych}` library to produce descriptive statistics for the variables in the data-set.
 
 ```{r}
-summary(all.studies.subjects)
+describe(all.studies.subjects)
 ```
+
+In the reports you write -- whether as a student or, later, in your professional work -- you may often be required to present table summaries of the variables in your data, incorporating descriptive statistics.
+
+- You can use the `describe()` function to get R to do the work for you.
+
+We want to get just the descriptive statistics we want. 
+
+We are going to do this in two steps: 
+
+1. we select the variables we care about;
+2. we get just the descriptive statistics we want for those variables
+
+We will do this using *two different* but equivalent methods.
+
+First, we are going to do this using the `%>%` pipes that you saw previously (in week 5):
+
+```{r}
+all.studies.subjects %>%
+  select(mean.acc, mean.self, AGE, SHIPLEY, HLVA, FACTOR3) %>%
+  describe(skew = FALSE)
+```
+
+These are the code elements and what they do:
+
+1. `all.studies.subjects %>%` -- you tell R to use the `all.studies.subjects` dataset, then use `%>%` to ask R to take those data to the next step: to `%>%` pipe it forwards on to the next step.
+2. `select(mean.acc, mean.self, AGE, SHIPLEY, HLVA, FACTOR3) %>%` -- you tell R to select just those variables in `all.studies.subjects` that you name and `%>%` pipe them to the next step.
+3. `describe(...)` -- you tell R to give you descriptive statistics for the variables you have selected.
+4. `describe(skew = FALSE)` -- critically, you add the argument `skew = FALSE` to *turn off* the option in `describe()` to report skew, kurtosis: because we do not typically see these statistics reported in psychology.
 
 ::: callout-tip
-- `summary()` will give you either descriptive statistics for variable columns classified as numeric or will tell you that columns in the dataset are not numeric.
+Modern R coding often uses the pipe. When you see it, you see it used in a process involving a series of steps.
+
+- Do this thing, then send the results `%>` to the next step, do the next thing then send the results `%>%` to the next step...
+- When you look at `ggplot()` code, the `+` at the end of each line of plotting code is doing a similar job to the pipe.
 :::
 
-#### How-to Part 3: Developing histograms to examine the distributions of variables
-
-##### How-to Task 5 -- Edit histogram plotting code to visualize distributions like a pro
-
-You have seen how to produce histograms before, in a previous class (week 3): here we are **consolidating** skills by practising them in different contexts, using different data.
-
-We **extend** your skills by adding some new moves.
-
-When we learn about creating a plot, it helps us to identify what each code element is doing.  Here's an example: run the line of code and see the result in the Plots window in R-Studio:
+Not everyone is comfortable coding this way so next we will do the same thing in an *old style*.
 
 ```{r}
-ggplot(data = all.studies.subjects, aes(x = mean.acc)) + geom_histogram()
+all.studies.subjects.select <- select(all.studies.subjects, 
+                           mean.acc, mean.self, AGE, SHIPLEY, HLVA, FACTOR3)
+describe(all.studies.subjects.select, skew = FALSE)
 ```
 
-These are the plotting code elements and what they are doing:
+These are the code elements and what they do:
 
-1. `ggplot(...)` you tell R you want to make a plot using the `ggplot()` function;
-2. `ggplot(data = all.studies.subjects ...)` you tell R you want to make a plot with the `all.studies.subjects` data;
-3. `ggplot(..., aes(x = mean.acc))` you tell R that you want to make a plot with the variable `mean.acc`;
-3. here, you specify the aesthetic mapping, `x = mean.acc`;
-4. `ggplot(...) + geom_histogram()` you tell R you want to show the distribution of values of `mean.acc` as a geometric object: a histogram.
-
-You have seen the plotting code arranged in two different ways, in one line, as above, or in a series of steps, like this:
-
-```{r}
-ggplot(data = all.studies.subjects, aes(x = mean.acc)) + 
-  geom_histogram()
-```
-
-::: callout-tip
-Notice that it has no impact whether you write the plotting code in one line, or in a series of lines.
-
-- R cares very much about how you spell function or variable names.
-
-- R does not usually care about line breaks.
-
-Learning what does or does not matter is a key lesson, when you learn a language, whatever the language.
-:::
-
-If we break the plotting code into steps, it makes the code easier for you to read, and it will make it easier to add edits, one at a time.
-Let's see how that works, next.
-
-To help you learn, we are going to work on editing the code to do things, and we are going to explain *why* we want to be able to do these things.
-
-These are the things we want to do:
-
-1. **new** -- the appearance of the bars using `binwidth`;
-2. **revision** -- the colour of the background using `theme_bw()`;
-3. **revision** -- the appearance of the labels using `labs()`;
-4. **new** -- setting the x-axis limits to reflect the full range of possible scores on the x-axis variable using `xlim()`;
-5. **new** -- adding annotation -- here, a vertical line using `geom_vline()` -- to focus the attention of the audience for a plot on specific information about the variable distribution (here, the sample average for the variable).
-
-::: callout-tip
-- Click on each `Code` tab to see how the code changes, and to see how the plot changes as a result.
-- Click on each `Why` tab for an explanation of why we want to do this.
-:::
-
-1. **new** -- the appearance of the bars using `binwidth`
-
-::: panel-tabset
-## Code
-```{r}
-ggplot(data = all.studies.subjects, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2)
-```
-
-## Why
-Histogram `binwidth` has to be a number. The best way to learn what the number tells R to do is to experiment with different values.
-
-- Notice that in the code we set the `binwidth` to 2.
-- If you are producing a histogram, `binwidth` has to be a number larger than the potential minimum and smaller than the potential maximum for the variable you are plotting: *so* for the `SHIPLEY` vocabulary test, because the test scores can only range between 0-40, the `binwidth` number you use in your plotting code has to be bigger than 0 but smaller than 40.
-
-In general, the larger (wider) the `binwidth`, the less detail you see about the distribution of values in the variable. 
-
-- In a histogram, each bar you draw represents a collection of values. The `binwidth` tells R how many values to collect together, for each bar. So, the bigger the width, the bigger (wider and taller) the bar because it represents more observations.
-
-Whether or not you want to present detail is then a question concerning your communication aims: do you want to give an impression, or identify a specific detail?
-:::
-
-2. **revision** -- the colour of the background using `theme_bw()`
-
-::: panel-tabset
-## Code
-```{r}
-ggplot(data = all.studies.subjects, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2) +
-  theme_bw()
-```
-
-## Why
-In general, a grey background is argued to be a good way to present information visually but we often use a white background because it helps the plot elements to be visible, especially, for example, if we are giving a presentation.
-:::
-
-3. **revision** -- the appearance of the labels using `labs()`
-
-::: panel-tabset
-## Code
-```{r}
-ggplot(data = all.studies.subjects, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2) +
-  theme_bw() +
-  labs(x = "Vocabulary (SHIPLEY)", y = "frequency count")
-```
-
-## Why
-You cannot assume that the audience for your plots will understand what you are referring to, if you just use data-set variable names e.g. `SHIPLEY`. They may not be familiar with your data-set. This means you need to use axis labels that will make sense to most people in your audience.
-:::
-
-4. **new** -- setting the x-axis limits using `xlim()`
-
-::: panel-tabset
-## Code
-```{r}
-ggplot(data = all.studies.subjects, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2) +
-  theme_bw() +
-  labs(x = "Vocabulary (SHIPLEY)", y = "frequency count") +
-  xlim(0,40)
-```
-
-## Why
-1. It is often useful to set the axis limits like this: because we want to show the audience where the sample values are distributed compared to where they *could* be distributed, given the measure. 
-2. This makes sense, e.g., if you want to see the relative age distribution of a sample compared to the population, or because we want to give the audience a more accurate picture of the data.
-:::
-
-5. **new** -- adding annotation -- here, a vertical line
-
-::: panel-tabset
-## Code
-```{r}
-ggplot(data = all.studies.subjects, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2) +
-  theme_bw() +
-  labs(x = "Vocabulary (SHIPLEY)", y = "frequency count") +
-  xlim(0,40) +
-  geom_vline(xintercept = mean(all.studies.subjects$SHIPLEY), colour = "red", linewidth = 1.5)
-```
-
-Notice that we used the `geom_vline()` element to plot a vertical line at the location on the x-axis we define.
-
-We do this in the steps:
-
-1. `geom_vline(...)` -- draw a vertical line;
-2. `...xintercept...` -- draw the line so it hits the x-axis (intercepts the x-axis);
-3. `...xintercept = mean(all.studies.subjects$SHIPLEY... ` -- at a location defined by the mean of the variable `mean(all.studies.subjects$SHIPLEY)`;
-4. `...colour = "red", size = 1.5..` -- make the line red and one and a half times the default thickness.
-
-## Why
-We can use annotations, like this vertical line, when we want to draw the attention of the audience for our plot to a specific feature of the data.
-:::
+1. `all.studies.subjects.select <- ...(all.studies.subjects, ...)` -- you tell R to create a new dataset `all.studies.subjects.select` from the original `all.studies.subjects` -- the new dataset will include just the variables we select from the original.
+2. `select(all.studies.subjects, ...)` -- you tell R to select the variables you want using the `select(...)` function: telling R to select variables from `all.studies.subjects`.
+3. `... select(..., mean.acc, mean.self, AGE, SHIPLEY, HLVA, FACTOR3)` -- you tell R to select the variables you want by entering the variable names, separated by commas, after you have named the dataset.
+4. `describe(...)` -- you tell R to give you descriptive statistics.
+5. `describe(all.studies.subjects.select, ...)` -- you name the dataset with the selection of variables you have created, telling the `describe()` function what data to work with.
+5. `describe(skew = FALSE)` -- critically, you add the argument `skew = FALSE` to turn off the option to report skew, kurtosis to keep the descriptive statistics short.
 
 **What are we learning here?**
 
-You can see that while the data stays the same, the appearance of the plot changes, as we add each edit to the plotting code.
+First, we can do exactly the same thing in two different but related ways:
 
-The lesson that we are learning, here, is not just that you can arrange plotting code in steps but that *in general* in R you can build things (like plots) one action at a time.
+- Use the way that (1.) works and (2.) you prefer.
+- Which should you prefer? You may reflect on how easy the code is to write, read, understand and use
+
+Second, we modify how the function `describe()` works by adding an argument: `describe(skew = FALSE)`.
+
+We have been doing this kind of move, already, by adding arguments to, e.g., specify point colour in `ggplot()` code.
+
+As your skills advance, so your preferences on how you want R to work for you will become more specific.
+
+- You can modify the outputs from functions so that you get exactly what you want *in the way that you want it*.
+
+The information on the options available to you for any argument can be found in different kinds of places, see the further information box, below.
 
 ::: callout-tip
 ## Further information you can explore
 
-We can define the limits on the x-axis and on the y-axis, see the `{ggplot2}` library reference information on setting limits is here:
+1. Here is an explanation for how to use pipes %>% when you code and why it may be helpful to do so:
 
-<https://ggplot2.tidyverse.org/reference/lims.html>
+<https://r4ds.had.co.nz/pipes.html>
 
-The `{ggplot2}` reference information for drawing lines is here:
+Note that we are not going to require the use of pipes in PSYC411.
 
-<https://ggplot2.tidyverse.org/reference/geom_abline.html>
+2. You can get a guide to the 'psych' library here:
+
+<http://personality-project.org/r/psych/vignettes/intro.pdf>
+
+Every "official" R library has a technical manual on the central R resource CRAN, and the manual for 'psych' can be found here:
+
+<https://cran.r-project.org/web/packages/psych/psych.pdf>
+
+- where you can see information on the functions the library provides, and how you can use each function.
+
+This is how you ask for help in R for a function, e.g., just type: `?describe` or
+`help(describe)`.
+
+The `{psych}` library is written by William Revelle who provides a lot of useful resources here:
+
+<http://personality-project.org/r/psych/>
 :::
 
-#### How-to Part 4: Developing scatterplots to examine associations between variables
+#### How-to Part 4: Using a linear model to answer research questions -- one predictor
 
-##### How-to Task 6 -- Edit scatterplot code to visualize associations like a pro
+##### How-to Task 5 -- Examine the relation between outcome mean accuracy (`mean.acc`) and health literacy (`HLVA`)
 
-You have seen these code moves before, in previous classes (weeks 3 and 4): we are **consolidating** skills by practising your coding in different contexts, using different data.
+One of our research questions is:
 
-We **extend** your skills by adding some new moves.
+1. What person attributes predict success in understanding?
 
-We create scatterplots to examine the association between pairs of variables.
-For example, we can draw a scatterplot to examine the association between variation in the values of `SHIPLEY` and of `mean.acc`.
+Here, we can address the question directly because we have information on an outcome, mean accuracy (`mean.acc`), and information on a predictor, health literacy (`HLVA`).
+Given the theoretical account outlined in @sec-associations, our hypothesis is that people who possess a higher level of background knowledge, measured here using the health literacy (`HLVA`) test, will be more likely to accurately understand health information when they read it, with understanding tested to calculate the mean accuracy (`mean.acc`).
+This hypothesis translates into a statistical prediction: if people in our sample have higher `HLVA` scores, we predict that, on average, they will also have higher `mean.acc` scores.
+
+To address the research question, we test the statistical prediction using the linear model:
 
 ```{r}
-ggplot(data = all.studies.subjects, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point()
-```  
-
-The plot code moves through the following steps:  
-
-1. `ggplot(...)` makes a plot.
-2. `ggplot(data = all.studies.subjects, ...)` uses the `all.studies.subjects` data-set.
-3. `ggplot(...aes(x = SHIPLEY, y = mean.acc))` uses two aesthetic mappings.
-4. `geom_point()` show the mappings as points.
-
-We are now going to edit:
-
-1. **revision and new** -- the appearance of the points using alpha, size, **shape**, and **colour**;
-2. **revision** -- the colour of the background using `theme_bw()`;
-3. **revision** -- the appearance of the labels using `labs()`;
-4. **new** -- the x-axis and y-axis limits using `lim()`.
-
-We make the changes, one change at a time.
-
-Click on the drop-down view to see the code but, if you want a challenge, first try to write the code on your own, using what you have learned so far.
-
-1. **revision and new** -- the appearance of the points using alpha, size, **shape**, and **colour**
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-ggplot(data = all.studies.subjects, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square') 
+model <- lm(mean.acc ~ HLVA, data = all.studies.subjects)
+summary(model)
 ```
-:::
+  
+If you look at the model summary you can answer the following questions  
 
-2. **revision** -- the colour of the background using `theme_bw()`
+> Q.1. What is the estimate for the coefficient of the effect of the predictor, HLVA?
 
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-ggplot(data = all.studies.subjects, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw()
-```
-:::
+> A.1. 0.041188 
 
-3. **revision** -- the appearance of the labels using `labs()`
+> Q.2. Is the effect significant?
 
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-ggplot(data = all.studies.subjects, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw() +
-  labs(x = "Vocabulary (SHIPLEY)", y = "mean accuracy")
-```  
-:::
+> A.2. It is significant because p < .05
 
-4. **new** -- the x-axis and y-axis limits using `lim()`
+> Q.3. What are the values for t and p for the significance test for the coefficient?
+> A.3. t = 12.94, p <2e-16
 
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-ggplot(data = all.studies.subjects, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw() +
-  labs(x = "SHIPLEY", y = "mean accuracy") +
-  xlim(0, 40) + ylim(0, 1)
-```  
+> Q.4. What do you conclude is the answer to the research question, given the linear model results?
 
-Notice that:
+> A.4. The model slope estimate suggests that as `HLVA` scores increase so also do `mean.acc` scores.
 
-- I set the x-axis limits to the minimum (0) and maximum (40) possible values for the `SHIPLEY` variable.
+> Q.5. What is the F-statistic for the regression? Report F, DF and the p-value.
 
-- I set the y-axis limits to the minimum (0) and maximum (1) possible values for the mean accuracy variable `mean.acc`.
-:::
+> A.5. F-statistic: 167.5 on 1 and 559 DF,  p-value: < 2.2e-16
+
+> Q.6. Is the regression significant?
+
+> A.6. Yes: the regression is significant.
+
+> Q.7. What is the Adjusted R-squared?
+
+> A.7. Adjusted R-squared:  0.2292
+
+> Q.8. Explain in words what this R-squared value indicates?
+
+> A.8. The R-squared suggests that 23% of outcome variance can be explained 
+# by the model
 
 **What are we learning here?**
 
-It is generally a good idea to show the minimum value (the origin) for each variable.
+It is worth your time reflecting, here, on how statistical analyses are incorporated in research work.
 
-- Not doing this, i.e., showing a more narrow slice of the sample range is an easy way to exaggerate the strength of associations or to imply incorrectly the breadth in variation.
+1. We have ideas about a psychological process: e.g., reading comprehension.
+2. We have assumptions of a theoretical account of that process: e.g., we use background knowledge to understand what we read.
+3. Given those assumptions, we derive hypotheses that we translate into statistical predictions: e.g., higher health literacy predicts higher accuracy of understanding.
+4. We test a statistical prediction using a method like `lm()`, specifying a model that aligns with the prediction terms: the outcome, the predictor(s).
 
-You can change the transparency (alpha), size, colour and shape of important parts of a plot.
-Here, we are changing the appearance of the points.
-But you can also change the transparency (alpha), size, colour and shape of reference lines
-added to a plot.
+#### How-to Part 4: Using a linear model to answer research questions -- multiple predictors
 
-::: callout-tip
-## Further information you can explore
+##### How-to Task 6 --Examine the relation between outcome mean accuracy (`mean.acc`) and multiple predictors including: health literacy (`HLVA`); vocabulary (`SHIPLEY`); `AGE`; reading strategy (`FACTOR3`)
 
-The `{ggplot2}` `geom_point()` reference information is here: 
-
-<https://ggplot2.tidyverse.org/reference/geom_point.html>
-
-- where you can see some examples of the edits we have done.
-
-Some useful information about shape options is here:
-
-<http://www.cookbook-r.com/Graphs/Shapes_and_line_types/>
-
-Some useful information about colour options is here:
-
-<http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/>
-:::
-
-::: callout-important
-Now you: experiment!
-:::
-
-#### How-to Part 5: Using correlations to to answer research questions
-
-##### How-to Task 7 -- Examine the correlation between a pair of variables
-
-In the **Clearly understood** project, one of our research questions is:
+We saw that our research question is:
 
 1. What person attributes predict success in understanding?
 
-We can answer this question by doing a correlation analysis.
-This is because we can expect that *if* vocabulary knowledge predicts success in understanding *then* variation in vocabulary knowledge should be associated with variation in success of understanding.
-We measured how successful study participants were in understanding health information: recording outcome `mean.acc` as the accuracy of response to questions designed to examine understanding.
-We measured a key person attribute, vocabulary knowledge using the `SHIPLEY` vocabulary test.
-We can then examine the association between this pair of variables using correlation.
+In the previous task, we tried to model success in understanding using just one predictor variable but it is unrealistic that a person's capacity to understand health information will be predicted by just one thing, their background knowledge.
+It is more likely that variation on multiple dimensions will predict understanding.
 
-Here, we examine the correlation between the mean accuracy (`mean.acc`) of understanding of health information, and vocabulary (`SHIPLEY`) knowledge, for each person in our participant sample.
+What could those variables be?
 
-Can you figure out how to code the correlation analysis?
+We can examine the relation between outcome mean accuracy (`mean.acc`) and multiple predictors simultaneously.
+Here, the candidate predictor variables include: health literacy (`HLVA`); vocabulary (`SHIPLEY`); `AGE`; reading strategy (`FACTOR3`).
 
-It helps with your learning if you first try to predict what the code will look like.
-Then reveal the code, below, to see what you guessed right.
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-cor.test(all.studies.subjects$SHIPLEY, all.studies.subjects$mean.acc, method = "pearson",  alternative = "two.sided")
-```
-:::
-
-> Q.1. What is r, the correlation coefficient?
-
-:::{.callout-tip collapse="true"}
-## Answer
-> A.1. r = 0.334406
-:::
-
-> Q.2. Is the correlation significant?
-
-:::{.callout-tip collapse="true"}
-## Answer
-> A.2. r is significant, p < .05
-:::
-
-> Q.3. What are the values for t and p for the significance test for the correlation?
-
-:::{.callout-tip collapse="true"}
-## Answer
-> A.3. t = 4.5855, p = 8.846e-06
-:::
-
-> Q.4. What do you conclude is the answer to the research question, given the correlation results?
-
-:::{.callout-tip collapse="true"}
-## Hint
-Review the scatterplot you drew earlier (or draw one now) to examine the shape of the association between these variables.
-:::
-
-:::{.callout-tip collapse="true"}
-## Answer
-> A.4. Vocabulary and `mean.acc` are positively correlated suggesting that as `SHIPLEY` scores increase so also do `mean.acc` scores.
-:::
-
-#### How-to Part 6: **New**: using a linear model to answer research questions
-
-##### How-to Task 8 -- Code and read the results from a linear model analysis
-
-As we have seen, one of our research questions is:
-
-1. What person attributes predict success in understanding?
-
-We can examine the relation between outcome mean accuracy (`mean.acc`) of understanding and vocabulary (`SHIPLEY`) knowledge by testing if person vocabulary score predicts understanding.
-
-We do this through a linear model analysis.
-
-We complete the analysis using the `lm()` function.
+We can incorporate all predictors together in a linear model: we use `lm()`, as before, but now specify each variable listed here by variable name.
 
 ```{r}
-model <- lm(mean.acc ~ SHIPLEY, data = all.studies.subjects)
+model <- lm(mean.acc ~ HLVA + SHIPLEY + FACTOR3 + AGE, data = all.studies.subjects)
 summary(model)
 ```
 
-Let's work through the elements of the linear model code so we can see what everything does:
+If we look closely at this code example, we can first identify the working elements in the linear model code, but then we can identify some general properties that it will be useful to you to learn about.
 
-1. `model <- lm(...)` -- fit the model using `lm(...)`, giving the model a name 
-here, we just call it "model".
-2. `...lm(mean.acc ~ SHIPLEY...)` -- tell R you want a model of the outcome 
-`mean.acc` predicted `~` by the predictor `SHIPLEY`.
-3. `...data = study.one)` -- tell R that the variables you name in the 
- formula are in the `study.one` dataset.
+First, let's work through the elements of the linear model code so we can see what everything does:
+
+1. `model <- lm(...)` -- tell R you want to fit the model using `lm(...)`, and give the model a name: here, we call it "model".
+2. `...lm(mean.acc ~ HLVA...)` -- tell R you want a model of the outcome `mean.acc` predicted `~` by the predictors: `HLVA`, `SHIPLEY`, `FACTOR3`, `AGE`.
+
+- Note that we use the variable names as they appear in the dataset, and that each predictor variable is separated from the next by a plus sign.
+
+3. `...data = all.studies.subjects)` -- tell R that the variables you name in the formula are in the `all.studies.subjects` data-set.
 4. `summary(model)` -- ask R for a summary of the model you called "model": **this is how you get the results**.
 
 ::: callout-tip
@@ -639,128 +455,462 @@ Notice that R has a general formula syntax: `outcome ~ predictor` *or* `y ~ x`
 
 - and uses the same format across a number of different functions;
 - each time, on the left of the tilde symbol `~` you identify the output or outcome variable;
-- but on the right of the tilde `~` you identify an input or predictor variable or set of predictor variables.
+- here, **what is new** is that you see on the right of the tilde `~` multiple predictor variables: `y ~ x1 + x2 + ...`
 :::
-  
+
 If you look at the model summary you can answer the following questions.
 
-> Q.5. What is the estimate for the coefficient of the effect of the predictor, SHIPLEY?
+(We have hidden the answers -- so that you can test yourself -- but you can reveal each answer by clicking on the box.)
+
+> Q.7. What is the estimate for the coefficient of the effect of the predictor `HLVA` in *this* model?
 
 :::{.callout-tip collapse="true"}
 ## Answer
-> A.5. 0.01050 
+> A.7. 0.0274954 
 :::
 
-> Q.6. Is the effect significant?
+> Q.8. Is the effect significant?
 
 :::{.callout-tip collapse="true"}
 ## Answer
-> A.6. It is significant, p < .05
+> A.8. It is significant because p < .05.
 :::
 
-> Q.7. What are the values for t and p for the significance test for the coefficient?
+> Q.9. What are the values for t and p for the significance test for the coefficient?
 
 :::{.callout-tip collapse="true"}
 ## Answer
-> A.7. t = 4.585, p = 8.85e-06
+> A.9. t = 8.470, p < 2e-16
 :::
 
-> Q.8. What do you conclude is the answer to the research question, given the linear model results?
+> Q.10. What do you conclude is the answer to the research question, given the linear model results?
 
 :::{.callout-tip collapse="true"}
 ## Answer
-> A.8. The model slope estimate suggests that as `SHIPLEY` scores increase so also do `mean.acc` scores.
+> A.10. The model slope estimate 0.0274954 suggests that as HLVA scores 
+# increase so also do mean.acc scores
 :::
 
-#### How-to Part 7: **New**: using a linear model to generate predictions
-
-##### How-to Task 9 -- Fit a linear model and plot the model predictions
-
-We can use the model we have just fitted to plot the model predictions.
-
-- The estimates of the coefficients (given in summary results) are the information we need to generate predictions.
-- What we are predicting is how values of the outcome variable change, on average, given different values in one or more predictor variables.
-- We can produce predictions by working with linear model estimates of (1.) the intercept and (2.) the coefficient of the effect of each predictor variable.
-- The effect of a predictor tells you *how* the outcome changes (how much the outcome increases or decreases), given different values of the predictor.
-
-We are going to do this prediction in two steps:
-
-1. **revision** -- fit a linear model to estimate the relationship between the outcome and the predictor variables.
-2. **new** -- draw a scatterplot and add a line to show the model predictions, given the model estimates.
-
-We work through these steps in turn.
-
-**Step 1. First fit a linear model and get a summary of the estimates**
-
-```{r}
-model <- lm(mean.acc ~ SHIPLEY, data = all.studies.subjects)
-summary(model)
-```
-
-> Q.9. What is the coefficient estimate for the intercept?
-
-> A.9. 0.44914
-
-> Q.10. What is the coefficient estimate for the slope of SHIPLEY?
-
-> A.10. 0.01050
-
-**Step 2. Second, draw a scatterplot and add a line to show the model predictions**
-
-We use the `geom_abline()` function to draw the line.
-
-```{r}
-ggplot(data = all.studies.subjects, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  geom_abline(intercept = 0.44914, slope = 0.01050, colour = "red", linewidth = 1.5) +
-  theme_bw() +
-  labs(x = "SHIPLEY", y = "mean accuracy") +
-  xlim(0, 40) + ylim(0, 1)
-```
-
-You can see that the only **new** thing we do here is to:
-
-1. add the `geom_abline(...)` function;
-2. and, inside the brackets, add information about the intercept and the slope estimates.
-
-Note that we can get the prediction line drawn for us automatically.
+> Q.11. How is the coefficient estimate for the HLVA slope similar or different, comparing this model with multiple predictors to the previous model with one predictor?
 
 :::{.callout-tip collapse="true"}
-## Hint
-```{r}
-ggplot(data = all.studies.subjects, aes(x = SHIPLEY, y = mean.acc)) +
-  # geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  geom_smooth(method = 'lm', colour = "purple", alpha = .2, linewidth = 2.5, se = FALSE) +
-  geom_abline(intercept = 0.44914, slope = 0.01050, colour = "red", linewidth = 1) +
-  theme_bw() +
-  labs(x = "SHIPLEY", y = "mean accuracy") +
-  xlim(0, 40) + ylim(0, 1)  
-```
-
-Here, I turned the points off by commenting them out, adding `#` to the start of the line.
-
-- I added `geom_smooth(method = 'lm', ...)` to draw a prediction line.
-
-You can compare the red prediction line I drew using the model estimates with the purple line I used `geom_smooth()` to draw automatically, to see that they are identical.
-
-You have seen `geom_smooth()` before: this shows you how it works.
+## Answer
+> A.11. It can be seen that the HLVA estimate in the two models is different in that it is a bit smaller in the model with multiple predictors compared to the model with one predictor. The HLVA estimate is similar in that it remains positive, and it is about the same size.
 :::
 
 **What are we learning here?**
 
-We want to generate model predictions because doing this unlocks a key concept in understanding why we use linear models and what we do.
+The estimate of the coefficient of any one predictor can be expected to vary depending on the presence of other predictors.
 
-- Linear models are an analysis method based on the *prediction* of the average change in outcome variable values, given different values of one or more predictor variables.
+- This is one reason why we need to be transparent about why we choose to use the predictors we include in our model.
+- The lecture for week 10 discusses this concern in relation to the motivation for good open science practices.
+
+> Q.12. Can you report the estimated effect of `SHIPLEY` (the measure of vocabulary)?
+
+:::{.callout-tip collapse="true"}
+## Answer
+> A.12. The effect of vocabulary knowledge (`SHIPLEY`) on mean accuracy of understanding is significant (estimate = 0.01, t = 7.30, p < .001), indicating that increasing skill is associated with increasing accuracy.
+:::
+
+> Q.13. Can you report the model and the model fit statistics?
+
+:::{.callout-tip collapse="true"}
+## Answer
+> A.13. We fitted a linear model with mean comprehension accuracy as the outcome and health literacy (`HLVA`),  reading strategy (`FACTOR3`), vocabulary (`SHIPLEY`) and `AGE` (in years) as predictors. The model is significant overall, with F(4, 556) = 85.17, p < .001, and explains 38% of variance (adjusted R2 = 0.38).
+:::
+
+#### How-to Part 5: Plot predictions from linear models with multiple predictors
+
+##### How-to Task 7 -- Produce and plot model results using R functions that make the process easier
+
+We can begin by plotting linear model predictions for one of the predictors in the multiple predictors model we have been working with.
+
+- Previously, we used `geom_abline()`, specifying intercept and slope estimates, to produce and plot model predictions.
+- Here, we use functions that are very helpful when we need to plot model predictions for a predictor, for models where we have multiple predictors.
+
+We do this in three steps:
+
+1. We first fit a linear model of the outcome, given our predictors, and we save information about the model.
+2. We use the `ggpredict()` function from the `{ggeffects}` library to take the information about the model and create a set of predictions we can use for plotting.
+3. We plot the model predictions, producing what are also called *marginal effects* plots.
+
+We write the code to do the work as follows.
+
+1. We first fit a linear model of the outcome, given our predictors:
+
+```{r}
+model <- lm(mean.acc ~ HLVA + SHIPLEY + FACTOR3 + AGE, 
+                         data = all.studies.subjects)
+```
+
+- `model <- lm(...)` -- we fit the model using `lm(...)`, giving the model a name: "model".
+- `...lm(mean.acc ~ HLVA + ... + ...)` -- this model estimates how the outcome `mean.acc` changes, is predicted `~` given information about the predictors `HLVA`, `SHIPLEY`, `FACTOR3`, and `AGE`.
+- Notice: when we use `lm()` to fit the model, R creates a set of information about the model, including estimates.
+- We give that set of information a name ("model"), and we use that name, next, to call on and use the model information to make the plot.
+
+2. We use the `ggpredict()` function from the `{ggeffects}` library to take the information about the model and create a set of predictions we can use for plotting:
+
+```{r}
+dat <- ggpredict(model, "HLVA")
+```
+
+- `dat <- ggpredict(...)` -- we ask R to create a set of predictions, and we give that set of predictions a name `dat`.
+- `... ggpredict(model, "HLVA")` -- we tell R what model information it should use (from "model"), and which predictor variable we need predictions for: `HLVA`.
+
+3. We plot the model predictions (marginal effects plots):
+
+```{r}
+plot(dat)
+```
+
+##### How-to Task 8 -- *Optional* -- Edit the appearance of the marginal effect (prediction) plot as you can with any `ggplot` object
+
+Once we have created the model predictions plot, we can edit it like we would edit any other `ggplot` object.
+
+- This is clearly advanced but it helps you to see just how powerful your capabilities can be if you aim to develop skills in this kind of work.
+
+```{r}
+p.model <- plot(dat)
+p.model +
+  geom_point(data = all.studies.subjects, 
+             aes(x = HLVA, y = mean.acc), size = 1.5, alpha = .75, colour = "lightgreen") +
+  geom_line(size = 1.5) +
+  ylim(0, 1.1) + xlim(0, 16) +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.25)),
+    plot.title = element_text(size = rel(1.4))
+  ) +
+  xlab("Health literacy (HLVA)") + ylab("Mean accuracy") +
+  ggtitle("Effect of health literacy on mean comprehension accuracy")
+```
+
+We do this in stages, as we have done for other kinds of plots:
+
+1. `p.model <- plot(dat)` -- we create a plot object, which we call 'p.model'.
+2. `p.model +` -- we then set up the first line of a series of code lines, starting with the name of the plot, `p.model` and a `+` to show we are going to add some edits.
+3. `geom_point(data = all.studies.subjects, aes(x = HLVA, y = mean.acc) ...)` -- we first add the raw data points showing the observed `HLVA` and `mean.acc` for each person in our sample.
+4. `geom_point(... size = 1.5, alpha = .75, colour = "lightgreen") +` -- we modify the appearance of the points, then
+5. `geom_line(size = 1.5) +` -- we add the prediction line, using the predictions created earlier, then
+6. `ylim(0, 1.1) + xlim(0, 16) +` -- we set axis limits to show the full potential range of variation in each variable, then
+7. `theme_bw()` -- we set the theme to black and white, then
+8. `theme(axis.text = element_text(size = rel(1.15)), ...)` -- we modify the relative size of x-axis, y-axis and plot title label font, then
+9. `xlab("Health literacy (HLVA)") + ylab("Mean accuracy") +` -- we edit labels to make them easier to understand, then
+10. `ggtitle("Effect of health literacy on mean comprehension accuracy")` -- we give the plot a title
+
+::: callout-tip
+Notice that here, we are constructing a complex plot from two datasets:
+
+- We use `plot(dat)` to construct a plot showing the prediction line using `geom_line(size = 1.5) + ` 
+- We then add a layer to the plot to show the raw sample data, using
+`geom_point(data = all.studies.subjects, ...)` -- to tell R to work with the sample data-set `all.studies.subjects`
+- and to show points representing the (aesthetic mappings) values, given that sample data, for (`x = HLVA, y = mean.acc`).
+:::
+
+**What are we learning here?**
+
+This complex plot is a good example of:
+
+1. How we can plot summary of prediction data plus observed outcomes, and this connects to the classes on visualization.
+2. How we can add layers of edits, or geometric objects, together to create complex plots that can show our audience messages like, here, that there is an average trend (shown by the line) but that individual outcomes vary quite a bit from the average.
+
+##### How-to Task 9 -- *Optional* -- Now produce plots that show the predictions for all the predictor variables in the model
+
+This is optional but we offer the task as an opportunity for practice with these notes.
+
+1. The code may get pretty lengthy.
+2. You will need to adjust axis labels so for each plot we see the correct predictor as the x-axis label
+3. You will give the plot titles as letters a-e so that, if you put this plot in a report, you can refer to each plot by letter in comments in a report.
+
+:::{.callout-tip collapse="true"}
+## Code
+We will use the `{Patchwork}` library:
+
+```{r}
+library(patchwork)
+```
+
+First, fit the model and get the model information:
+
+```{r}
+model <- lm(mean.acc ~ HLVA + SHIPLEY + FACTOR3 + AGE, 
+                         data = all.studies.subjects)
+```
+
+Second, get the predictions, given the model information, for two different predictor variables.
+
+- Notice that I use different names for different sets of predictors.
+
+```{r}
+dat.HLVA <- ggpredict(model, "HLVA")
+dat.SHIPLEY <- ggpredict(model, "SHIPLEY")
+```
+  
+Third, produce plots of the predictions, giving each *plot object* a different plot name.
+
+- Notice that I use different names for different sets of predictors.
+
+```{r}
+plot.HLVA <- plot(dat.HLVA)
+plot.SHIPLEY <- plot(dat.SHIPLEY)
+```  
+  
+Last, put the two plots together by calling their names.
+
+```{r}
+plot.HLVA + plot.SHIPLEY
+```
+
+The `{Patchwork}` library functions are *really* powerful and the documentation information is *really* helpful:
+
+<https://patchwork.data-imaginist.com/articles/patchwork.html>
+:::
+
+**What are we learning here?**
+
+If you follow the code example, and learn how to:
+
+1. complete a linear model analysis with multiple predictors and 
+2. present the model results, for all effects (estimates of the impact of all predictors) simultaneously
+
+- then *this* is a big deal, as a skill development learning achievement
+- because knowing about this process, and knowing how to do it, *unlocks* an important advanced analysis and visualization skill.
+
+::: callout-tip
+Knowing how to follow this model $\rightarrow$ visualization workflow gives you a competitive advantage in future professional settings (job applications, interviews, workplace) because not many Psychology graduates can do it, yet.
+:::
+
+#### How-to Part 6: **New**: estimate the effects of factors as well as numeric variables
+
+As we have seen, one of our research questions is:
+
+1. What person attributes predict success in understanding?
+
+We have not yet included any categorical or nominal variables as predictors but we can, and should: `lm()` can cope with any kind of variable as a predictor.
+
+::: callout-tip
+In Part 4 of the Week 10 lectures, I explain that fundamentally every kind of analysis you have learnt before (t-test, ANOVA, etc.) can be understood as a kind of linear model. This part shows how that works.
+
+- In a (two groups) t-test, you are comparing the average outcome between two different groups.
+- To do that analysis, you need an outcome variable (like `mean.acc`) and a categorical variable or factor (like, say, experimental condition: condition 1 versus condition 2). 
+- Here, we see how you can do the same kind of group comparison using a linear model.
+:::
+
+There are different ways to do this, here we look at one. Extra information about the second can be found in the drop-down box, following.
+
+##### How-to Task 10 -- Fit a linear model including both numeric variables and categorical variables as predictors model including both numeric variables and categorical 
+# variables as predictors
+
+We begin by inspecting the data to check what variables are categorical or nominal variables -- factors -- using `summary()`.
+
+:::{.callout-tip collapse="true"}
+## Code
+summary(all.studies.subjects)
+:::
+
+`summary()` gives you the information you need because R shows factors with a count of the number of observations for each level.
+
+::: callout-tip
+What are factors?
+
+- A *factor* is a categorical variable.
+- Categorical variables have a "fixed and known set of possible values", for example, maybe you are working with the factor `EDUCATION`: in the data collection process, answers to the question "What is your education level?" can have only one of three possible values (`further, higher, secondary`).
+- For any factor, different values of the variable are called `levels` so, for `EDUCATION` the different levels are: `further, higher, secondary`
+
+R treats factors differently from other kinds of variables:
+
+1. R *will not* give you summary statistics (e.g., a mean) for values of a factor. It can't because: what is the mean of education?
+2. R *will* count the number of times each `level` in a `factor` appears in a sample.
+3. If you are plotting a bar chart or a boxplot to show outcomes for different groups or conditions then the group or condition coding variable (e.g., `aes(x = group)`) has to be a factor.
+:::
+
+We can build on our previous work by including the factor `NATIVE.LANGUAGE` as a predictor:
+
+```{r}
+model <- lm(mean.acc ~ HLVA + SHIPLEY + FACTOR3 + AGE + NATIVE.LANGUAGE, 
+            data = all.studies.subjects)
+```
+
+Now, take a look at the results to answer the following questions.
+
+> Q.14. Can you report the estimated effect of `NATIVE.LANGUAGE` (the coding of participant language status: `English` versus `Other`)?
+
+> A.14. The effect of language status (`NATIVE.LANGUAGE`) on mean accuracy of 
+ understanding is significant (estimate = -0.09, t = -6.37, p < .001) indicating that not being a native speaker of English ('Other') is associated with lower accuracy.
+
+> Q.15. Can you report the model and the model fit statistics?
+
+> A.15. We fitted a linear model with mean comprehension accuracy as the outcome and health literacy (`HLVA`), reading strategy (`FACTOR3`), vocabulary (`SHIPLEY`) and `AGE` (years), as well as language status as predictors. The model is significant overall, with F(5, 555) = 81.09, p < .001, and 
+ explains 42% of variance (adjusted R2 = 0.42).
+
+> Q.16. What changes, when you compare the models with versus without `NATIVE.LANGUAGE`?
+
+> A.16. If you compare the summaries, for the last two models, you can see that the proportion of variance explained, `R-sq`, increases to 42% (0.4221), suggesting that knowing about participant language background helps to account for their response accuracy in tests of comprehension of health advice.
+
+::: callout-tip  
+R handles factors, by default, by picking one level (e.g., `English`) as the reference level (or baseline) and comparing outcomes to that baseline, for each other factor level (here, `Other`).
+
+- This is why, in this model, the effect of `NATIVE.LANGUAGE` is estimated as the average difference in `mean.acc` outcome for `English` compared to `Other` participants.
+- This is why the effect is listed as: `NATIVE.LANGUAGEOther` in the summary table for the model
+:::
+
+:::{.callout-tip collapse="true"}
+## Extra information: ANOVAs, and coding factors for analysis
+
+There are different ways to code factors for analysis:
+
+- If you are doing an analysis where your data come from, say, a factorial design (e.g. a 2 x 2 study design) then you will want to use a different coding scheme: *sum* or *effect* coding.
+
+It is easy to do this, in two steps, proceeding as follows.
+  
+1. We first change the coding scheme.
+
+- Get the `{memisc}` library:
+
+```{r}
+library(memisc)
+```
+
+- Check the coding:
+
+```{r}
+contrasts(all.studies.subjects$NATIVE.LANGUAGE)
+```
+
+- Change the coding
+
+```{r}
+contrasts(all.studies.subjects$NATIVE.LANGUAGE) <- contr.sum(2, base = 1)
+```
+
+The arguments in `contr.sum(2, base = 1)` tell R which level we want to be the reference level.
+
+- Check the coding to show you got what you want:
+
+```{r}
+contrasts(all.studies.subjects$NATIVE.LANGUAGE)
+```
+
+::: callout-tip
+Loading the `{memisc}` library can cause problems when using `{tidyverse}` library functions like `select()`: the problem is expressed as, e.g., `select()` not being able to see variables listed for selection.
+
+- You can fix this problem by restarting R or by requiring R to use `dplyr::select()`.
+- I would normally avoid problems like this but the `{memisc}` `contr.sum()` function is too useful to ignore.
+:::
+
+2. We then fit a linear model of the outcome, given our predictors:
+
+```{r}
+model <- lm(mean.acc ~ HLVA + SHIPLEY + FACTOR3 + AGE + NATIVE.LANGUAGE, 
+            data = all.studies.subjects)
+summary(model)
+```
+
+> Optional.Q.1 What changes, when you compare the models with versus without sum coding of `NATIVE.LANGUAGE`?
+
+> Optional.A.1. If you compare the summaries, for the last two models, you can see that the estimate for the coefficient of `NATIVE.LANGUAGE` changes in two ways: 
+
+> 1. the name changes, from `NATIVE.LANGUAGEOther` to `NATIVE.LANGUAGE2`, reflecting the change in coding;
+
+> 2. the slope estimate changes, from `-0.0900035` to `-0.0450018`.
+
+> Note: the change in the estimate happens because we go from estimating the average difference in level between 0 (`English`) versus 1 (`Other`), a change of one unit to estimating the average difference in level between -1 (`English`) versus 1 (`Other`), a change of 2 units.
+
+Being able to change the coding of nominal or categorical variables is very useful.
+And enables you to do ANOVA style analyses given factorial study designs e.g.
+
+```{r}
+model <- aov(lm(mean.acc ~ HLVA + SHIPLEY + FACTOR3 + AGE + NATIVE.LANGUAGE, 
+       data = all.studies.subjects))
+summary(model)
+```
+
+Notice: we use `aov()` to get an ANOVA summary for the model.
+:::
+
+As before, you can fit a linear model including both numeric variables and categorical variables as predictors: and then plot the predicted effect of the factor.
+
+- We first fit the model, including `NATIVE.LANGUAGE` then use the ggpredict() function to get the predictions.
+
+```{r}
+dat <- ggpredict(model, "NATIVE.LANGUAGE")
+plot(dat)
+```
+:::
 
 ::: callout-tip
 ## Further information you can explore
-You can get `{ggplot2}` reference information to see what `geom_smooth()` does:
 
-<https://ggplot2.tidyverse.org/reference/geom_smooth.html>
+You can read more about factor coding schemes here:
 
-You can see reference information on drawing lines here:
+<https://talklab.psy.gla.ac.uk/tvw/catpred/>
 
-<https://ggplot2.tidyverse.org/reference/geom_abline.html>
+and here:
+
+<https://phillipalday.com/stats/coding.html>
+:::
+
+#### How-to Part 7: **New**: examine associations comparing data from different samples
+
+The lecture for developing the linear model includes a discussion of the ways in which the observed associations between variables or the estimated effects of predictor variables on some outcome may differ between different studies, different samples of data.
+
+To draw the plots, I used the `{ggplot2}` library function `facet_wrap()`:
+
+```{r}
+all.studies.subjects %>%
+  ggplot(aes(x = SHIPLEY, y = mean.acc)) +
+  geom_point(size = 2, alpha = .5, colour = "darkgrey") +
+  geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) +
+  xlim(0, 40) +
+  ylim(0, 1.1)+
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  ) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") +
+  facet_wrap(~ study)
+```
+
+What is new here is this bit:` facet_wrap(~ study)`
+
+This is how it works:
+
+1. `facet_wrap()` -- the function asks R to take the data-set and split it into subsets.
+2. `facet_wrap(~ study)` -- tells the function to split the data-set according to the different levels of a named factor: `study`.
+
+So: you need to identify a factor to do this work.
+
+##### How-to Task 11 -- *Optional*  Fit a linear model and plot the model predictions, for different study samples, all together, to enable comparisons of effects between studies
+
+Change the factor in `facet_wrap()` to show how the vocabulary effect may vary between English monolinguals versus non-native speakers of English.
+
+```{r}
+all.studies.subjects %>%
+  ggplot(aes(x = SHIPLEY, y = mean.acc)) +
+  geom_point(size = 2, alpha = .5, colour = "darkgrey") +
+  geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) +
+  xlim(0, 40) +
+  ylim(0, 1.1)+
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  ) +
+  xlab("Vocabulary (Shipley)") + ylab("Mean accuracy") +
+  facet_wrap(~ NATIVE.LANGUAGE)
+```
+
+**What are we learning here?**
+
+We can work with factors to split data-sets up by group or condition, or combinations of groups or conditions. We can then compare patterns, like outcomes, or the ways that outcomes are affected by predictors, in different groups or in different combinations.
+
+::: callout-tip
+## Further information you can explore
+You can read more about faceting here:
+
+<https://ggplot2.tidyverse.org/reference/facet_wrap.html>
 :::
 
 #### The practical exercises {#sec-lm-intro-practical-workbook}
