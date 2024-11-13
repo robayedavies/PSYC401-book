@@ -275,7 +275,6 @@ window.Quarto = {
   <li><a href="#sec-lm-dev-practical" id="toc-sec-lm-dev-practical" class="nav-link" data-scroll-target="#sec-lm-dev-practical"><span class="header-section-number">6.3.2</span> Practical materials: data and R-Studio</a></li>
   <li><a href="#sec-lm-dev-practical-guide" id="toc-sec-lm-dev-practical-guide" class="nav-link" data-scroll-target="#sec-lm-dev-practical-guide"><span class="header-section-number">6.3.3</span> Practical materials guide</a></li>
   </ul></li>
-  <li><a href="#mean-self-rated-accuracy-of-mean.self" id="toc-mean-self-rated-accuracy-of-mean.self" class="nav-link" data-scroll-target="#mean-self-rated-accuracy-of-mean.self"><span class="header-section-number">7</span> mean self-rated accuracy of <code>mean.self</code></a></li>
   </ul>
 </nav>
     </div>
@@ -2403,14 +2402,8 @@ Important
 </section>
 <section id="practical-part-6-new-estimate-the-effects-of-factors-as-well-as-numeric-variables" class="level4" data-number="6.3.3.16">
 <h4 data-number="6.3.3.16" class="anchored" data-anchor-id="practical-part-6-new-estimate-the-effects-of-factors-as-well-as-numeric-variables"><span class="header-section-number">6.3.3.16</span> Practical Part 6: New – estimate the effects of factors as well as numeric variables</h4>
-<section id="practical-task-8-fit-a-linear-model-to-examine-what-variables-predict-outcome" class="level5" data-number="6.3.3.16.1">
-<h5 data-number="6.3.3.16.1" class="anchored" data-anchor-id="practical-task-8-fit-a-linear-model-to-examine-what-variables-predict-outcome"><span class="header-section-number">6.3.3.16.1</span> Practical Task 8 – Fit a linear model to examine what variables predict outcome</h5>
-</section>
-</section>
-</section>
-</section>
-<section id="mean-self-rated-accuracy-of-mean.self" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> mean self-rated accuracy of <code>mean.self</code></h1>
+<section id="practical-task-8-fit-a-linear-model-to-examine-what-variables-predict-outcome-mean-self-rated-accuracy-of-mean.self" class="level5" data-number="6.3.3.16.1">
+<h5 data-number="6.3.3.16.1" class="anchored" data-anchor-id="practical-task-8-fit-a-linear-model-to-examine-what-variables-predict-outcome-mean-self-rated-accuracy-of-mean.self"><span class="header-section-number">6.3.3.16.1</span> Practical Task 8 – Fit a linear model to examine what variables predict outcome mean self-rated accuracy of <code>mean.self</code></h5>
 <p>Include in the model both numeric variables and categorical variables as predictors:</p>
 <ul>
 <li>health literacy (<code>HLVA</code>); vocabulary (<code>SHIPLEY</code>); <code>AGE</code>; reading strategy (<code>FACTOR3</code>); as well as <code>mean.acc</code> and <code>NATIVE.LANGUAGE</code>.</li>
@@ -2507,10 +2500,12 @@ Code
 <p><strong>Q.25.</strong> Compare the difference in the estimated <code>mean.self</code> between these groups, given the plot, with the coefficient estimate from the model summary: what do you see?</p>
 </blockquote>
 <!-- > A.25. The coefficient estimate = -0.225432. This matches the difference shown in the plot. -->
-<section id="practical-part-7-new-examine-associations-comparing-data-from-different-samples" class="level4" data-number="7.0.0.1">
-<h4 data-number="7.0.0.1" class="anchored"><span class="header-section-number">7.0.0.1</span> Practical Part 7: New – examine associations comparing data from different samples</h4>
-<section id="practical-task-8-use-facet_wrap-to-show-how-the-association-between-mean.self-and-mean.acc-can-vary-between-the-different-studies-in-the-data-set" class="level5" data-number="7.0.0.1.1">
-<h5 data-number="7.0.0.1.1" class="anchored"><span class="header-section-number">7.0.0.1.1</span> Practical Task 8 – Use <code>facet_wrap()</code> to show how the association between <code>mean.self</code> and <code>mean.acc</code> can vary between the different studies in the data-set</h5>
+</section>
+</section>
+<section id="practical-part-7-new-examine-associations-comparing-data-from-different-samples" class="level4" data-number="6.3.3.17">
+<h4 data-number="6.3.3.17" class="anchored"><span class="header-section-number">6.3.3.17</span> Practical Part 7: New – examine associations comparing data from different samples</h4>
+<section id="practical-task-8-use-facet_wrap-to-show-how-the-association-between-mean.self-and-mean.acc-can-vary-between-the-different-studies-in-the-data-set" class="level5" data-number="6.3.3.17.1">
+<h5 data-number="6.3.3.17.1" class="anchored"><span class="header-section-number">6.3.3.17.1</span> Practical Task 8 – Use <code>facet_wrap()</code> to show how the association between <code>mean.self</code> and <code>mean.acc</code> can vary between the different studies in the data-set</h5>
 <p>Change the factor in <code>facet_wrap()</code> to show how the association between <code>mean.self</code> and <code>mean.acc</code> can vary between the different studies</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-45-contents" aria-controls="callout-45" aria-expanded="false" aria-label="Toggle callout">
@@ -2563,8 +2558,8 @@ Code
 </ul>
 <p>Hint: check out the continuous scale information in:</p>
 <p><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html" class="uri">https://ggplot2.tidyverse.org/reference/scale_continuous.html</a></p>
-<section id="practical-part-optional-new-save-or-export-plots-so-that-you-can-insert-them-in-reports" class="level4" data-number="7.0.0.2">
-<h4 data-number="7.0.0.2" class="anchored" data-anchor-id="practical-part-optional-new-save-or-export-plots-so-that-you-can-insert-them-in-reports"><span class="header-section-number">7.0.0.2</span> Practical Part Optional: New – save or export plots so that you can insert them in reports</h4>
+<section id="practical-part-optional-new-save-or-export-plots-so-that-you-can-insert-them-in-reports" class="level4" data-number="6.3.3.18">
+<h4 data-number="6.3.3.18" class="anchored" data-anchor-id="practical-part-optional-new-save-or-export-plots-so-that-you-can-insert-them-in-reports"><span class="header-section-number">6.3.3.18</span> Practical Part Optional: New – save or export plots so that you can insert them in reports</h4>
 <p>Learning how to export plots from R will help you later with reports.</p>
 <p>The task is to save or export a plot that you produce, so that you can insert it in a report or presentation.</p>
 <p>There are different ways to do this, we can look at one simple example.</p>
@@ -2613,8 +2608,8 @@ Further information you can explore
 </div>
 </div>
 </section>
-<section id="practical-task-optional-now-try-it-for-yourself-make-a-plot-and-save-it-using-what-you-have-learnt-so-far" class="level4" data-number="7.0.0.3">
-<h4 data-number="7.0.0.3" class="anchored" data-anchor-id="practical-task-optional-now-try-it-for-yourself-make-a-plot-and-save-it-using-what-you-have-learnt-so-far"><span class="header-section-number">7.0.0.3</span> Practical Task Optional: Now try it for yourself: make a plot, and save it, using what you have learnt so far</h4>
+<section id="practical-task-optional-now-try-it-for-yourself-make-a-plot-and-save-it-using-what-you-have-learnt-so-far" class="level4" data-number="6.3.3.19">
+<h4 data-number="6.3.3.19" class="anchored" data-anchor-id="practical-task-optional-now-try-it-for-yourself-make-a-plot-and-save-it-using-what-you-have-learnt-so-far"><span class="header-section-number">6.3.3.19</span> Practical Task Optional: Now try it for yourself: make a plot, and save it, using what you have learnt so far</h4>
 <p>You will need to:</p>
 <ol type="1">
 <li>Fit a model</li>
@@ -2690,14 +2685,14 @@ Code
 <li>Notice also that different presentation venues will require different levels if image resolution e.g.&nbsp;journals may require .tiff file plots at dpi = 180 or greater.</li>
 </ul>
 </section>
-<section id="the-answers" class="level3" data-number="7.0.1">
-<h3 data-number="7.0.1" class="anchored" data-anchor-id="the-answers"><span class="header-section-number">7.0.1</span> The answers</h3>
+<section id="the-answers" class="level3" data-number="6.3.4">
+<h3 data-number="6.3.4" class="anchored" data-anchor-id="the-answers"><span class="header-section-number">6.3.4</span> The answers</h3>
 <p>After the practical class, you will be able to download the answers version of the <code>workbook</code> here.</p>
 <!-- [401-visualization-workbook-answers.R](files/401-visualization-workbook-answers.R) -->
 <p>The answers version will present my answers for questions, and some extra information where that is helpful.</p>
 </section>
-<section id="general-advice" class="level3" data-number="7.0.2">
-<h3 data-number="7.0.2" class="anchored" data-anchor-id="general-advice"><span class="header-section-number">7.0.2</span> General advice</h3>
+<section id="general-advice" class="level3" data-number="6.3.5">
+<h3 data-number="6.3.5" class="anchored" data-anchor-id="general-advice"><span class="header-section-number">6.3.5</span> General advice</h3>
 <p>An old saying goes:</p>
 <blockquote class="blockquote">
 <p>All models are wrong but some are useful</p>
@@ -2721,8 +2716,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="summary" class="level3" data-number="7.0.3">
-<h3 data-number="7.0.3" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.0.3</span> Summary</h3>
+<section id="summary" class="level3" data-number="6.3.6">
+<h3 data-number="6.3.6" class="anchored" data-anchor-id="summary"><span class="header-section-number">6.3.6</span> Summary</h3>
 <ol type="1">
 <li>Linear models</li>
 </ol>
@@ -2755,6 +2750,7 @@ Tip
 </div>
 </div>
 </div>
+</section>
 </section>
 </section>
 </section>

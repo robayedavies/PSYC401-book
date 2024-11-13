@@ -1296,8 +1296,7 @@ Predictions *must* be scaled in the same way as the outcome variable.
 
 #### Practical Part 6: New -- estimate the effects of factors as well as numeric variables
 
-##### Practical Task 8 -- Fit a linear model to examine what variables predict outcome
-# mean self-rated accuracy of `mean.self`
+##### Practical Task 8 -- Fit a linear model to examine what variables predict outcome mean self-rated accuracy of `mean.self`
 
 Include in the model both numeric variables and categorical variables as predictors:
 
