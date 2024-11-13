@@ -1210,12 +1210,14 @@ Note that the comparison between these models teaches us something about *what* 
 
 :::{.callout-tip collapse="true"}
 ## Code
+```{r}
 model.1 <- lm(mean.acc ~ mean.self, data = all.studies.subjects)
 summary(model.1)
 
 model.2 <- lm(mean.self ~ mean.acc, 
               data = all.studies.subjects)
 summary(model.2)
+```
 :::
   
 Take a look at the summary for each model.  
