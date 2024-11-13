@@ -38,9 +38,10 @@ In the context of the *Clearly understood* project, we frame our analysis concer
 
 This is to help you to learn to think critically about what it is you want to do with linear models when you use them, or when you read about their results in research reports.
 
-It will be seen that to answer research questions like this example question, we will need to think about how we analyze data when *multiple* different predictor variables could be included in our model.
+It will be seen that, to answer research questions like this example question, we will need to think about how we analyze data when *multiple* different predictor variables could be included in our model.
 
 Most of the time, in your future professional work, when you use linear models you will be trying to predict outcomes (behaviours, person attributes) given information from multiple different predictor variables at once.
+
 You will be able to do this work using what you learn this week.
 
 As students, now, learning how to move from analyses involving one outcome and one predictor variable, to analyses involving one outcome and *multiple* outcome variables **unlocks a much wider range of contexts** in which you can apply the skills and understanding you develop here to address research problems and questions of your own.
@@ -322,7 +323,7 @@ First, we can do exactly the same thing in two different but related ways:
 
 Second, we modify how the function `describe()` works by adding an argument: `describe(skew = FALSE)`.
 
-We have been doing this kind of move, already, by adding arguments to, e.g., specify point colour in `ggplot()` code.
+- We have been doing this kind of move, already, by adding arguments to, e.g., specify point colour in `ggplot()` code.
 
 As your skills advance, so your preferences on how you want R to work for you will become more specific.
 
@@ -574,7 +575,7 @@ plot(dat)
 
 ::: callout-tip
 ## Further information you can explore
-In producing prediction plots, we are using functions from the `{ggefects}` library. Can you locate online information about working with the library functions?
+In producing prediction plots, we are using functions from the `{ggeffects}` library. Can you locate online information about working with the library functions?
 
 - Try doing a search with the key words: `in r ggeffects`.
 
@@ -596,7 +597,7 @@ p.model <- plot(dat)
 p.model +
   geom_point(data = all.studies.subjects, 
              aes(x = HLVA, y = mean.acc), size = 1.5, alpha = .75, colour = "lightgreen") +
-  geom_line(size = 1.5) +
+  geom_line(linewidth = 1.5) +
   ylim(0, 1.1) + xlim(0, 16) +
   theme_bw() +
   theme(
@@ -627,19 +628,19 @@ Notice that we are constructing a complex plot from two datasets:
 - We then add a layer to the plot to show (2.) the raw sample data, using
 `geom_point(data = all.studies.subjects, ...)` -- to tell R to work with the sample data-set `all.studies.subjects`, and to show points representing the (aesthetic mappings) values, given that sample data, for (`x = HLVA, y = mean.acc`).
 
-::: calloutbox-tip
-No model will be perfect.
-
-- It is often useful to compare model estimates -- here, the slopes -- with the raw data observations.
-- Visualizing the difference between what we observe and what we predict helps to make sense of how our prediction model could be improved.
-:::
-
 **What are we learning here?**
 
 This complex plot is a good example of:
 
 1. How we can plot summary of prediction data plus observed outcomes, and this connects to the classes on visualization.
 2. How we can add layers of edits, or geometric objects, together to create complex plots that can show our audience messages like, here, that there is an average trend (shown by the line) but that individual outcomes vary quite a bit from the average.
+
+::: callout-tip
+No model will be perfect.
+
+- It is often useful to compare model estimates -- here, the slopes -- with the raw data observations.
+- Visualizing the difference between what we observe and what we predict helps to make sense of how our prediction model could be improved.
+:::
 
 ##### How-to Task 9 -- *Optional* -- Now produce plots that show the predictions for all the predictor variables in the model
 
@@ -1075,7 +1076,7 @@ Note that ratings of accuracy are ordinal (categorical ordered) data but that, h
 - We learn about ordinal models for ordinal data in PSYC412.
 :::
 
-For these data, participants were asked to respond to questions about health information to get 'mean.acc' scores and were asked to rate their own understanding of the same information.
+For these data, participants were asked to respond to questions about health information to get `mean.acc` scores and were asked to rate their own understanding of the same information.
 
 - If you *can* evaluate your own understanding then ratings of understanding *should* be associated with performance on tests of understanding.
 
@@ -1146,9 +1147,11 @@ We use `lm()`, as before, but now specify each variable listed here by variable 
 
 :::{.callout-tip collapse="true"}
 ## Code
+```{r}
 model <- lm(mean.self ~ HLVA + SHIPLEY + FACTOR3 + AGE + mean.acc, 
             data = all.studies.subjects)
 summary(model)
+```
 :::
 
 If you look at the model summary you can answer the following questions  
