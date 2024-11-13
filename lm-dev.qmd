@@ -1317,7 +1317,9 @@ Hint: you will need to get a summary of the model you have coded.
 
 :::{.callout-tip collapse="true"}
 ## Code
+```{r}
 summary(model)
+```
 :::
 
 <!-- > A.21. The effect of language status (`NATIVE.LANGUAGE`) on mean accuracy of understanding is not significant (estimate = -0.225432, t = -1.750, p = .081) indicating that not being a native speaker of English (`Other`) is not associated with lower self-rated accuracy. -->
@@ -1379,6 +1381,7 @@ all.studies.subjects %>%
   xlab("Mean self-rated accuracy") + ylab("Mean accuracy") +
   facet_wrap(~ study)
 ```
+:::
 
 You may need to edit the x-axis labeling to make it readable
 
@@ -1475,7 +1478,6 @@ ggsave("reading-strategy-prediction.png", width = 10, height = 10, units = "cm")
 ```
 :::
 
-
 Some advice:
 
 - It is often helpful to present plots that are almost square i.e. height about = width.
@@ -1483,17 +1485,15 @@ Some advice:
 - We may experiment with width-height (aspect ratio) until we get something that "looks" right. 
 - Notice also that different presentation venues will require different levels if image resolution e.g. journals may require .tiff file plots at dpi = 180 or greater.
 
-
-
 ### The answers
 
-After the practical class, you will be able to download the answers version of the `workbook` here.
+After the practical class, we will reveal the answers that are currently hidden.
 
-<!-- [401-visualization-workbook-answers.R](files/401-visualization-workbook-answers.R) -->
+The answers version of the webpage will present my answers for questions, and some extra information where that is helpful.
 
-The answers version will present my answers for questions, and some extra information where that is helpful.
+### Look ahead: growing in independence
 
-### General advice
+#### General advice
 
 An old saying goes:
 
@@ -1527,3 +1527,5 @@ An old saying goes:
 1.  Explain what I did, specifying the method (linear model), the outcome variable (accuracy) and the predictor variables (health literacy, reading strategy, reading skill and vocabulary)
 2.  Report the model fit statistics overall ($F, R^2$)
 3.  Report the significant effects ($\beta, t, p$) and describe the nature of the effects (does the outcome increase or decrease?)
+
+
