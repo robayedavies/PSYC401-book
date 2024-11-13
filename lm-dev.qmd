@@ -36,7 +36,7 @@ In the context of the *Clearly understood* project, we frame our analysis concer
 
 1.  What person attributes predict success in understanding?
 
-This is to help you to learn to think critically about what it is you want to do with linear models when you use them, or read about their results.
+This is to help you to learn to think critically about what it is you want to do with linear models when you use them, or when you read about their results in research reports.
 
 It will be seen that to answer research questions like this example question, we will need to think about how we analyze data when *multiple* different predictor variables could be included in our model.
 
@@ -45,12 +45,16 @@ You will be able to do this work using what you learn this week.
 
 As students, now, learning how to move from analyses involving one outcome and one predictor variable, to analyses involving one outcome and *multiple* outcome variables **unlocks a much wider range of contexts** in which you can apply the skills and understanding you develop here to address research problems and questions of your own.
 
+::: callout-tip
+We encounter linear models with multiple predictors, often, as *multiple regression* or *regression* analyses. The difference in names in different fields disguises the fact that we are working with the same technique: multiple regressions **are** linear models.
+:::
+
 ## Our learning goals {#sec-lm-dev-goals}
 
 We will learn how to:
 
 -   *Skills* -- extend our capacity to code models so that we can incorporate **multiple predictors**;
--   *Concepts* -- develop the critical thinking processes required to make **decisions about what predictors to include** when you code your model;
+-   *Concepts* -- develop the critical thinking processes required to make **decisions about what predictors to include** in your model;
 -   *Concepts and skills* -- learn how to **critically evaluate results**, given variation between samples.
 
 We will revise how to:
@@ -280,7 +284,7 @@ all.studies.subjects %>%
 
 These are the code elements and what they do:
 
-1. `all.studies.subjects %>%` -- you tell R to use the `all.studies.subjects` dataset, then use `%>%` to ask R to take those data to the next step: to `%>%` pipe it forwards on to the next step.
+1. `all.studies.subjects %>%` -- you tell R to use the `all.studies.subjects` dataset, then use `%>%` to ask R to take those data to the next step.
 2. `select(mean.acc, mean.self, AGE, SHIPLEY, HLVA, FACTOR3) %>%` -- you tell R to select just those variables in `all.studies.subjects` that you name and `%>%` pipe them to the next step.
 3. `describe(...)` -- you tell R to give you descriptive statistics for the variables you have selected.
 4. `describe(skew = FALSE)` -- critically, you add the argument `skew = FALSE` to *turn off* the option in `describe()` to report skew, kurtosis: because we do not typically see these statistics reported in psychology.
@@ -362,8 +366,9 @@ One of our research questions is:
 1. What person attributes predict success in understanding?
 
 Here, we can address the question directly because we have information on an outcome, mean accuracy (`mean.acc`), and information on a predictor, health literacy (`HLVA`).
-Given the theoretical account outlined in @sec-associations, our hypothesis is that people who possess a higher level of background knowledge, measured here using the health literacy (`HLVA`) test, will be more likely to accurately understand health information when they read it, with understanding tested to calculate the mean accuracy (`mean.acc`).
-This hypothesis translates into a statistical prediction: if people in our sample have higher `HLVA` scores, we predict that, on average, they will also have higher `mean.acc` scores.
+
+- Given the theoretical account outlined in @sec-associations, our hypothesis is that people who possess a higher level of background knowledge, measured here using the health literacy (`HLVA`) test, will be more likely to accurately understand health information when they read it, with understanding tested to calculate the mean accuracy (`mean.acc`).
+- This hypothesis translates into a statistical prediction: if people in our sample have higher `HLVA` scores, we predict that, on average, they will also have higher `mean.acc` scores.
 
 To address the research question, we test the statistical prediction using the linear model:
 
@@ -414,6 +419,10 @@ It is worth your time reflecting, here, on how statistical analyses are incorpor
 2. We have assumptions of a theoretical account of that process: e.g., we use background knowledge to understand what we read.
 3. Given those assumptions, we derive hypotheses that we translate into statistical predictions: e.g., higher health literacy predicts higher accuracy of understanding.
 4. We test a statistical prediction using a method like `lm()`, specifying a model that aligns with the prediction terms: the outcome, the predictor(s).
+
+::: callout-tip
+Thinking ahead to your dissertation project, can you reflect on the research question you will hope to answer, how you will address that question through measurement, then data analysis to test a statistical prediction?
+:::
 
 #### How-to Part 4: Using a linear model to answer research questions -- multiple predictors
 
@@ -706,30 +715,19 @@ We begin by inspecting the data to check what variables are categorical or nomin
 
 :::{.callout-tip collapse="true"}
 ## Code
+```{r}
 summary(all.studies.subjects)
+```
 :::
 
 `summary()` gives you the information you need because R shows factors with a count of the number of observations for each level.
-
-::: callout-tip
-What are factors?
-
-- A *factor* is a categorical variable.
-- Categorical variables have a "fixed and known set of possible values", for example, maybe you are working with the factor `EDUCATION`: in the data collection process, answers to the question "What is your education level?" can have only one of three possible values (`further, higher, secondary`).
-- For any factor, different values of the variable are called `levels` so, for `EDUCATION` the different levels are: `further, higher, secondary`
-
-R treats factors differently from other kinds of variables:
-
-1. R *will not* give you summary statistics (e.g., a mean) for values of a factor. It can't because: what is the mean of education?
-2. R *will* count the number of times each `level` in a `factor` appears in a sample.
-3. If you are plotting a bar chart or a boxplot to show outcomes for different groups or conditions then the group or condition coding variable (e.g., `aes(x = group)`) has to be a factor.
-:::
 
 We can build on our previous work by including the factor `NATIVE.LANGUAGE` as a predictor:
 
 ```{r}
 model <- lm(mean.acc ~ HLVA + SHIPLEY + FACTOR3 + AGE + NATIVE.LANGUAGE, 
             data = all.studies.subjects)
+summary(model)
 ```
 
 Now, take a look at the results to answer the following questions.
@@ -748,15 +746,34 @@ Now, take a look at the results to answer the following questions.
 
 > A.16. If you compare the summaries, for the last two models, you can see that the proportion of variance explained, `R-sq`, increases to 42% (0.4221), suggesting that knowing about participant language background helps to account for their response accuracy in tests of comprehension of health advice.
 
-::: callout-tip  
+**What are we learning here?**
+
+What are factors?
+
+- A *factor* is a categorical variable.
+- Categorical variables have a "fixed and known set of possible values", for example, maybe you are working with the factor `EDUCATION`: in the data collection process, answers to the question "What is your education level?" can have only one of three possible values (`further, higher, secondary`).
+- For any factor, different values of the variable are called `levels` so, for `EDUCATION` the different levels are: `further, higher, secondary`
+
+R treats factors differently from other kinds of variables:
+
+1. R *will not* give you summary statistics (e.g., a mean) for values of a factor. It can't because: what is the mean of education?
+2. R *will* count the number of times each `level` in a `factor` appears in a sample.
+3. If you are plotting a bar chart or a boxplot to show outcomes for different groups or conditions then the group or condition coding variable (e.g., `aes(x = group)`) has to be a factor.
+
 R handles factors, by default, by picking one level (e.g., `English`) as the reference level (or baseline) and comparing outcomes to that baseline, for each other factor level (here, `Other`).
 
-- This is why, in this model, the effect of `NATIVE.LANGUAGE` is estimated as the average difference in `mean.acc` outcome for `English` compared to `Other` participants.
+- This is why, in the summary of estimates for this model, the effect of `NATIVE.LANGUAGE` is estimated as the average difference in `mean.acc` outcome for `English` compared to `Other` participants.
 - This is why the effect is listed as: `NATIVE.LANGUAGEOther` in the summary table for the model
+
+::: callout-tip
+## Further information you can explore
+Note that I quote, here, from the powerful `{forcats}` library of tools for working with factors:
+
+<https://forcats.tidyverse.org/>
 :::
 
 :::{.callout-tip collapse="true"}
-## Extra information: ANOVAs, and coding factors for analysis
+## Extra information for students interested in ANOVAs
 
 There are different ways to code factors for analysis:
 
@@ -792,13 +809,6 @@ The arguments in `contr.sum(2, base = 1)` tell R which level we want to be the r
 contrasts(all.studies.subjects$NATIVE.LANGUAGE)
 ```
 
-::: callout-tip
-Loading the `{memisc}` library can cause problems when using `{tidyverse}` library functions like `select()`: the problem is expressed as, e.g., `select()` not being able to see variables listed for selection.
-
-- You can fix this problem by restarting R or by requiring R to use `dplyr::select()`.
-- I would normally avoid problems like this but the `{memisc}` `contr.sum()` function is too useful to ignore.
-:::
-
 2. We then fit a linear model of the outcome, given our predictors:
 
 ```{r}
@@ -827,7 +837,6 @@ summary(model)
 ```
 
 Notice: we use `aov()` to get an ANOVA summary for the model.
-:::
 
 As before, you can fit a linear model including both numeric variables and categorical variables as predictors: and then plot the predicted effect of the factor.
 
