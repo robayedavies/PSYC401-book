@@ -274,13 +274,10 @@ window.Quarto = {
   <li><a href="#sec-lm-dev-lectures" id="toc-sec-lm-dev-lectures" class="nav-link" data-scroll-target="#sec-lm-dev-lectures"><span class="header-section-number">6.3.1</span> Lectures</a></li>
   <li><a href="#sec-lm-dev-practical" id="toc-sec-lm-dev-practical" class="nav-link" data-scroll-target="#sec-lm-dev-practical"><span class="header-section-number">6.3.2</span> Practical materials: data and R-Studio</a></li>
   <li><a href="#sec-lm-dev-practical-guide" id="toc-sec-lm-dev-practical-guide" class="nav-link" data-scroll-target="#sec-lm-dev-practical-guide"><span class="header-section-number">6.3.3</span> Practical materials guide</a></li>
-  </ul></li>
-  <li><a href="#variables-as-predictors" id="toc-variables-as-predictors" class="nav-link" data-scroll-target="#variables-as-predictors"><span class="header-section-number">7</span> variables as predictors</a>
-  <ul class="collapse">
-  <li><a href="#sec-lm-dev-practical-workbook" id="toc-sec-lm-dev-practical-workbook" class="nav-link" data-scroll-target="#sec-lm-dev-practical-workbook"><span class="header-section-number">7.0.1</span> The workbook</a></li>
-  <li><a href="#the-answers" id="toc-the-answers" class="nav-link" data-scroll-target="#the-answers"><span class="header-section-number">7.0.2</span> The answers</a></li>
-  <li><a href="#general-advice" id="toc-general-advice" class="nav-link" data-scroll-target="#general-advice"><span class="header-section-number">7.0.3</span> General advice</a></li>
-  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">7.0.4</span> Summary</a></li>
+  <li><a href="#sec-lm-dev-practical-workbook" id="toc-sec-lm-dev-practical-workbook" class="nav-link" data-scroll-target="#sec-lm-dev-practical-workbook"><span class="header-section-number">6.3.4</span> The workbook</a></li>
+  <li><a href="#the-answers" id="toc-the-answers" class="nav-link" data-scroll-target="#the-answers"><span class="header-section-number">6.3.5</span> The answers</a></li>
+  <li><a href="#general-advice" id="toc-general-advice" class="nav-link" data-scroll-target="#general-advice"><span class="header-section-number">6.3.6</span> General advice</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary"><span class="header-section-number">6.3.7</span> Summary</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1395,14 +1392,8 @@ Tip
 </div>
 </div>
 <p>There are different ways to do this, here we look at one. Extra information about the second can be found in the drop-down box, following.</p>
-<section id="how-to-task-10-fit-a-linear-model-including-both-numeric-variables-and-categorical-variables-as-predictors-model-including-both-numeric-variables-and-categorical" class="level5" data-number="6.3.3.8.1">
-<h5 data-number="6.3.3.8.1" class="anchored" data-anchor-id="how-to-task-10-fit-a-linear-model-including-both-numeric-variables-and-categorical-variables-as-predictors-model-including-both-numeric-variables-and-categorical"><span class="header-section-number">6.3.3.8.1</span> How-to Task 10 – Fit a linear model including both numeric variables and categorical variables as predictors model including both numeric variables and categorical</h5>
-</section>
-</section>
-</section>
-</section>
-<section id="variables-as-predictors" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> variables as predictors</h1>
+<section id="how-to-task-10-fit-a-linear-model-including-both-numeric-variables-and-categorical-variables-as-predictors-model-including-both-numeric-variables-and-categorical-variables-as-predictors" class="level5" data-number="6.3.3.8.1">
+<h5 data-number="6.3.3.8.1" class="anchored" data-anchor-id="how-to-task-10-fit-a-linear-model-including-both-numeric-variables-and-categorical-variables-as-predictors-model-including-both-numeric-variables-and-categorical-variables-as-predictors"><span class="header-section-number">6.3.3.8.1</span> How-to Task 10 – Fit a linear model including both numeric variables and categorical variables as predictors model including both numeric variables and categorical variables as predictors</h5>
 <p>We begin by inspecting the data to check what variables are categorical or nominal variables – factors – using <code>summary()</code>.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
@@ -1530,6 +1521,10 @@ Further information you can explore
 <div class="callout-body-container callout-body">
 <p>Note that I quote, here, from the powerful <code>{forcats}</code> library of tools for working with factors:</p>
 <p><a href="https://forcats.tidyverse.org/" class="uri">https://forcats.tidyverse.org/</a></p>
+<p>You can read more about factor coding schemes here:</p>
+<p><a href="https://talklab.psy.gla.ac.uk/tvw/catpred/" class="uri">https://talklab.psy.gla.ac.uk/tvw/catpred/</a></p>
+<p>and here:</p>
+<p><a href="https://phillipalday.com/stats/coding.html" class="uri">https://phillipalday.com/stats/coding.html</a></p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
@@ -1557,71 +1552,12 @@ Extra information for students interested in ANOVAs
 </ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(memisc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: lattice</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Loading required package: MASS</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'MASS'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:dplyr':
-
-    select</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:patchwork':
-
-    area</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'memisc'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:lubridate':
-
-    as.interval, is.interval</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:dplyr':
-
-    collect, recode, rename, syms</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:purrr':
-
-    %@%</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:tibble':
-
-    view</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:ggplot2':
-
-    syms</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following objects are masked from 'package:stats':
-
-    contr.sum, contr.treatment, contrasts</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:base':
-
-    as.array</code></pre>
-</div>
 </div>
 <ul>
 <li>Check the coding:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(all.studies.subjects<span class="sc">$</span>NATIVE.LANGUAGE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(all.studies.subjects<span class="sc">$</span>NATIVE.LANGUAGE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>        Other
 English     0
@@ -1632,14 +1568,14 @@ Other       1</code></pre>
 <li>Change the coding</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(all.studies.subjects<span class="sc">$</span>NATIVE.LANGUAGE) <span class="ot">&lt;-</span> <span class="fu">contr.sum</span>(<span class="dv">2</span>, <span class="at">base =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(all.studies.subjects<span class="sc">$</span>NATIVE.LANGUAGE) <span class="ot">&lt;-</span> <span class="fu">contr.sum</span>(<span class="dv">2</span>, <span class="at">base =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>The arguments in <code>contr.sum(2, base = 1)</code> tell R which level we want to be the reference level.</p>
 <ul>
 <li>Check the coding to show you got what you want:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(all.studies.subjects<span class="sc">$</span>NATIVE.LANGUAGE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">contrasts</span>(all.studies.subjects<span class="sc">$</span>NATIVE.LANGUAGE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         2
 English -1
@@ -1650,9 +1586,9 @@ Other    1</code></pre>
 <li>We then fit a linear model of the outcome, given our predictors:</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean.acc <span class="sc">~</span> HLVA <span class="sc">+</span> SHIPLEY <span class="sc">+</span> FACTOR3 <span class="sc">+</span> AGE <span class="sc">+</span> NATIVE.LANGUAGE, </span>
-<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> all.studies.subjects)</span>
-<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">lm</span>(mean.acc <span class="sc">~</span> HLVA <span class="sc">+</span> SHIPLEY <span class="sc">+</span> FACTOR3 <span class="sc">+</span> AGE <span class="sc">+</span> NATIVE.LANGUAGE, </span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">data =</span> all.studies.subjects)</span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -1681,7 +1617,7 @@ F-statistic: 81.09 on 5 and 555 DF,  p-value: &lt; 2.2e-16</code></pre>
 </div>
 </div>
 <blockquote class="blockquote">
-<p>Optional.Q.1 What changes, when you compare the models with versus without sum coding of <code>NATIVE.LANGUAGE</code>?</p>
+<p>Optional.Q.1. What changes, when you compare the models with versus without sum coding of <code>NATIVE.LANGUAGE</code>?</p>
 </blockquote>
 <blockquote class="blockquote">
 <p>Optional.A.1. If you compare the summaries, for the last two models, you can see that the estimate for the coefficient of <code>NATIVE.LANGUAGE</code> changes in two ways:</p>
@@ -1701,9 +1637,9 @@ F-statistic: 81.09 on 5 and 555 DF,  p-value: &lt; 2.2e-16</code></pre>
 </blockquote>
 <p>Being able to change the coding of nominal or categorical variables is very useful. And enables you to do ANOVA style analyses given factorial study designs e.g.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">aov</span>(<span class="fu">lm</span>(mean.acc <span class="sc">~</span> HLVA <span class="sc">+</span> SHIPLEY <span class="sc">+</span> FACTOR3 <span class="sc">+</span> AGE <span class="sc">+</span> NATIVE.LANGUAGE, </span>
-<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">data =</span> all.studies.subjects))</span>
-<span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> <span class="fu">aov</span>(<span class="fu">lm</span>(mean.acc <span class="sc">~</span> HLVA <span class="sc">+</span> SHIPLEY <span class="sc">+</span> FACTOR3 <span class="sc">+</span> AGE <span class="sc">+</span> NATIVE.LANGUAGE, </span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>       <span class="at">data =</span> all.studies.subjects))</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(model)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>                 Df Sum Sq Mean Sq F value   Pr(&gt;F)    
 HLVA              1  5.753   5.753  221.47  &lt; 2e-16 ***
@@ -1723,8 +1659,8 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 <li>We first fit the model, including <code>NATIVE.LANGUAGE</code> then use the ggpredict() function to get the predictions.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(model, <span class="st">"NATIVE.LANGUAGE"</span>)</span>
-<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">ggpredict</span>(model, <span class="st">"NATIVE.LANGUAGE"</span>)</span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -1736,40 +1672,26 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 </div>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Further information you can explore
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>You can read more about factor coding schemes here:</p>
-<p><a href="https://talklab.psy.gla.ac.uk/tvw/catpred/" class="uri">https://talklab.psy.gla.ac.uk/tvw/catpred/</a></p>
-<p>and here:</p>
-<p><a href="https://phillipalday.com/stats/coding.html" class="uri">https://phillipalday.com/stats/coding.html</a></p>
-</div>
-</div>
-<section id="how-to-part-7-new-examine-associations-comparing-data-from-different-samples" class="level4" data-number="7.0.0.1">
-<h4 data-number="7.0.0.1" class="anchored" data-anchor-id="how-to-part-7-new-examine-associations-comparing-data-from-different-samples"><span class="header-section-number">7.0.0.1</span> How-to Part 7: <strong>New</strong>: examine associations comparing data from different samples</h4>
+</section>
+</section>
+<section id="how-to-part-7-new-examine-associations-comparing-data-from-different-samples" class="level4" data-number="6.3.3.9">
+<h4 data-number="6.3.3.9" class="anchored" data-anchor-id="how-to-part-7-new-examine-associations-comparing-data-from-different-samples"><span class="header-section-number">6.3.3.9</span> How-to Part 7: <strong>New</strong>: examine associations comparing data from different samples</h4>
 <p>The lecture for developing the linear model includes a discussion of the ways in which the observed associations between variables or the estimated effects of predictor variables on some outcome may differ between different studies, different samples of data.</p>
 <p>To draw the plots, I used the <code>{ggplot2}</code> library function <code>facet_wrap()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>all.studies.subjects <span class="sc">%&gt;%</span></span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
-<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">colour =</span> <span class="st">"darkgrey"</span>) <span class="sc">+</span></span>
-<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">40</span>) <span class="sc">+</span></span>
-<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>)<span class="sc">+</span></span>
-<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.15</span>)),</span>
-<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.5</span>))</span>
-<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Vocabulary (Shipley)"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Mean accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> study)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a>all.studies.subjects <span class="sc">%&gt;%</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">colour =</span> <span class="st">"darkgrey"</span>) <span class="sc">+</span></span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">40</span>) <span class="sc">+</span></span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>)<span class="sc">+</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.15</span>)),</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.5</span>))</span>
+<span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb41-12"><a href="#cb41-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Vocabulary (Shipley)"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Mean accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb41-13"><a href="#cb41-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> study)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
@@ -1796,23 +1718,23 @@ Further information you can explore
 <li><code>facet_wrap(~ study)</code> – tells the function to split the data-set according to the different levels of a named factor: <code>study</code>.</li>
 </ol>
 <p>So: you need to identify a factor to do this work.</p>
-<section id="how-to-task-11-optional-fit-a-linear-model-and-plot-the-model-predictions-for-different-study-samples-all-together-to-enable-comparisons-of-effects-between-studies" class="level5" data-number="7.0.0.1.1">
-<h5 data-number="7.0.0.1.1" class="anchored" data-anchor-id="how-to-task-11-optional-fit-a-linear-model-and-plot-the-model-predictions-for-different-study-samples-all-together-to-enable-comparisons-of-effects-between-studies"><span class="header-section-number">7.0.0.1.1</span> How-to Task 11 – <em>Optional</em> Fit a linear model and plot the model predictions, for different study samples, all together, to enable comparisons of effects between studies</h5>
+<section id="how-to-task-11-optional-fit-a-linear-model-and-plot-the-model-predictions-for-different-study-samples-all-together-to-enable-comparisons-of-effects-between-studies" class="level5" data-number="6.3.3.9.1">
+<h5 data-number="6.3.3.9.1" class="anchored" data-anchor-id="how-to-task-11-optional-fit-a-linear-model-and-plot-the-model-predictions-for-different-study-samples-all-together-to-enable-comparisons-of-effects-between-studies"><span class="header-section-number">6.3.3.9.1</span> How-to Task 11 – <em>Optional</em> – Fit a linear model and plot the model predictions, for different study samples, all together, to enable comparisons of effects between studies</h5>
 <p>Change the factor in <code>facet_wrap()</code> to show how the vocabulary effect may vary between English monolinguals versus non-native speakers of English.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>all.studies.subjects <span class="sc">%&gt;%</span></span>
-<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
-<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">colour =</span> <span class="st">"darkgrey"</span>) <span class="sc">+</span></span>
-<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">40</span>) <span class="sc">+</span></span>
-<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>)<span class="sc">+</span></span>
-<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.15</span>)),</span>
-<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.5</span>))</span>
-<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Vocabulary (Shipley)"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Mean accuracy"</span>) <span class="sc">+</span></span>
-<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> NATIVE.LANGUAGE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>all.studies.subjects <span class="sc">%&gt;%</span></span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> SHIPLEY, <span class="at">y =</span> mean.acc)) <span class="sc">+</span></span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">2</span>, <span class="at">alpha =</span> .<span class="dv">5</span>, <span class="at">colour =</span> <span class="st">"darkgrey"</span>) <span class="sc">+</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">size =</span> <span class="fl">1.5</span>, <span class="at">colour =</span> <span class="st">"red"</span>, <span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">40</span>) <span class="sc">+</span></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="fl">1.1</span>)<span class="sc">+</span></span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.15</span>)),</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="fu">rel</span>(<span class="fl">1.5</span>))</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Vocabulary (Shipley)"</span>) <span class="sc">+</span> <span class="fu">ylab</span>(<span class="st">"Mean accuracy"</span>) <span class="sc">+</span></span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span> NATIVE.LANGUAGE)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
@@ -1834,6 +1756,22 @@ Further information you can explore
 </div>
 <p><strong>What are we learning here?</strong></p>
 <p>We can work with factors to split data-sets up by group or condition, or combinations of groups or conditions. We can then compare patterns, like outcomes, or the ways that outcomes are affected by predictors, in different groups or in different combinations.</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>But the <em>critical lesson</em> is that, when we visualize trends or differences between groups or, as here, between different studies, then we often see that the effects of variables <em>varies</em> between samples.</p>
+<ul>
+<li>This variation between samples in the effects we observe is a key insight into what working with people involves: variation.</li>
+</ul>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -1850,11 +1788,12 @@ Further information you can explore
 </div>
 </section>
 </section>
-<section id="sec-lm-intro-practical-workbook" class="level4" data-number="7.0.0.2">
-<h4 data-number="7.0.0.2" class="anchored" data-anchor-id="sec-lm-intro-practical-workbook"><span class="header-section-number">7.0.0.2</span> The practical exercises</h4>
+<section id="sec-lm-intro-practical-workbook" class="level4" data-number="6.3.3.10">
+<h4 data-number="6.3.3.10" class="anchored" data-anchor-id="sec-lm-intro-practical-workbook"><span class="header-section-number">6.3.3.10</span> The practical exercises</h4>
 </section>
-<section id="sec-lm-dev-practical-workbook" class="level3" data-number="7.0.1">
-<h3 data-number="7.0.1" class="anchored" data-anchor-id="sec-lm-dev-practical-workbook"><span class="header-section-number">7.0.1</span> The workbook</h3>
+</section>
+<section id="sec-lm-dev-practical-workbook" class="level3" data-number="6.3.4">
+<h3 data-number="6.3.4" class="anchored" data-anchor-id="sec-lm-dev-practical-workbook"><span class="header-section-number">6.3.4</span> The workbook</h3>
 <p>In the <code>workbook</code>:</p>
 <ul>
 <li><code>401-lm-dev-workbook.R</code></li>
@@ -1896,14 +1835,14 @@ Further information you can explore
 <p>If you are unsure about what you need to do, check the advice in <code>401-lm-dev-how-to.R</code>.</p>
 <p>You will see that you can match a task in the <code>activity</code> to the same task in the <code>how-to</code>. The <code>how-to</code> shows you what function you need and how you should write the function code. You will need to change the names of the data-set or the variables to complete the tasks in the activity.</p>
 </section>
-<section id="the-answers" class="level3" data-number="7.0.2">
-<h3 data-number="7.0.2" class="anchored" data-anchor-id="the-answers"><span class="header-section-number">7.0.2</span> The answers</h3>
+<section id="the-answers" class="level3" data-number="6.3.5">
+<h3 data-number="6.3.5" class="anchored" data-anchor-id="the-answers"><span class="header-section-number">6.3.5</span> The answers</h3>
 <p>After the practical class, you will be able to download the answers version of the <code>workbook</code> here.</p>
 <!-- [401-visualization-workbook-answers.R](files/401-visualization-workbook-answers.R) -->
 <p>The answers version will present my answers for questions, and some extra information where that is helpful.</p>
 </section>
-<section id="general-advice" class="level3" data-number="7.0.3">
-<h3 data-number="7.0.3" class="anchored" data-anchor-id="general-advice"><span class="header-section-number">7.0.3</span> General advice</h3>
+<section id="general-advice" class="level3" data-number="6.3.6">
+<h3 data-number="6.3.6" class="anchored" data-anchor-id="general-advice"><span class="header-section-number">6.3.6</span> General advice</h3>
 <p>An old saying goes:</p>
 <blockquote class="blockquote">
 <p>All models are wrong but some are useful</p>
@@ -1927,8 +1866,8 @@ Tip
 </div>
 </div>
 </section>
-<section id="summary" class="level3" data-number="7.0.4">
-<h3 data-number="7.0.4" class="anchored" data-anchor-id="summary"><span class="header-section-number">7.0.4</span> Summary</h3>
+<section id="summary" class="level3" data-number="6.3.7">
+<h3 data-number="6.3.7" class="anchored" data-anchor-id="summary"><span class="header-section-number">6.3.7</span> Summary</h3>
 <ol type="1">
 <li>Linear models</li>
 </ol>

@@ -708,8 +708,7 @@ In Part 4 of the Week 10 lectures, I explain that fundamentally every kind of an
 
 There are different ways to do this, here we look at one. Extra information about the second can be found in the drop-down box, following.
 
-##### How-to Task 10 -- Fit a linear model including both numeric variables and categorical variables as predictors model including both numeric variables and categorical 
-# variables as predictors
+##### How-to Task 10 -- Fit a linear model including both numeric variables and categorical variables as predictors model including both numeric variables and categorical variables as predictors
 
 We begin by inspecting the data to check what variables are categorical or nominal variables -- factors -- using `summary()`.
 
@@ -770,6 +769,14 @@ R handles factors, by default, by picking one level (e.g., `English`) as the ref
 Note that I quote, here, from the powerful `{forcats}` library of tools for working with factors:
 
 <https://forcats.tidyverse.org/>
+
+You can read more about factor coding schemes here:
+
+<https://talklab.psy.gla.ac.uk/tvw/catpred/>
+
+and here:
+
+<https://phillipalday.com/stats/coding.html>
 :::
 
 :::{.callout-tip collapse="true"}
@@ -786,6 +793,7 @@ It is easy to do this, in two steps, proceeding as follows.
 - Get the `{memisc}` library:
 
 ```{r}
+#| warning: false
 library(memisc)
 ```
 
@@ -817,7 +825,7 @@ model <- lm(mean.acc ~ HLVA + SHIPLEY + FACTOR3 + AGE + NATIVE.LANGUAGE,
 summary(model)
 ```
 
-> Optional.Q.1 What changes, when you compare the models with versus without sum coding of `NATIVE.LANGUAGE`?
+> Optional.Q.1. What changes, when you compare the models with versus without sum coding of `NATIVE.LANGUAGE`?
 
 > Optional.A.1. If you compare the summaries, for the last two models, you can see that the estimate for the coefficient of `NATIVE.LANGUAGE` changes in two ways: 
 
@@ -846,18 +854,6 @@ As before, you can fit a linear model including both numeric variables and categ
 dat <- ggpredict(model, "NATIVE.LANGUAGE")
 plot(dat)
 ```
-:::
-
-::: callout-tip
-## Further information you can explore
-
-You can read more about factor coding schemes here:
-
-<https://talklab.psy.gla.ac.uk/tvw/catpred/>
-
-and here:
-
-<https://phillipalday.com/stats/coding.html>
 :::
 
 #### How-to Part 7: **New**: examine associations comparing data from different samples
@@ -891,7 +887,7 @@ This is how it works:
 
 So: you need to identify a factor to do this work.
 
-##### How-to Task 11 -- *Optional*  Fit a linear model and plot the model predictions, for different study samples, all together, to enable comparisons of effects between studies
+##### How-to Task 11 -- *Optional* -- Fit a linear model and plot the model predictions, for different study samples, all together, to enable comparisons of effects between studies
 
 Change the factor in `facet_wrap()` to show how the vocabulary effect may vary between English monolinguals versus non-native speakers of English.
 
@@ -914,6 +910,12 @@ all.studies.subjects %>%
 **What are we learning here?**
 
 We can work with factors to split data-sets up by group or condition, or combinations of groups or conditions. We can then compare patterns, like outcomes, or the ways that outcomes are affected by predictors, in different groups or in different combinations.
+
+::: callout-important
+But the *critical lesson* is that, when we visualize trends or differences between groups or, as here, between different studies, then we often see that the effects of variables *varies* between samples.
+
+- This variation between samples in the effects we observe is a key insight into what working with people involves: variation.
+:::
 
 ::: callout-tip
 ## Further information you can explore
