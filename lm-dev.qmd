@@ -512,7 +512,7 @@ If you look at the model summary you can answer the following questions.
 The estimate of the coefficient of any one predictor can be expected to vary depending on the presence of other predictors.
 
 - This is one reason why we need to be transparent about why we choose to use the predictors we include in our model.
-- The lecture for week 10 discusses this concern in relation to the motivation for good open science practices.
+- The lecture for week 10 (@sec-lm-dev-lectures) discusses this concern in relation to the motivation for good open science practices.
 
 > Q.12. Can you report the estimated effect of `SHIPLEY` (the measure of vocabulary)?
 
@@ -572,6 +572,19 @@ dat <- ggpredict(model, "HLVA")
 plot(dat)
 ```
 
+::: callout-tip
+## Further information you can explore
+In producing prediction plots, we are using functions from the `{ggefects}` library. Can you locate online information about working with the library functions?
+
+- Try doing a search with the key words: `in r ggeffects`.
+
+If you do that, you will see links to the website:
+
+<https://strengejacke.github.io/ggeffects/>
+
+In the `{ggeffects}` online information, you can see links to practical examples. Can you use the information under `Practical examples` to adjust the appearance of the prediction plots?
+:::
+
 ##### How-to Task 8 -- *Optional* -- Edit the appearance of the marginal effect (prediction) plot as you can with any `ggplot` object
 
 Once we have created the model predictions plot, we can edit it like we would edit any other `ggplot` object.
@@ -608,13 +621,17 @@ We do this in stages, as we have done for other kinds of plots:
 9. `xlab("Health literacy (HLVA)") + ylab("Mean accuracy") +` -- we edit labels to make them easier to understand, then
 10. `ggtitle("Effect of health literacy on mean comprehension accuracy")` -- we give the plot a title
 
-::: callout-tip
-Notice that here, we are constructing a complex plot from two datasets:
+Notice that we are constructing a complex plot from two datasets:
 
-- We use `plot(dat)` to construct a plot showing the prediction line using `geom_line(size = 1.5) + ` 
-- We then add a layer to the plot to show the raw sample data, using
-`geom_point(data = all.studies.subjects, ...)` -- to tell R to work with the sample data-set `all.studies.subjects`
-- and to show points representing the (aesthetic mappings) values, given that sample data, for (`x = HLVA, y = mean.acc`).
+- We use `plot(dat)` to construct a plot from (1.) the set of predictions, showing the prediction line using `geom_line(size = 1.5) + ` 
+- We then add a layer to the plot to show (2.) the raw sample data, using
+`geom_point(data = all.studies.subjects, ...)` -- to tell R to work with the sample data-set `all.studies.subjects`, and to show points representing the (aesthetic mappings) values, given that sample data, for (`x = HLVA, y = mean.acc`).
+
+::: calloutbox-tip
+No model will be perfect.
+
+- It is often useful to compare model estimates -- here, the slopes -- with the raw data observations.
+- Visualizing the difference between what we observe and what we predict helps to make sense of how our prediction model could be improved.
 :::
 
 **What are we learning here?**
@@ -699,7 +716,7 @@ As we have seen, one of our research questions is:
 We have not yet included any categorical or nominal variables as predictors but we can, and should: `lm()` can cope with any kind of variable as a predictor.
 
 ::: callout-tip
-In Part 4 of the Week 10 lectures, I explain that fundamentally every kind of analysis you have learnt before (t-test, ANOVA, etc.) can be understood as a kind of linear model. This part shows how that works.
+In Part 4 of the Week 10 lectures (@sec-lm-dev-lectures), I explain that fundamentally every kind of analysis you have learnt before (t-test, ANOVA, etc.) can be understood as a kind of linear model. This part shows how that works.
 
 - In a (two groups) t-test, you are comparing the average outcome between two different groups.
 - To do that analysis, you need an outcome variable (like `mean.acc`) and a categorical variable or factor (like, say, experimental condition: condition 1 versus condition 2). 
@@ -858,7 +875,7 @@ plot(dat)
 
 #### How-to Part 7: **New**: examine associations comparing data from different samples
 
-The lecture for developing the linear model includes a discussion of the ways in which the observed associations between variables or the estimated effects of predictor variables on some outcome may differ between different studies, different samples of data.
+The lecture for developing the linear model (@sec-lm-dev-lectures) includes a discussion of the ways in which the observed associations between variables or the estimated effects of predictor variables on some outcome may differ between different studies, different samples of data.
 
 To draw the plots, I used the `{ggplot2}` library function `facet_wrap()`:
 
@@ -924,58 +941,543 @@ You can read more about faceting here:
 <https://ggplot2.tidyverse.org/reference/facet_wrap.html>
 :::
 
-#### The practical exercises {#sec-lm-intro-practical-workbook}
+#### The practical exercises {#sec-lm-dev-practical-workbook}
 
+Now you will progress through a series of tasks, and challenges, to test what you have learnt.
 
-
-
-
-
-
-### The workbook {#sec-lm-dev-practical-workbook}
-
-In the `workbook`:
-
--   `401-lm-dev-workbook.R`
-
-you will work with the data file
+::: callout-warning
+We will continue to work with the data file
 
 -   `2022-12-08_all-studies-subject-scores.csv`
+:::
 
-We split .R scripts into parts, tasks and questions.
+We again split the steps into into parts, tasks and questions.
 
-For this class on developing the linear model, our practical materials have two aims:
+We are going to work through the following workflow steps: **each step is labelled as a practical part**.
 
-1.  Helping you to consolidate your learning on how to use linear models to estimate and to visualize the hypothetical association between outcome and predictor variables.
+1. Set-up
+2. Load the data
+3. **Revision**: using a linear model to answer research questions -- one predictor.
+4. **New**: using a linear model to answer research questions -- multiple predictors.
+5. **New**: plot predictions from linear models.
+6. **New**: estimate the effects of factors as well as numeric variables.
+7. **New**: examine associations comparing data from different samples.
 
--   You will work to code linear models, to identify key statistical information in model outputs, and to interpret and report the results of the models.
--   We refresh your learning by working with a data-set you have not encountered before
--   We extend your skills by using a new function to generate predictions from fitted models.
+::: callout-tip
+- The `how-to` guide showed you what functions you needed and how you should write the function code.
+- Use the code structure you have seen and *change* it to use the data required for these `practical exercises`: you will need to change the data-set name, the variable names, to get the code to work for the following exercises.
+- Identify what code elements must change, and what code elements have to stay the same.
+:::
 
-2.  Helping you to learn how to extend your capacity to work with data to answer research questions by developing linear models that include multiple predictor variables.
+Note that, for Part 5, we focus on using the `ggpredict()` tools you saw in the `how-to` guide but, for the practical exercises, use these tools to better understand what linear models (generally) do when we use them.
 
--   We extend your skills by looking at how you work with categorical predictor variables: *factors*.
--   Because factors are so important to research in Psychology, we examine how to code or recode factor levels, and how to visualize the effects on outcomes of differences between factor levels.
+In the following, we will guide you through the tasks and questions step by step.
 
-To meet these aims, we progress through a series of parts:
+::: callout-important
+An answers version of the workbook will be provided after the practical class.
+:::
 
--   **Part 2** shows you how you can read in data *and* at the same time ensure that different kinds of variables (e.g., factors versus numeric variables) are handled differently by R.
--   **Part 3** consolidates your learning on how to work with linear models when there is one outcome variable and just one predictor variable. Learning to work with linear models involves not just coding models but also being able to identify and interpret the results of the models you fit.
--   **Part 5** extends your capacities by helping you to learn how to code linear models that include multiple predictor variables.
--   **Part 6** builds your understanding of what linear models do, and what model estimates mean, by demonstrating a key point: linear models are coded to fit sample outcome data. When you look at model results, your interpretation is based on how the outcome is predicted to change, on average, given differences in values of one or more predictor variables.
--   **Part 7** builds your skills by helping you to learn how to code, visualize and interpret the impact on outcomes of the differences between factor levels.
+#### Practical Part 1: Set-up
 
-Throughout, we help you to develop skills in calculating and presenting model predictions.
+To begin, we set up our environment in R.
 
--   **Parts optional** are designed to help you to examine the ways in which the association between variables may, itself, differ between different samples, and to help you to consolidate skills on exporting plots for use in reports.
+##### Practical Task 1 -- Run code to empty the R environment
 
-The activity `401-lm-dev-workbook.R` file takes you through the tasks, one by one.
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
+<!-- ```{r} -->
+<!-- #| eval: false -->
+<!-- rm(list=ls()) -->
+<!-- ``` -->
+<!-- ::: -->
 
-If you are unsure about what you need to do, check the advice in `401-lm-dev-how-to.R`.
+##### Practical Task 2 -- Run code to load relevant libraries
 
-You will see that you can match a task in the `activity` to the same task in the `how-to`. The `how-to` shows you what function you need and how you should write the function code. You will need to change the names of the data-set or the variables to complete the tasks in the activity.
+Notice that in Week 10 we need to work with the libraries `ggeffects`, `patchwork` and `tidyverse`.
+Use the `library()` function to make these libraries available to you.
+
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
+<!-- ```{r} -->
+<!-- library("ggeffects") -->
+<!-- library("patchwork") -->
+<!-- library("tidyverse") -->
+<!-- ``` -->
+<!-- ::: -->
+
+#### Practical Part 2: Load the data
+
+##### Practical Task 3 -- Read in the data file we will be using
+
+The data file is called:
+
+- `2022-12-08_all-studies-subject-scores.csv`
+
+Use the `read_csv()` function to read the data files into R:
+
+<!-- :::{.callout-tip collapse="true"} -->
+<!-- ## Code -->
+<!-- ```{r} -->
+<!-- study.two.gen <- read_csv("study-two-general-participants.csv")   -->
+<!-- study.122 <- read_csv("2023-24_PSYC122-participants.csv")   -->
+<!-- ``` -->
+<!-- ::: -->
+
+##### Practical Task 4 -- Get summary statistics for *only* the numeric variables: `AGE` and `HLVA`
+
+Use the `{psych}` library `describe()` function to get a table summary of descriptive statistics for these variables.
+
+:::{.callout-tip collapse="true"}
+## Code
+Here, we can do this in two steps:
+
+1. we select the variables we care about
+2. we get just the descriptive statistics we want for those variables
+
+```{r}
+all.studies.subjects %>%
+  dplyr::select(AGE, HLVA) %>%
+  describe(skew = FALSE)
+```
+:::
+
+>**Q.1.** What is the mean health literacy (HLVA) score in this sample?
+
+<!-- > A.1. 7.22 -->
+
+>**Q.2.** What are the minimum and maximum ages in this sample?
+
+<!-- > A.2. 18-100 -->
+
+>**Q.3.** Do you see any reason to be concerned about the data in this sample?
+
+<!-- > Hint: It is always a good idea to use your visualization skills to examine the distribution of variable values in a dataset: -->
+
+<!-- ```{r} -->
+<!-- all.studies.subjects %>% -->
+<!--   ggplot(aes(x = AGE)) + -->
+<!--   geom_histogram() -->
+<!-- ``` -->
+
+<!-- > A.3. It looks like the `AGE` of 100 is maybe an error, or an extreme outlier. -->
+
+#### Practical Part 3: Revision -- using a linear model to answer research questions -- one predictor.
+
+One of our research questions is:
+
+2. Can people accurately evaluate whether they correctly understand written health information?
+
+We can address this question by examining whether someone's rated evaluation of their own understanding matches their performance on a test of that understanding, and by investigating what variables predict variation in mean self-rated accuracy.
+
+::: callout-tip
+Note that ratings of accuracy are ordinal (categorical ordered) data but that, here, we may choose to examine the average of participants' ratings of their own understanding of health information for the purposes of this example.
+
+- We learn about ordinal models for ordinal data in PSYC412.
+:::
+
+For these data, participants were asked to respond to questions about health information to get 'mean.acc' scores and were asked to rate their own understanding of the same information.
+
+- If you *can* evaluate your own understanding then ratings of understanding *should* be associated with performance on tests of understanding.
+
+##### Practical Task 5 -- Estimate the relation between outcome mean self-rated accuracy (`mean.self`) and tested accuracy of understanding (`mean.acc`)
+
+We can use `lm()` to estimate whether the ratings of accuracy actually predict the outcome tested accuracy levels.
+
+:::{.callout-tip collapse="true"}
+## Code
+```{r}
+model <- lm(mean.acc ~ mean.self, data = all.studies.subjects)
+summary(model)
+```
+:::
+
+If you first fit the appropriate model, then read the model summary, you can answer the following questions.
+
+>**Q.4.** What is the estimate for the coefficient of the effect of the predictor `mean.self` on the outcome `mean.acc` in this model?
+
+<!-- > A.4. 0.058613  -->
+
+>**Q.5.** Is the effect significant?
+
+<!-- > A.5. It is significant, p < .05 -->
+
+>**Q.6.** What are the values for t and p for the significance test for the coefficient?
+
+<!-- > A.6. t = 12.90, p <2e-16 -->
+
+>**Q.7.** What do you conclude is the answer to the research question, given the linear model results?
+
+<!-- > A.7. The model slope estimate suggests that higher levels of rated understanding can predict higher levels of tested understanding so, yes: it does appear that people can evaluate their own understanding. -->
+
+>**Q.8.** What is the F-statistic for the regression? Report F, DF and the p-value.
+
+<!-- > A.8. F-statistic: 166.4 on 1 and 559 DF,  p-value: < 2.2e-16 -->
+
+>**Q.9.** Is the regression significant?
+
+<!-- > A.9. Yes: the regression is significant. -->
+
+>**Q.10.** What is the Adjusted R-squared?
+
+<!-- > A.10. Adjusted R-squared:  0.228 -->
+
+>**Q.11.** Explain in words what this R-squared value indicates?
+
+<!-- > A.11. The R-squared suggests that 23% of outcome variance can be explained by the model -->
+
+#### Practical Part 4: New -- using a linear model to answer research questions -- multiple predictors
+
+One of our research questions is:
+
+2. Can people accurately evaluate whether they correctly understand written health information?
+
+We have already looked at this question by asking whether ratings of understanding predict performance on tests of understanding. But there is a problem with that analysis -- it leaves open the question: 
+
+- What actually predicts ratings of understanding?
+
+We can look at that follow-up question through the analysis we do next.
+
+##### Practical Task 6 -- Examine the relation between outcome mean self-rated accuracy (`mean.self`) and  multiple predictors including: health literacy (`HLVA`); vocabulary (`SHIPLEY`); `AGE`; reading strategy (`FACTOR3`); as well as `mean.acc`
+
+We use `lm()`, as before, but now specify each variable listed here by variable name
+
+- outcome: mean self-rated accuracy (`mean.self`)
+- predictors: health literacy (`HLVA`); vocabulary (`SHIPLEY`); `AGE`; reading strategy (`FACTOR3`); as well as `mean.acc`.
+
+:::{.callout-tip collapse="true"}
+## Code
+model <- lm(mean.self ~ HLVA + SHIPLEY + FACTOR3 + AGE + mean.acc, 
+            data = all.studies.subjects)
+summary(model)
+:::
+
+If you look at the model summary you can answer the following questions  
+
+>**Q.12.** What predictors are significant in this model?
+
+<!-- > A.12. Health literacy ('HLVA'), reading strategy ('FACTOR3') and performance on tests of accuracy of understanding ('mean.acc') all appear to significantly predict variation in mean ratings of understanding ('mean.self'). -->
+
+>**Q.13.** What is the estimate for the coefficient of the effect of the predictor, `mean.acc`, in this model?
+
+<!-- > A.13. 2.502024  -->
+
+>**Q.14.** Is the effect significant?
+
+<!-- > A.14. It is significant because p < .05 -->
+
+>**Q.15.** What are the values for t and p for the significance test for the coefficient?
+
+<!-- > A.15. t = 6.929, p = 1.18e-11 -->
+
+>**Q.16.** What do you conclude is the answer to the follow-up question, what actually predicts ratings of understanding?
+
+<!-- > A.16. Ratings of understanding appear to be predicted by performance on tests of accuracy of understanding, together with variation in health literacy and reading strategy. -->
+
+#### Practical Part 5: New -- plot predictions from linear models
+
+In this part, the practical work involves plotting the predictions from two linear models but the benefit from this practical work is to better your understanding of what linear models are doing.
+
+So, our research questions is:
+
+2. Can people accurately evaluate whether they correctly understand written health information?
+
+We can look at this question in two ways:
+
+- we can focus on whether `mean.self` predicts `mean.acc`?
+- or, in reverse, whether `mean.acc` predicts `mean.self`?
+
+People could (1.) be good at understanding accurately what they read (measured as `mean.acc`), so that that accurate understanding results in accurate evaluation of their own understanding (measured as `mean.self`). Or people could (2.) be good at judging their own understanding (`mean.self`) so that they can then be accurate in their understanding of what they read. This is not just a tricksy way of talking: it could be that people who are good at evaluating if they understand what they read are able to work more effectively at that understanding, or the opposite could be the case. 
+
+The *direction of cause-and-effect* is just unclear, here. 
+
+##### Practical Task 7 -- We cannot actually resolve the question of causality but we can learn a lot if we look at two models incorporating the same variables
+
+1. If we focus on whether (predictor) `mean.self` predicts (outcome) `mean.acc` then the model should be: `mean.acc ~ mean.self`
+2. If we focus on whether (predictor) `mean.acc` predicts (outcome) `mean.self` then the model should be: `mean.self ~ mean.acc`
+
+The two models involve the same variables but arrange the variables differently, in the code, depending on which variable is specified as the outcome versus which variable is specified as the predictor.
+
+::: callout-tip
+Note that the comparison between these models teaches us something about *what* it is that linear models predict.
+
+- You want to focus on the estimate of the coefficient of the predictor variable, for each model, presented in the model summary results.
+:::
+  
+>**Q.17.** Can you write the code for the two models? Can you give each model a distinctive name?
+
+:::{.callout-tip collapse="true"}
+## Code
+model.1 <- lm(mean.acc ~ mean.self, data = all.studies.subjects)
+summary(model.1)
+
+model.2 <- lm(mean.self ~ mean.acc, 
+              data = all.studies.subjects)
+summary(model.2)
+:::
+  
+Take a look at the summary for each model.  
+
+>**Q.18.** Why do you think it appears that the slope coefficient estimate is different if you compare:
+
+> (1.) the model, mean.acc ~ mean.self
+
+> versus
+
+> (2.) the model, mean.self ~ mean.acc?
+
+> Hint: You may benefit by reflecting on the @sec-lm-intro-lectures lectures and practical materials, especially where they concern predictions.
+
+<!-- > A.18. Linear models are prediction models. We use them to predict variation in outcomes given some set of predictor variables. Because of this, predictions *must* be scaled in the same way as the outcome variable.  -->
+
+<!-- > So: -->
+
+<!-- > (1.) the model `mean.acc ~ mean.self` identifies `mean.acc` as the outcome so if we are predicting change in `mean.acc` (scaled 0-1) then we are looking at coefficients that will lie somewhere on the same scale (also 0-1). -->
+
+<!-- > Here: the model suggests that unit change in `mean.self` predicts increase of 0.058613 in `mean.acc`. -->
+
+<!-- > Versus:  -->
+
+<!-- > (2.) the model, `mean.self ~ mean.acc` identifies `mean.self` as the outcome so if we are predicting change in `mean.self` (scaled 1-9) then we are looking at coefficients that will lie somewhere on the same scale (also 1-9). -->
+
+<!-- > Here: the model suggests that unit change in `mean.acc` predicts increase of 3.9135 in `mean.self`. -->
+
+>**Q.19.** Can you plot the predictions from each model?
+
+:::{.callout-tip collapse="true"}
+## Code
+> A.19. Here is the code to plot the predictions from both models:
+
+First fit the models -- give the model objects distinct names:
+
+```{r}
+model.1 <- lm(mean.acc ~ mean.self, data = all.studies.subjects)
+summary(model.1)
+
+model.2 <- lm(mean.self ~ mean.acc, 
+            data = all.studies.subjects)
+summary(model.2)
+```
+
+Then get the predictions:
+
+```{r}
+dat.1 <- ggpredict(model.1, "mean.self")
+dat.2 <- ggpredict(model.2, "mean.acc")
+```
+
+Then make the plots, and arrange them for easy comparison, side-by-side:
+
+```{r}
+plot.1 <- plot(dat.1)
+plot.2 <- plot(dat.2)
+
+plot.1 + plot.2
+```
+:::
+
+>**Q.20.** Look at the two plots side-by-side: what do you see?
+
+Hint: Look at changes in height of the prediction line, given changes in x-axis position of the line.
+
+<!-- > A.20. A side-by-side comparison shows that for (1.) `mean.acc ~ mean.self,` increases in `mean.self` from about 2-8 are associated with a change in `mean.acc` from about .4 to about .85, while for (2.) `mean.self ~ mean.acc`, increases in `mean.self` from about .2-1.0 are associated with a change in `mean.acc` from about 4 to about 8. -->
+
+**What are we learning here?**
+
+Linear models are prediction models. We use them to predict variation in outcomes given some set of predictor variables. 
+
+::: callout-important
+Predictions *must* be scaled in the same way as the outcome variable.
+:::
+
+#### Practical Part 6: New -- estimate the effects of factors as well as numeric variables
+
+##### Practical Task 8 -- Fit a linear model to examine what variables predict outcome
+# mean self-rated accuracy of `mean.self`
+
+Include in the model both numeric variables and categorical variables as predictors:
+
+- health literacy (`HLVA`); vocabulary (`SHIPLEY`); `AGE`; reading strategy (`FACTOR3`); as well as `mean.acc` and `NATIVE.LANGUAGE`.
+
+:::{.callout-tip collapse="true"}
+## Code
+```{r}
+model <- lm(mean.self ~ HLVA + SHIPLEY + FACTOR3 + AGE + mean.acc +
+                        NATIVE.LANGUAGE, 
+            data = all.studies.subjects)
+```
+:::
+
+>**Q.21.** Can you report the estimated effect of `NATIVE.LANGUAGE` (the coding of participant language status: `English` versus `other`)?
+
+Hint: you will need to get a summary of the model you have coded.
+
+:::{.callout-tip collapse="true"}
+## Code
+summary(model)
+:::
+
+<!-- > A.21. The effect of language status (`NATIVE.LANGUAGE`) on mean accuracy of understanding is not significant (estimate = -0.225432, t = -1.750, p = .081) indicating that not being a native speaker of English (`Other`) is not associated with lower self-rated accuracy. -->
+
+>**Q.22.** Can you report the overall model and model fit statistics?
+
+> A.22. We fitted a linear model with mean self-rated accuracy as the outcome and with the predictors: health literacy (HLVA),  reading strategy (FACTOR3), vocabulary (SHIPLEY) and AGE (years), as well as mean accuracy (mean.acc) and language status. The model is significant overall, with F(6, 554) = 45.82, p < .001, and explains 32% of variance (adjusted R2 = 0.32).
+
+>**Q.23.** Can you plot the predicted effect of `NATIVE.LANGUAGE` given your model?
+
+:::{.callout-tip collapse="true"}
+## Code
+We first fit the model, including `NATIVE.LANGUAGE`:
+
+```{r}
+model <- lm(mean.self ~ HLVA + SHIPLEY + FACTOR3 + AGE + mean.acc +
+              NATIVE.LANGUAGE, 
+            data = all.studies.subjects)
+```
+            
+Then use the `ggpredict()` function to get the predictions
+
+```{r}
+dat <- ggpredict(model, "NATIVE.LANGUAGE")
+plot(dat)
+```
+:::
+
+>**Q.24.** The plot should give you dot-and-whisker representations of the estimated `mean.self` for `English` versus `Other` participants in the dataset. What is the difference in the estimated `mean.self` between these groups?
+
+Hint: The effect or prediction plot will show you dot-and-whisker representations of predicted outcome `mean.self`. In these plots, the dots represent the estimated `mean.self` while the lines (whiskers) represent confidence intervals.
+
+<!-- > A.24. The difference in the estimated 'mean.self' between these groups is about .2. -->
+
+>**Q.25.** Compare the difference in the estimated `mean.self` between these groups, given the plot, with the coefficient estimate from the model summary: what do you see?
+
+<!-- > A.25. The coefficient estimate = -0.225432. This matches the difference shown in the plot. -->
+
+#### Practical Part 7: New -- examine associations comparing data from different samples
+
+##### Practical Task 8 -- Use `facet_wrap()` to show how the association between `mean.self` and `mean.acc` can vary between the different studies in the data-set
+
+Change the factor in `facet_wrap()` to show how the association between `mean.self` and `mean.acc` can vary between the different studies
+
+:::{.callout-tip collapse="true"}
+## Code
+```{r}
+all.studies.subjects %>%
+  ggplot(aes(x = mean.self, y = mean.acc)) +
+  geom_point(size = 2, alpha = .5, colour = "darkgrey") +
+  geom_smooth(size = 1.5, colour = "red", method = "lm", se = FALSE) +
+  xlim(0, 10) +
+  ylim(0, 1.1)+
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.5))
+  ) +
+  xlab("Mean self-rated accuracy") + ylab("Mean accuracy") +
+  facet_wrap(~ study)
+```
+
+You may need to edit the x-axis labeling to make it readable
+
+- Can you work out how to do that, given `ggplot()` help information?
+
+Hint: check out the continuous scale information in:
+
+<https://ggplot2.tidyverse.org/reference/scale_continuous.html>
+
+#### Practical Part Optional: New -- save or export plots so that you can insert them in reports
+
+Learning how to export plots from R will help you later with reports.
+
+The task is to save or export a plot that you produce, so that you can insert it in a report or presentation.
+
+There are different ways to do this, we can look at one simple example.
+
+- We can save the last plot we produce using the `{tidyverse}` function `ggsave()`:
+
+```{r}
+ggsave("facet-plots.png")
+```
+
+Notice, here, that:
+
+- `ggsave("facet-plots...")` -- we need to give the plot a name;
+- `ggsave("...png")` -- and we need to tell R what format we require.
+
+The plot is saved as a file with the name you specify, in the working directory (folder) you are using.
+
+R will save the plot in the format you specify: here, I choose .png because .png image files can be imported into Microsoft Word documents easily.
+
+- Notice that `ggsave()` will use pretty good defaults but that you can over-ride the defaults, by adding arguments to specify the plot width, height and resolution (in dpi).
+
+::: callout-tip
+## Further information you can explore
+Check out reference information here:
+
+<https://ggplot2.tidyverse.org/reference/ggsave.html>
+
+and
+
+<http://www.cookbook-r.com/Graphs/Output_to_a_file/>
+:::
+
+#### Practical Task Optional: Now try it for yourself: make a plot, and save it, using what you have learnt so far
+
+You will need to:
+
+1. Fit a model
+2. Create a set of predictions we can use for plotting
+3. Make a plot
+4. Save it
+
+Then, you can import the saved plot into Word.
+
+:::{.callout-tip collapse="true"}
+## Code
+Fit a model:
+
+```{r}
+model <- lm(mean.acc ~ HLVA + SHIPLEY + FACTOR3 + AGE, 
+            data = all.studies.subjects)
+```
+
+Create a set of predictions we can use for plotting  
+
+```{r}
+dat <- ggpredict(model, "FACTOR3")
+```
+
+Make a plot
+
+```{r}
+p.model <- plot(dat)
+p.model +
+  geom_point(data = all.studies.subjects, 
+             aes(x = FACTOR3, y = mean.acc), size = 1.5, alpha = .75, colour = "darkgrey") +
+  geom_line(size = 1.5) +
+  theme_bw() +
+  theme(
+    axis.text = element_text(size = rel(1.15)),
+    axis.title = element_text(size = rel(1.25)),
+    plot.title = element_text(size = rel(1.4))
+  ) +
+  xlab("Reading strategy (FACTOR3)") + ylab("Mean accuracy") +
+  ggtitle("Effect of reading strategy on \n mean comprehension accuracy")
+```
+
+Save it
+
+```{r}
+ggsave("reading-strategy-prediction.png", width = 10, height = 10, units = "cm")
+```
+:::
 
 
+Some advice:
+
+- It is often helpful to present plots that are almost square i.e. height about = width.
+- This helps to present the best fit line in scatterplots in a way that is easier to perceive.
+- We may experiment with width-height (aspect ratio) until we get something that "looks" right. 
+- Notice also that different presentation venues will require different levels if image resolution e.g. journals may require .tiff file plots at dpi = 180 or greater.
 
 
 
@@ -986,16 +1488,6 @@ After the practical class, you will be able to download the answers version of t
 <!-- [401-visualization-workbook-answers.R](files/401-visualization-workbook-answers.R) -->
 
 The answers version will present my answers for questions, and some extra information where that is helpful.
-
-
-
-
-
-
-
-
-
-
 
 ### General advice
 
