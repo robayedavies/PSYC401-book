@@ -3,14 +3,9 @@
 ```{r library}
 #| echo: false
 #| warning: false
-library(datasauRus)
-library(faux)
-library(ggExtra)
-library(kableExtra)
-library(knitr)
-library(lme4)
-library(patchwork)
-library(tidyverse)
+library("ggdist")
+library("kableExtra")
+library("tidyverse")
 ```
 
 ```{r readin-hide}
@@ -484,7 +479,7 @@ We break this task into the same steps we followed before:
 As before, we begin with a keyword search.
 
 ::: callout-tip
-Hint: Do a search using the words: ggplot boxplot colour
+Hint: Do a search using the words: `ggplot boxplot colour`
 
 That will get you results including this one:
 
@@ -560,7 +555,6 @@ ggplot(mpg, aes(x=class, y=hwy, fill=class)) +
 - to this:
 
 ```{r}
-#| eval: false
 ggplot(study.one.gen, aes(x=EDUCATION, y=mean.acc, fill=EDUCATION)) + 
   geom_boxplot(alpha=0.3) +
   theme(legend.position="none") +
@@ -580,14 +574,13 @@ Notice:
 3. To change the colour of the boxplots, you add: `fill=EDUCATION` as an argument to the aesthetic mappings in `aes(...)`
 4. `scale_fill_brewer()` adds in the colour using the Brewer **colour-blind friendly** palette.
 
-
 ##### How-to Task 7 -- Can you find out more information about colour palettes?
 
 Hint: Do a search using the words: 
 
-1. <ggplot colour palettes>
-2. <ggplot colour blind friendly palettes>
-3. <ggplot cookbook colour palettes>
+1. `ggplot colour palettes`
+2. `ggplot colour blind friendly palettes`
+3. `ggplot cookbook colour palettes`
 
 Results include:
 
@@ -621,232 +614,213 @@ There are several famous colour palettes that have been developed:
 
 <https://ggplot2.tidyverse.org/reference/scale_brewer.html>
 
+- MetBrewer provides colour palettes matched to famous art works in the Metropolitan Museum of Art in New York:
+
+<https://www.blakerobertmills.com/my-work/met-brewer>
+
 And some people have contributed deep thinking about *how* and *why* we should different colour schemes in different contexts or for diverse audiences:
 
 <https://personal.sron.nl/~pault/>
 :::
 
 ::: callout-important
-Make *choices* when you use colour!
+Make *intentional choices* when you use colour!
 :::
 
-#### How-to Part 5: Using correlations to to answer research questions
+#### How-to Part 5: New -- locate and use StackOverflow information
 
-##### How-to Task 7 -- Examine the correlation between a pair of variables
+Everybody who uses R professionally uses StackOverflow all the time.
 
-In the **Clearly understood** project, one of our research questions is:
+- It is a huge, useful, resource of helpful information.
+- Most of the time, if you do a search for answers to a question about using R -- for data analysis, or plotting -- the search will take you to a StackOverflow discussion page, sooner or later.
 
-1. What person attributes predict success in understanding?
+Let's learn how to use this resource.
 
-We can answer this question by doing a correlation analysis.
-This is because we can expect that *if* vocabulary knowledge predicts success in understanding *then* variation in vocabulary knowledge should be associated with variation in success of understanding.
-We measured how successful study participants were in understanding health information: recording outcome `mean.acc` as the accuracy of response to questions designed to examine understanding.
-We measured a key person attribute, vocabulary knowledge using the `SHIPLEY` vocabulary test.
-We can then examine the association between this pair of variables using correlation.
+##### How-to Task 7 -- Find out how to export a nice boxplot so you can include it in a report
 
-Here, we examine the correlation between the mean accuracy (`mean.acc`) of understanding of health information, and vocabulary (`SHIPLEY`) knowledge, for each person in our participant sample.
+In writing a report, we often need to insert an image file.
 
-Can you figure out how to code the correlation analysis?
-
-It helps with your learning if you first try to predict what the code will look like.
-Then reveal the code, below, to see what you guessed right.
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-cor.test(study.one.gen$SHIPLEY, study.one.gen$mean.acc, method = "pearson",  alternative = "two.sided")
-```
-:::
-
-> Q.1. What is r, the correlation coefficient?
-
-:::{.callout-tip collapse="true"}
-## Answer
-> A.1. r = 0.334406
-:::
-
-> Q.2. Is the correlation significant?
-
-:::{.callout-tip collapse="true"}
-## Answer
-> A.2. r is significant, p < .05
-:::
-
-> Q.3. What are the values for t and p for the significance test for the correlation?
-
-:::{.callout-tip collapse="true"}
-## Answer
-> A.3. t = 4.5855, p = 8.846e-06
-:::
-
-> Q.4. What do you conclude is the answer to the research question, given the correlation results?
-
-:::{.callout-tip collapse="true"}
-## Hint
-Review the scatterplot you drew earlier (or draw one now) to examine the shape of the association between these variables.
-:::
-
-:::{.callout-tip collapse="true"}
-## Answer
-> A.4. Vocabulary and `mean.acc` are positively correlated suggesting that as `SHIPLEY` scores increase so also do `mean.acc` scores.
-:::
-
-#### How-to Part 6: **New**: using a linear model to answer research questions
-
-##### How-to Task 8 -- Code and read the results from a linear model analysis
-
-As we have seen, one of our research questions is:
-
-1. What person attributes predict success in understanding?
-
-We can examine the relation between outcome mean accuracy (`mean.acc`) of understanding and vocabulary (`SHIPLEY`) knowledge by testing if person vocabulary score predicts understanding.
-
-We do this through a linear model analysis.
-
-We complete the analysis using the `lm()` function.
-
-```{r}
-model <- lm(mean.acc ~ SHIPLEY, data = study.one.gen)
-summary(model)
-```
-
-Let's work through the elements of the linear model code so we can see what everything does:
-
-1. `model <- lm(...)` -- fit the model using `lm(...)`, giving the model a name 
-here, we just call it "model".
-2. `...lm(mean.acc ~ SHIPLEY...)` -- tell R you want a model of the outcome 
-`mean.acc` predicted `~` by the predictor `SHIPLEY`.
-3. `...data = study.one)` -- tell R that the variables you name in the 
- formula are in the `study.one` dataset.
-4. `summary(model)` -- ask R for a summary of the model you called "model": **this is how you get the results**.
+- You have been drawing some plots.
+- You need to save the plots so that you can use the plots in a report.
 
 ::: callout-tip
-Notice that R has a general formula syntax: `outcome ~ predictor` *or* `y ~ x`
+People sometimes paste copies of screenshots of plots into reports. Sometimes, the plots look bad because they are low resolution, or because they are squashed into the wrong aspect ratio.
 
-- and uses the same format across a number of different functions;
-- each time, on the left of the tilde symbol `~` you identify the output or outcome variable;
-- but on the right of the tilde `~` you identify an input or predictor variable or set of predictor variables.
+There is no need for this.
+
+- You can export or save the plot to an image file.
+- You can save the file in a high resolution.
+- You can make sure that the image has an aspect ratio that looks good.
 :::
+
+How do you do this?
+
+We break this task into the same steps we followed before:
+
+1. Find relevant and useful information;
+2. Locate example code;  
+3. Run the example code;   
+4. Edit the code to do the task with the `study.one.gen` data.
+
+**1. Find relevant and useful information**
+
+You find the information you need by doing *keyword* searches online.
+
+::: callout-tip
+Hint: Do a search using the words: `how to export ggplot`
+
+That will get you results including this one:
+
+<https://ggplot2.tidyverse.org/reference/ggsave.html>
+
+This is the official {ggplot2} library reference information on how to save plots.
+:::
+
+Notice:
+
+- This time, the example code at the end of the web page may not be helpful to everyone.
+- The usage information at the beginning tells you what you need to know but you will have to look up what arguments like 'device' or 'dpi' mean, and you will need to experiment a bit, trying different arguments, to get it to work for you.
+- **Let's move on**.
+
+::: callout-tip
+Hint: Do a search using the words: how to export ggplot
+
+That will also get you results including this one:
+
+<https://stackoverflow.com/questions/38907514/saving-a-high-resolution-image-in-r>
+:::
+
+This is what we want: the example code, you will find, is usable and it is clearly explained.
+
+Notice:
+
+- On StackOverflow, people posts questions and then other people post answers to those questions.
+- Still others can up-vote or down-vote the questions and the answers.
+- This system means that the most interesting or useful questions are more likely to appear in your search results when you do searches with the right key words.
+
+::: callout-important
+In working with R: if you have a question someone has usually asked your question before, and someone else has usually posted an answer to that question.
+
+- As a rule: **every question you ever have has been answered in a StackOverflow discussion**.
+
+You just need to be able to find that discussion, and to be able to use the answer information.
+:::
+
+Here, you can see that the discussion has been viewed 258k times (a lot).
+
+- Many people have up-voted the question because it is *so* important.
+- Many people have up-voted the answers to the question because they are *so* useful.
+
+**2. Locate example code**
+
+On Stackoverflow, in response to any one question, different people may post alternative answers.
+
+- Some students may be concerned that there is no one right answer.
+- In mathematics, there are right or wrong answers but this here is something different: we are working out how to do something with a computer.
+- The fact that there may be alternative different ways of doing the same task is a fair reflection of the reality that with the same set of tools
+- different experts can reasonably prefer different approaches or methods.
+
+Here, let's just pick the simplest example:
+
+```{r}
+#| eval: false
+tiff("test.tiff", units="in", width=5, height=5, res=300)
+# insert ggplot code
+dev.off()
+```
   
-If you look at the model summary you can answer the following questions.
+**3. Run the example code** 
 
-> Q.5. What is the estimate for the coefficient of the effect of the predictor, SHIPLEY?
-
-:::{.callout-tip collapse="true"}
-## Answer
-> A.5. 0.01050 
-:::
-
-> Q.6. Is the effect significant?
-
-:::{.callout-tip collapse="true"}
-## Answer
-> A.6. It is significant, p < .05
-:::
-
-> Q.7. What are the values for t and p for the significance test for the coefficient?
-
-:::{.callout-tip collapse="true"}
-## Answer
-> A.7. t = 4.585, p = 8.85e-06
-:::
-
-> Q.8. What do you conclude is the answer to the research question, given the linear model results?
-
-:::{.callout-tip collapse="true"}
-## Answer
-> A.8. The model slope estimate suggests that as `SHIPLEY` scores increase so also do `mean.acc` scores.
-:::
-
-#### How-to Part 7: **New**: using a linear model to generate predictions
-
-##### How-to Task 9 -- Fit a linear model and plot the model predictions
-
-We can use the model we have just fitted to plot the model predictions.
-
-- The estimates of the coefficients (given in summary results) are the information we need to generate predictions.
-- What we are predicting is how values of the outcome variable change, on average, given different values in one or more predictor variables.
-- We can produce predictions by working with linear model estimates of (1.) the intercept and (2.) the coefficient of the effect of each predictor variable.
-- The effect of a predictor tells you *how* the outcome changes (how much the outcome increases or decreases), given different values of the predictor.
-
-We are going to do this prediction in two steps:
-
-1. **revision** -- fit a linear model to estimate the relationship between the outcome and the predictor variables.
-2. **new** -- draw a scatterplot and add a line to show the model predictions, given the model estimates.
-
-We work through these steps in turn.
-
-**Step 1. First fit a linear model and get a summary of the estimates**
+What happens if you run this example code?
 
 ```{r}
-model <- lm(mean.acc ~ SHIPLEY, data = study.one.gen)
-summary(model)
+#| eval: false
+tiff("test.tiff", units="in", width=5, height=5, res=300)
+# insert ggplot code
+dev.off()
 ```
 
-> Q.9. What is the coefficient estimate for the intercept?
+Nothing.
 
-> A.9. 0.44914
+Notice this bit: `insert ggplot code`.
 
-> Q.10. What is the coefficient estimate for the slope of SHIPLEY?
+We have to fix that.
 
-> A.10. 0.01050
+**4. Edit the code to do the task with the `study.one.gen` data**
 
-**Step 2. Second, draw a scatterplot and add a line to show the model predictions**
+What the authors of the answer are telling you to do is to write *your* bit of code to produce a plot where they say: `insert ggplot code`.
 
-We use the `geom_abline()` function to draw the line.
+Let's do that:
 
 ```{r}
-ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  geom_abline(intercept = 0.44914, slope = 0.01050, colour = "red", linewidth = 1.5) +
-  theme_bw() +
-  labs(x = "SHIPLEY", y = "mean accuracy") +
-  xlim(0, 40) + ylim(0, 1)
+tiff("my-plot.tiff", units="in", width=5, height=5, res=300)
+
+ggplot(study.one.gen, aes(x=EDUCATION, y=SHIPLEY, fill=EDUCATION)) + 
+  geom_boxplot(alpha=0.3) +
+  theme(legend.position="none") +
+  scale_fill_brewer(palette="BuPu")
+
+dev.off()
 ```
 
-You can see that the only **new** thing we do here is to:
+Notice:
 
-1. add the `geom_abline(...)` function;
-2. and, inside the brackets, add information about the intercept and the slope estimates.
+- This works but it may appear again as if nothing has happened.
+- But look in R-Studio in the `Files` window (bottom right screen).
+- Click on the `Files' tab.
+- Sort the list of files by date by clicking on the `Modified` column header.
+- You should see the file: `my-plot.tiff` in the `Files` space.
+- You can download this file by ticking the box.
 
-Note that we can get the prediction line drawn for us automatically.
+Now let's go back to the way that the `{ggplot2}` library information recommends.
 
-:::{.callout-tip collapse="true"}
-## Hint
+- Take a look at the second answer to the Stackoverflow question:
+
 ```{r}
-ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
-  # geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  geom_smooth(method = 'lm', colour = "purple", alpha = .2, linewidth = 2.5, se = FALSE) +
-  geom_abline(intercept = 0.44914, slope = 0.01050, colour = "red", linewidth = 1) +
-  theme_bw() +
-  labs(x = "SHIPLEY", y = "mean accuracy") +
-  xlim(0, 40) + ylim(0, 1)  
+#| eval: false
+ggplot(data=df, aes(x=xvar, y=yvar)) + 
+geom_point()
+
+ggsave(path = path, width = width, height = height, device='tiff', dpi=700)
 ```
 
-Here, I turned the points off by commenting them out, adding `#` to the start of the line.
+Adapt the example code to do the task:
 
-- I added `geom_smooth(method = 'lm', ...)` to draw a prediction line.
+```{r}
+ggplot(study.one.gen, aes(x=EDUCATION, y=SHIPLEY, fill=EDUCATION)) + 
+  geom_boxplot(alpha=0.3) +
+  theme(legend.position="none") +
+  scale_fill_brewer(palette="BuPu")
 
-You can compare the red prediction line I drew using the model estimates with the purple line I used `geom_smooth()` to draw automatically, to see that they are identical.
+ggsave(filename = 'my-plot-2.tiff', device='tiff', dpi=700)
+```
 
-You have seen `geom_smooth()` before: this shows you how it works.
-:::
+Now you should see:
+
+1. A plot appear in the `Plots` window in R-Studio.
+2. And a plot appear in the `Files` window in R-Studio.
+
+Notice:
+
+- I deleted every argument I was not interested in using, e.g. `width = ...` and `height = ...`
+- I gave the file a new name, so that you can see that this works as well as the `dev.off()` method
+
+Which method do you prefer?
 
 **What are we learning here?**
 
-We want to generate model predictions because doing this unlocks a key concept in understanding why we use linear models and what we do.
+We are learning two things:
 
-- Linear models are an analysis method based on the *prediction* of the average change in outcome variable values, given different values of one or more predictor variables.
+1. StackOverflow has many of the answers you will need, now, and later if you continue to use R.
+2. You can save the image files you make for use in your reports.
 
 ::: callout-tip
 ## Further information you can explore
-You can get `{ggplot2}` reference information to see what `geom_smooth()` does:
+Here's a blog post by Cedric Scherer:
 
-<https://ggplot2.tidyverse.org/reference/geom_smooth.html>
+<https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/>
 
-You can see reference information on drawing lines here:
-
-<https://ggplot2.tidyverse.org/reference/geom_abline.html>
+- which covers many of the issues we have been discussing.
 :::
 
 #### The practical exercises {#sec-lm-intro-practical-workbook}
@@ -861,23 +835,18 @@ Now we will work with the data file
 
 We again split the steps into into parts, tasks and questions.
 
-We are going to work through the following workflow steps: **each step is labelled as a practical part**.
-
 1. Set-up
 2. Load the data
-3. Revision: developing histograms to examine the distributions of variables.
-4. Revision: developing scatterplots to examine associations between variables.
-5. Revision: using correlations to to answer research questions --- making sure you are comfortable with the calculation and interpretation of correlation analyses.
-6. **New**: using a linear model to answer research questions.
-7. **New**: using a linear model to make predictions.
+3. **Revision**: locate and use ggplot2 reference information.
+4. **New**: locate and use tutorial or how-to information.
+5. **New**: locate and use Stackoverflow information.
 
 ::: callout-tip
-- The `how-to` guide showed you what functions you needed and how you should write the function code.
-- Use the code structure you have seen and *change* it to use the data required for these `practical exercises`: you will need to change the data-set name, the variable names, to get the code to work for the following exercises.
-- Identify what code elements must change, and what code elements have to stay the same.
+- The `how-to` guide showed you ways of doing these tasks.
+- Now use the hints and tips to complete the `practical exercises` that follow.
 :::
 
-In the following, we will guide you through the tasks and questions step by step.
+We are going to work through the following tasks, split into separate parts.
 
 ::: callout-important
 An answers version of the workbook will be provided after the practical class.
@@ -898,8 +867,11 @@ rm(list=ls())
 
 ```{r}
 #| eval: false
+library("ggdist")
 library("tidyverse")
 ```
+
+You may need to load other libraries as you progress.
 
 #### Practical Part 2: Load the data
 
@@ -933,509 +905,357 @@ summary(study.two.gen)
 ```
 :::
 
-This time:
-
-- Pay attention to what you see, for the numeric variables, in the information about minimum `Min.` and maximum `Max.` values.
+#### Practical Part 3: Revision -- locate and use `{ggplot2}` reference information
+
+##### Practical Task 5 -- Find out how to produce boxplots to examine if vocabulary scores are different for people with different education levels
+
+<!-- # -- Task 5 -- Specifically, find out how to produce a plot comprising: -->
+<!-- # -- 1 -- boxplots showing a summary of vocabulary scores for people with different  -->
+<!-- # education levels -->
+<!-- # -- 2 -- plus a scatterplot showing individual vocabulary scores for each person -->
+<!-- # in the data-set -->
+
+<!-- # -- We can break this task into steps: -->
+
+<!-- # -- 1 -- Find relevant and useful information   -->
+<!-- # -- 2 -- Locate example code   -->
+<!-- # -- 3 -- Run the example code    -->
+<!-- # -- 4 -- Edit the code to do the task with the 'study.two' data -->
 
-#### Practical Part 3: Revision -- developing histograms to examine the distributions of variables
+
+<!-- # -- 1 -- Find relevant and useful information -->
+
+<!-- # -- hint: Task 5 -- If you have never created a box plot before, a good place to start -->
+<!-- # is the {ggplot2} library reference information -->
+
+
+<!-- # -- Q.1. -- What keywords can you use to find {ggplot2} library reference information? -->
+<!-- # -- A.1. -- You can do an effective search using the words: ggplot reference boxplot -->
+<!-- # -- That will get you results including this one: -->
+<!-- # https://ggplot2.tidyverse.org/reference/geom_boxplot.html -->
+<!-- # -- You know this source is official, relevant, and useful because you can -->
+<!-- # see the hex badge: "ggplot2" -->
+
+<!-- # -- Q.2. -- What does a boxplot represent? In other words, what summary -->
+<!-- # statistics do the features of a boxplot display? -->
+<!-- # -- A.2. -- The reference page includes this information: -->
+<!-- # The lower and upper hinges correspond to the first and third quartiles (the 25th and 75th percentiles).  -->
+<!-- # This differs slightly from the method used by the boxplot() function, and may be apparent with small  -->
+<!-- # samples. See boxplot.stats() for more information on how hinge positions are calculated for boxplot(). -->
+<!-- #  -->
+<!-- # The upper whisker extends from the hinge to the largest value no further than 1.5 * IQR from the  -->
+<!-- # hinge (where IQR is the inter-quartile range, or distance between the first and third quartiles).  -->
+<!-- # The lower whisker extends from the hinge to the smallest value at most 1.5 * IQR of the hinge.  -->
+<!-- #  -->
+<!-- # Data beyond the end of the whiskers are called "outlying" points and are plotted individually. -->
+
+
+<!-- # -- 2 -- Locate example code -->
+
+<!-- # -- hint: Task 5 -- Most R developers design their information web pages in the same way: -->
+<!-- # -- They will give you example code -- in highlighted boxes -->
+
+
+<!-- # -- Q.3. -- Can you find example code showing how to produce a boxplot that  -->
+<!-- # allows you to examine if vocabulary scores are different for people with  -->
+<!-- # different education levels? -->
+<!-- # -- A.3. -- The web page: -->
+<!-- # https://ggplot2.tidyverse.org/reference/geom_boxplot.html   -->
+<!-- # -- includes example code like this:   -->
+<!-- # p <- ggplot(mpg, aes(class, hwy)) -->
+<!-- # p + geom_boxplot() -->
+
+<!-- # -- Q.4. -- Can you find example code showing how to produce a complex plot comprising: -->
+<!-- # -- 1 -- boxplots showing a summary of vocabulary scores for people with different  -->
+<!-- # education levels -->
+<!-- # -- 2 -- plus a scatterplot showing individual vocabulary scores for each person -->
+<!-- # in the data-set -->
+<!-- # -- A.4. -- The web page: -->
+<!-- # https://ggplot2.tidyverse.org/reference/geom_boxplot.html   -->
+<!-- # -- includes example code like this:   -->
+<!-- # p + geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2) -->
+
+
+<!-- # -- Notice: -->
+<!-- # -- You will need to understand two things before you move on: -->
+
+<!-- # -- Q.5. -- Can you explain what geom_jitter() does? -->
+<!-- # -- A.5. -- You can do a search like you have been doing -- with the words: -->
+<!-- # ggplot reference geom_jitter   -->
+<!-- # -- hint: Q.5 -- That will get you results including this one: -->
+<!-- # https://ggplot2.tidyverse.org/reference/geom_jitter.html   -->
+<!-- # -- which says: -->
+
+<!-- # The jitter geom is a convenient shortcut for geom_point(position = "jitter").  -->
+<!-- # It adds a small amount of random variation to the location of each point, and  -->
+<!-- # is a useful way of handling overplotting caused by discreteness in smaller datasets. -->
+
+<!-- # -- Q.6. -- Can you explain what overplotting means? -->
+<!-- # -- A.6. -- Overplotting refers to where points (or other objects) are printed -->
+<!-- # on top of each other, or printed crowded together, making it difficult to -->
+<!-- # identify different data elements -->
+
+
+<!-- # -- hint -- If you see a line of code like this: -->
+<!-- # p + geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2) -->
+<!-- #  -->
+<!-- # -- You need to pay attention to this bit: p + ... -->
+<!-- #  -->
+<!-- # -- That means that the code works by: -->
+<!-- # -- adding the geom_boxplot() and geom_jitter() layers to a pre-existing plot -->
+<!-- # called p -->
+
+<!-- # -- So if you run: -->
+<!-- p + geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2) -->
+<!-- # -- on its own then it will give you an error: -->
+<!-- # Error: object 'p' not found -->
+
+<!-- # -- This tells you that you need to define the object 'p' so that R -->
+<!-- # can find it -->
+<!-- # -- so that R can add the geom_boxplot() and geom_jitter() layers to it -->
+
+<!-- # -- Notice that in the example code in: -->
+<!-- # https://ggplot2.tidyverse.org/reference/geom_jitter.html -->
+<!-- # -- 'p' is defined first, right at the start of the series of examples -->
+
+<!-- # -- So, what you need to do is build the plot object then add the layers step-by-step -->
+
+
+<!-- # Look at: -->
+<!-- p <- ggplot(data = study.two, aes(x = EDUCATION, y = SHIPLEY)) -->
+<!-- p + geom_boxplot() -->
+<!-- # -- In this sequence of code: -->
+<!-- #  -->
+<!-- # 1. p <- ggplot(data = mpg, aes(x = class, y = hwy))  -->
+<!-- # -- First constructs a plot object, called 'p' -->
+<!-- # -- Nothing will appear in the 'Plots' window but the object 'p' will appear -->
+<!-- # in the 'Environment' window in R-Studio -->
+<!-- #  -->
+<!-- # 2. p + geom_boxplot()   -->
+<!-- # -- Adds the object geom_boxplot() to the object 'p' -->
+<!-- # -- *This* step is where something is produced in the 'Plots' window -->
+<!-- #  -->
+<!-- # This style of building a plot step-by-step enables you to construct quite -->
+<!-- # complex plots, with multiple layers -->
+
+
+<!-- # -- 3 and 4 -- Edit the example code to do the task with the 'study.two' data -->
+
+<!-- # -- Q.7. -- Can you edit and run the example code to produce a complex plot comprising: -->
+<!-- # -- 1 -- boxplots showing a summary of vocabulary scores for people with different  -->
+<!-- # education levels -->
+<!-- # -- 2 -- plus a scatterplot showing individual vocabulary scores for each person -->
+<!-- # in the data-set -->
+<!-- # -- A.7. -- The example code can be edited to:    -->
+<!-- # p <- ggplot(data = study.two, aes(x = EDUCATION, y = SHIPLEY)) -->
+<!-- # p + geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2) -->
 
-##### Practical Task 5 -- Practise editing the appearance of a histogram plot step-by-step
+
+<!-- # -- Now look at the plot you have produced and critically evaluate it. -->
+
 
-Start by constructing a basic histogram.
-
-- Draw a histogram plot to visualize the distribution of *any* numeric variable from the `study.two.gen` data-set.
-
-:::{.callout-tip collapse="true"}
-## Hint
-- Use the line-by-line format to break the plot code into steps.
-- It will make it easier to read, and it will make it easier to add edit.
-::: 
-
-1. Pick a numeric variable in the dataset.
-2. Run the code to produce a histogram to show the distribution of values for that variable in the data.
-
-Can you work out how to do it without looking at the code example?
-
-Click on the button to see the code example: compare it to the code you wrote.
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY)) + 
-  geom_histogram()
-```
-:::
-
-Next, we are going to edit:
-
-1. **new** -- the appearance of the bars using `binwidth`;
-2. **revision** -- the appearance of the background;
-3. **revision** -- the appearance of the labels using `labs()`;
-4. **new** -- setting the x-axis limits to reflect the full range of possible scores on the x-axis variable using `xlim()`;
-5. **new** -- adding annotation -- here, a vertical line using `geom_vline()`.
-
->**Q.1.** Can you edit the appearance of the bars by specifying a `binwidth` value?
-
-:::{.callout-tip collapse="true"}
-## Hint
-Remember: 
-
-- The `binwidth` number has to be a value between the smallest possible value and the largest possible value for the variable. For example, if the variable is `AGE` then the smallest possible value will be 0. So `binwidth` has to be some number bigger than 0.
-- You can experiment with different numbers to find a balance between a histogram that shows detail (more, narrow, bars) and a histogram that shows an impression (fewer, wider, bars).
-:::
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2)
-```
-:::
+<!-- # -- Q.8. -- What does the plot tell you about the average (median) -->
+<!-- # vocabulary (SHIPLEY) score recorded for people in the study.two dataset -->
+<!-- # who report different education levels? -->
+<!-- # -- A.8. -- The plot indicates that the median vocabulary score is higher -->
+<!-- # for people who report Higher education compared to people who report Further -->
+<!-- # education or people who report Secondary education -->
+<!-- # -- hint: We can see this because the middle line in the boxes, representing -->
+<!-- # the median score for people in each education level group, is higher for  -->
+<!-- # for people who report Higher education  -->
 
->**Q.2.** Can you edit the appearance of the background?
-
-:::{.callout-tip collapse="true"}
-## Hint
-There are a range of themes that you can use.  Why not pick one of the options shown here:
-
-<https://ggplot2.tidyverse.org/reference/ggtheme.html>
-:::
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2) +
-  theme_bw()
-```
-:::
-
->**Q.3.** Can you edit the appearance of the labels?
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2) +
-  theme_bw() +
-  labs(x = "SHIPLEY", y = "frequency count")
-```
-:::
-
->**Q.4.** Can you edit the x-axis limits?
-
-:::{.callout-tip collapse="true"}
-## Hint
-What you want to do, here, is to show the smallest possible value (often, not always 0) for values in the variable.
-
-- The idea is that you want to see the distribution of values in the sample (the histogram), for the variable, in the context of the full possible range of values for that variable.
-- You can use the `summary()` information to make your choice of limits.
-
-Drawing a histogram like this allows you to show the reader how the sample compares to the wider population.
-:::
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2) +
-  theme_bw() +
-  labs(x = "Vocabulary (SHIPLEY)", y = "frequency count") +
-  xlim(0,40)
-```
-:::
-
->**Q.5.** Can you add annotation: a vertical line to show the mean value of 
-the variable you are plotting?
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2) +
-  theme_bw() +
-  labs(x = "Vocabulary (SHIPLEY)", y = "frequency count") +
-  xlim(0,40) +
-  geom_vline(xintercept = mean(study.two.gen$SHIPLEY), colour = "red", size = 1.5)
-```
-:::
-
->**Q.6.** Where can you find information on how to define the limits on the x-axis 
-and on the y-axis?
-
-:::{.callout-tip collapse="true"}
-## Hint
-You can see the information in this week's `how-to` guide but try a search online for the keywords: `ggplot reference xlim`.
-:::
-
-<!-- - A.6. See ggplot reference information on setting limits here: -->
-
-<!-- <https://ggplot2.tidyverse.org/reference/lims.html> -->
-
->**Q.7.** Where can you find information on how to draw a reference line?
-
-:::{.callout-tip collapse="true"}
-## Hint
-You can see the information in this week's `how-to` but try a search online for the keywords: `ggplot reference vline`.
-:::
-
-<!-- - A.7. See ggplot reference information on adding lines here: -->
-
-<!-- <https://ggplot2.tidyverse.org/reference/geom_abline.html> -->
-
-#### Practical Part 4: Developing scatterplots to examine associations between variables
-
-##### Practical Task 6 -- Create a scatterplot to examine the association between some variables
-
-Create three scatterplots to visualize the relationship between (1.) the outcome `mean.acc` and (2.) each of three numeric potential predictor variables `SHIPLEY`, `HLVA` and `AGE`.
-
-Check first if you can write the code you need to produce each scatterplot.
-Click on the button to see the code example: compare it to the code you wrote.
-
-:::{.callout-tip collapse="true"}
-## Code
-
-Check out the example code for each of the scatterplots we are asking you to do.
-
-- Notice what changes and what stays the same.
-
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point()
-
-ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
-  geom_point()
-
-ggplot(data = study.two.gen, aes(x = AGE, y = mean.acc)) +
-  geom_point()
-```
-:::
-
-##### Practical Task 7 -- Edit the appearance of *each* plot step-by-step
-
-1. You may want to use the same plot edit choices for all plots.
-
-- Producing plots with a consistent appearance will make it easier for 
-your audience to read your plots.
-
-2. You can find links to relevant information on options in the `how-to` guide.
-
-- Use the information to make the plots pleasing in appearance to you.
-
-:::{.callout-tip collapse="true"}
-## Hints
-- Do not be afraid to select, copy then paste code to re-use it and *save yourself* the effort of typing out the code over and over again.
-- But be careful to make sure that you change variable names, and that things like axis values are sensible for each variable.
-:::
-
->**Q.8.** Can you edit the appearance of the points using `alpha`, `size`, `shape`, and `colour`?
-
-:::{.callout-tip collapse="true"}
-## Code
-Check out the example code for each of the scatterplots.
-
-- Notice what changes and what stays the same.
-
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')
-
-ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')
-
-ggplot(data = study.two.gen, aes(x = AGE, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')
-```
-:::
-
->**Q.9.** Can you edit the appearance of the background?
-
-:::{.callout-tip collapse="true"}
-## Code
-Check out the example code for each of the scatterplots.
-
-- Notice what changes and what stays the same.
-
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw()
-
-ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw()
-
-ggplot(data = study.two.gen, aes(x = AGE, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw()
-```
-:::
-
->**Q.10.** Can you edit the appearance of the labels?
-
-:::{.callout-tip collapse="true"}
-## Code
-Check out the example code for each of the scatterplots.
-
-- Notice what changes and what stays the same.
-
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw() +
-  labs(x = "SHIPLEY", y = "mean accuracy")
-
-ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw() +
-  labs(x = "HLVA", y = "mean accuracy")
-
-ggplot(data = study.two.gen, aes(x = AGE, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw() +
-  labs(x = "Age (Years)", y = "mean accuracy")
-```
-:::
-
->**Q.11.** Can you set the x-axis and y-axis limits to 0 (as the minimum) versus the sample data maximum values for the variables you are plotting?
-
-:::{.callout-tip collapse="true"}
-## Hint
-- For these plots the y-axis limits will be the same because the outcome stays the same across plots.
-- The x-axis limits will be different for each different predictor variable.
-- Check out the information in the `summary()` of the dataset.
-- The minimum values for the variables will often be 0, e.g., if you are looking at data from ability tests and people who do the tests can get 0. But if you are looking at, e.g., ratings data then the minimum value could be 1, e.g., because people are asked to rate something on a scale from 1-9.
-:::
-
-Check first if you can write the code you need to produce each scatterplot.
-Click on the button to see the code example: compare it to the code you wrote.
-
-:::{.callout-tip collapse="true"}
-## Code
-Check out the example code for each of the scatterplots.
-
-- Notice what changes and what stays the same.
-
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw() +
-  labs(x = "SHIPLEY", y = "mean accuracy") +
-  xlim(0, 40) + ylim(0, 1)
-
-ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw() +
-  labs(x = "HLVA", y = "mean accuracy") +
-  xlim(0, 16) + ylim(0, 1)
-
-ggplot(data = study.two.gen, aes(x = AGE, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw() +
-  labs(x = "Age (Years)", y = "mean accuracy") +
-  xlim(0, 80) + ylim(0, 1)
-```
-:::
-
-#### Practical Part 5: Using correlations to to answer research questions --- making sure you are comfortable
-
-One of our research questions is:
-
-1. What person attributes predict success in understanding?
-
-##### Practical Task 8 -- Examine the correlations between the outcome variable and predictor variables
-
-Run three correlations to look at this question: 
-
-1. between mean accuracy and `SHIPLEY`;
-2. between mean accuracy and `HLVA`; 
-3. between mean accuracy and `AGE`.
-
-Check first if you can write the code you need to complete each correlation analysis.
-Click on the button to see the code example: compare it to the code you wrote.
-
-:::{.callout-tip collapse="true"}
-## Code
-Check out the example code for doing each of the correlation analyses.
-
-- Notice what changes and what stays the same.
-
-```{r}
-#| eval: false
-cor.test(study.two.gen$SHIPLEY, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided")
-
-cor.test(study.two.gen$HLVA, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided")
-
-cor.test(study.two.gen$AGE, study.two.gen$mean.acc, method = "pearson",  alternative = "two.sided")
-```
-:::
-
-Now use the results from the correlations to answer the following questions.
-
->**Q.12.** What is `r`, the coefficient for the correlation between `mean.acc` and `SHIPLEY`?
-
-<!-- - A.12. r = 0.4650537 -->
-
->**Q.13.** Is the correlation between `mean.acc` and `HLVA`  significant?
-
-<!-- - A.13. -- r is significant, p < .05 -->
-
->**Q.14.** What are the values for t and p for the significance test for the correlation between `mean.acc` and `AGE`?
-
-<!-- - A.14. t = 0.30121, p = 0.7636 -->
-
->**Q.15.** For which pair of outcome-predictor variables is the correlation the largest?
-
-<!-- - A.15. -- The correlation is the largest between `mean.acc` and `HLVA`. -->
-
->**Q.16.** What is the sign or direction of each of the correlations?
-
-<!-- - A.16. -- All the correlations are positive. -->
-
-#### Practical Part 6: Using a linear model to to answer research questions
-
-Now we can use linear models to try to answer the question:
-
-1. What person attributes predict success in understanding?
-
-##### Practical Task 9 -- Examine the relation between outcome mean accuracy (`mean.acc`) and each of the predictors: `SHIPLEY`, `HLVA` and `AGE`
-
-You need to run three separate `lm()` analyses:
-
-1. with mean accuracy `mean.acc` as the outcome and `SHIPLEY` as the predictor;
-2. with mean accuracy `mean.acc` as the outcome and `HLVA` as the predictor; 
-3. with mean accuracy `mean.acc` as the outcome and `AGE` as the predictor.
-
-:::{.callout-tip collapse="true"}
-## Hints
-You need to use `lm()` to do the analyses.
-
-1. Be careful to identify the outcome and predictor variables correctly.
-2. Remember that analysis code is arranged like this:
-
-```{r}
-#| eval: false
-lm(outcome.variable ~ predictor.variable, data = data.set)
-```
-
-With:
-
-- `lm()` asking R to do the linear model analysis;
-- `outcome.variable ~ ...` specified on the *left* of the `~`;
-- the `predictor.variable ~ ...` specified on the *right* of the `~`;
-- and `data.set` identifying to R what dataset you are working with.
-:::
-
-Check first if you can write the code you need to complete each linear model analysis.
-Click on the button to see the code example: compare it to the code you wrote.
-
-:::{.callout-tip collapse="true"}
-## Code
-Check out the example code for each of the models.
-
-- Notice what changes and what stays the same.
-
-```{r}
-#| eval: false
-model.1 <- lm(mean.acc ~ SHIPLEY, data = study.two.gen)
-summary(model.1)
-
-model.2 <- lm(mean.acc ~ HLVA, data = study.two.gen)
-summary(model.2)
-
-model.3 <- lm(mean.acc ~ AGE, data = study.two.gen)
-summary(model.3)
-```
-:::
-
-If you look at the model summary you can answer the following questions.
-
->**Q.17.** What is the estimate for the coefficient of the effect of the predictor `HLVA` on `mean.acc`?
-
-<!-- - A.17. 0.026207  -->
-
->**Q.18.** Is the effect significant?
-
-<!-- - A.18. It is significant, p < .05 -->
-
->**Q.19.** What are the values for t and p for the significance test for the coefficient?
-
-<!-- - A.19. t = 7.529, p = 2.87e-12 -->
-
->**Q.20.** How would you describe in words the shape or direction of the association between `HLVA` and `mean.acc`?
-
-<!-- - A.20. The slope coefficient -- and a scatterplot (draw it) -- suggest that as HLVA scores increase so also do mean accuracy scores. -->
-
->**Q.21.** How how would you describe the relations apparent between the predictor and outcome in all three models?
-
-<!-- - A.21. It is possible to see, given coefficient estimates, that the association between predictor and outcome is positive for each model: mean accuracy appears to increase for increasing values of SHIPLEY vocabulary, HLVA health literacy, and age. -->
-
-#### Practical Part 7: Using a linear model to make predictions
-
-##### Practical Task 10 -- Fit a linear model and use the results to plot the model predictions
-
-We are going to draw a scatterplot and add a line.
-
-- The line will show the model predictions, given the model intercept and effect 
-coefficient estimates.
-
-**Step 1. First fit a linear model and get a summary of the estimates**
-
-Fit a model with mean accuracy `mean.acc` as the outcome and `HLVA` as the predictor.
-
-Check if you can write the code you need to complete the linear model analysis.
-Click on the button to see the code example: compare it to the code you wrote.
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-#| eval: false
-model <- lm(mean.acc ~ HLVA, data = study.two.gen)
-summary(model)
-```
-:::
-
-You will need to record some information from the model summary so you can use it next.
-
->**Q.22.** What is the coefficient estimate for the intercept?
-
-<!-- - A.22. 0.522016 -->
-
->**Q.23.** What is the coefficient estimate for the slope of `HLVA`?
-
-<!-- - A.23. 0.026207 -->
-
-**Step 2. Second, draw a scatterplot and add a line to show the model predictions**
-
-Check first if you can write the code you need to produce the prediction plot.
-Click on the button to see the code example: compare it to the code you wrote.
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-#| eval: false
-ggplot(data = study.two.gen, aes(x = HLVA, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  geom_abline(intercept = 0.522016, slope = 0.026207, 
-              colour = "red", size = 1.5) +
-  theme_bw() +
-  labs(x = "HLVA", y = "mean accuracy") +
-  xlim(0, 15) + ylim(0, 1)
-```
-:::
-
-#### You have now completed the Week 7 practical exercises and questions
+<!-- # -- Q.9. -- What does the plot tell you about the individual i.e. per-person -->
+<!-- # vocabulary (SHIPLEY) score recorded for people in the study.two dataset -->
+<!-- # who report different education levels? -->
+<!-- # -- A.9. -- The plot indicates a lot of variability in the individual scores -->
+<!-- # -- The distributions of scores appears to have similar wide ranges in each -->
+<!-- # group -->
+
+#### Practical Part 4: New -- locate and use tutorial or how-to information
+
+##### Practical Task 6 -- Find out how to construct a rain cloud plot
+
+<!-- # -- We break this task into the same steps we followed before: -->
+<!-- # -- 1 -- Find relevant and useful information   -->
+<!-- # -- 2 -- Locate example code   -->
+<!-- # -- 3 -- Run the example code    -->
+<!-- # -- 4 -- Edit the code to do the task with the 'study.two' data -->
+
+<!-- # -- hint: Task 6 -- Rain cloud plots are now a popular visualization that incorporates -->
+<!-- # elements of the boxplot, the scatterplot and the density plot to give the -->
+<!-- # viewer summary information about the distribution of scores on a variable -->
+<!-- # and also giving information about the variability of outcomes -->
+
+<!-- # -- hint: Task 6 -- I discuss why this is important in the PSYC403 lecture on -->
+<!-- # Perspectives on visualization as well as the PSYC401 lecture on  -->
+<!-- # Practices in visualization -->
+
+
+<!-- # -- 1 -- Find relevant and useful information -->
+
+<!-- # -- hint: Task 6 -- Do a search using the words: how to ggplot rain cloud plot -->
+
+<!-- # -- hint: Task 6 -- That will get you results including these: -->
+
+<!-- # https://www.cedricscherer.com/2021/06/06/visualizing-distributions-with-raincloud-plots-and-how-to-create-them-with-ggplot2/ -->
+<!-- # -- see also: -->
+<!-- # https://z3tt.github.io/Rainclouds/     -->
+<!-- #    -->
+<!-- # https://www.r-bloggers.com/2021/07/ggdist-make-a-raincloud-plot-to-visualize-distribution-in-ggplot2/   -->
+<!-- # -- see also: -->
+<!-- # https://rpubs.com/rana2hin/raincloud -->
+<!-- #      -->
+<!-- # https://wellcomeopenresearch.org/articles/4-63 -->
+
+
+<!-- # -- Q.10. -- There are reasons for doing the things we ask you to learn to do. Can you explain -->
+<!-- # briefly why rain cloud plots are useful? -->
+<!-- # -- hint: Q.10 -- People often explain why or how to do things in R in general or in visualization -->
+<!-- # specifically in academic articles. A good source of information for the answer to this question -->
+<!-- # is in the article by Allen et al. in wellcomeopenresearch -->
+<!-- # -- A.10. -- The explanation, in short is that: -->
+<!-- # -- conventional visualizations like bar plots can be misleading -->
+<!-- # -- showing raw data with statistical summaries helps the viewer to see both -->
+<!-- # statistical summary information and raw outcomes -->
+
+
+<!-- # -- 2 -- Locate example code -->
+
+<!-- # -- hint: Task 6 -- Most tutorial or how-to writers design their web pages in the same way: -->
+<!-- # -- first, they identify what the question or problem is they are going to -->
+<!-- # help you with; -->
+<!-- # -- second, they explain what they will do; -->
+<!-- # -- third, they may give you example code -- you want this -->
+
+<!-- # -- hint: Task 6 -- You will find some tutorials easier to follow than others -->
+<!-- # -- hint: Task 6 -- Pick the one that you can understand most easily -->
+
+
+<!-- # -- Q.11. -- Example code is often highlighted -- can you see it in the tutorial -->
+<!-- # you have chosen to focus on? -->
+<!-- # -- A.11. -- A good example tutorial is the one written by Cedric Scherer: -->
+<!-- # https://www.cedricscherer.com/2021/06/06/visualizing-distributions-with-raincloud-plots-and-how-to-create-them-with-ggplot2/ -->
+<!-- # -- It is a bit simpler here so I focus on this one: -->
+<!-- # https://z3tt.github.io/Rainclouds/   -->
+
+
+<!-- # -- 3 -- Run the example code -->
+
+<!-- # -- hint: Task 6 -- A long sequence of code chunks are required to explain -->
+<!-- # rain cloud plots, so scroll through whatever tutorial you are looking at -->
+<!-- # until you find the bit that is presented e.g. as: Raincloud plots -->
+
+<!-- # -- hint: Task 6 -- Copy a chunk of example code and paste it directly into -->
+<!-- # the Console and run it, or paste it into the Script window and run it: -->
+
+<!-- # ggplot(iris, aes(Species, Sepal.Width)) +  -->
+<!-- #   ggdist::stat_halfeye(adjust = .5, width = .7, .width = 0, justification = -.2, point_colour = NA) +  -->
+<!-- #   geom_boxplot(width = .2, outlier.shape = NA) +  -->
+<!-- #   geom_jitter(width = .05, alpha = .3) -->
+
+<!-- # -- hint: Task 6 -- Make sure you have copied the *complete* sequence of code -->
+<!-- # shown in the highlighted window in the tutorial -->
+
+
+<!-- # -- 4 -- Edit the code to do the task with the 'study.two' data -->
+
+
+<!-- # -- Q.12. -- Can you edit the example code to draw a rain cloud plot including -->
+<!-- # -- 1 -- boxplots showing a summary of vocabulary scores for people with different  -->
+<!-- # education levels -->
+<!-- # -- 2 -- plus a scatterplot showing individual vocabulary scores for each person -->
+<!-- # in the data-set -->
+<!-- # -- hint: Q.12. -- To edit the example code to work for you, you will need to -->
+<!-- # change the specification of the dataset and of the 'x = ...' and 'y = ...' -->
+<!-- # aesthetic mappings in 'aes(...)' -->
+<!-- # -- A.12. -- You need to change the data, and the aesthetic mappings -- from  -->
+<!-- # something like this: -->
+<!-- #  -->
+<!-- # ggplot(iris, aes(Species, Sepal.Width)) +  -->
+<!-- #   ggdist::stat_halfeye(adjust = .5, width = .7, .width = 0, justification = -.2, point_colour = NA) +  -->
+<!-- #   geom_boxplot(width = .2, outlier.shape = NA) +  -->
+<!-- #   geom_jitter(width = .05, alpha = .3) -->
+<!-- #  -->
+<!-- # -- to this: -->
+<!-- #  -->
+<!-- # ggplot(data = study.two, aes(x = EDUCATION, y = SHIPLEY)) +  -->
+<!-- #   ggdist::stat_halfeye(adjust = .5, width = .7, .width = 0, justification = -.2, point_colour = NA) +  -->
+<!-- #   geom_boxplot(width = .2, outlier.shape = NA) +  -->
+<!-- #   geom_jitter(width = .05, alpha = .3) -->
+
+
+<!-- # -- hint: Task 6 -- Sometimes, when you are working with example code from an online -->
+<!-- # source, you need to experiment a bit with the example code to get it to work -->
+<!-- # -- hint: Task 6 -- Learning to experiment with codd is a *really* useful skill -->
+<!-- # to develop -->
+<!-- # -- hint: Task 6 -- You can start by just deleting the arguments inside -->
+<!-- # function calls to see what happens -->
+<!-- # -- hint: Task 6 -- You will need the example data and aesthetic mappings -->
+<!-- # -- hint: Task 6 -- If you delete arguments then you require ggplot() to use -->
+<!-- # the defaults e.g. -->
+<!-- # ggplot(iris, aes(Species, Sepal.Width)) + -->
+<!-- #   ggdist::stat_halfeye() + -->
+<!-- #   geom_boxplot() + -->
+<!-- #   geom_jitter() -->
+<!-- # -- hint: Task 6 -- You can then add arguments in, change their values, to  -->
+<!-- # figure out what each argument adds -->
+
+#### How-to Part 5: New -- locate and use StackOverflow information
+
+##### How-to Task 7 -- Export one of the nice plots you have been making so you can include it in a report
+
+<!-- # -- hint: Task 7 -- In the 401-visualization-how-to.R you can find information on how to do this -->
+
+<!-- # -- Adapt the example code to do the task: -->
+
+<!-- # ggplot(iris, aes(Species, Sepal.Width)) +  -->
+<!-- #   ggdist::stat_halfeye(adjust = .5, width = .7, .width = 0, justification = -.2, point_colour = NA) +  -->
+<!-- #   geom_boxplot(width = .2, outlier.shape = NA) +  -->
+<!-- #   geom_jitter(width = .05, alpha = .3) -->
+<!-- #  -->
+<!-- # ggsave(filename = 'my-plot-2.tiff', device='tiff', dpi=700) -->
+
+<!-- # -- Now you should see: -->
+<!-- # -- 1 -- A plot appear in the 'Plots' window in R-Studio   -->
+<!-- # -- 2 -- And a plot appear in the 'Files' window in R-Studio -->
+
+<!-- # -- Notice: -->
+<!-- # -- I deleted every argument I was not interested in using, e.g. 'width = ...' and 'height = ...' -->
+<!-- # -- I gave the file a new name, so that you can see that this works as well as the dev.off() method -->
+
+
+<!-- # -- Q.13. -- Can you figure out how to insert the plot file you have created into a Word document? -->
+<!-- # -- hint: Q.13. -- You can search for information on how to do this by using keywords like: word how to insert an image file -->
+<!-- # -- A.13. -- You can find instructions e.g. here -->
+<!-- # https://support.microsoft.com/en-us/office/insert-pictures-3c51edf4-22e1-460a-b372-9329a8724344#:~:text=Insert%20a%20picture%20in%20Word%2C%20PowerPoint%2C%20or%20Excel&text=On%20the%20Insert%20tab%2C%20click,in%20iPhoto%20or%20Photo%20Booth. -->
+
+
+<!-- # -- Q.14. -- Can you adapt the colour scheme of the plot to make it look good to you? -->
+<!-- # -- A.14. -- Again, we are asking you to do a key words search. If you do, the results may include: -->
+<!-- # https://ggplot2.tidyverse.org/reference/scale_brewer.html -->
+<!-- # -- hint: Q.14. -- You may need to edit the aesthetic mappings to instruct R to map colour (lines) and fill -->
+<!-- # to the categorical variable or factor we are working with -->
+<!-- ggplot(data = study.two, aes(x = EDUCATION, y = SHIPLEY,  -->
+<!--                              colour = EDUCATION, fill = EDUCATION)) + -->
+<!--   ggdist::stat_halfeye(adjust = .5, width = .7, .width = 0, justification = -.2) + -->
+<!--   geom_boxplot(width = .2, outlier.shape = NA) + -->
+<!--   geom_jitter(width = .05, alpha = .3) + -->
+<!--   scale_colour_brewer() +  -->
+<!--   scale_fill_brewer() -->
+
+<!-- # -- Q.15. -- Can you change the theme?   -->
+<!-- # -- A.15. -- Again, we are asking you to do a key words search. If you do, the results may include: -->
+<!-- # https://ggplot2.tidyverse.org/reference/ggtheme.html -->
+<!-- ggplot(data = study.two, aes(x = EDUCATION, y = SHIPLEY,  -->
+<!--                              colour = EDUCATION, fill = EDUCATION)) + -->
+<!--   ggdist::stat_halfeye(adjust = .5, width = .7, .width = 0, justification = -.2) + -->
+<!--   geom_boxplot(width = .2, outlier.shape = NA) + -->
+<!--   geom_jitter(width = .05, alpha = .3) + -->
+<!--   scale_colour_brewer() +  -->
+<!--   scale_fill_brewer() +  -->
+<!--   theme_bw() -->
+
+#### You have now completed the Week 9 practical exercises and questions
 
 ::: callout-important
 Predicting human behaviour is at the heart of:
@@ -1453,12 +1273,6 @@ This is an important step in your developmental journey: **Well done!**
 After the practical class, we will reveal the answers that are currently hidden.
 
 The answers version of the webpage will present my answers for questions, and some extra information where that is helpful.
-
-
-
-
-
-
 
 ### Summary
 
