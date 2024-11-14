@@ -13,37 +13,16 @@ library(patchwork)
 library(tidyverse)
 ```
 
-```{r readin}
-#| echo: false
+```{r readin-hide}
 #| warning: false
-
-# -- read in the datasaurus dataset:
-datasaurus <- read_csv("Datasaurus_data.csv")
-
+#| echo: false
 # -- code to read in the aggregated subject level data from the clearly-understood data set
+
 # -- study one
-clearly.one.subjects <- read_csv("study-one-general-participants.csv", 
-                                  col_types = cols(
-                                    participant_ID = col_factor(),
-                                    study = col_factor(),
-                                    EDUCATION = col_factor(),
-                                    GENDER = col_factor(),
-                                    ETHNICITY = col_factor()
-                                    )
-                                   )
+study.one.gen <- read_csv("study-one-general-participants.csv")
 
-# -- code to read in the aggregated subject level data from the clearly-understood data set
-# -- study two -- general texts
-clearly.two.subjects <- read_csv("study-two-general-participants.csv", 
-                                 col_types = cols(
-                                   participant_ID = col_factor(),
-                                   study = col_factor(),
-                                   EDUCATION = col_factor(),
-                                   GENDER = col_factor(),
-                                   ETHNICITY = col_factor()
-                                   )
-                                  )
-
+# -- study two
+study.two.gen <- read_csv("study-two-general-participants.csv")
 ```
 
 ## Overview {#sec-vis-intro-overview}
@@ -53,11 +32,12 @@ Welcome to your overview of the work we will do together in **Week 9**.
 This week, we will focus on perspectives and practices in data visualization.
 
 In a wide range of professions, you will benefit if you can exercise skills in the capacity to produce and to interpret data visualizations.
+
 The power to produce informative eye-catching visualizations in R is industry-leading, everywhere from news media to medical science.
 This means that learning how to produce visualizations using R will give you an advantage in many settings.
 
 Our materials are designed to help you to think about what you are doing --- to understand the aims of the practical steps --- as well as to learn about producing professional effective data visualizations.
-This is because, as you progress in your careers, you may come to manage as well as to direct the development of visualizations, so we need to **see what best practice looks like**.
+This is because, as you progress in your careers, you may come to manage as well as to direct the development of visualizations, so we need to see **what best practice looks like**.
 
 We will continue to work with data collected for the *Clearly understood* project (@sec-associations) because we think that working with these data in this research **context** will help you to make sense of the data, and to see why we ask you to practise the skills we are teaching.
 
@@ -83,31 +63,30 @@ We are working together so you can:
 3.  *Development* --- Locate yourself within the stages of the development process
 4.  *Implement* --- Produce visualizations that look good and are useful
 
-As we work together, you will have the opportunity to consolidate your learning in coding plots in R but you can be sure, too, that the practical exercises will help you to grow your skills with new ideas.
-
 ## Learning resources {#sec-vis-intro-resources}
 
 You will see, next, the lectures we share to explain the concepts you will learn about, and the practical visualization skills you will develop. Then you will see information about the practical exercises you can use to build and practise your skills.
 
 Every week, you will learn best if you *first* watch the lectures *then* do the practical exercises.
 
-You will realize that we are helping to build familiarity and fluency in your practical skills through the accumulation of practice, and the extension of capabilities bit-by-bit.
+You will realize that we are helping to build familiarity and fluency in your practical skills through the accumulation of practice, and the step-by-step extension of capabilities.
 
 ::: callout-tip
 ## Linked resources
 1. In PSYC411: in Week 3, we started learning about histograms, bar charts, scatterplots, and boxplots; in Week 4, we revisited bar charts and scatterplots; in Week 5, we revised boxplots.
-2. In PSYC411: in Week 7, we consolidated your skills with scatterplots, strengthening your capacity to build and develop this key visualization type through step-by-step edits, aiming to deepen your understanding of what you can do and why you might do it, practising how to *read* plots.
-3. In PSYC411: in Week 8, we consolidated and extended your skills with both histograms and scatterplots; critically, we learned how to combine data analysis with plotting by producing plots to present model results. 
-4. In PSYC413: in Week 9, we explore more broadly why being able to read, and make, data visualizations is now an important, sought-after, skill in many professions.
-5. In PSYC411: in Week 10, we explore how to use convenience functions to do visualization tasks automatically; and we reach the most advanced plots, plots that show a combination of raw data and model results.
+2. In PSYC411: in Week 7, we consolidated and extended your skills with scatterplots, and practised how to **read plots**.
+3. In PSYC411: in Week 8, we consolidated and extended your skills with both histograms and scatterplots; learning to **combine analysis with visualization**. 
+4. In PSYC413: in Week 9, we explore more broadly why being able to produce and read data visualizations is now an important **sought-after skill**.
+5. In PSYC411: in Week 10, we explore how to use convenience functions to do visualization tasks automatically. We reach the **most advanced** kind of plots: presenting model estimates with raw data.
 
--   In @sec-visualization, we present a more extensive discussion of data visualization, elaborating on some ideas, incorporating additional example plots and enabling you to work with alternate data-sets. This is provided as *optional* reading and may support more advanced development for students interested in future professional roles involving data analysis or data visualization.
+-   In @sec-visualization, as **optional reading**, we present a more extensive discussion of data visualization, explaining perspectives, and enabling you to work with richer data-sets.
 :::
 
-Throughout our materials, we increasingly link the exercises we share to free online information that explains *why* we do the things we do when we code, or *how* we can vary how R works for us.
+Throughout our materials, we have called your attention to the ecosystem of free, high-value, information that is available to people working with R.
+That is because this information is an important benefit of learning to use R.
 
-- The ecosystem of free, high-value, information that is available to people working with R is an important benefit of learning to use R.
-- This week we grow your capacity to find, and to use, the information you need efficiently. This will help to *build your independence* for the work you will do in your future professional careers.
+- This week we grow your capacity to find, and to use, the information you need. 
+- This will help to *build your independence* for the work you will do in your future professional careers.
 
 ### Lectures {#sec-vis-intro-lectures}
 
@@ -133,7 +112,7 @@ Click on a link and your browser should open a tab showing the *Panopto* video f
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=05e049cb-277d-4d76-888d-b0c000df3c6f&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-visualization-3" ></iframe>
 ```
 
-4. Part 4 (25 minutes): the key skills --- `{ggplot2}` the grammar of graphics, why we have been working on building and editing plots step-by-step, what you can do in future work.
+4. Part 4 (25 minutes): the key skills --- `{ggplot2}` as the grammar of graphics, why we have been working on building and editing plots step-by-step, what you can do in future work.
 
 ```{=html}
 <iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5fccaa55-9d07-4e24-8995-b0c0010fe92b&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-visualization-4" ></iframe>
@@ -173,10 +152,10 @@ As usual, you will find that the practical exercises are simpler to do if you fo
 2. **The `how-to` guide** --- We will go through the practical analysis and visualization coding steps, showing all the code required for each step.
 3. **The `practical` exercises** --- We will set out the tasks, questions and challenges that you should complete to learn the practical skills we target this week.
 
-This week --- **Week 9** --- we aim to *further* develop your skills in working with -- making and reading -- data visualizations: to find patterns; to detect the unusual; and to better understand the kinds of evidence we collect to address our scientific research questions.
+This week --- **Week 9** --- our emphasis is on finding and making use of online information.
 
-- While we build on everything you have learned so far, our emphasis this week is on finding and making use of online information.
-- This work will enable you to find solutions for yourself in your professional working lives: we aim to help you to unlock your future *independence*.
+- This work will enable you to find solutions for yourself in your professional working lives
+- to figure out practical *how* and *why* answers to the questions you will face.
 
 ::: callout-tip
 ## Week 9 parts
@@ -256,7 +235,6 @@ Load libraries using `library()`.
 
 ```{r}
 #| eval: false
-library("patchwork")
 library("tidyverse")
 ```
 
@@ -275,18 +253,6 @@ Read in the data file -- using `read_csv()`.
 study.one.gen <- read_csv("study-one-general-participants.csv")
 ```
 
-::: callout-tip
-Last week, we started working with the **online help** information on R functions. 
-
-Let's build on that.
-
-You can read the technical information about the `read_csv()` function here:
-
-<https://readr.tidyverse.org/reference/read_delim.html>
-
-- Take a look around the `{tidyverse}` webpages: expert professionals use information like this whenever they try to figure out how to do something.
-:::
-
 ##### How-to Task 4 -- Inspect the data file
 
 Use the `summary()` function to take a look.
@@ -295,296 +261,373 @@ Use the `summary()` function to take a look.
 summary(study.one.gen)
 ```
 
-::: callout-tip
-- `summary()` will give you either descriptive statistics for variable columns classified as numeric or will tell you that columns in the dataset are not numeric.
-:::
+#### How-to Part 3: Revision -- locate and use `{ggplot2}` reference information
 
-#### How-to Part 3: Developing histograms to examine the distributions of variables
+We have called your attention to `{ggplot2}` reference information before.
 
-##### How-to Task 5 -- Edit histogram plotting code to visualize distributions like a pro
+This time, we take you through the steps involved in exploiting this information efficiently to produce more plots that communicate more effectively.
 
-You have seen how to produce histograms before, in a previous class (week 3): here we are **consolidating** skills by practising them in different contexts, using different data.
+##### How-to Task 5 -- Find out how to produce *layered* boxplots to examine if vocabulary scores are different for people with different education levels
 
-We **extend** your skills by adding some new moves.
-
-When we learn about creating a plot, it helps us to identify what each code element is doing.  Here's an example: run the line of code and see the result in the Plots window in R-Studio:
-
-```{r}
-ggplot(data = study.one.gen, aes(x = mean.acc)) + geom_histogram()
-```
-
-These are the plotting code elements and what they are doing:
-
-1. `ggplot(...)` you tell R you want to make a plot using the `ggplot()` function;
-2. `ggplot(data = study.one.gen ...)` you tell R you want to make a plot with the `study.one.gen` data;
-3. `ggplot(..., aes(x = mean.acc))` you tell R that you want to make a plot with the variable `mean.acc`;
-3. here, you specify the aesthetic mapping, `x = mean.acc`;
-4. `ggplot(...) + geom_histogram()` you tell R you want to show the distribution of values of `mean.acc` as a geometric object: a histogram.
-
-You have seen the plotting code arranged in two different ways, in one line, as above, or in a series of steps, like this:
-
-```{r}
-ggplot(data = study.one.gen, aes(x = mean.acc)) + 
-  geom_histogram()
-```
+You have seen how to produce boxplots before, in previous classes (weeks 3 and 5): here we add a *twist* to make the plot *dramatically* more informative.
 
 ::: callout-tip
-Notice that it has no impact whether you write the plotting code in one line, or in a series of lines.
-
-- R cares very much about how you spell function or variable names.
-
-- R does not usually care about line breaks.
-
-Learning what does or does not matter is a key lesson, when you learn a language, whatever the language.
+A box plot is a visualization designed to enable you to visualize the distribution of scores on a numeric variable, sometimes so that you can compare the distribution of scores on that variable in different groups or conditions.
 :::
 
-If we break the plotting code into steps, it makes the code easier for you to read, and it will make it easier to add edits, one at a time.
-Let's see how that works, next.
+This task is *both* about finding out how to do things (generally), here, using `{ggplot2}` reference information, and also about finding out how to produce a particularly effective form of data visualization, combining summary estimates with raw data observations.
 
-To help you learn, we are going to work on editing the code to do things, and we are going to explain *why* we want to be able to do these things.
+We can break this task into steps:
 
-These are the things we want to do:
+1. Find relevant and useful information;
+2. Locate example code;  
+3. Run the example code;   
+4. Edit the code to do the task with the `study.one.gen` data.
 
-1. **new** -- the appearance of the bars using `binwidth`;
-2. **revision** -- the colour of the background using `theme_bw()`;
-3. **revision** -- the appearance of the labels using `labs()`;
-4. **new** -- setting the x-axis limits to reflect the full range of possible scores on the x-axis variable using `xlim()`;
-5. **new** -- adding annotation -- here, a vertical line using `geom_vline()` -- to focus the attention of the audience for a plot on specific information about the variable distribution (here, the sample average for the variable).
+We want to make a boxplot. 
+You have done that before.
+But *this time* we want to make a plot that shows (i.) the summary statistics (median and quartile) information of the boxplot plus (ii.) the raw observation information about sample data values that you see in scatterplot points.
+That is because, in the lectures on data visualization, we learned about the ways in which summaries can sometimes obscure what is going on with the sample data (think of Anscombe's Quartet).
+
+How do we produce this kind of plot?
+
+- A professional would take the wish-list of aims (i.) and (ii.) and start looking for information online to figure out how to produce the kind of plot they want.
+
+We work through the steps in order:
+
+**1. Find relevant and useful information**
+
+You find the information you need by doing *keyword* searches online: but what are the keywords?
 
 ::: callout-tip
-- Click on each `Code` tab to see how the code changes, and to see how the plot changes as a result.
-- Click on each `Why` tab for an explanation of why we want to do this.
+Hint: Do a search using the words: `ggplot reference`.
+
+That will get you results including this one:
+
+<https://ggplot2.tidyverse.org/reference/>
 :::
 
-1. **new** -- the appearance of the bars using `binwidth`
+How do you know if you can or should use this information?
 
-::: panel-tabset
-## Code
+- You know this source is 'official', relevant, and useful because you can see the hex badge (a hexagon shaped image): "ggplot2".
+
+We need more *specific* information on boxplots in the `{ggplot2}` library reference information: how do we find it?
+
+- You can do a search of the reference index, or you can expand your set of keywords.
+
+::: callout-tip
+We are looking specifically for information on box plots so do a search of the web page e.g. using `CMD-F` (on a Mac) or `CTRL-F` (on a PC) using the words: `box or boxplot`
+
+That will get you a link -- click on it:
+
+<https://ggplot2.tidyverse.org/reference/geom_boxplot.html>
+:::
+
+**2. Locate example code**
+
+Most R developers design their information web pages in the same way:
+
+- first, they show a list of arguments you can edit to make choices about how functions like `geom_boxplot()` work;
+- second, they explain what the object -- here, a boxplot -- represents;
+- third, they may give you information about what information the function can work with;
+- fourth, they give you **example code** $\rightarrow$ **this is the bit you want**.
+
+::: callout-tip
+Example code can be run without reading in any extra data, once you have run
+
 ```{r}
-ggplot(data = study.one.gen, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2)
+library(tidyverse)
+```
+:::
+
+Scroll through the page, looking for an example plot that looks like what we want: a plot which shows (i.) the summary statistics (median and quartile) information of the boxplot plus (ii.) the raw observation information (points) of the sample data.
+
+Do you see it?
+
+::: callout-tip
+You can see the example shown under this line of code.
+
+```{r}
+#| eval: false
+p + geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2)
+```
+:::
+
+**3. Run the example code**
+
+Copy the first bit of example code you see and paste it directly into the R-Studio `Console` and run it, or paste it into the `Script` window and run it:
+
+- You have to be careful. Read the sequence of example code carefully.
+
+::: callout-tip
+If you run this line of code, you will get an error, at first.
+
+```{r}
+#| eval: false
+p + geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2)
+```
+:::
+
+This is because the `p + ` tells you that somewhere previously the sequence of examples builds a part of the plot `p` to which the next parts `geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2)` are added.
+
+- You need to make sure you run the full sequence of example code to get the plot.
+
+::: callout-tip
+If you run this line of code, it will work.
+
+```{r}
+p <- ggplot(mpg, aes(class, hwy))
+p + geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2)
+```
+:::
+
+In this sequence of code:
+ 
+1. `p <- ggplot(mpg, aes(class, hwy))` first constructs a plot object, called `p` -- nothing will appear in the `Plots` window but the object `p` will appear in the `Environment` window in R-Studio.
+2. `p + geom_boxplot(outlier.shape = NA)` adds the object `geom_boxplot()` to the object `p` -- this step is where something is produced in the `Plots` window.
+3. `+ geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2)` adds one plot *on top* of another.
+
+This style of building a plot step-by-step enables you to construct quite complex plots, with multiple layers.
+
+In the plot you can see that we get what we want. The plot shows:
+
+- Using `geom_boxplot(outlier.shape = NA)` -- a *summary* of the data, including the median (the thick line in the middle of each box) and the 25\% and 75\% quartiles (the lower and upper edges of the box) of the observed values for the variable `hwy`, for different groups of `class`.
+- Using `geom_jitter(width = 0.2)` -- the *raw* observations (of `hwy` per `class`) that the boxplots summarize, shown as the black points superimposed on the boxplots.
+
+**4. Edit the code to do the task with the `study.one.gen` data**
+
+Now we know that we can produce the kind of plot we want, and we have seen the code that would produce that kind of plot.
+
+The next step is to take the code structure that we see in the example and convert it so that kind of code does the same work for our own purposes.
+
+Let's say that I want to produce a boxplot, showing raw data observations of accuracy of understanding, `mean.acc`, for each level of education in the `study.one.gen` data-set. 
+
+How do we convert the example code to produce the same kind of plot with *our* data?
+
+Hint: You need to change the data, and the aesthetic mappings -- from this:
+
+```{r}
+#| eval: false
+p <- ggplot(mpg, aes(class, hwy))
+p + geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2)
 ```
 
-## Why
-Histogram `binwidth` has to be a number. The best way to learn what the number tells R to do is to experiment with different values.
+- to this:
 
-- Notice that in the code we set the `binwidth` to 2.
-- If you are producing a histogram, `binwidth` has to be a number larger than the potential minimum and smaller than the potential maximum for the variable you are plotting: *so* for the `SHIPLEY` vocabulary test, because the test scores can only range between 0-40, the `binwidth` number you use in your plotting code has to be bigger than 0 but smaller than 40.
-
-In general, the larger (wider) the `binwidth`, the less detail you see about the distribution of values in the variable. 
-
-- In a histogram, each bar you draw represents a collection of values. The `binwidth` tells R how many values to collect together, for each bar. So, the bigger the width, the bigger (wider and taller) the bar because it represents more observations.
-
-Whether or not you want to present detail is then a question concerning your communication aims: do you want to give an impression, or identify a specific detail?
-:::
-
-2. **revision** -- the colour of the background using `theme_bw()`
-
-::: panel-tabset
-## Code
 ```{r}
-ggplot(data = study.one.gen, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2) +
-  theme_bw()
+#| eval: false
+p <- ggplot(data = study.one.gen, aes(x = EDUCATION, y = mean.acc))
+p + geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2)
 ```
 
-## Why
-In general, a grey background is argued to be a good way to present information visually but we often use a white background because it helps the plot elements to be visible, especially, for example, if we are giving a presentation.
-:::
+Notice:
 
-3. **revision** -- the appearance of the labels using `labs()`
+1. You can write code quite concisely, like this `ggplot(mpg, aes(class, hwy))` or more fully, like this `ggplot(data = mpg, aes(x = class, y = hwy))`.
+2. You change the dataset from the example `mpg` data to our data `study.one.gen`.
+3. When you construct a boxplot, `x` must be mapped `=` to a categorical variable: a nominal variable or factor like `EDUCATION`.
+4. When you construct a boxplot, `y` must be mapped `=`to a numeric variable: a continuous or interval variable like `mean.acc`.
+5. `geom_jitter(width = 0.2)` is new: we add that to show the raw data observations.
 
-::: panel-tabset
-## Code
+Now take a look at the plot we have made.
+
 ```{r}
-ggplot(data = study.one.gen, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2) +
-  theme_bw() +
-  labs(x = "Vocabulary (SHIPLEY)", y = "frequency count")
+p <- ggplot(data = study.one.gen, aes(x = EDUCATION, y = mean.acc))
+p + geom_boxplot(outlier.shape = NA) + geom_jitter(width = 0.2)
 ```
 
-## Why
-You cannot assume that the audience for your plots will understand what you are referring to, if you just use data-set variable names e.g. `SHIPLEY`. They may not be familiar with your data-set. This means you need to use axis labels that will make sense to most people in your audience.
-:::
+You can make two useful observations:
 
-4. **new** -- setting the x-axis limits using `xlim()`
-
-::: panel-tabset
-## Code
-```{r}
-ggplot(data = study.one.gen, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2) +
-  theme_bw() +
-  labs(x = "Vocabulary (SHIPLEY)", y = "frequency count") +
-  xlim(0,40)
-```
-
-## Why
-1. It is often useful to set the axis limits like this: because we want to show the audience where the sample values are distributed compared to where they *could* be distributed, given the measure. 
-2. This makes sense, e.g., if you want to see the relative age distribution of a sample compared to the population, or because we want to give the audience a more accurate picture of the data.
-:::
-
-5. **new** -- adding annotation -- here, a vertical line
-
-::: panel-tabset
-## Code
-```{r}
-ggplot(data = study.one.gen, aes(x = SHIPLEY)) + 
-  geom_histogram(binwidth = 2) +
-  theme_bw() +
-  labs(x = "Vocabulary (SHIPLEY)", y = "frequency count") +
-  xlim(0,40) +
-  geom_vline(xintercept = mean(study.one.gen$SHIPLEY), colour = "red", linewidth = 1.5)
-```
-
-Notice that we used the `geom_vline()` element to plot a vertical line at the location on the x-axis we define.
-
-We do this in the steps:
-
-1. `geom_vline(...)` -- draw a vertical line;
-2. `...xintercept...` -- draw the line so it hits the x-axis (intercepts the x-axis);
-3. `...xintercept = mean(study.one.gen$SHIPLEY... ` -- at a location defined by the mean of the variable `mean(study.one.gen$SHIPLEY)`;
-4. `...colour = "red", size = 1.5..` -- make the line red and one and a half times the default thickness.
-
-## Why
-We can use annotations, like this vertical line, when we want to draw the attention of the audience for our plot to a specific feature of the data.
-:::
+- Mean accuracy of understanding (of health information) is different in different education groups, on average -- that is what the heights of the middle lines in the boxplots tell us.
+- The distribution of sample observations is *really* different for different education groups in this sample. This second observation might make us a bit uncertain about the extent to which the average outcome differences (comparing mean accuracy) reflect what we would see in the wider population.
 
 **What are we learning here?**
 
-You can see that while the data stays the same, the appearance of the plot changes, as we add each edit to the plotting code.
+There are two lessons:
 
-The lesson that we are learning, here, is not just that you can arrange plotting code in steps but that *in general* in R you can build things (like plots) one action at a time.
+- It is *very* useful to be able to find, read, and convert example code in online help information. Getting practice doing this will really helpful, not only to make it easier for you to do what we ask you to do but also for you to do things *you* decide you want to do.
+- In R, the plotting code is designed to work so that we can build complex plots, layer by later.
+- In general, it is helpful to be able to combine summaries with raw data.
 
 ::: callout-tip
 ## Further information you can explore
 
-We can define the limits on the x-axis and on the y-axis, see the `{ggplot2}` library reference information on setting limits is here:
+You can read more about boxplots here:
 
-<https://ggplot2.tidyverse.org/reference/lims.html>
+<https://ggplot2.tidyverse.org/reference/geom_boxplot.html>
 
-The `{ggplot2}` reference information for drawing lines is here:
+You can read more about jittering here:
 
-<https://ggplot2.tidyverse.org/reference/geom_abline.html>
+<https://ggplot2.tidyverse.org/reference/geom_jitter.html>
 :::
 
-#### How-to Part 4: Developing scatterplots to examine associations between variables
+#### How-to Part 4: New -- locate and use tutorial or how-to information
 
-##### How-to Task 6 -- Edit scatterplot code to visualize associations like a pro
+The official information provided by the developers of `{ggplot2}` or `{tidyverse}` are very useful but there is a whole other world of information --- many hundreds of web-sites --- provided by people interested in writing and sharing how-to guides and tutorials to highlight solutions to problems or answers to questions they, or others, have encountered.
 
-You have seen these code moves before, in previous classes (weeks 3 and 4): we are **consolidating** skills by practising your coding in different contexts, using different data.
+##### How-to Task 6 -- Find out how to modify the colour of the boxplots to examine if vocabulary scores are different for people with different education levels, and to distinguish education by colour
 
-We **extend** your skills by adding some new moves.
+This time, we again want to produce some boxplots, but we want to modify the colours of the boxes *to communicate* information about the groups in our sample data to the reader.
 
-We create scatterplots to examine the association between pairs of variables.
-For example, we can draw a scatterplot to examine the association between variation in the values of `SHIPLEY` and of `mean.acc`.
+- We are using colour, here, not for decoration but as a third dimension of information, in addition to the height and the horizontal position of the boxes.
+
+How do we change the colour of plot elements by linking colour differences to data differences?
+
+We break this task into the same steps we followed before:
+
+1. Find relevant and useful information;
+2. Locate example code;  
+3. Run the example code;   
+4. Edit the code to do the task with the `study.one.gen` data.
+
+**1. Find relevant and useful information**
+
+As before, we begin with a keyword search.
+
+::: callout-tip
+Hint: Do a search using the words: ggplot boxplot colour
+
+That will get you results including this one:
+
+<https://r-graph-gallery.com/264-control-ggplot2-boxplot-colors.html>
+:::
+
+This source is not official linked to the `{ggplot}` project so now you have to decide if it is useful: how do you do that?
+
+Hint: You can decide *simply* if a source is useful by (1.) trying the example code (does it work?) and evaluating if you understand how it works (do you understand why it works?)
+
+**2. Locate example code**
+
+Most tutorial or how-to writers design their web pages in the same way:
+
+- first, they identify what the question or problem is they are going to help you with;
+- second, they explain what they will do;
+- third, they may give you **example code** $\rightarrow$ **this is the bit you want**.
+
+::: callout-tip
+Example code is often highlighted -- can you see it in the webpage?
+
+<https://r-graph-gallery.com/264-control-ggplot2-boxplot-colors.html>
+:::
+
+**3. Run the example code**
+
+How do you this?
+
+- Usually, tutorial writers tell you first what libraries you need to load, do that, then run their example code.
+
+::: callout-tip
+Hint: Copy a chunk of example code and paste it directly into the Console and run it, or paste it into the Script window and run it:
 
 ```{r}
-ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point()
-```  
-
-The plot code moves through the following steps:  
-
-1. `ggplot(...)` makes a plot.
-2. `ggplot(data = study.one.gen, ...)` uses the `study.one.gen` data-set.
-3. `ggplot(...aes(x = SHIPLEY, y = mean.acc))` uses two aesthetic mappings.
-4. `geom_point()` show the mappings as points.
-
-We are now going to edit:
-
-1. **revision and new** -- the appearance of the points using alpha, size, **shape**, and **colour**;
-2. **revision** -- the colour of the background using `theme_bw()`;
-3. **revision** -- the appearance of the labels using `labs()`;
-4. **new** -- the x-axis and y-axis limits using `lim()`.
-
-We make the changes, one change at a time.
-
-Click on the drop-down view to see the code but, if you want a challenge, first try to write the code on your own, using what you have learned so far.
-
-1. **revision and new** -- the appearance of the points using alpha, size, **shape**, and **colour**
-
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square') 
+ggplot(mpg, aes(x=class, y=hwy, fill=class)) + 
+  geom_boxplot(alpha=0.3) +
+  theme(legend.position="none") +
+  scale_fill_brewer(palette="BuPu")
 ```
 :::
 
-2. **revision** -- the colour of the background using `theme_bw()`
+In this sequence of code:
+ 
+1. `ggplot(mpg, aes(x=class, y=hwy, fill=class))` -- tells R to map `x` to `class` to distinguish different groups by left-right position, and y to `hwy` to show outcome `hwy` scores by height. What is new here is this bit `fill=class` which tells R to colour the insides of the boxes with different colours for different classes.
+2. `geom_boxplot(alpha=0.3) +` -- tells R to draw boxplots, and reduce the opacity of the boxes (increase transparency).
+3. `theme(legend.position="none") +` -- tells R to hide the legend.
+4. `scale_fill_brewer(palette="BuPu")` -- tells R to use the blue-purple Brewer colour palette to draw the colours.
 
-:::{.callout-tip collapse="true"}
-## Code
+::: colour-tip
+So far, you have been using the default colour palette -- sets of colours -- that are built-in in R, or in `{ggplot2}` but there are many more palettes available.
+:::
+
+**4. Edit the code to do the task with the `study.one.gen` data**
+
+The next step is to take the code structure that we see in the example and convert it so that kind of code does the same work for our own purposes.
+
+Let's say that I want to produce a boxplot, showing the average accuracy of understanding, `mean.acc`, for each level of education in the `study.one.gen` data-set.
+
+- This will produce a set of boxplots. Each boxplot summarizes the `mean.acc` scores for a separate (education level) group. Now, I want to draw each boxplot in a different colour so different education levels are marked by different colours.
+
+How do we convert the example code to produce the same kind of plot with *our* data?
+
+Hint: You need to change the data, and the aesthetic mappings -- from this:
+
 ```{r}
-ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw()
+#| eval: false
+ggplot(mpg, aes(x=class, y=hwy, fill=class)) + 
+  geom_boxplot(alpha=0.3) +
+  theme(legend.position="none") +
+  scale_fill_brewer(palette="BuPu")
 ```
-:::
 
-3. **revision** -- the appearance of the labels using `labs()`
+- to this:
 
-:::{.callout-tip collapse="true"}
-## Code
 ```{r}
-ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw() +
-  labs(x = "Vocabulary (SHIPLEY)", y = "mean accuracy")
-```  
-:::
+#| eval: false
+ggplot(study.one.gen, aes(x=EDUCATION, y=mean.acc, fill=EDUCATION)) + 
+  geom_boxplot(alpha=0.3) +
+  theme(legend.position="none") +
+  scale_fill_brewer(palette="BuPu")
+```
 
-4. **new** -- the x-axis and y-axis limits using `lim()`
+Notice:
 
-:::{.callout-tip collapse="true"}
-## Code
-```{r}
-ggplot(data = study.one.gen, aes(x = SHIPLEY, y = mean.acc)) +
-  geom_point(alpha = 0.5, size = 2, colour = "blue", shape = 'square')   +
-  theme_bw() +
-  labs(x = "SHIPLEY", y = "mean accuracy") +
-  xlim(0, 40) + ylim(0, 1)
-```  
+1. You need to make sure that you copy a complete chunk of code:
 
-Notice that:
+- including `ggplot()`
+- including `aes()`
+- including `geom_boxplot()`
+- including `scale_fill_brewer()`
 
-- I set the x-axis limits to the minimum (0) and maximum (40) possible values for the `SHIPLEY` variable.
+2. You change the data-set name to `study.one.gen` and you change the `x=` and `y=` aesthetic mappings.
+3. To change the colour of the boxplots, you add: `fill=EDUCATION` as an argument to the aesthetic mappings in `aes(...)`
+4. `scale_fill_brewer()` adds in the colour using the Brewer **colour-blind friendly** palette.
 
-- I set the y-axis limits to the minimum (0) and maximum (1) possible values for the mean accuracy variable `mean.acc`.
-:::
+
+##### How-to Task 7 -- Can you find out more information about colour palettes?
+
+Hint: Do a search using the words: 
+
+1. <ggplot colour palettes>
+2. <ggplot colour blind friendly palettes>
+3. <ggplot cookbook colour palettes>
+
+Results include:
+
+<https://ggplot2-book.org/scales-colour>
+
+- or:
+
+<http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#:~:text=(size%3D3)-,A%20colorblind%2Dfriendly%20palette,variable%2C%20then%20use%20it%20later>
+
+These sources are quite technical in places, can you find useful example code?
 
 **What are we learning here?**
 
-It is generally a good idea to show the minimum value (the origin) for each variable.
+You have seen, previously, that it is quite straightforward to change the colours of things in plots.
 
-- Not doing this, i.e., showing a more narrow slice of the sample range is an easy way to exaggerate the strength of associations or to imply incorrectly the breadth in variation.
+Here, we are learning that:
 
-You can change the transparency (alpha), size, colour and shape of important parts of a plot.
-Here, we are changing the appearance of the points.
-But you can also change the transparency (alpha), size, colour and shape of reference lines
-added to a plot.
+- you can use colour to communicate key information about data;
+- you can *choose* colours deliberately to ensure accessibility (by using colour blind palettes) or to suit your tastes.
 
 ::: callout-tip
 ## Further information you can explore
 
-The `{ggplot2}` `geom_point()` reference information is here: 
+There are several famous colour palettes that have been developed:
 
-<https://ggplot2.tidyverse.org/reference/geom_point.html>
+- Viridis:
 
-- where you can see some examples of the edits we have done.
+<https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html>
 
-Some useful information about shape options is here:
+- Brewer:
 
-<http://www.cookbook-r.com/Graphs/Shapes_and_line_types/>
+<https://ggplot2.tidyverse.org/reference/scale_brewer.html>
 
-Some useful information about colour options is here:
+And some people have contributed deep thinking about *how* and *why* we should different colour schemes in different contexts or for diverse audiences:
 
-<http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/>
+<https://personal.sron.nl/~pault/>
 :::
 
 ::: callout-important
-Now you: experiment!
+Make *choices* when you use colour!
 :::
 
 #### How-to Part 5: Using correlations to to answer research questions
