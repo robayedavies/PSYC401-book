@@ -87,63 +87,77 @@ As we work together, you will have the opportunity to consolidate your learning 
 
 ## Learning resources {#sec-vis-intro-resources}
 
-You will see, next, the lectures we share to explain the concepts you will learn about, and the practical data analysis skills you will develop (@sec-lm-intro-lectures). Then you will see information about the practical materials you can use to build and practise your skills (@sec-lm-intro-practical).
+You will see, next, the lectures we share to explain the concepts you will learn about, and the practical visualization skills you will develop. Then you will see information about the practical exercises you can use to build and practise your skills.
 
 Every week, you will learn best if you *first* watch the lectures *then* do the practical exercises.
 
+You will realize that we are helping to build familiarity and fluency in your practical skills through the accumulation of practice, and the extension of capabilities bit-by-bit.
+
 ::: callout-tip
 ## Linked resources
-1. In @sec-associations, we share materials to support your development of critical thinking about associations, and your development of practical skills in working with correlation-based analyses.
-2. In @sec-lm-dev-intro, we share materials to extend your capacity to use linear models, to answer more and different kinds of research questions.
+1. In PSYC411: in Week 3, we started learning about histograms, bar charts, scatterplots, and boxplots; in Week 4, we revisited bar charts and scatterplots; in Week 5, we revised boxplots.
+2. In PSYC411: in Week 7, we consolidated your skills with scatterplots, strengthening your capacity to build and develop this key visualization type through step-by-step edits, aiming to deepen your understanding of what you can do and why you might do it, practising how to *read* plots.
+3. In PSYC411: in Week 8, we consolidated and extended your skills with both histograms and scatterplots; critically, we learned how to combine data analysis with plotting by producing plots to present model results. 
+4. In PSYC413: in Week 9, we explore more broadly why being able to read, and make, data visualizations is now an important, sought-after, skill in many professions.
+5. In PSYC411: in Week 10, we explore how to use convenience functions to do visualization tasks automatically; and we reach the most advanced plots, plots that show a combination of raw data and model results.
+
+-   In @sec-visualization, we present a more extensive discussion of data visualization, elaborating on some ideas, incorporating additional example plots and enabling you to work with alternate data-sets. This is provided as *optional* reading and may support more advanced development for students interested in future professional roles involving data analysis or data visualization.
 :::
 
-### Lectures {#sec-lm-intro-lectures}
+Throughout our materials, we increasingly link the exercises we share to free online information that explains *why* we do the things we do when we code, or *how* we can vary how R works for us.
+
+- The ecosystem of free, high-value, information that is available to people working with R is an important benefit of learning to use R.
+- This week we grow your capacity to find, and to use, the information you need efficiently. This will help to *build your independence* for the work you will do in your future professional careers.
+
+### Lectures {#sec-vis-intro-lectures}
 
 The lecture materials for this week are presented in four short parts. 
 
 Click on a link and your browser should open a tab showing the *Panopto* video for the lecture part.
 
-1. Part 1 (13 minutes) **Focus on the linear model**: The concepts and skills we will learn about in week 8: our aims, the kind of questions we can answer with linear models, and how we get from those questions to sensible linear model analyses.
+1. Part 1 (12 minutes) **Data visualization perspectives and practices**: The concepts and skills we will learn about in week 9: what we will learn and how we will know if we have learned it, the different kinds of goals we think about when we make visualizations, discovery and communication.
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=9d4653c0-9ea2-4437-a74f-af5f00b2fd2e&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC401-lm-intro-1" ></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=b7324096-ad13-4ca1-b8ab-b0c000d85850&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC401-visualization-1" ></iframe>
 ```
 
-2. Part 2 (15 minutes): the first key concept --- how we use linear models to predict average outcomes.
+2. Part 2 (8 minutes): the evidence base, the psychology of seeing and understanding visual information, and how we know what we should do in data visualization.
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=71eaffe1-5066-425c-9ce2-af5f00b79730&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-lm-intro-2" ></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=8f42d056-6da6-4aba-b893-b0c000dc28d1&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-visualization-2" ></iframe>
 ```
 
-3. Part 3 (12 minutes): the second key concept --- how we ensure that linear models make the best predictions given the data we have.
+3. Part 3 (19 minutes): why visualization is important, and why the things we can do to show variation and uncertainty matter, when we communicate evidence to audiences.
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a08f12af-606a-4be0-90ae-af5f00bc1491&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-lm-intro-3" ></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=05e049cb-277d-4d76-888d-b0c000df3c6f&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-visualization-3" ></iframe>
 ```
 
-4. Part 4 (14 minutes): the key skills --- coding linear models, reading model results, and writing reports of those results.
+4. Part 4 (25 minutes): the key skills --- `{ggplot2}` the grammar of graphics, why we have been working on building and editing plots step-by-step, what you can do in future work.
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=a16c627e-609b-49db-b683-af5f00bfb15f&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-lm-intro-4" ></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=5fccaa55-9d07-4e24-8995-b0c0010fe92b&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-visualization-4" ></iframe>
 ```
+
+### Lecture slides {#sec-vis-intro-lectures-slides}
 
 ::: callout-tip
 ## Download the lecture slides
 The slides presented in the videos can be downloaded here:
 
-- [The slides](files/401-linear-model-intro.html) exactly as presented (12 MB). 
+- [The slides](files/401-data-visualisation-practices.html) exactly as presented (7 MB). 
 
 You can download the web page `.html` file and click on it to open it in any browser (e.g., Chrome, Edge or Safari). The slide images are high quality so the file is quite big and may take a few seconds to download.
 :::
 
 We are going to work through some practical exercises, next, to develop your critical thinking and practical skills for working with linear models.
 
-### Practical materials: data and R-Studio {#sec-lm-intro-practical}
+### Practical materials: data and R-Studio {#sec-vis-intro-practical}
 
 We will work with two data files which you can download by clicking on their names (below):
 
--   [`study-one-general-participants.csv`](files/study-one-general-participants.csv).
--   [`study-two-general-participants.csv`](files/study-two-general-participants.csv).
+-   [study-one-general-participants.csv](files/study-one-general-participants.csv).
+-   [study-two-general-participants.csv](files/study-two-general-participants.csv).
 
 Once you have downloaded the files, you will need to upload them to the R-Studio server to access and use the R files.
 
@@ -153,41 +167,41 @@ Here is a link to the sign-in page for [R-Studio Server](https://psy-rstudio.lan
 
 ### Practical materials guide {#sec-lm-intro-practical-guide}
 
-You will find that the practical exercises are simpler to do if you follow these steps in order.
+As usual, you will find that the practical exercises are simpler to do if you follow these steps in order.
 
 1. **The data** --- We will take a quick look at what is inside the data files so you know what everything means.
 2. **The `how-to` guide** --- We will go through the practical analysis and visualization coding steps, showing all the code required for each step.
 3. **The `practical` exercises** --- We will set out the tasks, questions and challenges that you should complete to learn the practical skills we target this week.
 
-This week --- **Week 8** --- we consolidate what you have been learning, so your critical thinking and practical skills have a firm foundation *then* we extend your skills by learning how to do new things.
+This week --- **Week 9** --- we aim to *further* develop your skills in working with -- making and reading -- data visualizations: to find patterns; to detect the unusual; and to better understand the kinds of evidence we collect to address our scientific research questions.
+
+- While we build on everything you have learned so far, our emphasis this week is on finding and making use of online information.
+- This work will enable you to find solutions for yourself in your professional working lives: we aim to help you to unlock your future *independence*.
 
 ::: callout-tip
-## Week 8 parts
+## Week 9 parts
 
 1. Set-up
 2. Load the data
-3. **Revision**: developing histograms to examine the distributions of variables.
-4. **Revision**: developing scatterplots to examine associations between variables.
-5. **Revision**: using correlations to to answer research questions, making sure you are comfortable.
-6. **New**: using a linear model to answer research questions.
-7. **New**: using a linear model to make predictions.
+3. **Revision**: locate and use ggplot2 reference information.
+4. **New**: locate and use tutorial or how-to information.
+5. **New**: locate and use Stackoverflow information.
 :::
 
-We learn these skills so that we can answer research questions like:
+There are three main sources of information you can access for free online:
 
-1. What person attributes predict success in understanding?
-2. Can people accurately evaluate whether they correctly understand written health information?
-  
-These kinds of research questions can often be answered through analyses using linear models.
-We typically use linear models to estimate the association between predictors and outcomes.
+1. The people who write software like the `{tidyverse}` or `{ggplot}` libraries
+provide manuals, reference guides and tutorials. This information is often written as free web books, or as hard copy books.
+2. Other people write tutorials or guides or teaching materials designed to show learners (like us) how to use R functions or do certain things using R. They may present these tutorials or guides as web books, blog sites or video tutorials, e.g., on Youtube or TikTok.
+3. Many people post questions and answers to discussion forums like Stackoverflow.
 
-When we do these analyses, we need to think about how we report the results:  
+::: callout-important
+Learning how to find, understand and use this information teaches two lessons:
 
-- We usually need to report information about the kind of model we specify;
-- We will need to report the nature of the association estimated in our model;
-- We usually need to decide if (i.) the association is significant? (ii.) does the association reflect a positive or negative relationship between outcome and predictor? (iii.) is the association we see in our sample data relatively strong or weak?
-
-We will consolidate and extend learning on data visualization so that we can produce eye-catching, appealing, plots for professional audiences.
+1. A lot of scholarly and technical information is online and free.
+2. Being able to locate and to use this information is often *the* way that most professionals work out what they want to do, and how they can do it, if they have a problem or a question.
+3. This means you get an advantage if you learn how to do that here.
+:::
 
 #### The data files {#sec-lm-intro-practical-data}
 
