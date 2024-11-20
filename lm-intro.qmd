@@ -76,10 +76,10 @@ The lecture materials for this week are presented in four short parts.
 
 Click on a link and your browser should open a tab showing the *Panopto* video for the lecture part.
 
-1. Part 1 (13 minutes) **Focus on the linear model**: The concepts and skills we will learn about in week 8: our aims, the kind of questions we can answer with linear models, and how we get from those questions to sensible linear model analyses.
+1. Part 1 (12 minutes) **Focus on the linear model**: The concepts and skills we will learn about in week 8: our aims, the kind of questions we can answer with linear models, and how we get from those questions to sensible linear model analyses.
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=9d4653c0-9ea2-4437-a74f-af5f00b2fd2e&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC401-lm-intro-1" ></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=eaf1c87a-87bb-491e-b33b-b22e0102965f&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-lm-intro-1" ></iframe>
 ```
 
 2. Part 2 (15 minutes): the first key concept --- how we use linear models to predict average outcomes.
