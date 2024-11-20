@@ -104,7 +104,7 @@ Click on a link and your browser should open a tab showing the *Panopto* video f
 ## Download the lecture slides
 The slides presented in the videos can be downloaded here:
 
-- [The slides](files/401-linear-model-intro.html) exactly as presented (12 MB). 
+- [The slides](files/411-linear-model-intro.html) exactly as presented (12 MB). 
 
 You can download the web page `.html` file and click on it to open it in any browser (e.g., Chrome, Edge or Safari). The slide images are high quality so the file is quite big and may take a few seconds to download.
 :::
