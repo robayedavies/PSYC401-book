@@ -88,7 +88,7 @@ Click on a link and your browser should open a tab showing the *Panopto* video f
 1. Part 1 (20 minutes) **Developing the linear model**: The concepts and skills we will learn about in week 10: our aims, the research questions we can answer with linear models, making the move to working with linear models with multiple predictors, why the main challenge is not the coding but the *choices* over which predictors to include in a model.
 
 ```{=html}
-<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=6bc16beb-f7f1-4fb7-ab5c-af630105f8eb&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC401-lm-dev-1" ></iframe>
+<iframe src="https://lancaster.cloud.panopto.eu/Panopto/Pages/Embed.aspx?id=14284d6d-f17d-4c0a-a827-b23d00bda67f&autoplay=false&offerviewer=true&showtitle=true&showbrand=true&captions=false&interactivity=all" height="405" width="720" style="border: 1px solid #464646;" allowfullscreen allow="autoplay" aria-label="Panopto Embedded Video Player" aria-description="PSYC411-lm-dev-1" ></iframe>
 ```
 
 2. Part 2 (13 minutes): Coding, thinking about, and reporting linear models with multiple predictors.
@@ -113,7 +113,7 @@ Click on a link and your browser should open a tab showing the *Panopto* video f
 ## Download the lecture slides
 The slides presented in the videos can be downloaded here:
 
-- [The slides](files/401-linear-model-develop.html) exactly as presented (11 MB). 
+- [The slides](files/411-linear-model-develop.html) exactly as presented (11 MB). 
 
 You can download the web page `.html` file and click on it to open it in any browser (e.g., Chrome, Edge or Safari). The slide images are high quality so the file is quite big and may take a few seconds to download.
 :::
